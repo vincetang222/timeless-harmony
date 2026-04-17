@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Điều khoản sử dụng — Timeless Harmony</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1a2a1e;--green-mid:#243424;--green-soft:#3d5240;--cream:#f8f4ec;--cream-dark:#efe9dc;--white:#fdfaf4;--gold:#c9a96e;--gold-light:#e2c99a;--muted:#7a8c7d;--max:760px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;font-weight:300;background:var(--cream);color:var(--green);overflow-x:hidden;}
+a{color:var(--green-soft);text-decoration:underline;text-underline-offset:3px;}
+a:hover{color:var(--green);}
+
+/* NAV */
+nav{background:var(--green);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--gold-light);letter-spacing:.06em;text-decoration:none;}
+.nav-back{font-size:12px;color:rgba(226,201,154,.5);text-decoration:none;letter-spacing:.06em;transition:color .2s;}
+.nav-back:hover{color:var(--gold-light);}
+
+/* HERO */
+.page-hero{background:var(--green);padding:56px 32px 64px;text-align:center;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(201,169,110,.05) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;}
+.page-hero-tag{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:14px;}
+.page-hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,48px);font-weight:300;color:var(--cream);line-height:1.1;margin-bottom:12px;}
+.page-hero-title em{font-style:italic;color:var(--gold);}
+.page-hero-sub{font-size:13px;color:rgba(248,244,236,.45);max-width:480px;margin:0 auto;line-height:1.75;}
+.page-hero-meta{margin-top:20px;font-size:11px;color:rgba(226,201,154,.35);letter-spacing:.06em;}
+
+/* CONTENT */
+.content-wrap{max-width:var(--max);margin:0 auto;padding:64px 32px 96px;}
+@media(max-width:600px){.content-wrap{padding:48px 20px 72px;}}
+
+/* TOC */
+.toc{background:var(--white);border:0.5px solid rgba(30,42,30,.08);border-radius:14px;padding:28px 32px;margin-bottom:56px;}
+.toc-title{font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.toc-list li a{font-size:14px;color:var(--green-soft);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .2s;}
+.toc-list li a:hover{color:var(--green);}
+.toc-num{font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(201,169,110,.5);width:20px;flex-shrink:0;}
+
+/* SECTIONS */
+.doc-section{margin-bottom:52px;scroll-margin-top:24px;}
+.doc-section:last-child{margin-bottom:0;}
+
+.section-num-title{display:flex;align-items:baseline;gap:14px;margin-bottom:20px;padding-bottom:16px;border-bottom:.5px solid rgba(30,42,30,.08);}
+.section-num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:rgba(201,169,110,.4);line-height:1;flex-shrink:0;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--green);line-height:1.2;}
+
+.doc-p{font-size:15px;line-height:1.85;color:#3a4a3c;margin-bottom:14px;}
+.doc-p:last-child{margin-bottom:0;}
+
+.doc-list{list-style:none;margin:14px 0;display:flex;flex-direction:column;gap:10px;}
+.doc-list li{display:flex;align-items:flex-start;gap:12px;font-size:15px;line-height:1.8;color:#3a4a3c;}
+.doc-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);opacity:.6;flex-shrink:0;margin-top:9px;}
+
+.doc-sublist{list-style:none;margin:8px 0 8px 24px;display:flex;flex-direction:column;gap:8px;}
+.doc-sublist li{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.75;color:var(--muted);}
+.doc-sublist li::before{content:'—';color:rgba(201,169,110,.5);flex-shrink:0;}
+
+.highlight-box{background:var(--white);border:.5px solid rgba(30,42,30,.08);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:18px 22px;margin:20px 0;}
+.highlight-box p{font-size:14px;line-height:1.8;color:#3a4a3c;}
+
+.fee-table{width:100%;border-collapse:collapse;margin:20px 0;}
+.fee-table th{font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding:10px 16px;text-align:left;border-bottom:.5px solid rgba(30,42,30,.1);}
+.fee-table td{font-size:14px;padding:12px 16px;border-bottom:.5px solid rgba(30,42,30,.06);color:#3a4a3c;line-height:1.6;}
+.fee-table tr:last-child td{border-bottom:none;}
+.fee-table tr:nth-child(even) td{background:rgba(30,42,30,.02);}
+
+.warning-box{background:rgba(201,169,110,.06);border:.5px solid rgba(201,169,110,.2);border-radius:10px;padding:18px 22px;margin:20px 0;}
+.warning-box p{font-size:14px;line-height:1.8;color:#3a4a3c;}
+.warning-title{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+
+/* FOOTER */
+.doc-footer{background:var(--green);padding:40px 32px;text-align:center;}
+.doc-footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(226,201,154,.6);letter-spacing:.05em;margin-bottom:8px;}
+.doc-footer-sub{font-size:12px;color:rgba(248,244,236,.25);}
+.doc-footer-links{display:flex;gap:24px;justify-content:center;margin-top:16px;flex-wrap:wrap;}
+.doc-footer-link{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(248,244,236,.22);text-decoration:none;transition:color .2s;}
+.doc-footer-link:hover{color:rgba(226,201,154,.6);}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Timeless Harmony</a>
+  <a href="/" class="nav-back">← Về trang chủ</a>
+</nav>
+
+<div class="page-hero">
+  <p class="page-hero-tag">Pháp lý</p>
+  <h1 class="page-hero-title">Điều khoản <em>sử dụng</em></h1>
+  <p class="page-hero-sub">Vui lòng đọc kỹ trước khi đăng ký và sử dụng nền tảng Timeless Harmony.</p>
+  <p class="page-hero-meta">Phiên bản 1.0 · Có hiệu lực từ ngày 01/01/2026 · Theo Luật Giao dịch điện tử 2023</p>
+</div>
+
+<div class="content-wrap">
+
+  <!-- TOC -->
+  <div class="toc">
+    <p class="toc-title">Mục lục</p>
+    <ol class="toc-list">
+      <li><a href="#s1"><span class="toc-num">01</span>Định nghĩa & Phạm vi áp dụng</a></li>
+      <li><a href="#s2"><span class="toc-num">02</span>Điều kiện tham gia</a></li>
+      <li><a href="#s3"><span class="toc-num">03</span>Quyền và nghĩa vụ của nhà cung cấp</a></li>
+      <li><a href="#s4"><span class="toc-num">04</span>Quyền và nghĩa vụ của khách hàng</a></li>
+      <li><a href="#s5"><span class="toc-num">05</span>Thanh toán, ký quỹ & phí dịch vụ</a></li>
+      <li><a href="#s6"><span class="toc-num">06</span>Hủy hợp đồng & hoàn tiền</a></li>
+      <li><a href="#s7"><span class="toc-num">07</span>Nghiêm cấm & xử lý vi phạm</a></li>
+      <li><a href="#s8"><span class="toc-num">08</span>Giới hạn trách nhiệm</a></li>
+      <li><a href="#s9"><span class="toc-num">09</span>Giải quyết tranh chấp</a></li>
+      <li><a href="#s10"><span class="toc-num">10</span>Sửa đổi điều khoản</a></li>
+      <li><a href="#s11"><span class="toc-num">11</span>Liên hệ</a></li>
+    </ol>
+  </div>
+
+  <!-- 01 -->
+  <div class="doc-section" id="s1">
+    <div class="section-num-title">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Định nghĩa & Phạm vi áp dụng</h2>
+    </div>
+    <p class="doc-p"><strong>Timeless Harmony</strong> là nền tảng marketplace kết nối dịch vụ cưới, (sau đây gọi là "Nền tảng" hoặc "chúng tôi").</p>
+    <p class="doc-p">Điều khoản này áp dụng cho tất cả người dùng khi truy cập, đăng ký và sử dụng nền tảng tại địa chỉ <strong>timeless-harmony.com</strong> và các dịch vụ liên quan. Bằng cách đăng ký tài khoản hoặc sử dụng nền tảng, bạn xác nhận đã đọc, hiểu và đồng ý toàn bộ điều khoản này.</p>
+    <p class="doc-p">Trong điều khoản này, <strong>Nhà cung cấp</strong> là cá nhân hoặc doanh nghiệp cung cấp dịch vụ cưới đã được Timeless Harmony xét duyệt và đưa lên nền tảng. <strong>Khách hàng</strong> là cô dâu, chú rể hoặc người đại diện tìm kiếm và đặt dịch vụ cưới thông qua nền tảng. <strong>Hợp đồng dịch vụ</strong> là thỏa thuận giữa Khách hàng và Nhà cung cấp về dịch vụ cụ thể, được ký kết và quản lý qua Timeless Harmony. <strong>Ký quỹ</strong> là khoản tiền Khách hàng thanh toán được Timeless Harmony giữ và giải ngân theo từng giai đoạn cam kết trong hợp đồng.</p>
+  </div>
+
+  <!-- 02 -->
+  <div class="doc-section" id="s2">
+    <div class="section-num-title">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Điều kiện tham gia</h2>
+    </div>
+    <p class="doc-p">Để đăng ký và sử dụng nền tảng, người dùng phải đáp ứng đồng thời các điều kiện sau:</p>
+    <p class="doc-p">Về độ tuổi: khách hàng nam phải đủ 20 tuổi trở lên, khách hàng nữ đủ 18 tuổi trở lên theo quy định về độ tuổi kết hôn tại Luật Hôn nhân và Gia đình Việt Nam. Nhà cung cấp phải đủ 18 tuổi trở lên, có năng lực hành vi dân sự đầy đủ và có khả năng thực hiện dịch vụ đúng như mô tả trong hồ sơ đăng ký.</p>
+    <p class="doc-p">Ngoài ra, tất cả người dùng cần cung cấp thông tin đăng ký trung thực, chính xác và đầy đủ, đồng thời không thuộc diện bị cấm giao dịch hoặc tham gia hoạt động kinh tế theo quy định pháp luật hiện hành.</p>
+    <p class="doc-p">Timeless Harmony có quyền từ chối hoặc tạm dừng tài khoản nếu phát hiện thông tin đăng ký không trung thực hoặc người dùng không đáp ứng các điều kiện trên.</p>
+  </div>
+
+  <!-- 03 -->
+  <div class="doc-section" id="s3">
+    <div class="section-num-title">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Quyền và nghĩa vụ của nhà cung cấp</h2>
+    </div>
+    <p class="doc-p"><strong>Nhà cung cấp có quyền:</strong></p>
+    <ul class="doc-list">
+      <li>Đăng ký hồ sơ và quảng bá dịch vụ trên nền tảng hoàn toàn miễn phí.</li>
+      <li>Tự quyết định báo giá, phạm vi dịch vụ và điều kiện hợp đồng cho từng khách hàng.</li>
+      <li>Từ chối nhận deal nếu không phù hợp — không cần giải thích lý do.</li>
+      <li>Nhận thanh toán đúng hạn theo tiến độ đã cam kết trong hợp đồng.</li>
+    </ul>
+    <p class="doc-p" style="margin-top:20px;"><strong>Nhà cung cấp có nghĩa vụ:</strong></p>
+    <ul class="doc-list">
+      <li>Thực hiện dịch vụ đúng như đã mô tả trong hồ sơ và cam kết trong hợp đồng.</li>
+      <li>Thông báo cho Timeless Harmony ít nhất <strong>7 ngày</strong> nếu không thể thực hiện dịch vụ đã ký kết.</li>
+      <li>Toàn bộ giao dịch liên quan đến dịch vụ đã kết nối qua nền tảng phải được thực hiện qua hệ thống thanh toán của Timeless Harmony. Mọi thỏa thuận tài chính ngoài nền tảng đều vi phạm điều khoản này.</li>
+      <li>Tự chịu trách nhiệm kê khai và nộp thuế thu nhập theo quy định pháp luật hiện hành.</li>
+      <li>Bảo mật thông tin cá nhân của Khách hàng, không tiết lộ cho bên thứ ba khi chưa có sự đồng ý.</li>
+    </ul>
+  </div>
+
+  <!-- 04 -->
+  <div class="doc-section" id="s4">
+    <div class="section-num-title">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Quyền và nghĩa vụ của khách hàng</h2>
+    </div>
+    <p class="doc-p"><strong>Khách hàng có quyền:</strong></p>
+    <ul class="doc-list">
+      <li>Tìm kiếm, so sánh và kết nối với các nhà cung cấp trên nền tảng.</li>
+      <li>Được bảo vệ tài chính thông qua hệ thống ký quỹ — tiền chỉ giải ngân khi dịch vụ hoàn thành đúng thỏa thuận.</li>
+      <li>Yêu cầu Timeless Harmony can thiệp làm trọng tài khi có tranh chấp với nhà cung cấp.</li>
+      <li>Được hoàn tiền theo chính sách nêu tại Điều 6 nếu dịch vụ không được thực hiện hoặc không đúng cam kết.</li>
+    </ul>
+    <p class="doc-p" style="margin-top:20px;"><strong>Khách hàng có nghĩa vụ:</strong></p>
+    <ul class="doc-list">
+      <li>Cung cấp thông tin yêu cầu dịch vụ trung thực và đầy đủ.</li>
+      <li>Thanh toán đặt cọc qua hệ thống ký quỹ của Timeless Harmony — không thanh toán trực tiếp cho nhà cung cấp ngoài nền tảng.</li>
+      <li>Xác nhận tiến độ và giải ngân đúng hạn theo các giai đoạn trong hợp đồng.</li>
+      <li>Thông báo cho Timeless Harmony trong vòng <strong>48 giờ</strong> nếu phát hiện dịch vụ không đúng cam kết.</li>
+    </ul>
+  </div>
+
+  <!-- 05 -->
+  <div class="doc-section" id="s5">
+    <div class="section-num-title">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Thanh toán, ký quỹ & phí dịch vụ</h2>
+    </div>
+    <p class="doc-p">Timeless Harmony đóng vai trò trung gian thanh toán — toàn bộ giao dịch tài chính giữa Khách hàng và Nhà cung cấp đều đi qua hệ thống ký quỹ của nền tảng.</p>
+
+    <div class="highlight-box">
+      <p><strong>Quy trình ký quỹ:</strong> Khách hàng thanh toán vào tài khoản ký quỹ của Timeless Harmony → Tiền được giữ an toàn → Giải ngân cho Nhà cung cấp theo từng giai đoạn khi Khách hàng xác nhận hoàn thành.</p>
+    </div>
+
+    <p class="doc-p"><strong>Phí dịch vụ:</strong> Timeless Harmony thu phí thành công từ <strong>Nhà cung cấp</strong> — Khách hàng không phải trả thêm bất kỳ khoản phí nào ngoài giá trị hợp đồng. Mức phí cụ thể được thỏa thuận và ghi rõ trong từng hợp đồng onboarding với nhà cung cấp, dao động trong khoảng <strong>3–5% giá trị hợp đồng</strong>.</p>
+
+    <table class="fee-table">
+      <thead>
+        <tr>
+          <th>Giai đoạn giải ngân</th>
+          <th>Điều kiện</th>
+          <th>Thời gian xử lý</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Đặt cọc ban đầu</td>
+          <td>Sau khi hợp đồng được ký kết đầy đủ</td>
+          <td>1–2 ngày làm việc</td>
+        </tr>
+        <tr>
+          <td>Giải ngân theo tiến độ</td>
+          <td>Khách hàng xác nhận từng giai đoạn hoàn thành</td>
+          <td>1–2 ngày làm việc</td>
+        </tr>
+        <tr>
+          <td>Thanh toán cuối</td>
+          <td>Dịch vụ hoàn tất, không có khiếu nại trong 48 giờ</td>
+          <td>2–3 ngày làm việc</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 06 -->
+  <div class="doc-section" id="s6">
+    <div class="section-num-title">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Hủy hợp đồng & hoàn tiền</h2>
+    </div>
+    <p class="doc-p"><strong>Trường hợp Khách hàng hủy:</strong></p>
+    <ul class="doc-list">
+      <li>Hủy trước <strong>30 ngày</strong> so với ngày dịch vụ: hoàn 80% khoản đã đặt cọc.</li>
+      <li>Hủy trong vòng <strong>15–30 ngày</strong>: hoàn 50% khoản đã đặt cọc.</li>
+      <li>Hủy trong vòng <strong>dưới 15 ngày</strong>: hoàn tối đa 20% tùy trường hợp cụ thể.</li>
+    </ul>
+    <p class="doc-p" style="margin-top:20px;"><strong>Trường hợp Nhà cung cấp hủy:</strong></p>
+    <ul class="doc-list">
+      <li>Nhà cung cấp hủy vì lý do chính đáng (bệnh, tai nạn, bất khả kháng): hoàn 100% cho Khách hàng, Timeless Harmony hỗ trợ tìm nhà cung cấp thay thế.</li>
+      <li>Nhà cung cấp hủy không có lý do chính đáng: hoàn 100% cho Khách hàng, Nhà cung cấp có thể bị tạm dừng hoặc xóa tài khoản.</li>
+    </ul>
+    <p class="doc-p" style="margin-top:20px;"><strong>Trường hợp dịch vụ không đúng cam kết:</strong></p>
+    <ul class="doc-list">
+      <li>Khách hàng phản ánh trong vòng 48 giờ sau khi dịch vụ xảy ra → Timeless Harmony xem xét và quyết định trong 5 ngày làm việc → Hoàn tiền toàn bộ hoặc một phần tùy mức độ vi phạm.</li>
+    </ul>
+    <div class="warning-box">
+      <p class="warning-title">Lưu ý quan trọng</p>
+      <p>Chính sách hoàn tiền chỉ áp dụng cho các giao dịch được thực hiện qua hệ thống ký quỹ của Timeless Harmony. Các khoản thanh toán ngoài nền tảng sẽ không được bảo vệ.</p>
+    </div>
+  </div>
+
+  <!-- 07 -->
+  <div class="doc-section" id="s7">
+    <div class="section-num-title">
+      <span class="section-num">07</span>
+      <h2 class="section-title">Hành vi không được phép & xử lý vi phạm</h2>
+    </div>
+    <p class="doc-p">Để bảo vệ quyền lợi của tất cả người dùng, Timeless Harmony không chấp nhận các hành vi sau: cung cấp thông tin giả mạo hoặc hồ sơ không trung thực khi đăng ký; quấy rối, đe dọa hoặc có thái độ không phù hợp với người dùng khác; sử dụng thông tin cá nhân thu thập qua nền tảng cho mục đích ngoài phạm vi dịch vụ; tạo nhiều tài khoản để lách quy định hoặc tác động đến hệ thống đánh giá. Ngoài ra, các giao dịch phát sinh từ kết nối qua Timeless Harmony cần được thực hiện qua hệ thống của nền tảng để đảm bảo quyền lợi cho cả hai bên — đặc biệt là bảo vệ tài chính thông qua ký quỹ và hiệu lực của hợp đồng.</p>
+    <p class="doc-p">Tùy theo mức độ, vi phạm sẽ được xử lý bằng cảnh cáo đối với lần đầu và mức độ nhẹ; tạm khóa tài khoản 30 ngày nếu vi phạm lặp lại hoặc mức độ trung bình; xóa tài khoản vĩnh viễn nếu vi phạm nghiêm trọng; hoặc báo cáo cơ quan có thẩm quyền nếu hành vi vi phạm pháp luật hình sự.</p>
+  </div>
+
+  <!-- 08 -->
+  <div class="doc-section" id="s8">
+    <div class="section-num-title">
+      <span class="section-num">08</span>
+      <h2 class="section-title">Giới hạn trách nhiệm</h2>
+    </div>
+    <p class="doc-p">Timeless Harmony đóng vai trò trung gian kết nối — không phải là bên trực tiếp cung cấp dịch vụ cưới. Do đó:</p>
+    <ul class="doc-list">
+      <li>Timeless Harmony không chịu trách nhiệm về chất lượng dịch vụ thực tế do Nhà cung cấp thực hiện, ngoại trừ trường hợp Nhà cung cấp vi phạm cam kết đã ghi trong hợp đồng.</li>
+      <li>Trách nhiệm tài chính tối đa của Timeless Harmony không vượt quá tổng giá trị khoản ký quỹ của giao dịch liên quan.</li>
+      <li>Timeless Harmony không chịu trách nhiệm với các thiệt hại gián tiếp phát sinh từ việc sử dụng nền tảng.</li>
+      <li>Trong trường hợp bất khả kháng (thiên tai, dịch bệnh, sự cố kỹ thuật ngoài tầm kiểm soát), Timeless Harmony sẽ thông báo và xử lý từng trường hợp cụ thể.</li>
+    </ul>
+  </div>
+
+  <!-- 09 -->
+  <div class="doc-section" id="s9">
+    <div class="section-num-title">
+      <span class="section-num">09</span>
+      <h2 class="section-title">Giải quyết tranh chấp</h2>
+    </div>
+    <p class="doc-p">Khi phát sinh tranh chấp, các bên thực hiện theo thứ tự sau. Đầu tiên, liên hệ Timeless Harmony trong vòng <strong>48 giờ</strong> sau khi phát sinh tranh chấp qua thư điện tử hoặc kênh liên lạc chính thức, trình bày rõ vấn đề và cung cấp bằng chứng liên quan. Timeless Harmony sẽ xem xét và phản hồi trong vòng <strong>5 ngày làm việc</strong>, đóng vai trò trọng tài trung lập dựa trên hợp đồng đã ký và bằng chứng hai bên cung cấp.</p>
+    <p class="doc-p">Nếu một bên không đồng ý với quyết định của Timeless Harmony, các bên có thể yêu cầu hòa giải theo Luật Hòa giải cơ sở 2013. Trường hợp không giải quyết được qua hòa giải, tranh chấp sẽ được đưa ra <strong>Tòa án nhân dân có thẩm quyền tại Thành phố Hồ Chí Minh</strong> theo pháp luật Việt Nam.</p>
+    <p class="doc-p">Điều khoản này được điều chỉnh bởi pháp luật nước Cộng hòa Xã hội Chủ nghĩa Việt Nam.</p>
+  </div>
+
+  <!-- 10 -->
+  <div class="doc-section" id="s10">
+    <div class="section-num-title">
+      <span class="section-num">10</span>
+      <h2 class="section-title">Sửa đổi điều khoản</h2>
+    </div>
+    <p class="doc-p">Timeless Harmony có quyền cập nhật điều khoản sử dụng bất kỳ lúc nào. Người dùng sẽ được thông báo trước ít nhất <strong>14 ngày</strong> trước khi thay đổi có hiệu lực — qua email hoặc thông báo trên nền tảng.</p>
+    <p class="doc-p">Việc tiếp tục sử dụng nền tảng sau thời điểm thay đổi có hiệu lực đồng nghĩa với việc bạn chấp nhận điều khoản mới. Nếu không đồng ý, bạn có thể ngừng sử dụng dịch vụ trước khi thay đổi có hiệu lực.</p>
+  </div>
+
+  <!-- 11 -->
+  <div class="doc-section" id="s11">
+    <div class="section-num-title">
+      <span class="section-num">11</span>
+      <h2 class="section-title">Liên hệ</h2>
+    </div>
+    <p class="doc-p">Nếu có bất kỳ câu hỏi nào về điều khoản sử dụng, vui lòng liên hệ:</p>
+    <ul class="doc-list">
+      <li><strong>Thư điện tử:</strong> hello@timeless-harmony.com</li>
+      <li><strong>Đơn vị vận hành:</strong> Bigfish Agency</li>
+      <li><strong>Website:</strong> timeless-harmony.com</li>
+    </ul>
+    <div class="highlight-box">
+      <p>Chúng tôi cam kết phản hồi trong vòng <strong>2 ngày làm việc</strong> với mọi câu hỏi và phản ánh liên quan đến điều khoản sử dụng.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="doc-footer">
+  <p class="doc-footer-logo">Timeless Harmony</p>
+  <p class="doc-footer-sub">© 2026 Timeless Harmony</p>
+  <div class="doc-footer-links">
+    <a href="/" class="doc-footer-link">Trang chủ</a>
+    <a href="/dieu-khoan" class="doc-footer-link">Điều khoản</a>
+    <a href="/bao-mat" class="doc-footer-link">Bảo mật</a>
+  </div>
+</div>
+
+</body>
+</html>
