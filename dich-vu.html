@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dịch vụ cưới — Timeless Harmony</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0c0c;--bg2:#141414;--nav-bg:rgba(12,12,12,0.94);
+  --line:rgba(255,255,255,0.07);--line2:rgba(255,255,255,0.13);
+  --text:#f0ede8;--text2:rgba(240,237,232,0.62);--text3:rgba(240,237,232,0.38);
+  --gold:#c9a96e;--gold2:#e2c99a;
+  --gold-bg:rgba(201,169,110,0.1);--gold-line:rgba(201,169,110,0.22);
+  --card-bg:linear-gradient(145deg,#202020 0%,#151515 100%);
+  --card-border:rgba(255,255,255,0.13);
+  --max:1100px;--r:12px;
+}
+body.light{
+  --bg:#f8f4ec;--bg2:#f0ebe0;--nav-bg:rgba(248,244,236,0.96);
+  --line:rgba(30,42,30,0.08);--line2:rgba(30,42,30,0.14);
+  --text:#1a2a1e;--text2:rgba(26,42,30,0.75);--text3:rgba(26,42,30,0.55);
+  --gold:#9a7a42;--gold2:#7a5e2e;
+  --gold-bg:rgba(154,122,66,0.08);--gold-line:rgba(154,122,66,0.2);
+  --card-bg:linear-gradient(145deg,#ffffff 0%,#f5f1e8 100%);
+  --card-border:rgba(30,42,30,0.1);
+}
+body,nav,.sup-card,.cat-card,footer{transition:background .35s ease,color .35s ease,border-color .35s ease;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;font-weight:300;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+@media(max-width:600px){.wrap{padding:0 18px;}}
+[data-r]{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease;}
+[data-r].on{opacity:1;transform:none;}
+[data-r="1"]{transition-delay:.07s;}[data-r="2"]{transition-delay:.14s;}
+[data-r="3"]{transition-delay:.21s;}[data-r="4"]{transition-delay:.28s;}
+[data-r="5"]{transition-delay:.35s;}[data-r="6"]{transition-delay:.42s;}
+[data-r="7"]{transition-delay:.49s;}[data-r="8"]{transition-delay:.56s;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:99;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--line);height:58px;display:flex;align-items:center;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;}
+.nav-logo{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.nav-logo span{color:var(--gold);}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-back{font-size:12px;color:var(--text3);transition:color .2s;}
+.nav-back:hover{color:var(--text2);}
+.nav-cta{font-size:12px;font-weight:600;background:var(--gold);color:var(--bg);padding:8px 18px;border-radius:6px;transition:all .2s;}
+.nav-cta:hover{filter:brightness(1.08);}
+.mode-toggle{width:32px;height:32px;border-radius:7px;background:var(--gold-bg);border:0.5px solid var(--gold-line);color:var(--gold);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;}
+
+/* HERO */
+.hero{padding:56px 0 44px;border-bottom:0.5px solid var(--line);}
+.hero-inner{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.hero-left{}
+.page-tag{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:12px;}
+.page-title{font-family:'Be Vietnam Pro',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;color:var(--text);line-height:1.06;margin-bottom:12px;}
+.page-title em{font-style:normal;color:var(--gold);}
+.page-sub{font-size:14px;color:var(--text2);line-height:1.8;max-width:480px;}
+.hero-stats{display:flex;gap:32px;flex-shrink:0;}
+.hero-stat{text-align:right;}
+.hero-stat-num{font-family:'Be Vietnam Pro',sans-serif;font-size:32px;font-weight:800;color:var(--text);line-height:1;}
+.hero-stat-label{font-size:12px;color:var(--text3);margin-top:4px;}
+
+/* SEARCH + FILTER */
+.search-bar{padding:28px 0 20px;display:flex;gap:10px;flex-wrap:wrap;}
+.search-box{flex:1;min-width:240px;display:flex;align-items:center;gap:12px;background:var(--bg2);border:0.5px solid var(--line2);border-radius:9px;padding:12px 18px;transition:border-color .2s;}
+.search-box:focus-within{border-color:rgba(255,255,255,0.25);}
+body.light .search-box:focus-within{border-color:rgba(30,42,30,0.3);}
+.search-icon{width:16px;height:16px;flex-shrink:0;border:1.5px solid var(--text3);border-radius:50%;position:relative;}
+.search-icon::after{content:'';position:absolute;bottom:-4px;right:-4px;width:5px;height:1.5px;background:var(--text3);transform:rotate(45deg);}
+.search-input{flex:1;background:none;border:none;outline:none;font-family:'Inter',sans-serif;font-size:14px;color:var(--text);font-weight:300;}
+.search-input::placeholder{color:var(--text3);}
+.filter-select{background:var(--bg2);border:0.5px solid var(--line2);border-radius:9px;padding:12px 18px;font-family:'Inter',sans-serif;font-size:13px;color:var(--text2);outline:none;cursor:pointer;appearance:none;min-width:140px;}
+
+/* CATEGORY PILLS */
+.cat-pills{display:flex;gap:8px;flex-wrap:wrap;padding-bottom:28px;border-bottom:0.5px solid var(--line);}
+.cat-pill{font-size:12px;font-weight:400;padding:7px 16px;border-radius:100px;border:0.5px solid var(--line2);color:var(--text3);cursor:pointer;transition:all .18s;white-space:nowrap;background:transparent;}
+.cat-pill:hover{color:var(--text2);border-color:rgba(255,255,255,0.22);}
+body.light .cat-pill:hover{border-color:rgba(30,42,30,0.3);}
+.cat-pill.active{background:var(--gold);color:var(--bg);border-color:var(--gold);font-weight:500;}
+.cat-pill.special{background:var(--gold-bg);border-color:var(--gold-line);color:var(--gold);font-weight:500;}
+.cat-pill.special.active{background:var(--gold);color:var(--bg);}
+
+/* CATEGORIES OVERVIEW */
+.cats-section{padding:48px 0 36px;}
+.cats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+@media(max-width:800px){.cats-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.cats-grid{grid-template-columns:1fr;}}
+.cat-card{background:var(--card-bg);border:0.5px solid var(--card-border);border-radius:var(--r);padding:20px;cursor:pointer;transition:border-color .2s,transform .2s;display:flex;align-items:center;gap:14px;}
+.cat-card:hover{border-color:var(--gold-line);transform:translateY(-2px);}
+.cat-icon-wrap{width:40px;height:40px;border-radius:9px;background:var(--gold-bg);border:0.5px solid var(--gold-line);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cat-info{}
+.cat-name{font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px;}
+.cat-count{font-size:11px;color:var(--text3);}
+
+/* SUPPLIER GRID */
+.sup-section{padding:36px 0 80px;}
+.sup-section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+.sup-section-title{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);}
+.sup-section-count{font-size:12px;color:var(--text3);}
+.sup-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+@media(max-width:800px){.sup-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.sup-grid{grid-template-columns:1fr;}}
+
+.sup-card{background:var(--card-bg);border:0.5px solid var(--card-border);border-radius:var(--r);overflow:hidden;cursor:pointer;transition:border-color .25s,transform .25s;}
+.sup-card:hover{border-color:var(--gold-line);transform:translateY(-2px);}
+.sup-thumb{height:180px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.sup-thumb img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:opacity .25s,transform .3s;}
+.sup-card:hover .sup-thumb img{opacity:1;transform:scale(1.03);}
+.t1{background:#1a231c;}.t2{background:#221c14;}.t3{background:#14202a;}
+.t4{background:#241422;}.t5{background:#181e14;}.t6{background:#201a14;}
+.t7{background:#1e1a2e;}.t8{background:#1a2218;}.t9{background:#221a18;}
+.t10{background:#18201e;}.t11{background:#1e1c28;}.t12{background:#20181c;}
+.thumb-icon{width:48px;height:48px;border-radius:50%;border:1px solid rgba(201,169,110,0.2);display:flex;align-items:center;justify-content:center;}
+.sup-badge{position:absolute;top:12px;left:12px;font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:100px;}
+.badge-new{background:var(--gold-bg);color:var(--gold);border:0.5px solid var(--gold-line);}
+.badge-hot{background:rgba(255,255,255,0.06);color:rgba(240,237,232,.6);border:0.5px solid var(--line2);}
+.badge-unique{background:rgba(201,169,110,0.2);color:var(--gold2);border:0.5px solid var(--gold-line);}
+.sup-body{padding:16px;}
+.sup-cat{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:5px;}
+.sup-name{font-size:15px;font-weight:600;color:var(--text);margin-bottom:3px;line-height:1.3;}
+.sup-loc{font-size:12px;color:var(--text3);}
+.sup-footer{display:flex;align-items:center;justify-content:space-between;margin-top:14px;padding-top:14px;border-top:0.5px solid var(--line);}
+.sup-price{font-size:12px;color:var(--text3);}
+.sup-arrow{width:26px;height:26px;border-radius:50%;border:0.5px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text3);transition:all .2s;}
+.sup-card:hover .sup-arrow{border-color:var(--gold-line);color:var(--gold);background:var(--gold-bg);}
+
+/* EMPTY STATE */
+.empty-state{padding:80px 0;text-align:center;}
+.empty-title{font-size:18px;font-weight:500;color:var(--text2);margin-bottom:8px;}
+.empty-sub{font-size:14px;color:var(--text3);}
+
+/* LOAD MORE */
+.load-more{text-align:center;padding:40px 0 20px;}
+.btn-load{font-size:13px;padding:12px 32px;border-radius:8px;border:0.5px solid var(--line2);color:var(--text2);background:transparent;cursor:pointer;transition:all .2s;}
+.btn-load:hover{border-color:var(--gold-line);color:var(--gold);}
+
+/* FOOTER */
+footer{border-top:0.5px solid var(--line);padding:36px 0;}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:700;color:var(--text3);}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap;}
+.footer-link{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);transition:color .2s;}
+.footer-link:hover{color:var(--text2);}
+.footer-copy{font-size:12px;color:var(--text3);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-logo">Timeless <span>Harmony</span></a>
+    <div class="nav-right">
+      <a href="/" class="nav-back">← Trang chủ</a>
+      <button class="mode-toggle" id="modeToggle" onclick="toggleMode()">
+        <svg id="modeIcon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.1 3.1l1.1 1.1M11.8 11.8l1.1 1.1M11.8 4.2l-1.1 1.1M4.2 11.8l-1.1 1.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      </button>
+      <a href="/#cta" class="nav-cta">Đăng ký supplier</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-left" data-r>
+        <p class="page-tag">Nhà cung cấp</p>
+        <h1 class="page-title">Tất cả dịch vụ<br><em>cho ngày cưới của bạn</em></h1>
+        <p class="page-sub">Được tuyển chọn kỹ, có hợp đồng và thanh toán ký quỹ an toàn. Tìm đúng người cho đúng phong cách.</p>
+      </div>
+      <div class="hero-stats" data-r="1">
+        <div class="hero-stat">
+          <div class="hero-stat-num">12</div>
+          <div class="hero-stat-label">Danh mục dịch vụ</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">60+</div>
+          <div class="hero-stat-label">Loại dịch vụ</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search-bar" data-r="2">
+      <div class="search-box">
+        <div class="search-icon"></div>
+        <input class="search-input" id="searchInput" type="text" placeholder="Tìm nhiếp ảnh gia, hoa cưới, địa điểm..." oninput="filterSuppliers()">
+      </div>
+      <select class="filter-select" id="cityFilter" onchange="filterSuppliers()">
+        <option value="">Tất cả khu vực</option>
+        <option>Sài Gòn</option>
+        <option>Hà Nội</option>
+        <option>Đà Nẵng</option>
+        <option>Đà Lạt</option>
+        <option>Hội An</option>
+      </select>
+      <select class="filter-select" id="sortFilter" onchange="filterSuppliers()">
+        <option value="">Sắp xếp</option>
+        <option value="name">Tên A–Z</option>
+        <option value="new">Mới nhất</option>
+      </select>
+    </div>
+
+    <!-- CATEGORY PILLS -->
+    <div class="cat-pills" data-r="3">
+      <button class="cat-pill active" data-cat="all" onclick="selectCat(this,'all')">Tất cả</button>
+      <button class="cat-pill" data-cat="plan" onclick="selectCat(this,'plan')">Lên kế hoạch</button>
+      <button class="cat-pill" data-cat="photo" onclick="selectCat(this,'photo')">Nhiếp ảnh & Quay phim</button>
+      <button class="cat-pill" data-cat="music" onclick="selectCat(this,'music')">Âm nhạc & Giải trí</button>
+      <button class="cat-pill" data-cat="flower" onclick="selectCat(this,'flower')">Hoa cưới & Trang trí</button>
+      <button class="cat-pill" data-cat="beauty" onclick="selectCat(this,'beauty')">Làm đẹp & Trang phục</button>
+      <button class="cat-pill" data-cat="food" onclick="selectCat(this,'food')">Ẩm thực & Đồ uống</button>
+      <button class="cat-pill" data-cat="venue" onclick="selectCat(this,'venue')">Địa điểm</button>
+      <button class="cat-pill" data-cat="sound" onclick="selectCat(this,'sound')">Âm thanh & Ánh sáng</button>
+      <button class="cat-pill" data-cat="stationery" onclick="selectCat(this,'stationery')">Văn phòng phẩm</button>
+      <button class="cat-pill special" data-cat="unique" onclick="selectCat(this,'unique')">✦ Độc đáo</button>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORIES OVERVIEW (hidden when filtering) -->
+<div id="catsOverview">
+  <div class="cats-section">
+    <div class="wrap">
+      <div class="cats-grid">
+        <div class="cat-card" data-r onclick="selectCatById('plan')">
+          <div class="cat-icon-wrap"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="3" width="14" height="12" rx="2" stroke="#c9a96e" stroke-width="1"/><path d="M5 7h8M5 10h5" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><path d="M6 1v3M12 1v3" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg></div>
+          <div class="cat-info"><div class="cat-name">Lên kế hoạch cưới</div><div class="cat-count">Planner · Boutique event</div></div>
+        </div>
+        <div class="cat-card" data-r="1" onclick="selectCatById('photo')">
+          <div class="cat-icon-wrap"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="5" width="16" height="11" rx="2" stroke="#c9a96e" stroke-width="1"/><circle cx="9" cy="10.5" r="3" stroke="#c9a96e" stroke-width="1"/><path d="M6 5l1.5-2h3L12 5" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg></div>
+          <div class="cat-info"><div class="cat-name">Nhiếp ảnh & Quay phim</div><div class="cat-count">Film · Digital · GoPro · Album</div></div>
+        </div>
+        <div class="cat-card" data-r="2" onclick="selectCatById('flower')">
+          <div class="cat-icon-wrap"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4c-2.5 0-4 2-4 4 0 3.5 4 8 4 8s4-4.5 4-8c0-2-1.5-4-4-4z" stroke="#c9a96e" stroke-width="1" fill="none"/><circle cx="9" cy="8" r="1.5" stroke="#c9a96e" stroke-width="1"/></svg></div>
+          <div class="cat-info"><div class="cat-name">Hoa cưới & Trang trí</div><div class="cat-count">Hoa cầm tay · Backdrop · Decor</div></div>
+        </div>
+        <div class="cat-card" data-r="3" onclick="selectCatById('beauty')">
+          <div class="cat-icon-wrap"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3a5 5 0 000 10M9 3a5 5 0 010 10" stroke="#c9a96e" stroke-width="1"/><path d="M6.5 13l-2 4h9l-2-4" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg></div>
+          <div class="cat-info"><div class="cat-name">Làm đẹp & Trang phục</div><div class="cat-count">Makeup · Tóc · Váy · Vest</div></div>
+        </div>
+        <div class="cat-card" data-r="4" onclick="selectCatById('music')">
+          <div class="cat-icon-wrap"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 14V6l8-2v8" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><circle cx="4" cy="14" r="2" stroke="#c9a96e" stroke-width="1"/><circle cx="13" cy="12" r="2" stroke="#c9a96e" stroke-width="1"/></svg></div>
+          <div class="cat-info"><div class="cat-name">Âm nhạc & Giải trí</div><div class="cat-count">Ban nhạc · DJ · MC · Ca sĩ</div></div>
+        </div>
+        <div class="cat-card" data-r="5" onclick="selectCatById('food')">
+          <div class="cat-icon-wrap"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 4v4a5 5 0 0010 0V4" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><path d="M9 13v3M6 16h6M9 4V1" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg></div>
+          <div class="cat-info"><div class="cat-name">Ẩm thực & Đồ uống</div><div class="cat-count">Catering · Mobile bar · Bánh cưới</div></div>
+        </div>
+        <div class="cat-card" data-r="6" onclick="selectCatById('venue')">
+          <div class="cat-icon-wrap"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2l1.5 5H16l-4.2 3 1.6 5L9 12.5 4.6 15l1.6-5L2 7h5.5z" stroke="#c9a96e" stroke-width="1" fill="none"/></svg></div>
+          <div class="cat-info"><div class="cat-name">Địa điểm</div><div class="cat-count">Villa · Nhà hàng · Garden · Farm</div></div>
+        </div>
+        <div class="cat-card" data-r="7" onclick="selectCatById('unique')" style="border-color:var(--gold-line);background:var(--gold-bg);">
+          <div class="cat-icon-wrap" style="background:rgba(201,169,110,0.15);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2l1.5 4.5H15l-3.7 2.7 1.4 4.3L9 11l-3.7 2.5 1.4-4.3L3 6.5h4.5z" stroke="#c9a96e" stroke-width="1"/></svg></div>
+          <div class="cat-info"><div class="cat-name" style="color:var(--gold);">✦ Độc đáo</div><div class="cat-count">Film bar · Live art · Scent designer</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SUPPLIER GRID -->
+<div class="sup-section" id="supSection">
+  <div class="wrap">
+    <div class="sup-section-header">
+      <span class="sup-section-title" id="supLabel">Tất cả nhà cung cấp</span>
+      <span class="sup-section-count" id="supCount">12 nhà cung cấp</span>
+    </div>
+    <div class="sup-grid" id="supGrid"></div>
+    <div class="load-more" id="loadMoreWrap">
+      <button class="btn-load" onclick="loadMore()">Xem thêm nhà cung cấp</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap footer-inner">
+    <p class="footer-logo">Timeless Harmony</p>
+    <div class="footer-links">
+      <a href="/" class="footer-link">Trang chủ</a>
+      <a href="/cach-hoat-dong.html" class="footer-link">Cách hoạt động</a>
+      <a href="/ke-hoach.html" class="footer-link">Kế hoạch</a>
+      <a href="/dieu-khoan.html" class="footer-link">Điều khoản</a>
+    </div>
+    <p class="footer-copy">© 2026 Timeless Harmony</p>
+  </div>
+</footer>
+
+<script>
+// ── DATA ──
+const SUPPLIERS = [
+  {id:1,name:'Ánh Dương Studio',cat:'photo',catLabel:'Nhiếp ảnh & Quay phim',city:'Sài Gòn',style:'Vintage · Film analog',price:'Từ 8 triệu',badge:'new',thumb:'t1',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1" y="5" width="18" height="12" rx="2" stroke="#c9a96e" stroke-width="1"/><circle cx="10" cy="11" r="3.5" stroke="#c9a96e" stroke-width="1"/></svg>',isNew:true},
+  {id:2,name:'Ý Linh Planner',cat:'plan',catLabel:'Lên kế hoạch cưới',city:'Sài Gòn · Đà Lạt',style:'Boutique · Tối giản',price:'Từ 15 triệu',badge:'hot',thumb:'t2',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="3" width="16" height="14" rx="2" stroke="#c9a96e" stroke-width="1"/><path d="M6 8h8M6 11h5" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg>'},
+  {id:3,name:'Bloom & Petal',cat:'flower',catLabel:'Hoa cưới & Trang trí',city:'Hội An',style:'Bohemian · Garden',price:'Từ 5 triệu',badge:'new',thumb:'t3',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3c-3 0-6 2.5-6 6 0 4 6 9 6 9s6-5 6-9c0-3.5-3-6-6-6z" stroke="#c9a96e" stroke-width="1" fill="none"/></svg>',isNew:true},
+  {id:4,name:'Mộc Band',cat:'music',catLabel:'Âm nhạc & Giải trí',city:'Hà Nội',style:'Acoustic · Jazz · Indie',price:'Từ 8 triệu',badge:'',thumb:'t4',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 16V8l6-2 6 2v8" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><circle cx="4" cy="16" r="2" stroke="#c9a96e" stroke-width="1"/><circle cx="16" cy="14" r="2" stroke="#c9a96e" stroke-width="1"/></svg>'},
+  {id:5,name:'Luna Bridal',cat:'beauty',catLabel:'Làm đẹp & Trang phục',city:'Sài Gòn',style:'Tinh tế · Tự nhiên',price:'Từ 4 triệu',badge:'hot',thumb:'t5',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3a5 5 0 000 10M10 3a5 5 0 010 10" stroke="#c9a96e" stroke-width="1"/><path d="M6.5 13l-2 5h11l-2-5" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg>'},
+  {id:6,name:'The Loft Venue',cat:'venue',catLabel:'Địa điểm',city:'Đà Lạt',style:'Industrial · Rustic',price:'Từ 20 triệu',badge:'',thumb:'t6',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l1.8 5.6H18l-4.9 3.5 1.9 5.6L10 13.1l-5 3.6 1.9-5.6L2 7.6h6.2z" stroke="#c9a96e" stroke-width="1"/></svg>'},
+  {id:7,name:'Disposable Camera Bar',cat:'unique',catLabel:'Trải nghiệm độc đáo',city:'Sài Gòn',style:'Film · Analog · Vintage',price:'Từ 5 triệu',badge:'unique',thumb:'t7',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="6" width="6" height="6" rx="1" stroke="#c9a96e" stroke-width="1"/><rect x="9" y="3" width="9" height="5" rx="1" stroke="#c9a96e" stroke-width="1"/><rect x="9" y="10" width="5" height="5" rx="1" stroke="#c9a96e" stroke-width="1"/></svg>',isNew:true},
+  {id:8,name:'Nhã Acoustic',cat:'music',catLabel:'Âm nhạc & Giải trí',city:'Sài Gòn',style:'Acoustic · Chill · Ballad',price:'Từ 6 triệu',badge:'',thumb:'t8',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 16V8l6-2 6 2v8" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><circle cx="4" cy="16" r="2" stroke="#c9a96e" stroke-width="1"/><circle cx="16" cy="14" r="2" stroke="#c9a96e" stroke-width="1"/></svg>'},
+  {id:9,name:'Vân Hương Studio',cat:'photo',catLabel:'Nhiếp ảnh & Quay phim',city:'Đà Nẵng',style:'Documentary · Phim tài liệu',price:'Từ 12 triệu',badge:'new',thumb:'t9',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1" y="5" width="18" height="12" rx="2" stroke="#c9a96e" stroke-width="1"/><circle cx="10" cy="11" r="3.5" stroke="#c9a96e" stroke-width="1"/></svg>',isNew:true},
+  {id:10,name:'Live Illustration',cat:'unique',catLabel:'Trải nghiệm độc đáo',city:'Sài Gòn',style:'Ký họa · Art · Kỷ niệm',price:'Từ 4 triệu',badge:'unique',thumb:'t10',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 16l3-3 8-8-3-3-8 8-1 4 1-1z" stroke="#c9a96e" stroke-width="1"/><path d="M12 5l3 3" stroke="#c9a96e" stroke-width="1"/></svg>',isNew:true},
+  {id:11,name:'Garden Table Catering',cat:'food',catLabel:'Ẩm thực & Đồ uống',city:'Hội An · Đà Nẵng',style:'Picnic · Buffet · Plated',price:'Từ 250k/khách',badge:'hot',thumb:'t11',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4v5a6 6 0 0012 0V4" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><path d="M10 15v3M7 18h6" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg>'},
+  {id:12,name:'360° Booth Vietnam',cat:'unique',catLabel:'Trải nghiệm độc đáo',city:'Sài Gòn',style:'360° · Slow-mo · Viral',price:'Từ 8 triệu',badge:'unique',thumb:'t12',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="10" rx="1.5" stroke="#c9a96e" stroke-width="1"/><circle cx="10" cy="10" r="3" stroke="#c9a96e" stroke-width="1"/></svg>',isNew:true},
+];
+
+let activeCat = 'all';
+let visibleCount = 12;
+
+function selectCat(el, cat){
+  document.querySelectorAll('.cat-pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  activeCat = cat;
+  visibleCount = 12;
+  const showOverview = cat === 'all';
+  document.getElementById('catsOverview').style.display = showOverview ? 'block' : 'none';
+  renderSuppliers();
+}
+
+function selectCatById(cat){
+  const pill = document.querySelector(`.cat-pill[data-cat="${cat}"]`);
+  if(pill) selectCat(pill, cat);
+  document.getElementById('supSection').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function filterSuppliers(){
+  visibleCount = 12;
+  renderSuppliers();
+}
+
+function getFiltered(){
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const city = document.getElementById('cityFilter').value;
+  const sort = document.getElementById('sortFilter').value;
+  let list = SUPPLIERS.filter(s=>{
+    const catMatch = activeCat === 'all' || s.cat === activeCat;
+    const qMatch = !q || s.name.toLowerCase().includes(q) || s.catLabel.toLowerCase().includes(q) || s.style.toLowerCase().includes(q);
+    const cityMatch = !city || s.city.includes(city);
+    return catMatch && qMatch && cityMatch;
+  });
+  if(sort === 'name') list.sort((a,b)=>a.name.localeCompare(b.name,'vi'));
+  return list;
+}
+
+function renderSuppliers(){
+  const list = getFiltered();
+  const grid = document.getElementById('supGrid');
+  const shown = list.slice(0, visibleCount);
+  document.getElementById('supCount').textContent = list.length + ' nhà cung cấp';
+  const catNames = {all:'Tất cả nhà cung cấp',plan:'Lên kế hoạch cưới',photo:'Nhiếp ảnh & Quay phim',music:'Âm nhạc & Giải trí',flower:'Hoa cưới & Trang trí',beauty:'Làm đẹp & Trang phục',food:'Ẩm thực & Đồ uống',venue:'Địa điểm',sound:'Âm thanh & Ánh sáng',stationery:'Văn phòng phẩm',unique:'✦ Dịch vụ độc đáo'};
+  document.getElementById('supLabel').textContent = catNames[activeCat] || 'Nhà cung cấp';
+  document.getElementById('loadMoreWrap').style.display = list.length > visibleCount ? 'block' : 'none';
+
+  if(!shown.length){
+    grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><p class="empty-title">Chưa có nhà cung cấp nào</p><p class="empty-sub">Chúng tôi đang tiếp tục mở rộng — hãy thử tìm kiếm khác nhé</p></div>';
+    return;
+  }
+
+  grid.innerHTML = shown.map(s=>{
+    const badgeHTML = s.badge === 'new' ? '<div class="sup-badge badge-new">Mới</div>'
+      : s.badge === 'hot' ? '<div class="sup-badge badge-hot">Nổi bật</div>'
+      : s.badge === 'unique' ? '<div class="sup-badge badge-unique">✦ Độc đáo</div>'
+      : '';
+    return `<div class="sup-card" onclick="window.location='#supplier-${s.id}'">
+      <div class="sup-thumb ${s.thumb} thumb-fallback">
+        <div class="thumb-icon">${s.icon}</div>
+        ${badgeHTML}
+      </div>
+      <div class="sup-body">
+        <p class="sup-cat">${s.catLabel}</p>
+        <p class="sup-name">${s.name}</p>
+        <p class="sup-loc">${s.city}</p>
+        <div class="sup-footer">
+          <span class="sup-price">${s.price}</span>
+          <div class="sup-arrow">→</div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function loadMore(){
+  visibleCount += 12;
+  renderSuppliers();
+}
+
+// Reveal animation
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);}});
+},{threshold:0.08});
+document.querySelectorAll('[data-r]').forEach(el=>obs.observe(el));
+
+// Light/dark
+const moonIcon=`<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.5 10.5A6 6 0 015.5 2.5a6 6 0 108 8z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>`;
+const sunIcon=`<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.1 3.1l1.1 1.1M11.8 11.8l1.1 1.1M11.8 4.2l-1.1 1.1M4.2 11.8l-1.1 1.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>`;
+function toggleMode(){
+  const isLight=document.body.classList.toggle('light');
+  document.getElementById('modeToggle').innerHTML=isLight?moonIcon:sunIcon;
+  localStorage.setItem('th-mode',isLight?'light':'dark');
+}
+if(localStorage.getItem('th-mode')==='light'){
+  document.body.classList.add('light');
+  document.getElementById('modeToggle').innerHTML=moonIcon;
+}
+
+renderSuppliers();
+</script>
+</body>
+</html>

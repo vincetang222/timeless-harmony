@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nhà cung cấp — Timeless Harmony</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0c0c;--bg2:#141414;--nav-bg:rgba(12,12,12,0.94);
+  --line:rgba(255,255,255,0.07);--line2:rgba(255,255,255,0.13);
+  --text:#f0ede8;--text2:rgba(240,237,232,0.62);--text3:rgba(240,237,232,0.38);
+  --gold:#c9a96e;--gold2:#e2c99a;
+  --gold-bg:rgba(201,169,110,0.1);--gold-line:rgba(201,169,110,0.22);
+  --card-bg:linear-gradient(145deg,#202020 0%,#151515 100%);
+  --card-border:rgba(255,255,255,0.13);
+  --max:1000px;--r:12px;
+}
+body.light{
+  --bg:#f8f4ec;--bg2:#f0ebe0;--nav-bg:rgba(248,244,236,0.96);
+  --line:rgba(30,42,30,0.08);--line2:rgba(30,42,30,0.14);
+  --text:#1a2a1e;--text2:rgba(26,42,30,0.75);--text3:rgba(26,42,30,0.55);
+  --gold:#9a7a42;--gold2:#7a5e2e;
+  --gold-bg:rgba(154,122,66,0.08);--gold-line:rgba(154,122,66,0.2);
+  --card-bg:linear-gradient(145deg,#ffffff 0%,#f5f1e8 100%);
+  --card-border:rgba(30,42,30,0.1);
+}
+body,nav,.pkg-card,.review-card,footer{transition:background .35s ease,color .35s ease,border-color .35s ease;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;font-weight:300;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+@media(max-width:600px){.wrap{padding:0 18px;}}
+[data-r]{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease;}
+[data-r].on{opacity:1;transform:none;}
+[data-r="1"]{transition-delay:.08s;}[data-r="2"]{transition-delay:.16s;}[data-r="3"]{transition-delay:.24s;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:99;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--line);height:58px;display:flex;align-items:center;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;}
+.nav-logo{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.nav-logo span{color:var(--gold);}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-back{font-size:12px;color:var(--text3);transition:color .2s;}
+.nav-back:hover{color:var(--text2);}
+.mode-toggle{width:32px;height:32px;border-radius:7px;background:var(--gold-bg);border:0.5px solid var(--gold-line);color:var(--gold);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;}
+.btn-cta{font-size:12px;font-weight:600;background:var(--gold);color:var(--bg);padding:8px 18px;border-radius:6px;cursor:pointer;border:none;transition:all .2s;}
+.btn-cta:hover{filter:brightness(1.08);}
+
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:280px 200px;gap:8px;padding:24px 0 0;}
+.gallery-main{grid-row:1/3;border-radius:14px 0 0 14px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;}
+.gallery-2{border-radius:0 14px 0 0;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.gallery-3{border-radius:0 0 14px 0;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;}
+.gallery img{width:100%;height:100%;object-fit:cover;}
+.gallery-placeholder svg{opacity:.12;}
+.gallery-more{position:absolute;bottom:12px;right:12px;font-size:12px;font-weight:500;padding:6px 14px;border-radius:100px;background:rgba(0,0,0,0.55);color:rgba(240,237,232,0.85);backdrop-filter:blur(4px);}
+.verified-badge{position:absolute;top:14px;left:14px;display:flex;align-items:center;gap:6px;font-size:11px;font-weight:500;padding:6px 12px;border-radius:100px;background:rgba(12,12,12,0.75);color:var(--gold);border:0.5px solid var(--gold-line);backdrop-filter:blur(8px);}
+@media(max-width:640px){.gallery{grid-template-columns:1fr;grid-template-rows:220px 140px 140px;}.gallery-main{border-radius:14px 14px 0 0;}.gallery-3{border-radius:0 0 14px 14px;}}
+
+/* HEADER */
+.profile-head{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;padding:32px 0 28px;border-bottom:0.5px solid var(--line);}
+.profile-cat{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:10px;}
+.profile-name{font-family:'Be Vietnam Pro',sans-serif;font-size:clamp(26px,4vw,38px);font-weight:800;color:var(--text);line-height:1.08;margin-bottom:12px;}
+.ptags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.ptag{font-size:11px;padding:4px 12px;border-radius:100px;background:var(--bg2);border:0.5px solid var(--line2);color:var(--text2);}
+.profile-loc{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text3);}
+.profile-actions{display:flex;flex-direction:column;gap:10px;flex-shrink:0;}
+.btn-contact{font-size:14px;font-weight:600;padding:13px 28px;border-radius:8px;background:var(--gold);color:var(--bg);border:none;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.btn-contact:hover{filter:brightness(1.08);}
+.btn-plan{font-size:13px;padding:11px 22px;border-radius:8px;border:0.5px solid var(--line2);color:var(--text2);background:transparent;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.btn-plan:hover{border-color:var(--gold-line);color:var(--gold);}
+.btn-plan.added{background:var(--gold-bg);border-color:var(--gold-line);color:var(--gold);}
+@media(max-width:640px){.profile-head{grid-template-columns:1fr;}.profile-actions{flex-direction:row;}}
+
+/* STATS */
+.stats-row{display:flex;gap:32px;padding:24px 0;border-bottom:0.5px solid var(--line);flex-wrap:wrap;}
+.stat-item{display:flex;flex-direction:column;gap:4px;}
+.stat-num{font-family:'Be Vietnam Pro',sans-serif;font-size:22px;font-weight:700;color:var(--text);}
+.stat-lbl{font-size:12px;color:var(--text3);}
+
+/* CONTENT */
+.content-grid{display:grid;grid-template-columns:1fr 360px;gap:40px;padding:40px 0;}
+@media(max-width:760px){.content-grid{grid-template-columns:1fr;}}
+.section-title{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;color:var(--text);margin-bottom:14px;}
+.about-text{font-size:15px;color:var(--text2);line-height:1.9;margin-bottom:14px;}
+.style-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;}
+.style-tag{font-size:12px;padding:6px 14px;border-radius:100px;background:var(--gold-bg);border:0.5px solid var(--gold-line);color:var(--gold);}
+
+/* PACKAGES */
+.packages{display:flex;flex-direction:column;gap:12px;margin-bottom:40px;}
+.pkg-card{background:var(--card-bg);border:0.5px solid var(--card-border);border-radius:var(--r);padding:22px 24px;transition:border-color .2s;position:relative;}
+.pkg-card:hover{border-color:var(--gold-line);}
+.pkg-card.featured{border-color:var(--gold-line);}
+.pkg-badge{position:absolute;top:-1px;left:20px;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;border-radius:0 0 8px 8px;background:var(--gold);color:var(--bg);}
+.pkg-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:12px;}
+.pkg-name{font-size:15px;font-weight:600;color:var(--text);}
+.pkg-price{font-family:'Be Vietnam Pro',sans-serif;font-size:18px;font-weight:700;color:var(--gold);text-align:right;white-space:nowrap;}
+.pkg-price-note{font-size:11px;color:var(--text3);font-weight:300;display:block;}
+.pkg-desc{font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:14px;}
+.pkg-includes{display:flex;flex-direction:column;gap:6px;}
+.pkg-inc{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text2);}
+.pkg-chk{width:14px;height:14px;border-radius:3px;background:var(--gold-bg);border:0.5px solid var(--gold-line);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.pkg-btn{width:100%;margin-top:16px;padding:10px;border-radius:7px;font-size:13px;font-weight:500;cursor:pointer;border:0.5px solid var(--line2);background:transparent;color:var(--text2);transition:all .2s;}
+.pkg-card.featured .pkg-btn{background:var(--gold);color:var(--bg);border-color:var(--gold);}
+.pkg-btn:hover{border-color:var(--gold-line);color:var(--gold);}
+.pkg-card.featured .pkg-btn:hover{filter:brightness(1.08);}
+
+/* REVIEWS */
+.review-card{background:var(--card-bg);border:0.5px solid var(--card-border);border-radius:var(--r);padding:20px;margin-bottom:10px;}
+.review-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.reviewer{display:flex;align-items:center;gap:10px;}
+.r-avatar{width:36px;height:36px;border-radius:50%;background:var(--gold-bg);border:0.5px solid var(--gold-line);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:var(--gold);flex-shrink:0;}
+.r-name{font-size:13px;font-weight:500;color:var(--text);}
+.r-date{font-size:11px;color:var(--text3);}
+.stars{display:flex;gap:2px;}
+.review-text{font-size:13px;color:var(--text2);line-height:1.8;}
+.review-verified{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:500;color:var(--gold);background:var(--gold-bg);border:0.5px solid var(--gold-line);padding:2px 8px;border-radius:100px;margin-top:8px;}
+
+/* SIDEBAR */
+.sidebar-card{background:var(--card-bg);border:0.5px solid var(--card-border);border-radius:var(--r);padding:22px;margin-bottom:14px;}
+.sidebar-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:14px;}
+.info-row{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:0.5px solid var(--line);}
+.info-row:last-child{border-bottom:none;}
+.info-icon{width:32px;height:32px;border-radius:7px;background:var(--gold-bg);border:0.5px solid var(--gold-line);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.info-label{font-size:11px;color:var(--text3);margin-bottom:3px;}
+.info-val{font-size:13px;color:var(--text);}
+.escrow-notice{background:var(--gold-bg);border:0.5px solid var(--gold-line);border-radius:var(--r);padding:18px 20px;display:flex;gap:12px;align-items:flex-start;}
+.escrow-notice-text{font-size:12px;color:var(--text2);line-height:1.75;}
+.escrow-notice-text strong{color:var(--gold);font-weight:500;}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.72);z-index:200;align-items:center;justify-content:center;padding:20px;}
+.modal-overlay.open{display:flex;}
+.modal{background:var(--bg2);border:0.5px solid var(--line2);border-radius:16px;padding:32px;max-width:440px;width:100%;}
+.modal-title{font-family:'Be Vietnam Pro',sans-serif;font-size:20px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.modal-sub{font-size:13px;color:var(--text2);margin-bottom:24px;line-height:1.7;}
+.form-group{margin-bottom:16px;}
+.form-label{font-size:12px;color:var(--text3);margin-bottom:6px;display:block;}
+.form-input{width:100%;padding:11px 14px;background:var(--bg);border:0.5px solid var(--line2);border-radius:8px;font-family:'Inter',sans-serif;font-size:14px;color:var(--text);outline:none;transition:border-color .2s;}
+.form-input:focus{border-color:rgba(201,169,110,0.4);}
+.form-textarea{resize:vertical;min-height:90px;}
+.modal-btns{display:flex;gap:10px;margin-top:20px;}
+.btn-send{flex:1;padding:12px;border-radius:8px;background:var(--gold);color:var(--bg);border:none;font-size:14px;font-weight:600;cursor:pointer;}
+.btn-send:hover{filter:brightness(1.08);}
+.btn-cancel{padding:12px 20px;border-radius:8px;border:0.5px solid var(--line2);color:var(--text2);background:transparent;font-size:13px;cursor:pointer;}
+.form-success{text-align:center;padding:20px 0;}
+.success-icon{width:48px;height:48px;border-radius:50%;background:var(--gold-bg);border:0.5px solid var(--gold-line);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;}
+.success-title{font-size:17px;font-weight:600;color:var(--text);margin-bottom:8px;}
+.success-sub{font-size:13px;color:var(--text2);line-height:1.7;}
+
+/* NOT FOUND */
+.not-found{text-align:center;padding:120px 32px;}
+.not-found h1{font-family:'Be Vietnam Pro',sans-serif;font-size:32px;font-weight:800;color:var(--text);margin-bottom:12px;}
+.not-found p{font-size:15px;color:var(--text2);margin-bottom:28px;}
+
+/* FOOTER */
+footer{border-top:0.5px solid var(--line);padding:36px 0;}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:700;color:var(--text3);}
+.footer-link{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);transition:color .2s;margin-left:24px;}
+.footer-link:hover{color:var(--text2);}
+.footer-copy{font-size:12px;color:var(--text3);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-logo">Timeless <span>Harmony</span></a>
+    <div class="nav-right">
+      <a href="/dich-vu.html" class="nav-back">← Dịch vụ</a>
+      <button class="mode-toggle" id="modeToggle" onclick="toggleMode()">
+        <svg id="modeIcon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.1 3.1l1.1 1.1M11.8 11.8l1.1 1.1M11.8 4.2l-1.1 1.1M4.2 11.8l-1.1 1.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      </button>
+      <button class="btn-cta" onclick="openModal()">Liên hệ ngay</button>
+    </div>
+  </div>
+</nav>
+
+<div id="pageContent"></div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <div id="modalForm">
+      <p class="modal-title" id="modalTitle">Liên hệ nhà cung cấp</p>
+      <p class="modal-sub">Điền thông tin — nhà cung cấp phản hồi trong 24 giờ qua Timeless Harmony.</p>
+      <div class="form-group"><label class="form-label">Tên của bạn</label><input class="form-input" type="text" placeholder="Ví dụ: Thảo & Lâm"></div>
+      <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" placeholder="email@example.com"></div>
+      <div class="form-group"><label class="form-label">Ngày cưới dự kiến</label><input class="form-input" type="date"></div>
+      <div class="form-group"><label class="form-label">Gói quan tâm</label><select class="form-input" id="modalPkg"></select></div>
+      <div class="form-group"><label class="form-label">Lời nhắn (không bắt buộc)</label><textarea class="form-input form-textarea" placeholder="Phong cách, địa điểm, số khách, yêu cầu đặc biệt..."></textarea></div>
+      <div class="modal-btns"><button class="btn-cancel" onclick="closeModal()">Huỷ</button><button class="btn-send" onclick="submitForm()">Gửi yêu cầu</button></div>
+    </div>
+    <div id="modalSuccess" style="display:none" class="form-success">
+      <div class="success-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 11l4 4 8-8" stroke="#c9a96e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <p class="success-title">Đã gửi yêu cầu!</p>
+      <p class="success-sub">Nhà cung cấp sẽ phản hồi trong 24 giờ. Timeless Harmony sẽ thông báo ngay khi có tin.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap footer-inner">
+    <p class="footer-logo">Timeless Harmony</p>
+    <div>
+      <a href="/dich-vu.html" class="footer-link">Dịch vụ</a>
+      <a href="/cach-hoat-dong.html" class="footer-link">Cách hoạt động</a>
+      <a href="/dieu-khoan.html" class="footer-link">Điều khoản</a>
+    </div>
+    <p class="footer-copy">© 2026 Timeless Harmony</p>
+  </div>
+</footer>
+
+<script src="suppliers.js"></script>
+<script>
+// ── LOAD SUPPLIER ──
+const params = new URLSearchParams(window.location.search);
+const id = params.get('id') || '';
+const s = SUPPLIERS_DATA[id];
+
+if(!s){
+  document.getElementById('pageContent').innerHTML = `
+    <div class="not-found">
+      <h1>Không tìm thấy nhà cung cấp</h1>
+      <p>Nhà cung cấp này có thể đã ngừng hoạt động hoặc đường dẫn không đúng.</p>
+      <a href="/dich-vu.html" style="display:inline-block;padding:12px 28px;background:var(--gold);color:var(--bg);border-radius:8px;font-weight:600;">← Quay lại danh sách</a>
+    </div>`;
+} else {
+  document.title = s.name + ' — Timeless Harmony';
+  document.getElementById('modalTitle').textContent = 'Liên hệ ' + s.name;
+  const pkgSel = document.getElementById('modalPkg');
+  s.packages.forEach(p => { const o = document.createElement('option'); o.textContent = p.name; pkgSel.appendChild(o); });
+
+  const initials = s.name.split(' ').slice(-2).map(w=>w[0]).join('');
+  const starsSVG = `<div class="stars">${'<svg width="12" height="12" viewBox="0 0 12 12" fill="#c9a96e"><path d="M6 1l1.2 3.5H11l-2.9 2.1 1.1 3.4L6 8l-3.2 2 1.1-3.4L1 3.5h3.8z"/></svg>'.repeat(5)}</div>`;
+  const checkSVG = `<svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#c9a96e" stroke-width="1.2" stroke-linecap="round"/></svg>`;
+
+  document.getElementById('pageContent').innerHTML = `
+  <div class="wrap">
+    <div class="gallery" data-r>
+      <div class="gallery-main gallery-placeholder" style="background:${s.thumb[0]}">
+        <div class="verified-badge"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1l1.2 3.5H11l-2.9 2.1 1.1 3.4L6 8l-3.2 2 1.1-3.4L1 3.5h3.8z" fill="#c9a96e"/></svg>Đã được xác minh</div>
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" opacity="0.12"><rect x="3" y="12" width="46" height="30" rx="4" stroke="#c9a96e" stroke-width="1.5"/><circle cx="26" cy="27" r="9" stroke="#c9a96e" stroke-width="1.5"/></svg>
+      </div>
+      <div class="gallery-2 gallery-placeholder" style="background:${s.thumb[1]}"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" opacity="0.12"><rect x="2" y="7" width="28" height="19" rx="3" stroke="#c9a96e" stroke-width="1.2"/><circle cx="16" cy="16.5" r="6" stroke="#c9a96e" stroke-width="1.2"/></svg></div>
+      <div class="gallery-3 gallery-placeholder" style="background:${s.thumb[2]}">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" opacity="0.12"><rect x="2" y="7" width="28" height="19" rx="3" stroke="#c9a96e" stroke-width="1.2"/><circle cx="16" cy="16.5" r="6" stroke="#c9a96e" stroke-width="1.2"/></svg>
+        <div class="gallery-more">+ Portfolio</div>
+      </div>
+    </div>
+
+    <div class="profile-head" data-r="1">
+      <div>
+        <p class="profile-cat">${s.catLabel}</p>
+        <h1 class="profile-name">${s.name}</h1>
+        <div class="ptags">${s.styles.map(t=>`<span class="ptag">${t}</span>`).join('')}</div>
+        <div class="profile-loc"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1C4.3 1 2.5 2.8 2.5 5c0 3.5 4 7.5 4 7.5s4-4 4-7.5C10.5 2.8 8.7 1 6.5 1z" stroke="currentColor" stroke-width="1" fill="none"/><circle cx="6.5" cy="5" r="1.5" stroke="currentColor" stroke-width="1" fill="none"/></svg>${s.cityFull}</div>
+      </div>
+      <div class="profile-actions">
+        <button class="btn-contact" onclick="openModal()">Liên hệ nhà cung cấp</button>
+        <button class="btn-plan" id="planBtn" onclick="togglePlan()">+ Thêm vào kế hoạch</button>
+      </div>
+    </div>
+
+    <div class="stats-row" data-r="2">
+      <div class="stat-item"><span class="stat-num">${s.stats.deals}</span><span class="stat-lbl">Đám cưới đã thực hiện</span></div>
+      <div class="stat-item"><span class="stat-num">${s.stats.rating}</span><span class="stat-lbl">Đánh giá trung bình</span></div>
+      <div class="stat-item"><span class="stat-num">${s.stats.exp}</span><span class="stat-lbl">Kinh nghiệm</span></div>
+      <div class="stat-item"><span class="stat-num">${s.stats.reply}</span><span class="stat-lbl">Phản hồi trong</span></div>
+    </div>
+
+    <div class="content-grid">
+      <div>
+        <div data-r>
+          <p class="section-title">Về chúng tôi</p>
+          <p class="about-text">${s.about}</p>
+          <p class="about-text">${s.about2}</p>
+          <div class="style-tags">${s.styles.map(t=>`<span class="style-tag">${t}</span>`).join('')}</div>
+        </div>
+
+        <div data-r="1">
+          <p class="section-title">Gói dịch vụ</p>
+          <div class="packages">
+            ${s.packages.map(p=>`
+            <div class="pkg-card${p.featured?' featured':''}">
+              ${p.featured?'<div class="pkg-badge">Phổ biến nhất</div>':''}
+              <div class="pkg-top">
+                <div><p class="pkg-name">${p.name}</p><p class="pkg-desc">${p.desc}</p></div>
+                <div><p class="pkg-price">${p.price}<span class="pkg-price-note">${p.note}</span></p></div>
+              </div>
+              <div class="pkg-includes">${p.includes.map(i=>`<div class="pkg-inc"><div class="pkg-chk">${checkSVG}</div>${i}</div>`).join('')}</div>
+              <button class="pkg-btn" onclick="openModal('${p.name}')">${p.featured?'Chọn gói này':'Hỏi về gói này'}</button>
+            </div>`).join('')}
+          </div>
+        </div>
+
+        <div data-r="2">
+          <p class="section-title">Đánh giá từ khách hàng</p>
+          ${s.reviews.map(r=>`
+          <div class="review-card">
+            <div class="review-top">
+              <div class="reviewer">
+                <div class="r-avatar">${r.name.split(' ')[0][0]}${r.name.split('&')[1]?.trim()[0]||''}</div>
+                <div><p class="r-name">${r.name}</p><p class="r-date">${r.date}</p></div>
+              </div>
+              ${starsSVG}
+            </div>
+            <p class="review-text">${r.text}</p>
+            <div class="review-verified"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1l1 3H9l-2.4 1.7.9 2.8L5 6.8 2.5 8.5l.9-2.8L1 4h3z" fill="#c9a96e"/></svg>Đã xác minh qua Timeless Harmony</div>
+          </div>`).join('')}
+        </div>
+      </div>
+
+      <div data-r="3">
+        <div class="sidebar-card">
+          <p class="sidebar-title">Thông tin</p>
+          <div class="info-row"><div class="info-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C4.8 1 3 2.8 3 5c0 3.5 4 7.5 4 7.5S11 8.5 11 5c0-2.2-1.8-4-4-4z" stroke="#c9a96e" stroke-width="1" fill="none"/><circle cx="7" cy="5" r="1.5" stroke="#c9a96e" stroke-width="1" fill="none"/></svg></div><div><p class="info-label">Khu vực</p><p class="info-val">${s.city}</p></div></div>
+          <div class="info-row"><div class="info-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="9" rx="1.5" stroke="#c9a96e" stroke-width="1"/><path d="M4 3V2M10 3V2M1 6h12" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg></div><div><p class="info-label">Lịch trống gần nhất</p><p class="info-val">${s.available}</p></div></div>
+          <div class="info-row"><div class="info-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#c9a96e" stroke-width="1"/><path d="M7 4v3l2 1.5" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg></div><div><p class="info-label">Phản hồi trong</p><p class="info-val">${s.stats.reply}</p></div></div>
+          <div class="info-row"><div class="info-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.5 4H13l-3.7 2.7 1.4 4.3L7 9.5l-3.7 2.5 1.4-4.3L1 5h4.5z" stroke="#c9a96e" stroke-width="1" fill="none"/></svg></div><div><p class="info-label">Đánh giá</p><p class="info-val">${s.stats.rating} / 5 · Đã xác minh</p></div></div>
+        </div>
+        <div class="escrow-notice">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink:0;margin-top:1px;"><circle cx="9" cy="9" r="8" stroke="#c9a96e" stroke-width="1"/><path d="M9 8v4M9 6v.5" stroke="#c9a96e" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <p class="escrow-notice-text"><strong>Thanh toán an toàn qua ký quỹ.</strong> Tiền đặt cọc được giữ bởi Timeless Harmony — chỉ giải ngân khi bạn xác nhận dịch vụ hoàn thành đúng cam kết.</p>
+        </div>
+      </div>
+    </div>
+  </div>`;
+
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);}});},{threshold:0.08});
+  document.querySelectorAll('[data-r]').forEach(el=>obs.observe(el));
+}
+
+// ── MODAL ──
+function openModal(pkg=''){
+  const sel=document.getElementById('modalPkg');
+  if(pkg&&sel) for(let i=0;i<sel.options.length;i++) if(sel.options[i].text===pkg) sel.selectedIndex=i;
+  document.getElementById('modalForm').style.display='block';
+  document.getElementById('modalSuccess').style.display='none';
+  document.getElementById('modalOverlay').classList.add('open');
+}
+function closeModal(){document.getElementById('modalOverlay').classList.remove('open');}
+function closeModalOutside(e){if(e.target===document.getElementById('modalOverlay'))closeModal();}
+function submitForm(){document.getElementById('modalForm').style.display='none';document.getElementById('modalSuccess').style.display='block';}
+function togglePlan(){const btn=document.getElementById('planBtn');if(!btn)return;const a=btn.classList.toggle('added');btn.textContent=a?'✓ Đã thêm vào kế hoạch':'+ Thêm vào kế hoạch';}
+
+// ── LIGHT/DARK ──
+const moonIcon=`<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.5 10.5A6 6 0 015.5 2.5a6 6 0 108 8z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>`;
+const sunIcon=`<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.1 3.1l1.1 1.1M11.8 11.8l1.1 1.1M11.8 4.2l-1.1 1.1M4.2 11.8l-1.1 1.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>`;
+function toggleMode(){const l=document.body.classList.toggle('light');document.getElementById('modeToggle').innerHTML=l?moonIcon:sunIcon;localStorage.setItem('th-mode',l?'light':'dark');}
+if(localStorage.getItem('th-mode')==='light'){document.body.classList.add('light');document.getElementById('modeToggle').innerHTML=moonIcon;}
+</script>
+</body>
+</html>
