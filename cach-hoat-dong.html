@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cách hoạt động — Timeless Harmony</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0c0c;--bg2:#141414;--nav-bg:rgba(12,12,12,0.94);
+  --line:rgba(255,255,255,0.07);--line2:rgba(255,255,255,0.13);
+  --text:#f0ede8;--text2:rgba(240,237,232,0.62);--text3:rgba(240,237,232,0.38);
+  --gold:#c9a96e;--gold2:#e2c99a;
+  --gold-bg:rgba(201,169,110,0.1);--gold-line:rgba(201,169,110,0.22);
+  --card-bg:linear-gradient(145deg,#202020 0%,#151515 100%);
+  --card-border:rgba(255,255,255,0.13);
+  --max:1100px;--r:12px;
+}
+body.light{
+  --bg:#f8f4ec;--bg2:#f0ebe0;--nav-bg:rgba(248,244,236,0.96);
+  --line:rgba(30,42,30,0.08);--line2:rgba(30,42,30,0.14);
+  --text:#1a2a1e;--text2:rgba(26,42,30,0.75);--text3:rgba(26,42,30,0.55);
+  --gold:#9a7a42;--gold2:#7a5e2e;
+  --gold-bg:rgba(154,122,66,0.08);--gold-line:rgba(154,122,66,0.2);
+  --card-bg:linear-gradient(145deg,#ffffff 0%,#f5f1e8 100%);
+  --card-border:rgba(30,42,30,0.1);
+}
+body,nav,section,.card,footer{transition:background .35s ease,color .35s ease,border-color .35s ease;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;font-weight:300;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+@media(max-width:600px){.wrap{padding:0 18px;}}
+section{padding:80px 0;}
+[data-r]{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+[data-r].on{opacity:1;transform:none;}
+[data-r="1"]{transition-delay:.08s;}[data-r="2"]{transition-delay:.16s;}[data-r="3"]{transition-delay:.24s;}[data-r="4"]{transition-delay:.32s;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:99;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--line);height:58px;display:flex;align-items:center;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;}
+.nav-logo{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.nav-logo span{color:var(--gold);}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-back{font-size:12px;color:var(--text3);display:flex;align-items:center;gap:6px;transition:color .2s;}
+.nav-back:hover{color:var(--text2);}
+.nav-cta{font-size:12px;font-weight:600;background:var(--gold);color:var(--bg);padding:8px 18px;border-radius:6px;transition:all .2s;}
+.nav-cta:hover{filter:brightness(1.08);}
+.mode-toggle{width:32px;height:32px;border-radius:7px;background:var(--gold-bg);border:0.5px solid var(--gold-line);color:var(--gold);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;}
+
+/* PAGE HERO */
+.page-hero{padding:72px 0 64px;border-bottom:0.5px solid var(--line);}
+.page-tag{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:14px;}
+.page-title{font-family:'Be Vietnam Pro',sans-serif;font-size:clamp(36px,6vw,64px);font-weight:800;color:var(--text);line-height:1.04;margin-bottom:18px;}
+.page-title em{font-style:normal;color:var(--gold);}
+.page-sub{font-size:16px;color:var(--text2);line-height:1.8;max-width:580px;}
+
+/* TAB SWITCHER */
+.tab-wrap{display:flex;gap:2px;padding:4px;background:var(--bg2);border-radius:10px;margin-bottom:56px;width:fit-content;}
+.tab-btn{padding:10px 28px;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--text3);transition:all .2s;}
+.tab-btn.active{background:var(--card-bg);border:0.5px solid var(--card-border);color:var(--text);}
+
+/* STEPS — couples */
+.steps-big{display:flex;flex-direction:column;gap:1px;}
+.step-big{display:grid;grid-template-columns:80px 1fr;gap:32px;align-items:start;padding:36px 0;border-bottom:0.5px solid var(--line);}
+.step-big:last-child{border-bottom:none;}
+.step-big-num{font-family:'Be Vietnam Pro',sans-serif;font-size:48px;font-weight:800;color:var(--gold);opacity:.25;line-height:1;padding-top:4px;}
+.step-big-body{display:flex;flex-direction:column;gap:12px;}
+.step-big-title{font-family:'Be Vietnam Pro',sans-serif;font-size:22px;font-weight:700;color:var(--text);line-height:1.2;}
+.step-big-desc{font-size:15px;color:var(--text2);line-height:1.85;max-width:640px;}
+.step-big-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;}
+.step-tag{font-size:11px;font-weight:500;padding:4px 12px;border-radius:100px;background:var(--gold-bg);border:0.5px solid var(--gold-line);color:var(--gold);}
+.step-big-note{display:flex;align-items:flex-start;gap:10px;padding:14px 18px;border-radius:10px;background:var(--bg2);border:0.5px solid var(--line2);margin-top:4px;}
+.step-note-icon{width:20px;height:20px;flex-shrink:0;margin-top:1px;}
+.step-note-text{font-size:13px;color:var(--text2);line-height:1.7;}
+@media(max-width:640px){.step-big{grid-template-columns:1fr;gap:12px;}.step-big-num{font-size:32px;}}
+
+/* ESCROW FLOW */
+.escrow-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:0.5px solid var(--line2);border-radius:var(--r);overflow:hidden;margin:40px 0;}
+.escrow-step{background:var(--card-bg);padding:28px 24px;display:flex;flex-direction:column;gap:10px;}
+.escrow-step-num{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.6;}
+.escrow-step-title{font-size:15px;font-weight:600;color:var(--text);}
+.escrow-step-desc{font-size:13px;color:var(--text2);line-height:1.75;}
+.escrow-arrow{display:flex;align-items:center;justify-content:center;color:var(--gold);opacity:.4;font-size:20px;padding-top:20px;}
+@media(max-width:640px){.escrow-flow{grid-template-columns:1fr;}}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:1px;}
+.faq-item{border:0.5px solid var(--line2);border-radius:0;overflow:hidden;}
+.faq-item:first-child{border-radius:var(--r) var(--r) 0 0;}
+.faq-item:last-child{border-radius:0 0 var(--r) var(--r);}
+.faq-item+.faq-item{border-top:none;}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;background:var(--card-bg);gap:16px;}
+.faq-q-text{font-size:15px;font-weight:500;color:var(--text);}
+.faq-icon{width:20px;height:20px;border-radius:50%;border:0.5px solid var(--line2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--text3);font-size:14px;transition:transform .2s;}
+.faq-item.open .faq-icon{transform:rotate(45deg);color:var(--gold);}
+.faq-a{display:none;padding:0 24px 20px;font-size:14px;color:var(--text2);line-height:1.85;}
+.faq-item.open .faq-a{display:block;}
+
+/* TRUST BADGES */
+.trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px;}
+.trust-card{background:var(--card-bg);border:0.5px solid var(--card-border);border-radius:var(--r);padding:28px 24px;display:flex;flex-direction:column;gap:12px;}
+.trust-icon{width:40px;height:40px;border-radius:9px;background:var(--gold-bg);border:0.5px solid var(--gold-line);display:flex;align-items:center;justify-content:center;}
+.trust-title{font-size:15px;font-weight:600;color:var(--text);}
+.trust-desc{font-size:13px;color:var(--text2);line-height:1.8;}
+@media(max-width:640px){.trust-row{grid-template-columns:1fr;}}
+
+/* CTA STRIP */
+.cta-strip{background:var(--gold-bg);border:0.5px solid var(--gold-line);border-radius:16px;padding:40px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px;margin-top:64px;}
+.cta-strip-title{font-family:'Be Vietnam Pro',sans-serif;font-size:24px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.cta-strip-sub{font-size:14px;color:var(--text2);}
+.cta-strip-btns{display:flex;gap:10px;flex-shrink:0;}
+.btn-gold{font-size:13px;font-weight:600;background:var(--gold);color:var(--bg);padding:12px 28px;border-radius:7px;transition:all .2s;border:none;cursor:pointer;white-space:nowrap;}
+.btn-gold:hover{filter:brightness(1.08);}
+.btn-outline{font-size:13px;background:transparent;color:var(--text2);padding:12px 22px;border-radius:7px;border:0.5px solid var(--line2);transition:all .2s;white-space:nowrap;}
+.btn-outline:hover{border-color:var(--text3);color:var(--text);}
+@media(max-width:680px){.cta-strip{flex-direction:column;padding:28px 24px;align-items:flex-start;}}
+
+/* SECTION LABELS */
+.s-tag{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:10px;}
+.s-title{font-family:'Be Vietnam Pro',sans-serif;font-size:clamp(26px,4vw,38px);font-weight:800;color:var(--text);line-height:1.12;margin-bottom:12px;}
+.s-title em{font-style:normal;color:var(--gold);}
+.s-sub{font-size:15px;color:var(--text2);line-height:1.8;max-width:600px;margin-bottom:40px;}
+
+/* FOOTER */
+footer{border-top:0.5px solid var(--line);padding:36px 0;}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:700;color:var(--text3);}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap;}
+.footer-link{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);transition:color .2s;}
+.footer-link:hover{color:var(--text2);}
+.footer-copy{font-size:12px;color:var(--text3);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-logo">Timeless <span>Harmony</span></a>
+    <div class="nav-right">
+      <a href="/" class="nav-back">← Trang chủ</a>
+      <button class="mode-toggle" id="modeToggle" onclick="toggleMode()">
+        <svg id="modeIcon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.1 3.1l1.1 1.1M11.8 11.8l1.1 1.1M11.8 4.2l-1.1 1.1M4.2 11.8l-1.1 1.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      </button>
+      <a href="/#cta" class="nav-cta">Bắt đầu</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section style="padding:72px 0 56px;border-bottom:0.5px solid var(--line);">
+  <div class="wrap">
+    <p class="page-tag" data-r>Cách hoạt động</p>
+    <h1 class="page-title" data-r="1">Đơn giản, minh bạch<br><em>và an toàn từ đầu</em></h1>
+    <p class="page-sub" data-r="2">Timeless Harmony đóng vai trò trung gian tin cậy — kết nối đúng người, bảo vệ mọi giao dịch, đồng hành đến tận ngày cưới.</p>
+  </div>
+</section>
+
+<!-- TAB SECTION -->
+<section style="padding:64px 0;">
+  <div class="wrap">
+    <div class="tab-wrap" data-r>
+      <button class="tab-btn active" onclick="switchTab('couple')">Cô dâu & Chú rể</button>
+      <button class="tab-btn" onclick="switchTab('supplier')">Nhà cung cấp</button>
+    </div>
+
+    <!-- COUPLES -->
+    <div id="tab-couple">
+      <div class="steps-big">
+
+        <div class="step-big" data-r>
+          <div class="step-big-num">01</div>
+          <div class="step-big-body">
+            <h2 class="step-big-title">Tìm kiếm & khám phá dịch vụ</h2>
+            <p class="step-big-desc">Duyệt qua hơn 12 danh mục dịch vụ cưới — từ nhiếp ảnh phong cách film analog đến guest experience designer độc lạ. Lọc theo khu vực, phong cách, ngân sách để thu hẹp đúng người bạn cần.</p>
+            <div class="step-big-tags">
+              <span class="step-tag">Lọc theo phong cách</span>
+              <span class="step-tag">Lọc theo khu vực</span>
+              <span class="step-tag">Lọc theo ngân sách</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-big" data-r="1">
+          <div class="step-big-num">02</div>
+          <div class="step-big-body">
+            <h2 class="step-big-title">Kết nối & trao đổi trực tiếp</h2>
+            <p class="step-big-desc">Nhắn tin trực tiếp với nhà cung cấp ngay trên nền tảng — thảo luận yêu cầu, phong cách, ngân sách và nhận báo giá chi tiết. Mọi cuộc trao đổi đều được lưu lại để tham chiếu sau.</p>
+            <div class="step-big-note">
+              <svg class="step-note-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#c9a96e" stroke-width="1"/><path d="M10 9v5M10 7v.5" stroke="#c9a96e" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <p class="step-note-text">Mọi trao đổi về giá cả và dịch vụ nên được thực hiện qua nền tảng để đảm bảo quyền lợi cho bạn trong trường hợp có tranh chấp.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-big" data-r="2">
+          <div class="step-big-num">03</div>
+          <div class="step-big-body">
+            <h2 class="step-big-title">Ký hợp đồng & thanh toán ký quỹ</h2>
+            <p class="step-big-desc">Sau khi thống nhất, hai bên ký hợp đồng chuẩn hóa ngay trên nền tảng — điều khoản rõ ràng, có giá trị pháp lý. Bạn đặt cọc vào tài khoản ký quỹ của Timeless Harmony — tiền được giữ an toàn, nhà cung cấp chưa nhận được cho đến khi bạn xác nhận.</p>
+            <div class="step-big-tags">
+              <span class="step-tag">Hợp đồng chuẩn hóa</span>
+              <span class="step-tag">Ký quỹ an toàn</span>
+              <span class="step-tag">Không thanh toán trực tiếp</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-big" data-r="3">
+          <div class="step-big-num">04</div>
+          <div class="step-big-body">
+            <h2 class="step-big-title">Theo dõi tiến độ & xác nhận</h2>
+            <p class="step-big-desc">Hợp đồng được chia thành các giai đoạn rõ ràng. Sau mỗi giai đoạn hoàn thành, bạn xác nhận và Timeless Harmony giải ngân phần tương ứng cho nhà cung cấp. Quy trình này bảo vệ cả hai bên đến tận ngày cưới.</p>
+            <div class="step-big-note">
+              <svg class="step-note-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#c9a96e" stroke-width="1"/><path d="M7 10l2 2 4-4" stroke="#c9a96e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p class="step-note-text">Nếu có tranh chấp, Timeless Harmony đóng vai trò trọng tài trung lập — xem xét hợp đồng và bằng chứng để đưa ra quyết định trong 5 ngày làm việc.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-big" data-r="4">
+          <div class="step-big-num">05</div>
+          <div class="step-big-body">
+            <h2 class="step-big-title">Ngày cưới & đánh giá</h2>
+            <p class="step-big-desc">Dịch vụ hoàn tất → bạn xác nhận lần cuối → Timeless Harmony giải ngân toàn bộ cho nhà cung cấp. Sau đó, bạn để lại đánh giá thật để giúp những cặp đôi tiếp theo đưa ra quyết định tốt hơn.</p>
+            <div class="step-big-tags">
+              <span class="step-tag">Giải ngân cuối sau xác nhận</span>
+              <span class="step-tag">Đánh giá có kiểm chứng</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SUPPLIERS -->
+    <div id="tab-supplier" style="display:none;">
+      <div class="steps-big">
+
+        <div class="step-big" data-r>
+          <div class="step-big-num">01</div>
+          <div class="step-big-body">
+            <h2 class="step-big-title">Đăng ký & xây dựng hồ sơ</h2>
+            <p class="step-big-desc">Điền form đăng ký đơn giản — tên, danh mục dịch vụ, khu vực hoạt động và link portfolio. Timeless Harmony xét duyệt trong 48 giờ và liên hệ qua điện thoại để xác nhận và hỗ trợ onboarding.</p>
+            <div class="step-big-tags">
+              <span class="step-tag">Miễn phí đăng ký</span>
+              <span class="step-tag">Xét duyệt trong 48 giờ</span>
+              <span class="step-tag">Hỗ trợ onboarding</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-big" data-r="1">
+          <div class="step-big-num">02</div>
+          <div class="step-big-body">
+            <h2 class="step-big-title">Xây dựng gói dịch vụ</h2>
+            <p class="step-big-desc">Timeless Harmony hỗ trợ bạn đóng gói dịch vụ thành 2–3 gói rõ ràng dựa trên ngành nghề và phong cách của bạn. Không cần tự nghĩ — chúng tôi brainstorm cùng bạn dựa trên kiến thức thị trường và nhu cầu thực tế của cặp đôi.</p>
+            <div class="step-big-note">
+              <svg class="step-note-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#c9a96e" stroke-width="1"/><path d="M10 6v4M8 14h4" stroke="#c9a96e" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <p class="step-note-text">Đây là điểm khác biệt của Timeless Harmony — chúng tôi không để bạn tự xây gói giá từ đầu. Kinh nghiệm từ ngành và phản hồi từ khách hàng sẽ được tích hợp vào gói giá của bạn.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-big" data-r="2">
+          <div class="step-big-num">03</div>
+          <div class="step-big-body">
+            <h2 class="step-big-title">Nhận inquiry & trao đổi</h2>
+            <p class="step-big-desc">Khi có cặp đôi quan tâm, bạn nhận thông báo qua nền tảng. Trao đổi trực tiếp, xác nhận yêu cầu, gửi báo giá chi tiết. Bạn có quyền từ chối bất kỳ deal nào không phù hợp — không cần giải thích.</p>
+          </div>
+        </div>
+
+        <div class="step-big" data-r="3">
+          <div class="step-big-num">04</div>
+          <div class="step-big-body">
+            <h2 class="step-big-title">Ký hợp đồng & nhận đặt cọc</h2>
+            <p class="step-big-desc">Hợp đồng được ký qua nền tảng, tiền đặt cọc từ khách hàng được giữ trong tài khoản ký quỹ của Timeless Harmony. Bạn yên tâm thực hiện dịch vụ — tiền đã được bảo đảm.</p>
+            <div class="step-big-tags">
+              <span class="step-tag">Tiền đặt cọc được bảo đảm</span>
+              <span class="step-tag">Hợp đồng có giá trị pháp lý</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-big" data-r="4">
+          <div class="step-big-num">05</div>
+          <div class="step-big-body">
+            <h2 class="step-big-title">Thực hiện & nhận thanh toán</h2>
+            <p class="step-big-desc">Sau mỗi giai đoạn hoàn thành và khách hàng xác nhận, Timeless Harmony giải ngân trong 1–2 ngày làm việc. Phí thành công (3–5%) được khấu trừ tự động — không phát sinh chi phí ẩn.</p>
+            <div class="step-big-note">
+              <svg class="step-note-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#c9a96e" stroke-width="1"/><path d="M10 6v4l3 2" stroke="#c9a96e" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <p class="step-note-text">Càng nhiều deal hoàn thành tốt → đánh giá càng cao → profile càng nổi bật → nhận nhiều inquiry hơn. Uy tín tích lũy theo thời gian và không ai lấy đi được.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESCROW SECTION -->
+<section style="padding:0 0 80px;">
+  <div class="wrap">
+    <p class="s-tag" data-r>Hệ thống ký quỹ</p>
+    <h2 class="s-title" data-r="1">Tiền của bạn<br><em>được bảo vệ thế nào?</em></h2>
+    <p class="s-sub" data-r="2">Timeless Harmony giữ tiền trong tài khoản ký quỹ và chỉ giải ngân khi cả hai bên đồng thuận. Không ai có thể lấy tiền một cách đơn phương.</p>
+
+    <div class="escrow-flow" data-r="3">
+      <div class="escrow-step">
+        <div class="escrow-step-num">Bước 1</div>
+        <div class="escrow-step-title">Khách hàng đặt cọc</div>
+        <div class="escrow-step-desc">Tiền chuyển vào tài khoản ký quỹ của Timeless Harmony — không vào tay nhà cung cấp ngay.</div>
+      </div>
+      <div class="escrow-step" style="border-left:0.5px solid var(--line2);border-right:0.5px solid var(--line2);">
+        <div class="escrow-step-num">Bước 2</div>
+        <div class="escrow-step-title">Dịch vụ được thực hiện</div>
+        <div class="escrow-step-desc">Nhà cung cấp thực hiện từng giai đoạn. Khách hàng theo dõi và xác nhận khi hoàn thành.</div>
+      </div>
+      <div class="escrow-step">
+        <div class="escrow-step-num">Bước 3</div>
+        <div class="escrow-step-title">Giải ngân an toàn</div>
+        <div class="escrow-step-desc">Sau xác nhận, Timeless Harmony giải ngân cho nhà cung cấp trong 1–2 ngày làm việc.</div>
+      </div>
+    </div>
+
+    <div class="trust-row">
+      <div class="trust-card" data-r>
+        <div class="trust-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2l1.5 4.5H15l-3.7 2.7 1.4 4.3L9 11l-3.7 2.5 1.4-4.3L3 6.5h4.5z" stroke="#c9a96e" stroke-width="1"/></svg></div>
+        <p class="trust-title">Nhà cung cấp được tuyển chọn</p>
+        <p class="trust-desc">Mọi nhà cung cấp đều qua quy trình xét duyệt hồ sơ trước khi xuất hiện trên nền tảng. Không phải ai cũng được chấp nhận.</p>
+      </div>
+      <div class="trust-card" data-r="1">
+        <div class="trust-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="4" width="12" height="10" rx="2" stroke="#c9a96e" stroke-width="1"/><path d="M6 8h6M6 11h4" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg></div>
+        <p class="trust-title">Hợp đồng có giá trị pháp lý</p>
+        <p class="trust-desc">Hợp đồng chuẩn hóa, điều khoản rõ ràng. Nếu có tranh chấp, Timeless Harmony làm trọng tài trung lập — không thiên vị.</p>
+      </div>
+      <div class="trust-card" data-r="2">
+        <div class="trust-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#c9a96e" stroke-width="1"/><path d="M6 9l2 2 4-4" stroke="#c9a96e" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <p class="trust-title">Đánh giá có kiểm chứng</p>
+        <p class="trust-desc">Chỉ cặp đôi đã sử dụng dịch vụ thật mới được để lại đánh giá. Không gian lận, không mua bán nhận xét.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding:0 0 80px;">
+  <div class="wrap">
+    <p class="s-tag" data-r>Câu hỏi thường gặp</p>
+    <h2 class="s-title" data-r="1">Bạn đang<br><em>thắc mắc điều gì?</em></h2>
+
+    <div class="faq-list" data-r="2">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Tôi có phải tạo tài khoản không?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Hiện tại chưa cần. Bạn có thể duyệt nhà cung cấp và bắt đầu lên kế hoạch ngay. Khi muốn kết nối với nhà cung cấp và ký hợp đồng, bạn sẽ cần cung cấp thông tin liên hệ để Timeless Harmony làm việc trực tiếp với bạn.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Timeless Harmony thu phí như thế nào?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Cô dâu chú rể không phải trả thêm bất kỳ khoản phí nào ngoài giá trị hợp đồng. Timeless Harmony chỉ thu phí thành công từ nhà cung cấp — từ 3 đến 5% giá trị hợp đồng, được thỏa thuận và ghi rõ khi onboarding. Minh bạch từ đầu, không phát sinh sau.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Nếu nhà cung cấp hủy đột ngột thì sao?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Nếu nhà cung cấp hủy không có lý do chính đáng, bạn được hoàn 100% khoản đã đặt cọc. Timeless Harmony cũng sẽ hỗ trợ tìm nhà cung cấp thay thế khẩn cấp. Đây là lý do tiền luôn được giữ qua ký quỹ thay vì chuyển thẳng cho nhà cung cấp.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Timeless Harmony có nhà cung cấp ở tỉnh của tôi không?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Hiện tại chúng tôi đang có nhà cung cấp tại Sài Gòn, Hà Nội, Đà Nẵng, Đà Lạt và Hội An. Danh sách đang được mở rộng liên tục. Nếu bạn ở khu vực khác, hãy liên hệ với chúng tôi — chúng tôi sẽ cố gắng kết nối bạn với nhà cung cấp phù hợp hoặc nhà cung cấp sẵn sàng di chuyển.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Tôi là nhà cung cấp, đăng ký mất phí không?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Hoàn toàn miễn phí. Không phí đăng ký, không phí duy trì, không phí listing. Chỉ thu phí thành công khi có hợp đồng hoàn tất — từ 3 đến 5% tùy deal. Nếu không có deal thành công, bạn không mất bất kỳ khoản nào.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Tôi có thể tự liên hệ nhà cung cấp ngoài nền tảng không?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Các giao dịch phát sinh từ kết nối qua Timeless Harmony cần được thực hiện qua hệ thống để đảm bảo quyền lợi cho cả hai bên — đặc biệt là bảo vệ tài chính qua ký quỹ và hiệu lực của hợp đồng. Thanh toán ngoài nền tảng sẽ không được bảo vệ nếu có tranh chấp.</div>
+      </div>
+    </div>
+
+    <!-- CTA STRIP -->
+    <div class="cta-strip" data-r>
+      <div>
+        <p class="cta-strip-title">Sẵn sàng bắt đầu?</p>
+        <p class="cta-strip-sub">Khám phá nhà cung cấp hoặc đăng ký làm đối tác ngay hôm nay.</p>
+      </div>
+      <div class="cta-strip-btns">
+        <a href="/" class="btn-gold">Tìm dịch vụ cưới</a>
+        <a href="/#cta" class="btn-outline">Tôi là nhà cung cấp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <p class="footer-logo">Timeless Harmony</p>
+    <div class="footer-links">
+      <a href="/" class="footer-link">Trang chủ</a>
+      <a href="/cach-hoat-dong.html" class="footer-link">Cách hoạt động</a>
+      <a href="/dieu-khoan.html" class="footer-link">Điều khoản</a>
+    </div>
+    <p class="footer-copy">© 2026 Timeless Harmony</p>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);}});
+},{threshold:0.08});
+document.querySelectorAll('[data-r]').forEach(el=>obs.observe(el));
+
+function switchTab(t){
+  document.querySelectorAll('.tab-btn').forEach((btn,i)=>btn.classList.toggle('active',['couple','supplier'][i]===t));
+  document.getElementById('tab-couple').style.display = t==='couple'?'block':'none';
+  document.getElementById('tab-supplier').style.display = t==='supplier'?'block':'none';
+}
+
+function toggleFaq(el){
+  const item = el.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
+}
+
+const moonIcon=`<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.5 10.5A6 6 0 015.5 2.5a6 6 0 108 8z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>`;
+const sunIcon=`<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.1 3.1l1.1 1.1M11.8 11.8l1.1 1.1M11.8 4.2l-1.1 1.1M4.2 11.8l-1.1 1.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>`;
+
+function toggleMode(){
+  const isLight=document.body.classList.toggle('light');
+  document.getElementById('modeToggle').innerHTML=isLight?moonIcon:sunIcon;
+  localStorage.setItem('th-mode',isLight?'light':'dark');
+}
+if(localStorage.getItem('th-mode')==='light'){
+  document.body.classList.add('light');
+  document.getElementById('modeToggle').innerHTML=moonIcon;
+}
+</script>
+</body>
+</html>
