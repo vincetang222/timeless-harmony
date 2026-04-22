@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đăng ký nhà cung cấp — Timeless Harmony</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0c0c;--bg2:#141414;--nav-bg:rgba(12,12,12,0.94);
+  --line:rgba(255,255,255,0.07);--line2:rgba(255,255,255,0.13);
+  --text:#f0ede8;--text2:rgba(240,237,232,0.62);--text3:rgba(240,237,232,0.38);
+  --gold:#c9a96e;--gold2:#e2c99a;
+  --gold-bg:rgba(201,169,110,0.1);--gold-line:rgba(201,169,110,0.22);
+  --card-bg:linear-gradient(145deg,#202020 0%,#151515 100%);
+  --card-border:rgba(255,255,255,0.13);
+  --max:680px;--r:12px;
+}
+body.light{
+  --bg:#f8f4ec;--bg2:#f0ebe0;--nav-bg:rgba(248,244,236,0.96);
+  --line:rgba(30,42,30,0.08);--line2:rgba(30,42,30,0.14);
+  --text:#1a2a1e;--text2:rgba(26,42,30,0.75);--text3:rgba(26,42,30,0.55);
+  --gold:#9a7a42;--gold2:#7a5e2e;
+  --gold-bg:rgba(154,122,66,0.08);--gold-line:rgba(154,122,66,0.2);
+  --card-bg:linear-gradient(145deg,#ffffff 0%,#f5f1e8 100%);
+  --card-border:rgba(30,42,30,0.1);
+}
+body,nav,footer{transition:background .35s,color .35s,border-color .35s;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;font-weight:300;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;min-height:100vh;}
+a{text-decoration:none;color:inherit;}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:99;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--line);height:58px;display:flex;align-items:center;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;}
+.nav-logo{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.nav-logo span{color:var(--gold);}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-back{font-size:12px;color:var(--text3);transition:color .2s;}
+.nav-back:hover{color:var(--text2);}
+.mode-toggle{width:32px;height:32px;border-radius:7px;background:var(--gold-bg);border:0.5px solid var(--gold-line);color:var(--gold);display:flex;align-items:center;justify-content:center;cursor:pointer;}
+
+/* HERO */
+.hero{padding:56px 0 40px;text-align:center;border-bottom:0.5px solid var(--line);}
+.hero-tag{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:12px;}
+.hero-title{font-family:'Be Vietnam Pro',sans-serif;font-size:clamp(28px,5vw,42px);font-weight:800;color:var(--text);line-height:1.06;margin-bottom:12px;}
+.hero-title em{font-style:normal;color:var(--gold);}
+.hero-sub{font-size:15px;color:var(--text2);line-height:1.8;max-width:480px;margin:0 auto 28px;}
+
+/* BENEFITS */
+.benefits{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:4px;}
+.benefit{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text2);}
+.benefit-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+
+/* FORM */
+.form-section{padding:48px 0 80px;}
+.form-card{background:var(--card-bg);border:0.5px solid var(--card-border);border-radius:16px;padding:36px;margin-bottom:20px;}
+.form-card-title{font-family:'Be Vietnam Pro',sans-serif;font-size:14px;font-weight:700;color:var(--text);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.form-card-num{width:24px;height:24px;border-radius:6px;background:var(--gold-bg);border:0.5px solid var(--gold-line);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--gold);flex-shrink:0;}
+
+.form-group{margin-bottom:18px;}
+.form-group:last-child{margin-bottom:0;}
+.form-label{font-size:12px;color:var(--text3);margin-bottom:7px;display:flex;align-items:center;gap:4px;}
+.required{color:var(--gold);font-size:10px;}
+.form-input,.form-select,.form-textarea{
+  width:100%;padding:12px 14px;
+  background:var(--bg);border:0.5px solid var(--line2);
+  border-radius:9px;font-family:'Inter',sans-serif;
+  font-size:14px;color:var(--text);outline:none;
+  transition:border-color .2s,background .35s;
+  appearance:none;
+}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:rgba(201,169,110,0.4);}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--text3);}
+.form-textarea{resize:vertical;min-height:100px;line-height:1.6;}
+.form-select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23c9a96e' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:520px){.form-row{grid-template-columns:1fr;}}
+
+/* PACKAGES */
+.pkg-options{display:flex;flex-direction:column;gap:10px;}
+.pkg-option{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--bg);border:0.5px solid var(--line2);border-radius:9px;cursor:pointer;transition:border-color .2s;}
+.pkg-option:hover{border-color:var(--gold-line);}
+.pkg-option input[type=checkbox]{width:16px;height:16px;accent-color:var(--gold);flex-shrink:0;margin-top:2px;}
+.pkg-option-info{}
+.pkg-option-name{font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px;}
+.pkg-option-desc{font-size:11px;color:var(--text3);line-height:1.5;}
+
+/* PORTFOLIO */
+.portfolio-hint{font-size:12px;color:var(--text3);line-height:1.7;margin-top:8px;padding:12px 14px;background:var(--gold-bg);border:0.5px solid var(--gold-line);border-radius:8px;}
+.portfolio-hint strong{color:var(--gold);font-weight:500;}
+
+/* TERMS */
+.terms-check{display:flex;align-items:flex-start;gap:12px;padding:16px;background:var(--bg);border:0.5px solid var(--line2);border-radius:9px;}
+.terms-check input{width:16px;height:16px;accent-color:var(--gold);flex-shrink:0;margin-top:2px;cursor:pointer;}
+.terms-text{font-size:13px;color:var(--text2);line-height:1.7;}
+.terms-text a{color:var(--gold);text-decoration:underline;text-underline-offset:2px;}
+
+/* SUBMIT */
+.submit-btn{width:100%;padding:15px;border-radius:10px;background:var(--gold);color:var(--bg);font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:700;border:none;cursor:pointer;transition:all .2s;margin-top:20px;}
+.submit-btn:hover{filter:brightness(1.08);}
+.submit-btn:disabled{opacity:.5;cursor:not-allowed;}
+.submit-note{text-align:center;font-size:12px;color:var(--text3);margin-top:12px;line-height:1.6;}
+
+/* SUCCESS */
+.success-page{display:none;text-align:center;padding:72px 24px;}
+.success-icon{width:64px;height:64px;border-radius:16px;background:var(--gold-bg);border:0.5px solid var(--gold-line);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+.success-title{font-family:'Be Vietnam Pro',sans-serif;font-size:26px;font-weight:800;color:var(--text);margin-bottom:10px;}
+.success-title em{font-style:normal;color:var(--gold);}
+.success-sub{font-size:15px;color:var(--text2);line-height:1.8;max-width:440px;margin:0 auto 28px;}
+.success-steps{display:flex;flex-direction:column;gap:12px;max-width:400px;margin:0 auto 32px;text-align:left;}
+.success-step{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--card-bg);border:0.5px solid var(--card-border);border-radius:10px;}
+.success-step-num{width:24px;height:24px;border-radius:6px;background:var(--gold-bg);border:0.5px solid var(--gold-line);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--gold);flex-shrink:0;}
+.success-step-text{font-size:13px;color:var(--text2);line-height:1.6;}
+.success-step-text strong{color:var(--text);font-weight:500;}
+.btn-home{display:inline-block;padding:12px 28px;border-radius:8px;background:var(--gold);color:var(--bg);font-size:14px;font-weight:600;transition:all .2s;}
+.btn-home:hover{filter:brightness(1.08);}
+
+/* FOOTER */
+footer{border-top:0.5px solid var(--line);padding:32px 0;}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-logo{font-family:'Be Vietnam Pro',sans-serif;font-size:14px;font-weight:700;color:var(--text3);}
+.footer-copy{font-size:12px;color:var(--text3);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-logo">Timeless <span>Harmony</span></a>
+    <div class="nav-right">
+      <a href="/" class="nav-back">← Trang chủ</a>
+      <button class="mode-toggle" id="modeToggle" onclick="toggleMode()">
+        <svg id="modeIcon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.1 3.1l1.1 1.1M11.8 11.8l1.1 1.1M11.8 4.2l-1.1 1.1M4.2 11.8l-1.1 1.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN FORM -->
+<div id="mainContent">
+
+  <div class="hero">
+    <div class="wrap">
+      <p class="hero-tag">Dành cho nhà cung cấp</p>
+      <h1 class="hero-title">Đưa dịch vụ của bạn<br>đến <em>đúng khách hàng</em></h1>
+      <p class="hero-sub">Timeless Harmony kết nối bạn với những cặp đôi đang tìm kiếm dịch vụ cưới chất lượng — không phí listing, chỉ thu khi có deal thành công.</p>
+      <div class="benefits">
+        <div class="benefit"><div class="benefit-dot"></div>Miễn phí đăng ký</div>
+        <div class="benefit"><div class="benefit-dot"></div>Chỉ thu 3–5% khi có deal</div>
+        <div class="benefit"><div class="benefit-dot"></div>Hệ thống ký quỹ bảo vệ bạn</div>
+        <div class="benefit"><div class="benefit-dot"></div>Xét duyệt trong 48 giờ</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-section">
+    <div class="wrap">
+      <form id="supplierForm" action="https://formspree.io/f/mpqkwjzy" method="POST" onsubmit="handleSubmit(event)">
+
+        <!-- 01 THÔNG TIN CƠ BẢN -->
+        <div class="form-card">
+          <div class="form-card-title"><div class="form-card-num">01</div>Thông tin cơ bản</div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Tên thương hiệu / Studio <span class="required">*</span></label>
+              <input class="form-input" type="text" name="ten_thuong_hieu" placeholder="Ví dụ: Ánh Dương Studio" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Tên người liên hệ <span class="required">*</span></label>
+              <input class="form-input" type="text" name="ten_lien_he" placeholder="Họ và tên" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Số điện thoại <span class="required">*</span></label>
+              <input class="form-input" type="tel" name="so_dien_thoai" placeholder="0901 234 567" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email <span class="required">*</span></label>
+              <input class="form-input" type="email" name="email" placeholder="studio@email.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Danh mục dịch vụ <span class="required">*</span></label>
+              <select class="form-select" name="danh_muc" required>
+                <option value="">Chọn danh mục</option>
+                <option>Lên kế hoạch cưới</option>
+                <option>Nhiếp ảnh & Quay phim</option>
+                <option>Hoa cưới & Trang trí</option>
+                <option>Làm đẹp & Trang phục</option>
+                <option>Âm nhạc & Giải trí</option>
+                <option>Ẩm thực & Đồ uống</option>
+                <option>Địa điểm</option>
+                <option>Âm thanh & Ánh sáng</option>
+                <option>Văn phòng phẩm</option>
+                <option>Trải nghiệm độc đáo</option>
+                <option>Khác</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Khu vực hoạt động <span class="required">*</span></label>
+              <select class="form-select" name="khu_vuc" required>
+                <option value="">Chọn khu vực</option>
+                <option>Sài Gòn</option>
+                <option>Hà Nội</option>
+                <option>Đà Nẵng</option>
+                <option>Đà Lạt</option>
+                <option>Hội An</option>
+                <option>Sài Gòn + Toàn quốc</option>
+                <option>Toàn quốc</option>
+                <option>Khác</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Số năm kinh nghiệm</label>
+            <select class="form-select" name="kinh_nghiem">
+              <option value="">Chọn</option>
+              <option>Dưới 1 năm</option>
+              <option>1–2 năm</option>
+              <option>3–5 năm</option>
+              <option>Trên 5 năm</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 02 PHONG CÁCH & GÓI DỊCH VỤ -->
+        <div class="form-card">
+          <div class="form-card-title"><div class="form-card-num">02</div>Phong cách & Gói dịch vụ</div>
+
+          <div class="form-group">
+            <label class="form-label">Phong cách đặc trưng <span class="required">*</span></label>
+            <input class="form-input" type="text" name="phong_cach" placeholder="Ví dụ: Film analog, Tối giản, Bohemian, Vintage..." required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Mô tả ngắn về dịch vụ <span class="required">*</span></label>
+            <textarea class="form-textarea" name="mo_ta" placeholder="Bạn cung cấp dịch vụ gì? Điều gì làm bạn khác biệt? Phù hợp với loại đám cưới nào?..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Bạn muốn Timeless Harmony hỗ trợ xây dựng gói giá không?</label>
+            <div class="pkg-options">
+              <label class="pkg-option">
+                <input type="checkbox" name="ho_tro_goi_gia" value="co">
+                <div class="pkg-option-info">
+                  <div class="pkg-option-name">Có — mình cần hỗ trợ</div>
+                  <div class="pkg-option-desc">Timeless Harmony sẽ brainstorm 2–3 gói giá phù hợp dựa trên ngành và phong cách của bạn</div>
+                </div>
+              </label>
+              <label class="pkg-option">
+                <input type="checkbox" name="co_goi_san" value="co">
+                <div class="pkg-option-info">
+                  <div class="pkg-option-name">Mình đã có gói giá sẵn</div>
+                  <div class="pkg-option-desc">Bạn sẽ gửi thông tin gói giá trong buổi onboarding</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Mức giá khởi điểm (tham khảo)</label>
+            <select class="form-select" name="muc_gia">
+              <option value="">Chọn khoảng giá</option>
+              <option>Dưới 3 triệu</option>
+              <option>3–8 triệu</option>
+              <option>8–15 triệu</option>
+              <option>15–30 triệu</option>
+              <option>Trên 30 triệu</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 03 PORTFOLIO -->
+        <div class="form-card">
+          <div class="form-card-title"><div class="form-card-num">03</div>Portfolio & Hình ảnh</div>
+
+          <div class="form-group">
+            <label class="form-label">Link Instagram <span class="required">*</span></label>
+            <input class="form-input" type="url" name="instagram" placeholder="https://instagram.com/studio_cua_ban" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Link portfolio / website (nếu có)</label>
+            <input class="form-input" type="url" name="website" placeholder="https://website.com hoặc link behance, facebook...">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Link Google Drive / Dropbox hình ảnh mẫu</label>
+            <input class="form-input" type="url" name="hinh_anh" placeholder="Link folder ảnh đám cưới đã thực hiện">
+            <div class="portfolio-hint">
+              <strong>Gợi ý:</strong> Chia sẻ folder Google Drive với 10–20 ảnh đẹp nhất đại diện cho phong cách của bạn. Hình ảnh chất lượng sẽ giúp profile của bạn nổi bật hơn trên nền tảng.
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 THÔNG TIN THÊM -->
+        <div class="form-card">
+          <div class="form-card-title"><div class="form-card-num">04</div>Thêm cho chúng mình biết</div>
+
+          <div class="form-group">
+            <label class="form-label">Bạn biết đến Timeless Harmony qua đâu?</label>
+            <select class="form-select" name="nguon_biet_den">
+              <option value="">Chọn</option>
+              <option>Hội nhà cung cấp đám cưới</option>
+              <option>Bạn bè / đồng nghiệp giới thiệu</option>
+              <option>Instagram / Facebook</option>
+              <option>Google tìm kiếm</option>
+              <option>Khác</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Bạn có câu hỏi hoặc muốn chia sẻ thêm điều gì không?</label>
+            <textarea class="form-textarea" name="ghi_chu" placeholder="Câu hỏi về quy trình, điều khoản, phí hoa hồng... hoặc bất kỳ điều gì bạn muốn chúng mình biết." style="min-height:80px;"></textarea>
+          </div>
+        </div>
+
+        <!-- TERMS -->
+        <label class="terms-check">
+          <input type="checkbox" id="termsCheck" required>
+          <span class="terms-text">Mình đã đọc và đồng ý với <a href="/dieu-khoan.html" target="_blank">Điều khoản sử dụng</a> của Timeless Harmony. Thông tin mình cung cấp là trung thực và mình có đủ năng lực thực hiện dịch vụ như mô tả.</span>
+        </label>
+
+        <!-- Hidden field để phân loại email -->
+        <input type="hidden" name="_subject" value="🎉 Đăng ký nhà cung cấp mới — Timeless Harmony">
+        <input type="hidden" name="_next" value="thanks">
+
+        <button type="submit" class="submit-btn" id="submitBtn">Gửi đăng ký →</button>
+        <p class="submit-note">Timeless Harmony sẽ xem xét hồ sơ và liên hệ lại trong vòng <strong>48 giờ</strong> làm việc.</p>
+
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<!-- SUCCESS PAGE -->
+<div id="successPage" class="success-page" style="display:none;">
+  <div class="wrap">
+    <div class="success-icon">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M5 14l6 6 12-12" stroke="#c9a96e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h1 class="success-title">Đã nhận hồ sơ<br>của <em>bạn rồi!</em></h1>
+    <p class="success-sub">Cảm ơn bạn đã tin tưởng Timeless Harmony. Đội ngũ của chúng mình sẽ xem xét hồ sơ và liên hệ lại trong vòng 48 giờ làm việc.</p>
+
+    <div class="success-steps">
+      <div class="success-step">
+        <div class="success-step-num">1</div>
+        <p class="success-step-text"><strong>Xét duyệt hồ sơ</strong> — Chúng mình xem xét portfolio và thông tin bạn cung cấp trong 48 giờ.</p>
+      </div>
+      <div class="success-step">
+        <div class="success-step-num">2</div>
+        <p class="success-step-text"><strong>Video call onboarding</strong> — Nếu phù hợp, chúng mình sẽ đặt lịch call 30 phút để trao đổi thêm và xây dựng gói dịch vụ.</p>
+      </div>
+      <div class="success-step">
+        <div class="success-step-num">3</div>
+        <p class="success-step-text"><strong>Lên sóng</strong> — Profile của bạn xuất hiện trên Timeless Harmony và bắt đầu nhận inquiry từ cô dâu chú rể.</p>
+      </div>
+    </div>
+
+    <a href="/" class="btn-home">← Về trang chủ</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap footer-inner">
+    <p class="footer-logo">Timeless Harmony</p>
+    <p class="footer-copy">© 2026 Timeless Harmony</p>
+  </div>
+</footer>
+
+<script>
+async function handleSubmit(e){
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Đang gửi...';
+
+  try{
+    const form = document.getElementById('supplierForm');
+    const data = new FormData(form);
+    const res = await fetch('https://formspree.io/f/mpqkwjzy', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if(res.ok){
+      document.getElementById('mainContent').style.display = 'none';
+      document.getElementById('successPage').style.display = 'block';
+      window.scrollTo({top:0,behavior:'smooth'});
+    } else {
+      btn.disabled = false;
+      btn.textContent = 'Gửi đăng ký →';
+      alert('Có lỗi xảy ra. Vui lòng thử lại hoặc liên hệ hello@timeless-harmony.com');
+    }
+  } catch(err){
+    btn.disabled = false;
+    btn.textContent = 'Gửi đăng ký →';
+    alert('Không thể kết nối. Vui lòng kiểm tra mạng và thử lại.');
+  }
+}
+
+const moonIcon=`<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.5 10.5A6 6 0 015.5 2.5a6 6 0 108 8z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>`;
+const sunIcon=`<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.1 3.1l1.1 1.1M11.8 11.8l1.1 1.1M11.8 4.2l-1.1 1.1M4.2 11.8l-1.1 1.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>`;
+function toggleMode(){
+  const l=document.body.classList.toggle('light');
+  document.getElementById('modeToggle').innerHTML=l?moonIcon:sunIcon;
+  localStorage.setItem('th-mode',l?'light':'dark');
+}
+if(localStorage.getItem('th-mode')==='light'){
+  document.body.classList.add('light');
+  document.getElementById('modeToggle').innerHTML=moonIcon;
+}
+</script>
+</body>
+</html>
