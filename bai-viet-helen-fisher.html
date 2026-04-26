@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Não bộ khi yêu — khoa học giải thích cảm giác "điên dại" đó — Timeless Harmony</title>
+<meta name="description" content="Dr. Helen Fisher đã chụp MRI não của 37 người đang yêu và phát hiện điều bất ngờ — tình yêu không phải cảm xúc, đó là một hệ thống động lực nguyên thủy như đói và khát.">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0c0c;--bg2:#141414;--nav-bg:rgba(12,12,12,0.94);
+  --line:rgba(255,255,255,0.1);--line2:rgba(255,255,255,0.2);
+  --text:#f5f2ed;--text2:rgba(245,242,237,0.85);--text3:rgba(245,242,237,0.55);
+  --gold:#d4b47a;--gold2:#e8d4a8;
+  --gold-bg:rgba(212,180,122,0.15);--gold-line:rgba(212,180,122,0.35);
+  --card-bg:linear-gradient(145deg,#272727 0%,#1c1c1c 100%);
+  --card-border:rgba(255,255,255,0.2);
+  --max-article:680px;--max:1000px;
+}
+body.light{
+  --bg:#f5f0e8;--bg2:#ece6d8;--nav-bg:rgba(245,240,232,0.96);
+  --line:rgba(20,32,20,0.14);--line2:rgba(20,32,20,0.24);
+  --text:#111e14;--text2:rgba(17,30,20,0.88);--text3:rgba(17,30,20,0.58);
+  --gold:#7a5820;--gold2:#5a3e10;
+  --gold-bg:rgba(122,88,32,0.12);--gold-line:rgba(122,88,32,0.3);
+  --card-bg:linear-gradient(145deg,#ffffff 0%,#eee8d8 100%);
+  --card-border:rgba(20,32,20,0.2);
+}
+body,nav,footer{transition:background .35s,color .35s,border-color .35s;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;font-weight:300;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+nav{position:sticky;top:0;z-index:99;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--line);height:58px;display:flex;align-items:center;padding:0 32px;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--max);margin:0 auto;}
+.nav-logo{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.nav-logo span{color:var(--gold);}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-back{font-size:12px;color:var(--text3);transition:color .2s;}
+.nav-back:hover{color:var(--text2);}
+.mode-toggle{width:32px;height:32px;border-radius:7px;background:var(--gold-bg);border:0.5px solid var(--gold-line);color:var(--gold);display:flex;align-items:center;justify-content:center;cursor:pointer;}
+.article-hero{padding:56px 32px 0;max-width:var(--max);margin:0 auto;}
+.article-cat{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.75;margin-bottom:14px;}
+.article-title{font-family:'Be Vietnam Pro',sans-serif;font-size:clamp(28px,5vw,48px);font-weight:800;line-height:1.08;color:var(--text);margin-bottom:16px;}
+.article-title em{font-style:normal;color:var(--gold);}
+.article-sub{font-size:17px;color:var(--text2);line-height:1.75;max-width:580px;margin-bottom:28px;}
+.article-meta{display:flex;align-items:center;gap:12px;padding-bottom:24px;border-bottom:0.5px solid var(--line);flex-wrap:wrap;}
+.meta-author{display:flex;align-items:center;gap:8px;}
+.meta-avatar{width:32px;height:32px;border-radius:50%;background:var(--gold-bg);border:0.5px solid var(--gold-line);display:flex;align-items:center;justify-content:center;}
+.meta-name{font-size:13px;font-weight:500;color:var(--text);}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--text3);}
+.meta-info{font-size:12px;color:var(--text3);}
+.article-cover{width:100%;max-width:var(--max);margin:0 auto;padding:24px 32px 0;}
+.cover-img{width:100%;height:440px;object-fit:cover;border-radius:14px;display:block;}
+.cover-caption{font-size:12px;color:var(--text3);text-align:center;margin-top:10px;font-style:italic;}
+.article-body{max-width:var(--max-article);margin:0 auto;padding:48px 32px 80px;}
+.article-body p{font-size:17px;color:var(--text2);line-height:1.9;margin-bottom:22px;}
+.article-body h2{font-family:'Be Vietnam Pro',sans-serif;font-size:24px;font-weight:700;color:var(--text);line-height:1.25;margin:42px 0 16px;}
+.article-body strong{color:var(--text);font-weight:500;}
+.article-body em{color:var(--gold);font-style:normal;}
+
+/* STAT ROW */
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:36px 0;}
+@media(max-width:520px){.stat-row{grid-template-columns:1fr;}}
+.stat-box{background:var(--card-bg);border:0.5px solid var(--card-border);border-radius:12px;padding:22px 20px;text-align:center;}
+.stat-num{font-family:'Be Vietnam Pro',sans-serif;font-size:32px;font-weight:800;color:var(--gold2);line-height:1;margin-bottom:6px;}
+.stat-label{font-size:13px;color:var(--text2);line-height:1.55;}
+
+/* CHEMICAL CARDS */
+.chem-list{display:flex;flex-direction:column;gap:12px;margin:32px 0;}
+.chem-card{background:var(--card-bg);border:0.5px solid var(--card-border);border-radius:12px;padding:20px 22px;display:flex;gap:16px;align-items:flex-start;transition:border-color .2s;}
+.chem-card:hover{border-color:var(--gold-line);}
+.chem-tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:3px 10px;border-radius:100px;background:var(--gold-bg);color:var(--gold);border:0.5px solid var(--gold-line);white-space:nowrap;flex-shrink:0;align-self:flex-start;margin-top:2px;}
+.chem-body{}
+.chem-name{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:800;color:var(--text);margin-bottom:5px;}
+.chem-desc{font-size:14px;color:var(--text2);line-height:1.75;}
+
+.pull-quote{border-left:3px solid var(--gold);margin:36px 0;padding:22px 28px;background:var(--gold-bg);border-radius:0 10px 10px 0;border:0.5px solid var(--gold-line);border-left:3px solid var(--gold);}
+.pull-quote p{font-family:'Be Vietnam Pro',sans-serif;font-size:20px;font-weight:600;color:var(--text);line-height:1.45;margin:0;font-style:italic;}
+.pull-quote cite{display:block;font-size:12px;color:var(--gold);font-style:normal;margin-top:10px;font-weight:500;letter-spacing:.08em;}
+.insight-box{background:var(--card-bg);border:0.5px solid var(--card-border);border-radius:12px;padding:24px 28px;margin:32px 0;}
+.insight-tag{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.insight-box p{font-size:15px;color:var(--text);line-height:1.8;margin:0;}
+.insight-box p+p{margin-top:10px;}
+.divider{height:0.5px;background:var(--line);margin:40px 0;}
+.references{padding:32px;background:var(--card-bg);border:0.5px solid var(--card-border);border-radius:12px;margin:40px 0;}
+.ref-title{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--text3);margin-bottom:16px;}
+.ref-list{display:flex;flex-direction:column;gap:10px;}
+.ref-item{font-size:13px;color:var(--text2);line-height:1.65;}
+.ref-item a{color:var(--gold);text-decoration:underline;text-underline-offset:2px;}
+footer{border-top:0.5px solid var(--line);padding:36px 32px;}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:var(--max);margin:0 auto;}
+.footer-logo{font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:700;color:var(--text3);}
+.footer-links{display:flex;gap:24px;}
+.footer-link{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);transition:color .2s;}
+.footer-link:hover{color:var(--text2);}
+.footer-copy{font-size:12px;color:var(--text3);}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Timeless <span>Harmony</span></a>
+    <div class="nav-right">
+      <a href="/cam-nang.html" class="nav-back">← Cẩm nang</a>
+      <button class="mode-toggle" id="modeToggle" onclick="toggleMode()">
+        <svg id="modeIcon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.1 3.1l1.1 1.1M11.8 11.8l1.1 1.1M11.8 4.2l-1.1 1.1M4.2 11.8l-1.1 1.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <p class="article-cat">Thần kinh học tình yêu · 8 phút đọc</p>
+  <h1 class="article-title">Não bộ khi yêu —<br>khoa học giải thích cảm giác <em>"điên dại"</em> đó</h1>
+  <p class="article-sub">Dr. Helen Fisher đã chụp MRI não của 37 người đang yêu say đắm. Kết quả làm cả thế giới ngạc nhiên: tình yêu không phải là cảm xúc — đó là một hệ thống động lực nguyên thủy, mạnh như đói và khát.</p>
+  <div class="article-meta">
+    <div class="meta-author">
+      <div class="meta-avatar"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.5 4H13l-3.7 2.7 1.4 4.3L7 9.5l-3.7 2.5 1.4-4.3L1 5h4.5z" stroke="#c9a96e" stroke-width="1" fill="none"/></svg></div>
+      <span class="meta-name">Timeless Harmony</span>
+    </div>
+    <div class="meta-dot"></div>
+    <span class="meta-info">20 tháng 4, 2026</span>
+    <div class="meta-dot"></div>
+    <span class="meta-info">8 phút đọc</span>
+    <div class="meta-dot"></div>
+    <span class="meta-info">Thần kinh học · Khoa học</span>
+  </div>
+</div>
+
+<div class="article-cover">
+  <img src="https://picsum.photos/seed/helenfisher/1200/440" alt="Não bộ và tình yêu — minh họa khoa học thần kinh" class="cover-img" loading="eager">
+  <p class="cover-caption">Ảnh minh họa · Timeless Harmony</p>
+</div>
+
+<div class="article-body">
+
+  <p>Hãy nghĩ lại lần đầu bạn yêu ai đó thật sự. Trái tim đập nhanh hơn mỗi khi thấy họ. Không thể ngừng nghĩ về họ. Mọi thứ có màu sắc tươi hơn, âm thanh rõ hơn. Bạn cảm thấy có thể làm được bất cứ điều gì.</p>
+
+  <p>Đây không phải ảo giác. Và đây cũng không đơn thuần là "cảm xúc." Đây là <strong>hóa học</strong>.</p>
+
+  <p>Năm 2005, nhà nhân chủng học sinh học <strong>Dr. Helen Fisher</strong> của Đại học Rutgers đã công bố nghiên cứu fMRI đột phá — lần đầu tiên trong lịch sử, con người được chụp ảnh não bộ trong khi đang yêu. Và những gì bà tìm thấy đã thay đổi cách chúng ta hiểu về tình yêu mãi mãi.</p>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <div class="stat-num">37</div>
+      <div class="stat-label">người được chụp MRI não trong khi nhìn ảnh người yêu</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">166</div>
+      <div class="stat-label">xã hội trên thế giới có dấu hiệu của tình yêu lãng mạn</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">21 năm</div>
+      <div class="stat-label">hôn nhân trung bình — não vẫn phản ứng như mới yêu</div>
+    </div>
+  </div>
+
+  <h2>Tình yêu sống ở đâu trong não bộ?</h2>
+
+  <p>Khi các tình nguyện viên nhìn vào ảnh của người họ yêu trong máy MRI, não bộ của họ sáng lên tại một vùng rất đặc biệt: <strong>ventral tegmental area (VTA)</strong> — một nhà máy nhỏ nằm sâu trong não, chuyên sản xuất <em>dopamine</em>.</p>
+
+  <p>VTA không phải vùng cảm xúc. Đây là vùng <strong>động lực và phần thưởng</strong> — cùng vùng kích hoạt khi bạn đói và nhìn thấy thức ăn, hay khi bạn khát và nhìn thấy nước. Fisher kết luận: <em>"Tình yêu lãng mạn không phải cảm xúc — đó là động lực."</em></p>
+
+  <div class="pull-quote">
+    <p>"Tình yêu lãng mạn nằm ngay cạnh các trung tâm điều khiển cơn đói và cơn khát trong não. Đói giúp bạn sống sót hôm nay. Tình yêu thúc đẩy bạn tạo ra sự sống cho ngày mai."</p>
+    <cite>— Dr. Helen Fisher, Rutgers University</cite>
+  </div>
+
+  <h2>Ba chất hóa học của tình yêu</h2>
+
+  <p>Fisher và các đồng nghiệp xác định ba hệ thống não bộ khác nhau tham gia vào tình yêu, mỗi hệ thống được dẫn dắt bởi một nhóm chất hóa học riêng:</p>
+
+  <div class="chem-list">
+    <div class="chem-card">
+      <div class="chem-tag">Giai đoạn 1</div>
+      <div class="chem-body">
+        <p class="chem-name">Dopamine & Norepinephrine — Hứng khởi ban đầu</p>
+        <p class="chem-desc">Khi mới yêu, dopamine tạo ra cảm giác hưng phấn, tập trung tuyệt đối và tràn đầy năng lượng. Norepinephrine làm tim đập nhanh, lòng bàn tay đổ mồ hôi. Cùng lúc đó, serotonin giảm xuống — tạo ra suy nghĩ ám ảnh về người yêu. Fisher gọi đây là giai đoạn "điên rồ nhưng tuyệt vời."</p>
+      </div>
+    </div>
+    <div class="chem-card">
+      <div class="chem-tag">Giai đoạn 2</div>
+      <div class="chem-body">
+        <p class="chem-name">Oxytocin & Vasopressin — Gắn kết sâu</p>
+        <p class="chem-desc">Khi mối quan hệ trưởng thành, oxytocin — thường được gọi là "hormone ôm" — tạo ra cảm giác tin tưởng, an toàn và gắn kết. Vasopressin liên quan đến sự trung thành và cam kết dài hạn. Đây là nền tảng hóa học của tình yêu bền vững.</p>
+      </div>
+    </div>
+    <div class="chem-card">
+      <div class="chem-tag">Đặc biệt</div>
+      <div class="chem-body">
+        <p class="chem-name">Dopamine trong tình yêu lâu dài</p>
+        <p class="chem-desc">Phát hiện đáng kinh ngạc nhất: một nghiên cứu năm 2011 tại Stony Brook University chụp MRI những cặp đôi đã kết hôn trung bình 21 năm — và tìm thấy cùng mức độ hoạt động dopamine như những người mới yêu. Tình yêu lâu dài và hạnh phúc không phải là một điều hiếm có — não bộ hoàn toàn có khả năng duy trì nó.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Tình yêu có thể "tái kích hoạt" không?</h2>
+
+  <p>Fisher khám phá ra rằng <strong>sự mới lạ là chìa khóa</strong> để duy trì dopamine trong mối quan hệ dài hạn. Khi bạn trải nghiệm điều gì đó mới và thú vị <em>cùng với</em> người yêu — leo núi lần đầu, thử món ăn lạ, du lịch nơi chưa đến — não bộ liên kết cảm giác hưng phấn đó với người bên cạnh bạn.</p>
+
+  <p>Đây không phải lý thuyết — đây là cơ chế sinh học. Và nó giải thích tại sao những cặp đôi tiếp tục khám phá và trải nghiệm cùng nhau thường hạnh phúc hơn những cặp đôi chìm vào thói quen.</p>
+
+  <div class="insight-box">
+    <p class="insight-tag">✦ Phát hiện đáng kinh ngạc</p>
+    <p>Fisher cũng nghiên cứu não bộ của những người vừa bị chia tay — và phát hiện ra rằng <strong>cùng vùng não kích hoạt khi đang yêu cũng kích hoạt khi mất đi tình yêu</strong>. Đau khổ sau chia tay không phải yếu đuối — đó là phản ứng sinh học hoàn toàn có thật, tương tự như cai nghiện.</p>
+    <p>Tin vui: cũng giống như não bộ có thể học cách yêu, nó cũng có thể học cách chữa lành.</p>
+  </div>
+
+  <h2>Điều này có ý nghĩa gì?</h2>
+
+  <p>Nghiên cứu của Fisher mang đến một thông điệp đầy hy vọng: tình yêu không phải thứ "xảy ra" với bạn rồi mất đi theo thời gian. Đó là một <strong>hệ thống sinh học có thể được nuôi dưỡng và duy trì</strong> — nếu bạn biết cách.</p>
+
+  <p>Và bắt đầu từ những điều đơn giản nhất: hôn nhau mỗi sáng trước khi đi làm, thử một nhà hàng mới mỗi tuần, kể cho nhau nghe một câu chuyện chưa từng chia sẻ. Não bộ của bạn sẽ làm phần còn lại.</p>
+
+  <div class="divider"></div>
+
+  <div class="references">
+    <p class="ref-title">Nguồn tham khảo</p>
+    <div class="ref-list">
+      <p class="ref-item">1. Fisher, H., Aron, A., & Brown, L. L. (2005). Romantic love: An fMRI study of a neural mechanism for mate choice. <em>Journal of Comparative Neurology, 493</em>(1), 58–62. — <a href="https://pubmed.ncbi.nlm.nih.gov/16255001/" target="_blank">PubMed</a></p>
+      <p class="ref-item">2. Acevedo, B. P., Aron, A., Fisher, H. E., & Brown, L. L. (2012). Neural correlates of long-term intense romantic love. <em>Social Cognitive and Affective Neuroscience, 7</em>(2), 145–159. — <a href="https://www.helenfisher.com/downloads/articles/Acevedo-et-alLong-term.pdf" target="_blank">helenfisher.com</a></p>
+      <p class="ref-item">3. Harvard Medical School. (2023). Love and the Brain. — <a href="https://hms.harvard.edu/news-events/publications-archive/brain/love-brain" target="_blank">hms.harvard.edu</a></p>
+      <p class="ref-item">4. Fisher, H. (2004). <em>Why We Love: The Nature and Chemistry of Romantic Love.</em> Henry Holt and Company.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-logo">Timeless Harmony</p>
+    <div class="footer-links">
+      <a href="/" class="footer-link">Trang chủ</a>
+      <a href="/cam-nang.html" class="footer-link">Cẩm nang</a>
+      <a href="/dieu-khoan.html" class="footer-link">Điều khoản</a>
+    </div>
+    <p class="footer-copy">© 2026 Timeless Harmony</p>
+  </div>
+</footer>
+<script>
+const moonIcon=`<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.5 10.5A6 6 0 015.5 2.5a6 6 0 108 8z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>`;
+const sunIcon=`<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.1 3.1l1.1 1.1M11.8 11.8l1.1 1.1M11.8 4.2l-1.1 1.1M4.2 11.8l-1.1 1.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>`;
+function toggleMode(){const l=document.body.classList.toggle('light');document.getElementById('modeToggle').innerHTML=l?moonIcon:sunIcon;localStorage.setItem('th-mode',l?'light':'dark');}
+if(localStorage.getItem('th-mode')==='light'){document.body.classList.add('light');document.getElementById('modeToggle').innerHTML=moonIcon;}
+</script>
+</body>
+</html>
