@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carl & Ellie trong Up — 4 phút phim dạy về hôn nhân nhiều hơn ngàn cuốn sách — Timeless Harmony</title>
+<meta name="description" content="4 phút rưỡi đầu của bộ phim Up (Pixar, 2009) đã được ca ngợi là một trong những cảnh phim vĩ đại nhất lịch sử điện ảnh. Đây là những bài học về hôn nhân ẩn trong từng khung hình.">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0c0c;--bg2:#141414;--nav-bg:rgba(12,12,12,0.94);
+  --line:rgba(255,255,255,0.1);--line2:rgba(255,255,255,0.2);
+  --text:#f5f2ed;--text2:rgba(245,242,237,0.85);--text3:rgba(245,242,237,0.55);
+  --gold:#d4b47a;--gold2:#e8d4a8;
+  --gold-bg:rgba(212,180,122,0.15);--gold-line:rgba(212,180,122,0.35);
+  --card-bg:linear-gradient(145deg,#272727 0%,#1c1c1c 100%);
+  --card-border:rgba(255,255,255,0.2);
+  --max-article:680px;--max:1000px;
+}
+body.light{
+  --bg:#f5f0e8;--bg2:#ece6d8;--nav-bg:rgba(245,240,232,0.96);
+  --line:rgba(20,32,20,0.14);--line2:rgba(20,32,20,0.24);
+  --text:#111e14;--text2:rgba(17,30,20,0.88);--text3:rgba(17,30,20,0.58);
+  --gold:#7a5820;--gold2:#5a3e10;
+  --gold-bg:rgba(122,88,32,0.12);--gold-line:rgba(122,88,32,0.3);
+  --card-bg:linear-gradient(145deg,#ffffff 0%,#eee8d8 100%);
+  --card-border:rgba(20,32,20,0.2);
+}
+body,nav,footer{transition:background .35s,color .35s,border-color .35s;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;font-weight:300;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+nav{position:sticky;top:0;z-index:99;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--line);height:58px;display:flex;align-items:center;padding:0 32px;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--max);margin:0 auto;}
+.nav-logo{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.nav-logo span{color:var(--gold);}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-back{font-size:12px;color:var(--text3);transition:color .2s;}
+.nav-back:hover{color:var(--text2);}
+.mode-toggle{width:32px;height:32px;border-radius:7px;background:var(--gold-bg);border:0.5px solid var(--gold-line);color:var(--gold);display:flex;align-items:center;justify-content:center;cursor:pointer;}
+.article-hero{padding:56px 32px 0;max-width:var(--max);margin:0 auto;}
+.article-cat{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.75;margin-bottom:14px;}
+.article-title{font-family:'Be Vietnam Pro',sans-serif;font-size:clamp(26px,4.5vw,44px);font-weight:800;line-height:1.1;color:var(--text);margin-bottom:16px;}
+.article-title em{font-style:normal;color:var(--gold);}
+.article-sub{font-size:17px;color:var(--text2);line-height:1.75;max-width:580px;margin-bottom:28px;}
+.article-meta{display:flex;align-items:center;gap:12px;padding-bottom:24px;border-bottom:0.5px solid var(--line);flex-wrap:wrap;}
+.meta-author{display:flex;align-items:center;gap:8px;}
+.meta-avatar{width:32px;height:32px;border-radius:50%;background:var(--gold-bg);border:0.5px solid var(--gold-line);display:flex;align-items:center;justify-content:center;}
+.meta-name{font-size:13px;font-weight:500;color:var(--text);}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--text3);}
+.meta-info{font-size:12px;color:var(--text3);}
+.article-cover{width:100%;max-width:var(--max);margin:0 auto;padding:24px 32px 0;}
+.cover-img{width:100%;height:440px;object-fit:cover;border-radius:14px;display:block;}
+.cover-caption{font-size:12px;color:var(--text3);text-align:center;margin-top:10px;font-style:italic;}
+.article-body{max-width:var(--max-article);margin:0 auto;padding:48px 32px 80px;}
+.article-body p{font-size:17px;color:var(--text2);line-height:1.9;margin-bottom:22px;}
+.article-body h2{font-family:'Be Vietnam Pro',sans-serif;font-size:24px;font-weight:700;color:var(--text);line-height:1.25;margin:42px 0 16px;}
+.article-body strong{color:var(--text);font-weight:500;}
+.article-body em{color:var(--gold);font-style:normal;}
+
+/* LESSON LIST */
+.lesson-list{display:flex;flex-direction:column;margin:32px 0;border:0.5px solid var(--card-border);border-radius:14px;overflow:hidden;}
+.lesson{display:flex;align-items:stretch;border-bottom:0.5px solid var(--line);transition:background .18s;}
+.lesson:last-child{border-bottom:none;}
+.lesson:hover{background:var(--gold-bg);}
+.lesson-num{width:58px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Be Vietnam Pro',sans-serif;font-size:20px;font-weight:800;color:var(--gold);opacity:.45;border-right:0.5px solid var(--line);padding:22px 0;background:var(--card-bg);transition:opacity .18s;}
+.lesson:hover .lesson-num{opacity:1;background:transparent;}
+.lesson-body{padding:18px 22px;flex:1;background:var(--card-bg);transition:background .18s;}
+.lesson:hover .lesson-body{background:transparent;}
+.lesson-title{font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:800;color:var(--text);margin-bottom:5px;line-height:1.3;}
+.lesson-desc{font-size:13.5px;color:var(--text2);line-height:1.78;font-weight:300;}
+
+.pull-quote{border-left:3px solid var(--gold);margin:36px 0;padding:22px 28px;background:var(--gold-bg);border-radius:0 10px 10px 0;border:0.5px solid var(--gold-line);border-left:3px solid var(--gold);}
+.pull-quote p{font-family:'Be Vietnam Pro',sans-serif;font-size:20px;font-weight:600;color:var(--text);line-height:1.45;margin:0;font-style:italic;}
+.pull-quote cite{display:block;font-size:12px;color:var(--gold);font-style:normal;margin-top:10px;font-weight:500;letter-spacing:.08em;}
+.insight-box{background:var(--card-bg);border:0.5px solid var(--card-border);border-radius:12px;padding:24px 28px;margin:32px 0;}
+.insight-tag{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.insight-box p{font-size:15px;color:var(--text);line-height:1.8;margin:0;}
+.insight-box p+p{margin-top:10px;}
+.divider{height:0.5px;background:var(--line);margin:40px 0;}
+footer{border-top:0.5px solid var(--line);padding:36px 32px;}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:var(--max);margin:0 auto;}
+.footer-logo{font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:700;color:var(--text3);}
+.footer-links{display:flex;gap:24px;}
+.footer-link{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);transition:color .2s;}
+.footer-link:hover{color:var(--text2);}
+.footer-copy{font-size:12px;color:var(--text3);}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Timeless <span>Harmony</span></a>
+    <div class="nav-right">
+      <a href="/cam-nang.html" class="nav-back">← Cẩm nang</a>
+      <button class="mode-toggle" id="modeToggle" onclick="toggleMode()">
+        <svg id="modeIcon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.1 3.1l1.1 1.1M11.8 11.8l1.1 1.1M11.8 4.2l-1.1 1.1M4.2 11.8l-1.1 1.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <p class="article-cat">Điện ảnh & Tình yêu · 6 phút đọc</p>
+  <h1 class="article-title">Carl & Ellie trong <em>Up</em> — 4 phút phim dạy về hôn nhân nhiều hơn ngàn cuốn sách</h1>
+  <p class="article-sub">Không một lời thoại. Chỉ có hình ảnh và âm nhạc. Nhưng 4 phút rưỡi đầu của bộ phim hoạt hình Up (Pixar, 2009) đã khiến hàng triệu người khóc — và dạy về hôn nhân sâu sắc hơn bất kỳ bài giảng nào.</p>
+  <div class="article-meta">
+    <div class="meta-author">
+      <div class="meta-avatar"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.5 4H13l-3.7 2.7 1.4 4.3L7 9.5l-3.7 2.5 1.4-4.3L1 5h4.5z" stroke="#c9a96e" stroke-width="1" fill="none"/></svg></div>
+      <span class="meta-name">Timeless Harmony</span>
+    </div>
+    <div class="meta-dot"></div>
+    <span class="meta-info">18 tháng 4, 2026</span>
+    <div class="meta-dot"></div>
+    <span class="meta-info">6 phút đọc</span>
+    <div class="meta-dot"></div>
+    <span class="meta-info">Điện ảnh · Hôn nhân</span>
+  </div>
+</div>
+
+<div class="article-cover">
+  <img src="https://picsum.photos/seed/carlEllie/1200/440" alt="Cặp đôi già đi cùng nhau — minh họa tinh thần câu chuyện Carl và Ellie" class="cover-img" loading="eager">
+  <p class="cover-caption">Ảnh minh họa · Timeless Harmony</p>
+</div>
+
+<div class="article-body">
+
+  <p>Nếu bạn chưa xem Up, hãy dừng đọc bài này và xem ngay 10 phút đầu của bộ phim. Rồi quay lại đây.</p>
+
+  <p>Nếu bạn đã xem — bạn biết cảm giác đó. Cái cảm giác ngực tức lại khi nhạc nổi lên. Khi Carl và Ellie già đi cùng nhau qua từng khung hình im lặng. Khi chiếc hũ tiết kiệm cứ đầy rồi lại vơi. Và khi Ellie ra đi.</p>
+
+  <p>Đạo diễn Pete Docter và Pixar đã làm được điều mà ít tác phẩm nào làm được: <strong>nén trọn một cuộc hôn nhân thật sự vào 4 phút rưỡi không lời</strong>. Và trong từng giây đó, ẩn chứa những bài học về tình yêu mà không một cuốn sách tự giúp bản thân nào có thể diễn đạt hay hơn.</p>
+
+  <h2>Bài học Carl & Ellie dạy chúng ta</h2>
+
+  <div class="lesson-list">
+    <div class="lesson">
+      <div class="lesson-num">1</div>
+      <div class="lesson-body">
+        <p class="lesson-title"><strong>Tình yêu bắt đầu từ cùng nhìn về một hướng</strong></p>
+        <p class="lesson-desc">Carl và Ellie gặp nhau khi cả hai đều ngước nhìn lên bầu trời và mơ về cuộc phiêu lưu. Họ không yêu vì đối phương hoàn hảo — họ yêu vì cùng chia sẻ một ước mơ. Các nhà tâm lý học gọi đây là "shared meaning" — ý nghĩa chung — và đây là nền tảng bền vững nhất của bất kỳ cuộc hôn nhân nào.</p>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-num">2</div>
+      <div class="lesson-body">
+        <p class="lesson-title"><strong>Hôn nhân là những khoảnh khắc nhỏ, không phải ngày trọng đại</strong></p>
+        <p class="lesson-desc">Pixar không cho chúng ta xem đám cưới hay kỳ nghỉ hoành tráng. Họ cho chúng ta thấy Carl và Ellie cùng nhau sơn nhà, ngắm mây, đọc sách cạnh nhau. Chính những điều bình thường đó — không phải khoảnh khắc đặc biệt — là chất liệu thật sự của một cuộc hôn nhân.</p>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-num">3</div>
+      <div class="lesson-body">
+        <p class="lesson-title"><strong>Những khủng hoảng không định nghĩa bạn — cách vượt qua mới định nghĩa</strong></p>
+        <p class="lesson-desc">Cảnh bác sĩ thông báo Ellie không thể sinh con là một trong những khoảnh khắc bi thương nhất phim hoạt hình từng có. Nhưng ngay sau đó, Carl mang ra cuốn sách phiêu lưu của Ellie — một hành động nhỏ bé nhưng đầy tình yêu — và họ cùng nhau bước tiếp. Khủng hoảng không phá vỡ họ. Nó gắn kết họ lại.</p>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-num">4</div>
+      <div class="lesson-body">
+        <p class="lesson-title"><strong>Cuộc sống xảy ra — và đó không phải thất bại</strong></p>
+        <p class="lesson-desc">Chiếc hũ tiết kiệm cho chuyến đi Paradise Falls cứ đầy rồi lại vơi — vì xe hỏng, vì ốm đau, vì hóa đơn bất ngờ. Điều Pixar dạy chúng ta không phải là "hãy từ bỏ ước mơ" — mà là: cuộc sống bên cạnh người yêu thương chính là cuộc phiêu lưu đó rồi.</p>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-num">5</div>
+      <div class="lesson-body">
+        <p class="lesson-title"><strong>Người thật sự yêu bạn muốn bạn tiếp tục sống sau khi họ đi</strong></p>
+        <p class="lesson-desc">Thông điệp cuối Ellie để lại cho Carl trong cuốn sách — "Cảm ơn vì cuộc phiêu lưu. Giờ hãy đi có một cuộc phiêu lưu mới đi" — là một trong những câu nói về tình yêu đẹp nhất từng được viết ra. Tình yêu thật không giữ người lại — nó giải phóng.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    <p>"Chúng tôi muốn khán giả yêu Ellie và Carl đến mức cảm thấy mất mát thật sự khi cô ấy ra đi — dù chưa gặp cô ấy được 10 phút."</p>
+    <cite>— Pete Docter, Đạo diễn Up, Pixar (2009)</cite>
+  </div>
+
+  <h2>Tại sao Up khiến chúng ta khóc?</h2>
+
+  <p>Nhà tâm lý học Jonathan Haidt gọi đây là <em>"elevation"</em> — cảm giác ngực ấm và xúc động khi chứng kiến điều gì đó đẹp đẽ và chân thật về tình người. Não bộ phản ứng với những hình mẫu tình yêu tích cực bằng cách sản sinh oxytocin — chất hóa học của sự kết nối và tin tưởng.</p>
+
+  <p>Nói cách khác: khi bạn khóc xem Up, não bộ của bạn đang <strong>học về tình yêu</strong>. Bạn không chỉ bị xúc động — bạn đang được nhắc nhở về điều mà thẳm sâu trong bản năng, bạn đã biết là thật.</p>
+
+  <div class="insight-box">
+    <p class="insight-tag">✦ Điều thú vị từ hậu trường</p>
+    <p>Đạo diễn Pete Docter tiết lộ rằng đội ngũ Pixar ban đầu đã thử cắt cảnh Ellie sẩy thai vì lo là quá nặng nề cho phim hoạt hình. Nhưng khi xem lại phim không có cảnh đó — toàn bộ cảm xúc của câu chuyện sụp đổ. Sự trung thực với nỗi đau là thứ làm cho câu chuyện tình yêu trở nên thật sự.</p>
+  </div>
+
+  <h2>Hôn nhân không phải điểm đến — đó là cuộc hành trình</h2>
+
+  <p>Carl dành cả bộ phim để cố đưa ngôi nhà đến Paradise Falls — nơi Ellie luôn mơ đến. Nhưng ở cuối phim, ông nhận ra điều Ellie thật sự để lại trong cuốn sách phiêu lưu không phải là hình ảnh của thác nước — mà là những tấm ảnh của họ, ngày qua ngày, bên nhau.</p>
+
+  <p><strong>Cuộc sống của họ cùng nhau chính là Paradise Falls rồi.</strong></p>
+
+  <p>Đây là điều mà những đám cưới hoành tráng đôi khi làm chúng ta quên mất: ngày cưới không phải đích đến — đó chỉ là ngày đầu tiên của cuộc phiêu lưu dài nhất và đẹp nhất trong cuộc đời.</p>
+
+  <div class="divider"></div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-logo">Timeless Harmony</p>
+    <div class="footer-links">
+      <a href="/" class="footer-link">Trang chủ</a>
+      <a href="/cam-nang.html" class="footer-link">Cẩm nang</a>
+      <a href="/dieu-khoan.html" class="footer-link">Điều khoản</a>
+    </div>
+    <p class="footer-copy">© 2026 Timeless Harmony</p>
+  </div>
+</footer>
+<script>
+const moonIcon=`<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.5 10.5A6 6 0 015.5 2.5a6 6 0 108 8z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>`;
+const sunIcon=`<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.1 3.1l1.1 1.1M11.8 11.8l1.1 1.1M11.8 4.2l-1.1 1.1M4.2 11.8l-1.1 1.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>`;
+function toggleMode(){const l=document.body.classList.toggle('light');document.getElementById('modeToggle').innerHTML=l?moonIcon:sunIcon;localStorage.setItem('th-mode',l?'light':'dark');}
+if(localStorage.getItem('th-mode')==='light'){document.body.classList.add('light');document.getElementById('modeToggle').innerHTML=moonIcon;}
+</script>
+</body>
+</html>
