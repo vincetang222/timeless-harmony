@@ -196,3 +196,11 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 }
 /* Giá & số thứ tự dùng màu Tulip */
 .sup-price, .pkg-price, .sup-card-price { color: var(--tulip); }
+
+/* Điện thoại: các hàng nút được phép xuống dòng (Be Vietnam Pro rộng hơn phông cũ) */
+@media (max-width: 640px) {
+  .profile-actions, .cta-strip-btns, .hero-btns, .cta-btns { flex-wrap: wrap; }
+  .profile-actions > * { flex: 1 1 auto; }
+  .newsletter-form { flex-shrink: 1; min-width: 0; width: 100%; }
+  .newsletter-input { min-width: 0; flex: 1 1 150px; }
+}
