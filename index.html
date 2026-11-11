@@ -13,8 +13,85 @@
 <meta property="og:description" content="Timeless Harmony — nền tảng kết nối dịch vụ cưới tại Việt Nam: nhiếp ảnh, hoa cưới, địa điểm, làm đẹp, âm nhạc. Nhà cung cấp được tuyển chọn, thanh toán an toàn qua ký quỹ, trợ lý AI lên kế hoạch miễn phí.">
 <meta property="og:url" content="https://timeless-harmony.com/">
 <meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://timeless-harmony.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Timeless Harmony — Đám cưới của bạn bắt đầu từ đây">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0c0c0c">
+<script type="application/ld+json">
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Timeless Harmony",
+  "url": "https://timeless-harmony.com/",
+  "inLanguage": "vi",
+  "potentialAction": {
+   "@type": "SearchAction",
+   "target": "https://timeless-harmony.com/dich-vu?q={search_term_string}",
+   "query-input": "required name=search_term_string"
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Timeless Harmony",
+  "url": "https://timeless-harmony.com/",
+  "logo": "https://timeless-harmony.com/favicon.svg",
+  "email": "hello@timeless-harmony.com"
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Cô dâu chú rể có phải trả phí cho Timeless Harmony không?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Không. Cô dâu chú rể không phải trả thêm bất kỳ khoản phí nào ngoài giá trị hợp đồng. Timeless Harmony chỉ thu phí thành công từ nhà cung cấp — từ 3 đến 5% giá trị hợp đồng, được thỏa thuận và ghi rõ khi onboarding."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Nếu nhà cung cấp hủy đột ngột thì sao?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Nếu nhà cung cấp hủy không có lý do chính đáng, bạn được hoàn 100% khoản đã đặt cọc, và Timeless Harmony hỗ trợ tìm nhà cung cấp thay thế khẩn cấp. Đây là lý do tiền luôn được giữ qua ký quỹ thay vì chuyển thẳng cho nhà cung cấp."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Tôi có phải tạo tài khoản không?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Hiện tại chưa cần. Bạn có thể duyệt nhà cung cấp và lên kế hoạch cùng Harmony AI ngay. Khi muốn kết nối với nhà cung cấp và ký hợp đồng, bạn sẽ cần cung cấp thông tin liên hệ để Timeless Harmony làm việc trực tiếp với bạn."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Timeless Harmony có nhà cung cấp ở khu vực của tôi không?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Hiện có nhà cung cấp tại Sài Gòn, Hà Nội, Đà Nẵng, Đà Lạt và Hội An, và danh sách đang được mở rộng. Nếu bạn ở khu vực khác, hãy liên hệ để được kết nối với nhà cung cấp phù hợp hoặc sẵn sàng di chuyển."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Tôi là nhà cung cấp, đăng ký có mất phí không?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Hoàn toàn miễn phí: không phí đăng ký, không phí duy trì, không phí listing. Chỉ thu phí thành công khi có hợp đồng hoàn tất — từ 3 đến 5% tùy deal."
+    }
+   }
+  ]
+ }
+]
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 
 :root {
@@ -182,7 +259,7 @@ nav {
   border: 0.5px solid var(--line2); cursor: pointer;
   transition: all .2s; white-space: nowrap;
 }
-.btn-line:hover { border-color: rgba(255,255,255,0.2); color: var(--text); }
+.btn-line:hover { border-color: var(--text3); color: var(--text); }
 
 @media (max-width: 720px) {
   .hero-head { flex-direction: column; align-items: flex-start; }
@@ -202,7 +279,7 @@ nav {
   border-radius: 9px; padding: 13px 18px;
   transition: border-color .2s;
 }
-.search-box:focus-within { border-color: rgba(255,255,255,0.22); }
+.search-box:focus-within { border-color: var(--gold-line); }
 .search-icon {
   width: 16px; height: 16px; flex-shrink: 0;
   border: 1.5px solid var(--text3); border-radius: 50%;
@@ -251,7 +328,7 @@ nav {
   cursor: pointer; transition: all .2s;
   white-space: nowrap; background: transparent;
 }
-.pill:hover { color: var(--text2); border-color: rgba(255,255,255,0.2); }
+.pill:hover { color: var(--text2); border-color: var(--text3); }
 .pill.active {
   background: var(--gold); color: var(--bg);
   border-color: var(--gold); font-weight: 500;
@@ -273,7 +350,7 @@ nav {
   color: var(--text3);
 }
 .grid-see-all {
-  font-size: 12px; color: var(--gold);
+  font-size: 12px; color: var(--gold); white-space: nowrap; flex-shrink: 0;
   transition: opacity .2s;
 }
 .grid-see-all:hover { opacity: 0.7; }
@@ -313,12 +390,6 @@ nav {
   display: flex; align-items: center; justify-content: center;
 }
 .sup-thumb.thumb-fallback { height: 180px; } /* giữ chỗ cho tên & khu vực bên dưới */
-.t1 { background: #1a231c; }
-.t2 { background: #221c14; }
-.t3 { background: #14202a; }
-.t4 { background: #241422; }
-.t5 { background: #181e14; }
-.t6 { background: #201a14; }
 
 .thumb-icon {
   width: 48px; height: 48px; border-radius: 50%;
@@ -451,7 +522,7 @@ nav {
 }
 .step:first-child { border-radius: var(--r) 0 0 var(--r); }
 .step:last-child { border-radius: 0 var(--r) var(--r) 0; }
-.step:hover { border-color: rgba(255,255,255,0.2); }
+.step:hover { border-color: var(--gold-line); }
 .step-num {
   font-family: 'Be Vietnam Pro', sans-serif;
   font-size: 28px; font-weight: 400;
@@ -459,7 +530,12 @@ nav {
 }
 .step-title { font-size: 14px; font-weight: 500; color: var(--text); }
 .step-desc { font-size: 13px; color: var(--text2); line-height: 1.75; }
-@media (max-width: 680px) { .steps { grid-template-columns: 1fr 1fr; } .step:first-child,.step:last-child { border-radius: 0; } }
+@media (max-width: 680px) {
+  .steps { grid-template-columns: 1fr 1fr; }
+  .step:first-child,.step:last-child { border-radius: 0; }
+  .how-head { flex-direction: column; align-items: flex-start; }
+  .how-sub { text-align: left; }
+}
 
 /* ══════════════════════════════
    WHY
@@ -530,9 +606,6 @@ nav {
   align-items: center; justify-content: center;
   position: relative;
 }
-.bt1 { background: #1a231c; }
-.bt2 { background: #22201a; }
-.bt3 { background: #181c24; }
 .blog-cat {
   position: absolute; top: 12px; left: 12px;
   font-size: 9px; font-weight: 600;
@@ -598,8 +671,9 @@ footer {
 }
 .footer-logo {
   font-family: 'Be Vietnam Pro', sans-serif;
-  font-size: 16px; color: rgba(240,237,232,0.4);
+  font-size: 16px; font-weight: 600; color: var(--text);
 }
+.footer-logo span { color: var(--gold); }
 .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
 .footer-link {
   font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
@@ -680,23 +754,156 @@ body.light .nav-dropdown { background: var(--bg2); }
   color: var(--bg);
   border-color: var(--gold);
 }
+
+/* ══════════════════════════════
+   HOÀN THIỆN TRANG CHỦ
+══════════════════════════════ */
+/* Nav links (máy tính) */
+.nav-links { display: flex; align-items: center; gap: 2px; margin-left: 32px; margin-right: auto; }
+.nav-link {
+  font-size: 13px; color: var(--text2);
+  padding: 7px 12px; border-radius: 6px; transition: color .2s, background .2s;
+}
+.nav-link:hover { color: var(--text); background: var(--gold-bg); }
+.nav-link-supplier { color: var(--gold); }
+@media (max-width: 900px) { .nav-links { display: none; } }
+@media (min-width: 901px) { .nav-menu-btn, .nav-dropdown { display: none; } }
+
+/* Thumbnail: màu nền theo từng nhà cung cấp, dịu lại ở chế độ sáng */
+.sup-thumb, .blog-thumb { background: var(--thumb, #1a1a1a); }
+body.light .sup-thumb, body.light .blog-thumb { background: var(--thumb-light, #ece6da); }
+body.light .thumb-icon { border-color: var(--gold-line); }
+body.light .thumb-icon svg { opacity: .55; }
+body.light .badge-hot { background: rgba(26,42,30,0.07); color: var(--text2); }
+
+/* Giá trên thẻ */
+.sup-price { font-size: 12px; font-weight: 500; color: var(--gold); white-space: nowrap; }
+.sup-right { display: flex; align-items: center; gap: 10px; }
+.sup-style { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.sup-footer { gap: 10px; }
+
+/* Dịch vụ độc đáo "sắp có" */
+#unique { padding: 0 0 72px; }
+.sup-card.soon { border-style: dashed; background: transparent; }
+.sup-card.soon .sup-thumb { opacity: .55; }
+.sup-card.soon .sup-arrow { width: auto; padding: 0 10px; border-radius: 100px; font-size: 11px; }
+.badge-soon { background: transparent; color: var(--text3); border: 0.5px dashed var(--line2); }
+
+/* Điện thoại: thẻ nhà cung cấp cuộn ngang thay vì xếp dọc 12 thẻ */
+@media (max-width: 600px) {
+  .sup-grid.carousel {
+    display: flex; overflow-x: auto; gap: 12px;
+    scroll-snap-type: x mandatory; scroll-padding: 0 18px;
+    margin: 0 -18px; padding: 2px 18px 10px;
+    scrollbar-width: none;
+  }
+  .sup-grid.carousel::-webkit-scrollbar { display: none; }
+  .sup-grid.carousel > .sup-card { flex: 0 0 76%; scroll-snap-align: start; }
+  .sup-grid.carousel .sup-thumb.thumb-fallback { height: 140px; }
+  .grid-meta { gap: 12px; }
+}
+
+/* Harmony AI: hỏi ngay từ trang chủ */
+.planner-form { display: flex; gap: 8px; width: 100%; max-width: 420px; }
+.planner-input {
+  flex: 1; min-width: 0;
+  background: var(--search-bg); border: 0.5px solid var(--line2);
+  border-radius: 8px; padding: 11px 14px;
+  font-family: 'Inter', sans-serif; font-size: 13px; color: var(--text);
+  outline: none; transition: border-color .2s;
+}
+.planner-input:focus { border-color: var(--gold-line); }
+.planner-input::placeholder { color: var(--text3); }
+@media (max-width: 760px) {
+  .planner-right { align-self: stretch; min-width: 0; flex-shrink: 1; }
+  .planner-form { max-width: none; }
+}
+@media (max-width: 420px) {
+  .planner-form { flex-direction: column; }
+}
+
+/* FAQ */
+#faq { padding: 72px 0; border-top: 0.5px solid var(--line); }
+.faq-wrap { display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; align-items: start; }
+.faq-intro .s-title { margin-bottom: 14px; }
+.faq-intro p:not(.s-tag) { font-size: 13px; color: var(--text2); line-height: 1.75; }
+.faq-intro a { color: var(--gold); }
+.faq-list { display: flex; flex-direction: column; gap: 10px; }
+.faq-item {
+  background: var(--card-bg); border: 0.5px solid var(--card-border);
+  border-radius: var(--r); transition: border-color .2s;
+}
+.faq-item[open] { border-color: var(--gold-line); }
+.faq-item summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 18px 22px; font-size: 14px; font-weight: 500; color: var(--text);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+'; flex-shrink: 0;
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 0.5px solid var(--line2); color: var(--text3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; transition: transform .2s, color .2s;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); color: var(--gold); }
+.faq-item p { padding: 0 22px 20px; font-size: 13px; color: var(--text2); line-height: 1.85; }
+@media (max-width: 760px) { .faq-wrap { grid-template-columns: 1fr; gap: 24px; } }
+
+/* Footer nhiều cột */
+footer { padding: 56px 0 28px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; }
+.footer-tagline { font-size: 13px; color: var(--text2); line-height: 1.75; margin: 10px 0 14px; max-width: 280px; }
+.footer-mail { font-size: 13px; color: var(--gold); }
+.footer-mail:hover { text-decoration: underline; }
+.footer-col-title {
+  font-size: 10px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 14px;
+}
+.footer-col { display: flex; flex-direction: column; gap: 10px; }
+.footer-col a { font-size: 13px; color: var(--text2); transition: color .2s; }
+.footer-col a:hover { color: var(--gold); }
+.footer-bottom {
+  margin-top: 40px; padding-top: 20px; border-top: 0.5px solid var(--line);
+  display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+}
+@media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr 1fr; } .footer-brand { grid-column: 1 / -1; } }
+
+/* Trợ năng */
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid var(--gold); outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  [data-r] { opacity: 1; transform: none; transition: none; }
+  .search-row, .filter-row { animation: none !important; }
+}
 </style>
 </head>
 <body>
+<script>try{if(localStorage.getItem('th-mode')==='light')document.body.classList.add('light')}catch(e){}</script>
 
 <!-- NAV -->
 <nav>
   <div class="wrap nav-inner">
     <a href="/" class="nav-logo">Timeless <span>Harmony</span></a>
+    <div class="nav-links">
+      <a href="/dich-vu.html" class="nav-link">Dịch vụ</a>
+      <a href="/cach-hoat-dong.html" class="nav-link">Cách hoạt động</a>
+      <a href="/ke-hoach.html" class="nav-link">Kế hoạch cưới</a>
+      <a href="/cam-nang.html" class="nav-link">Cẩm nang</a>
+      <a href="/dang-ky-supplier.html" class="nav-link nav-link-supplier">Dành cho nhà cung cấp</a>
+    </div>
     <div class="nav-right">
-      <button class="mode-toggle" id="modeToggle" onclick="toggleMode()" title="Chuyển giao diện">
+      <button class="mode-toggle" id="modeToggle" onclick="toggleMode()" title="Chuyển giao diện" aria-label="Chuyển giao diện sáng/tối">
         <svg id="modeIcon" width="16" height="16" viewBox="0 0 16 16" fill="none">
           <circle cx="8" cy="8" r="3.5" stroke="currentColor" stroke-width="1.2" fill="none"/>
           <path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.1 3.1l1.1 1.1M11.8 11.8l1.1 1.1M11.8 4.2l-1.1 1.1M4.2 11.8l-1.1 1.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
         </svg>
       </button>
       <a href="#suppliers" class="nav-cta">Bắt đầu</a>
-      <button class="nav-menu-btn" id="menuBtn" onclick="toggleMenu()">
+      <button class="nav-menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="Mở menu" aria-expanded="false" aria-controls="navDropdown">
         <div class="nav-bar"></div>
         <div class="nav-bar"></div>
         <div class="nav-bar"></div>
@@ -785,115 +992,8 @@ body.light .nav-dropdown { background: var(--bg2); }
       <span class="grid-meta-label">Nhà cung cấp nổi bật</span>
       <a href="/dich-vu.html" class="grid-see-all">Xem tất cả →</a>
     </div>
-    <div class="sup-grid">
-
-      <a class="sup-card" data-r href="/supplier.html?id=anh-duong-studio">
-        <div class="sup-thumb t1 thumb-fallback">
-          <div class="thumb-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="2" stroke="#c9a96e" stroke-width="1"/><circle cx="10" cy="11" r="3.5" stroke="#c9a96e" stroke-width="1"/></svg>
-          </div>
-          <div class="sup-badge badge-new">Mới</div>
-        </div>
-        <div class="sup-body">
-          <p class="sup-cat">Nhiếp ảnh & Quay phim</p>
-          <p class="sup-name">Ánh Dương Studio</p>
-          <p class="sup-loc">Sài Gòn</p>
-          <div class="sup-footer">
-            <span class="sup-style">Vintage · Film</span>
-            <div class="sup-arrow">→</div>
-          </div>
-        </div>
-      </a>
-
-      <a class="sup-card" data-r="1" href="/supplier.html?id=y-linh-planner">
-        <div class="sup-thumb t2 thumb-fallback">
-          <div class="thumb-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="4" stroke="#c9a96e" stroke-width="1"/><path d="M3 18c0-3.9 3.1-7 7-7s7 3.1 7 7" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg>
-          </div>
-          <div class="sup-badge badge-hot">Nổi bật</div>
-        </div>
-        <div class="sup-body">
-          <p class="sup-cat">Lên kế hoạch cưới</p>
-          <p class="sup-name">Ý Linh Planner</p>
-          <p class="sup-loc">Sài Gòn · Đà Lạt</p>
-          <div class="sup-footer">
-            <span class="sup-style">Tối giản · Luxury</span>
-            <div class="sup-arrow">→</div>
-          </div>
-        </div>
-      </a>
-
-      <a class="sup-card" data-r="2" href="/supplier.html?id=bloom-petal">
-        <div class="sup-thumb t3 thumb-fallback">
-          <div class="thumb-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2c0 0-7 5-7 10a7 7 0 0014 0c0-5-7-10-7-10z" stroke="#c9a96e" stroke-width="1"/></svg>
-          </div>
-          <div class="sup-badge badge-new">Mới</div>
-        </div>
-        <div class="sup-body">
-          <p class="sup-cat">Hoa cưới & Trang trí</p>
-          <p class="sup-name">Bloom & Petal</p>
-          <p class="sup-loc">Hội An</p>
-          <div class="sup-footer">
-            <span class="sup-style">Bohemian · Garden</span>
-            <div class="sup-arrow">→</div>
-          </div>
-        </div>
-      </a>
-
-      <a class="sup-card" data-r="3" href="/supplier.html?id=moc-band">
-        <div class="sup-thumb t4 thumb-fallback">
-          <div class="thumb-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 15V8l6-2 6 2v7" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><circle cx="4" cy="15" r="2" stroke="#c9a96e" stroke-width="1"/><circle cx="16" cy="13" r="2" stroke="#c9a96e" stroke-width="1"/></svg>
-          </div>
-        </div>
-        <div class="sup-body">
-          <p class="sup-cat">Âm nhạc & Giải trí</p>
-          <p class="sup-name">Mộc Band</p>
-          <p class="sup-loc">Hà Nội</p>
-          <div class="sup-footer">
-            <span class="sup-style">Acoustic · Jazz</span>
-            <div class="sup-arrow">→</div>
-          </div>
-        </div>
-      </a>
-
-      <a class="sup-card" data-r="4" href="/supplier.html?id=luna-bridal">
-        <div class="sup-thumb t5 thumb-fallback">
-          <div class="thumb-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3a5 5 0 000 10M10 3a5 5 0 010 10" stroke="#c9a96e" stroke-width="1"/><path d="M6.5 13l-2 5h11l-2-5" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg>
-          </div>
-          <div class="sup-badge badge-hot">Nổi bật</div>
-        </div>
-        <div class="sup-body">
-          <p class="sup-cat">Làm đẹp & Trang phục</p>
-          <p class="sup-name">Luna Bridal</p>
-          <p class="sup-loc">Sài Gòn</p>
-          <div class="sup-footer">
-            <span class="sup-style">Tinh tế · Tự nhiên</span>
-            <div class="sup-arrow">→</div>
-          </div>
-        </div>
-      </a>
-
-      <a class="sup-card" data-r="5" href="/supplier.html?id=the-loft-venue">
-        <div class="sup-thumb t6 thumb-fallback">
-          <div class="thumb-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l1.8 5.6H18l-4.9 3.5 1.9 5.6L10 13.1l-5 3.6 1.9-5.6L2 7.6h6.2z" stroke="#c9a96e" stroke-width="1"/></svg>
-          </div>
-        </div>
-        <div class="sup-body">
-          <p class="sup-cat">Địa điểm & Nhà hàng</p>
-          <p class="sup-name">The Loft Venue</p>
-          <p class="sup-loc">Đà Lạt</p>
-          <div class="sup-footer">
-            <span class="sup-style">Industrial · Rustic</span>
-            <div class="sup-arrow">→</div>
-          </div>
-        </div>
-      </a>
-
-    </div>
+    <div class="sup-grid carousel" id="featuredGrid"></div>
+    <noscript><p style="font-size:13px;color:var(--text2)"><a href="/dich-vu.html" style="color:var(--gold)">Xem danh sách nhà cung cấp →</a></p></noscript>
   </div>
 </section>
 
@@ -914,7 +1014,10 @@ body.light .nav-dropdown { background: var(--bg2); }
           <div class="chip chip-pend"><div class="chip-dot chip-dot-pend"></div>Địa điểm</div>
           <div class="chip chip-pend"><div class="chip-dot chip-dot-pend"></div>Làm đẹp</div>
         </div>
-        <a href="/ke-hoach.html" class="planner-btn">Thử ngay với Harmony AI →</a>
+        <form class="planner-form" action="/ke-hoach.html" method="get">
+          <input class="planner-input" name="q" type="text" maxlength="300" placeholder="VD: Cưới ở Đà Lạt, 40 khách, 150 triệu" aria-label="Kể cho Harmony về đám cưới của bạn">
+          <button type="submit" class="planner-btn">Hỏi Harmony →</button>
+        </form>
       </div>
     </div>
   </div>
@@ -929,117 +1032,9 @@ body.light .nav-dropdown { background: var(--bg2); }
         <span class="grid-meta-label">Dịch vụ độc đáo</span>
         <p style="font-size:13px;color:var(--text2);margin-top:4px;">Những trải nghiệm bạn không tìm thấy ở nơi khác</p>
       </div>
-      <a href="/dich-vu.html" class="grid-see-all">Xem tất cả →</a>
+      <a href="/dich-vu.html?cat=unique" class="grid-see-all">Xem tất cả →</a>
     </div>
-    <div class="sup-grid">
-
-      <a class="sup-card" data-r href="/supplier.html?id=disposable-camera">
-        <div class="sup-thumb thumb-fallback" style="background:#1e1a2e;">
-          <div class="thumb-icon" style="border-color:rgba(201,169,110,0.3);">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="6" width="6" height="6" rx="1" stroke="#c9a96e" stroke-width="1"/><rect x="9" y="3" width="9" height="5" rx="1" stroke="#c9a96e" stroke-width="1"/><rect x="9" y="10" width="5" height="5" rx="1" stroke="#c9a96e" stroke-width="1"/></svg>
-          </div>
-          <div class="sup-badge badge-new">Độc đáo</div>
-        </div>
-        <div class="sup-body">
-          <p class="sup-cat">Trải nghiệm đặc biệt</p>
-          <p class="sup-name">Disposable Camera Bar</p>
-          <p class="sup-loc">Máy ảnh film cho khách tự chụp</p>
-          <div class="sup-footer">
-            <span class="sup-style">Film · Analog · Vintage</span>
-            <div class="sup-arrow">→</div>
-          </div>
-        </div>
-      </a>
-
-      <a class="sup-card" data-r="1" href="/supplier.html?id=live-sketch">
-        <div class="sup-thumb thumb-fallback" style="background:#1a2218;">
-          <div class="thumb-icon" style="border-color:rgba(201,169,110,0.3);">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#c9a96e" stroke-width="1"/><path d="M10 4v6l4 2" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><circle cx="10" cy="10" r="2" fill="#c9a96e" opacity="0.3"/></svg>
-          </div>
-          <div class="sup-badge badge-new">Mới</div>
-        </div>
-        <div class="sup-body">
-          <p class="sup-cat">Trải nghiệm đặc biệt</p>
-          <p class="sup-name">Live Illustration Artist</p>
-          <p class="sup-loc">Họa sĩ vẽ trực tiếp tại tiệc</p>
-          <div class="sup-footer">
-            <span class="sup-style">Art · Ký họa · Kỷ niệm</span>
-            <div class="sup-arrow">→</div>
-          </div>
-        </div>
-      </a>
-
-      <a class="sup-card" data-r="2" href="/dich-vu.html?cat=unique">
-        <div class="sup-thumb thumb-fallback" style="background:#221a18;">
-          <div class="thumb-icon" style="border-color:rgba(201,169,110,0.3);">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3c-3 0-6 2.5-6 6 0 4 6 9 6 9s6-5 6-9c0-3.5-3-6-6-6z" stroke="#c9a96e" stroke-width="1" fill="none"/><circle cx="10" cy="9" r="2" stroke="#c9a96e" stroke-width="1" fill="none"/></svg>
-          </div>
-        </div>
-        <div class="sup-body">
-          <p class="sup-cat">Trải nghiệm đặc biệt</p>
-          <p class="sup-name">Wedding Scent Designer</p>
-          <p class="sup-loc">Thiết kế mùi hương cho không gian</p>
-          <div class="sup-footer">
-            <span class="sup-style">Nến · Diffuser · Concept</span>
-            <div class="sup-arrow">→</div>
-          </div>
-        </div>
-      </a>
-
-      <a class="sup-card" data-r="3" href="/supplier.html?id=booth-360">
-        <div class="sup-thumb thumb-fallback" style="background:#18201e;">
-          <div class="thumb-icon" style="border-color:rgba(201,169,110,0.3);">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="10" rx="1.5" stroke="#c9a96e" stroke-width="1"/><circle cx="10" cy="10" r="3" stroke="#c9a96e" stroke-width="1"/><path d="M3 8h14" stroke="#c9a96e" stroke-width="0.8" opacity="0.5"/></svg>
-          </div>
-          <div class="sup-badge badge-hot">Hot</div>
-        </div>
-        <div class="sup-body">
-          <p class="sup-cat">Trải nghiệm đặc biệt</p>
-          <p class="sup-name">360° Video Booth</p>
-          <p class="sup-loc">Quay slow motion 360 độ tại tiệc</p>
-          <div class="sup-footer">
-            <span class="sup-style">360° · Slow-mo · Viral</span>
-            <div class="sup-arrow">→</div>
-          </div>
-        </div>
-      </a>
-
-      <a class="sup-card" data-r="4" href="/dich-vu.html?cat=unique">
-        <div class="sup-thumb thumb-fallback" style="background:#1e1c28;">
-          <div class="thumb-icon" style="border-color:rgba(201,169,110,0.3);">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 16V8l6-4 6 4v8" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><rect x="7" y="11" width="6" height="5" rx="0.5" stroke="#c9a96e" stroke-width="1"/></svg>
-          </div>
-        </div>
-        <div class="sup-body">
-          <p class="sup-cat">Trải nghiệm đặc biệt</p>
-          <p class="sup-name">Guest Experience Designer</p>
-          <p class="sup-loc">Thiết kế từng chi tiết cho khách mời</p>
-          <div class="sup-footer">
-            <span class="sup-style">Welcome kit · Activity · Note</span>
-            <div class="sup-arrow">→</div>
-          </div>
-        </div>
-      </a>
-
-      <a class="sup-card" data-r="5" href="/dich-vu.html?cat=unique">
-        <div class="sup-thumb thumb-fallback" style="background:#20181c;">
-          <div class="thumb-icon" style="border-color:rgba(201,169,110,0.3);">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="6" cy="10" r="3" stroke="#c9a96e" stroke-width="1"/><circle cx="14" cy="10" r="3" stroke="#c9a96e" stroke-width="1"/><path d="M9 10h2M3 6l2 2M15 6l-2 2M3 14l2-2M15 14l-2-2" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg>
-          </div>
-          <div class="sup-badge badge-new">Mới</div>
-        </div>
-        <div class="sup-body">
-          <p class="sup-cat">Trải nghiệm đặc biệt</p>
-          <p class="sup-name">Star Map & Birth Chart Art</p>
-          <p class="sup-loc">Bản đồ sao ngày hai người gặp nhau</p>
-          <div class="sup-footer">
-            <span class="sup-style">Thiên văn · In ấn · Quà tặng</span>
-            <div class="sup-arrow">→</div>
-          </div>
-        </div>
-      </a>
-
-    </div>
+    <div class="sup-grid carousel" id="uniqueGrid"></div>
   </div>
 </section>
 
@@ -1118,7 +1113,7 @@ body.light .nav-dropdown { background: var(--bg2); }
     </div>
     <div class="blog-grid">
       <a class="blog-card" href="/dam-cuoi-nho-co-hanh-phuc-hon-khong.html" data-r>
-        <div class="blog-thumb bt1">
+        <div class="blog-thumb" style="--thumb:#1a231c;--thumb-light:#f0e0db">
           <div class="blog-cat">Đám cưới</div>
           <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="12" stroke="#c9a96e" stroke-width="0.8" opacity="0.3" fill="none"/><circle cx="18" cy="18" r="6" stroke="#c9a96e" stroke-width="0.8" opacity="0.5" fill="none"/></svg>
         </div>
@@ -1129,7 +1124,7 @@ body.light .nav-dropdown { background: var(--bg2); }
         </div>
       </a>
       <a class="blog-card" href="/hon-nhan-hanh-phuc.html" data-r="1">
-        <div class="blog-thumb bt2">
+        <div class="blog-thumb" style="--thumb:#22201a;--thumb-light:#ebe3d2">
           <div class="blog-cat">Hôn nhân</div>
           <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 29s-10-6.2-10-13a5.5 5.5 0 0110-3.2A5.5 5.5 0 0128 16c0 6.8-10 13-10 13z" stroke="#c9a96e" stroke-width="0.8" opacity="0.45" fill="none"/></svg>
         </div>
@@ -1140,7 +1135,7 @@ body.light .nav-dropdown { background: var(--bg2); }
         </div>
       </a>
       <a class="blog-card" href="/hen-ho-bao-lau-thi-cuoi.html" data-r="2">
-        <div class="blog-thumb bt3">
+        <div class="blog-thumb" style="--thumb:#181c24;--thumb-light:#e3e0ee">
           <div class="blog-cat">Tình yêu</div>
           <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="12" stroke="#c9a96e" stroke-width="0.8" opacity="0.35" fill="none"/><path d="M18 11v7l5 3" stroke="#c9a96e" stroke-width="0.8" opacity="0.5" stroke-linecap="round"/></svg>
         </div>
@@ -1150,6 +1145,39 @@ body.light .nav-dropdown { background: var(--bg2); }
           <p class="blog-excerpt">Câu hỏi sai. Đây mới là câu hỏi đúng bạn nên tự hỏi trước khi quyết định.</p>
         </div>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap faq-wrap">
+    <div class="faq-intro" data-r>
+      <p class="s-tag">Câu hỏi thường gặp</p>
+      <h2 class="s-title">Bạn đang<br><em>thắc mắc điều gì?</em></h2>
+      <p>Chưa thấy câu trả lời? Xem thêm ở trang <a href="/cach-hoat-dong.html#faq">Cách hoạt động</a> hoặc viết cho chúng mình qua <a href="mailto:hello@timeless-harmony.com">hello@timeless-harmony.com</a>.</p>
+    </div>
+    <div class="faq-list" data-r="1">
+        <details class="faq-item" open>
+          <summary>Cô dâu chú rể có phải trả phí cho Timeless Harmony không?</summary>
+          <p>Không. Cô dâu chú rể không phải trả thêm bất kỳ khoản phí nào ngoài giá trị hợp đồng. Timeless Harmony chỉ thu phí thành công từ nhà cung cấp — từ 3 đến 5% giá trị hợp đồng, được thỏa thuận và ghi rõ khi onboarding.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Nếu nhà cung cấp hủy đột ngột thì sao?</summary>
+          <p>Nếu nhà cung cấp hủy không có lý do chính đáng, bạn được hoàn 100% khoản đã đặt cọc, và Timeless Harmony hỗ trợ tìm nhà cung cấp thay thế khẩn cấp. Đây là lý do tiền luôn được giữ qua ký quỹ thay vì chuyển thẳng cho nhà cung cấp.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Tôi có phải tạo tài khoản không?</summary>
+          <p>Hiện tại chưa cần. Bạn có thể duyệt nhà cung cấp và lên kế hoạch cùng Harmony AI ngay. Khi muốn kết nối với nhà cung cấp và ký hợp đồng, bạn sẽ cần cung cấp thông tin liên hệ để Timeless Harmony làm việc trực tiếp với bạn.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Timeless Harmony có nhà cung cấp ở khu vực của tôi không?</summary>
+          <p>Hiện có nhà cung cấp tại Sài Gòn, Hà Nội, Đà Nẵng, Đà Lạt và Hội An, và danh sách đang được mở rộng. Nếu bạn ở khu vực khác, hãy liên hệ để được kết nối với nhà cung cấp phù hợp hoặc sẵn sàng di chuyển.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Tôi là nhà cung cấp, đăng ký có mất phí không?</summary>
+          <p>Hoàn toàn miễn phí: không phí đăng ký, không phí duy trì, không phí listing. Chỉ thu phí thành công khi có hợp đồng hoàn tất — từ 3 đến 5% tùy deal.</p>
+        </details>
     </div>
   </div>
 </section>
@@ -1172,20 +1200,119 @@ body.light .nav-dropdown { background: var(--bg2); }
 
 <!-- FOOTER -->
 <footer>
-  <div class="wrap footer-inner">
-    <p class="footer-logo">Timeless Harmony</p>
-    <div class="footer-links">
-      <a href="/dich-vu.html" class="footer-link">Dịch vụ</a>
-      <a href="/cach-hoat-dong.html" class="footer-link">Cách hoạt động</a>
-      <a href="/ke-hoach.html" class="footer-link">Kế hoạch</a>
-      <a href="/cam-nang.html" class="footer-link">Cẩm nang</a>
-      <a href="/dieu-khoan.html" class="footer-link">Điều khoản</a>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">Timeless <span>Harmony</span></a>
+        <p class="footer-tagline">Nền tảng kết nối dịch vụ cưới tại Việt Nam — nhà cung cấp được tuyển chọn, thanh toán an toàn qua ký quỹ.</p>
+        <a href="mailto:hello@timeless-harmony.com" class="footer-mail">hello@timeless-harmony.com</a>
+      </div>
+      <div class="footer-col" role="navigation" aria-label="Khám phá">
+        <p class="footer-col-title">Khám phá</p>
+        <a href="/dich-vu.html">Tất cả dịch vụ</a>
+        <a href="/dich-vu.html?cat=unique">Dịch vụ độc đáo</a>
+        <a href="/ke-hoach.html">Harmony AI</a>
+        <a href="/cam-nang.html">Cẩm nang cưới</a>
+      </div>
+      <div class="footer-col" role="navigation" aria-label="Về Timeless Harmony">
+        <p class="footer-col-title">Về chúng mình</p>
+        <a href="/cach-hoat-dong.html">Cách hoạt động</a>
+        <a href="/cach-hoat-dong.html#faq">Câu hỏi thường gặp</a>
+        <a href="/dieu-khoan.html">Điều khoản sử dụng</a>
+      </div>
+      <div class="footer-col" role="navigation" aria-label="Nhà cung cấp">
+        <p class="footer-col-title">Nhà cung cấp</p>
+        <a href="/dang-ky-supplier.html">Đăng ký miễn phí</a>
+        <a href="/cach-hoat-dong.html">Quy trình ký quỹ</a>
+      </div>
     </div>
-    <p class="footer-copy">© 2026 Timeless Harmony</p>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Timeless Harmony</p>
+      <p class="footer-copy">Làm với ♥ cho các cặp đôi Việt</p>
+    </div>
   </div>
 </footer>
 
+<script src="/suppliers.js"></script>
 <script>
+// ── Thẻ nhà cung cấp (dữ liệu từ suppliers.js) ──
+const FEATURED = [
+  ['anh-duong-studio','new'], ['y-linh-planner','hot'], ['bloom-petal','new'],
+  ['moc-band',''], ['luna-bridal','hot'], ['the-loft-venue',''],
+];
+const UNIQUE_LIVE = ['disposable-camera','live-sketch','booth-360'];
+// Dịch vụ độc đáo chưa có nhà cung cấp — mời nhà cung cấp đăng ký
+const UNIQUE_SOON = [
+  {name:'Wedding Scent Designer', desc:'Thiết kế mùi hương cho không gian', style:'Nến · Diffuser · Concept', bg:'#221a18',
+   icon:'<path d="M10 3c-3 0-6 2.5-6 6 0 4 6 9 6 9s6-5 6-9c0-3.5-3-6-6-6z" stroke="#c9a96e" stroke-width="1" fill="none"/><circle cx="10" cy="9" r="2" stroke="#c9a96e" stroke-width="1" fill="none"/>'},
+  {name:'Guest Experience Designer', desc:'Thiết kế từng chi tiết cho khách mời', style:'Welcome kit · Activity · Note', bg:'#1e1c28',
+   icon:'<path d="M4 16V8l6-4 6 4v8" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><rect x="7" y="11" width="6" height="5" rx="0.5" stroke="#c9a96e" stroke-width="1"/>'},
+  {name:'Star Map & Birth Chart Art', desc:'Bản đồ sao ngày hai người gặp nhau', style:'Thiên văn · In ấn · Quà tặng', bg:'#20181c',
+   icon:'<circle cx="10" cy="10" r="7" stroke="#c9a96e" stroke-width="1"/><path d="M10 6l1 2.5 2.6.2-2 1.7.6 2.6L10 11.6 7.8 13l.6-2.6-2-1.7L9 8.5z" stroke="#c9a96e" stroke-width="0.8"/>'},
+];
+const CAT_ICON = {
+  plan:'<rect x="2" y="3" width="16" height="14" rx="2" stroke="#c9a96e" stroke-width="1"/><path d="M6 8h8M6 11h5" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/>',
+  photo:'<rect x="2" y="5" width="16" height="12" rx="2" stroke="#c9a96e" stroke-width="1"/><circle cx="10" cy="11" r="3.5" stroke="#c9a96e" stroke-width="1"/>',
+  flower:'<path d="M10 2c0 0-7 5-7 10a7 7 0 0014 0c0-5-7-10-7-10z" stroke="#c9a96e" stroke-width="1"/>',
+  music:'<path d="M4 15V8l6-2 6 2v7" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><circle cx="4" cy="15" r="2" stroke="#c9a96e" stroke-width="1"/><circle cx="16" cy="13" r="2" stroke="#c9a96e" stroke-width="1"/>',
+  beauty:'<path d="M10 3a5 5 0 000 10M10 3a5 5 0 010 10" stroke="#c9a96e" stroke-width="1"/><path d="M6.5 13l-2 5h11l-2-5" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/>',
+  food:'<path d="M4 4v5a6 6 0 0012 0V4" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><path d="M10 15v3M7 18h6" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/>',
+  venue:'<path d="M10 2l1.8 5.6H18l-4.9 3.5 1.9 5.6L10 13.1l-5 3.6 1.9-5.6L2 7.6h6.2z" stroke="#c9a96e" stroke-width="1"/>',
+  unique:'<rect x="2" y="6" width="6" height="6" rx="1" stroke="#c9a96e" stroke-width="1"/><rect x="9" y="3" width="9" height="5" rx="1" stroke="#c9a96e" stroke-width="1"/><rect x="9" y="10" width="5" height="5" rx="1" stroke="#c9a96e" stroke-width="1"/>',
+};
+const BADGE = {
+  new:'<div class="sup-badge badge-new">Mới</div>',
+  hot:'<div class="sup-badge badge-hot">Nổi bật</div>',
+  unique:'<div class="sup-badge badge-new">✦ Độc đáo</div>',
+  soon:'<div class="sup-badge badge-soon">Sắp có</div>',
+};
+function esc(t){ return String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+// Màu nền dịu cho chế độ sáng, theo hạng mục
+const LIGHT_BG = {
+  plan:'#ebe3d2', photo:'#dfe6df', flower:'#f0e0db', beauty:'#efe0e7',
+  music:'#e3e0ee', food:'#efe7d5', venue:'#dde6e9', unique:'#e7e1f0', soon:'#e9e5dd',
+};
+// Icon riêng cho từng dịch vụ độc đáo
+const ICON_BY_ID = {
+  'disposable-camera':'<rect x="2" y="6" width="16" height="10" rx="1.5" stroke="#c9a96e" stroke-width="1"/><circle cx="11" cy="11" r="3" stroke="#c9a96e" stroke-width="1"/><rect x="4" y="8" width="3" height="2" rx=".5" stroke="#c9a96e" stroke-width=".8"/><path d="M14 4h3" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/>',
+  'live-sketch':'<path d="M4 16l2.5-.6L15 6.9 13.1 5 4.6 13.5z" stroke="#c9a96e" stroke-width="1" stroke-linejoin="round"/><path d="M12 6l2 2M3 18h14" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/>',
+  'booth-360':'<ellipse cx="10" cy="14" rx="7" ry="2.5" stroke="#c9a96e" stroke-width="1"/><rect x="7" y="3" width="6" height="8" rx="1.5" stroke="#c9a96e" stroke-width="1"/><circle cx="10" cy="6.5" r="1.5" stroke="#c9a96e" stroke-width=".8"/>',
+};
+function cardHTML({href, bg, light, icon, badge, cat, name, loc, foot, soon, delay}) {
+  return `<a class="sup-card${soon ? ' soon' : ''}" href="${href}" data-r="${delay || ''}">
+    <div class="sup-thumb thumb-fallback" style="--thumb:${bg};--thumb-light:${light}">
+      <div class="thumb-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none">${icon}</svg></div>
+      ${BADGE[badge] || ''}
+    </div>
+    <div class="sup-body">
+      <p class="sup-cat">${esc(cat)}</p>
+      <p class="sup-name">${esc(name)}</p>
+      <p class="sup-loc">${esc(loc)}</p>
+      <div class="sup-footer">${foot}</div>
+    </div>
+  </a>`;
+}
+function supplierCard(id, badge, i) {
+  const s = getSupplier(id);
+  if (!s) return '';
+  return cardHTML({
+    href: '/supplier.html?id=' + encodeURIComponent(id),
+    bg: (s.thumb && s.thumb[0]) || '#1a1a1a', light: LIGHT_BG[s.cat] || LIGHT_BG.soon,
+    icon: ICON_BY_ID[id] || CAT_ICON[s.cat] || CAT_ICON.venue,
+    badge, cat: s.catLabel, name: s.name, loc: s.city, delay: i,
+    foot: `<span class="sup-style">${esc(s.styles.slice(0, 2).join(' · '))}</span><span class="sup-right"><span class="sup-price">${esc(supplierPriceFrom(s))}</span><span class="sup-arrow">→</span></span>`,
+  });
+}
+document.getElementById('featuredGrid').innerHTML =
+  FEATURED.map(([id, badge], i) => supplierCard(id, badge, i)).join('');
+document.getElementById('uniqueGrid').innerHTML =
+  UNIQUE_LIVE.map((id, i) => supplierCard(id, 'unique', i)).join('') +
+  UNIQUE_SOON.map((u, i) => cardHTML({
+    href: '/dang-ky-supplier.html', bg: u.bg, light: LIGHT_BG.soon, icon: u.icon, badge: 'soon', soon: true,
+    cat: 'Sắp có trên Timeless Harmony', name: u.name, loc: u.desc, delay: i + 3,
+    foot: `<span class="sup-style">${esc(u.style)}</span><span class="sup-arrow">Bạn làm dịch vụ này? →</span>`,
+  })).join('');
+
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
 }, { threshold: 0.08 });
@@ -1206,11 +1333,14 @@ document.querySelectorAll('.pill').forEach(pill => {
 
 // Menu
 function toggleMenu() {
-  document.getElementById('navDropdown').classList.toggle('open');
+  const open = document.getElementById('navDropdown').classList.toggle('open');
+  document.getElementById('menuBtn').setAttribute('aria-expanded', open);
 }
 function closeMenu() {
   document.getElementById('navDropdown').classList.remove('open');
+  document.getElementById('menuBtn').setAttribute('aria-expanded', 'false');
 }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 document.addEventListener('click', e => {
   if (!e.target.closest('#menuBtn') && !e.target.closest('#navDropdown')) {
     closeMenu();
@@ -1224,12 +1354,11 @@ const moonIcon = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><p
 function toggleMode() {
   const isLight = document.body.classList.toggle('light');
   document.getElementById('modeToggle').innerHTML = isLight ? moonIcon : sunIcon;
-  localStorage.setItem('th-mode', isLight ? 'light' : 'dark');
+  try { localStorage.setItem('th-mode', isLight ? 'light' : 'dark'); } catch (e) {}
 }
 
-// Restore preference
-if (localStorage.getItem('th-mode') === 'light') {
-  document.body.classList.add('light');
+// Giao diện đã áp dụng ngay đầu <body>; ở đây chỉ đổi icon cho khớp
+if (document.body.classList.contains('light')) {
   document.getElementById('modeToggle').innerHTML = moonIcon;
 }
 </script>

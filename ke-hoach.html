@@ -13,6 +13,8 @@
 <meta property="og:description" content="Harmony AI — trợ lý lên kế hoạch cưới miễn phí: timeline chuẩn bị, phân bổ ngân sách và gợi ý nhà cung cấp phù hợp.">
 <meta property="og:url" content="https://timeless-harmony.com/ke-hoach">
 <meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://timeless-harmony.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -367,6 +369,14 @@ if(localStorage.getItem('th-mode')==='light'){
   document.getElementById('modeToggle').innerHTML=moonIcon;
 }
 document.getElementById('inputBox').focus();
+
+// Câu hỏi gửi từ trang chủ: /ke-hoach.html?q=...
+(function(){
+  const q=(new URLSearchParams(location.search).get('q')||'').trim().slice(0,300);
+  if(!q)return;
+  window.history.replaceState(null,'',location.pathname); // tránh gửi lại khi tải lại trang
+  sendQuick(q);
+})();
 </script>
 </body>
 </html>
