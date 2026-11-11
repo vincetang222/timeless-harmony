@@ -15,25 +15,26 @@
 <meta property="og:locale" content="vi_VN">
 <meta property="og:image" content="https://timeless-harmony.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg:        #0c0c0c;
   --bg2:       #141414;
   --nav-bg:    rgba(12,12,12,0.94);
   --card-bg:   linear-gradient(145deg, #202020 0%, #151515 100%);
-  --line:      rgba(255,255,255,0.07);
-  --line2:     rgba(255,255,255,0.13);
+  --line:      rgba(var(--ink-rgb),0.07);
+  --line2:     rgba(var(--ink-rgb),0.13);
   --text:      #f0ede8;
-  --text2:     rgba(240,237,232,0.62);
-  --text3:     rgba(240,237,232,0.38);
-  --gold:      #c9a96e;
-  --gold2:     #e2c99a;
-  --gold-bg:   rgba(201,169,110,0.1);
-  --gold-line: rgba(201,169,110,0.22);
+  --text2:     rgba(var(--ink-rgb),0.62);
+  --text3:     rgba(var(--ink-rgb),0.38);
+  --accent:      var(--accent);
+  --accent-strong:     #e2c99a;
+  --accent-bg:   rgba(var(--accent-rgb),0.1);
+  --accent-line: rgba(var(--accent-rgb),0.22);
   --max:       760px;
-  --table-even:rgba(255,255,255,0.02);
+  --table-even:rgba(var(--ink-rgb),0.02);
 }
 
 body.light {
@@ -46,10 +47,10 @@ body.light {
   --text:      #1a2a1e;
   --text2:     rgba(26,42,30,0.65);
   --text3:     rgba(26,42,30,0.38);
-  --gold:      #9a7a42;
-  --gold2:     #7a5e2e;
-  --gold-bg:   rgba(154,122,66,0.08);
-  --gold-line: rgba(154,122,66,0.2);
+  --accent:      #9a7a42;
+  --accent-strong:     #7a5e2e;
+  --accent-bg:   rgba(154,122,66,0.08);
+  --accent-line: rgba(154,122,66,0.2);
   --table-even:rgba(30,42,30,0.02);
 }
 
@@ -60,7 +61,7 @@ body, nav, .toc, .doc-section, .hi-box, .warn-box, .fee-table td, footer {
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-weight: 300;
   background: var(--bg);
   color: var(--text);
@@ -79,11 +80,11 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo {
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: var(--font-display);
   font-size: 16px; font-weight: 700;
   color: var(--text);
 }
-.nav-logo span { color: var(--gold); }
+.nav-logo span { color: var(--accent); }
 .nav-back {
   font-size: 12px; color: var(--text3);
   display: flex; align-items: center; gap: 6px;
@@ -100,16 +101,16 @@ nav {
 .page-tag {
   font-size: 10px; font-weight: 500;
   letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--gold); opacity: 0.7;
+  color: var(--accent); opacity: 0.7;
   margin-bottom: 14px;
 }
 .page-title {
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(32px, 5vw, 48px);
   font-weight: 800; color: var(--text);
   line-height: 1.05; margin-bottom: 14px;
 }
-.page-title em { font-style: normal; color: var(--gold); }
+.page-title em { font-style: normal; color: var(--accent); }
 .page-sub { font-size: 14px; color: var(--text2); line-height: 1.75; max-width: 480px; }
 .page-meta {
   margin-top: 20px; padding-top: 20px;
@@ -142,11 +143,11 @@ nav {
   font-size: 14px; color: var(--text2);
   transition: all .15s;
 }
-.toc-list li a:hover { background: rgba(255,255,255,0.04); color: var(--text); }
+.toc-list li a:hover { background: rgba(var(--ink-rgb),0.04); color: var(--text); }
 .toc-num {
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: var(--font-display);
   font-size: 12px; font-weight: 700;
-  color: rgba(201,169,110,0.35); width: 24px; flex-shrink: 0;
+  color: rgba(var(--accent-rgb),0.35); width: 24px; flex-shrink: 0;
 }
 
 /* SECTIONS */
@@ -158,12 +159,12 @@ nav {
   border-bottom: 0.5px solid var(--line);
 }
 .sec-num {
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: var(--font-display);
   font-size: 24px; font-weight: 800;
-  color: rgba(201,169,110,0.3); line-height: 1; flex-shrink: 0;
+  color: rgba(var(--accent-rgb),0.3); line-height: 1; flex-shrink: 0;
 }
 .sec-title {
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: var(--font-display);
   font-size: 18px; font-weight: 700; color: var(--text);
 }
 
@@ -182,32 +183,32 @@ nav {
 }
 .doc-list li::before {
   content: ''; width: 5px; height: 5px; border-radius: 50%;
-  background: var(--gold); opacity: 0.5;
+  background: var(--accent); opacity: 0.5;
   flex-shrink: 0; margin-top: 9px;
 }
 .doc-list li strong { color: var(--text); font-weight: 500; }
 
 /* Highlight box */
 .hi-box {
-  background: var(--gold-bg);
-  border: 0.5px solid var(--gold-line);
-  border-left: 2px solid var(--gold);
+  background: var(--accent-bg);
+  border: 0.5px solid var(--accent-line);
+  border-left: 2px solid var(--accent);
   border-radius: 0 10px 10px 0;
   padding: 16px 20px; margin: 18px 0;
 }
 .hi-box p { font-size: 14px; color: var(--text2); line-height: 1.8; }
-.hi-box p strong { color: var(--gold2); font-weight: 500; }
+.hi-box p strong { color: var(--accent-strong); font-weight: 500; }
 
 /* Warning box */
 .warn-box {
-  background: rgba(255,255,255,0.03);
+  background: rgba(var(--ink-rgb),0.03);
   border: 0.5px solid var(--line2);
   border-radius: 10px; padding: 16px 20px; margin: 18px 0;
 }
 .warn-title {
   font-size: 10px; font-weight: 600;
   letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 8px;
+  color: var(--accent); margin-bottom: 8px;
 }
 .warn-box p { font-size: 14px; color: var(--text2); line-height: 1.8; }
 
@@ -236,9 +237,9 @@ footer {
   max-width: 100%;
 }
 .footer-logo {
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: var(--font-display);
   font-size: 15px; font-weight: 700;
-  color: rgba(240,237,232,0.35);
+  color: rgba(var(--ink-rgb),0.35);
 }
 .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
 .footer-link {
@@ -249,13 +250,15 @@ footer {
 .footer-link:hover { color: var(--text2); }
 .footer-copy { font-size: 12px; color: var(--text3); }
 </style>
+<link rel="stylesheet" href="/theme.css">
 </head>
 <body>
+<script>try{if(localStorage.getItem('th-mode')!=='dark')document.body.classList.add('light')}catch(e){document.body.classList.add('light')}</script>
 
 <nav>
   <a href="/" class="nav-logo">Timeless <span>Harmony</span></a>
   <div style="display:flex;align-items:center;gap:12px;">
-      <button id="modeToggle" onclick="toggleMode()" style="width:34px;height:34px;border-radius:8px;background:var(--gold-bg);border:0.5px solid var(--gold-line);color:var(--gold);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;" title="Chuyển giao diện">
+      <button id="modeToggle" onclick="toggleMode()" style="width:34px;height:34px;border-radius:8px;background:var(--accent-bg);border:0.5px solid var(--accent-line);color:var(--accent);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;" title="Chuyển giao diện">
         <svg id="modeIcon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.1 3.1l1.1 1.1M11.8 11.8l1.1 1.1M11.8 4.2l-1.1 1.1M4.2 11.8l-1.1 1.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
       </button>
       <a href="/" class="nav-back">← Về trang chủ</a>
@@ -451,7 +454,7 @@ function toggleMode() {
   localStorage.setItem('th-mode', isLight ? 'light' : 'dark');
 }
 
-if (localStorage.getItem('th-mode') === 'light') {
+if (document.body.classList.contains('light')) {
   document.body.classList.add('light');
   document.getElementById('modeToggle').innerHTML = moonIcon;
 }

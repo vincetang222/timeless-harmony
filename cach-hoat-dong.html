@@ -15,31 +15,33 @@
 <meta property="og:locale" content="vi_VN">
 <meta property="og:image" content="https://timeless-harmony.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#0c0c0c;--bg2:#141414;--nav-bg:rgba(12,12,12,0.94);
-  --line:rgba(255,255,255,0.07);--line2:rgba(255,255,255,0.13);
-  --text:#f0ede8;--text2:rgba(240,237,232,0.62);--text3:rgba(240,237,232,0.38);
-  --gold:#c9a96e;--gold2:#e2c99a;
-  --gold-bg:rgba(201,169,110,0.1);--gold-line:rgba(201,169,110,0.22);
+  --line:rgba(var(--ink-rgb),0.07);--line2:rgba(var(--ink-rgb),0.13);
+  --text:#f0ede8;--text2:rgba(var(--ink-rgb),0.62);--text3:rgba(var(--ink-rgb),0.38);
+  --accent:var(--accent);--accent-strong:#e2c99a;
+  --accent-bg:rgba(var(--accent-rgb),0.1);--accent-line:rgba(var(--accent-rgb),0.22);
   --card-bg:linear-gradient(145deg,#202020 0%,#151515 100%);
-  --card-border:rgba(255,255,255,0.13);
+  --card-border:rgba(var(--ink-rgb),0.13);
   --max:1100px;--r:12px;
 }
 body.light{
   --bg:#f8f4ec;--bg2:#f0ebe0;--nav-bg:rgba(248,244,236,0.96);
   --line:rgba(30,42,30,0.08);--line2:rgba(30,42,30,0.14);
   --text:#1a2a1e;--text2:rgba(26,42,30,0.75);--text3:rgba(26,42,30,0.55);
-  --gold:#9a7a42;--gold2:#7a5e2e;
-  --gold-bg:rgba(154,122,66,0.08);--gold-line:rgba(154,122,66,0.2);
+  --accent:#9a7a42;--accent-strong:#7a5e2e;
+  --accent-bg:rgba(154,122,66,0.08);--accent-line:rgba(154,122,66,0.2);
   --card-bg:linear-gradient(145deg,#ffffff 0%,#f5f1e8 100%);
   --card-border:rgba(30,42,30,0.1);
 }
 body,nav,section,.card,footer{transition:background .35s ease,color .35s ease,border-color .35s ease;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;font-weight:300;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+body{font-family:var(--font-body);font-weight:300;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 a{text-decoration:none;color:inherit;}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
 @media(max-width:600px){.wrap{padding:0 18px;}}
@@ -51,20 +53,20 @@ section{padding:80px 0;}
 /* NAV */
 nav{position:sticky;top:0;z-index:99;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--line);height:58px;display:flex;align-items:center;}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;}
-.nav-logo{font-family:'Be Vietnam Pro',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
-.nav-logo span{color:var(--gold);}
+.nav-logo{font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--text);}
+.nav-logo span{color:var(--accent);}
 .nav-right{display:flex;align-items:center;gap:12px;}
 .nav-back{font-size:12px;color:var(--text3);display:flex;align-items:center;gap:6px;transition:color .2s;}
 .nav-back:hover{color:var(--text2);}
-.nav-cta{font-size:12px;font-weight:600;background:var(--gold);color:var(--bg);padding:8px 18px;border-radius:6px;transition:all .2s;}
+.nav-cta{font-size:12px;font-weight:600;background:var(--accent);color:var(--bg);padding:8px 18px;border-radius:6px;transition:all .2s;}
 .nav-cta:hover{filter:brightness(1.08);}
-.mode-toggle{width:32px;height:32px;border-radius:7px;background:var(--gold-bg);border:0.5px solid var(--gold-line);color:var(--gold);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;}
+.mode-toggle{width:32px;height:32px;border-radius:7px;background:var(--accent-bg);border:0.5px solid var(--accent-line);color:var(--accent);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;}
 
 /* PAGE HERO */
 .page-hero{padding:72px 0 64px;border-bottom:0.5px solid var(--line);}
-.page-tag{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:14px;}
-.page-title{font-family:'Be Vietnam Pro',sans-serif;font-size:clamp(36px,6vw,64px);font-weight:800;color:var(--text);line-height:1.04;margin-bottom:18px;}
-.page-title em{font-style:normal;color:var(--gold);}
+.page-tag{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);opacity:.7;margin-bottom:14px;}
+.page-title{font-family:var(--font-display);font-size:clamp(36px,6vw,64px);font-weight:800;color:var(--text);line-height:1.04;margin-bottom:18px;}
+.page-title em{font-style:normal;color:var(--accent);}
 .page-sub{font-size:16px;color:var(--text2);line-height:1.8;max-width:580px;}
 
 /* TAB SWITCHER */
@@ -76,12 +78,12 @@ nav{position:sticky;top:0;z-index:99;background:var(--nav-bg);backdrop-filter:bl
 .steps-big{display:flex;flex-direction:column;gap:1px;}
 .step-big{display:grid;grid-template-columns:80px 1fr;gap:32px;align-items:start;padding:36px 0;border-bottom:0.5px solid var(--line);}
 .step-big:last-child{border-bottom:none;}
-.step-big-num{font-family:'Be Vietnam Pro',sans-serif;font-size:48px;font-weight:800;color:var(--gold);opacity:.25;line-height:1;padding-top:4px;}
+.step-big-num{font-family:var(--font-display);font-size:48px;font-weight:800;color:var(--accent);opacity:.25;line-height:1;padding-top:4px;}
 .step-big-body{display:flex;flex-direction:column;gap:12px;}
-.step-big-title{font-family:'Be Vietnam Pro',sans-serif;font-size:22px;font-weight:700;color:var(--text);line-height:1.2;}
+.step-big-title{font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--text);line-height:1.2;}
 .step-big-desc{font-size:15px;color:var(--text2);line-height:1.85;max-width:640px;}
 .step-big-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;}
-.step-tag{font-size:11px;font-weight:500;padding:4px 12px;border-radius:100px;background:var(--gold-bg);border:0.5px solid var(--gold-line);color:var(--gold);}
+.step-tag{font-size:11px;font-weight:500;padding:4px 12px;border-radius:100px;background:var(--accent-bg);border:0.5px solid var(--accent-line);color:var(--accent);}
 .step-big-note{display:flex;align-items:flex-start;gap:10px;padding:14px 18px;border-radius:10px;background:var(--bg2);border:0.5px solid var(--line2);margin-top:4px;}
 .step-note-icon{width:20px;height:20px;flex-shrink:0;margin-top:1px;}
 .step-note-text{font-size:13px;color:var(--text2);line-height:1.7;}
@@ -90,10 +92,10 @@ nav{position:sticky;top:0;z-index:99;background:var(--nav-bg);backdrop-filter:bl
 /* ESCROW FLOW */
 .escrow-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:0.5px solid var(--line2);border-radius:var(--r);overflow:hidden;margin:40px 0;}
 .escrow-step{background:var(--card-bg);padding:28px 24px;display:flex;flex-direction:column;gap:10px;}
-.escrow-step-num{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.6;}
+.escrow-step-num{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);opacity:.6;}
 .escrow-step-title{font-size:15px;font-weight:600;color:var(--text);}
 .escrow-step-desc{font-size:13px;color:var(--text2);line-height:1.75;}
-.escrow-arrow{display:flex;align-items:center;justify-content:center;color:var(--gold);opacity:.4;font-size:20px;padding-top:20px;}
+.escrow-arrow{display:flex;align-items:center;justify-content:center;color:var(--accent);opacity:.4;font-size:20px;padding-top:20px;}
 @media(max-width:640px){.escrow-flow{grid-template-columns:1fr;}}
 
 /* FAQ */
@@ -105,46 +107,48 @@ nav{position:sticky;top:0;z-index:99;background:var(--nav-bg);backdrop-filter:bl
 .faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;background:var(--card-bg);gap:16px;}
 .faq-q-text{font-size:15px;font-weight:500;color:var(--text);}
 .faq-icon{width:20px;height:20px;border-radius:50%;border:0.5px solid var(--line2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--text3);font-size:14px;transition:transform .2s;}
-.faq-item.open .faq-icon{transform:rotate(45deg);color:var(--gold);}
+.faq-item.open .faq-icon{transform:rotate(45deg);color:var(--accent);}
 .faq-a{display:none;padding:0 24px 20px;font-size:14px;color:var(--text2);line-height:1.85;}
 .faq-item.open .faq-a{display:block;}
 
 /* TRUST BADGES */
 .trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px;}
 .trust-card{background:var(--card-bg);border:0.5px solid var(--card-border);border-radius:var(--r);padding:28px 24px;display:flex;flex-direction:column;gap:12px;}
-.trust-icon{width:40px;height:40px;border-radius:9px;background:var(--gold-bg);border:0.5px solid var(--gold-line);display:flex;align-items:center;justify-content:center;}
+.trust-icon{width:40px;height:40px;border-radius:9px;background:var(--accent-bg);border:0.5px solid var(--accent-line);display:flex;align-items:center;justify-content:center;}
 .trust-title{font-size:15px;font-weight:600;color:var(--text);}
 .trust-desc{font-size:13px;color:var(--text2);line-height:1.8;}
 @media(max-width:640px){.trust-row{grid-template-columns:1fr;}}
 
 /* CTA STRIP */
-.cta-strip{background:var(--gold-bg);border:0.5px solid var(--gold-line);border-radius:16px;padding:40px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px;margin-top:64px;}
-.cta-strip-title{font-family:'Be Vietnam Pro',sans-serif;font-size:24px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.cta-strip{background:var(--accent-bg);border:0.5px solid var(--accent-line);border-radius:16px;padding:40px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px;margin-top:64px;}
+.cta-strip-title{font-family:var(--font-display);font-size:24px;font-weight:700;color:var(--text);margin-bottom:6px;}
 .cta-strip-sub{font-size:14px;color:var(--text2);}
 .cta-strip-btns{display:flex;gap:10px;flex-shrink:0;}
-.btn-gold{font-size:13px;font-weight:600;background:var(--gold);color:var(--bg);padding:12px 28px;border-radius:7px;transition:all .2s;border:none;cursor:pointer;white-space:nowrap;}
+.btn-gold{font-size:13px;font-weight:600;background:var(--accent);color:var(--bg);padding:12px 28px;border-radius:7px;transition:all .2s;border:none;cursor:pointer;white-space:nowrap;}
 .btn-gold:hover{filter:brightness(1.08);}
 .btn-outline{font-size:13px;background:transparent;color:var(--text2);padding:12px 22px;border-radius:7px;border:0.5px solid var(--line2);transition:all .2s;white-space:nowrap;}
 .btn-outline:hover{border-color:var(--text3);color:var(--text);}
 @media(max-width:680px){.cta-strip{flex-direction:column;padding:28px 24px;align-items:flex-start;}}
 
 /* SECTION LABELS */
-.s-tag{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:10px;}
-.s-title{font-family:'Be Vietnam Pro',sans-serif;font-size:clamp(26px,4vw,38px);font-weight:800;color:var(--text);line-height:1.12;margin-bottom:12px;}
-.s-title em{font-style:normal;color:var(--gold);}
+.s-tag{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);opacity:.7;margin-bottom:10px;}
+.s-title{font-family:var(--font-display);font-size:clamp(26px,4vw,38px);font-weight:800;color:var(--text);line-height:1.12;margin-bottom:12px;}
+.s-title em{font-style:normal;color:var(--accent);}
 .s-sub{font-size:15px;color:var(--text2);line-height:1.8;max-width:600px;margin-bottom:40px;}
 
 /* FOOTER */
 footer{border-top:0.5px solid var(--line);padding:36px 0;}
 .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
-.footer-logo{font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:700;color:var(--text3);}
+.footer-logo{font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text3);}
 .footer-links{display:flex;gap:24px;flex-wrap:wrap;}
 .footer-link{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);transition:color .2s;}
 .footer-link:hover{color:var(--text2);}
 .footer-copy{font-size:12px;color:var(--text3);}
 </style>
+<link rel="stylesheet" href="/theme.css">
 </head>
 <body>
+<script>try{if(localStorage.getItem('th-mode')!=='dark')document.body.classList.add('light')}catch(e){document.body.classList.add('light')}</script>
 
 <nav>
   <div class="wrap nav-inner">
@@ -460,7 +464,7 @@ function toggleMode(){
   document.getElementById('modeToggle').innerHTML=isLight?moonIcon:sunIcon;
   localStorage.setItem('th-mode',isLight?'light':'dark');
 }
-if(localStorage.getItem('th-mode')==='light'){
+if(document.body.classList.contains('light')){
   document.body.classList.add('light');
   document.getElementById('modeToggle').innerHTML=moonIcon;
 }

@@ -1,0 +1,198 @@
+/* ═══════════════════════════════════════════════════════════════
+   TIMELESS HARMONY — BRAND THEME
+   Nguồn duy nhất cho màu sắc & kiểu chữ của toàn site.
+   File này được nạp SAU <style> của từng trang nên các biến ở đây
+   luôn thắng. Muốn đổi màu/chữ thương hiệu: sửa ở đây, không sửa
+   trong từng trang. Quy chuẩn đầy đủ: docs/brand-guidelines.html
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── 1. BẢNG MÀU GỐC (không đổi theo chế độ sáng/tối) ── */
+:root {
+  --th-linen:   #D6CEC1;  /* Vải lanh — nền thương hiệu (lấy từ artwork gốc) */
+  --th-paper:   #E8E2D7;  /* Giấy — thẻ, bề mặt nổi */
+  --th-ivory:   #F3EEE5;  /* Ngà — ô nhập liệu, điểm sáng nhất */
+  --th-forest:  #2F3523;  /* Rừng — mực chính: chữ, logo, nét vẽ */
+  --th-moss:    #4C5A38;  /* Rêu — nhấn: icon, nhãn, liên kết */
+  --th-sage:    #8A937C;  /* Xô thơm — viền, chi tiết phụ (không dùng cho chữ nhỏ) */
+  --th-tulip:   #86432D;  /* Tulip — điểm nhấn ấm, dùng tiết chế (≤10%) */
+  --th-night:   #1F2618;  /* Rừng đêm — nền chế độ tối */
+
+  --font-display: 'Philosopher', 'Be Vietnam Pro', Georgia, serif;
+  --font-body:    'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif:   'Lora', Georgia, 'Times New Roman', serif;
+
+  /* tên biến cũ của trang đăng ký nhà cung cấp */
+  --serif: var(--font-display);
+  --sans:  var(--font-body);
+  --radius: 10px;
+  --r: 14px;
+}
+
+/* ── 2. CHẾ ĐỘ TỐI — "Rừng đêm" (khi <body> không có class .light) ── */
+:root {
+  --bg: var(--th-night);  --bg2: #262E1E;  --bg3: #2D3624;
+  --nav-bg: rgba(31,38,24,0.9);
+  --line: rgba(230,223,210,0.10);  --line2: rgba(230,223,210,0.20);
+  --text: #E6DFD2;  --text2: #C6C1B2;  --text3: #A3A392;
+  --ink-rgb: 230,223,210;
+
+  --accent: #B9C3A4;  --accent-strong: #D6CEC1;  --accent-rgb: 185,195,164;
+  --accent-bg: rgba(185,195,164,0.10);  --accent-line: rgba(185,195,164,0.28);
+  --accent-soft: rgba(185,195,164,0.14);
+  --tulip: #E0A58C;  --tulip-bg: rgba(224,165,140,0.12);
+  --icon: #B9C3A4;
+
+  --card-bg: #283020;  --card-border: rgba(230,223,210,0.14);
+  --search-bg: #262E1E;
+  --btn-primary-bg: var(--th-linen);  --btn-primary-text: #232A1B;
+  --inverse-bg: var(--th-linen);  --inverse-text: var(--th-forest);  --inverse-tulip: var(--th-tulip);
+
+  --user-bubble: #34402B;  --user-border: rgba(185,195,164,0.25);
+  --ai-bubble: #283020;    --ai-border: rgba(230,223,210,0.12);
+  --table-even: rgba(230,223,210,0.03);
+
+  --surface: #283020;  --border: rgba(230,223,210,0.16);  --muted: #A3A392;  --white: #2D3624;
+
+  --danger: #E08B7A;  --success: #B9C3A4;
+
+  --tint-plan: #3A3626;  --tint-photo: #2B3A2C;  --tint-flower: #3D2E29;  --tint-beauty: #3B2C30;
+  --tint-music: #2F2F3A; --tint-food: #3B3522;   --tint-venue: #26363A;   --tint-unique: #3E3024;
+  --tint-soon: #2A2F22;
+}
+
+/* ── 3. CHẾ ĐỘ SÁNG — mặc định của thương hiệu ── */
+body.light {
+  --bg: var(--th-linen);  --bg2: #CEC5B6;  --bg3: #C5BCAC;
+  --nav-bg: rgba(214,206,193,0.9);
+  --line: rgba(47,53,35,0.14);  --line2: rgba(47,53,35,0.26);
+  --text: var(--th-forest);  --text2: #434B39;  --text3: #525A48;
+  --ink-rgb: 47,53,35;
+
+  --accent: var(--th-moss);  --accent-strong: var(--th-forest);  --accent-rgb: 76,90,56;
+  --accent-bg: rgba(76,90,56,0.10);  --accent-line: rgba(76,90,56,0.30);
+  --accent-soft: rgba(76,90,56,0.12);
+  --tulip: var(--th-tulip);  --tulip-bg: rgba(134,67,45,0.10);
+  --icon: var(--th-moss);
+
+  --card-bg: var(--th-paper);  --card-border: rgba(47,53,35,0.14);
+  --search-bg: var(--th-ivory);
+  --btn-primary-bg: var(--th-forest);  --btn-primary-text: var(--th-paper);
+  --inverse-bg: var(--th-forest);  --inverse-text: var(--th-linen);  --inverse-tulip: #E0A58C;
+
+  --user-bubble: #C9D0BA;  --user-border: rgba(76,90,56,0.3);
+  --ai-bubble: var(--th-paper);  --ai-border: rgba(47,53,35,0.12);
+  --table-even: rgba(47,53,35,0.03);
+
+  --surface: var(--th-paper);  --border: rgba(47,53,35,0.18);  --muted: #525A48;  --white: var(--th-ivory);
+
+  --danger: #9B3A2B;  --success: var(--th-moss);
+
+  --tint-plan: #DBCFB6;  --tint-photo: #C3CBB6;  --tint-flower: #DFC7BC;  --tint-beauty: #DCC6C6;
+  --tint-music: #CBC8CF; --tint-food: #DDD0B0;   --tint-venue: #C2CDC9;   --tint-unique: #D9C1AD;
+  --tint-soon: #CFC7B9;
+}
+
+/* ── 4. KIỂU CHỮ ── */
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  background: var(--bg);
+  color: var(--text);
+  text-rendering: optimizeLegibility;
+}
+h1, h2, h3 { font-family: var(--font-display); }
+/* Chữ nhấn trong tiêu đề: Philosopher nghiêng, màu Tulip */
+h1 em, h2 em, h3 em, [class*="title"] em {
+  font-style: italic; font-weight: 400; color: var(--tulip);
+}
+::selection { background: var(--th-forest); color: var(--th-linen); }
+body:not(.light) ::selection { background: var(--th-linen); color: var(--th-night); }
+
+/* ── 5. ICON: nét vẽ cũ màu vàng → màu icon của thương hiệu ── */
+[stroke="#c9a96e"] { stroke: var(--icon); }
+[fill="#c9a96e"]   { fill: var(--icon); }
+
+/* ── 6. LOGO ──
+   Chữ "Timeless Harmony" trong HTML giữ lại cho trình đọc màn hình & SEO;
+   hình hiển thị là logo vector tách từ artwork gốc. */
+.nav-logo, a.logo {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 0 !important; letter-spacing: 0 !important; line-height: 0;
+  color: var(--text); flex-shrink: 0;
+}
+.nav-logo::before, a.logo::before {
+  content: ''; width: 30px; height: 30px; background: currentColor;
+  -webkit-mask: url(/assets/brand/logo-compact.svg) center / contain no-repeat;
+          mask: url(/assets/brand/logo-compact.svg) center / contain no-repeat;
+}
+.nav-logo::after, a.logo::after {
+  content: ''; width: 140px; height: 18.5px; background: currentColor;
+  -webkit-mask: url(/assets/brand/logo-wordmark.svg) center / contain no-repeat;
+          mask: url(/assets/brand/logo-wordmark.svg) center / contain no-repeat;
+}
+@media (max-width: 420px) {
+  .nav-logo::after, a.logo::after { width: 112px; height: 15px; }
+  .nav-logo::before, a.logo::before { width: 26px; height: 26px; }
+}
+.footer-logo {
+  display: block; font-size: 0 !important; line-height: 0;
+  width: 190px; height: 25px; background: var(--text);
+  -webkit-mask: url(/assets/brand/logo-wordmark.svg) left center / contain no-repeat;
+          mask: url(/assets/brand/logo-wordmark.svg) left center / contain no-repeat;
+}
+
+/* Tiện ích dùng lại: hình vẽ thương hiệu tô theo màu chữ hiện tại */
+.th-art {
+  display: block; background: currentColor; pointer-events: none;
+  -webkit-mask: var(--art) center / contain no-repeat;
+          mask: var(--art) center / contain no-repeat;
+}
+.th-art-mark      { --art: url(/assets/brand/logo-mark.svg);        aspect-ratio: 520 / 492; }
+.th-art-lockup    { --art: url(/assets/brand/logo-lockup.svg);      aspect-ratio: 626 / 630; }
+.th-art-wordmark  { --art: url(/assets/brand/logo-wordmark.svg);    aspect-ratio: 604 / 80; }
+.th-art-tagline   { --art: url(/assets/brand/logo-tagline.svg);     aspect-ratio: 360 / 62; }
+.th-art-tulip-tl  { --art: url(/assets/brand/tulip-top-left.svg);   aspect-ratio: 318 / 452; }
+.th-art-tulip-r   { --art: url(/assets/brand/tulip-right.svg);      aspect-ratio: 213 / 240; }
+.th-art-tulip-b   { --art: url(/assets/brand/tulip-bottom.svg);     aspect-ratio: 336 / 181; }
+.th-art-tulip-bl  { --art: url(/assets/brand/tulip-bottom-left.svg); aspect-ratio: 228 / 194; }
+
+/* Nền màu theo hạng mục (ảnh giữ chỗ cho tới khi có ảnh thật) */
+.tint-plan   { background: var(--tint-plan); }
+.tint-photo  { background: var(--tint-photo); }
+.tint-flower { background: var(--tint-flower); }
+.tint-beauty { background: var(--tint-beauty); }
+.tint-music  { background: var(--tint-music); }
+.tint-food   { background: var(--tint-food); }
+.tint-venue  { background: var(--tint-venue); }
+.tint-unique { background: var(--tint-unique); }
+.tint-soon   { background: var(--tint-soon); }
+
+/* ── 7. THÀNH PHẦN DÙNG CHUNG ── */
+nav { background: var(--nav-bg); border-bottom-color: var(--line); }
+
+a:focus-visible, button:focus-visible, summary:focus-visible,
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  [data-r] { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+/* Nút: bo tròn mềm, nút chính màu Rừng */
+.btn-gold, .btn-line, .nav-cta, .planner-btn, .search-btn, .quick-btn, .newsletter-btn,
+.pkg-btn, .btn-submit, .btn-send, .btn-plan, .btn-outline, .btn-load, .btn-home,
+.btn-cta, .btn-contact, .btn-cancel { border-radius: 999px; }
+.nav-cta, .btn-contact, .btn-submit, .btn-cta, .newsletter-btn {
+  background: var(--btn-primary-bg); color: var(--btn-primary-text);
+}
+.nav-cta:hover, .btn-contact:hover, .btn-submit:hover, .btn-cta:hover, .newsletter-btn:hover {
+  background: var(--btn-primary-bg); filter: brightness(1.14);
+}
+/* Bộ lọc đang chọn */
+.pill.active, .pill.special.active, .cat-pill.active, .cat-pill.special.active, .cat.active {
+  background: var(--btn-primary-bg); border-color: var(--btn-primary-bg); color: var(--btn-primary-text);
+}
+/* Giá & số thứ tự dùng màu Tulip */
+.sup-price, .pkg-price, .sup-card-price { color: var(--tulip); }

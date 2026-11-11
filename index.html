@@ -18,7 +18,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Timeless Harmony — Đám cưới của bạn bắt đầu từ đây">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0c0c0c">
+<meta name="theme-color" content="#D6CEC1">
 <script type="application/ld+json">
 [
  {
@@ -91,7 +91,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
 
 :root {
@@ -99,20 +99,20 @@
   --bg2:         #141414;
   --bg3:         #1a1a1a;
   --nav-bg:      rgba(12,12,12,0.88);
-  --line:        rgba(255,255,255,0.07);
-  --line2:       rgba(255,255,255,0.13);
+  --line:        rgba(var(--ink-rgb),0.07);
+  --line2:       rgba(var(--ink-rgb),0.13);
   --text:        #f0ede8;
-  --text2:       rgba(240,237,232,0.62);
-  --text3:       rgba(240,237,232,0.38);
-  --gold:        #c9a96e;
-  --gold2:       #e2c99a;
-  --gold-bg:     rgba(201,169,110,0.1);
-  --gold-line:   rgba(201,169,110,0.22);
+  --text2:       rgba(var(--ink-rgb),0.62);
+  --text3:       rgba(var(--ink-rgb),0.38);
+  --accent:        var(--accent);
+  --accent-strong:       #e2c99a;
+  --accent-bg:     rgba(var(--accent-rgb),0.1);
+  --accent-line:   rgba(var(--accent-rgb),0.22);
   --max:         1100px;
   --r:           12px;
   --card-bg:     linear-gradient(145deg, #202020 0%, #151515 100%);
-  --card-border: rgba(255,255,255,0.13);
-  --btn-primary-bg:   #c9a96e;
+  --card-border: rgba(var(--ink-rgb),0.13);
+  --btn-primary-bg:   var(--accent);
   --btn-primary-text: #0c0c0c;
   --search-bg:   #141414;
 }
@@ -128,10 +128,10 @@ body.light {
   --text:        #1a2a1e;
   --text2:       rgba(26,42,30,0.75);
   --text3:       rgba(26,42,30,0.55);
-  --gold:        #9a7a42;
-  --gold2:       #7a5e2e;
-  --gold-bg:     rgba(154,122,66,0.08);
-  --gold-line:   rgba(154,122,66,0.2);
+  --accent:        #9a7a42;
+  --accent-strong:       #7a5e2e;
+  --accent-bg:     rgba(154,122,66,0.08);
+  --accent-line:   rgba(154,122,66,0.2);
   --card-bg:     linear-gradient(145deg, #ffffff 0%, #f5f1e8 100%);
   --card-border: rgba(30,42,30,0.1);
   --btn-primary-bg:   #1a2a1e;
@@ -150,7 +150,7 @@ body, nav, section, .sup-card, .why-card, .step, .blog-card,
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-weight: 300;
   background: var(--bg);
   color: var(--text);
@@ -190,21 +190,21 @@ nav {
   height: 58px;
 }
 .nav-logo {
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: var(--font-display);
   font-size: 16px; font-weight: 600;
   color: var(--text); letter-spacing: 0.03em;
 }
-.nav-logo span { color: var(--gold); }
+.nav-logo span { color: var(--accent); }
 
 .nav-right { display: flex; align-items: center; gap: 12px; }
 
 .nav-cta {
   font-size: 12px; font-weight: 600;
-  background: var(--gold); color: var(--bg);
+  background: var(--accent); color: var(--bg);
   padding: 8px 18px; border-radius: 6px;
   transition: all .2s;
 }
-.nav-cta:hover { background: var(--gold2); }
+.nav-cta:hover { background: var(--accent-strong); }
 @media (max-width: 680px) {
   .nav-links { display: none; }
   .nav-supplier { display: none; }
@@ -218,27 +218,15 @@ nav {
   background: var(--bg);
 }
 
-.hero-head {
-  display: flex; align-items: flex-end;
-  justify-content: space-between;
-  padding: 48px 0 36px;
-  gap: 24px;
-  border-bottom: 0.5px solid var(--line);
-}
 .hero-title {
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(32px, 4.8vw, 56px);
   font-weight: 800; line-height: 1.03;
   color: var(--text);
   max-width: 520px;
 }
-.hero-title em { font-style: normal; color: var(--gold); }
+.hero-title em { font-style: normal; color: var(--accent); }
 
-.hero-right {
-  flex-shrink: 0; max-width: 280px;
-  display: flex; flex-direction: column;
-  align-items: flex-end; gap: 14px;
-}
 .hero-sub {
   font-size: 14px; color: var(--text2);
   line-height: 1.75; text-align: right;
@@ -261,11 +249,6 @@ nav {
 }
 .btn-line:hover { border-color: var(--text3); color: var(--text); }
 
-@media (max-width: 720px) {
-  .hero-head { flex-direction: column; align-items: flex-start; }
-  .hero-right { max-width: 100%; align-items: flex-start; }
-  .hero-sub { text-align: left; }
-}
 
 /* Search */
 .search-row {
@@ -279,7 +262,7 @@ nav {
   border-radius: 9px; padding: 13px 18px;
   transition: border-color .2s;
 }
-.search-box:focus-within { border-color: var(--gold-line); }
+.search-box:focus-within { border-color: var(--accent-line); }
 .search-icon {
   width: 16px; height: 16px; flex-shrink: 0;
   border: 1.5px solid var(--text3); border-radius: 50%;
@@ -293,7 +276,7 @@ nav {
 }
 .search-input {
   flex: 1; background: none; border: none; outline: none;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 14px; color: var(--text);
   font-weight: 300;
 }
@@ -301,14 +284,14 @@ nav {
 .search-select {
   background: var(--search-bg); border: 0.5px solid var(--line2);
   border-radius: 9px; padding: 13px 18px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 13px; color: var(--text2);
   outline: none; cursor: pointer;
   appearance: none;
   min-width: 130px;
 }
 
-.search-btn { padding: 13px 22px; border-radius: 9px; font-family: 'Inter', sans-serif; }
+.search-btn { padding: 13px 22px; border-radius: 9px; font-family: var(--font-body); }
 @media (max-width: 600px) {
   .search-row { flex-wrap: wrap; }
   .search-box { flex-basis: 100%; }
@@ -330,8 +313,8 @@ nav {
 }
 .pill:hover { color: var(--text2); border-color: var(--text3); }
 .pill.active {
-  background: var(--gold); color: var(--bg);
-  border-color: var(--gold); font-weight: 500;
+  background: var(--accent); color: var(--bg);
+  border-color: var(--accent); font-weight: 500;
 }
 
 /* ══════════════════════════════
@@ -350,7 +333,7 @@ nav {
   color: var(--text3);
 }
 .grid-see-all {
-  font-size: 12px; color: var(--gold); white-space: nowrap; flex-shrink: 0;
+  font-size: 12px; color: var(--accent); white-space: nowrap; flex-shrink: 0;
   transition: opacity .2s;
 }
 .grid-see-all:hover { opacity: 0.7; }
@@ -370,7 +353,7 @@ nav {
   transition: border-color .25s, transform .25s;
   cursor: pointer;
 }
-.sup-card:hover { border-color: var(--gold-line); transform: translateY(-2px); }
+.sup-card:hover { border-color: var(--accent-line); transform: translateY(-2px); }
 
 .sup-thumb {
   height: 180px;
@@ -393,7 +376,7 @@ nav {
 
 .thumb-icon {
   width: 48px; height: 48px; border-radius: 50%;
-  border: 1px solid rgba(201,169,110,0.2);
+  border: 1px solid rgba(var(--accent-rgb),0.2);
   display: flex; align-items: center; justify-content: center;
 }
 .thumb-icon svg { opacity: 0.3; }
@@ -404,14 +387,14 @@ nav {
   letter-spacing: 0.12em; text-transform: uppercase;
   padding: 4px 10px; border-radius: 100px;
 }
-.badge-new { background: var(--gold-bg); color: var(--gold); border: 0.5px solid var(--gold-line); }
-.badge-hot { background: rgba(255,255,255,0.06); color: rgba(240,237,232,0.6); border: 0.5px solid var(--line2); }
+.badge-new { background: var(--accent-bg); color: var(--accent); border: 0.5px solid var(--accent-line); }
+.badge-hot { background: rgba(var(--ink-rgb),0.06); color: rgba(var(--ink-rgb),0.6); border: 0.5px solid var(--line2); }
 
 .sup-body { padding: 16px; }
 .sup-cat {
   font-size: 10px; font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--gold); opacity: 0.75; margin-bottom: 5px;
+  color: var(--accent); opacity: 0.75; margin-bottom: 5px;
 }
 .sup-name {
   font-size: 15px; font-weight: 500;
@@ -433,9 +416,9 @@ nav {
   transition: all .2s;
 }
 .sup-card:hover .sup-arrow {
-  border-color: var(--gold-line);
-  color: var(--gold);
-  background: var(--gold-bg);
+  border-color: var(--accent-line);
+  color: var(--accent);
+  background: var(--accent-bg);
 }
 
 /* ══════════════════════════════
@@ -446,7 +429,7 @@ nav {
 }
 .planner-box {
   background: var(--card-bg);
-  border: 0.5px solid var(--gold-line);
+  border: 0.5px solid var(--accent-line);
   border-radius: 16px; padding: 36px 40px;
   display: flex; align-items: center;
   justify-content: space-between; gap: 32px;
@@ -455,13 +438,13 @@ nav {
 .planner-tag {
   font-size: 10px; font-weight: 500;
   letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--gold); opacity: 0.7;
+  color: var(--accent); opacity: 0.7;
 }
 .planner-title {
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: var(--font-display);
   font-size: 26px; font-weight: 400; color: var(--text); line-height: 1.2;
 }
-.planner-title em { font-style: normal; color: var(--gold); }
+.planner-title em { font-style: normal; color: var(--accent); }
 .planner-sub { font-size: 13px; color: var(--text2); line-height: 1.75; }
 .planner-right { display: flex; flex-direction: column; align-items: flex-end; gap: 16px; flex-shrink: 0; }
 
@@ -470,20 +453,20 @@ nav {
   display: flex; align-items: center; gap: 6px;
   font-size: 11px; padding: 5px 12px; border-radius: 100px;
 }
-.chip-done { background: var(--gold-bg); color: var(--gold); border: 0.5px solid var(--gold-line); }
-.chip-pend { background: rgba(255,255,255,0.04); color: var(--text3); border: 0.5px solid var(--line); }
+.chip-done { background: var(--accent-bg); color: var(--accent); border: 0.5px solid var(--accent-line); }
+.chip-pend { background: rgba(var(--ink-rgb),0.04); color: var(--text3); border: 0.5px solid var(--line); }
 .chip-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-.chip-dot-done { background: var(--gold); }
-.chip-dot-pend { background: rgba(255,255,255,0.18); }
+.chip-dot-done { background: var(--accent); }
+.chip-dot-pend { background: rgba(var(--ink-rgb),0.18); }
 
 .planner-btn {
   font-size: 13px; font-weight: 500;
   padding: 11px 24px; border-radius: 7px;
-  background: var(--gold-bg); color: var(--gold);
-  border: 0.5px solid var(--gold-line);
+  background: var(--accent-bg); color: var(--accent);
+  border: 0.5px solid var(--accent-line);
   cursor: pointer; transition: all .2s; white-space: nowrap;
 }
-.planner-btn:hover { background: rgba(201,169,110,0.18); }
+.planner-btn:hover { background: rgba(var(--accent-rgb),0.18); }
 
 @media (max-width: 760px) {
   .planner-box { flex-direction: column; padding: 28px 24px; align-items: flex-start; }
@@ -504,11 +487,11 @@ nav {
   margin-bottom: 40px; gap: 16px;
 }
 .how-title {
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(26px, 4vw, 38px);
   font-weight: 400; color: var(--text); line-height: 1.15;
 }
-.how-title em { font-style: normal; color: var(--gold); }
+.how-title em { font-style: normal; color: var(--accent); }
 .how-sub { font-size: 13px; color: var(--text2); max-width: 280px; text-align: right; line-height: 1.7; }
 
 .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; }
@@ -522,11 +505,11 @@ nav {
 }
 .step:first-child { border-radius: var(--r) 0 0 var(--r); }
 .step:last-child { border-radius: 0 var(--r) var(--r) 0; }
-.step:hover { border-color: var(--gold-line); }
+.step:hover { border-color: var(--accent-line); }
 .step-num {
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: var(--font-display);
   font-size: 28px; font-weight: 400;
-  color: var(--gold); opacity: 0.4; line-height: 1;
+  color: var(--accent); opacity: 0.4; line-height: 1;
 }
 .step-title { font-size: 14px; font-weight: 500; color: var(--text); }
 .step-desc { font-size: 13px; color: var(--text2); line-height: 1.75; }
@@ -547,15 +530,15 @@ nav {
 .s-tag {
   font-size: 10px; font-weight: 500;
   letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--gold); opacity: 0.65; margin-bottom: 10px;
+  color: var(--accent); opacity: 0.65; margin-bottom: 10px;
 }
 .s-title {
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(26px, 4vw, 38px);
   font-weight: 400; color: var(--text); line-height: 1.15;
   margin-bottom: 36px;
 }
-.s-title em { font-style: normal; color: var(--gold); }
+.s-title em { font-style: normal; color: var(--accent); }
 .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .why-card {
   background: var(--card-bg);
@@ -564,18 +547,18 @@ nav {
   display: flex; flex-direction: column; gap: 10px;
   transition: border-color .2s, transform .2s;
 }
-.why-card:hover { border-color: var(--gold-line); transform: translateY(-2px); }
+.why-card:hover { border-color: var(--accent-line); transform: translateY(-2px); }
 .why-card-header {
   display: flex; align-items: center; gap: 12px;
 }
 .why-icon {
   width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0;
-  background: var(--gold-bg); border: 0.5px solid var(--gold-line);
+  background: var(--accent-bg); border: 0.5px solid var(--accent-line);
   display: flex; align-items: center; justify-content: center;
 }
 .why-card-num {
-  font-family: 'Be Vietnam Pro', sans-serif;
-  font-size: 11px; color: rgba(201,169,110,0.35); font-weight: 600;
+  font-family: var(--font-display);
+  font-size: 11px; color: rgba(var(--accent-rgb),0.35); font-weight: 600;
 }
 .why-card-title { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.3; }
 .why-card-desc { font-size: 13px; color: var(--text2); line-height: 1.75; }
@@ -600,7 +583,7 @@ nav {
   border-radius: var(--r); overflow: hidden;
   cursor: pointer; transition: border-color .25s, transform .25s;
 }
-.blog-card:hover { border-color: var(--gold-line); transform: translateY(-2px); }
+.blog-card:hover { border-color: var(--accent-line); transform: translateY(-2px); }
 .blog-thumb {
   height: 150px; display: flex;
   align-items: center; justify-content: center;
@@ -610,13 +593,13 @@ nav {
   position: absolute; top: 12px; left: 12px;
   font-size: 9px; font-weight: 600;
   letter-spacing: 0.12em; text-transform: uppercase;
-  background: var(--gold); color: var(--bg);
+  background: var(--accent); color: var(--bg);
   padding: 4px 10px; border-radius: 100px;
 }
 .blog-body { padding: 18px; }
 .blog-meta { font-size: 11px; color: var(--text3); margin-bottom: 7px; }
 .blog-title {
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: var(--font-display);
   font-size: 17px; font-weight: 400;
   color: var(--text); line-height: 1.4; margin-bottom: 8px;
 }
@@ -632,26 +615,19 @@ nav {
 }
 .cta-box {
   background: var(--card-bg);
-  border: 0.5px solid var(--gold-line);
+  border: 0.5px solid var(--accent-line);
   border-radius: 16px; padding: 52px 56px;
   display: flex; align-items: center;
   justify-content: space-between; gap: 40px;
   position: relative; overflow: hidden;
 }
-.cta-box::before {
-  content: '';
-  position: absolute; top: -80px; right: -80px;
-  width: 280px; height: 280px; border-radius: 50%;
-  background: rgba(201,169,110,0.04);
-  pointer-events: none;
-}
 .cta-title {
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(26px, 3.5vw, 38px);
   font-weight: 400; color: var(--text); line-height: 1.2;
   margin-bottom: 8px;
 }
-.cta-title em { font-style: normal; color: var(--gold); }
+.cta-title em { font-style: normal; color: var(--accent); }
 .cta-sub { font-size: 13px; color: var(--text3); }
 .cta-btns { display: flex; gap: 10px; flex-shrink: 0; }
 @media (max-width: 680px) {
@@ -670,10 +646,10 @@ footer {
   justify-content: space-between; flex-wrap: wrap; gap: 16px;
 }
 .footer-logo {
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: var(--font-display);
   font-size: 16px; font-weight: 600; color: var(--text);
 }
-.footer-logo span { color: var(--gold); }
+.footer-logo span { color: var(--accent); }
 .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
 .footer-link {
   font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
@@ -686,14 +662,14 @@ footer {
 /* ── MODE TOGGLE ── */
 .mode-toggle {
   width: 32px; height: 32px; border-radius: 7px;
-  background: var(--gold-bg);
-  border: 0.5px solid var(--gold-line);
-  color: var(--gold);
+  background: var(--accent-bg);
+  border: 0.5px solid var(--accent-line);
+  color: var(--accent);
   display: flex; align-items: center; justify-content: center;
   cursor: pointer; transition: all .2s;
   flex-shrink: 0;
 }
-.mode-toggle:hover { background: rgba(201,169,110,0.18); }
+.mode-toggle:hover { background: rgba(var(--accent-rgb),0.18); }
 
 /* ── HAMBURGER MENU ── */
 .nav-menu-btn {
@@ -728,31 +704,31 @@ footer {
   font-size: 14px; color: var(--text2);
   transition: all .15s; cursor: pointer;
 }
-.nav-dropdown-link:hover { background: rgba(255,255,255,0.05); color: var(--text); }
+.nav-dropdown-link:hover { background: rgba(var(--ink-rgb),0.05); color: var(--text); }
 body.light .nav-dropdown-link:hover { background: rgba(30,42,30,0.05); }
 .nav-dropdown-link svg { flex-shrink: 0; opacity: 0.5; }
 .nav-dropdown-sep { height: 0.5px; background: var(--line); margin: 6px 8px; }
 .nav-dropdown-supplier {
   display: flex; align-items: center; gap: 10px;
   padding: 10px 14px; border-radius: 8px;
-  font-size: 14px; color: var(--gold);
+  font-size: 14px; color: var(--accent);
   font-weight: 500; cursor: pointer;
   transition: all .15s;
 }
-.nav-dropdown-supplier:hover { background: var(--gold-bg); }
+.nav-dropdown-supplier:hover { background: var(--accent-bg); }
 .nav-dropdown { background: var(--bg); }
 body.light .nav-dropdown { background: var(--bg2); }
 
 .pill.special {
-  background: var(--gold-bg);
-  border-color: var(--gold-line);
-  color: var(--gold);
+  background: var(--accent-bg);
+  border-color: var(--accent-line);
+  color: var(--accent);
   font-weight: 500;
 }
 .pill.special.active {
-  background: var(--gold);
+  background: var(--accent);
   color: var(--bg);
-  border-color: var(--gold);
+  border-color: var(--accent);
 }
 
 /* ══════════════════════════════
@@ -764,20 +740,17 @@ body.light .nav-dropdown { background: var(--bg2); }
   font-size: 13px; color: var(--text2);
   padding: 7px 12px; border-radius: 6px; transition: color .2s, background .2s;
 }
-.nav-link:hover { color: var(--text); background: var(--gold-bg); }
-.nav-link-supplier { color: var(--gold); }
+.nav-link:hover { color: var(--text); background: var(--accent-bg); }
+.nav-link-supplier { color: var(--accent); }
 @media (max-width: 900px) { .nav-links { display: none; } }
 @media (min-width: 901px) { .nav-menu-btn, .nav-dropdown { display: none; } }
 
 /* Thumbnail: màu nền theo từng nhà cung cấp, dịu lại ở chế độ sáng */
-.sup-thumb, .blog-thumb { background: var(--thumb, #1a1a1a); }
-body.light .sup-thumb, body.light .blog-thumb { background: var(--thumb-light, #ece6da); }
-body.light .thumb-icon { border-color: var(--gold-line); }
-body.light .thumb-icon svg { opacity: .55; }
-body.light .badge-hot { background: rgba(26,42,30,0.07); color: var(--text2); }
+.thumb-icon { border-color: var(--accent-line); }
+.thumb-icon svg { opacity: .6; }
 
 /* Giá trên thẻ */
-.sup-price { font-size: 12px; font-weight: 500; color: var(--gold); white-space: nowrap; }
+.sup-price { font-size: 12px; font-weight: 500; color: var(--accent); white-space: nowrap; }
 .sup-right { display: flex; align-items: center; gap: 10px; }
 .sup-style { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .sup-footer { gap: 10px; }
@@ -809,10 +782,10 @@ body.light .badge-hot { background: rgba(26,42,30,0.07); color: var(--text2); }
   flex: 1; min-width: 0;
   background: var(--search-bg); border: 0.5px solid var(--line2);
   border-radius: 8px; padding: 11px 14px;
-  font-family: 'Inter', sans-serif; font-size: 13px; color: var(--text);
+  font-family: var(--font-body); font-size: 13px; color: var(--text);
   outline: none; transition: border-color .2s;
 }
-.planner-input:focus { border-color: var(--gold-line); }
+.planner-input:focus { border-color: var(--accent-line); }
 .planner-input::placeholder { color: var(--text3); }
 @media (max-width: 760px) {
   .planner-right { align-self: stretch; min-width: 0; flex-shrink: 1; }
@@ -827,13 +800,13 @@ body.light .badge-hot { background: rgba(26,42,30,0.07); color: var(--text2); }
 .faq-wrap { display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; align-items: start; }
 .faq-intro .s-title { margin-bottom: 14px; }
 .faq-intro p:not(.s-tag) { font-size: 13px; color: var(--text2); line-height: 1.75; }
-.faq-intro a { color: var(--gold); }
+.faq-intro a { color: var(--accent); }
 .faq-list { display: flex; flex-direction: column; gap: 10px; }
 .faq-item {
   background: var(--card-bg); border: 0.5px solid var(--card-border);
   border-radius: var(--r); transition: border-color .2s;
 }
-.faq-item[open] { border-color: var(--gold-line); }
+.faq-item[open] { border-color: var(--accent-line); }
 .faq-item summary {
   list-style: none; cursor: pointer;
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
@@ -847,7 +820,7 @@ body.light .badge-hot { background: rgba(26,42,30,0.07); color: var(--text2); }
   display: flex; align-items: center; justify-content: center;
   font-size: 14px; transition: transform .2s, color .2s;
 }
-.faq-item[open] summary::after { transform: rotate(45deg); color: var(--gold); }
+.faq-item[open] summary::after { transform: rotate(45deg); color: var(--accent); }
 .faq-item p { padding: 0 22px 20px; font-size: 13px; color: var(--text2); line-height: 1.85; }
 @media (max-width: 760px) { .faq-wrap { grid-template-columns: 1fr; gap: 24px; } }
 
@@ -855,7 +828,7 @@ body.light .badge-hot { background: rgba(26,42,30,0.07); color: var(--text2); }
 footer { padding: 56px 0 28px; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; }
 .footer-tagline { font-size: 13px; color: var(--text2); line-height: 1.75; margin: 10px 0 14px; max-width: 280px; }
-.footer-mail { font-size: 13px; color: var(--gold); }
+.footer-mail { font-size: 13px; color: var(--accent); }
 .footer-mail:hover { text-decoration: underline; }
 .footer-col-title {
   font-size: 10px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
@@ -863,7 +836,7 @@ footer { padding: 56px 0 28px; }
 }
 .footer-col { display: flex; flex-direction: column; gap: 10px; }
 .footer-col a { font-size: 13px; color: var(--text2); transition: color .2s; }
-.footer-col a:hover { color: var(--gold); }
+.footer-col a:hover { color: var(--accent); }
 .footer-bottom {
   margin-top: 40px; padding-top: 20px; border-top: 0.5px solid var(--line);
   display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
@@ -872,17 +845,87 @@ footer { padding: 56px 0 28px; }
 
 /* Trợ năng */
 a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible {
-  outline: 2px solid var(--gold); outline-offset: 2px;
+  outline: 2px solid var(--accent); outline-offset: 2px;
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   [data-r] { opacity: 1; transform: none; transition: none; }
   .search-row, .filter-row { animation: none !important; }
 }
+
+/* ══════════════════════════════
+   THƯƠNG HIỆU — hero, CTA, footer
+   (màu & chữ lấy từ /theme.css)
+══════════════════════════════ */
+#hero { padding: 58px 0 0; position: relative; overflow: hidden; }
+.hero-grid {
+  display: grid; grid-template-columns: 1.2fr .8fr; gap: 56px; align-items: center;
+  padding: 56px 0 48px; border-bottom: 0.5px solid var(--line);
+}
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--font-serif); font-style: italic; font-size: 17px;
+  color: var(--text2); margin-bottom: 18px;
+}
+.hero-eyebrow::before { content: ''; width: 40px; height: 1px; background: currentColor; opacity: .55; }
+.hero-title { font-size: clamp(38px, 5.4vw, 66px); font-weight: 700; line-height: 1.05; max-width: none; letter-spacing: -.005em; }
+.hero-sub { text-align: left; font-size: 16px; line-height: 1.7; max-width: 44ch; margin: 20px 0 28px; }
+.hero-btns { flex-wrap: wrap; gap: 10px; }
+.hero-btns .btn-gold, .hero-btns .btn-line { font-size: 14px; padding: 13px 26px; }
+
+/* Poster: artwork gốc của thương hiệu, dựng lại bằng vector trên nền đảo màu */
+.hero-poster {
+  position: relative; width: 100%; max-width: 400px; aspect-ratio: 1 / 1; margin-left: auto;
+  border-radius: 28px; overflow: hidden;
+  background: var(--inverse-bg); color: var(--inverse-text);
+}
+.hero-poster .th-art { position: absolute; }
+.hero-poster .p-lockup { width: 60%; left: 20%; top: 19%; }
+.hero-poster .p-tl { width: 31%; left: 0; top: 0; }
+.hero-poster .p-bl { width: 21%; left: 0; bottom: 0; }
+.hero-poster .p-b  { width: 31%; left: 35%; bottom: 0; }
+.hero-poster .p-r  { width: 20%; right: 0; bottom: 5%; }
+#hero .hero-tulip-m { display: none; }
+@media (max-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 0; padding: 40px 0 32px; }
+  .hero-poster { display: none; }
+  #hero .hero-tulip-m { display: block; position: absolute; right: -18px; top: 70px; width: 132px; opacity: .2; color: var(--text); }
+  .hero-copy { position: relative; }
+}
+
+/* Nút bo tròn mềm */
+.btn-gold, .btn-line, .nav-cta, .planner-btn, .search-btn { border-radius: 999px; }
+.nav-cta { background: var(--btn-primary-bg); color: var(--btn-primary-text); }
+.nav-cta:hover { background: var(--btn-primary-bg); filter: brightness(1.12); }
+.pill.active, .pill.special.active { background: var(--btn-primary-bg); border-color: var(--btn-primary-bg); color: var(--btn-primary-text); }
+.blog-cat { background: var(--btn-primary-bg); color: var(--btn-primary-text); }
+.search-box, .search-select, .planner-input { border-radius: 999px; }
+.search-box { padding-left: 22px; }
+.step-num { color: var(--tulip); opacity: .75; }
+.sup-price { color: var(--tulip); }
+
+/* CTA cuối trang: nền đảo màu + tulip */
+.cta-box { background: var(--inverse-bg); color: var(--inverse-text); border: none; border-radius: 28px; }
+.cta-box > * { position: relative; z-index: 1; }
+.cta-box .cta-art { position: absolute; z-index: 0; right: 27%; bottom: 0; width: 230px; opacity: .22; }
+.cta-box .cta-art-2 { position: absolute; z-index: 0; left: 0; top: 0; width: 120px; opacity: .2; }
+.cta-title { color: inherit; }
+.cta-title em { color: var(--inverse-tulip) !important; }
+.cta-sub { color: inherit; opacity: .72; }
+.cta-box .btn-gold { background: var(--inverse-text); color: var(--inverse-bg); }
+.cta-box .btn-line { color: inherit; border-color: currentColor; opacity: .85; }
+.cta-box .btn-line:hover { opacity: 1; color: inherit; border-color: currentColor; }
+@media (max-width: 680px) { .cta-box .cta-art { right: -30px; width: 170px; } }
+
+/* Footer: logo chữ + tagline */
+.footer-brandmark { display: inline-flex; flex-direction: column; gap: 8px; color: var(--text); margin-left: -7px; }
+.footer-brandmark .th-art-wordmark { width: 210px; }
+.footer-brandmark .th-art-tagline { width: 118px; margin-left: 2px; opacity: .85; }
 </style>
+<link rel="stylesheet" href="/theme.css">
 </head>
 <body>
-<script>try{if(localStorage.getItem('th-mode')==='light')document.body.classList.add('light')}catch(e){}</script>
+<script>try{if(localStorage.getItem('th-mode')!=='dark')document.body.classList.add('light')}catch(e){document.body.classList.add('light')}</script>
 
 <!-- NAV -->
 <nav>
@@ -939,17 +982,25 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 
 <!-- HERO -->
 <section id="hero">
+  <span class="th-art th-art-tulip-r hero-tulip-m" aria-hidden="true"></span>
   <div class="wrap">
-    <div class="hero-head">
-      <h1 class="hero-title">
-        Đám cưới của bạn<br><em>bắt đầu từ đây</em>
-
-      </h1>
-      <div class="hero-right">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">hold us together</p>
+        <h1 class="hero-title">Đám cưới của bạn<br><em>bắt đầu từ đây</em></h1>
         <p class="hero-sub">Tìm đúng nhà cung cấp cho ngày trọng đại — được tuyển chọn kỹ, thanh toán an toàn qua ký quỹ.</p>
         <div class="hero-btns">
-          <a href="#suppliers" class="btn-gold">Khám phá ngay</a>
+          <a href="#suppliers" class="btn-gold">Khám phá nhà cung cấp</a>
+          <a href="/ke-hoach.html" class="btn-line">Lên kế hoạch cùng Harmony AI</a>
         </div>
+      </div>
+      <!-- Poster thương hiệu: logo + tulip từ artwork gốc (assets/brand/) -->
+      <div class="hero-poster" aria-hidden="true">
+        <span class="th-art th-art-tulip-tl p-tl"></span>
+        <span class="th-art th-art-lockup p-lockup"></span>
+        <span class="th-art th-art-tulip-bl p-bl"></span>
+        <span class="th-art th-art-tulip-b p-b"></span>
+        <span class="th-art th-art-tulip-r p-r"></span>
       </div>
     </div>
 
@@ -993,7 +1044,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
       <a href="/dich-vu.html" class="grid-see-all">Xem tất cả →</a>
     </div>
     <div class="sup-grid carousel" id="featuredGrid"></div>
-    <noscript><p style="font-size:13px;color:var(--text2)"><a href="/dich-vu.html" style="color:var(--gold)">Xem danh sách nhà cung cấp →</a></p></noscript>
+    <noscript><p style="font-size:13px;color:var(--text2)"><a href="/dich-vu.html" style="color:var(--accent)">Xem danh sách nhà cung cấp →</a></p></noscript>
   </div>
 </section>
 
@@ -1113,7 +1164,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
     </div>
     <div class="blog-grid">
       <a class="blog-card" href="/dam-cuoi-nho-co-hanh-phuc-hon-khong.html" data-r>
-        <div class="blog-thumb" style="--thumb:#1a231c;--thumb-light:#f0e0db">
+        <div class="blog-thumb tint-flower">
           <div class="blog-cat">Đám cưới</div>
           <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="12" stroke="#c9a96e" stroke-width="0.8" opacity="0.3" fill="none"/><circle cx="18" cy="18" r="6" stroke="#c9a96e" stroke-width="0.8" opacity="0.5" fill="none"/></svg>
         </div>
@@ -1124,7 +1175,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
         </div>
       </a>
       <a class="blog-card" href="/hon-nhan-hanh-phuc.html" data-r="1">
-        <div class="blog-thumb" style="--thumb:#22201a;--thumb-light:#ebe3d2">
+        <div class="blog-thumb tint-plan">
           <div class="blog-cat">Hôn nhân</div>
           <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 29s-10-6.2-10-13a5.5 5.5 0 0110-3.2A5.5 5.5 0 0128 16c0 6.8-10 13-10 13z" stroke="#c9a96e" stroke-width="0.8" opacity="0.45" fill="none"/></svg>
         </div>
@@ -1135,7 +1186,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
         </div>
       </a>
       <a class="blog-card" href="/hen-ho-bao-lau-thi-cuoi.html" data-r="2">
-        <div class="blog-thumb" style="--thumb:#181c24;--thumb-light:#e3e0ee">
+        <div class="blog-thumb tint-music">
           <div class="blog-cat">Tình yêu</div>
           <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="12" stroke="#c9a96e" stroke-width="0.8" opacity="0.35" fill="none"/><path d="M18 11v7l5 3" stroke="#c9a96e" stroke-width="0.8" opacity="0.5" stroke-linecap="round"/></svg>
         </div>
@@ -1186,6 +1237,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 <section id="cta">
   <div class="wrap">
     <div class="cta-box" data-r>
+      <span class="th-art th-art-tulip-tl cta-art-2" aria-hidden="true"></span>
+      <span class="th-art th-art-tulip-b cta-art" aria-hidden="true"></span>
       <div>
         <h2 class="cta-title">Sẵn sàng bắt đầu<br><em>hành trình cưới của bạn?</em></h2>
         <p class="cta-sub">Miễn phí khám phá · Thanh toán an toàn qua ký quỹ</p>
@@ -1203,7 +1256,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/" class="footer-logo">Timeless <span>Harmony</span></a>
+        <a href="/" class="footer-brandmark" aria-label="Timeless Harmony — hold us together">
+          <span class="th-art th-art-wordmark"></span>
+          <span class="th-art th-art-tagline"></span>
+        </a>
         <p class="footer-tagline">Nền tảng kết nối dịch vụ cưới tại Việt Nam — nhà cung cấp được tuyển chọn, thanh toán an toàn qua ký quỹ.</p>
         <a href="mailto:hello@timeless-harmony.com" class="footer-mail">hello@timeless-harmony.com</a>
       </div>
@@ -1243,11 +1299,11 @@ const FEATURED = [
 const UNIQUE_LIVE = ['disposable-camera','live-sketch','booth-360'];
 // Dịch vụ độc đáo chưa có nhà cung cấp — mời nhà cung cấp đăng ký
 const UNIQUE_SOON = [
-  {name:'Wedding Scent Designer', desc:'Thiết kế mùi hương cho không gian', style:'Nến · Diffuser · Concept', bg:'#221a18',
+  {name:'Wedding Scent Designer', desc:'Thiết kế mùi hương cho không gian', style:'Nến · Diffuser · Concept',
    icon:'<path d="M10 3c-3 0-6 2.5-6 6 0 4 6 9 6 9s6-5 6-9c0-3.5-3-6-6-6z" stroke="#c9a96e" stroke-width="1" fill="none"/><circle cx="10" cy="9" r="2" stroke="#c9a96e" stroke-width="1" fill="none"/>'},
-  {name:'Guest Experience Designer', desc:'Thiết kế từng chi tiết cho khách mời', style:'Welcome kit · Activity · Note', bg:'#1e1c28',
+  {name:'Guest Experience Designer', desc:'Thiết kế từng chi tiết cho khách mời', style:'Welcome kit · Activity · Note',
    icon:'<path d="M4 16V8l6-4 6 4v8" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><rect x="7" y="11" width="6" height="5" rx="0.5" stroke="#c9a96e" stroke-width="1"/>'},
-  {name:'Star Map & Birth Chart Art', desc:'Bản đồ sao ngày hai người gặp nhau', style:'Thiên văn · In ấn · Quà tặng', bg:'#20181c',
+  {name:'Star Map & Birth Chart Art', desc:'Bản đồ sao ngày hai người gặp nhau', style:'Thiên văn · In ấn · Quà tặng',
    icon:'<circle cx="10" cy="10" r="7" stroke="#c9a96e" stroke-width="1"/><path d="M10 6l1 2.5 2.6.2-2 1.7.6 2.6L10 11.6 7.8 13l.6-2.6-2-1.7L9 8.5z" stroke="#c9a96e" stroke-width="0.8"/>'},
 ];
 const CAT_ICON = {
@@ -1267,20 +1323,15 @@ const BADGE = {
   soon:'<div class="sup-badge badge-soon">Sắp có</div>',
 };
 function esc(t){ return String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
-// Màu nền dịu cho chế độ sáng, theo hạng mục
-const LIGHT_BG = {
-  plan:'#ebe3d2', photo:'#dfe6df', flower:'#f0e0db', beauty:'#efe0e7',
-  music:'#e3e0ee', food:'#efe7d5', venue:'#dde6e9', unique:'#e7e1f0', soon:'#e9e5dd',
-};
 // Icon riêng cho từng dịch vụ độc đáo
 const ICON_BY_ID = {
   'disposable-camera':'<rect x="2" y="6" width="16" height="10" rx="1.5" stroke="#c9a96e" stroke-width="1"/><circle cx="11" cy="11" r="3" stroke="#c9a96e" stroke-width="1"/><rect x="4" y="8" width="3" height="2" rx=".5" stroke="#c9a96e" stroke-width=".8"/><path d="M14 4h3" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/>',
   'live-sketch':'<path d="M4 16l2.5-.6L15 6.9 13.1 5 4.6 13.5z" stroke="#c9a96e" stroke-width="1" stroke-linejoin="round"/><path d="M12 6l2 2M3 18h14" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/>',
   'booth-360':'<ellipse cx="10" cy="14" rx="7" ry="2.5" stroke="#c9a96e" stroke-width="1"/><rect x="7" y="3" width="6" height="8" rx="1.5" stroke="#c9a96e" stroke-width="1"/><circle cx="10" cy="6.5" r="1.5" stroke="#c9a96e" stroke-width=".8"/>',
 };
-function cardHTML({href, bg, light, icon, badge, cat, name, loc, foot, soon, delay}) {
+function cardHTML({href, tint, icon, badge, cat, name, loc, foot, soon, delay}) {
   return `<a class="sup-card${soon ? ' soon' : ''}" href="${href}" data-r="${delay || ''}">
-    <div class="sup-thumb thumb-fallback" style="--thumb:${bg};--thumb-light:${light}">
+    <div class="sup-thumb thumb-fallback tint-${tint}">
       <div class="thumb-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none">${icon}</svg></div>
       ${BADGE[badge] || ''}
     </div>
@@ -1297,7 +1348,7 @@ function supplierCard(id, badge, i) {
   if (!s) return '';
   return cardHTML({
     href: '/supplier.html?id=' + encodeURIComponent(id),
-    bg: (s.thumb && s.thumb[0]) || '#1a1a1a', light: LIGHT_BG[s.cat] || LIGHT_BG.soon,
+    tint: s.cat,
     icon: ICON_BY_ID[id] || CAT_ICON[s.cat] || CAT_ICON.venue,
     badge, cat: s.catLabel, name: s.name, loc: s.city, delay: i,
     foot: `<span class="sup-style">${esc(s.styles.slice(0, 2).join(' · '))}</span><span class="sup-right"><span class="sup-price">${esc(supplierPriceFrom(s))}</span><span class="sup-arrow">→</span></span>`,
@@ -1308,7 +1359,7 @@ document.getElementById('featuredGrid').innerHTML =
 document.getElementById('uniqueGrid').innerHTML =
   UNIQUE_LIVE.map((id, i) => supplierCard(id, 'unique', i)).join('') +
   UNIQUE_SOON.map((u, i) => cardHTML({
-    href: '/dang-ky-supplier.html', bg: u.bg, light: LIGHT_BG.soon, icon: u.icon, badge: 'soon', soon: true,
+    href: '/dang-ky-supplier.html', tint: 'soon', icon: u.icon, badge: 'soon', soon: true,
     cat: 'Sắp có trên Timeless Harmony', name: u.name, loc: u.desc, delay: i + 3,
     foot: `<span class="sup-style">${esc(u.style)}</span><span class="sup-arrow">Bạn làm dịch vụ này? →</span>`,
   })).join('');
