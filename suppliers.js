@@ -492,3 +492,28 @@ const SUPPLIERS_DATA = {
   },
 
 };
+
+// ── HELPERS (dùng chung cho dich-vu, supplier, ke-hoach) ──
+
+// Giá thấp nhất trong các gói, ví dụ "Từ 3 triệu" hoặc "Từ 180k/khách"
+function supplierPriceFrom(s) {
+  let best = null;
+  (s.packages || []).forEach(p => {
+    const m = String(p.price).match(/^([\d.]+)(?:–[\d.]+)?\s*(tr|k)(\/khách)?/);
+    if (!m) return;
+    const vnd = parseFloat(m[1]) * (m[2] === 'tr' ? 1e6 : 1e3);
+    const perGuest = !!m[3];
+    // Ưu tiên giá theo khách (catering) vì đó là giá chính
+    if (!best || (perGuest && !best.perGuest) || (perGuest === best.perGuest && vnd < best.vnd)) {
+      best = { vnd, num: m[1].replace('.', ','), unit: m[2], perGuest };
+    }
+  });
+  if (!best) return 'Liên hệ';
+  if (best.perGuest) return 'Từ ' + best.num + 'k/khách';
+  return best.unit === 'tr' ? 'Từ ' + best.num + ' triệu' : 'Từ ' + best.num + 'k';
+}
+
+// Tìm theo id, trả về null nếu không có
+function getSupplier(id) {
+  return Object.prototype.hasOwnProperty.call(SUPPLIERS_DATA, id) ? SUPPLIERS_DATA[id] : null;
+}

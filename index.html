@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <title>Timeless Harmony — Nền tảng dịch vụ cưới Việt Nam</title>
+<meta name="description" content="Timeless Harmony — nền tảng kết nối dịch vụ cưới tại Việt Nam: nhiếp ảnh, hoa cưới, địa điểm, làm đẹp, âm nhạc. Nhà cung cấp được tuyển chọn, thanh toán an toàn qua ký quỹ, trợ lý AI lên kế hoạch miễn phí.">
+<link rel="canonical" href="https://timeless-harmony.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Timeless Harmony">
+<meta property="og:title" content="Timeless Harmony — Nền tảng dịch vụ cưới Việt Nam">
+<meta property="og:description" content="Timeless Harmony — nền tảng kết nối dịch vụ cưới tại Việt Nam: nhiếp ảnh, hoa cưới, địa điểm, làm đẹp, âm nhạc. Nhà cung cấp được tuyển chọn, thanh toán an toàn qua ký quỹ, trợ lý AI lên kế hoạch miễn phí.">
+<meta property="og:url" content="https://timeless-harmony.com/">
+<meta property="og:locale" content="vi_VN">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -12,7 +21,7 @@
   --bg:          #0c0c0c;
   --bg2:         #141414;
   --bg3:         #1a1a1a;
-  --nav-bg:      var(--nav-bg);
+  --nav-bg:      rgba(12,12,12,0.88);
   --line:        rgba(255,255,255,0.07);
   --line2:       rgba(255,255,255,0.13);
   --text:        #f0ede8;
@@ -74,6 +83,8 @@ body {
 a { text-decoration: none; color: inherit; }
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
 @media (max-width: 600px) { .wrap { padding: 0 18px; } }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 
 /* ── REVEAL ── */
 [data-r] { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
@@ -220,6 +231,13 @@ nav {
   min-width: 130px;
 }
 
+.search-btn { padding: 13px 22px; border-radius: 9px; font-family: 'Inter', sans-serif; }
+@media (max-width: 600px) {
+  .search-row { flex-wrap: wrap; }
+  .search-box { flex-basis: 100%; }
+  .search-select { flex: 1; }
+}
+
 /* Filter pills */
 .filter-row {
   display: flex; gap: 8px; flex-wrap: wrap;
@@ -294,6 +312,7 @@ nav {
   width: 100%; height: 100%;
   display: flex; align-items: center; justify-content: center;
 }
+.sup-thumb.thumb-fallback { height: 180px; } /* giữ chỗ cho tên & khu vực bên dưới */
 .t1 { background: #1a231c; }
 .t2 { background: #221c14; }
 .t3 { background: #14202a; }
@@ -710,7 +729,6 @@ body.light .nav-dropdown { background: var(--bg2); }
     </a>
   </div>
 </nav>
-</nav>
 
 <!-- HERO -->
 <section id="hero">
@@ -729,20 +747,21 @@ body.light .nav-dropdown { background: var(--bg2); }
     </div>
 
     <!-- Search -->
-    <div class="search-row" style="animation: fadeUp .9s ease .35s both;">
-      <div class="search-box">
-        <div class="search-icon"></div>
-        <input class="search-input" type="text" placeholder="Tìm nhiếp ảnh gia, hoa cưới, địa điểm...">
-      </div>
-      <select class="search-select">
+    <form class="search-row" id="searchForm" action="/dich-vu.html" method="get" role="search" style="animation: fadeUp .9s ease .35s both;">
+      <label class="search-box">
+        <span class="search-icon"></span>
+        <input class="search-input" name="q" type="search" placeholder="Tìm nhiếp ảnh gia, hoa cưới, địa điểm..." aria-label="Tìm nhà cung cấp">
+      </label>
+      <select class="search-select" name="city" aria-label="Khu vực">
+        <option value="">Toàn quốc</option>
         <option>Sài Gòn</option>
         <option>Hà Nội</option>
         <option>Đà Nẵng</option>
         <option>Đà Lạt</option>
         <option>Hội An</option>
-        <option>Toàn quốc</option>
       </select>
-    </div>
+      <button type="submit" class="btn-gold search-btn">Tìm kiếm</button>
+    </form>
 
     <!-- Filter -->
     <div class="filter-row" id="filterRow" style="animation: fadeUp .9s ease .42s both;">
@@ -768,7 +787,7 @@ body.light .nav-dropdown { background: var(--bg2); }
     </div>
     <div class="sup-grid">
 
-      <div class="sup-card" data-r>
+      <a class="sup-card" data-r href="/supplier.html?id=anh-duong-studio">
         <div class="sup-thumb t1 thumb-fallback">
           <div class="thumb-icon">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="2" stroke="#c9a96e" stroke-width="1"/><circle cx="10" cy="11" r="3.5" stroke="#c9a96e" stroke-width="1"/></svg>
@@ -784,9 +803,9 @@ body.light .nav-dropdown { background: var(--bg2); }
             <div class="sup-arrow">→</div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="sup-card" data-r="1">
+      <a class="sup-card" data-r="1" href="/supplier.html?id=y-linh-planner">
         <div class="sup-thumb t2 thumb-fallback">
           <div class="thumb-icon">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="4" stroke="#c9a96e" stroke-width="1"/><path d="M3 18c0-3.9 3.1-7 7-7s7 3.1 7 7" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg>
@@ -802,9 +821,9 @@ body.light .nav-dropdown { background: var(--bg2); }
             <div class="sup-arrow">→</div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="sup-card" data-r="2">
+      <a class="sup-card" data-r="2" href="/supplier.html?id=bloom-petal">
         <div class="sup-thumb t3 thumb-fallback">
           <div class="thumb-icon">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2c0 0-7 5-7 10a7 7 0 0014 0c0-5-7-10-7-10z" stroke="#c9a96e" stroke-width="1"/></svg>
@@ -820,9 +839,9 @@ body.light .nav-dropdown { background: var(--bg2); }
             <div class="sup-arrow">→</div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="sup-card" data-r="3">
+      <a class="sup-card" data-r="3" href="/supplier.html?id=moc-band">
         <div class="sup-thumb t4 thumb-fallback">
           <div class="thumb-icon">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 15V8l6-2 6 2v7" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><circle cx="4" cy="15" r="2" stroke="#c9a96e" stroke-width="1"/><circle cx="16" cy="13" r="2" stroke="#c9a96e" stroke-width="1"/></svg>
@@ -837,9 +856,9 @@ body.light .nav-dropdown { background: var(--bg2); }
             <div class="sup-arrow">→</div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="sup-card" data-r="4">
+      <a class="sup-card" data-r="4" href="/supplier.html?id=luna-bridal">
         <div class="sup-thumb t5 thumb-fallback">
           <div class="thumb-icon">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3a5 5 0 000 10M10 3a5 5 0 010 10" stroke="#c9a96e" stroke-width="1"/><path d="M6.5 13l-2 5h11l-2-5" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg>
@@ -855,9 +874,9 @@ body.light .nav-dropdown { background: var(--bg2); }
             <div class="sup-arrow">→</div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="sup-card" data-r="5">
+      <a class="sup-card" data-r="5" href="/supplier.html?id=the-loft-venue">
         <div class="sup-thumb t6 thumb-fallback">
           <div class="thumb-icon">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l1.8 5.6H18l-4.9 3.5 1.9 5.6L10 13.1l-5 3.6 1.9-5.6L2 7.6h6.2z" stroke="#c9a96e" stroke-width="1"/></svg>
@@ -872,7 +891,7 @@ body.light .nav-dropdown { background: var(--bg2); }
             <div class="sup-arrow">→</div>
           </div>
         </div>
-      </div>
+      </a>
 
     </div>
   </div>
@@ -914,7 +933,7 @@ body.light .nav-dropdown { background: var(--bg2); }
     </div>
     <div class="sup-grid">
 
-      <div class="sup-card" data-r>
+      <a class="sup-card" data-r href="/supplier.html?id=disposable-camera">
         <div class="sup-thumb thumb-fallback" style="background:#1e1a2e;">
           <div class="thumb-icon" style="border-color:rgba(201,169,110,0.3);">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="6" width="6" height="6" rx="1" stroke="#c9a96e" stroke-width="1"/><rect x="9" y="3" width="9" height="5" rx="1" stroke="#c9a96e" stroke-width="1"/><rect x="9" y="10" width="5" height="5" rx="1" stroke="#c9a96e" stroke-width="1"/></svg>
@@ -930,9 +949,9 @@ body.light .nav-dropdown { background: var(--bg2); }
             <div class="sup-arrow">→</div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="sup-card" data-r="1">
+      <a class="sup-card" data-r="1" href="/supplier.html?id=live-sketch">
         <div class="sup-thumb thumb-fallback" style="background:#1a2218;">
           <div class="thumb-icon" style="border-color:rgba(201,169,110,0.3);">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#c9a96e" stroke-width="1"/><path d="M10 4v6l4 2" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><circle cx="10" cy="10" r="2" fill="#c9a96e" opacity="0.3"/></svg>
@@ -948,9 +967,9 @@ body.light .nav-dropdown { background: var(--bg2); }
             <div class="sup-arrow">→</div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="sup-card" data-r="2">
+      <a class="sup-card" data-r="2" href="/dich-vu.html?cat=unique">
         <div class="sup-thumb thumb-fallback" style="background:#221a18;">
           <div class="thumb-icon" style="border-color:rgba(201,169,110,0.3);">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3c-3 0-6 2.5-6 6 0 4 6 9 6 9s6-5 6-9c0-3.5-3-6-6-6z" stroke="#c9a96e" stroke-width="1" fill="none"/><circle cx="10" cy="9" r="2" stroke="#c9a96e" stroke-width="1" fill="none"/></svg>
@@ -965,9 +984,9 @@ body.light .nav-dropdown { background: var(--bg2); }
             <div class="sup-arrow">→</div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="sup-card" data-r="3">
+      <a class="sup-card" data-r="3" href="/supplier.html?id=booth-360">
         <div class="sup-thumb thumb-fallback" style="background:#18201e;">
           <div class="thumb-icon" style="border-color:rgba(201,169,110,0.3);">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="10" rx="1.5" stroke="#c9a96e" stroke-width="1"/><circle cx="10" cy="10" r="3" stroke="#c9a96e" stroke-width="1"/><path d="M3 8h14" stroke="#c9a96e" stroke-width="0.8" opacity="0.5"/></svg>
@@ -983,9 +1002,9 @@ body.light .nav-dropdown { background: var(--bg2); }
             <div class="sup-arrow">→</div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="sup-card" data-r="4">
+      <a class="sup-card" data-r="4" href="/dich-vu.html?cat=unique">
         <div class="sup-thumb thumb-fallback" style="background:#1e1c28;">
           <div class="thumb-icon" style="border-color:rgba(201,169,110,0.3);">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 16V8l6-4 6 4v8" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><rect x="7" y="11" width="6" height="5" rx="0.5" stroke="#c9a96e" stroke-width="1"/></svg>
@@ -1000,9 +1019,9 @@ body.light .nav-dropdown { background: var(--bg2); }
             <div class="sup-arrow">→</div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="sup-card" data-r="5">
+      <a class="sup-card" data-r="5" href="/dich-vu.html?cat=unique">
         <div class="sup-thumb thumb-fallback" style="background:#20181c;">
           <div class="thumb-icon" style="border-color:rgba(201,169,110,0.3);">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="6" cy="10" r="3" stroke="#c9a96e" stroke-width="1"/><circle cx="14" cy="10" r="3" stroke="#c9a96e" stroke-width="1"/><path d="M9 10h2M3 6l2 2M15 6l-2 2M3 14l2-2M15 14l-2-2" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg>
@@ -1018,7 +1037,7 @@ body.light .nav-dropdown { background: var(--bg2); }
             <div class="sup-arrow">→</div>
           </div>
         </div>
-      </div>
+      </a>
 
     </div>
   </div>
@@ -1095,42 +1114,42 @@ body.light .nav-dropdown { background: var(--bg2); }
         <p class="s-tag" data-r>Cẩm nang cưới</p>
         <h2 class="s-title" data-r="1" style="margin-bottom:0;">Chuẩn bị thông minh<br><em>hơn cho ngày cưới</em></h2>
       </div>
-      <a href="/dich-vu.html" class="grid-see-all" data-r="2">Xem tất cả →</a>
+      <a href="/cam-nang.html" class="grid-see-all" data-r="2">Xem tất cả →</a>
     </div>
     <div class="blog-grid">
-      <div class="blog-card" data-r>
+      <a class="blog-card" href="/dam-cuoi-nho-co-hanh-phuc-hon-khong.html" data-r>
         <div class="blog-thumb bt1">
-          <div class="blog-cat">Ngân sách</div>
+          <div class="blog-cat">Đám cưới</div>
           <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="12" stroke="#c9a96e" stroke-width="0.8" opacity="0.3" fill="none"/><circle cx="18" cy="18" r="6" stroke="#c9a96e" stroke-width="0.8" opacity="0.5" fill="none"/></svg>
         </div>
         <div class="blog-body">
-          <p class="blog-meta">15 tháng 4, 2025 · 5 phút đọc</p>
-          <h3 class="blog-title">Đám cưới 50 triệu có đẹp không? Hoàn toàn có thể</h3>
-          <p class="blog-excerpt">Bí quyết phân bổ ngân sách mà không đánh đổi chất lượng.</p>
+          <p class="blog-meta">20 tháng 4, 2026 · 5 phút đọc</p>
+          <h3 class="blog-title">Đám cưới 30 người có thật sự hạnh phúc hơn không?</h3>
+          <p class="blog-excerpt">Intimate wedding không phải xu hướng — đó là lựa chọn có chủ đích.</p>
         </div>
-      </div>
-      <div class="blog-card" data-r="1">
+      </a>
+      <a class="blog-card" href="/hon-nhan-hanh-phuc.html" data-r="1">
         <div class="blog-thumb bt2">
-          <div class="blog-cat">Nhiếp ảnh</div>
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="6" y="10" width="24" height="18" rx="3" stroke="#c9a96e" stroke-width="0.8" opacity="0.35" fill="none"/><circle cx="18" cy="19" r="5" stroke="#c9a96e" stroke-width="0.8" opacity="0.5" fill="none"/></svg>
+          <div class="blog-cat">Hôn nhân</div>
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 29s-10-6.2-10-13a5.5 5.5 0 0110-3.2A5.5 5.5 0 0128 16c0 6.8-10 13-10 13z" stroke="#c9a96e" stroke-width="0.8" opacity="0.45" fill="none"/></svg>
         </div>
         <div class="blog-body">
-          <p class="blog-meta">10 tháng 4, 2025 · 4 phút đọc</p>
-          <h3 class="blog-title">5 câu hỏi cần hỏi nhiếp ảnh gia trước khi ký hợp đồng</h3>
-          <p class="blog-excerpt">Tránh những rủi ro phổ biến từ kinh nghiệm thực tế.</p>
+          <p class="blog-meta">25 tháng 4, 2026 · 8 phút đọc</p>
+          <h3 class="blog-title">Khoa học nói gì về những cặp đôi hạnh phúc bền lâu?</h3>
+          <p class="blog-excerpt">40 năm nghiên cứu, 3,000 cặp đôi — và công thức bất ngờ của tình yêu bền vững.</p>
         </div>
-      </div>
-      <div class="blog-card" data-r="2">
+      </a>
+      <a class="blog-card" href="/hen-ho-bao-lau-thi-cuoi.html" data-r="2">
         <div class="blog-thumb bt3">
-          <div class="blog-cat">Địa điểm</div>
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 6c-5 0-9 4-9 9 0 7 9 18 9 18s9-11 9-18c0-5-4-9-9-9z" stroke="#c9a96e" stroke-width="0.8" opacity="0.35" fill="none"/><circle cx="18" cy="15" r="3.5" stroke="#c9a96e" stroke-width="0.8" opacity="0.5" fill="none"/></svg>
+          <div class="blog-cat">Tình yêu</div>
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="12" stroke="#c9a96e" stroke-width="0.8" opacity="0.35" fill="none"/><path d="M18 11v7l5 3" stroke="#c9a96e" stroke-width="0.8" opacity="0.5" stroke-linecap="round"/></svg>
         </div>
         <div class="blog-body">
-          <p class="blog-meta">5 tháng 4, 2025 · 6 phút đọc</p>
-          <h3 class="blog-title">Tiệc cưới nhỏ tại Sài Gòn: 8 địa điểm dưới 30 triệu</h3>
-          <p class="blog-excerpt">Tuyển chọn cho đám cưới quy mô nhỏ nhưng đầy chất riêng.</p>
+          <p class="blog-meta">18 tháng 4, 2026 · 6 phút đọc</p>
+          <h3 class="blog-title">Hẹn hò bao lâu thì đủ để cưới?</h3>
+          <p class="blog-excerpt">Câu hỏi sai. Đây mới là câu hỏi đúng bạn nên tự hỏi trước khi quyết định.</p>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -1145,7 +1164,7 @@ body.light .nav-dropdown { background: var(--bg2); }
       </div>
       <div class="cta-btns">
         <a href="#suppliers" class="btn-gold">Bắt đầu ngay</a>
-        <a href="#" class="btn-line">Tôi là nhà cung cấp</a>
+        <a href="/dang-ky-supplier.html" class="btn-line">Tôi là nhà cung cấp</a>
       </div>
     </div>
   </div>
@@ -1156,10 +1175,10 @@ body.light .nav-dropdown { background: var(--bg2); }
   <div class="wrap footer-inner">
     <p class="footer-logo">Timeless Harmony</p>
     <div class="footer-links">
-      <a href="#suppliers" class="footer-link">Dịch vụ</a>
-      <a href="#how" class="footer-link">Cách hoạt động</a>
-      <a href="#planner" class="footer-link">Kế hoạch</a>
-      <a href="#blog" class="footer-link">Cẩm nang</a>
+      <a href="/dich-vu.html" class="footer-link">Dịch vụ</a>
+      <a href="/cach-hoat-dong.html" class="footer-link">Cách hoạt động</a>
+      <a href="/ke-hoach.html" class="footer-link">Kế hoạch</a>
+      <a href="/cam-nang.html" class="footer-link">Cẩm nang</a>
       <a href="/dieu-khoan.html" class="footer-link">Điều khoản</a>
     </div>
     <p class="footer-copy">© 2026 Timeless Harmony</p>
@@ -1172,10 +1191,16 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 document.querySelectorAll('[data-r]').forEach(el => obs.observe(el));
 
+// Bấm danh mục → mở trang Dịch vụ đã lọc sẵn (giữ cả từ khóa & khu vực nếu có)
 document.querySelectorAll('.pill').forEach(pill => {
   pill.addEventListener('click', () => {
-    document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-    pill.classList.add('active');
+    const form = document.getElementById('searchForm');
+    const params = new URLSearchParams();
+    if (pill.dataset.cat !== 'all') params.set('cat', pill.dataset.cat);
+    if (form.q.value.trim()) params.set('q', form.q.value.trim());
+    if (form.city.value) params.set('city', form.city.value);
+    const qs = params.toString();
+    window.location.href = '/dich-vu.html' + (qs ? '?' + qs : '');
   });
 });
 

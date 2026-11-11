@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <title>Cẩm nang — Timeless Harmony</title>
+<meta name="description" content="Cẩm nang cưới của Timeless Harmony: tổ chức đám cưới, ngân sách, tình yêu và hôn nhân — viết dựa trên nghiên cứu khoa học và kinh nghiệm thực tế.">
+<link rel="canonical" href="https://timeless-harmony.com/cam-nang">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Timeless Harmony">
+<meta property="og:title" content="Cẩm nang — Timeless Harmony">
+<meta property="og:description" content="Cẩm nang cưới của Timeless Harmony: tổ chức đám cưới, ngân sách, tình yêu và hôn nhân — viết dựa trên nghiên cứu khoa học và kinh nghiệm thực tế.">
+<meta property="og:url" content="https://timeless-harmony.com/cam-nang">
+<meta property="og:locale" content="vi_VN">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -104,6 +113,9 @@ body.light .cat:hover{border-color:rgba(30,42,30,0.3);}
 .article-time{font-size:11px;color:var(--text3);}
 .article-arrow{font-size:12px;color:var(--text3);transition:color .2s;}
 .article-card:hover .article-arrow{color:var(--gold);}
+.article-card.coming-soon{cursor:default;opacity:.6;}
+.article-card.coming-soon:hover{border-color:var(--card-border);transform:none;}
+.article-soon{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);}
 
 /* NEWSLETTER */
 .newsletter{padding:0 0 80px;}
@@ -168,7 +180,7 @@ footer{border-top:0.5px solid var(--line);padding:36px 0;}
 <div class="wrap" id="featuredWrap">
   <div class="featured">
     <p class="featured-label">Bài nổi bật</p>
-    <div class="featured-card" data-r onclick="window.location='/hon-nhan-hanh-phuc.html'">
+    <a class="featured-card" data-r href="/hon-nhan-hanh-phuc.html">
       <div class="featured-thumb" style="background:#1a2314;">
         <img src="https://picsum.photos/seed/weddingvn/800/500" alt="Gen Z và hôn nhân" style="width:100%;height:100%;object-fit:cover;opacity:0.75;" loading="lazy">
         <div class="featured-cat-badge">Hôn nhân</div>
@@ -186,7 +198,7 @@ footer{border-top:0.5px solid var(--line);padding:36px 0;}
         </div>
         <div class="read-more">Đọc bài viết <span>→</span></div>
       </div>
-    </div>
+    </a>
   </div>
 </div>
 
@@ -196,7 +208,7 @@ footer{border-top:0.5px solid var(--line);padding:36px 0;}
     <p class="articles-label" id="gridLabel">Tất cả bài viết</p>
     <div class="grid" id="articleGrid">
 
-      <div class="article-card" data-cat="wedding" data-r onclick="window.location='#'">
+      <a class="article-card" data-cat="wedding" data-r href="/dam-cuoi-nho-co-hanh-phuc-hon-khong.html">
         <div class="article-thumb at1">
           <img src="https://picsum.photos/seed/intimate1/600/400" alt="Đám cưới nhỏ" style="width:100%;height:100%;object-fit:cover;opacity:0.8;" loading="lazy">
           <div class="article-cat-badge">Đám cưới</div>
@@ -210,9 +222,9 @@ footer{border-top:0.5px solid var(--line);padding:36px 0;}
             <span class="article-arrow">→</span>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="article-card" data-cat="love" data-r="1" onclick="window.location='#'">
+      <a class="article-card" data-cat="love" data-r="1" href="/hen-ho-bao-lau-thi-cuoi.html">
         <div class="article-thumb at2">
           <img src="https://picsum.photos/seed/couplove/600/400" alt="Hẹn hò" style="width:100%;height:100%;object-fit:cover;opacity:0.8;" loading="lazy">
           <div class="article-cat-badge">Tình yêu</div>
@@ -226,9 +238,9 @@ footer{border-top:0.5px solid var(--line);padding:36px 0;}
             <span class="article-arrow">→</span>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="article-card" data-cat="finance" data-r="2" onclick="window.location='#'">
+      <div class="article-card coming-soon" data-cat="finance" data-r="2" aria-disabled="true">
         <div class="article-thumb at3">
           <img src="https://picsum.photos/seed/finance1/600/400" alt="Chuyện tài chính" style="width:100%;height:100%;object-fit:cover;opacity:0.8;" loading="lazy">
           <div class="article-cat-badge">Tài chính</div>
@@ -239,12 +251,12 @@ footer{border-top:0.5px solid var(--line);padding:36px 0;}
           <p class="article-excerpt">Bất đồng tài chính là nguyên nhân ly hôn phổ biến nhất. Và nó hoàn toàn có thể tránh được.</p>
           <div class="article-meta">
             <span class="article-time">8 phút · 15/4/2026</span>
-            <span class="article-arrow">→</span>
+            <span class="article-soon">Sắp ra mắt</span>
           </div>
         </div>
       </div>
 
-      <div class="article-card" data-cat="marriage" data-r="3" onclick="window.location='#'">
+      <a class="article-card" data-cat="marriage" data-r="3" href="/nam-dau-hon-nhan.html">
         <div class="article-thumb at4">
           <img src="https://picsum.photos/seed/homewarm/600/400" alt="Cặp vợ chồng mới — năm đầu hôn nhân" style="width:100%;height:100%;object-fit:cover;opacity:0.8;" loading="lazy">
           <div class="article-cat-badge">Hôn nhân</div>
@@ -258,9 +270,9 @@ footer{border-top:0.5px solid var(--line);padding:36px 0;}
             <span class="article-arrow">→</span>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="article-card" data-cat="wedding" data-r="4" onclick="window.location='#'">
+      <div class="article-card coming-soon" data-cat="wedding" data-r="4" aria-disabled="true">
         <div class="article-thumb at5">
           <img src="https://picsum.photos/seed/bouquet1/600/400" alt="Hoa cưới và trang trí — phân bổ ngân sách đám cưới" style="width:100%;height:100%;object-fit:cover;opacity:0.8;" loading="lazy">
           <div class="article-cat-badge">Đám cưới</div>
@@ -271,12 +283,12 @@ footer{border-top:0.5px solid var(--line);padding:36px 0;}
           <p class="article-excerpt">Không phải về việc tiết kiệm — mà là đặt đúng tiền vào đúng chỗ tạo ra ký ức.</p>
           <div class="article-meta">
             <span class="article-time">5 phút · 10/4/2026</span>
-            <span class="article-arrow">→</span>
+            <span class="article-soon">Sắp ra mắt</span>
           </div>
         </div>
       </div>
 
-      <div class="article-card" data-cat="family" data-r="5" onclick="window.location='#'">
+      <a class="article-card" data-cat="family" data-r="5" href="/giu-lua-hon-nhan-sau-khi-co-con.html">
         <div class="article-thumb at6">
           <img src="https://picsum.photos/seed/family11/600/400" alt="Gia đình hạnh phúc — giữ lửa hôn nhân sau khi có con" style="width:100%;height:100%;object-fit:cover;opacity:0.8;" loading="lazy">
           <div class="article-cat-badge">Gia đình</div>
@@ -290,9 +302,9 @@ footer{border-top:0.5px solid var(--line);padding:36px 0;}
             <span class="article-arrow">→</span>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="article-card" data-cat="love" data-r onclick="window.location='#'">
+      <div class="article-card coming-soon" data-cat="love" data-r aria-disabled="true">
         <div class="article-thumb at7">
           <img src="https://picsum.photos/seed/dateout1/600/400" alt="Cặp đôi hẹn hò ngoài trời — buổi hẹn có chiều sâu" style="width:100%;height:100%;object-fit:cover;opacity:0.8;" loading="lazy">
           <div class="article-cat-badge">Hẹn hò</div>
@@ -303,12 +315,12 @@ footer{border-top:0.5px solid var(--line);padding:36px 0;}
           <p class="article-excerpt">Không phải cà phê rồi về. Những buổi hẹn giúp bạn thực sự hiểu người mình đang yêu.</p>
           <div class="article-meta">
             <span class="article-time">4 phút · 5/4/2026</span>
-            <span class="article-arrow">→</span>
+            <span class="article-soon">Sắp ra mắt</span>
           </div>
         </div>
       </div>
 
-      <div class="article-card" data-cat="marriage" data-r="1" onclick="window.location='#'">
+      <div class="article-card coming-soon" data-cat="marriage" data-r="1" aria-disabled="true">
         <div class="article-thumb at8">
           <img src="https://picsum.photos/seed/convers1/600/400" alt="Cặp đôi trò chuyện — giao tiếp trong hôn nhân" style="width:100%;height:100%;object-fit:cover;opacity:0.8;" loading="lazy">
           <div class="article-cat-badge">Hôn nhân</div>
@@ -319,13 +331,13 @@ footer{border-top:0.5px solid var(--line);padding:36px 0;}
           <p class="article-excerpt">Những cặp đôi không bao giờ cãi nhau không phải là hạnh phúc nhất — đôi khi họ chỉ đang tránh né.</p>
           <div class="article-meta">
             <span class="article-time">6 phút · 2/4/2026</span>
-            <span class="article-arrow">→</span>
+            <span class="article-soon">Sắp ra mắt</span>
           </div>
         </div>
       </div>
 
 
-      <div class="article-card" data-cat="marriage" data-r onclick="window.location='/cac-loai-tinh-yeu.html'">
+      <a class="article-card" data-cat="marriage" data-r href="/cac-loai-tinh-yeu.html">
         <div class="article-thumb at1">
           <img src="https://picsum.photos/seed/triangle1/600/400" alt="Tam giác tình yêu Sternberg — thân mật đam mê cam kết" style="width:100%;height:100%;object-fit:cover;opacity:0.8;" loading="lazy">
           <div class="article-cat-badge">Khoa học</div>
@@ -339,9 +351,9 @@ footer{border-top:0.5px solid var(--line);padding:36px 0;}
             <span class="article-arrow">→</span>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="article-card" data-cat="marriage" data-r="1" onclick="window.location='/khoa-hoc-giai-thich-tinh-yeu.html'">
+      <a class="article-card" data-cat="marriage" data-r="1" href="/khoa-hoc-giai-thich-tinh-yeu.html">
         <div class="article-thumb at3">
           <img src="https://picsum.photos/seed/brainlove/600/400" alt="Não bộ và tình yêu — neuroscience Helen Fisher" style="width:100%;height:100%;object-fit:cover;opacity:0.8;" loading="lazy">
           <div class="article-cat-badge">Thần kinh học</div>
@@ -355,9 +367,9 @@ footer{border-top:0.5px solid var(--line);padding:36px 0;}
             <span class="article-arrow">→</span>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="article-card" data-cat="marriage" data-r="2" onclick="window.location='/bai-hoc-hon-nhan-tu-phim-up.html'">
+      <a class="article-card" data-cat="marriage" data-r="2" href="/bai-hoc-hon-nhan-tu-phim-up.html">
         <div class="article-thumb at6">
           <img src="https://picsum.photos/seed/carlEllie/600/400" alt="Carl và Ellie — bài học hôn nhân từ phim Up Pixar" style="width:100%;height:100%;object-fit:cover;opacity:0.8;" loading="lazy">
           <div class="article-cat-badge">Điện ảnh</div>
@@ -371,9 +383,9 @@ footer{border-top:0.5px solid var(--line);padding:36px 0;}
             <span class="article-arrow">→</span>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="article-card" data-cat="marriage" data-r="3" onclick="window.location='/hon-nhan-hanh-phuc.html'">
+      <a class="article-card" data-cat="marriage" data-r="3" href="/hon-nhan-hanh-phuc.html">
         <div class="article-thumb at2">
           <img src="https://picsum.photos/seed/gottman2/600/400" alt="Nghiên cứu Gottman về những cặp đôi hạnh phúc" style="width:100%;height:100%;object-fit:cover;opacity:0.8;" loading="lazy">
           <div class="article-cat-badge">Khoa học</div>
@@ -387,40 +399,8 @@ footer{border-top:0.5px solid var(--line);padding:36px 0;}
             <span class="article-arrow">→</span>
           </div>
         </div>
-      </div>
+      </a>
 
-
-      <div class="article-card" data-cat="love" data-r="6" onclick="window.location='/hen-ho-bao-lau-thi-cuoi.html'">
-        <div class="article-thumb at7">
-          <img src="https://picsum.photos/seed/dateout1/600/400" alt="Cặp đôi hẹn hò — 7 câu hỏi trước khi cưới" style="width:100%;height:100%;object-fit:cover;opacity:0.8;" loading="lazy">
-          <div class="article-cat-badge">Hẹn hò</div>
-        </div>
-        <div class="article-body">
-          <p class="article-cat">Tình yêu & Hẹn hò</p>
-          <h3 class="article-title">5 buổi hẹn hò có chiều sâu cho cặp đôi đang yêu</h3>
-          <p class="article-excerpt">Không phải cà phê rồi về. Những buổi hẹn giúp bạn thực sự hiểu người mình đang yêu.</p>
-          <div class="article-meta">
-            <span class="article-time">4 phút · 5/4/2026</span>
-            <span class="article-arrow">→</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="article-card" data-cat="marriage" data-r onclick="window.location='/nam-dau-hon-nhan.html'">
-        <div class="article-thumb at8">
-          <img src="https://picsum.photos/seed/convers1/600/400" alt="Giao tiếp trong hôn nhân — im lặng nguy hiểm hơn cãi nhau" style="width:100%;height:100%;object-fit:cover;opacity:0.8;" loading="lazy">
-          <div class="article-cat-badge">Hôn nhân</div>
-        </div>
-        <div class="article-body">
-          <p class="article-cat">Hôn nhân</p>
-          <h3 class="article-title">Giao tiếp trong hôn nhân: tại sao im lặng nguy hiểm hơn cãi nhau</h3>
-          <p class="article-excerpt">Những cặp đôi không bao giờ cãi nhau không phải là hạnh phúc nhất — đôi khi họ chỉ đang tránh né.</p>
-          <div class="article-meta">
-            <span class="article-time">6 phút · 2/4/2026</span>
-            <span class="article-arrow">→</span>
-          </div>
-        </div>
-      </div>
 
     </div>
   </div>

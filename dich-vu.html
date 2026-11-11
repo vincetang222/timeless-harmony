@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <title>Dịch vụ cưới — Timeless Harmony</title>
+<meta name="description" content="Tìm nhà cung cấp dịch vụ cưới tại Sài Gòn, Hà Nội, Đà Nẵng, Đà Lạt, Hội An — lọc theo hạng mục, khu vực và phong cách.">
+<link rel="canonical" href="https://timeless-harmony.com/dich-vu">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Timeless Harmony">
+<meta property="og:title" content="Dịch vụ cưới — Timeless Harmony">
+<meta property="og:description" content="Tìm nhà cung cấp dịch vụ cưới tại Sài Gòn, Hà Nội, Đà Nẵng, Đà Lạt, Hội An — lọc theo hạng mục, khu vực và phong cách.">
+<meta property="og:url" content="https://timeless-harmony.com/dich-vu">
+<meta property="og:locale" content="vi_VN">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -291,22 +300,39 @@ footer{border-top:0.5px solid var(--line);padding:36px 0;}
   </div>
 </footer>
 
+<script src="/suppliers.js"></script>
 <script>
-// ── DATA ──
-const SUPPLIERS = [
-  {id:1,name:'Ánh Dương Studio',cat:'photo',catLabel:'Nhiếp ảnh & Quay phim',city:'Sài Gòn',style:'Vintage · Film analog',price:'Từ 8 triệu',badge:'new',thumb:'t1',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1" y="5" width="18" height="12" rx="2" stroke="#c9a96e" stroke-width="1"/><circle cx="10" cy="11" r="3.5" stroke="#c9a96e" stroke-width="1"/></svg>',isNew:true},
-  {id:2,name:'Ý Linh Planner',cat:'plan',catLabel:'Lên kế hoạch cưới',city:'Sài Gòn · Đà Lạt',style:'Boutique · Tối giản',price:'Từ 15 triệu',badge:'hot',thumb:'t2',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="3" width="16" height="14" rx="2" stroke="#c9a96e" stroke-width="1"/><path d="M6 8h8M6 11h5" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg>'},
-  {id:3,name:'Bloom & Petal',cat:'flower',catLabel:'Hoa cưới & Trang trí',city:'Hội An',style:'Bohemian · Garden',price:'Từ 5 triệu',badge:'new',thumb:'t3',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3c-3 0-6 2.5-6 6 0 4 6 9 6 9s6-5 6-9c0-3.5-3-6-6-6z" stroke="#c9a96e" stroke-width="1" fill="none"/></svg>',isNew:true},
-  {id:4,name:'Mộc Band',cat:'music',catLabel:'Âm nhạc & Giải trí',city:'Hà Nội',style:'Acoustic · Jazz · Indie',price:'Từ 8 triệu',badge:'',thumb:'t4',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 16V8l6-2 6 2v8" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><circle cx="4" cy="16" r="2" stroke="#c9a96e" stroke-width="1"/><circle cx="16" cy="14" r="2" stroke="#c9a96e" stroke-width="1"/></svg>'},
-  {id:5,name:'Luna Bridal',cat:'beauty',catLabel:'Làm đẹp & Trang phục',city:'Sài Gòn',style:'Tinh tế · Tự nhiên',price:'Từ 4 triệu',badge:'hot',thumb:'t5',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3a5 5 0 000 10M10 3a5 5 0 010 10" stroke="#c9a96e" stroke-width="1"/><path d="M6.5 13l-2 5h11l-2-5" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg>'},
-  {id:6,name:'The Loft Venue',cat:'venue',catLabel:'Địa điểm',city:'Đà Lạt',style:'Industrial · Rustic',price:'Từ 20 triệu',badge:'',thumb:'t6',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l1.8 5.6H18l-4.9 3.5 1.9 5.6L10 13.1l-5 3.6 1.9-5.6L2 7.6h6.2z" stroke="#c9a96e" stroke-width="1"/></svg>'},
-  {id:7,name:'Disposable Camera Bar',cat:'unique',catLabel:'Trải nghiệm độc đáo',city:'Sài Gòn',style:'Film · Analog · Vintage',price:'Từ 5 triệu',badge:'unique',thumb:'t7',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="6" width="6" height="6" rx="1" stroke="#c9a96e" stroke-width="1"/><rect x="9" y="3" width="9" height="5" rx="1" stroke="#c9a96e" stroke-width="1"/><rect x="9" y="10" width="5" height="5" rx="1" stroke="#c9a96e" stroke-width="1"/></svg>',isNew:true},
-  {id:8,name:'Nhã Acoustic',cat:'music',catLabel:'Âm nhạc & Giải trí',city:'Sài Gòn',style:'Acoustic · Chill · Ballad',price:'Từ 6 triệu',badge:'',thumb:'t8',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 16V8l6-2 6 2v8" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><circle cx="4" cy="16" r="2" stroke="#c9a96e" stroke-width="1"/><circle cx="16" cy="14" r="2" stroke="#c9a96e" stroke-width="1"/></svg>'},
-  {id:9,name:'Vân Hương Studio',cat:'photo',catLabel:'Nhiếp ảnh & Quay phim',city:'Đà Nẵng',style:'Documentary · Phim tài liệu',price:'Từ 12 triệu',badge:'new',thumb:'t9',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1" y="5" width="18" height="12" rx="2" stroke="#c9a96e" stroke-width="1"/><circle cx="10" cy="11" r="3.5" stroke="#c9a96e" stroke-width="1"/></svg>',isNew:true},
-  {id:10,name:'Live Illustration',cat:'unique',catLabel:'Trải nghiệm độc đáo',city:'Sài Gòn',style:'Ký họa · Art · Kỷ niệm',price:'Từ 4 triệu',badge:'unique',thumb:'t10',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 16l3-3 8-8-3-3-8 8-1 4 1-1z" stroke="#c9a96e" stroke-width="1"/><path d="M12 5l3 3" stroke="#c9a96e" stroke-width="1"/></svg>',isNew:true},
-  {id:11,name:'Garden Table Catering',cat:'food',catLabel:'Ẩm thực & Đồ uống',city:'Hội An · Đà Nẵng',style:'Picnic · Buffet · Plated',price:'Từ 250k/khách',badge:'hot',thumb:'t11',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4v5a6 6 0 0012 0V4" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><path d="M10 15v3M7 18h6" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg>'},
-  {id:12,name:'360° Booth Vietnam',cat:'unique',catLabel:'Trải nghiệm độc đáo',city:'Sài Gòn',style:'360° · Slow-mo · Viral',price:'Từ 8 triệu',badge:'unique',thumb:'t12',icon:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="10" rx="1.5" stroke="#c9a96e" stroke-width="1"/><circle cx="10" cy="10" r="3" stroke="#c9a96e" stroke-width="1"/></svg>',isNew:true},
-];
+// ── DATA (lấy từ suppliers.js — nguồn dữ liệu duy nhất) ──
+const CAT_ICONS = {
+  plan:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="3" width="16" height="14" rx="2" stroke="#c9a96e" stroke-width="1"/><path d="M6 8h8M6 11h5" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg>',
+  photo:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1" y="5" width="18" height="12" rx="2" stroke="#c9a96e" stroke-width="1"/><circle cx="10" cy="11" r="3.5" stroke="#c9a96e" stroke-width="1"/></svg>',
+  flower:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3c-3 0-6 2.5-6 6 0 4 6 9 6 9s6-5 6-9c0-3.5-3-6-6-6z" stroke="#c9a96e" stroke-width="1" fill="none"/></svg>',
+  beauty:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3a5 5 0 000 10M10 3a5 5 0 010 10" stroke="#c9a96e" stroke-width="1"/><path d="M6.5 13l-2 5h11l-2-5" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg>',
+  music:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 16V8l6-2 6 2v8" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><circle cx="4" cy="16" r="2" stroke="#c9a96e" stroke-width="1"/><circle cx="16" cy="14" r="2" stroke="#c9a96e" stroke-width="1"/></svg>',
+  food:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4v5a6 6 0 0012 0V4" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/><path d="M10 15v3M7 18h6" stroke="#c9a96e" stroke-width="1" stroke-linecap="round"/></svg>',
+  venue:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l1.8 5.6H18l-4.9 3.5 1.9 5.6L10 13.1l-5 3.6 1.9-5.6L2 7.6h6.2z" stroke="#c9a96e" stroke-width="1"/></svg>',
+  unique:'<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="6" width="6" height="6" rx="1" stroke="#c9a96e" stroke-width="1"/><rect x="9" y="3" width="9" height="5" rx="1" stroke="#c9a96e" stroke-width="1"/><rect x="9" y="10" width="5" height="5" rx="1" stroke="#c9a96e" stroke-width="1"/></svg>',
+};
+// Nhãn nổi bật/mới (nhà cung cấp "độc đáo" tự có nhãn ✦)
+const BADGES = {
+  'anh-duong-studio':'new','van-huong-studio':'new','bloom-petal':'new','banh-cuoi-atelier':'new',
+  'y-linh-planner':'hot','luna-bridal':'hot','garden-table':'hot','villa-xanh':'hot',
+};
+
+const SUPPLIERS = Object.entries(SUPPLIERS_DATA).map(([id,s])=>({
+  id, name:s.name, cat:s.cat, catLabel:s.catLabel, city:s.city,
+  style:s.styles.slice(0,3).join(' · '),
+  styles:s.styles,
+  price:supplierPriceFrom(s),
+  badge: s.cat==='unique' ? 'unique' : (BADGES[id]||''),
+  bg:(s.thumb&&s.thumb[0])||'#1a1a1a',
+  icon:CAT_ICONS[s.cat]||CAT_ICONS.venue,
+}));
+
+// Bỏ dấu để tìm "da lat" vẫn ra "Đà Lạt"
+function norm(str){
+  return String(str).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d');
+}
 
 let activeCat = 'all';
 let visibleCount = 12;
@@ -333,16 +359,19 @@ function filterSuppliers(){
 }
 
 function getFiltered(){
-  const q = document.getElementById('searchInput').value.toLowerCase();
+  const q = norm(document.getElementById('searchInput').value.trim());
   const city = document.getElementById('cityFilter').value;
   const sort = document.getElementById('sortFilter').value;
   let list = SUPPLIERS.filter(s=>{
     const catMatch = activeCat === 'all' || s.cat === activeCat;
-    const qMatch = !q || s.name.toLowerCase().includes(q) || s.catLabel.toLowerCase().includes(q) || s.style.toLowerCase().includes(q);
+    // mỗi từ khóa phải khớp với đầu một từ ("lat" khớp "Lạt" nhưng không khớp "Plated")
+    const words = norm([s.name, s.catLabel, s.city, s.styles.join(' ')].join(' ')).split(/[^a-z0-9°]+/);
+    const qMatch = !q || q.split(/\s+/).every(w=>words.some(x=>x.startsWith(w)));
     const cityMatch = !city || s.city.includes(city);
     return catMatch && qMatch && cityMatch;
   });
   if(sort === 'name') list.sort((a,b)=>a.name.localeCompare(b.name,'vi'));
+  if(sort === 'new') list.sort((a,b)=>(b.badge==='new')-(a.badge==='new'));
   return list;
 }
 
@@ -365,8 +394,8 @@ function renderSuppliers(){
       : s.badge === 'hot' ? '<div class="sup-badge badge-hot">Nổi bật</div>'
       : s.badge === 'unique' ? '<div class="sup-badge badge-unique">✦ Độc đáo</div>'
       : '';
-    return `<div class="sup-card" onclick="window.location='#supplier-${s.id}'">
-      <div class="sup-thumb ${s.thumb} thumb-fallback">
+    return `<a class="sup-card" href="/supplier.html?id=${encodeURIComponent(s.id)}">
+      <div class="sup-thumb thumb-fallback" style="background:${s.bg}">
         <div class="thumb-icon">${s.icon}</div>
         ${badgeHTML}
       </div>
@@ -379,7 +408,7 @@ function renderSuppliers(){
           <div class="sup-arrow">→</div>
         </div>
       </div>
-    </div>`;
+    </a>`;
   }).join('');
 }
 
@@ -407,7 +436,25 @@ if(localStorage.getItem('th-mode')==='light'){
   document.getElementById('modeToggle').innerHTML=moonIcon;
 }
 
-renderSuppliers();
+// Nhận bộ lọc từ URL, ví dụ /dich-vu.html?cat=photo&city=Đà Lạt&q=film (từ trang chủ)
+(function applyUrlFilters(){
+  const p = new URLSearchParams(location.search);
+  const q = p.get('q'), city = p.get('city'), cat = p.get('cat');
+  if(q) document.getElementById('searchInput').value = q;
+  if(city){
+    const sel = document.getElementById('cityFilter');
+    if([...sel.options].some(o=>o.value===city)) sel.value = city;
+  }
+  const pill = cat && document.querySelector(`.cat-pill[data-cat="${CSS.escape(cat)}"]`);
+  if(pill && cat !== 'all'){
+    selectCat(pill, cat);
+  } else {
+    renderSuppliers();
+  }
+  if(q || city || (pill && cat !== 'all')){
+    document.getElementById('supSection').scrollIntoView({block:'start'});
+  }
+})();
 </script>
 </body>
 </html>
