@@ -1,112 +1,143 @@
 /* ═══════════════════════════════════════════════════════════════
-   TIMELESS HARMONY — BRAND THEME
-   Nguồn duy nhất cho màu sắc & kiểu chữ của toàn site.
-   File này được nạp SAU <style> của từng trang nên các biến ở đây
-   luôn thắng. Muốn đổi màu/chữ thương hiệu: sửa ở đây, không sửa
-   trong từng trang. Quy chuẩn đầy đủ: docs/brand-guidelines.html
+   TIMELESS HARMONY — "VƯỜN KÍNH" (glass theme)
+   Nguồn duy nhất cho màu, chữ và chất liệu kính của toàn site.
+   File này nạp SAU <style> của từng trang nên biến ở đây luôn thắng.
+   Hình nền vẽ bằng docs/design/build_background.py → assets/bg/.
+   Quy chuẩn đầy đủ: docs/brand-guidelines.html
    ═══════════════════════════════════════════════════════════════ */
 
-/* ── 1. BẢNG MÀU GỐC (không đổi theo chế độ sáng/tối) ── */
+/* ── 1. BẢNG MÀU GỐC ── */
 :root {
-  --th-linen:   #D6CEC1;  /* Vải lanh — nền thương hiệu (lấy từ artwork gốc) */
-  --th-paper:   #E8E2D7;  /* Giấy — thẻ, bề mặt nổi */
-  --th-ivory:   #F3EEE5;  /* Ngà — ô nhập liệu, điểm sáng nhất */
-  --th-forest:  #2F3523;  /* Rừng — mực chính: chữ, logo, nét vẽ */
-  --th-moss:    #4C5A38;  /* Rêu — nhấn: icon, nhãn, liên kết */
-  --th-sage:    #8A937C;  /* Xô thơm — viền, chi tiết phụ (không dùng cho chữ nhỏ) */
-  --th-tulip:   #86432D;  /* Tulip — điểm nhấn ấm, dùng tiết chế (≤10%) */
-  --th-night:   #1F2618;  /* Rừng đêm — nền chế độ tối */
+  --th-ink:    #18301F;  /* Mực lá — chữ, logo */
+  --th-leaf:   #226340;  /* Lá — liên kết, icon, nút chính */
+  --th-meadow: #57B25A;  /* Cỏ non */
+  --th-sky:    #9CD0F5;  /* Trời */
+  --th-sky-deep: #2F7FD6;
+  --th-tulip:  #E0567A;  /* Tulip hồng — trang trí */
+  --th-tulip-deep: #A32545; /* Tulip đậm — chữ nhấn (đủ tương phản) */
+  --th-sun:    #FFD166;
+  --th-night:  #0B1B2E;  /* Trời đêm */
+  /* tên cũ, giữ để tài liệu/trang cũ không vỡ */
+  --th-forest: var(--th-ink); --th-moss: var(--th-leaf); --th-linen: #EAF4EE; --th-paper: #F4FAF6; --th-ivory: #FFFFFF; --th-sage: #8FB3A0;
 
   --font-display: 'Philosopher', 'Be Vietnam Pro', Georgia, serif;
   --font-body:    'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-serif:   'Lora', Georgia, 'Times New Roman', serif;
-
-  /* tên biến cũ của trang đăng ký nhà cung cấp */
   --serif: var(--font-display);
   --sans:  var(--font-body);
-  --radius: 10px;
-  --r: 14px;
+  --radius: 14px;
+  --r: 20px;
+  --blur: 24px;
 }
 
-/* ── 2. CHẾ ĐỘ TỐI — "Rừng đêm" (khi <body> không có class .light) ── */
+/* ── 2. CHẾ ĐỘ TỐI — "Đêm vườn" (khi <body> không có class .light) ── */
 :root {
-  --bg: var(--th-night);  --bg2: #262E1E;  --bg3: #2D3624;
-  --nav-bg: rgba(31,38,24,0.9);
-  --line: rgba(230,223,210,0.10);  --line2: rgba(230,223,210,0.20);
-  --text: #E6DFD2;  --text2: #C6C1B2;  --text3: #A3A392;
-  --ink-rgb: 230,223,210;
+  --sky: linear-gradient(180deg, #081425 0%, #0F2540 55%, #1D3F57 100%);
+  --bg-meadow: url(/assets/bg/meadow-night.svg);  --bg-sky: url(/assets/bg/sky-night.svg);
+  --pane: linear-gradient(135deg, rgba(18,36,48,.64), rgba(10,24,32,.5));
+  --pane-strong: rgba(10,22,30,.8);
+  --edge: rgba(255,255,255,.16);  --edge-soft: rgba(255,255,255,.1);
+  --pane-shadow: 0 24px 60px -18px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.12);
+  --card-shadow: 0 10px 26px -14px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.1);
+  --field: rgba(255,255,255,.09);  --chip: rgba(255,255,255,.08);  --menu: rgba(14,28,38,.94);
+  --btn-grad: linear-gradient(180deg, #F6FCF8, #D9EDE0);  --btn-shadow: 0 10px 22px -10px rgba(0,0,0,.6), inset 0 1px 0 #fff;
+  --btn2: rgba(255,255,255,.1);
 
-  --accent: #B9C3A4;  --accent-strong: #D6CEC1;  --accent-rgb: 185,195,164;
-  --accent-bg: rgba(185,195,164,0.10);  --accent-line: rgba(185,195,164,0.28);
-  --accent-soft: rgba(185,195,164,0.14);
-  --tulip: #E0A58C;  --tulip-bg: rgba(224,165,140,0.12);
-  --icon: #B9C3A4;
-
-  --card-bg: #283020;  --card-border: rgba(230,223,210,0.14);
-  --search-bg: #262E1E;
-  --btn-primary-bg: var(--th-linen);  --btn-primary-text: #232A1B;
-  --inverse-bg: var(--th-linen);  --inverse-text: var(--th-forest);  --inverse-tulip: var(--th-tulip);
-
-  --user-bubble: #34402B;  --user-border: rgba(185,195,164,0.25);
-  --ai-bubble: #283020;    --ai-border: rgba(230,223,210,0.12);
-  --table-even: rgba(230,223,210,0.03);
-
-  --surface: #283020;  --border: rgba(230,223,210,0.16);  --muted: #A3A392;  --white: #2D3624;
-
-  --danger: #E08B7A;  --success: #B9C3A4;
-
-  --tint-plan: #3A3626;  --tint-photo: #2B3A2C;  --tint-flower: #3D2E29;  --tint-beauty: #3B2C30;
-  --tint-music: #2F2F3A; --tint-food: #3B3522;   --tint-venue: #26363A;   --tint-unique: #3E3024;
-  --tint-soon: #2A2F22;
+  --bg: rgba(10,22,30,.62);  --bg2: rgba(255,255,255,.07);  --bg3: rgba(255,255,255,.11);
+  --nav-bg: rgba(10,22,30,.5);
+  --line: rgba(255,255,255,.12);  --line2: rgba(255,255,255,.22);
+  --text: #F1F6F2;  --text2: #D2DFD7;  --text3: #AEC1B6;
+  --ink-rgb: 241,246,242;
+  --accent: #9FDDB0;  --accent-strong: #E6F6EA;  --accent-rgb: 159,221,176;
+  --accent-bg: rgba(159,221,176,.12);  --accent-line: rgba(159,221,176,.3);  --accent-soft: rgba(159,221,176,.16);
+  --tulip: #FF9DB8;  --tulip-bg: rgba(255,157,184,.14);
+  --icon: #9FDDB0;
+  --card-bg: rgba(255,255,255,.07);  --card-border: rgba(255,255,255,.16);
+  --search-bg: rgba(255,255,255,.1);
+  --btn-primary-bg: #E9F6EC;  --btn-primary-text: #12301F;
+  --inverse-bg: rgba(255,255,255,.13);  --inverse-text: #F4FBF6;  --inverse-tulip: #FFB3C7;
+  --user-bubble: rgba(120,200,150,.24);  --user-border: rgba(159,221,176,.32);
+  --ai-bubble: rgba(14,28,38,.6);  --ai-border: rgba(255,255,255,.16);
+  --table-even: rgba(255,255,255,.04);
+  --surface: rgba(255,255,255,.07);  --border: rgba(255,255,255,.18);  --muted: #AEC1B6;  --white: rgba(255,255,255,.08);
+  --danger: #FF9A8A;  --success: #9FDDB0;
+  --tint-plan: linear-gradient(135deg, rgba(227,207,152,.3), rgba(255,255,255,.05));
+  --tint-photo: linear-gradient(135deg, rgba(120,190,170,.3), rgba(255,255,255,.05));
+  --tint-flower: linear-gradient(135deg, rgba(255,157,184,.3), rgba(255,255,255,.05));
+  --tint-beauty: linear-gradient(135deg, rgba(230,160,200,.28), rgba(255,255,255,.05));
+  --tint-music: linear-gradient(135deg, rgba(150,150,230,.3), rgba(255,255,255,.05));
+  --tint-food: linear-gradient(135deg, rgba(240,190,110,.28), rgba(255,255,255,.05));
+  --tint-venue: linear-gradient(135deg, rgba(110,170,230,.3), rgba(255,255,255,.05));
+  --tint-unique: linear-gradient(135deg, rgba(240,150,120,.28), rgba(255,255,255,.05));
+  --tint-soon: linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
 }
 
-/* ── 3. CHẾ ĐỘ SÁNG — mặc định của thương hiệu ── */
+/* ── 3. CHẾ ĐỘ SÁNG — mặc định: trời xanh, thảm cỏ ── */
 body.light {
-  --bg: var(--th-linen);  --bg2: #CEC5B6;  --bg3: #C5BCAC;
-  --nav-bg: rgba(214,206,193,0.9);
-  --line: rgba(47,53,35,0.14);  --line2: rgba(47,53,35,0.26);
-  --text: var(--th-forest);  --text2: #434B39;  --text3: #525A48;
-  --ink-rgb: 47,53,35;
+  --sky: linear-gradient(180deg, #6DB5EE 0%, #9CD0F5 35%, #CFE9FA 68%, #EEF7F4 100%);
+  --bg-meadow: url(/assets/bg/meadow-day.svg);  --bg-sky: url(/assets/bg/sky-day.svg);
+  --pane: linear-gradient(135deg, rgba(255,255,255,.74), rgba(255,255,255,.5));
+  --pane-strong: rgba(255,255,255,.84);
+  --edge: rgba(255,255,255,.88);  --edge-soft: rgba(255,255,255,.6);
+  --pane-shadow: 0 24px 60px -18px rgba(20,60,45,.3), 0 2px 8px rgba(20,60,45,.06), inset 0 1px 0 rgba(255,255,255,.95);
+  --card-shadow: 0 10px 26px -14px rgba(20,60,45,.28), inset 0 1px 0 rgba(255,255,255,.9);
+  --field: rgba(255,255,255,.66);  --chip: rgba(255,255,255,.5);  --menu: rgba(255,255,255,.94);
+  --btn-grad: linear-gradient(180deg, #2F7F55, #1C563A);  --btn-shadow: 0 10px 22px -10px rgba(20,80,50,.6), inset 0 1px 0 rgba(255,255,255,.35);
+  --btn2: rgba(255,255,255,.5);
 
-  --accent: var(--th-moss);  --accent-strong: var(--th-forest);  --accent-rgb: 76,90,56;
-  --accent-bg: rgba(76,90,56,0.10);  --accent-line: rgba(76,90,56,0.30);
-  --accent-soft: rgba(76,90,56,0.12);
-  --tulip: var(--th-tulip);  --tulip-bg: rgba(134,67,45,0.10);
-  --icon: var(--th-moss);
-
-  --card-bg: var(--th-paper);  --card-border: rgba(47,53,35,0.14);
-  --search-bg: var(--th-ivory);
-  --btn-primary-bg: var(--th-forest);  --btn-primary-text: var(--th-paper);
-  --inverse-bg: var(--th-forest);  --inverse-text: var(--th-linen);  --inverse-tulip: #E0A58C;
-
-  --user-bubble: #C9D0BA;  --user-border: rgba(76,90,56,0.3);
-  --ai-bubble: var(--th-paper);  --ai-border: rgba(47,53,35,0.12);
-  --table-even: rgba(47,53,35,0.03);
-
-  --surface: var(--th-paper);  --border: rgba(47,53,35,0.18);  --muted: #525A48;  --white: var(--th-ivory);
-
-  --danger: #9B3A2B;  --success: var(--th-moss);
-
-  --tint-plan: #DBCFB6;  --tint-photo: #C3CBB6;  --tint-flower: #DFC7BC;  --tint-beauty: #DCC6C6;
-  --tint-music: #CBC8CF; --tint-food: #DDD0B0;   --tint-venue: #C2CDC9;   --tint-unique: #D9C1AD;
-  --tint-soon: #CFC7B9;
+  --bg: rgba(255,255,255,.64);  --bg2: rgba(255,255,255,.46);  --bg3: rgba(255,255,255,.6);
+  --nav-bg: rgba(255,255,255,.5);
+  --line: rgba(24,48,31,.12);  --line2: rgba(24,48,31,.22);
+  --text: var(--th-ink);  --text2: #2F4A3A;  --text3: #47604F;
+  --ink-rgb: 24,48,31;
+  --accent: var(--th-leaf);  --accent-strong: var(--th-ink);  --accent-rgb: 34,99,64;
+  --accent-bg: rgba(34,99,64,.1);  --accent-line: rgba(34,99,64,.3);  --accent-soft: rgba(34,99,64,.13);
+  --tulip: var(--th-tulip-deep);  --tulip-bg: rgba(224,86,122,.12);
+  --icon: var(--th-leaf);
+  --card-bg: rgba(255,255,255,.52);  --card-border: rgba(255,255,255,.85);
+  --search-bg: rgba(255,255,255,.72);
+  --btn-primary-bg: #1F5C3D;  --btn-primary-text: #FFFFFF;
+  --inverse-bg: rgba(16,56,42,.8);  --inverse-text: #F4FBF6;  --inverse-tulip: #FFB3C7;
+  --user-bubble: rgba(190,232,202,.8);  --user-border: rgba(34,99,64,.26);
+  --ai-bubble: rgba(255,255,255,.7);  --ai-border: rgba(255,255,255,.9);
+  --table-even: rgba(24,48,31,.035);
+  --surface: rgba(255,255,255,.55);  --border: rgba(24,48,31,.16);  --muted: #47604F;  --white: rgba(255,255,255,.6);
+  --danger: #B3261E;  --success: var(--th-leaf);
+  --tint-plan: linear-gradient(135deg, rgba(255,222,150,.75), rgba(255,255,255,.4));
+  --tint-photo: linear-gradient(135deg, rgba(170,225,200,.8), rgba(255,255,255,.4));
+  --tint-flower: linear-gradient(135deg, rgba(255,186,205,.8), rgba(255,255,255,.4));
+  --tint-beauty: linear-gradient(135deg, rgba(245,190,225,.75), rgba(255,255,255,.4));
+  --tint-music: linear-gradient(135deg, rgba(196,190,250,.8), rgba(255,255,255,.4));
+  --tint-food: linear-gradient(135deg, rgba(255,205,150,.75), rgba(255,255,255,.4));
+  --tint-venue: linear-gradient(135deg, rgba(160,208,250,.8), rgba(255,255,255,.4));
+  --tint-unique: linear-gradient(135deg, rgba(255,180,150,.75), rgba(255,255,255,.4));
+  --tint-soon: linear-gradient(135deg, rgba(255,255,255,.6), rgba(255,255,255,.3));
 }
 
-/* ── 4. KIỂU CHỮ ── */
+/* ── 4. NỀN & KIỂU CHỮ ── */
+html { background: var(--th-sky); }
+html:has(body:not(.light)) { background: var(--th-night); }
 body {
   font-family: var(--font-body);
   font-weight: 400;
-  background: var(--bg);
+  background: transparent !important;
   color: var(--text);
   text-rendering: optimizeLegibility;
 }
+/* Khung cảnh cố định phía sau mọi thứ: trời (gradient) + mây/sao + thảm cỏ */
+body::before {
+  content: ''; position: fixed; z-index: -1; left: 0; top: 0; width: 100%; height: 100vh; height: 100lvh;
+  pointer-events: none;
+  background:
+    var(--bg-meadow) center bottom / auto clamp(220px, 34vh, 460px) repeat-x,
+    var(--bg-sky) center top / cover no-repeat,
+    var(--sky);
+}
 h1, h2, h3 { font-family: var(--font-display); }
-/* Chữ nhấn trong tiêu đề: Philosopher nghiêng, màu Tulip */
 h1 em, h2 em, h3 em, [class*="title"] em {
   font-style: italic; font-weight: 400; color: var(--tulip);
 }
-::selection { background: var(--th-forest); color: var(--th-linen); }
-body:not(.light) ::selection { background: var(--th-linen); color: var(--th-night); }
+::selection { background: var(--th-leaf); color: #fff; }
 
 /* ── 5. ICON: nét vẽ cũ màu vàng → màu icon của thương hiệu ── */
 [stroke="#c9a96e"] { stroke: var(--icon); }
@@ -121,9 +152,9 @@ body:not(.light) ::selection { background: var(--th-linen); color: var(--th-nigh
   color: var(--text); flex-shrink: 0;
 }
 .nav-logo::before, a.logo::before {
-  content: ''; width: 30px; height: 30px; background: currentColor;
-  -webkit-mask: url(/assets/brand/logo-compact.svg) center / contain no-repeat;
-          mask: url(/assets/brand/logo-compact.svg) center / contain no-repeat;
+  content: ''; width: 34px; height: 34px;
+  background: url(/assets/brand/logo-orb.svg) center / contain no-repeat;
+  filter: drop-shadow(0 4px 8px rgba(30, 90, 140, .32));
 }
 .nav-logo::after, a.logo::after {
   content: ''; width: 140px; height: 11.4px; margin-left: 11px; background: currentColor;
@@ -132,7 +163,7 @@ body:not(.light) ::selection { background: var(--th-linen); color: var(--th-nigh
 }
 @media (max-width: 420px) {
   .nav-logo::after, a.logo::after { width: 112px; height: 9.1px; }
-  .nav-logo::before, a.logo::before { width: 26px; height: 26px; }
+  .nav-logo::before, a.logo::before { width: 30px; height: 30px; }
 }
 .footer-logo {
   display: block; font-size: 0 !important; line-height: 0;
@@ -171,40 +202,188 @@ body:not(.light) ::selection { background: var(--th-linen); color: var(--th-nigh
 .tint-unique { background: var(--tint-unique); }
 .tint-soon   { background: var(--tint-soon); }
 
-/* ── 7. THÀNH PHẦN DÙNG CHUNG ── */
-nav { background: var(--nav-bg); border-bottom-color: var(--line); }
+/* ── 7. KÍNH ──
+   Ba cấp: TẤM (khối nội dung lớn, làm mờ nền), THẺ (nằm trong tấm, không cần làm mờ),
+   THẺ NỔI (thẻ đứng riêng ngoài tấm, tự làm mờ). Dùng lại bằng class .glass / .glass-strong. */
+.glass, .glass-strong,
+body > section:not(:first-of-type):not(#planner):not(#cta),
+.cats-section, .sup-section, #pageContent > .wrap, .articles, body > .article-body, body > .article-body ~ .related,
+.page-hero + .content, .chat-inner > .welcome, #success-section, footer {
+  background: var(--pane);
+  -webkit-backdrop-filter: blur(var(--blur)) saturate(1.35);
+          backdrop-filter: blur(var(--blur)) saturate(1.35);
+  border: 1px solid var(--edge);
+  border-radius: 34px;
+  box-shadow: var(--pane-shadow);
+}
+.glass-strong, body > .article-body, .page-hero + .content { background: var(--pane-strong); }
+
+/* Tấm: khối ngang toàn trang → tấm kính nổi, có lề hai bên */
+body > section:not(:first-of-type):not(#planner):not(#cta), .cats-section, .sup-section, footer {
+  width: min(1180px, calc(100% - 28px)); margin: 22px auto; max-width: none;
+}
+body > section:not(:first-of-type):not(#planner):not(#cta) { padding-block: clamp(36px, 5vw, 60px); }
+.cats-section, .sup-section { padding-block: 40px; }
+body > section#planner, body > section#cta { padding-block: 10px; border: 0; }
+footer { margin-bottom: 14px; padding-block: 34px 22px; border-top: 1px solid var(--edge); }
+#pageContent > .wrap { margin: 84px auto 22px; width: min(var(--max, 1100px), calc(100% - 28px)); padding-bottom: 44px; }
+.articles { margin: 26px 0; padding: 34px 32px 44px; }
+body > .article-body { margin: 28px auto; width: min(var(--max-article, 760px), calc(100% - 24px)); padding-top: 40px; padding-bottom: 56px; }
+body > .article-body ~ .related { margin: 0 auto 26px; width: min(var(--max, 1100px), calc(100% - 24px)); padding: 36px 32px 40px; }
+.page-hero + .content { margin: 0 auto 26px; width: min(var(--max, 1100px), calc(100% - 24px)); padding-top: 4px; padding-bottom: 56px; }
+.chat-inner > .welcome { border-radius: 30px; }
+#success-section { margin-top: 40px; margin-bottom: 40px; }
+/* Tiêu đề trang nằm trực tiếp trên nền trời: bỏ đường kẻ cũ */
+.hero, .hero-grid, .page-header, .page-hero, .featured, .article-hero, .cat-pills { border-bottom-color: transparent !important; }
+#hero { background: transparent; }
+
+/* Thẻ nằm trong tấm */
+.sup-card, .why-card, .step, .blog-card, .faq-item, .faq-q, .cat-card, .article-card, .pkg-card, .review-card,
+.sidebar-card, .escrow-step, .trust-card, .toc, .stat-box, .insight-box, .references, .related-card, .love-type,
+.triangle-card, .chem-card, .lesson-body, .principle-body, .q-body, .r-body, .t-body, .cover-placeholder, .featured-thumb {
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+}
+.sup-card, .blog-card, .article-card, .cat-card, .why-card, .pkg-card, .related-card { transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
+.sup-card:hover, .blog-card:hover, .article-card:hover, .cat-card:hover, .related-card:hover {
+  transform: translateY(-4px); border-color: var(--edge);
+  box-shadow: 0 22px 40px -18px rgba(20,60,45,.4), inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+/* Thẻ nổi: đứng riêng trên nền nên tự làm mờ */
+.planner-box, .cta-box, .newsletter-box, .form-wrap .step, .msg-bubble, .sup-card-chat, .typing, .modal,
+.featured-card, .featured-inner, .hint {
+  -webkit-backdrop-filter: blur(20px) saturate(1.35);
+          backdrop-filter: blur(20px) saturate(1.35);
+  border: 1px solid var(--edge);
+  box-shadow: var(--pane-shadow);
+}
+.planner-box, .newsletter-box { background: var(--pane); border-radius: 30px; }
+.cta-box { border: 1px solid var(--edge-soft); border-radius: 34px; }
+.modal { background: var(--pane-strong); border-radius: 28px; }
+.modal-overlay { -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); background: rgba(8,24,30,.45); }
+.msg-bubble, .sup-card-chat, .typing { box-shadow: var(--card-shadow); border-radius: 20px; }
+.form-wrap .step { border-radius: 24px; }
+
+/* Thanh menu: thanh kính nổi */
+nav {
+  background: var(--nav-bg);
+  -webkit-backdrop-filter: blur(22px) saturate(1.4);
+          backdrop-filter: blur(22px) saturate(1.4);
+  border: 1px solid var(--edge) !important;
+  border-radius: 22px;
+  margin: 10px max(12px, calc(50% - 590px)) 0;
+  box-shadow: 0 14px 34px -18px rgba(20,60,90,.45), inset 0 1px 0 rgba(255,255,255,.7);
+}
+nav:has(+ .page-hero), nav:has(+ #form-section) { top: 10px; }
+nav a, nav button, .nav-badge { white-space: nowrap; }
+.nav-right { flex-shrink: 0; }
+.verified-badge { background: var(--pane-strong); color: var(--accent); border: 1px solid var(--edge); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.nav-dropdown { background: var(--menu) !important; border: 1px solid var(--edge); border-radius: 18px; box-shadow: var(--pane-shadow); }
+
+/* Ô nhập & ô tìm kiếm */
+.search-box, .search-select, .planner-input, .filter-select, .form-input, .newsletter-input,
+.form-wrap input, .form-wrap select, .form-wrap textarea, .modal input, .modal select, .modal textarea {
+  background: var(--field); border: 1px solid var(--edge);
+  box-shadow: inset 0 1px 3px rgba(20,60,45,.08);
+}
+.search-box, .search-select {
+  -webkit-backdrop-filter: blur(16px) saturate(1.3); backdrop-filter: blur(16px) saturate(1.3);
+  border-radius: 999px;
+}
+.search-box:focus-within, .planner-input:focus, .form-input:focus, .newsletter-input:focus { border-color: var(--accent); }
+/* Khung nhập của Harmony AI: một viên kính nổi ở đáy */
+.input-bar { background: transparent !important; border-top: 0 !important; }
+.input-inner {
+  background: var(--pane-strong); border: 1px solid var(--edge); border-radius: 28px; padding: 8px 8px 8px 16px;
+  -webkit-backdrop-filter: blur(22px) saturate(1.35); backdrop-filter: blur(22px) saturate(1.35);
+  box-shadow: var(--pane-shadow);
+}
+.input-inner .input-box { background: transparent; border: 0; box-shadow: none; }
+
+/* Nút: viên kính — nút chính là kính xanh lá, nút phụ là kính trong */
+.btn-gold, .btn-line, .nav-cta, .planner-btn, .search-btn, .quick-btn, .newsletter-btn,
+.pkg-btn, .btn-submit, .btn-send, .btn-plan, .btn-outline, .btn-load, .btn-home,
+.btn-cta, .btn-contact, .btn-cancel, .send-btn { border-radius: 999px; }
+.btn-gold, .nav-cta, .btn-contact, .btn-submit, .btn-cta, .newsletter-btn, .search-btn, .btn-send, .send-btn,
+.pkg-card.featured .pkg-btn {
+  background: var(--btn-grad); color: var(--btn-primary-text);
+  border: 1px solid rgba(255,255,255,.3); box-shadow: var(--btn-shadow);
+  transition: transform .2s ease, filter .2s ease, box-shadow .2s ease;
+}
+.btn-gold:hover, .nav-cta:hover, .btn-contact:hover, .btn-submit:hover, .btn-cta:hover, .newsletter-btn:hover,
+.search-btn:hover, .btn-send:hover, .send-btn:hover {
+  background: var(--btn-grad); filter: brightness(1.1); transform: translateY(-1px);
+}
+.btn-line, .btn-outline, .btn-plan, .btn-load, .btn-home, .btn-cancel, .pkg-btn, .quick-btn, .planner-btn, .mode-toggle, .nav-menu-btn {
+  background: var(--btn2); border: 1px solid var(--edge); color: var(--text);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.5);
+}
+.btn-line:hover, .btn-outline:hover, .btn-load:hover, .pkg-btn:hover, .quick-btn:hover, .planner-btn:hover { background: var(--field); border-color: var(--edge); }
+.cta-box .btn-gold { background: #fff; color: #17472F; border-color: #fff; }
+.cta-box .btn-line { background: rgba(255,255,255,.14); color: #fff; border-color: rgba(255,255,255,.5); }
+
+/* Nhãn lọc: viên kính nhỏ */
+.pill, .cat-pill, .cat, .ptag, .style-tag {
+  background: var(--chip); border: 1px solid var(--edge);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+}
+.pill.active, .pill.special.active, .cat-pill.active, .cat-pill.special.active, .cat.active {
+  background: var(--btn-grad); border-color: rgba(255,255,255,.3); color: var(--btn-primary-text); box-shadow: var(--btn-shadow);
+}
+.tab-wrap { border: 1px solid var(--edge); border-radius: 999px; }
+.tab-btn { border-radius: 999px; }
+
+/* Giá & số thứ tự dùng màu Tulip */
+.sup-price, .pkg-price, .sup-card-price { color: var(--tulip); }
 
 a:focus-visible, button:focus-visible, summary:focus-visible,
 input:focus-visible, select:focus-visible, textarea:focus-visible {
   outline: 2px solid var(--accent); outline-offset: 2px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  [data-r] { opacity: 1 !important; transform: none !important; transition: none !important; }
-}
-
-/* Nút: bo tròn mềm, nút chính màu Rừng */
-.btn-gold, .btn-line, .nav-cta, .planner-btn, .search-btn, .quick-btn, .newsletter-btn,
-.pkg-btn, .btn-submit, .btn-send, .btn-plan, .btn-outline, .btn-load, .btn-home,
-.btn-cta, .btn-contact, .btn-cancel { border-radius: 999px; }
-.nav-cta, .btn-contact, .btn-submit, .btn-cta, .newsletter-btn {
-  background: var(--btn-primary-bg); color: var(--btn-primary-text);
-}
-.nav-cta:hover, .btn-contact:hover, .btn-submit:hover, .btn-cta:hover, .newsletter-btn:hover {
-  background: var(--btn-primary-bg); filter: brightness(1.14);
-}
-/* Bộ lọc đang chọn */
-.pill.active, .pill.special.active, .cat-pill.active, .cat-pill.special.active, .cat.active {
-  background: var(--btn-primary-bg); border-color: var(--btn-primary-bg); color: var(--btn-primary-text);
-}
-/* Giá & số thứ tự dùng màu Tulip */
-.sup-price, .pkg-price, .sup-card-price { color: var(--tulip); }
-
-/* Điện thoại: các hàng nút được phép xuống dòng (Be Vietnam Pro rộng hơn phông cũ) */
+/* ── 8. THÍCH ỨNG ── */
 @media (max-width: 640px) {
+  :root { --blur: 16px; }
+  body > section:not(:first-of-type):not(#planner):not(#cta), .cats-section, .sup-section, footer {
+    width: calc(100% - 16px); margin: 14px auto; border-radius: 26px;
+  }
+  body > .article-body, body > .article-body ~ .related, .page-hero + .content, #pageContent > .wrap { width: calc(100% - 16px); border-radius: 26px; }
+  .articles { padding: 24px 16px 30px; border-radius: 26px; }
+  nav { margin: 8px 8px 0; border-radius: 18px; }
+  nav { padding-inline: 12px !important; }
+  nav .wrap { padding-inline: 4px; }
+  .nav-right { gap: 8px; }
+  /* trang con: chỉ giữ quả cầu logo, mũi tên quay lại và chấm trạng thái */
+  nav:has(.nav-back) .nav-logo::after, nav:has(.nav-back) a.logo::after { display: none; }
+  .nav-back { font-size: 0 !important; }
+  .nav-back::before { content: '←'; font-size: 16px; }
+  .nav-badge { font-size: 0 !important; padding: 6px !important; gap: 0 !important; }
+  .nav-cta { padding: 8px 13px !important; }
+  /* Điện thoại: các hàng nút được phép xuống dòng */
   .profile-actions, .cta-strip-btns, .hero-btns, .cta-btns { flex-wrap: wrap; }
   .profile-actions > * { flex: 1 1 auto; }
   .newsletter-form { flex-shrink: 1; min-width: 0; width: 100%; }
   .newsletter-input { min-width: 0; flex: 1 1 150px; }
+}
+@media (min-width: 901px) and (max-width: 1040px) {
+  nav .wrap { padding-inline: 16px; }
+  .nav-links { margin-left: 16px; }
+  .nav-link { padding-inline: 7px; font-size: 12.5px; }
+  .nav-logo::after, a.logo::after { width: 124px; height: 10.1px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  [data-r] { opacity: 1 !important; transform: none !important; transition: none !important; }
+  * { animation-duration: .01ms !important; }
+}
+/* Trình duyệt không làm mờ được, hoặc người dùng tắt hiệu ứng trong suốt: dùng nền đặc hơn */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  body.light { --pane: rgba(255,255,255,.9); --nav-bg: rgba(255,255,255,.92); --card-bg: rgba(255,255,255,.7); --field: rgba(255,255,255,.92); }
+  :root { --pane: rgba(12,26,36,.92); --nav-bg: rgba(12,26,36,.94); }
+}
+@media (prefers-reduced-transparency: reduce) {
+  body.light { --pane: rgba(255,255,255,.95); --pane-strong: #fff; --nav-bg: rgba(255,255,255,.96); --card-bg: rgba(255,255,255,.8); --field: #fff; }
+  :root { --pane: rgba(12,26,36,.96); --pane-strong: #0C1A24; --nav-bg: rgba(12,26,36,.97); }
 }

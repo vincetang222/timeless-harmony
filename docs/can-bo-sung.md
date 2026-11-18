@@ -4,12 +4,10 @@ Danh sách này gom mọi thứ website và bộ thương hiệu đang chờ t�
 
 ## 1. Thương hiệu
 
-- [x] ~~Tệp logo gốc dạng vector~~ — đã **vẽ lại logo thành vector** (tháng 11, 2026). Bộ tệp ở `docs/logo/` (xem `docs/logo/README.md`).
-- [ ] **Duyệt bản vẽ lại logo** trong `docs/logo/preview.png`: hai nụ tulip, chữ T · H, độ đậm chữ. Báo lại nếu muốn giữ chi tiết nào của bản vẽ tay.
-- [ ] *(Không gấp)* Bốn cụm **tulip trang trí** vẫn tách từ ảnh 1080px — đủ cho web; nếu cần in khổ lớn (phông nền, bảng hiệu) thì vẽ lại như logo.
-- [ ] **Xác nhận ý nghĩa biểu tượng** (mục 01 của brand guideline): vô cực, hai nụ tulip, vòng tròn T · H.
-- [ ] **Xác nhận màu Tulip `#86432D`.** Artwork gốc chỉ có hai màu; đây là màu nhấn được đề xuất thêm. Nếu muốn giữ thuần hai màu: đổi `--th-tulip` trong `theme.css`.
-- [ ] **Xác nhận phông chữ** Philosopher / Be Vietnam Pro / Lora. (Chữ logo đã xác định: Belleza; tagline: Lora.)
+- [ ] **Duyệt hướng "Vườn kính"** (giao diện kính trên nền trời – thảm cỏ, logo quả cầu). Xem trang chủ và `docs/logo/preview.png`; báo lại nếu muốn chỉnh màu trời, mật độ hoa, độ trong của kính.
+- [ ] **Xác nhận ý nghĩa biểu tượng** (mục 01 của brand guideline): vô cực, hai nụ tulip, quả cầu trời – cỏ.
+- [ ] **Xác nhận phông chữ** Philosopher / Be Vietnam Pro / Lora. (Chữ logo: Belleza; tagline: Lora.)
+- [ ] *(Không gấp)* Bốn cụm tulip nét mảnh cũ vẫn tách từ ảnh 1080px; chỉ còn dùng ở khối kêu gọi và in ấn. Cần in khổ lớn thì vẽ lại.
 - [ ] **Xưng hô:** "chúng mình" hay "chúng tôi" (xem Giọng thương hiệu → Câu hỏi mở).
 
 ## 2. Hình ảnh

@@ -500,8 +500,93 @@ def compact_mark():
                  infinity(width_scale=2.3, width_add=8, bud_line=13, bud_scale=1.25, size=1.1))
 
 
-def favicon_paths():
-    return infinity(width_scale=2.6, width_add=10, bud_line=14, bud_scale=1.25)
+# ───────────────────────── Bản màu "Vườn kính" ─────────────────────────
+INK = "#18301F"                                   # mực lá đậm
+PINK = {"m": "#B8325A", "a": "#E0567A", "b": "#F08AA6"}   # cánh sau, cánh trước, cánh sáng
+PINK_ON_ORB = {"m": "#FF9DB8", "a": "#FFD3DF", "b": "#FFFFFF"}
+ORB_DEFS = (
+    '<defs><linearGradient id="o" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2F7FD6"/>'
+    '<stop offset=".52" stop-color="#57ADE2"/><stop offset=".8" stop-color="#55B77A"/><stop offset="1" stop-color="#2F8F55"/></linearGradient>'
+    '<radialGradient id="s" cx=".3" cy=".18" r=".8"><stop offset="0" stop-color="#fff" stop-opacity=".62"/>'
+    '<stop offset=".5" stop-color="#fff" stop-opacity=".07"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>'
+    '<linearGradient id="r" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/>'
+    '<stop offset=".5" stop-color="#fff" stop-opacity=".3"/><stop offset="1" stop-color="#fff" stop-opacity=".7"/></linearGradient></defs>'
+)
+
+
+def infinity_parts(width_scale=1.9, width_add=6, bud_scale=1.32, size=1.0):
+    """Dấu vô cực tách phần: thân (body) và ba cánh của mỗi nụ (m, a, b) để tô màu riêng."""
+    body, pts = infinity_body(width_scale, width_add)
+    parts = [("body", body)]
+    for o, ang in ((pts[0], BUD_AXIS_DEG), (pts[-1], BUD_AXIS_DEG + 180)):
+        L = PETAL_LEN * bud_scale
+        parts.append(("m", closed(place(mid_outline(MID_LEN * bud_scale), ang, o))))
+        parts.append(("a", closed(place(petal_outline(L), ang + PETAL_SPREAD, o))))
+        parts.append(("b", closed(place(petal_outline(L), ang - PETAL_SPREAD, o, mirror=True))))
+    if size != 1.0:
+        parts = [(k, p.transform(size, 0, 0, size, C[0] * (1 - size), C[1] * (1 - size))) for k, p in parts]
+    return parts
+
+
+def parts_svg(parts, body_fill, pink):
+    return "".join(f'<path fill="{body_fill if k == "body" else pink[k]}" d="{svg_d(p)}"/>' for k, p in parts)
+
+
+def moved(parts, a, dx, dy):
+    return [(k, p.transform(a, 0, 0, a, dx, dy)) for k, p in parts]
+
+
+def orb_inner(square=False):
+    shape = '<rect width="1000" height="1000" fill="url(#o)"/>' if square else '<circle cx="500" cy="500" r="492" fill="url(#o)"/>'
+    gloss = '<rect width="1000" height="1000" fill="url(#s)"/>' if square else (
+        '<circle cx="500" cy="500" r="492" fill="url(#s)"/><circle cx="500" cy="500" r="481" fill="none" stroke="url(#r)" stroke-width="14"/>')
+    mark = parts_svg(infinity_parts(width_scale=2.3, width_add=8, size=1.12 if not square else 1.0), "#fff", PINK_ON_ORB)
+    return ORB_DEFS + shape + gloss + mark
+
+
+def write_raw(filename, viewbox, inner, title=None):
+    t = f"<title>{title}</title>" if title else ""
+    with open(filename, "w") as fh:
+        fh.write(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{viewbox}"{" role=\"img\"" if title else ""}>{t}{inner}</svg>\n')
+
+
+def color_variants(word, tag, site_dir, kit_dir):
+    """Logo màu: quả cầu trời–cỏ, dấu vô cực trắng; chữ mực lá đậm (hoặc trắng cho nền tối)."""
+    out = {}
+    write_raw(os.path.join(site_dir, "logo-orb.svg"), "0 0 1000 1000", orb_inner(), "Timeless Harmony")
+    write_raw(os.path.join(ROOT, "favicon.svg"), "0 0 1000 1000", orb_inner())
+    write_raw(os.path.join(kit_dir, "logo-orb.svg"), "0 0 1000 1000", orb_inner(), "Timeless Harmony")
+    write_raw(os.path.join(kit_dir, "app-icon.svg"), "0 0 1000 1000", orb_inner(square=True))
+    # dấu vô cực màu trên nền trong suốt (thân mực, nụ hồng) — đặt trên kính sáng
+    inf = infinity_parts(width_scale=1.5, width_add=3, bud_scale=1.25)
+    write_raw(os.path.join(site_dir, "logo-infinity-color.svg"), "150 360 700 280", parts_svg(inf, INK, PINK))
+    # bản đầy đủ và bản ngang, chữ mực / chữ trắng
+    text_h = WORD_CAP + GAP_WORD_TAG + TAG_ASC
+    for suffix, ink in (("", INK), ("-light", "#FFFFFF")):
+        # dọc: cầu trên, chữ dưới
+        orb_d = 760.0
+        w = shift(fit_box(word, cx=500), 0, orb_d + 80 + WORD_CAP)
+        t = shift(fit_box(tag, cx=500), 0, orb_d + 80 + WORD_CAP + GAP_WORD_TAG + TAG_ASC)
+        k = orb_d / 1000
+        inner = f'<g transform="translate({500 - orb_d / 2} 0) scale({k})">{orb_inner()}</g><path fill="{ink}" d="{svg_d(w)}"/><path fill="{ink}" d="{svg_d(t)}"/>'
+        wb, tb = w.bounds, t.bounds
+        x0, x1 = min(wb[0], 500 - orb_d / 2) - 4, max(wb[2], 500 + orb_d / 2) + 4
+        vb = f"{math.floor(x0)} -4 {math.ceil(x1 - x0)} {math.ceil(tb[3] + 8)}"
+        for d in (site_dir, kit_dir):
+            write_raw(os.path.join(d, f"logo-lockup-color{suffix}.svg"), vb, inner, "Timeless Harmony — hold us together")
+        out[f"logo-lockup-color{suffix}"] = vb
+        # ngang: cầu trái, chữ phải
+        od = text_h * 1.9
+        k = od / 1000
+        xt = od + WORD_CAP * 0.8
+        w = shift(fit_box(word, x0=xt), 0, od / 2 - text_h / 2 + WORD_CAP)
+        t = shift(fit_box(tag, x0=xt + 2), 0, od / 2 - text_h / 2 + WORD_CAP + GAP_WORD_TAG + TAG_ASC)
+        inner = f'<g transform="scale({k:.4f})">{orb_inner()}</g><path fill="{ink}" d="{svg_d(w)}"/><path fill="{ink}" d="{svg_d(t)}"/>'
+        vb = f"-4 -4 {math.ceil(w.bounds[2] + 8)} {math.ceil(od + 8)}"
+        for d in (site_dir, kit_dir):
+            write_raw(os.path.join(d, f"logo-horizontal-color{suffix}.svg"), vb, inner, "Timeless Harmony — hold us together")
+        out[f"logo-horizontal-color{suffix}"] = vb
+    return out
 
 
 def find_fonts(fonts_dir):
@@ -514,7 +599,7 @@ def find_fonts(fonts_dir):
     return one("belleza-latin-400-normal.woff2"), one("lora-latin-wght-normal.woff2")
 
 
-COLORS = {"forest": "#2F3523", "ivory": "#F3EEE5"}
+COLORS = {"ink": "#18301F", "white": "#FFFFFF"}   # bản một màu: mực lá / trắng
 
 
 def main():
@@ -556,19 +641,10 @@ def main():
         for cname, col in COLORS.items():
             write_svg(path, os.path.join(args.kit, f"{name}-{cname}.svg"), color=col, title=title, box=box)
 
-    # Favicon: đĩa Rừng, dấu vô cực màu Ngà
-    fav = favicon_paths()
-    fb = fav.bounds
-    s = 780 / (fb[2] - fb[0])
-    fav = fav.transform(s, 0, 0, s, 0, 0)
-    fav = fit_box(fav, cx=500, cy=500)
-    svg = (
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">'
-        f'<circle cx="500" cy="500" r="500" fill="{COLORS["forest"]}"/>'
-        f'<path fill="{COLORS["ivory"]}" d="{svg_d(fav)}"/></svg>\n'
-    )
-    with open(os.path.join(ROOT, "favicon.svg"), "w") as f:
-        f.write(svg)
+    # Bản màu "Vườn kính": quả cầu, favicon, bản đầy đủ/ngang có màu
+    for name, vb in color_variants(word, tag, args.site, args.kit).items():
+        x, y, w, h = vb.split()
+        info[name] = (x, y, float(w), float(h))
     return info
 
 

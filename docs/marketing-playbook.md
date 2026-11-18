@@ -28,7 +28,7 @@ Tài liệu đi kèm: [Brand guideline](brand-guidelines.html) (hình ảnh) · 
 
 **Đã có**
 - Website đầy đủ luồng: trang chủ, danh sách và hồ sơ nhà cung cấp, Harmony AI, Cẩm nang 8 bài, trang đăng ký nhà cung cấp, Điều khoản.
-- Nhận diện thương hiệu: logo vô cực–tulip, bảng màu vải lanh/xanh rừng, tagline.
+- Nhận diện thương hiệu "Vườn kính": logo quả cầu vô cực–tulip, giao diện kính trên nền trời xanh và thảm cỏ hoa, tagline.
 - Mô hình doanh thu đã công bố: phí thành công 3–5% thu từ nhà cung cấp; cặp đôi không trả phí.
 
 **Chưa có (và marketing phải chờ hoặc tránh)**

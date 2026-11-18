@@ -2,35 +2,33 @@
 
 Nền tảng kết nối dịch vụ cưới tại Việt Nam (đám cưới nhỏ, ký quỹ, trợ lý Harmony AI). Website tĩnh, deploy trên Vercel. Người dùng viết tiếng Việt; nội dung site bằng tiếng Việt.
 
+**Cách làm việc & chọn model: đọc `docs/quy-tac-lam-viec.md`** (Sonnet hằng ngày, Opus advisor, Fable cho việc thiết kế, Haiku tra cứu; tìm trước–đọc ít; nháp để ở scratchpad).
+
 ## Cấu trúc
 
-- `*.html` — mỗi trang tự chứa CSS/JS riêng trong `<style>`/`<script>`. Không có bước build.
-- `theme.css` — **nguồn duy nhất cho màu và phông**. Nạp sau `<style>` của mỗi trang nên biến ở đây thắng.
-- `suppliers.js` — **nguồn duy nhất cho dữ liệu nhà cung cấp** (+ `supplierPriceFrom`, `getSupplier`). Hiện là dữ liệu mẫu.
-- `api/chat.js` — Vercel Edge Function cho Harmony AI. Prompt hệ thống nằm ở server; khi sửa `suppliers.js` phải cập nhật `SUPPLIER_LIST` trong file này.
-- `assets/brand/` — logo và tulip dạng SVG một màu (`currentColor`). Logo được **vẽ lại vector** bằng `docs/logo/build_logo.py` (không sửa SVG logo bằng tay — sửa thông số trong script rồi chạy lại, sau đó `node docs/logo/export.js`). Tulip trang trí vẫn tách từ artwork gốc.
-- `docs/logo/` — bộ tệp logo gửi đối tác/nhà in (SVG màu cố định, PNG, PDF, ảnh đại diện). `docs/build_brand_guidelines.py` dựng lại `docs/brand-guidelines.html`.
-- `docs/`, `.claude/`, `CLAUDE.md` — nội bộ, đã loại khỏi deploy bằng `.vercelignore`.
+- `*.html` — mỗi trang tự chứa CSS/JS riêng. Không có bước build.
+- `theme.css` — **nguồn duy nhất cho màu, phông và chất liệu kính**; nạp sau `<style>` của trang nên luôn thắng.
+- `assets/bg/` — hình nền vector (sinh bằng `docs/design/build_background.py`). `assets/brand/` — logo (sinh bằng `docs/logo/build_logo.py` + `node docs/logo/export.js`; không sửa SVG bằng tay).
+- `suppliers.js` — nguồn duy nhất cho dữ liệu nhà cung cấp (dữ liệu mẫu). Sửa thì cập nhật `SUPPLIER_LIST` trong `api/chat.js`.
+- `api/chat.js` — Vercel Edge Function cho Harmony AI.
+- `docs/`, `.claude/`, `CLAUDE.md` — nội bộ, không deploy (`.vercelignore`).
 
-## Thương hiệu — bắt buộc tuân theo
+## Thương hiệu "Vườn kính" — bắt buộc
 
-Đọc trước khi làm giao diện hay viết nội dung:
-- `docs/brand-guidelines.html` — logo, màu, chữ, tulip, thành phần giao diện.
-- `.claude/brand-voice-guidelines.md` — giọng viết, xưng hô, thuật ngữ.
-- `docs/marketing-playbook.md` — định vị, chân dung khách hàng, kế hoạch.
+Chi tiết: `docs/brand-guidelines.html` (hình ảnh), `.claude/brand-voice-guidelines.md` (giọng), `docs/marketing-playbook.md`.
 
-Quy tắc ngắn:
-- **Màu:** chỉ dùng biến trong `theme.css` (`--bg`, `--text`, `--accent`, `--tulip`, `--card-bg`, `--tint-*`…). Không viết mã màu trực tiếp trong trang. Nền Vải lanh `#D6CEC1`, mực Rừng `#2F3523`, Tulip `#86432D` chỉ để nhấn.
-- **Chữ:** `var(--font-display)` Philosopher cho tiêu đề, `var(--font-body)` Be Vietnam Pro cho giao diện, `var(--font-serif)` Lora cho tagline/trích dẫn. Chữ nhấn trong tiêu đề đặt trong `<em>`.
-- **Chế độ sáng là mặc định.** `<body class="light">` do script đầu `<body>` gắn; không có class = chế độ tối "Rừng đêm". Khoá lưu: `localStorage['th-mode']`.
-- **Logo/hình vẽ:** dùng class `.th-art .th-art-*` (mask theo `currentColor`). Chọn theo cỡ: biểu tượng đầy đủ ≥ 120px, `logo-mark-medium.svg` 48–120px, `logo-compact.svg` dưới 48px. Chữ logo là Belleza đã chuyển thành hình — không dùng Belleza cho chữ trên web (không có dấu tiếng Việt).
-- **Icon SVG cũ** có `stroke="#c9a96e"` được `theme.css` đổi sang `--icon`; icon mới dùng `stroke="currentColor"`.
-- **Giọng:** xưng "mình/chúng mình" – "bạn"; viết "nhà cung cấp" (không "supplier"), "ký quỹ"; không dùng số liệu hay đánh giá chưa có thật.
-- Thẻ `<nav>` có CSS chung `position: fixed` — không dùng `<nav>` cho thứ khác ngoài thanh menu trên cùng.
+- **Nền:** khung cảnh cố định `body::before` (trời + cỏ hoa). `body` luôn trong suốt. Chữ chỉ được nằm trực tiếp trên nền ở khối đầu trang; mọi nội dung khác nằm trong kính.
+- **Kính:** khối lớn = tấm kính (tự áp dụng cho `section`, hoặc thêm class `.glass` / `.glass-strong`); thẻ bên trong dùng `var(--card-bg)` + `var(--card-border)`, không thêm `backdrop-filter` (không lồng hai lớp làm mờ).
+- **Màu:** chỉ dùng biến trong `theme.css` (`--text`, `--accent`, `--tulip`, `--card-bg`, `--pane`, `--edge`, `--tint-*`…). Mực `#18301F`, lá `#226340`, tulip chữ `#A32545`.
+- **Chữ:** `--font-display` Philosopher (tiêu đề, chữ nhấn đặt trong `<em>`), `--font-body` Be Vietnam Pro, `--font-serif` Lora.
+- **Chế độ:** sáng là mặc định (`<body class="light">` do script đầu `<body>` gắn); không class = "Đêm vườn". Khoá: `localStorage['th-mode']`.
+- **Logo:** màn hình dùng quả cầu màu `logo-orb.svg` / `logo-*-color.svg`; bản nét một màu (`.th-art .th-art-*`, theo `currentColor`) cho in ấn và trên kính đậm.
+- **Giọng:** "mình/chúng mình" – "bạn"; "nhà cung cấp", "ký quỹ"; không dùng số liệu hay đánh giá chưa có thật.
+- Thẻ `<nav>` chỉ dùng cho thanh menu trên cùng (CSS chung biến nó thành thanh kính nổi).
 
 ## Kiểm tra
 
-Không có test trong repo. Trước khi push: chạy `python3 -m http.server` ở thư mục gốc và kiểm tra bằng Playwright (đã cài sẵn trong môi trường cloud) ở 1280px và 390px, cả hai chế độ sáng/tối; không được có cuộn ngang trên điện thoại. `/api/chat` không chạy ở local — trang Kế hoạch sẽ tự dùng câu trả lời mẫu.
+Không có test trong repo. Trước khi push: `python3 -m http.server`, soát bằng Playwright ở 1280px và 390px, cả sáng/tối; không được có cuộn ngang trên điện thoại. `/api/chat` không chạy ở local (trang Kế hoạch tự dùng câu trả lời mẫu).
 
 ## Đang chờ
 

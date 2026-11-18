@@ -874,23 +874,35 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .hero-btns { flex-wrap: wrap; gap: 10px; }
 .hero-btns .btn-gold, .hero-btns .btn-line { font-size: 14px; padding: 13px 26px; }
 
-/* Poster: artwork gốc của thương hiệu, dựng lại bằng vector trên nền đảo màu */
-.hero-poster {
-  position: relative; width: 100%; max-width: 400px; aspect-ratio: 1 / 1; margin-left: auto;
-  border-radius: 28px; overflow: hidden;
-  background: var(--inverse-bg); color: var(--inverse-text);
+/* Quả cầu kính: biểu tượng thương hiệu nổi trên nền trời, quanh có các viên kính nhỏ */
+.hero-orb { position: relative; width: min(100%, 400px); aspect-ratio: 1 / 1; margin-left: auto; }
+.orb-disc {
+  position: absolute; inset: 9%; border-radius: 50%; display: grid; place-items: center;
+  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.95) 0%, rgba(255,255,255,.5) 34%, rgba(255,255,255,.22) 68%, rgba(255,255,255,.34) 100%);
+  -webkit-backdrop-filter: blur(14px) saturate(1.5); backdrop-filter: blur(14px) saturate(1.5);
+  border: 1.5px solid rgba(255,255,255,.92);
+  box-shadow: 0 46px 80px -34px rgba(20,70,110,.5), inset 0 -34px 60px -30px rgba(120,190,255,.55), inset 0 2px 0 #fff;
+  animation: orbFloat 7s ease-in-out infinite;
 }
-.hero-poster .th-art { position: absolute; }
-.hero-poster .p-lockup { width: 60%; left: 20%; top: 19%; }
-.hero-poster .p-tl { width: 31%; left: 0; top: 0; }
-.hero-poster .p-bl { width: 21%; left: 0; bottom: 0; }
-.hero-poster .p-b  { width: 31%; left: 35%; bottom: 0; }
-.hero-poster .p-r  { width: 20%; right: 0; bottom: 5%; }
+.orb-disc img { width: 66%; height: auto; display: block; filter: drop-shadow(0 6px 10px rgba(24,48,31,.18)); }
+.orb-chip {
+  position: absolute; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+  font-size: 12.5px; font-weight: 500; color: #18301F; padding: 9px 15px 9px 11px; border-radius: 999px;
+  background: rgba(255,255,255,.66); border: 1px solid rgba(255,255,255,.92);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4);
+  box-shadow: 0 14px 28px -14px rgba(20,60,45,.4), inset 0 1px 0 #fff;
+  animation: orbFloat 7s ease-in-out infinite;
+}
+.orb-chip i { width: 18px; height: 18px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(180deg, #2F7F55, #1C563A); }
+.orb-chip i::after { content: ''; width: 8px; height: 4px; border-left: 1.6px solid #fff; border-bottom: 1.6px solid #fff; transform: rotate(-45deg) translate(1px, -1px); }
+.orb-chip.c1 { left: -6%; top: 16%; animation-delay: -2s; }
+.orb-chip.c2 { right: -4%; top: 47%; animation-delay: -4s; }
+.orb-chip.c3 { left: 4%; bottom: 9%; animation-delay: -1s; }
+@keyframes orbFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
 #hero .hero-tulip-m { display: none; }
 @media (max-width: 860px) {
   .hero-grid { grid-template-columns: 1fr; gap: 0; padding: 40px 0 32px; }
-  .hero-poster { display: none; }
-  #hero .hero-tulip-m { display: block; position: absolute; right: -18px; top: 70px; width: 132px; opacity: .2; color: var(--text); }
+  .hero-orb { display: none; }
   .hero-copy { position: relative; }
 }
 
@@ -983,7 +995,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 
 <!-- HERO -->
 <section id="hero">
-  <span class="th-art th-art-tulip-r hero-tulip-m" aria-hidden="true"></span>
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-copy">
@@ -995,13 +1006,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
           <a href="/ke-hoach.html" class="btn-line">Lên kế hoạch cùng Harmony AI</a>
         </div>
       </div>
-      <!-- Poster thương hiệu: logo + tulip từ artwork gốc (assets/brand/) -->
-      <div class="hero-poster" aria-hidden="true">
-        <span class="th-art th-art-tulip-tl p-tl"></span>
-        <span class="th-art th-art-lockup p-lockup"></span>
-        <span class="th-art th-art-tulip-bl p-bl"></span>
-        <span class="th-art th-art-tulip-b p-b"></span>
-        <span class="th-art th-art-tulip-r p-r"></span>
+      <!-- Quả cầu kính thương hiệu (trang trí) -->
+      <div class="hero-orb" aria-hidden="true">
+        <span class="orb-disc"><img src="/assets/brand/logo-infinity-color.svg" alt="" width="700" height="280"></span>
+        <span class="orb-chip c1"><i></i>Nhà cung cấp tuyển chọn</span>
+        <span class="orb-chip c2"><i></i>Thanh toán qua ký quỹ</span>
+        <span class="orb-chip c3"><i></i>Harmony AI lên kế hoạch</span>
       </div>
     </div>
 
