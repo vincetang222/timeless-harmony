@@ -8,7 +8,8 @@ Nền tảng kết nối dịch vụ cưới tại Việt Nam (đám cưới nh�
 - `theme.css` — **nguồn duy nhất cho màu và phông**. Nạp sau `<style>` của mỗi trang nên biến ở đây thắng.
 - `suppliers.js` — **nguồn duy nhất cho dữ liệu nhà cung cấp** (+ `supplierPriceFrom`, `getSupplier`). Hiện là dữ liệu mẫu.
 - `api/chat.js` — Vercel Edge Function cho Harmony AI. Prompt hệ thống nằm ở server; khi sửa `suppliers.js` phải cập nhật `SUPPLIER_LIST` trong file này.
-- `assets/brand/` — logo và tulip dạng SVG một màu (`currentColor`), tách từ artwork gốc.
+- `assets/brand/` — logo và tulip dạng SVG một màu (`currentColor`). Logo được **vẽ lại vector** bằng `docs/logo/build_logo.py` (không sửa SVG logo bằng tay — sửa thông số trong script rồi chạy lại, sau đó `node docs/logo/export.js`). Tulip trang trí vẫn tách từ artwork gốc.
+- `docs/logo/` — bộ tệp logo gửi đối tác/nhà in (SVG màu cố định, PNG, PDF, ảnh đại diện). `docs/build_brand_guidelines.py` dựng lại `docs/brand-guidelines.html`.
 - `docs/`, `.claude/`, `CLAUDE.md` — nội bộ, đã loại khỏi deploy bằng `.vercelignore`.
 
 ## Thương hiệu — bắt buộc tuân theo
@@ -22,7 +23,7 @@ Quy tắc ngắn:
 - **Màu:** chỉ dùng biến trong `theme.css` (`--bg`, `--text`, `--accent`, `--tulip`, `--card-bg`, `--tint-*`…). Không viết mã màu trực tiếp trong trang. Nền Vải lanh `#D6CEC1`, mực Rừng `#2F3523`, Tulip `#86432D` chỉ để nhấn.
 - **Chữ:** `var(--font-display)` Philosopher cho tiêu đề, `var(--font-body)` Be Vietnam Pro cho giao diện, `var(--font-serif)` Lora cho tagline/trích dẫn. Chữ nhấn trong tiêu đề đặt trong `<em>`.
 - **Chế độ sáng là mặc định.** `<body class="light">` do script đầu `<body>` gắn; không có class = chế độ tối "Rừng đêm". Khoá lưu: `localStorage['th-mode']`.
-- **Logo/hình vẽ:** dùng class `.th-art .th-art-*` (mask theo `currentColor`). Dưới 64px dùng `logo-compact.svg`.
+- **Logo/hình vẽ:** dùng class `.th-art .th-art-*` (mask theo `currentColor`). Chọn theo cỡ: biểu tượng đầy đủ ≥ 120px, `logo-mark-medium.svg` 48–120px, `logo-compact.svg` dưới 48px. Chữ logo là Belleza đã chuyển thành hình — không dùng Belleza cho chữ trên web (không có dấu tiếng Việt).
 - **Icon SVG cũ** có `stroke="#c9a96e"` được `theme.css` đổi sang `--icon`; icon mới dùng `stroke="currentColor"`.
 - **Giọng:** xưng "mình/chúng mình" – "bạn"; viết "nhà cung cấp" (không "supplier"), "ký quỹ"; không dùng số liệu hay đánh giá chưa có thật.
 - Thẻ `<nav>` có CSS chung `position: fixed` — không dùng `<nav>` cho thứ khác ngoài thanh menu trên cùng.

@@ -114,9 +114,9 @@ body:not(.light) ::selection { background: var(--th-linen); color: var(--th-nigh
 
 /* ── 6. LOGO ──
    Chữ "Timeless Harmony" trong HTML giữ lại cho trình đọc màn hình & SEO;
-   hình hiển thị là logo vector tách từ artwork gốc. */
+   hình hiển thị là logo vector vẽ lại từ artwork gốc (docs/logo/build_logo.py). */
 .nav-logo, a.logo {
-  display: inline-flex; align-items: center; gap: 10px;
+  display: inline-flex; align-items: center; gap: 0; /* chữ ẩn bên trong cũng là phần tử flex: dùng margin thay gap */
   font-size: 0 !important; letter-spacing: 0 !important; line-height: 0;
   color: var(--text); flex-shrink: 0;
 }
@@ -126,17 +126,17 @@ body:not(.light) ::selection { background: var(--th-linen); color: var(--th-nigh
           mask: url(/assets/brand/logo-compact.svg) center / contain no-repeat;
 }
 .nav-logo::after, a.logo::after {
-  content: ''; width: 140px; height: 18.5px; background: currentColor;
+  content: ''; width: 140px; height: 11.4px; margin-left: 11px; background: currentColor;
   -webkit-mask: url(/assets/brand/logo-wordmark.svg) center / contain no-repeat;
           mask: url(/assets/brand/logo-wordmark.svg) center / contain no-repeat;
 }
 @media (max-width: 420px) {
-  .nav-logo::after, a.logo::after { width: 112px; height: 15px; }
+  .nav-logo::after, a.logo::after { width: 112px; height: 9.1px; }
   .nav-logo::before, a.logo::before { width: 26px; height: 26px; }
 }
 .footer-logo {
   display: block; font-size: 0 !important; line-height: 0;
-  width: 190px; height: 25px; background: var(--text);
+  width: 190px; height: 15.5px; background: var(--text);
   -webkit-mask: url(/assets/brand/logo-wordmark.svg) left center / contain no-repeat;
           mask: url(/assets/brand/logo-wordmark.svg) left center / contain no-repeat;
 }
@@ -147,10 +147,14 @@ body:not(.light) ::selection { background: var(--th-linen); color: var(--th-nigh
   -webkit-mask: var(--art) center / contain no-repeat;
           mask: var(--art) center / contain no-repeat;
 }
-.th-art-mark      { --art: url(/assets/brand/logo-mark.svg);        aspect-ratio: 520 / 492; }
-.th-art-lockup    { --art: url(/assets/brand/logo-lockup.svg);      aspect-ratio: 626 / 630; }
-.th-art-wordmark  { --art: url(/assets/brand/logo-wordmark.svg);    aspect-ratio: 604 / 80; }
-.th-art-tagline   { --art: url(/assets/brand/logo-tagline.svg);     aspect-ratio: 360 / 62; }
+.th-art-mark      { --art: url(/assets/brand/logo-mark.svg);        aspect-ratio: 1 / 1; }
+.th-art-mark-md   { --art: url(/assets/brand/logo-mark-medium.svg); aspect-ratio: 1 / 1; }
+.th-art-compact   { --art: url(/assets/brand/logo-compact.svg);     aspect-ratio: 1 / 1; }
+.th-art-infinity  { --art: url(/assets/brand/logo-infinity.svg);    aspect-ratio: 670 / 240; }
+.th-art-lockup    { --art: url(/assets/brand/logo-lockup.svg);      aspect-ratio: 1242 / 1275; }
+.th-art-horizontal{ --art: url(/assets/brand/logo-horizontal.svg);  aspect-ratio: 1726 / 406; }
+.th-art-wordmark  { --art: url(/assets/brand/logo-wordmark.svg);    aspect-ratio: 1242 / 101; }
+.th-art-tagline   { --art: url(/assets/brand/logo-tagline.svg);     aspect-ratio: 722 / 95; }
 .th-art-tulip-tl  { --art: url(/assets/brand/tulip-top-left.svg);   aspect-ratio: 318 / 452; }
 .th-art-tulip-r   { --art: url(/assets/brand/tulip-right.svg);      aspect-ratio: 213 / 240; }
 .th-art-tulip-b   { --art: url(/assets/brand/tulip-bottom.svg);     aspect-ratio: 336 / 181; }
