@@ -92,7 +92,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 
 :root {
@@ -874,31 +874,41 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .hero-btns { flex-wrap: wrap; gap: 10px; }
 .hero-btns .btn-gold, .hero-btns .btn-line { font-size: 14px; padding: 13px 26px; }
 
-/* Quả cầu kính: biểu tượng thương hiệu nổi trên nền trời, quanh có các viên kính nhỏ */
-.hero-orb { position: relative; width: min(100%, 400px); aspect-ratio: 1 / 1; margin-left: auto; }
+/* Quả cầu pha lê: một giọt kính lỏng mang biểu tượng thương hiệu, quanh có ba viên kính nhỏ */
+.hero-orb { position: relative; width: min(100%, 430px); aspect-ratio: 1 / 1; margin-left: auto; }
 .orb-disc {
-  position: absolute; inset: 9%; border-radius: 50%; display: grid; place-items: center;
-  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.95) 0%, rgba(255,255,255,.5) 34%, rgba(255,255,255,.22) 68%, rgba(255,255,255,.34) 100%);
-  -webkit-backdrop-filter: blur(14px) saturate(1.5); backdrop-filter: blur(14px) saturate(1.5);
-  border: 1.5px solid rgba(255,255,255,.92);
-  box-shadow: 0 46px 80px -34px rgba(20,70,110,.5), inset 0 -34px 60px -30px rgba(120,190,255,.55), inset 0 2px 0 #fff;
-  animation: orbFloat 7s ease-in-out infinite;
+  position: absolute; inset: 7%; border-radius: 50%; display: grid; place-items: center;
+  background:
+    radial-gradient(60% 46% at 30% 17%, rgba(255,255,255,.92), rgba(255,255,255,0) 70%),
+    radial-gradient(70% 60% at 74% 90%, rgba(255,236,196,.6), rgba(255,255,255,0) 70%),
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,.06) 54%, rgba(255,255,255,.34) 70%, rgba(255,255,255,.1) 100%);
+  -webkit-backdrop-filter: blur(5px) saturate(1.9) brightness(1.08); backdrop-filter: blur(5px) saturate(1.9) brightness(1.08);
+  box-shadow: 0 64px 90px -46px rgba(18,50,84,.62), inset 0 0 0 1.5px rgba(255,255,255,.78), inset 0 3px 2px rgba(255,255,255,.95),
+              inset 0 -28px 48px -22px rgba(120,176,236,.5), inset 0 32px 52px -32px rgba(255,255,255,.9);
+  animation: orbFloat 8s ease-in-out infinite;
 }
-.orb-disc img { width: 66%; height: auto; display: block; filter: drop-shadow(0 6px 10px rgba(24,48,31,.18)); }
+.orb-disc::after {
+  content: ''; position: absolute; left: 15%; top: 8%; width: 40%; height: 21%; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255,255,255,.95), rgba(255,255,255,0)); transform: rotate(-24deg); filter: blur(2px);
+}
+.orb-disc img { width: 64%; height: auto; display: block; filter: drop-shadow(0 8px 12px rgba(18,38,28,.24)); }
 .orb-chip {
-  position: absolute; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
-  font-size: 12.5px; font-weight: 500; color: #18301F; padding: 9px 15px 9px 11px; border-radius: 999px;
-  background: rgba(255,255,255,.66); border: 1px solid rgba(255,255,255,.92);
-  -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4);
-  box-shadow: 0 14px 28px -14px rgba(20,60,45,.4), inset 0 1px 0 #fff;
-  animation: orbFloat 7s ease-in-out infinite;
+  position: absolute; display: inline-flex; align-items: center; gap: 9px; white-space: nowrap;
+  font-size: 12.5px; font-weight: 500; letter-spacing: .01em; color: #12261C; padding: 10px 17px 10px 11px; border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255,255,255,.74), rgba(255,255,255,.38));
+  -webkit-backdrop-filter: blur(10px) saturate(1.8); backdrop-filter: blur(10px) saturate(1.8);
+  box-shadow: 0 18px 30px -18px rgba(18,44,66,.55), inset 0 0 0 1px rgba(255,255,255,.6), inset 0 1.5px 0 #fff, inset 0 -8px 12px -10px rgba(255,255,255,.7);
+  animation: orbFloat 8s ease-in-out infinite;
 }
-.orb-chip i { width: 18px; height: 18px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(180deg, #2F7F55, #1C563A); }
+.orb-chip i { width: 19px; height: 19px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(140deg, #E3C88F, #9A7440); box-shadow: inset 0 1px 0 rgba(255,255,255,.6); }
 .orb-chip i::after { content: ''; width: 8px; height: 4px; border-left: 1.6px solid #fff; border-bottom: 1.6px solid #fff; transform: rotate(-45deg) translate(1px, -1px); }
-.orb-chip.c1 { left: -6%; top: 16%; animation-delay: -2s; }
-.orb-chip.c2 { right: -4%; top: 47%; animation-delay: -4s; }
-.orb-chip.c3 { left: 4%; bottom: 9%; animation-delay: -1s; }
-@keyframes orbFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+.orb-chip.c1 { left: -8%; top: 15%; animation-delay: -2.5s; }
+.orb-chip.c2 { right: -9%; top: 60%; animation-delay: -5s; }
+.orb-chip.c3 { left: -2%; bottom: 6%; animation-delay: -1s; }
+@keyframes orbFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.hero-title { font-weight: 600; letter-spacing: -.012em; font-size: clamp(34px, 4.5vw, 58px); }
+@media (min-width: 861px) { .hero-grid { grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); gap: 40px; } }
+.hero-eyebrow { color: var(--accent); }
 #hero .hero-tulip-m { display: none; }
 @media (max-width: 860px) {
   .hero-grid { grid-template-columns: 1fr; gap: 0; padding: 40px 0 32px; }
@@ -936,6 +946,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .footer-brandmark .th-art-tagline { width: 118px; opacity: .85; }
 </style>
 <link rel="stylesheet" href="/theme.css">
+<script src="/liquid.js" defer></script>
 </head>
 <body>
 <script>try{if(localStorage.getItem('th-mode')!=='dark')document.body.classList.add('light')}catch(e){document.body.classList.add('light')}</script>
@@ -1008,7 +1019,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
       </div>
       <!-- Quả cầu kính thương hiệu (trang trí) -->
       <div class="hero-orb" aria-hidden="true">
-        <span class="orb-disc"><img src="/assets/brand/logo-infinity-color.svg" alt="" width="700" height="280"></span>
+        <span class="orb-disc"><img src="/assets/brand/logo-infinity-gold.svg" alt="" width="700" height="280"></span>
         <span class="orb-chip c1"><i></i>Nhà cung cấp tuyển chọn</span>
         <span class="orb-chip c2"><i></i>Thanh toán qua ký quỹ</span>
         <span class="orb-chip c3"><i></i>Harmony AI lên kế hoạch</span>

@@ -4,9 +4,9 @@ Danh sách này gom mọi thứ website và bộ thương hiệu đang chờ t�
 
 ## 1. Thương hiệu
 
-- [ ] **Duyệt hướng "Vườn kính"** (giao diện kính trên nền trời – thảm cỏ, logo quả cầu). Xem trang chủ và `docs/logo/preview.png`; báo lại nếu muốn chỉnh màu trời, mật độ hoa, độ trong của kính.
+- [ ] **Duyệt giao diện kính lỏng** (cảnh nền lễ cưới bên hồ ở Ý có pháo bông, kính viền bắt sáng, tiêu đề serif ánh vàng, logo quả cầu ngọc lục – vàng). Xem trang chủ và `docs/logo/preview.png`; báo lại nếu muốn chỉnh màu trời, mật độ hoa, độ trong của kính.
 - [ ] **Xác nhận ý nghĩa biểu tượng** (mục 01 của brand guideline): vô cực, hai nụ tulip, quả cầu trời – cỏ.
-- [ ] **Xác nhận phông chữ** Philosopher / Be Vietnam Pro / Lora. (Chữ logo: Belleza; tagline: Lora.)
+- [ ] **Xác nhận phông chữ** Cormorant Garamond (tiêu đề) / Be Vietnam Pro / Lora. (Chữ logo: Belleza; tagline: Lora.)
 - [ ] *(Không gấp)* Bốn cụm tulip nét mảnh cũ vẫn tách từ ảnh 1080px; chỉ còn dùng ở khối kêu gọi và in ấn. Cần in khổ lớn thì vẽ lại.
 - [ ] **Xưng hô:** "chúng mình" hay "chúng tôi" (xem Giọng thương hiệu → Câu hỏi mở).
 

@@ -501,16 +501,21 @@ def compact_mark():
 
 
 # ───────────────────────── Bản màu "Vườn kính" ─────────────────────────
-INK = "#18301F"                                   # mực lá đậm
-PINK = {"m": "#B8325A", "a": "#E0567A", "b": "#F08AA6"}   # cánh sau, cánh trước, cánh sáng
-PINK_ON_ORB = {"m": "#FF9DB8", "a": "#FFD3DF", "b": "#FFFFFF"}
+INK = "#12261C"                                   # mực ngọc lục
+PINK = {"m": "#D98BA2", "a": "#F4A9BC", "b": "#FBD3DD"}   # nụ tulip hồng phấn: cánh sau, cánh trước, cánh sáng
+PINK_ON_ORB = {"m": "#E9A2B6", "a": "#F8CBD6", "b": "#FFF0F3"}
+GOLD_DEF = ('<linearGradient id="g" gradientUnits="userSpaceOnUse" x1="170" y1="390" x2="830" y2="610"><stop offset="0" stop-color="#F6E7BE"/>'
+            '<stop offset=".5" stop-color="#D9B878"/><stop offset="1" stop-color="#F1DDAA"/></linearGradient>')
+GOLD_DEEP_DEF = ('<linearGradient id="gd" gradientUnits="userSpaceOnUse" x1="170" y1="390" x2="830" y2="610"><stop offset="0" stop-color="#8A6534"/>'
+                 '<stop offset=".5" stop-color="#C7A262"/><stop offset="1" stop-color="#7A5628"/></linearGradient>')
 ORB_DEFS = (
-    '<defs><linearGradient id="o" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2F7FD6"/>'
-    '<stop offset=".52" stop-color="#57ADE2"/><stop offset=".8" stop-color="#55B77A"/><stop offset="1" stop-color="#2F8F55"/></linearGradient>'
-    '<radialGradient id="s" cx=".3" cy=".18" r=".8"><stop offset="0" stop-color="#fff" stop-opacity=".62"/>'
-    '<stop offset=".5" stop-color="#fff" stop-opacity=".07"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>'
-    '<linearGradient id="r" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/>'
-    '<stop offset=".5" stop-color="#fff" stop-opacity=".3"/><stop offset="1" stop-color="#fff" stop-opacity=".7"/></linearGradient></defs>'
+    '<defs><radialGradient id="o" cx=".34" cy=".26" r=".85"><stop offset="0" stop-color="#2F7458"/>'
+    '<stop offset=".5" stop-color="#164634"/><stop offset="1" stop-color="#08221A"/></radialGradient>'
+    '<radialGradient id="s" cx=".3" cy=".16" r=".62"><stop offset="0" stop-color="#fff" stop-opacity=".5"/>'
+    '<stop offset=".55" stop-color="#fff" stop-opacity=".05"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>'
+    '<linearGradient id="r" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6E7BE" stop-opacity=".95"/>'
+    '<stop offset=".5" stop-color="#C7A262" stop-opacity=".25"/><stop offset="1" stop-color="#F1DDAA" stop-opacity=".75"/></linearGradient>'
+    + GOLD_DEF + '</defs>'
 )
 
 
@@ -539,8 +544,8 @@ def moved(parts, a, dx, dy):
 def orb_inner(square=False):
     shape = '<rect width="1000" height="1000" fill="url(#o)"/>' if square else '<circle cx="500" cy="500" r="492" fill="url(#o)"/>'
     gloss = '<rect width="1000" height="1000" fill="url(#s)"/>' if square else (
-        '<circle cx="500" cy="500" r="492" fill="url(#s)"/><circle cx="500" cy="500" r="481" fill="none" stroke="url(#r)" stroke-width="14"/>')
-    mark = parts_svg(infinity_parts(width_scale=2.3, width_add=8, size=1.12 if not square else 1.0), "#fff", PINK_ON_ORB)
+        '<circle cx="500" cy="500" r="492" fill="url(#s)"/><circle cx="500" cy="500" r="484" fill="none" stroke="url(#r)" stroke-width="9"/>')
+    mark = parts_svg(infinity_parts(width_scale=2.3, width_add=8, size=1.12 if not square else 1.0), "url(#g)", PINK_ON_ORB)
     return ORB_DEFS + shape + gloss + mark
 
 
@@ -560,6 +565,8 @@ def color_variants(word, tag, site_dir, kit_dir):
     # dấu vô cực màu trên nền trong suốt (thân mực, nụ hồng) — đặt trên kính sáng
     inf = infinity_parts(width_scale=1.5, width_add=3, bud_scale=1.25)
     write_raw(os.path.join(site_dir, "logo-infinity-color.svg"), "150 360 700 280", parts_svg(inf, INK, PINK))
+    # bản vàng (thân ánh vàng đồng, nụ hồng phấn) — đặt trong quả cầu pha lê ở đầu trang chủ
+    write_raw(os.path.join(site_dir, "logo-infinity-gold.svg"), "150 360 700 280", "<defs>" + GOLD_DEEP_DEF + "</defs>" + parts_svg(inf, "url(#gd)", PINK))
     # bản đầy đủ và bản ngang, chữ mực / chữ trắng
     text_h = WORD_CAP + GAP_WORD_TAG + TAG_ASC
     for suffix, ink in (("", INK), ("-light", "#FFFFFF")):
@@ -599,7 +606,7 @@ def find_fonts(fonts_dir):
     return one("belleza-latin-400-normal.woff2"), one("lora-latin-wght-normal.woff2")
 
 
-COLORS = {"ink": "#18301F", "white": "#FFFFFF"}   # bản một màu: mực lá / trắng
+COLORS = {"ink": "#12261C", "white": "#FFFFFF"}   # bản một màu: mực ngọc lục / trắng
 
 
 def main():

@@ -8,7 +8,7 @@ Logo được **vẽ lại thành vector** (tháng 11, 2026) từ artwork gốc 
 |---|---|
 | Màn hình, mạng xã hội, tài liệu màu | `png/logo-lockup-color.png`, `png/logo-horizontal-color.png`, `png/logo-orb.png` (bản `-light` cho nền tối) |
 | In màu | `pdf/logo-lockup-color.pdf`, `pdf/logo-horizontal-color.pdf`, `pdf/logo-orb.pdf` — vector |
-| In một màu, khắc, dập nổi | `pdf/*-ink.pdf`, `svg/*-ink.svg` (mực lá `#18301F`), `svg/*-white.svg` (trắng) |
+| In một màu, khắc, dập nổi | `pdf/*-ink.pdf`, `svg/*-ink.svg` (mực ngọc lục `#12261C`), `svg/*-white.svg` (trắng) |
 | Gửi designer, Canva, Figma | thư mục `svg/` |
 | Ảnh đại diện Instagram, Facebook, Zalo | `social/avatar-orb.png` (1080×1080, tràn khung) |
 | Chữ ký email | `png/logo-horizontal-color.png`, hiển thị rộng 200px |
@@ -16,12 +16,12 @@ Logo được **vẽ lại thành vector** (tháng 11, 2026) từ artwork gốc 
 
 ## Các phiên bản
 
-- **logo-orb**: quả cầu trời–cỏ, dấu vô cực trắng, nụ tulip hồng. Dùng được từ 16px. Đây là biểu tượng chính.
+- **logo-orb**: quả cầu kính ngọc lục, dấu vô cực ánh vàng, nụ tulip hồng phấn. Dùng được từ 16px. Đây là biểu tượng chính.
 - **logo-lockup-color / logo-horizontal-color**: quả cầu + chữ (dọc / ngang); bản `-light` chữ trắng cho nền tối.
-- **logo-infinity-color**: dấu vô cực thân mực, nụ hồng, nền trong suốt — đặt trên kính sáng.
+- **logo-infinity-color** (thân mực) và **logo-infinity-gold** (thân ánh vàng): dấu vô cực nụ hồng, nền trong suốt — đặt trên kính sáng.
 - **Bản nét một màu** (vẽ lại đúng artwork gốc): `logo-lockup`, `logo-horizontal`, `logo-mark` (≥ 120px), `logo-mark-medium` (48–120px), `logo-compact` (< 48px), `logo-wordmark`, `logo-tagline`, `logo-infinity`.
 
-Màu: gradient quả cầu `#2F7FD6 → #57ADE2 → #55B77A → #2F8F55`; mực `#18301F`; nụ tulip `#E0567A`.
+Màu: quả cầu ngọc lục `#2F7458 → #164634 → #08221A`; vàng `#F6E7BE → #D9B878`; mực `#12261C`; nụ tulip `#F4A9BC`.
 
 ## Cấu trúc
 

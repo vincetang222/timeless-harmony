@@ -7,8 +7,8 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const KIT = __dirname;
-const INK = '#18301F';
-const SKY = 'linear-gradient(180deg,#6DB5EE 0%,#9CD0F5 40%,#CFE9FA 75%,#DDF1E2 100%)';
+const INK = '#12261C';
+const SKY = 'linear-gradient(180deg,#6FA5E3 0%,#9CC3EE 35%,#CFE2F4 62%,#F1ECE4 82%,#F8E7D2 100%)';
 
 const kit = (name) => fs.readFileSync(path.join(KIT, 'svg', `${name}.svg`), 'utf8');
 const site = (name) => fs.readFileSync(path.join(ROOT, 'assets', 'brand', `${name}.svg`), 'utf8');

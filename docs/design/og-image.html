@@ -2,23 +2,24 @@
 <!-- Ảnh chia sẻ link 1200×630. Dựng: mở tệp này bằng Chromium ở khung 1200×630 rồi chụp → og-image.png
      (lệnh mẫu trong docs/design/README.md). Dùng tệp thật trong assets/ nên luôn khớp thương hiệu. -->
 <html lang="vi"><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500&family=Lora:ital@1&family=Philosopher:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500&family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Lora:ital@1&display=swap" rel="stylesheet">
 <style>
   html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
-  body { position: relative; font-family: 'Be Vietnam Pro', sans-serif; color: #18301F;
-    background: url(../../assets/bg/meadow-day.svg) center bottom / auto 250px repeat-x,
-                url(../../assets/bg/sky-day.svg) center top / cover no-repeat,
-                linear-gradient(180deg, #6DB5EE 0%, #9CD0F5 35%, #CFE9FA 68%, #EEF7F4 100%); }
-  .pane { position: absolute; left: 64px; top: 70px; width: 640px; padding: 46px 50px 44px; box-sizing: border-box; border-radius: 40px;
-    background: linear-gradient(135deg, rgba(255,255,255,.78), rgba(255,255,255,.52));
-    backdrop-filter: blur(24px) saturate(1.35); border: 1.5px solid rgba(255,255,255,.9);
-    box-shadow: 0 30px 70px -22px rgba(20,60,45,.4), inset 0 1px 0 #fff; }
-  .eyebrow { font: italic 400 22px 'Lora', serif; margin: 0 0 14px; color: #2F4A3A; }
-  h1 { font: 700 62px/1.06 'Philosopher', serif; margin: 0; letter-spacing: -.005em; }
-  h1 em { display: block; font-weight: 400; font-style: italic; color: #A32545; }
-  .sub { font-size: 23px; line-height: 1.5; margin: 22px 0 0; color: #2F4A3A; }
-  .brand { position: absolute; right: 78px; top: 96px; width: 330px; }
-  .brand img { width: 100%; display: block; filter: drop-shadow(0 26px 30px rgba(20,70,110,.35)); }
+  body { position: relative; font-family: 'Be Vietnam Pro', sans-serif; color: #12261C;
+    background: url(../../assets/bg/scene-day.webp) center 88% / cover no-repeat; }
+  .pane { position: absolute; left: 60px; top: 66px; width: 660px; padding: 46px 52px 46px; box-sizing: border-box; border-radius: 48px;
+    background: linear-gradient(135deg, rgba(255,255,255,.82), rgba(255,255,255,.66) 48%, rgba(255,255,255,.74));
+    backdrop-filter: blur(26px) saturate(1.25) brightness(1.06);
+    box-shadow: 0 36px 70px -32px rgba(18,44,66,.5), inset 0 0 0 1px rgba(255,255,255,.5), inset 0 1.5px 0 #fff,
+                inset 0 18px 28px -18px rgba(255,255,255,.95), inset 0 -18px 28px -20px rgba(255,255,255,.6); }
+  .eyebrow { font: italic 400 22px 'Lora', serif; margin: 0 0 12px; color: #765225; }
+  h1 { font: 600 76px/1 'Cormorant Garamond', serif; margin: 0; letter-spacing: -.012em; }
+  h1 em { display: block; font-weight: 500; font-style: italic; background: linear-gradient(100deg, #7A5A2B, #C7A262 46%, #8A6534); -webkit-background-clip: text; color: transparent; padding-bottom: .08em; }
+  .sub { font-size: 23px; line-height: 1.5; margin: 18px 0 0; color: #2B4336; }
+  .brand { position: absolute; right: 60px; top: 66px; width: 370px; padding: 34px 40px 30px; box-sizing: border-box; border-radius: 48px;
+    background: linear-gradient(135deg, rgba(255,255,255,.82), rgba(255,255,255,.66) 48%, rgba(255,255,255,.74)); backdrop-filter: blur(26px) saturate(1.25) brightness(1.06);
+    box-shadow: 0 36px 70px -32px rgba(18,44,66,.5), inset 0 0 0 1px rgba(255,255,255,.5), inset 0 1.5px 0 #fff, inset 0 18px 28px -18px rgba(255,255,255,.95); }
+  .brand img { width: 100%; display: block; filter: drop-shadow(0 28px 30px rgba(12,46,32,.35)); }
 </style></head>
 <body>
   <div class="pane">
