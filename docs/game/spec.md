@@ -1,8 +1,8 @@
 # "Về chung một nhà" — đặc tả game
 
-**Bản nháp 0.2, chờ duyệt.** Tài liệu này chốt luật chơi, nội dung và hình ảnh **trước khi vẽ bất cứ thứ gì**. Hai tài liệu đi kèm: [ma trận tâm lý cặp đôi](tam-ly-cap-doi.md) và [giá tham khảo](gia-tham-khao.md).
+**Bản nháp 0.3.** Tài liệu này chốt luật chơi, nội dung và hình ảnh **trước khi vẽ bất cứ thứ gì**. Ba tài liệu đi kèm: [ma trận tâm lý cặp đôi](tam-ly-cap-doi.md) (chủ dự án đánh giá chưa sát, đang chờ viết lại), [xem tuổi, xem ngày](xem-ngay.md) và [giá tham khảo](gia-tham-khao.md).
 
-**Đã chốt với chủ dự án:** chạy trên trình duyệt (điện thoại và máy tính), chưa làm cho kính VR · tiền trong game, có nút "Nạp tiền" · người chơi chọn vai chú rể hoặc cô dâu · mở đầu ở Sài Gòn và quê miền Tây · làm bản chơi thử bằng hình khối tạm trước khi vẽ · tên game "Về chung một nhà" · hình không cần tả thực, nhưng phải ưa nhìn.
+**Đã chốt với chủ dự án:** chạy trên trình duyệt (điện thoại và máy tính), chưa làm cho kính VR · tiền trong game, có nút "Nạp tiền" · người chơi chọn vai chú rể hoặc cô dâu · mở đầu ở Sài Gòn và quê miền Tây · làm bản chơi thử bằng hình khối tạm trước khi vẽ · tên game "Về chung một nhà" · hình không cần tả thực, nhưng phải ưa nhìn · người chơi thường bấm "Nạp tiền" thì thấy các cách kiếm tiền trong game · nhóm tập luyện gọi là "khoẻ và tự tin" · có xem tuổi, xem ngày bằng tử vi, thần số học và cung hoàng đạo · bắt đầu bản chơi thử (giai đoạn 1).
 
 Mục 13 là những điểm còn cần bạn quyết.
 
@@ -34,12 +34,33 @@ Tính cách của hai nhân vật (chín trục, xem ma trận tâm lý) quyết
 |---|---|---|
 | 1. Gặp gỡ | Tạo nhân vật (vai, quê, nghề, tiền tiết kiệm, tính cách). Gặp vài người qua bạn bè giới thiệu, chỗ làm, ứng dụng hẹn hò, hoặc về quê được mai mối. Hẹn hò để hiểu người ấy. | Hai người chính thức yêu nhau |
 | 2. Yêu và cầu hôn | Vun tình cảm trong khi vẫn đi làm. Ra mắt gia đình hai bên. Chọn nhẫn và **dịch vụ cầu hôn** (mục 6). | Lời cầu hôn được nhận |
-| 3. Hai họ và kế hoạch | Dạm ngõ. Bàn với hai họ: ngày cưới, số khách, một tiệc chung hay hai tiệc, ở quê hay thành phố, sính lễ. Đặt ngân sách. Dựng chương trình (mục 4). | Kế hoạch và ngân sách được chốt |
+| 3. Hai họ và kế hoạch | Dạm ngõ. **Xem tuổi, xem ngày** (mục 3b). Bàn với hai họ: ngày cưới, số khách, một tiệc chung hay hai tiệc, ở quê hay thành phố, sính lễ. Đặt ngân sách. Dựng chương trình (mục 4). | Kế hoạch và ngân sách được chốt |
 | 4. Nhà cung cấp và hợp đồng | Dựng tiệc nhanh bằng gói sẵn hoặc may đo từng hạng mục, so sánh, mặc cả, đọc và ký hợp đồng (mục 5). | Mọi hạng mục bắt buộc đã ký |
 | 5. Gom tiền và chuẩn bị | Đóng tiền theo mốc. Thiếu thì kiếm thêm (mục 7). **Chăm sóc bản thân**: tập luyện, thư giãn, may đồ (mục 6). Đăng ký kết hôn ở uỷ ban. | Đóng đủ các mốc trước ngày cưới |
 | 6. Mùa cưới | Lễ ăn hỏi → lễ gia tiên nhà gái (vu quy) → rước dâu → lễ gia tiên nhà trai (tân hôn) → tiệc nhà gái, tiệc nhà trai (hoặc tiệc chung) → tiệc sau cưới → đếm phong bì, tổng kết (mục 8). | Tổng kết xong |
 
 **Sau tiệc sau cưới có còn gì không?** Tuỳ nhà. Nhiều gia đình giữ lễ lại mặt (miền Nam gọi là phản bái): một tới ba ngày sau cưới, hai vợ chồng mang quà về thăm bố mẹ cô dâu. Ở thành phố nhiều nhà bỏ hoặc làm gọn thành một bữa cơm. Trong game đây là lựa chọn bàn với hai họ ở chương 3; nhà nào không giữ thì tiệc sau cưới là hết, rồi tới trăng mật.
+
+## 3b. Xem tuổi, xem ngày, xem giờ
+
+Ngoài đời, rất nhiều gia đình xem tuổi và chọn ngày giờ trước khi cưới, và ngày đẹp là ngày nhà hàng kín lịch sớm nhất. Game đưa việc này vào như một phần của văn hoá và của áp lực thật, **không** như một cách đoán tương lai. Quy tắc tính nằm ở [tài liệu riêng](xem-ngay.md).
+
+| Cách xem | Dựa vào | Cho ra | Ai trong game coi trọng |
+|---|---|---|---|
+| Tử vi và lịch âm | năm sinh âm lịch của hai người, lịch âm | tuổi hợp hay xung; năm nên tránh (Kim Lâu, Tam Tai); ngày hoàng đạo, ngày kiêng; giờ hoàng đạo cho từng nghi lễ | ông bà, bố mẹ, họ hàng lớn tuổi |
+| Thần số học | ngày sinh dương lịch | con số chủ đạo, năm cá nhân, một dòng nhận xét về ngày cưới | một phần bạn bè, đồng nghiệp |
+| Cung hoàng đạo | ngày sinh dương lịch | độ hợp tính cách, gợi ý phong cách tiệc và quà | bạn bè, và chính hai người lúc hẹn hò |
+
+**Xem ở đâu.** Thầy xem ngày (trả phí bằng tiền trong game, kết quả kỹ, hai họ tin), ứng dụng xem ngày trên điện thoại của nhân vật (miễn phí, kết quả gọn), và người quen mê thần số học hoặc cung hoàng đạo. Hai nguồn có thể cho hai kết quả khác nhau, như ngoài đời.
+
+**Tác động vào luật chơi.**
+
+- Mỗi nhân vật và mỗi bên gia đình có một mức **tin vào tâm linh**. Kết quả xem chỉ có sức nặng với người tin: chọn ngày bị coi là xấu thì Lòng họ của bên tin giảm và Căng thẳng của người tin tăng; người không tin thì không sao.
+- **Ngày đẹp đắt và hiếm:** địa điểm và nhà cung cấp tính giá cao hơn và kín lịch sớm hơn vào ngày đẹp; ngày thường thì dễ mặc cả.
+- **Giờ hoàng đạo** thành mốc cứng của chương trình (mục 4): xuất phát rước dâu, làm lễ gia tiên, đón dâu vào nhà. Trễ giờ là một sự cố của ngày cưới.
+- **Tuổi chưa hợp, hoặc phạm Kim Lâu** mở ra tình huống với hai họ. Các lối ra theo tục lệ: dời sang năm khác, làm lễ xin dâu hai lần, đợi qua Đông chí; hoặc thuyết phục bố mẹ bỏ qua.
+
+**Năm nguyên tắc.** Luôn ghi rõ "theo lịch âm" hay "theo thần số học", không viết như sự thật · không bao giờ kết luận "không nên cưới" · tính theo quy tắc công khai, không ngẫu nhiên · không bán "giải hạn", không thu tiền thật cho việc xem · người chơi tắt hẳn phần này được.
 
 ## 4. Dựng chương trình
 
@@ -123,7 +144,7 @@ Lời cầu hôn được nhận hay hoãn tuỳ Tình cảm, lòng hai họ, v�
 
 **May đồ (chương 4–5).** Thuê hay may riêng váy cưới, vest, áo dài. May riêng cần hai ba buổi thử đồ. Đổi cân nặng nhiều sau khi đã may thì phải sửa đồ và trả phí sửa: lý do để lên lịch tập trước khi đi may.
 
-Mình đặt nhóm tập luyện dưới tên "khoẻ và tự tin" thay vì "giảm cân", vì nhiều người chơi là nữ và game không nên cổ vũ ép cân. Bạn xem mục 13.
+Nhóm tập luyện mang tên "khoẻ và tự tin" thay vì "giảm cân", vì nhiều người chơi là nữ và game không nên cổ vũ ép cân (đã chốt).
 
 ## 7. Kiếm tiền và nút "Nạp tiền"
 
@@ -143,7 +164,7 @@ Game **không** cho kiếm tiền bằng cờ bạc, cá độ hay vay nóng. L�
 **Nút "Nạp tiền"** nằm cạnh ví.
 
 - **Quản trị viên:** nạp bao nhiêu cũng được, để thử game và trình diễn cho nhà cung cấp. Lượt chơi có nạp kiểu này được đánh dấu "chế độ thử" và không tính vào số liệu.
-- **Người chơi thường, ở bản đầu:** bấm vào thì thấy các cách kiếm tiền trong game. Đây cũng là chỗ để nối cổng thanh toán thật về sau, khi đã có tư vấn pháp lý.
+- **Người chơi thường, ở bản đầu (đã chốt):** bấm vào thì thấy các cách kiếm tiền trong game. Đây cũng là chỗ để nối cổng thanh toán thật về sau, khi đã có tư vấn pháp lý.
 - **Nhận biết quản trị viên:** bản đầu chưa có tài khoản nên dùng mã quản trị nhập trong phần cài đặt (chỉ có tác dụng trên máy đó). Khi có tài khoản thì quyền này gắn với tài khoản và kiểm ở máy chủ.
 
 ## 8. Ngày cưới và kết quả
@@ -178,6 +199,8 @@ Mỗi tình huống luôn có ít nhất hai lối ra. Bản đầy đủ sẽ c
 | | Bố mẹ muốn mời 400 khách, hai người muốn 60 | tiệc lớn ở quê do bố mẹ lo cộng tiệc nhỏ riêng; hoặc nhượng một bên |
 | | Ngày đẹp rơi vào mùa cao điểm | chịu giá cao; chọn ngày khác (họ hàng phật ý) |
 | | Hai nhà khác miền | chọn theo một bên, hoặc pha hai phong tục |
+| | Tuổi hai người xung nhau theo lịch, hoặc cô dâu phạm Kim Lâu đúng năm định cưới | dời năm; xin dâu hai lần; đợi qua Đông chí; thuyết phục bố mẹ bỏ qua |
+| | Hai thầy xem ra hai ngày khác nhau; hoặc một người tin, một người không | theo bên coi trọng hơn; chọn ngày cả hai nguồn đều không chê; mỗi tiệc một ngày |
 | | Phải cưới gấp (có em bé, người thân yếu, sắp đi xa) | lịch rút ngắn, chủ yếu dùng gói sẵn |
 | Kế hoạch | Nhà cung cấp ưng ý kín lịch | chờ; đổi ngày; chọn phương án hai |
 | | Gói sẵn thiếu đúng món mình cần | thêm món (giá lẻ); chuyển sang may đo |
@@ -220,7 +243,7 @@ Trước khi viết nghi lễ của một miền hay một nước, cần một 
 
 ## 11. Hình ảnh
 
-**Phong cách.** Ấm, tông màu nhạt theo bảng màu Timeless Harmony (ngọc lục, champagne, hồng tulip), hình khối bo tròn, nhân vật cách điệu dễ mến. Không chạy theo tả thực. Thứ được chăm chút nhất là thứ người chơi tự chọn nhiều nhất: trang phục, tóc, hoa, trang trí tiệc.
+**Phong cách.** Ấm và tươi, theo bảng màu Timeless Harmony (ngọc lục, vàng champagne, hồng tulip) cộng thêm các màu nhấn đậm, hình khối bo tròn, nhân vật cách điệu dễ mến. Không chạy theo tả thực. Thứ được chăm chút nhất là thứ người chơi tự chọn nhiều nhất: trang phục, tóc, hoa, trang trí tiệc.
 
 **Giải pháp ở giữa: "sa bàn sống", mở dần theo ba bậc.** Mọi thứ dựng bằng 3D thật ngay từ đầu, nên không có gì phải bỏ đi làm lại khi mở rộng.
 
@@ -238,7 +261,9 @@ Trước khi viết nghi lễ của một miền hay một nước, cần một 
 
 **Bước thử kỹ thuật trước khi dựng hàng loạt:** một căn phòng và một nhân vật đi lại, chạy trên điện thoại thật, để bạn duyệt chất lượng hình và độ mượt.
 
-**Kho đồ vật.** Những món không phụ thuộc vào quyết định nào (bàn ghế tiệc, bánh cưới, cổng hoa, mâm quả, chậu cây, đèn, xe cà phê, sạp chợ đêm…) được dựng trước và cất vào `game/assets/kit/`. Lô đầu có 29 món, tổng cộng dưới 1 MB. Mỗi món là một hàm trong `docs/game/build_kit.py`; đổi bảng màu hay thêm món thì sửa tệp đó rồi chạy lại. Lô này cũng là mẫu phong cách đầu tiên để bạn xem có hợp mắt không. Cảnh, nhân vật và trang phục thì chờ bước thử kỹ thuật.
+**Kho đồ vật.** Những món không phụ thuộc vào quyết định nào (bàn ghế tiệc, bánh cưới, cổng hoa, mâm quả, chậu cây, đèn, xe cà phê, sạp chợ đêm…) được dựng trước và cất vào `game/assets/kit/`. Mỗi món là một hàm trong `docs/game/build_kit.py`; đổi bảng màu hay thêm món thì sửa tệp đó rồi chạy lại.
+
+Lô đầu (29 món, hình khối trơn một màu) bị chủ dự án chê là chán và khó nhận ra. **Bản hai** (30 món, khoảng 1,9 MB) đổi cách dựng: hoa có từng cánh, lá có gập, khăn bàn có nếp rủ, bàn tiệc bày sẵn đĩa và hoa, kim loại bóng thật, ly bằng kính trong, bóng đèn tự sáng, bóng tối ở hốc và khe được tô sẵn vào màu. Quy tắc mới: mỗi món phải nhận ra được khi nhìn nhỏ. Bản hai đang chờ duyệt; cảnh, nhân vật và trang phục thì chờ bước thử kỹ thuật.
 
 ### Khối lượng
 
@@ -285,7 +310,7 @@ Cuối game có nút chuyển kế hoạch trong game (ngân sách, chương tr�
 | Giai đoạn | Làm gì | Tốn hình vẽ |
 |---|---|---|
 | 0 | Chốt đặc tả này, ma trận tâm lý và bảng giá | không |
-| 1 | Bản chơi thử bằng hình khối tạm: đủ sáu chương, gói sẵn và may đo, tâm lý, tiền, tình huống | không |
+| 1 | Bản chơi thử bằng hình khối tạm: đủ sáu chương, gói sẵn và may đo, xem tuổi xem ngày, tâm lý (đọc từ tệp dữ liệu, vì ma trận còn sửa), tiền, tình huống | không |
 | 1b | Thử kỹ thuật hình: một phòng, một nhân vật, trên điện thoại thật | rất ít |
 | 2 | Lát cắt đẹp: ngày cưới ở Sài Gòn (lễ gia tiên và tiệc), để chốt phong cách | cột "Lát cắt đẹp" ở mục 11 |
 | 3 | Gói miền Nam đầy đủ | cột còn lại ở mục 11 |
@@ -297,9 +322,8 @@ Cuối game có nút chuyển kế hoạch trong game (ngân sách, chương tr�
 
 | # | Câu hỏi | Mình đề xuất |
 |---|---|---|
-| 1 | Người chơi thường bấm "Nạp tiền" ở bản đầu thì thấy gì? | Các cách kiếm tiền trong game; chưa thu tiền thật. |
-| 2 | Nhóm tập luyện gọi là "khoẻ và tự tin", và phạt việc ép cân cấp tốc? | Có. |
-| 3 | Chín trục tâm lý và mười kiểu cặp đôi có sát với những cặp bạn biết không? | Bạn đọc tài liệu đi kèm và sửa chỗ thấy chưa đúng. |
-| 3b | Phong cách của lô đồ vật đầu tiên (hình khối bo tròn, màu nhạt) có hợp mắt không? | Nếu hợp, mình dựng tiếp các lô sau theo đúng kiểu này. |
-| 4 | Các tỉ lệ của gói may đo (mục 5) và mức giá tham khảo đã hợp lý chưa? | Dùng làm điểm xuất phát, chỉnh ở bản chơi thử. |
-| 5 | Bắt đầu giai đoạn 1? | Có, ở một phiên làm việc mới. |
+| 1 | Ma trận tâm lý chưa sát ở đâu? | Bạn kể hai ba cặp bạn biết: họ cãi nhau vì chuyện gì, ai là người quyết, điều gì suýt làm hỏng đám cưới. Mình dựng lại ma trận từ chuyện thật thay vì từ lý thuyết. |
+| 2 | Phong cách bản hai của kho đồ vật đã hợp mắt chưa? | Nếu hợp, các lô sau dựng theo kiểu này. Nếu chưa, bạn gửi một hai hình mẫu bạn thích. |
+| 3 | Xem tuổi, xem ngày làm sâu tới đâu ở bản đầu? | Như mục 3b: tuổi hợp xung, Kim Lâu, Tam Tai, ngày và giờ hoàng đạo, con số chủ đạo, cung hoàng đạo. Chưa làm lá số tử vi đầy đủ. |
+| 4 | Ai soát các bảng tra lịch âm và phong tục? | Một người am hiểu mà bạn tin, trước khi phát hành. |
+| 5 | Các tỉ lệ của gói may đo (mục 5) và mức giá tham khảo đã hợp lý chưa? | Dùng làm điểm xuất phát, chỉnh ở bản chơi thử. |

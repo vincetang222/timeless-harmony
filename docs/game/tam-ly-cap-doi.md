@@ -1,6 +1,8 @@
 # Ma trận tâm lý của cặp đôi sắp cưới
 
-**Bản nháp 0.1, chờ duyệt.** Tài liệu này dùng cho hai việc:
+**Bản nháp 0.1. Chủ dự án đã đọc và đánh giá: chưa sát với các cặp đôi ngoài đời.** Bản này sẽ được viết lại từ chuyện thật của vài cặp đôi (họ cãi nhau vì chuyện gì, ai quyết, điều gì suýt làm hỏng đám cưới). Cho tới lúc đó, đừng coi các trục và các kiểu cặp đôi dưới đây là đã chốt; bản chơi thử phải đọc ma trận từ tệp dữ liệu, không viết cứng vào mã. Một thiếu sót đã rõ: chưa có mức **tin vào tâm linh** (xem tuổi, xem ngày) của hai người và của hai họ, xem [xem-ngay.md](xem-ngay.md).
+
+Tài liệu này dùng cho hai việc:
 
 - **Trong game:** mỗi nhân vật có tính cách ẩn, quyết định họ muốn gì, khó chịu vì điều gì, và cãi nhau theo kiểu nào.
 - **Trên nền tảng thật:** Harmony AI hỏi vài câu, xếp cặp đôi vào ma trận, rồi gợi ý kế hoạch hợp với họ và chỉ ra chuyện nên bàn trước khi nó thành cãi nhau.

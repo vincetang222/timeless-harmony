@@ -14,8 +14,9 @@ Danh sách này gom mọi thứ website và bộ thương hiệu đang chờ t�
 
 ## 1b. Game
 
-- [ ] **Duyệt đặc tả game bản 0.2** `docs/game/spec.md` và trả lời các câu ở mục 13 (nút nạp tiền, nhóm tập luyện, tỉ lệ gói may đo, phong cách lô đồ vật đầu tiên, bắt đầu bản chơi thử).
-- [ ] **Đọc ma trận tâm lý** `docs/game/tam-ly-cap-doi.md`: chín trục và mười kiểu cặp đôi có sát thực tế không.
+- [ ] **Đặc tả game bản 0.3** `docs/game/spec.md`: trả lời các câu còn lại ở mục 13 (phong cách kho đồ vật bản hai, độ sâu của phần xem tuổi xem ngày, tỉ lệ gói may đo).
+- [ ] **Ma trận tâm lý** `docs/game/tam-ly-cap-doi.md` chưa sát thực tế: kể hai ba cặp đôi thật (cãi nhau vì gì, ai quyết, điều gì suýt làm hỏng đám cưới) để viết lại.
+- [ ] **Người soát phong tục và lịch âm:** các bảng trong `docs/game/xem-ngay.md` ghi theo quy tắc phổ biến, chưa đối chiếu với lịch vạn niên in.
 - [ ] **Giá thật:** `docs/game/gia-tham-khao.md` còn nhiều ô là số tạm. Khi liên hệ nhà cung cấp, xin báo giá của hai ba nhà cho mỗi hạng mục.
 - [ ] *(Khi tới lúc)* Tìm một người am hiểu phong tục cưới từng miền để soát nội dung nghi lễ.
 
