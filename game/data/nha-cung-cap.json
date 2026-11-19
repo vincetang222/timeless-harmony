@@ -1,0 +1,96 @@
+{
+  "_ghi_chu": "Nhà cung cấp HƯ CẤU, chỉ là nhân vật trong game. Giá tính bằng triệu đồng, lấy từ cột 'số tạm' của docs/game/gia-tham-khao.md. Cấu trúc theo suppliers.js để sau này thêm nhà cung cấp thật.",
+  "loai": [
+    { "id": "tiec", "ten": "Địa điểm và tiệc", "bat_buoc": true },
+    { "id": "trang_phuc", "ten": "Trang phục và trang điểm", "bat_buoc": true },
+    { "id": "anh", "ten": "Ảnh và phim", "bat_buoc": false },
+    { "id": "trang_tri", "ten": "Trang trí và hoa", "bat_buoc": false },
+    { "id": "nhac", "ten": "MC và ban nhạc", "bat_buoc": false }
+  ],
+  "nha_cung_cap": [
+    {
+      "id": "ncc_nha_hang", "ten": "Sảnh Cẩm Tú", "loai": "tiec", "khu": "tp", "don_vi": "ban", "suc_chua": 400, "nhay_ngay": true,
+      "phong_cach": "Sảnh trong nhà, sang trọng gọn gàng",
+      "diem": { "chat_luong": 4, "dung_hen": 4, "linh_hoat": 3, "ro_chi_phi": 3 },
+      "manh": ["Bếp ổn định", "Sảnh đẹp, âm thanh sẵn"], "yeu": ["Kín lịch ngày đẹp"],
+      "yeu_an": { "mo": "Phụ thu phục vụ 8% chỉ ghi nhỏ ở cuối báo giá.", "phat_sinh": 0.08 },
+      "goi": [
+        { "id": "gon", "ten": "Gọn", "gia": 5.0, "gom": "Thực đơn 8 món, trang trí bàn cơ bản" },
+        { "id": "du", "ten": "Đủ", "gia": 6.5, "gom": "Thực đơn 10 món, sân khấu và cổng hoa" },
+        { "id": "tron", "ten": "Trọn", "gia": 8.5, "gom": "Thực đơn 12 món, sân khấu, MC của sảnh, bánh ba tầng" }
+      ]
+    },
+    {
+      "id": "ncc_vuon", "ten": "Vườn Mây", "loai": "tiec", "khu": "tp", "don_vi": "khach", "suc_chua": 100, "nhay_ngay": true, "nha_bat": ["tron"],
+      "phong_cach": "Sân vườn nhỏ, nhiều cây và đèn dây",
+      "diem": { "chat_luong": 4, "dung_hen": 3, "linh_hoat": 4, "ro_chi_phi": 4 },
+      "manh": ["Không gian ấm, hợp tiệc dưới 100 khách", "Linh hoạt thực đơn"], "yeu": ["Ngoài trời, phụ thuộc thời tiết"],
+      "yeu_an": { "mo": "Gói Gọn và Đủ không có nhà bạt dự phòng khi mưa; chỉ gói Trọn mới có.", "phat_sinh": 0 },
+      "goi": [
+        { "id": "gon", "ten": "Gọn", "gia": 0.9, "gom": "Thực đơn buffet, bàn ghế, đèn dây" },
+        { "id": "du", "ten": "Đủ", "gia": 1.3, "gom": "Thực đơn set, cổng hoa nhỏ, âm thanh" },
+        { "id": "tron", "ten": "Trọn", "gia": 1.9, "gom": "Thực đơn set, cổng hoa, âm thanh, nhà bạt dự phòng" }
+      ]
+    },
+    {
+      "id": "ncc_rap_que", "ten": "Rạp cưới Cô Ba", "loai": "tiec", "khu": "que", "don_vi": "ban", "suc_chua": 500, "nhay_ngay": true,
+      "phong_cach": "Rạp dựng tại nhà, ấm áp kiểu miền Tây",
+      "diem": { "chat_luong": 3, "dung_hen": 4, "linh_hoat": 5, "ro_chi_phi": 5 },
+      "manh": ["Giá dễ chịu", "Có đội nấu tiệc quen việc"], "yeu": ["Ít thiết bị hiện đại"],
+      "yeu_an": { "mo": "Hay trễ mười lăm phút khi dựng rạp nếu trời mưa.", "phat_sinh": 0 },
+      "goi": [
+        { "id": "gon", "ten": "Gọn", "gia": 1.6, "co_dinh": 6, "gom": "Rạp, bàn ghế, nấu tiệc 8 món" },
+        { "id": "du", "ten": "Đủ", "gia": 2.5, "co_dinh": 10, "gom": "Rạp lớn, nấu tiệc 10 món, loa đài" },
+        { "id": "tron", "ten": "Trọn", "gia": 3.5, "co_dinh": 15, "gom": "Rạp lớn, nấu tiệc 12 món, loa đài, cổng hoa" }
+      ]
+    },
+    {
+      "id": "ncc_anh", "ten": "Studio Nắng Mai", "loai": "anh", "khu": "tp", "don_vi": "tron", "nhay_ngay": true,
+      "phong_cach": "Ảnh tự nhiên, ánh sáng mềm",
+      "diem": { "chat_luong": 4, "dung_hen": 3, "linh_hoat": 4, "ro_chi_phi": 4 },
+      "manh": ["Ảnh tự nhiên"], "yeu": ["Trả ảnh hơi chậm"],
+      "yeu_an": { "mo": "Trả album chậm hơn hẹn khoảng ba tuần.", "phat_sinh": 0 },
+      "goi": [
+        { "id": "gon", "ten": "Gọn", "gia": 6, "gom": "Chụp và quay phóng sự ngày cưới, một thợ" },
+        { "id": "du", "ten": "Đủ", "gia": 11, "gom": "Phóng sự hai thợ, album cưới" },
+        { "id": "tron", "ten": "Trọn", "gia": 18, "gom": "Ảnh cưới trước ngày, phóng sự, album, phim ngắn" }
+      ]
+    },
+    {
+      "id": "ncc_trang_tri", "ten": "Hoa Gấm Decor", "loai": "trang_tri", "khu": "tp", "don_vi": "tron", "nhay_ngay": true,
+      "phong_cach": "Hoa tươi, tông ấm",
+      "diem": { "chat_luong": 5, "dung_hen": 3, "linh_hoat": 3, "ro_chi_phi": 3 },
+      "manh": ["Hoa tươi đẹp"], "yeu": ["Tăng giá nếu đổi ý muộn"],
+      "yeu_an": { "mo": "Đổi mẫu hoa trong vòng 7 ngày trước cưới bị tính thêm.", "phat_sinh": 0.05 },
+      "goi": [
+        { "id": "gon", "ten": "Gọn", "gia": 4, "gom": "Cổng hoa và bàn gia tiên" },
+        { "id": "du", "ten": "Đủ", "gia": 9, "gom": "Cổng hoa, sân khấu nhỏ, hoa bàn tiệc" },
+        { "id": "tron", "ten": "Trọn", "gia": 18, "gom": "Toàn bộ trang trí gia tiên, cổng hoa, sân khấu, hoa bàn" }
+      ]
+    },
+    {
+      "id": "ncc_trang_phuc", "ten": "Áo Cưới Thục Anh", "loai": "trang_phuc", "khu": "tp", "don_vi": "tron", "nhay_ngay": false,
+      "phong_cach": "Áo dài, váy và vest, may và cho thuê",
+      "diem": { "chat_luong": 4, "dung_hen": 4, "linh_hoat": 3, "ro_chi_phi": 4 },
+      "manh": ["Đồ nhiều size", "Thợ may lâu năm"], "yeu": ["Sát ngày cưới khó sửa"],
+      "yeu_an": { "mo": "Đồ may riêng cần ba buổi thử; sát ngày cưới thì hay chật lịch.", "phat_sinh": 0 },
+      "goi": [
+        { "id": "gon", "ten": "Gọn", "gia": 5, "gom": "Thuê váy hoặc áo dài và vest, trang điểm cô dâu" },
+        { "id": "du", "ten": "Đủ", "gia": 9, "gom": "Thuê bộ cao cấp cho hai người, trang điểm và làm tóc" },
+        { "id": "tron", "ten": "Trọn", "gia": 22, "gom": "May riêng cho hai người, ba buổi thử, trang điểm và làm tóc" }
+      ]
+    },
+    {
+      "id": "ncc_nhac", "ten": "Ban nhạc Lối Về", "loai": "nhac", "khu": "tp", "don_vi": "tron", "nhay_ngay": true,
+      "phong_cach": "Nhạc mộc, MC dí dỏm",
+      "diem": { "chat_luong": 4, "dung_hen": 5, "linh_hoat": 4, "ro_chi_phi": 4 },
+      "manh": ["Đúng giờ", "MC duyên"], "yeu": ["Ít bài nhạc mới"],
+      "yeu_an": { "mo": "Hay bị kéo dài chương trình vì khách nhờ hát thêm.", "phat_sinh": 0 },
+      "goi": [
+        { "id": "gon", "ten": "Gọn", "gia": 3.5, "gom": "MC và hai ca sĩ, ba tiếng" },
+        { "id": "du", "ten": "Đủ", "gia": 7, "gom": "MC, ban nhạc bốn người, âm thanh ánh sáng" },
+        { "id": "tron", "ten": "Trọn", "gia": 12, "gom": "MC, ban nhạc, DJ cho tiệc sau, âm thanh ánh sáng đầy đủ" }
+      ]
+    }
+  ]
+}
