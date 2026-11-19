@@ -3,9 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Đăng ký nhà cung cấp — Timeless Harmony</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -15,8 +18,8 @@
     --border: #E0D8CC;
     --text: #1C1810;
     --muted: #7A7268;
-    --gold: #B8944A;
-    --gold-light: #F5EDD8;
+    --accent: #B8944A;
+    --accent-soft: #F5EDD8;
     --white: #FFFFFF;
     --serif: 'Cormorant Garamond', Georgia, serif;
     --sans: 'DM Sans', system-ui, sans-serif;
@@ -77,8 +80,8 @@
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--gold);
-    background: var(--gold-light);
+    color: var(--accent);
+    background: var(--accent-soft);
     padding: 5px 14px;
     border-radius: 20px;
     margin-bottom: 1.25rem;
@@ -93,7 +96,7 @@
   }
   .hero h1 em {
     font-style: italic;
-    color: var(--gold);
+    color: var(--accent);
   }
   .hero p {
     font-size: 15px;
@@ -122,7 +125,7 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--gold);
+    background: var(--accent);
     flex-shrink: 0;
   }
 
@@ -153,7 +156,7 @@
     font-family: var(--serif);
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--gold);
+    color: var(--accent);
     line-height: 1;
     min-width: 32px;
   }
@@ -183,7 +186,7 @@
     color: var(--text);
     letter-spacing: 0.01em;
   }
-  label span { color: var(--gold); }
+  label span { color: var(--accent); }
   input[type=text],
   input[type=email],
   input[type=tel],
@@ -204,7 +207,7 @@
     appearance: none;
   }
   input:focus, select:focus, textarea:focus {
-    border-color: var(--gold);
+    border-color: var(--accent);
     box-shadow: 0 0 0 3px rgba(184,148,74,0.12);
   }
   textarea { resize: vertical; min-height: 90px; }
@@ -233,11 +236,11 @@
     transition: all 0.15s;
   }
   .radio-card input:checked + label {
-    border-color: var(--gold);
-    background: var(--gold-light);
+    border-color: var(--accent);
+    background: var(--accent-soft);
     font-weight: 500;
   }
-  .radio-card label:hover { border-color: var(--gold); }
+  .radio-card label:hover { border-color: var(--accent); }
   .radio-card .sublabel {
     display: block;
     font-size: 12px;
@@ -254,7 +257,7 @@
     padding: 10px 12px;
     background: var(--surface);
     border-radius: var(--radius);
-    border-left: 2px solid var(--gold);
+    border-left: 2px solid var(--accent);
   }
 
   /* CHECKBOX */
@@ -269,7 +272,7 @@
     width: 16px;
     height: 16px;
     margin-top: 2px;
-    accent-color: var(--gold);
+    accent-color: var(--accent);
     flex-shrink: 0;
     cursor: pointer;
   }
@@ -279,7 +282,7 @@
     font-weight: 400;
     cursor: pointer;
   }
-  .checkbox-row a { color: var(--gold); text-decoration: none; }
+  .checkbox-row a { color: var(--accent); text-decoration: none; }
   .checkbox-row a:hover { text-decoration: underline; }
 
   /* SUBMIT */
@@ -324,14 +327,14 @@
   .success-icon {
     width: 56px;
     height: 56px;
-    background: var(--gold-light);
+    background: var(--accent-soft);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 1.5rem;
     font-size: 1.5rem;
-    color: var(--gold);
+    color: var(--accent);
   }
   .success-state h2 {
     font-family: var(--serif);
@@ -340,7 +343,7 @@
     margin-bottom: 0.75rem;
     line-height: 1.2;
   }
-  .success-state h2 em { font-style: italic; color: var(--gold); }
+  .success-state h2 em { font-style: italic; color: var(--accent); }
   .success-state p {
     font-size: 14px;
     color: var(--muted);
@@ -365,7 +368,7 @@
     font-family: var(--serif);
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--gold);
+    color: var(--accent);
     min-width: 24px;
     line-height: 1.4;
   }
@@ -386,10 +389,10 @@
     cursor: pointer;
     transition: border-color 0.2s;
   }
-  .btn-home:hover { border-color: var(--gold); }
+  .btn-home:hover { border-color: var(--accent); }
 
   /* DECOR */
-  .decor { color: var(--gold); font-size: 0.85em; }
+  .decor { color: var(--accent); font-size: 0.85em; }
 
   /* FOOTER */
   footer {
@@ -400,10 +403,13 @@
     border-top: 1px solid var(--border);
   }
   footer a { color: var(--muted); text-decoration: none; }
-  footer a:hover { color: var(--gold); }
+  footer a:hover { color: var(--accent); }
 </style>
+<link rel="stylesheet" href="/theme.css">
+<script src="/liquid.js" defer></script>
 </head>
 <body>
+<script>try{if(localStorage.getItem('th-mode')!=='dark')document.body.classList.add('light');var l=+localStorage.getItem('th-lite');if(l&&Date.now()-l<6048e5)document.documentElement.classList.add('lite')}catch(e){document.body.classList.add('light')}</script>
 
 <nav>
   <a href="https://timeless-harmony.com" class="logo">Timeless Harmony</a>

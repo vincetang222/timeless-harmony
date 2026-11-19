@@ -1,4 +1,13 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/og-image.png", "destination": "/og-image.jpg", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/assets/bg/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=2592000" }]
+    }
+  ]
 }
