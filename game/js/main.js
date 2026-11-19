@@ -66,7 +66,7 @@ function moHopNoiDung(tieu, ...nd) {
   hop.hidden = false;
 }
 function moNapTien() {
-  const s = store.s, cfg = D().ch, nd = [];
+  const s = store.s, cfg = G.D.ch, nd = [];
   nd.push(h('p', {}, 'Bản chơi thử không thu tiền thật. Đây là các cách kiếm tiền ngay trong game:'));
   nd.push(h('ul', { cls: 'cach' },
     h('li', {}, h('b', {}, 'Lương theo nghề: '), `${G.fmtTien(G.luong(s))} mỗi tháng, nhận tự động (ngày thường bạn đi làm sáng và chiều).`),

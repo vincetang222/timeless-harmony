@@ -111,6 +111,10 @@ export function dungBuoi(s, n = 1) {
 export function quaNgay(s) {
   s.ngay = L.congNgay(s.ngay, 1);
   s.tien = lamTron(s.tien - D.ch.sinh_hoat_thang / 30, 2);
+  if (s.tien < 0) { // hết tiền trong ví: vay tạm để đủ sinh hoạt, không để ví âm
+    const thieu = lamTron(-s.tien + 0.5, 1); s.no = lamTron(s.no + thieu); s.tien = lamTron(s.tien + thieu, 2);
+    s.nhatKy.unshift(`Ví cạn: bạn vay tạm ${fmtTien(thieu)} để sinh hoạt.`);
+  }
   s.ngayLuong -= 1;
   if (s.ngayLuong <= 0) {
     s.ngayLuong = 30;
