@@ -24,7 +24,7 @@ def b64(path):
     mime = 'image/webp' if path.endswith('.webp') else 'image/svg+xml'
     return f'data:{mime};base64,' + base64.b64encode(open(path, 'rb').read()).decode()
 URI = {n: b64(A + n + '.svg') for n in ['logo-orb', 'logo-lockup-color', 'logo-lockup-color-light', 'logo-horizontal-color', 'logo-horizontal-color-light', 'logo-infinity-color', 'logo-infinity-gold']}
-SCENE_DAY = b64(BG + 'scene-day.webp'); SCENE_NIGHT = b64(BG + 'scene-night.webp')
+SCENE_DAY = b64(BG + 'lake-day.webp'); SCENE_NIGHT = b64(BG + 'lake-night.webp')
 def img(n, style='', alt=''):
     return f'<img class="cimg" src="{URI[n]}" alt="{alt}" style="{style}">'
 
@@ -42,18 +42,18 @@ def level(r):
 GL_L = 'kính sáng xấu nhất (đo)'; GL_D = 'kính tối xấu nhất (đo)'
 rows = [
  ('#12261C', '#FFFFFF', 'Mực ngọc lục', 'Chữ chính', None),
- ('#12261C', '#C9D9CB', 'Mực ngọc lục', 'Chữ chính, kính xấu nhất', (10.59, GL_L)),
+ ('#12261C', '#C9D9CB', 'Mực ngọc lục', 'Chữ chính, kính xấu nhất', (10.50, GL_L)),
  ('#2B4336', '#FFFFFF', 'Chữ phụ', 'Đoạn văn phụ', None),
- ('#2B4336', '#C9D9CB', 'Chữ phụ', 'Đoạn văn phụ, kính xấu nhất', (7.14, GL_L)),
+ ('#2B4336', '#C9D9CB', 'Chữ phụ', 'Đoạn văn phụ, kính xấu nhất', (7.08, GL_L)),
  ('#40574A', '#FFFFFF', 'Chữ mờ', 'Chú thích, ngày tháng', None),
- ('#40574A', '#C9D9CB', 'Chữ mờ', 'Chú thích, kính xấu nhất', (5.22, GL_L)),
+ ('#40574A', '#C9D9CB', 'Chữ mờ', 'Chú thích, kính xấu nhất', (5.17, GL_L)),
  ('#765225', '#FFFFFF', 'Vàng đồng', 'Chữ nhấn nhỏ, liên kết, icon, giá', None),
- ('#765225', '#C9D9CB', 'Vàng đồng', 'Chữ nhấn, kính xấu nhất', (4.65, GL_L)),
+ ('#765225', '#C9D9CB', 'Vàng đồng', 'Chữ nhấn, kính xấu nhất', (4.61, GL_L)),
  ('#FBF7EE', '#1E5A40', 'Chữ ngà', 'Nút chính (ngọc lục)', None),
- ('#F3F5F1', '#26414A', 'Chữ chính (tối)', 'Đêm vườn: chữ chính, kính xấu nhất', (9.21, GL_D)),
- ('#D5DED8', '#26414A', 'Chữ phụ (tối)', 'Đêm vườn: đoạn văn phụ', (7.34, GL_D)),
- ('#AFC0B7', '#26414A', 'Chữ mờ (tối)', 'Đêm vườn: chú thích', (5.31, GL_D)),
- ('#E7CF9B', '#26414A', 'Champagne (tối)', 'Đêm vườn: chữ nhấn, liên kết, giá', (6.64, GL_D)),
+ ('#F3F5F1', '#26414A', 'Chữ chính (tối)', 'Đêm vườn: chữ chính, kính xấu nhất', (10.12, GL_D)),
+ ('#D5DED8', '#26414A', 'Chữ phụ (tối)', 'Đêm vườn: đoạn văn phụ', (8.07, GL_D)),
+ ('#AFC0B7', '#26414A', 'Chữ mờ (tối)', 'Đêm vườn: chú thích', (5.84, GL_D)),
+ ('#E7CF9B', '#26414A', 'Champagne (tối)', 'Đêm vườn: chữ nhấn, liên kết, giá', (7.29, GL_D)),
 ]
 def contrast_row(fg, bg, name, use, meas):
     r = meas[0] if meas else ratio(fg, bg); lv, cl = level(r)
@@ -102,7 +102,7 @@ html = f'''<!DOCTYPE html>
 *,*::before,*::after {{ box-sizing:border-box; margin:0; padding:0; }}
 html {{ scroll-behavior:smooth; background:#9CC3EE; }}
 body {{ font-family:var(--body); background:transparent; color:var(--ink); line-height:1.7; font-size:15px; -webkit-font-smoothing:antialiased; }}
-/* Khung cảnh cố định: lễ cưới bên hồ ở Ý, pháo bông ở giữa ảnh */
+/* Khung cảnh cố định: lễ cưới bên hồ ở Ý */
 body::before {{ content:''; position:fixed; z-index:-1; inset:0; pointer-events:none;
   background:var(--scene-day) center bottom / cover no-repeat, linear-gradient(180deg,#4C97E6,#86BFF2 45%,#CDE6F9); }}
 a {{ color:var(--gold); }}
@@ -280,7 +280,7 @@ footer .art {{ width:150px; margin:0 auto 10px; color:var(--ink); }}
   <div class="cover-pane">
     {img('logo-lockup-color', '', 'Timeless Harmony — hold us together').replace('class="cimg"', 'class="cimg c-lockup"')}
     <p class="cover-title">Brand Guideline</p>
-    <p class="cover-sub">Phiên bản 2.3 · tháng 11, 2026 — Vườn kính · kính lỏng · cảnh nền 3D</p>
+    <p class="cover-sub">Phiên bản 2.4 · tháng 11, 2026 — Vườn kính · kính lỏng · cảnh nền 3D · pháo hoa chuyển động</p>
     <span class="cover-sys">Hệ nhận diện “Vườn kính” · kính lỏng</span>
   </div>
 </header>
@@ -434,7 +434,7 @@ footer .art {{ width:150px; margin:0 auto 10px; color:var(--ink); }}
   <p class="note">Mỗi màn hình hoặc mỗi bài đăng chỉ nên có <b>một</b> cụm chữ nhấn vàng. Hồng tulip không bao giờ dùng cho chữ.</p>
 
   <h3>Độ tương phản (WCAG 2.1)</h3>
-  <p style="color:var(--text2);font-size:14px;max-width:70ch">Hàng “kính xấu nhất” là số <b>đo thật</b> trên website: ảnh chụp tấm kính nằm trên toàn cảnh nền (hồ, cỏ, pháo bông), ở vùng xấu nhất. Hàng nền trắng và nút tính bằng công thức WCAG. Chữ thường cần ≥ 4,5:1 (AA); ≥ 7:1 là AAA; chữ lớn (từ 24px, hoặc 19px đậm) cần ≥ 3:1. <b>Quy tắc:</b> độ đục của kính (<code>--pane</code>) đã được chỉnh theo phép đo này; đổi cảnh nền hoặc độ đục thì phải đo lại.</p>
+  <p style="color:var(--text2);font-size:14px;max-width:70ch">Hàng “kính xấu nhất” là số <b>đo thật</b> trên website: ảnh chụp tấm kính nằm trên toàn cảnh nền (hồ, cỏ, hàng bách), ở vùng xấu nhất. Hàng nền trắng và nút tính bằng công thức WCAG. Chữ thường cần ≥ 4,5:1 (AA); ≥ 7:1 là AAA; chữ lớn (từ 24px, hoặc 19px đậm) cần ≥ 3:1. <b>Quy tắc:</b> độ đục của kính (<code>--pane</code>) đã được chỉnh theo phép đo này; đổi cảnh nền hoặc độ đục thì phải đo lại.</p>
   <table><tr><th>Cặp màu</th><th>Tỷ lệ</th><th>Mức</th><th>Dùng cho</th></tr>
   {CONTRAST_HTML}
   </table>
@@ -479,30 +479,32 @@ footer .art {{ width:150px; margin:0 auto 10px; color:var(--ink); }}
 <section id="nen"><div class="wrap">
   <span class="num">05</span>
   <h2>Hình <em>nền</em></h2>
-  <p class="lead">Mỗi trang là một lễ cưới trong vườn biệt thự bên hồ ở Ý — <b>một cảnh 3D dựng sẵn thành ảnh tĩnh</b> (ánh nắng, bóng đổ và phản chiếu trên mặt hồ là thật; trình duyệt chỉ tải một ảnh, không chạy 3D). Cảnh nhìn từ trên cao: trời xanh, dãy núi bên kia hồ, mặt hồ ngọc lam, lan can đá có ban công cong, thảm cỏ sọc và lối sỏi. Hai dãy ghế có khách (chỉ là hình dáng nhìn từ sau, không có gương mặt) chạy dọc lối đi viền hoa trắng dẫn tới cổng hoa; cô dâu chú rể nhỏ đứng dưới cổng, và phía sau là chùm pháo bông ngày nhiều màu xoè hình quạt.</p>
-  <p class="note">Bản đêm: trăng, sao, đèn làng ven hồ, nến dọc lối đi và pháo bông rực hơn. Pháo bông nhiều màu là <b>điểm nhấn màu duy nhất</b> của cảnh, nên giao diện giữ màu tiết chế: ngọc lục, vàng và kính trắng.</p>
+  <p class="lead">Mỗi trang là một lễ cưới trong vườn biệt thự bên hồ ở Ý — <b>một cảnh 3D dựng sẵn thành ảnh tĩnh</b> (ánh nắng, bóng đổ và phản chiếu trên mặt hồ là thật; trình duyệt chỉ tải một ảnh, không chạy 3D). Cảnh nhìn từ trên cao: trời xanh, dãy núi bên kia hồ, mặt hồ ngọc lam, lan can đá có ban công cong, thảm cỏ sọc và lối sỏi. Hai dãy ghế có khách (chỉ là hình dáng nhìn từ sau, không có gương mặt) chạy dọc lối đi viền hoa trắng dẫn tới cổng hoa; cô dâu chú rể nhỏ đứng dưới cổng, phía sau là mặt hồ và dãy núi. <b>Pháo hoa không vẽ sẵn trong ảnh</b>: nó là chuyển động, bắn lên từ sau cổng hoa mỗi lần người xem bấm nút “Bắn pháo hoa”.</p>
+  <p class="note">Bản đêm: trăng, sao, đèn làng ven hồ, dây đèn và nến dọc lối đi. Pháo hoa cầu vồng là <b>điểm nhấn màu duy nhất</b> của cảnh và chỉ xuất hiện khi được bấm, nên giao diện giữ màu tiết chế: ngọc lục, vàng và kính trắng.</p>
   <div class="grid g2" style="margin-top:30px">
-    <div><div class="scene day"></div><p class="note"><code>scene-day.webp</code> · chế độ sáng — hồ Ý, lối hoa trắng, cổng hoa và pháo bông ngày</p></div>
-    <div><div class="scene night"></div><p class="note"><code>scene-night.webp</code> · chế độ tối “Đêm vườn” — trăng, sao, đèn làng, nến và pháo bông rực</p></div>
+    <div><div class="scene day"></div><p class="note"><code>lake-day.webp</code> · chế độ sáng — hồ Ý, lối hoa trắng, cổng hoa</p></div>
+    <div><div class="scene night"></div><p class="note"><code>lake-night.webp</code> · chế độ tối “Đêm vườn” — trăng, sao, đèn làng, dây đèn và nến</p></div>
   </div>
   <div class="card" style="margin-top:22px"><table>
     <tr><th>Tệp</th><th>Vai trò</th></tr>
-    <tr><td><code>assets/bg/scene-day.webp</code> · <code>scene-night.webp</code></td><td>Cảnh nền máy tính, 2000×1250, ngày và đêm</td></tr>
-    <tr><td><code>assets/bg/scene-day-m.webp</code> · <code>scene-night-m.webp</code></td><td>Bản dọc cho điện thoại, 900×1950</td></tr>
+    <tr><td><code>assets/bg/lake-day.webp</code> · <code>lake-night.webp</code></td><td>Cảnh nền máy tính, 2000×1250, ngày và đêm</td></tr>
+    <tr><td><code>assets/bg/lake-day-m.webp</code> · <code>lake-night-m.webp</code></td><td>Bản dọc cho điện thoại, 900×1950</td></tr>
+    <tr><td><code>assets/bg/lake-*-glass.webp</code></td><td>Cảnh đã làm mờ sẵn, đặt sau các tấm kính lớn để cuộn trang không phải làm mờ lại (<code>docs/design/build_glass.js</code>)</td></tr>
+    <tr><td><code>assets/bg/lake-*-mask.webp</code> · <code>fireworks.js</code></td><td>Pháo hoa chuyển động: mặt nạ cho biết vật nào đứng trước pháo (cổng hoa, cây, khách) và đâu là mặt hồ</td></tr>
     <tr><td><code>docs/design/build_scene3d.py</code> + <code>post_scene3d.py</code></td><td>Dựng cảnh bằng Blender (Cycles) ra EXR trong <code>docs/design/.build/</code> (không commit), rồi hậu kỳ và xuất WebP ra <code>assets/bg/</code>. Cách chạy: <code>docs/design/README.md</code></td></tr>
   </table></div>
   <div class="grid g2" style="margin-top:26px">
     <div><h3 style="margin-top:0">Nên</h3><ul class="rules">
       <li>Nền luôn <b>cố định</b> (<code>position: fixed</code>, <code>cover</code>): nội dung cuộn, khung cảnh đứng yên.</li>
-      <li>Những thứ quan trọng (cổng hoa, pháo bông) nằm <b>giữa ảnh</b>, vì điện thoại cắt hai bên.</li>
+      <li>Những thứ quan trọng (cổng hoa, cô dâu chú rể, gốc pháo hoa) nằm <b>giữa ảnh</b>, vì điện thoại cắt hai bên.</li>
       <li><b>Mọi chữ nằm trong kính</b>, kể cả khối tiêu đề đầu trang.</li>
       <li>Chế độ sáng và tối dùng cặp ảnh tương ứng; không trộn ngày với đêm.</li>
     </ul></div>
     <div><h3 style="margin-top:0">Không</h3><ul class="rules no">
-      <li>Đặt chữ trực tiếp lên cảnh — cỏ, hồ và pháo bông làm chữ khó đọc.</li>
-      <li>Cuộn cảnh theo nội dung, hoặc đặt cổng hoa, pháo bông sát mép ảnh.</li>
+      <li>Đặt chữ trực tiếp lên cảnh — cỏ, hồ và hàng cây làm chữ khó đọc.</li>
+      <li>Cuộn cảnh theo nội dung, hoặc đặt cổng hoa sát mép ảnh.</li>
       <li>Thay bằng ảnh stock hay nền đặc; thêm khuôn mặt vào khách mời.</li>
-      <li>Dùng màu pháo bông làm màu giao diện — chỉ ngọc lục, vàng và kính trắng.</li>
+      <li>Dùng màu pháo hoa làm màu giao diện — chỉ ngọc lục, vàng và kính trắng.</li>
     </ul></div>
   </div>
 
@@ -566,7 +568,7 @@ footer .art {{ width:150px; margin:0 auto 10px; color:var(--ink); }}
     </div>
     <div class="d-float" style="margin-top:18px;max-width:460px"><span class="label" style="margin-bottom:4px">Giọt</span><p style="font-size:13px;color:var(--text2)">Thanh menu viên nang (bo 999px), nút, ô tìm kiếm, nhãn lọc. Kính nhẹ hơn nhưng vẫn đục: nền trắng .82 → .6–.66, blur 10–12px, saturate 1.8–1.9. Nhấn thì co lại <code>scale(.96)</code>.</p></div>
   </div>
-  <p class="note">Ví dụ dựng trong một khung trời minh hoạ để thấy hiệu ứng mờ. Kính đục hơn bản trước để đọc được trên cảnh nhiều chi tiết; màu pháo bông hắt qua kính tạo <b>ánh ngũ sắc</b> nhẹ — đó là hiệu ứng mong muốn, không phải lỗi. Class dùng lại: <code>.glass</code> (tấm) và <code>.glass-strong</code> (tấm đặc hơn, cho nội dung dài như bài viết).</p>
+  <p class="note">Ví dụ dựng trong một khung trời minh hoạ để thấy hiệu ứng mờ. Kính đục hơn bản trước để đọc được trên cảnh nhiều chi tiết; màu của cảnh (trời, hồ, cỏ) hắt qua kính tạo <b>sắc độ</b> nhẹ — đó là hiệu ứng mong muốn, không phải lỗi. Class dùng lại: <code>.glass</code> (tấm) và <code>.glass-strong</code> (tấm đặc hơn, cho nội dung dài như bài viết).</p>
 
   <h3>Quả cầu pha lê</h3>
   <div class="stage" style="display:flex;justify-content:center;padding:34px"><div class="crystal">{img('logo-infinity-gold', '', 'Dấu vô cực ánh vàng')}</div></div>
@@ -602,8 +604,10 @@ footer .art {{ width:150px; margin:0 auto 10px; color:var(--ink); }}
 
   <h3>Quy tắc</h3>
   <ul class="rules">
+    <li><b>Kính dựng sẵn</b> (<code>html.pre</code>): tấm kính lớn không làm mờ trực tiếp mà hiển thị ảnh nền đã làm mờ sẵn, ghim theo khung nhìn — nhìn như cũ nhưng cuộn nhẹ hẳn. Vì vậy tấm kính và phần tử bao ngoài nó không được có <code>transform</code> hay <code>filter</code>. Chi tiết: <code>docs/design/README.md</code>.</li>
+    <li><b>Sân khấu:</b> hai nút nổi ở góc dưới phải. “Bắn pháo hoa” tạm ẩn nội dung, pháo bắn lên từ sau cổng hoa rồi nội dung hiện lại; “Ngắm cảnh” ẩn nội dung cho tới khi bấm “Quay lại”, và chạm vào bầu trời thì một quả pháo nổ ở đó. Pháo hoa chỉ chạy vài giây sau mỗi lần bấm, không tự chạy.</li>
     <li><b>Không lồng hai lớp làm mờ.</b> Thẻ nằm trong tấm chỉ dùng nền kính mỏng (trắng .58 → .34), không <code>backdrop-filter</code>.</li>
-    <li><b>Điện thoại</b> (≤ 640px): giảm blur (<code>--blur</code>), tấm bo 30px, lề hai bên 8px; giọt kính nhỏ (nhãn, ô tìm kiếm, nút phụ) không làm mờ, bù bằng nền đục hơn.</li>
+    <li><b>Điện thoại</b> (≤ 640px): tấm bo 30px, lề hai bên 8px; giọt kính nhỏ (nhãn, ô tìm kiếm, nút phụ) không làm mờ, bù bằng nền đục hơn.</li>
     <li><b>Chế độ nhẹ</b> (<code>html.lite</code>): bỏ toàn bộ làm mờ, kính đục 92–97%. Tự bật khi máy yếu, khi bật tiết kiệm dữ liệu, hoặc khi <code>liquid.js</code> đo thấy cuộn trang bị giật. Thành phần mới phải đọc được cả ở chế độ này.</li>
     <li><b>Không cho phần tử đang làm mờ nền chuyển động</b> (trượt, trôi): mỗi khung hình trình duyệt phải làm mờ lại.</li>
     <li><b>Dự phòng:</b> trình duyệt không hỗ trợ <code>backdrop-filter</code> (<code>@supports not</code>), hoặc người dùng bật giảm trong suốt (<code>prefers-reduced-transparency</code>): tấm chuyển sang trắng đặc 90–95%.</li>
@@ -669,9 +673,11 @@ footer .art {{ width:150px; margin:0 auto 10px; color:var(--ink); }}
     <tr><td><code>assets/brand/logo-mark.svg</code> · <code>logo-mark-medium.svg</code> · <code>logo-compact.svg</code></td><td>Biểu tượng nét một màu: đầy đủ · nét vừa · thu nhỏ dưới 48px</td></tr>
     <tr><td><code>assets/brand/logo-wordmark.svg</code> · <code>logo-tagline.svg</code> · <code>logo-infinity.svg</code></td><td>Chữ “TIMELESS HARMONY” · “hold us together” · riêng dấu vô cực (một màu)</td></tr>
     <tr><td><code>favicon.svg</code> · <code>apple-touch-icon.png</code></td><td>Biểu tượng trình duyệt và iPhone</td></tr>
-    <tr><td><code>assets/bg/scene-day.webp</code> · <code>scene-night.webp</code></td><td>Cảnh lễ cưới bên hồ ở Ý, máy tính 2000×1250, ngày và đêm</td></tr>
-    <tr><td><code>assets/bg/scene-day-m.webp</code> · <code>scene-night-m.webp</code></td><td>Bản dọc cho điện thoại, 900×1950</td></tr>
-    <tr><td><code>docs/design/build_scene3d.py</code> · <code>post_scene3d.py</code></td><td>Dựng lại cảnh nền 3D và xuất bốn tệp WebP</td></tr>
+    <tr><td><code>assets/bg/lake-day.webp</code> · <code>lake-night.webp</code></td><td>Cảnh lễ cưới bên hồ ở Ý, máy tính 2000×1250, ngày và đêm</td></tr>
+    <tr><td><code>assets/bg/lake-day-m.webp</code> · <code>lake-night-m.webp</code></td><td>Bản dọc cho điện thoại, 900×1950</td></tr>
+    <tr><td><code>assets/bg/lake-*-glass.webp</code> · <code>lake-*-mask.webp</code></td><td>Kính làm mờ sẵn và mặt nạ pháo hoa (sinh cùng cảnh nền)</td></tr>
+    <tr><td><code>liquid.js</code> · <code>fireworks.js</code></td><td>Kính dựng sẵn, nút “Ngắm cảnh” / “Bắn pháo hoa” · pháo hoa chuyển động</td></tr>
+    <tr><td><code>docs/design/build_scene3d.py</code> · <code>post_scene3d.py</code> · <code>build_glass.js</code></td><td>Dựng lại cảnh nền 3D, xuất WebP, mặt nạ và kính làm mờ sẵn</td></tr>
     <tr><td><code>docs/logo/svg/</code> · <code>png/</code> · <code>pdf/</code> · <code>social/</code></td><td>Bộ tệp gửi đối tác, nhà in: bản màu, bản một màu cố định (mực ngọc lục và ngà), PNG nền trong, PDF vector, ảnh đại diện</td></tr>
     <tr><td><code>assets/brand/tulip-*.svg</code></td><td>Bốn cụm tulip nét mảnh (kính xanh đậm, ấn phẩm in)</td></tr>
     <tr><td><code>og-image.jpg</code></td><td>Ảnh chia sẻ link, 1200×630</td></tr>
@@ -682,7 +688,7 @@ footer .art {{ width:150px; margin:0 auto 10px; color:var(--ink); }}
   <p class="note">Các SVG một màu dùng <code>currentColor</code> — tự đổi theo màu chữ nơi đặt nó. Các SVG màu có gradient cố định, không đổi theo chữ.</p>
   <h3>Việc còn mở</h3>
   <ul class="rules">
-    <li><b>Duyệt cảnh nền hồ Ý + pháo bông và bản kính lỏng</b> — màu, độ đục, chuyển động.</li>
+    <li><b>Duyệt cảnh nền hồ Ý, pháo hoa chuyển động và bản kính lỏng</b> — màu, độ đục, chuyển động.</li>
     <li><b>Ảnh thật</b> của nhà cung cấp và cặp đôi để thay nền màu giữ chỗ.</li>
     <li><b>Ý nghĩa biểu tượng</b> ở mục 01 (kể cả “quả cầu = giọt sương, viên ngọc giữ khoảnh khắc”) cần bạn xác nhận.</li>
     <li><b>In khổ lớn:</b> nếu cần, vẽ lại bốn cụm tulip nét mảnh như đã làm với logo.</li>

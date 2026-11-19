@@ -24,6 +24,7 @@ ap.add_argument("--frame", default="land", choices=["land", "port"])
 ap.add_argument("--scale", type=float, default=1.0)
 ap.add_argument("--spp", type=int, default=160)
 ap.add_argument("--out", default="out.exr")
+ap.add_argument("--fireworks", action="store_true", help="vẽ sẵn pháo bông vào ảnh (ảnh chia sẻ link); mặc định bỏ, vì trên web pháo hoa là chuyển động (fireworks.js)")
 ap.add_argument("--skip", default="", help="bỏ bớt nhóm vật thể khi thử: terrain,grass,trees,people,fire")
 A = ap.parse_args(sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else sys.argv[1:])
 NIGHT = A.mode == "night"
@@ -494,7 +495,7 @@ def build_lake():
     L(nt, d.outputs[0], mx.inputs[1]); L(nt, g.outputs[0], mx.inputs[2])
     L(nt, mx.outputs[0], out.inputs[0])
     s = 60000.0
-    obj("Lake", (np.array([[-s, -3000, LAKE], [s, -3000, LAKE], [s, s, LAKE], [-s, s, LAKE]]), np.array([[0, 1, 2], [0, 2, 3]])), m, smooth=False)
+    obj("Lake", (np.array([[-s, -3000, LAKE], [s, -3000, LAKE], [s, s, LAKE], [-s, s, LAKE]]), np.array([[0, 1, 2], [0, 2, 3]])), m, smooth=False).pass_index = 1   # lớp IndexOB: mặt nạ mặt hồ cho pháo hoa
 
 
 # ──────────────────────────────── trời và nắng ────────────────────────────────
@@ -647,6 +648,7 @@ def setup_render():
     c.sample_clamp_indirect = 8.0
     r.threads_mode = "AUTO"
     scene.view_layers[0].use_pass_z = True
+    scene.view_layers[0].use_pass_object_index = True
     r.image_settings.media_type = "MULTI_LAYER_IMAGE"
     r.image_settings.file_format = "OPEN_EXR_MULTILAYER"
     r.image_settings.color_depth = "32"
@@ -1442,7 +1444,7 @@ obj("Flowers", merge(flowers), M_FLOWER)
 obj("Leaves", merge(leaves), M_LEAF, smooth=False)
 obj("Cores", merge(cores), M_CORE)
 seed(6)
-if "fire" not in SKIP:
+if A.fireworks:
     build_fireworks()
 if NIGHT and flames is not None:
     build_night_lights(flames)
