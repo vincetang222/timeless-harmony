@@ -1,0 +1,321 @@
+[
+ {
+  "id": "ghe-chiavari",
+  "ten": "Ghế tiệc Chiavari",
+  "kich_thuoc_m": [
+   0.41,
+   0.43,
+   0.93
+  ],
+  "tam_giac": 396,
+  "kb": 21.7
+ },
+ {
+  "id": "ban-tron",
+  "ten": "Bàn tròn 10 khách",
+  "kich_thuoc_m": [
+   1.72,
+   1.72,
+   0.78
+  ],
+  "tam_giac": 552,
+  "kb": 15.6
+ },
+ {
+  "id": "ban-dai",
+  "ten": "Bàn dài phủ khăn",
+  "kich_thuoc_m": [
+   1.84,
+   0.82,
+   0.76
+  ],
+  "tam_giac": 180,
+  "kb": 11.7
+ },
+ {
+  "id": "ghe-dau-nhua",
+  "ten": "Ghế đẩu nhựa",
+  "kich_thuoc_m": [
+   0.3,
+   0.3,
+   0.46
+  ],
+  "tam_giac": 92,
+  "kb": 4.2
+ },
+ {
+  "id": "ban-ca-phe",
+  "ten": "Bàn cà phê",
+  "kich_thuoc_m": [
+   0.68,
+   0.68,
+   0.73
+  ],
+  "tam_giac": 332,
+  "kb": 10.2
+ },
+ {
+  "id": "ly-ruou",
+  "ten": "Ly rượu",
+  "kich_thuoc_m": [
+   0.08,
+   0.08,
+   0.2
+  ],
+  "tam_giac": 288,
+  "kb": 7.4
+ },
+ {
+  "id": "thap-ly",
+  "ten": "Tháp ly",
+  "kich_thuoc_m": [
+   0.6,
+   0.6,
+   0.83
+  ],
+  "tam_giac": 5880,
+  "kb": 130.7
+ },
+ {
+  "id": "banh-cuoi",
+  "ten": "Bánh cưới ba tầng",
+  "kich_thuoc_m": [
+   0.42,
+   0.42,
+   0.46
+  ],
+  "tam_giac": 2292,
+  "kb": 53.7
+ },
+ {
+  "id": "cong-hoa",
+  "ten": "Cổng hoa",
+  "kich_thuoc_m": [
+   2.71,
+   0.59,
+   2.57
+  ],
+  "tam_giac": 5204,
+  "kb": 108.3
+ },
+ {
+  "id": "binh-hoa",
+  "ten": "Bình hoa",
+  "kich_thuoc_m": [
+   0.27,
+   0.24,
+   0.6
+  ],
+  "tam_giac": 1278,
+  "kb": 28.6
+ },
+ {
+  "id": "bo-hoa",
+  "ten": "Bó hoa cầm tay",
+  "kich_thuoc_m": [
+   0.28,
+   0.26,
+   0.34
+  ],
+  "tam_giac": 1408,
+  "kb": 30.2
+ },
+ {
+  "id": "mam-qua",
+  "ten": "Mâm quả",
+  "kich_thuoc_m": [
+   0.46,
+   0.46,
+   0.27
+  ],
+  "tam_giac": 872,
+  "kb": 19.4
+ },
+ {
+  "id": "hop-nhan",
+  "ten": "Hộp nhẫn",
+  "kich_thuoc_m": [
+   0.07,
+   0.1,
+   0.07
+  ],
+  "tam_giac": 384,
+  "kb": 15.7
+ },
+ {
+  "id": "thung-tien-mung",
+  "ten": "Thùng tiền mừng",
+  "kich_thuoc_m": [
+   0.36,
+   0.29,
+   0.32
+  ],
+  "tam_giac": 404,
+  "kb": 18.6
+ },
+ {
+  "id": "chan-nen",
+  "ten": "Chân nến",
+  "kich_thuoc_m": [
+   0.12,
+   0.12,
+   0.48
+  ],
+  "tam_giac": 436,
+  "kb": 11.5
+ },
+ {
+  "id": "den-long",
+  "ten": "Đèn lồng",
+  "kich_thuoc_m": [
+   0.42,
+   0.42,
+   0.72
+  ],
+  "tam_giac": 792,
+  "kb": 20.8
+ },
+ {
+  "id": "day-den",
+  "ten": "Dây đèn",
+  "kich_thuoc_m": [
+   3.24,
+   0.23,
+   2.6
+  ],
+  "tam_giac": 1260,
+  "kb": 35.5
+ },
+ {
+  "id": "bong-bay",
+  "ten": "Chùm bóng bay",
+  "kich_thuoc_m": [
+   0.66,
+   0.62,
+   1.72
+  ],
+  "tam_giac": 1180,
+  "kb": 28.1
+ },
+ {
+  "id": "chau-cay-tron",
+  "ten": "Chậu cây tán tròn",
+  "kich_thuoc_m": [
+   0.62,
+   0.61,
+   1.29
+  ],
+  "tam_giac": 1246,
+  "kb": 29.1
+ },
+ {
+  "id": "chau-cay-non",
+  "ten": "Chậu cây hình nón",
+  "kich_thuoc_m": [
+   0.62,
+   0.59,
+   1.42
+  ],
+  "tam_giac": 912,
+  "kb": 22.9
+ },
+ {
+  "id": "chau-hoa",
+  "ten": "Chậu hoa",
+  "kich_thuoc_m": [
+   0.36,
+   0.36,
+   0.45
+  ],
+  "tam_giac": 1540,
+  "kb": 35.2
+ },
+ {
+  "id": "den-duong",
+  "ten": "Đèn đường",
+  "kich_thuoc_m": [
+   0.8,
+   0.32,
+   3.42
+  ],
+  "tam_giac": 384,
+  "kb": 11.7
+ },
+ {
+  "id": "ghe-bang",
+  "ten": "Ghế băng công viên",
+  "kich_thuoc_m": [
+   1.42,
+   0.55,
+   0.84
+  ],
+  "tam_giac": 600,
+  "kb": 36.3
+ },
+ {
+  "id": "xe-ca-phe",
+  "ten": "Xe cà phê",
+  "kich_thuoc_m": [
+   1.5,
+   0.96,
+   1.95
+  ],
+  "tam_giac": 1764,
+  "kb": 80.0
+ },
+ {
+  "id": "sap-hang",
+  "ten": "Sạp chợ đêm",
+  "kich_thuoc_m": [
+   2.0,
+   1.26,
+   2.21
+  ],
+  "tam_giac": 3384,
+  "kb": 105.3
+ },
+ {
+  "id": "bang-don-khach",
+  "ten": "Bảng đón khách",
+  "kich_thuoc_m": [
+   0.72,
+   0.7,
+   1.61
+  ],
+  "tam_giac": 944,
+  "kb": 29.5
+ },
+ {
+  "id": "loa",
+  "ten": "Loa",
+  "kich_thuoc_m": [
+   0.75,
+   0.66,
+   1.59
+  ],
+  "tam_giac": 404,
+  "kb": 15.4
+ },
+ {
+  "id": "micro",
+  "ten": "Micro có chân",
+  "kich_thuoc_m": [
+   0.26,
+   0.26,
+   1.55
+  ],
+  "tam_giac": 292,
+  "kb": 9.9
+ },
+ {
+  "id": "quat-dung",
+  "ten": "Quạt đứng",
+  "kich_thuoc_m": [
+   0.51,
+   0.39,
+   1.37
+  ],
+  "tam_giac": 1136,
+  "kb": 27.1
+ }
+]

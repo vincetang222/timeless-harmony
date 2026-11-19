@@ -1,10 +1,14 @@
 # "Về chung một nhà" — đặc tả game
 
-**Bản nháp 0.1, chờ duyệt.** Tên game là tên tạm. Tài liệu này chốt luật chơi, nội dung và hình ảnh **trước khi vẽ bất cứ thứ gì**. Mục 12 gom các điểm cần bạn quyết; phần còn lại là đề xuất của mình dựa trên mô tả của bạn.
+**Bản nháp 0.2, chờ duyệt.** Tài liệu này chốt luật chơi, nội dung và hình ảnh **trước khi vẽ bất cứ thứ gì**. Hai tài liệu đi kèm: [ma trận tâm lý cặp đôi](tam-ly-cap-doi.md) và [giá tham khảo](gia-tham-khao.md).
+
+**Đã chốt với chủ dự án:** chạy trên trình duyệt (điện thoại và máy tính), chưa làm cho kính VR · tiền trong game, có nút "Nạp tiền" · người chơi chọn vai chú rể hoặc cô dâu · mở đầu ở Sài Gòn và quê miền Tây · làm bản chơi thử bằng hình khối tạm trước khi vẽ · tên game "Về chung một nhà" · hình không cần tả thực, nhưng phải ưa nhìn.
+
+Mục 13 là những điểm còn cần bạn quyết.
 
 ## 1. Game này là gì
 
-Một game mô phỏng đời sống, nhìn nhân vật từ bên ngoài (góc nhìn thứ ba). Người chơi gặp và yêu một người, ra mắt hai họ, nghĩ ra chương trình cưới, chọn và so sánh nhà cung cấp, ký hợp đồng, xoay đủ tiền để đóng theo từng mốc, rồi tự mình đi qua từng nghi thức: gia tiên, tiệc nhà gái, tiệc nhà trai, tiệc sau cưới.
+Một game mô phỏng đời sống, nhìn nhân vật từ bên ngoài (góc nhìn thứ ba). Người chơi gặp và yêu một người, cầu hôn, ra mắt hai họ, nghĩ ra chương trình cưới, chọn và so sánh nhà cung cấp, ký hợp đồng, xoay đủ tiền để đóng theo từng mốc, rồi tự mình đi qua từng nghi thức: gia tiên, tiệc nhà gái, tiệc nhà trai, tiệc sau cưới.
 
 Ba điều game phải giữ:
 
@@ -12,29 +16,30 @@ Ba điều game phải giữ:
 2. **Chọn gì chịu nấy.** Mỗi quyết định đổi tiền, thời gian, tình cảm hoặc lòng hai họ.
 3. **Chơi xong biết làm thật.** Người chơi rời game biết lập ngân sách, so sánh nhà cung cấp, đọc hợp đồng, và hiểu vì sao nên ký quỹ.
 
-Điều 3 là lý do game thuộc về Timeless Harmony: nó là bản tập dượt cho đúng những việc nền tảng giúp làm thật.
-
-## 2. Bốn chỉ số
+## 2. Năm chỉ số
 
 | Chỉ số | Tăng khi | Giảm khi |
 |---|---|---|
 | **Tiền** (ví, tiết kiệm, nợ) | đi làm, làm thêm, buôn bán, được hỗ trợ, tiền mừng | sinh hoạt phí, hẹn hò, sính lễ, đóng tiền hợp đồng, sự cố |
 | **Thời gian** (lịch đếm ngược tới ngày cưới; mỗi ngày có 3 buổi) | — | mọi hành động đều tốn buổi |
-| **Tình cảm** (với người yêu) | dành thời gian, lắng nghe, cùng quyết định | mải kiếm tiền, tự quyết một mình, cãi nhau không gỡ |
+| **Tình cảm** (với người yêu) | dành thời gian, hỏi ý, quyết định khớp với tính cách người ấy | mải kiếm tiền, tự quyết một mình, cãi nhau không gỡ |
 | **Lòng hai họ** (nhà trai, nhà gái tính riêng) | tôn trọng phong tục, thăm hỏi, giữ lời | bỏ nghi lễ, cắt khách mời, dời ngày |
+| **Căng thẳng** (mỗi người một thanh) | sát ngày cưới, thiếu tiền, quá nhiều lựa chọn | nghỉ ngơi, thư giãn, hẹn hò không bàn chuyện cưới, chia việc |
 
-Bốn chỉ số kéo nhau: làm thêm nhiều thì có tiền nhưng hết buổi cho người yêu; chiều hai họ thì đẹp lòng nhưng tốn tiền.
+Tính cách của hai nhân vật (chín trục, xem ma trận tâm lý) quyết định cùng một lựa chọn sẽ làm Tình cảm và Căng thẳng đổi ra sao.
 
 ## 3. Sáu chương
 
 | Chương | Người chơi làm gì | Qua chương khi |
 |---|---|---|
-| 1. Gặp gỡ | Tạo nhân vật (vai, quê, nghề, tiền tiết kiệm). Gặp vài người qua bạn bè giới thiệu, chỗ làm, ứng dụng hẹn hò, hoặc về quê được mai mối. Hẹn hò: cà phê, xem phim, đi phượt, nấu ăn. | Hai người chính thức yêu nhau |
-| 2. Yêu và cầu hôn | Vun tình cảm trong khi vẫn đi làm. Ra mắt gia đình hai bên. Chọn nhẫn, địa điểm và cách cầu hôn. | Lời cầu hôn được nhận |
+| 1. Gặp gỡ | Tạo nhân vật (vai, quê, nghề, tiền tiết kiệm, tính cách). Gặp vài người qua bạn bè giới thiệu, chỗ làm, ứng dụng hẹn hò, hoặc về quê được mai mối. Hẹn hò để hiểu người ấy. | Hai người chính thức yêu nhau |
+| 2. Yêu và cầu hôn | Vun tình cảm trong khi vẫn đi làm. Ra mắt gia đình hai bên. Chọn nhẫn và **dịch vụ cầu hôn** (mục 6). | Lời cầu hôn được nhận |
 | 3. Hai họ và kế hoạch | Dạm ngõ. Bàn với hai họ: ngày cưới, số khách, một tiệc chung hay hai tiệc, ở quê hay thành phố, sính lễ. Đặt ngân sách. Dựng chương trình (mục 4). | Kế hoạch và ngân sách được chốt |
-| 4. Nhà cung cấp và hợp đồng | Khảo sát theo hạng mục, gặp trực tiếp, thử dịch vụ, so sánh, mặc cả, đọc và ký hợp đồng (mục 5). | Mọi hạng mục bắt buộc đã ký |
-| 5. Gom tiền | Đóng tiền theo mốc của từng hợp đồng. Thiếu thì kiếm thêm (mục 6). Đăng ký kết hôn ở uỷ ban. | Đóng đủ các mốc trước ngày cưới |
-| 6. Mùa cưới | Lễ ăn hỏi → lễ gia tiên nhà gái (vu quy) → rước dâu → lễ gia tiên nhà trai (tân hôn) → tiệc nhà gái, tiệc nhà trai (hoặc tiệc chung) → tiệc sau cưới → đếm phong bì, tổng kết (mục 7). | Hết lễ lại mặt |
+| 4. Nhà cung cấp và hợp đồng | Dựng tiệc nhanh bằng gói sẵn hoặc may đo từng hạng mục, so sánh, mặc cả, đọc và ký hợp đồng (mục 5). | Mọi hạng mục bắt buộc đã ký |
+| 5. Gom tiền và chuẩn bị | Đóng tiền theo mốc. Thiếu thì kiếm thêm (mục 7). **Chăm sóc bản thân**: tập luyện, thư giãn, may đồ (mục 6). Đăng ký kết hôn ở uỷ ban. | Đóng đủ các mốc trước ngày cưới |
+| 6. Mùa cưới | Lễ ăn hỏi → lễ gia tiên nhà gái (vu quy) → rước dâu → lễ gia tiên nhà trai (tân hôn) → tiệc nhà gái, tiệc nhà trai (hoặc tiệc chung) → tiệc sau cưới → đếm phong bì, tổng kết (mục 8). | Tổng kết xong |
+
+**Sau tiệc sau cưới có còn gì không?** Tuỳ nhà. Nhiều gia đình giữ lễ lại mặt (miền Nam gọi là phản bái): một tới ba ngày sau cưới, hai vợ chồng mang quà về thăm bố mẹ cô dâu. Ở thành phố nhiều nhà bỏ hoặc làm gọn thành một bữa cơm. Trong game đây là lựa chọn bàn với hai họ ở chương 3; nhà nào không giữ thì tiệc sau cưới là hết, rồi tới trăng mật.
 
 ## 4. Dựng chương trình
 
@@ -50,30 +55,82 @@ Người chơi kéo các tiết mục vào dòng thời gian của từng ngày 
 
 Ràng buộc: giờ lành, tổng thời lượng (dài quá khách mệt), và thứ tự hợp lý (nghi thức trang trọng trước, vui chơi sau).
 
-## 5. Nhà cung cấp, hợp đồng, ký quỹ
+## 5. Nhà cung cấp: gói sẵn, gói may đo, hợp đồng
 
-**Hạng mục:** địa điểm và tiệc, người lên kế hoạch, trang trí và hoa, ảnh và phim, trang phục và trang điểm, MC, ban nhạc hoặc DJ, âm thanh ánh sáng, bánh và rượu, thiệp, xe hoa, mâm quả và đội bưng quả, nhẫn và trang sức. Mỗi hạng mục có 3–5 lựa chọn ở mỗi thành phố.
+**Hạng mục cưới:** địa điểm và tiệc, người lên kế hoạch, trang trí và hoa, ảnh và phim, trang phục và trang điểm, MC, ban nhạc hoặc DJ, âm thanh ánh sáng, bánh và rượu, thiệp, xe hoa, mâm quả và đội bưng quả, nhẫn và trang sức. Mỗi hạng mục có 4–5 nhà cung cấp ở mỗi thành phố.
 
-**Mỗi nhà cung cấp có:** giá theo gói; bốn điểm số (chất lượng, đúng hẹn, linh hoạt, rõ ràng chi phí); phong cách; lịch trống; một hai điểm mạnh và một hai điểm yếu. Một phần điểm yếu bị ẩn, chỉ lộ khi người chơi chịu gặp trực tiếp, thử dịch vụ hoặc hỏi cặp đôi đã dùng.
+**Mỗi nhà cung cấp có:** bốn điểm số (chất lượng, đúng hẹn, linh hoạt, rõ ràng chi phí); phong cách; lịch trống; một hai điểm mạnh và một hai điểm yếu. Một phần điểm yếu bị ẩn, chỉ lộ khi người chơi gặp trực tiếp, thử dịch vụ hoặc hỏi cặp đôi đã dùng.
 
-**So sánh:** đặt tối đa ba nhà cung cấp cạnh nhau, theo giá, điểm số, điều khoản.
+### Ba cách mua
 
-**Mặc cả:** dễ hơn khi đặt sớm, cưới ngày thường, hoặc ngoài mùa cao điểm.
+| Cách | Dành cho | Người chơi làm gì | Được | Mất |
+|---|---|---|---|---|
+| **Dựng tiệc nhanh** | muốn xong sớm | chọn một mẫu tiệc ("Sân vườn 60 khách", "Nhà hàng 30 bàn", "Rạp cưới quê 40 bàn"); game xếp sẵn gói vừa của các nhà cung cấp hợp ngân sách, người chơi đổi chỗ nào chưa ưng | nhanh, ít phải quyết | ít dấu ấn riêng |
+| **Gói sẵn** | phần lớn người chơi | mỗi nhà cung cấp có ba gói: gọn, đủ, trọn | giá chốt, rẻ hơn mua lẻ, ký trong một buổi, ít phát sinh | không đổi được thành phần |
+| **Gói may đo** | người có ý riêng | mở bảng dịch vụ lẻ của nhà cung cấp, bật tắt từng món, chỉnh số lượng (số bàn, số giờ, số người) | khớp đúng ý hai người, điểm hài lòng cao hơn | đắt hơn, tốn thêm buổi gặp, lâu hơn, nhiều chỗ có thể trục trặc |
 
-**Hợp đồng:** người chơi phải đọc. Điều khoản bất lợi (phí phát sinh, phạt huỷ, phí làm thêm giờ, đổi ngày) nằm lẫn trong văn bản; tìm ra thì được thương lượng lại.
+Ngoài ra, nhà hàng và người lên kế hoạch có **gói trọn** gộp nhiều hạng mục trong một hợp đồng: rẻ hơn, ít việc, nhưng phải dùng đối tác của họ.
 
-**Thanh toán, hai cách:**
+### Cách tính giá gói may đo
+
+Giá may đo = tổng giá lẻ của các món đã chọn − chiết khấu theo độ lớn của đơn + phí thiết kế riêng + phụ thu (nếu có).
+
+| Thành phần | Mức khởi điểm trong game | Ghi chú |
+|---|---|---|
+| Gói sẵn so với mua lẻ đúng các món đó | rẻ hơn 10–20% | lý do để chọn gói sẵn |
+| Phí thiết kế riêng | 8–15% giá trị đơn | nhà cung cấp có điểm linh hoạt cao thì phí thấp |
+| Chiết khấu theo độ lớn của đơn | tối đa 12% | chọn càng nhiều món của cùng một nhà càng giảm |
+| Bớt một món khỏi gói sẵn | chỉ được trừ 60–70% giá lẻ của món đó | bớt món không giảm đúng giá |
+| Thêm một món vào gói sẵn | tính đủ giá lẻ | — |
+| Phụ thu cuối tuần, mùa cao điểm, đặt gấp | theo số liệu khảo sát | xem giá tham khảo |
+| Thời gian | gói sẵn: 1 buổi gặp; may đo: 2–3 buổi và thêm một hai tuần chuẩn bị | may đo sát ngày cưới là rủi ro |
+
+Các tỉ lệ trên là điểm xuất phát để cân bằng; sẽ chỉnh ở bản chơi thử.
+
+Giá trong game dùng tiền đồng với mức giá thật (xem giá tham khảo). Thu nhập cũng theo mức thật, còn thời gian thì nén lại: một ngày trong game dài vài phút.
+
+### So sánh, mặc cả, hợp đồng, thanh toán
+
+- **So sánh:** đặt tối đa ba nhà cung cấp hoặc ba gói cạnh nhau, theo giá, điểm số, thành phần, điều khoản.
+- **Mặc cả:** dễ hơn khi đặt sớm, cưới ngày thường, hoặc ngoài mùa cao điểm.
+- **Hợp đồng:** người chơi phải đọc. Điều khoản bất lợi (phí phát sinh, phạt huỷ, phí làm thêm giờ, đổi ngày) nằm lẫn trong văn bản; tìm ra thì được thương lượng lại.
 - **Ký quỹ:** tiền nằm ở bên thứ ba, trả cho nhà cung cấp theo từng mốc. Nhà cung cấp bỏ ngang thì được hoàn tiền và có người thay.
 - **Trả thẳng:** đôi khi được giảm giá, nhưng mất cọc nếu gặp nhà cung cấp bỏ ngang.
+- **Mốc đóng tiền:** cọc khi ký, đợt hai trước ngày cưới, phần còn lại sau tiệc. Trễ mốc thì nhà cung cấp nhả lịch hoặc phạt.
 
-**Mốc đóng tiền:** cọc khi ký, đợt hai trước ngày cưới, phần còn lại sau tiệc. Trễ mốc thì nhà cung cấp nhả lịch hoặc phạt.
+## 6. Dịch vụ ngoài tiệc cưới
 
-## 6. Kiếm tiền
+Ba nhóm dịch vụ này cũng có gói sẵn và gói may đo như mục 5.
+
+**Cầu hôn (chương 2).** Chọn bối cảnh và mức đầu tư:
+
+| Bối cảnh | Điểm mạnh | Rủi ro |
+|---|---|---|
+| Sân thượng một toà tháp cao | cảnh thành phố về đêm | đông người lạ; mưa |
+| Trực thăng ngắm thành phố | bất ngờ nhất | đắt; huỷ chuyến vì thời tiết; người ấy sợ độ cao |
+| Bãi biển lúc hoàng hôn | lãng mạn, ảnh đẹp | gió, triều lên, phải đi xa |
+| Du thuyền | riêng tư | say sóng |
+| Quán cà phê quen, nơi hẹn đầu | nhiều kỷ niệm, rẻ | kém bất ngờ |
+| Tự làm tại nhà | chân thành, gần như không tốn | dễ vụng |
+
+Lời cầu hôn được nhận hay hoãn tuỳ Tình cảm, lòng hai họ, và **bối cảnh có hợp tính người ấy không**: người thích riêng tư không muốn bị cầu hôn giữa đám đông.
+
+**Chăm sóc bản thân (chương 5).**
+
+- **Tập luyện và dinh dưỡng:** kế hoạch tám tới mười hai tuần ở phòng tập, có hoặc không có huấn luyện viên. Tốn buổi và tiền; đổi lại là sức bền cho ngày cưới và sự tự tin. Game thưởng cho việc tập đều và **phạt việc ép cân cấp tốc** (mệt, cáu gắt, có thể xỉu đúng ngày cưới).
+- **Thư giãn:** spa, mát-xa, một chuyến đi ngắn. Hạ Căng thẳng.
+- **Da, tóc:** chăm sóc trước cưới, ảnh hưởng điểm ảnh cưới.
+
+**May đồ (chương 4–5).** Thuê hay may riêng váy cưới, vest, áo dài. May riêng cần hai ba buổi thử đồ. Đổi cân nặng nhiều sau khi đã may thì phải sửa đồ và trả phí sửa: lý do để lên lịch tập trước khi đi may.
+
+Mình đặt nhóm tập luyện dưới tên "khoẻ và tự tin" thay vì "giảm cân", vì nhiều người chơi là nữ và game không nên cổ vũ ép cân. Bạn xem mục 13.
+
+## 7. Kiếm tiền và nút "Nạp tiền"
 
 | Nguồn | Cách chơi | Cái giá |
 |---|---|---|
 | Lương theo nghề | tự động mỗi tháng, tăng khi làm tốt | tốn buổi sáng và chiều ngày thường |
-| Chạy xe công nghệ | trò chơi lái xe nhìn từ trên xuống: nhận cuốc, chọn đường, né kẹt xe và ngập, giữ điểm đánh giá | xăng, bảo dưỡng, mệt |
+| Chạy xe công nghệ | trò chơi lái xe: nhận cuốc, chọn đường, né kẹt xe và ngập, giữ điểm đánh giá | xăng, bảo dưỡng, mệt |
 | Buôn bán | nhập hàng, định giá, bán ở chợ đêm hoặc phát trực tiếp; cung cầu đổi theo ngày | có thể ế, lỗ vốn |
 | Việc tự do theo nghề | trò chơi ngắn theo nghề (thiết kế, dạy kèm, chụp ảnh thuê) | trễ hẹn thì mất khách |
 | Giao hàng | như chạy xe, cuốc ngắn hơn | thu nhập thấp |
@@ -81,17 +138,19 @@ Ràng buộc: giờ lành, tổng thời lượng (dài quá khách mệt), và 
 | Vay ngân hàng, vay người thân | nhận ngay | lãi, và nợ kéo qua sau cưới |
 | Tiền mừng | chỉ nhận sau tiệc, phụ thuộc số khách và mối quan hệ | không dùng để đóng cọc được |
 
-Game **không** cho kiếm tiền bằng cờ bạc, cá độ hay vay nóng. Lời mời kiểu đó có xuất hiện như một tình huống, và từ chối là lựa chọn đúng.
+Game **không** cho kiếm tiền bằng cờ bạc, cá độ hay vay nóng. Lời mời kiểu đó có xuất hiện như một tình huống, và từ chối là lựa chọn đúng. Hãng xe, sàn bán hàng trong game dùng tên hư cấu.
 
-Hãng xe, sàn bán hàng trong game dùng tên hư cấu, không dùng tên và logo hãng thật.
+**Nút "Nạp tiền"** nằm cạnh ví.
 
-## 7. Ngày cưới và kết quả
+- **Quản trị viên:** nạp bao nhiêu cũng được, để thử game và trình diễn cho nhà cung cấp. Lượt chơi có nạp kiểu này được đánh dấu "chế độ thử" và không tính vào số liệu.
+- **Người chơi thường, ở bản đầu:** bấm vào thì thấy các cách kiếm tiền trong game. Đây cũng là chỗ để nối cổng thanh toán thật về sau, khi đã có tư vấn pháp lý.
+- **Nhận biết quản trị viên:** bản đầu chưa có tài khoản nên dùng mã quản trị nhập trong phần cài đặt (chỉ có tác dụng trên máy đó). Khi có tài khoản thì quyền này gắn với tài khoản và kiểm ở máy chủ.
+
+## 8. Ngày cưới và kết quả
 
 Ở mỗi nghi lễ, người chơi điều khiển nhân vật làm vài bước ngắn (thắp hương, rót trà mời bố mẹ, trao trầu cau, trao nhẫn, đi chào bàn) và xử lý một đến ba sự cố. Sự cố nào xảy ra phụ thuộc lựa chọn ở các chương trước: thuê người lên kế hoạch giỏi thì nhiều việc tự được lo.
 
 Cuối game chấm năm điểm: cặp đôi, nhà trai, nhà gái, khách mời, tài chính (thu trừ chi, còn nợ bao nhiêu). Người chơi nhận một cuốn album ảnh kỷ niệm chia sẻ được.
-
-**Các kết thúc:**
 
 | Kết thúc | Khi nào |
 |---|---|
@@ -102,31 +161,38 @@ Cuối game chấm năm điểm: cặp đôi, nhà trai, nhà gái, khách mời
 | Hoãn cưới | chưa đủ tiền hoặc hai họ chưa thuận; chơi tiếp được |
 | Đường ai nấy đi | tình cảm cạn; bắt đầu lại, giữ số tiền đã có |
 
-## 8. Các tình huống
+## 9. Các tình huống
 
-Đây là danh sách "chuyện gì có thể xảy ra" để thiết kế không bị thiếu nhánh. Mỗi tình huống luôn có ít nhất hai lối ra.
+Mỗi tình huống luôn có ít nhất hai lối ra. Bản đầy đủ sẽ có vài biến thể cho mỗi dòng.
 
 | Giai đoạn | Tình huống | Lối ra |
 |---|---|---|
 | Gặp gỡ, yêu | Người ấy từ chối, hoặc hai người không hợp | làm quen người khác; kiên trì (tốn thời gian) |
 | | Yêu xa | tốn tiền đi lại; mở ra lựa chọn cưới ở quê |
 | | Cãi nhau vì tiền hoặc vì ít gặp | nói chuyện; để lâu thì chia tay |
-| | Cầu hôn bị hoãn | vun tình cảm, lấy lòng hai họ rồi thử lại |
+| Cầu hôn | Chọn bối cảnh không hợp tính người ấy | lời cầu hôn bị hoãn; thử lại cách khác |
+| | Mưa, huỷ chuyến bay, kẹt xe tới trễ | dời ngày (mất phí); đổi sang phương án trong nhà |
+| | Quên nhẫn, người ấy đoán ra trước | ứng biến; vẫn được nhận nếu Tình cảm cao |
 | Hai họ | Bố mẹ chưa đồng ý (khác quê, công việc chưa ổn, tuổi không hợp) | thuyết phục; nhờ người lớn nói giúp; chờ |
 | | Sính lễ cao | thương lượng; vay; cắt hạng mục khác |
 | | Bố mẹ muốn mời 400 khách, hai người muốn 60 | tiệc lớn ở quê do bố mẹ lo cộng tiệc nhỏ riêng; hoặc nhượng một bên |
 | | Ngày đẹp rơi vào mùa cao điểm | chịu giá cao; chọn ngày khác (họ hàng phật ý) |
 | | Hai nhà khác miền | chọn theo một bên, hoặc pha hai phong tục |
-| | Phải cưới gấp (có em bé, người thân yếu, sắp đi xa) | lịch rút ngắn, ít lựa chọn nhà cung cấp |
+| | Phải cưới gấp (có em bé, người thân yếu, sắp đi xa) | lịch rút ngắn, chủ yếu dùng gói sẵn |
 | Kế hoạch | Nhà cung cấp ưng ý kín lịch | chờ; đổi ngày; chọn phương án hai |
+| | Gói sẵn thiếu đúng món mình cần | thêm món (giá lẻ); chuyển sang may đo |
+| | Gói may đo trễ tiến độ, đổi ý quá nhiều lần | trả phí sửa; chốt và thôi sửa |
 | | Báo giá thấp nhưng nhiều phí phát sinh | đọc kỹ hợp đồng thì thấy; không đọc thì trả |
 | | Nhà cung cấp nhận cọc rồi bỏ ngang | ký quỹ: được hoàn; trả thẳng: mất cọc |
-| | Vượt ngân sách | cắt hạng mục; tự làm thiệp và hoa; nhờ bạn bè |
+| | Vượt ngân sách | hạ gói; tự làm thiệp và hoa; nhờ bạn bè |
 | | Hai người bất đồng về phong cách | nhường nhau; mỗi người quyết một phần |
-| Gom tiền | Mất việc, giảm lương, xe hỏng, ốm | dùng tiết kiệm; đổi việc làm thêm |
+| Gom tiền, chuẩn bị | Mất việc, giảm lương, xe hỏng, ốm | dùng tiết kiệm; đổi việc làm thêm |
 | | Buôn bán ế, bị đánh giá một sao | giảm giá; đổi mặt hàng |
-| | Không kịp mốc đóng tiền | xin gia hạn (mất phí); vay; giảm quy mô; dời ngày |
+| | Không kịp mốc đóng tiền | xin gia hạn (mất phí); vay; hạ gói; dời ngày |
 | | Được rủ vay nóng hoặc cá độ | từ chối |
+| | Ép cân quá mức | nghỉ, ăn uống lại; nếu cố thì xỉu ngày cưới |
+| | Đồ may không vừa sau khi đổi cân nặng | sửa đồ (mất phí); thuê đồ khác |
+| | Căng thẳng vượt ngưỡng, cãi nhau to | làm lành; đi thư giãn; hoãn một quyết định |
 | Ngày cưới | Mưa khi tiệc ngoài trời | có nhà bạt dự phòng thì ổn; không thì chạy vào trong |
 | | Nhà cung cấp tới trễ hoặc không tới | người lên kế hoạch gọi thay; tự xoay |
 | | Kẹt xe, trễ giờ lành lúc rước dâu | đổi đường; xin phép hai họ |
@@ -136,76 +202,104 @@ Cuối game chấm năm điểm: cặp đôi, nhà trai, nhà gái, khách mời
 | | Thiếu người bưng quả, quên nhẫn hoặc trầu cau | nhờ người thay; cho người chạy về lấy |
 | | Bố mẹ phát biểu dài, lố chương trình | cắt một tiết mục; kéo dài tiệc (tốn tiền) |
 | Sau cưới | Tiền mừng ít hơn dự tính | trả nợ dần; hoãn trăng mật |
-| | Tiệc sau cưới quá đà | hôm sau lại mặt trễ, mất lòng hai họ |
+| | Tiệc sau cưới quá đà | sáng hôm sau trễ chuyến bay trăng mật; nếu nhà có giữ lễ lại mặt thì tới trễ, mất lòng bố mẹ |
 
-## 9. Vùng miền và mở rộng
+## 10. Vùng miền và điểm đến
 
-Phong tục khác nhau theo miền (miền Bắc mang tráp số lẻ, miền Nam mang mâm quả số chẵn và có lễ lên đèn; miền Tây có tiệc nhóm họ đêm trước và dựng rạp tại nhà). Mỗi miền là một gói nội dung riêng: nghi lễ, lễ vật, cảnh, món ăn, nhạc.
+Phong tục khác nhau theo miền (miền Bắc mang tráp số lẻ, miền Nam mang mâm quả số chẵn và có lễ lên đèn; miền Tây có tiệc nhóm họ đêm trước và dựng rạp tại nhà). Mỗi miền, mỗi điểm đến là một gói nội dung: nghi lễ, lễ vật, cảnh, món ăn, nhạc, nhà cung cấp.
 
-- **Bản đầu:** Sài Gòn (thành phố) và một quê miền Tây, để có cả tiệc nhà hàng lẫn rạp cưới ở quê.
-- **Tiếp theo:** Hà Nội và miền Bắc; Huế, Đà Nẵng, Hội An; cưới điểm đến ở Đà Lạt, Phú Quốc.
-- **Thế giới:** mỗi nước là một gói. Gói đầu tiên là hồ ở Ý, vì cảnh đã có sẵn trên website.
+| Đợt | Gói |
+|---|---|
+| Bản đầu | Sài Gòn và một quê miền Tây |
+| Việt Nam, ba miền | Hà Nội và đồng bằng Bắc Bộ · Huế · Đà Nẵng và Hội An |
+| Việt Nam, cưới điểm đến | Đà Lạt · Phú Quốc · Nha Trang · Quy Nhơn · Hồ Tràm và Vũng Tàu · Mũi Né · Côn Đảo · Hạ Long · Ninh Bình · Sa Pa |
+| Châu Á | Bali · Phuket và Koh Samui · Kyoto · đảo Jeju · Maldives · Udaipur |
+| Châu Âu và xa hơn | hồ Como (cảnh đã có trên website) · bờ biển Amalfi · Tuscany · Santorini · Paris · Hawaii · Queenstown |
 
-Trước khi viết nội dung nghi lễ của từng miền, cần một người am hiểu phong tục miền đó soát lại.
+Trước khi viết nghi lễ của một miền hay một nước, cần một người am hiểu phong tục nơi đó soát lại.
 
-## 10. Hình ảnh
+## 11. Hình ảnh
 
-Đây là phần cần chốt trước khi vẽ.
+**Phong cách.** Ấm, tông màu nhạt theo bảng màu Timeless Harmony (ngọc lục, champagne, hồng tulip), hình khối bo tròn, nhân vật cách điệu dễ mến. Không chạy theo tả thực. Thứ được chăm chút nhất là thứ người chơi tự chọn nhiều nhất: trang phục, tóc, hoa, trang trí tiệc.
 
-**Hướng mình đề xuất: "mô hình thu nhỏ".** Mỗi địa điểm là một cảnh 3D dựng sẵn bằng Blender, cùng chất lượng với hình nền website (ánh sáng thật, bóng đổ, độ sâu). Máy quay cố định, nhìn chếch từ trên xuống. Nhân vật là hình 3D cách điệu, dựng sẵn theo tám hướng với vài động tác (đi, ngồi, cúi lạy, nâng ly, trao nhẫn), di chuyển khi người chơi chạm vào chỗ muốn tới. Giao diện dùng kính lỏng của Timeless Harmony.
+**Giải pháp ở giữa: "sa bàn sống", mở dần theo ba bậc.** Mọi thứ dựng bằng 3D thật ngay từ đầu, nên không có gì phải bỏ đi làm lại khi mở rộng.
 
-Vì sao: đẹp như ảnh dựng, chạy nhẹ trên điện thoại tầm trung, và dùng lại đúng quy trình đã làm hình nền. Kỹ thuật mặt nạ độ sâu vừa dùng cho pháo hoa cũng cho phép nhân vật đi vòng ra sau bàn ghế.
-
-**Hướng còn lại: thế giới 3D đi lại tự do,** máy quay bám sau lưng nhân vật. Nhập vai hơn, nhưng hình kém hẳn trên điện thoại, số thứ phải dựng nhiều gấp mấy lần, và nhân vật tỉ lệ người thật cử động mượt là thứ mình không tạo tốt bằng mã: phải mua hoặc thuê bộ nhân vật có sẵn.
-
-**Giới hạn cần nói rõ:** ở cả hai hướng, nhân vật sẽ là kiểu cách điệu, dễ mến, không phải người thật như phim.
-
-**Khối lượng hình cho gói miền Nam (ước lượng để duyệt):**
-
-| Loại | Số lượng | Gồm |
+| Bậc | Người chơi thấy gì | Giai đoạn |
 |---|---|---|
-| Cảnh | khoảng 12 | phòng của người chơi; bản đồ phố Sài Gòn (cũng là sân chơi chạy xe); quán cà phê; nhà bố mẹ cô dâu; nhà bố mẹ chú rể; chợ đêm; phòng trưng bày của nhà cung cấp (dùng chung, đổi trang trí); sảnh tiệc cưới; tiệc sân vườn nhỏ; rạp cưới ở quê; bar; resort biển |
-| Nhân vật chính | 2 | chọn trong vài kiểu tóc, màu da; trang phục thường ngày, áo dài, vest, váy cưới |
-| Nhân vật phụ | khoảng 18 | bố mẹ hai bên, ba bốn người để làm quen, tám kiểu khách, sáu nhân viên nhà cung cấp |
-| Giao diện | 1 bộ | bảng chỉ số, lịch, bảng so sánh, hợp đồng, dòng thời gian chương trình, album |
+| 1. Từng khu | Mỗi địa điểm là một khu 3D nhỏ. Máy quay bám theo nhân vật, xoay và phóng to thu nhỏ được trong giới hạn. Đi lại tự do trong khu; sang khu khác qua bản đồ thành phố. | lát cắt đẹp và gói miền Nam |
+| 2. Khu phố liền mạch | Các khu cạnh nhau nối thành một khu phố đi bộ và chạy xe được, không phải chuyển cảnh. | sau khi có tài khoản |
+| 3. Thành phố nhỏ và các điểm đến | Mở thêm quận, thêm điểm đến; máy quay tự do hơn. Lúc đó mới xét tới kính VR. | về sau |
 
-## 11. Kỹ thuật, kết nối với nền tảng, tiền thật
+Ánh sáng và bóng đổ được tính sẵn bằng Blender rồi "in" lên bề mặt các khu, nên hình vẫn mềm và có chiều sâu mà điện thoại không phải tính ánh sáng.
 
-**Kỹ thuật.** Game nằm trong thư mục `game/` của repo này, tải riêng nên không làm nặng website. Chạy trên trình duyệt điện thoại và máy tính. Lưu tiến độ trên máy người chơi ở bản đầu; có tài khoản thì lưu trên máy chủ (cùng đợt làm Supabase của website). Toàn bộ nội dung (nhà cung cấp, tình huống, lời thoại, giá) nằm trong tệp dữ liệu, sửa được mà không đụng tới mã.
+**Đánh đổi so với ảnh dựng sẵn như hình nền website:** hình kém một bậc (không có phản chiếu thật trên nước, không có hiệu ứng mờ tiền cảnh), mỗi khu nặng vài MB thay vì vài trăm KB, và cần điện thoại chạy được đồ hoạ 3D trên trình duyệt (hầu hết máy trong khoảng năm năm trở lại).
+
+**Nhân vật.** Hai cách: mình tự dựng bằng mã (đồng bộ phong cách, tốn công), hoặc dùng một bộ nhân vật có giấy phép mở rồi làm lại trang phục Việt (áo dài, vest, váy cưới). Mình sẽ thử cả hai ở bước thử kỹ thuật rồi báo bạn kèm hình.
+
+**Bước thử kỹ thuật trước khi dựng hàng loạt:** một căn phòng và một nhân vật đi lại, chạy trên điện thoại thật, để bạn duyệt chất lượng hình và độ mượt.
+
+**Kho đồ vật.** Những món không phụ thuộc vào quyết định nào (bàn ghế tiệc, bánh cưới, cổng hoa, mâm quả, chậu cây, đèn, xe cà phê, sạp chợ đêm…) được dựng trước và cất vào `game/assets/kit/`. Lô đầu có 29 món, tổng cộng dưới 1 MB. Mỗi món là một hàm trong `docs/game/build_kit.py`; đổi bảng màu hay thêm món thì sửa tệp đó rồi chạy lại. Lô này cũng là mẫu phong cách đầu tiên để bạn xem có hợp mắt không. Cảnh, nhân vật và trang phục thì chờ bước thử kỹ thuật.
+
+### Khối lượng
+
+| Loại | Lát cắt đẹp | Gói miền Nam đầy đủ |
+|---|---|---|
+| Khu 3D | 3 | khoảng 26: phòng người chơi; khu phố trung tâm; chỗ làm; quán cà phê; rạp phim; công viên bờ sông; nhà bố mẹ cô dâu; nhà bố mẹ chú rể; chợ đêm; ngân hàng; uỷ ban; phố nhà cung cấp (studio ảnh, tiệm váy cưới và may đo, tiệm hoa, tiệm bánh, tiệm vàng, văn phòng người lên kế hoạch); phòng tập; spa; ba điểm cầu hôn (sân thượng tháp, bãi biển, trực thăng); sảnh tiệc cưới; nhà hàng sân vườn; rạp cưới ở quê; bar; resort biển; sân bay |
+| Nhân vật | 2 chính, 8 phụ | khoảng 80 biến thể ghép từ 12 dáng người: 2 nhân vật chính, 8 người để làm quen, bố mẹ và người thân hai bên, phù dâu phù rể, 24 kiểu khách, 20 nhân viên nhà cung cấp, người đi đường |
+| Trang phục, tóc | 8 | 30–40 bộ, 12 kiểu tóc |
+| Đồ vật, trang trí | 40 | 150–200 món, 6 chủ đề trang trí tiệc |
+| Nhà cung cấp | 6 | khoảng 70 (hư cấu), mỗi nhà ba gói sẵn và bảng dịch vụ lẻ: khoảng 200 gói, 250 dịch vụ lẻ |
+| Tình huống | 10 | 80–100 |
+| Lời thoại | khoảng 150 câu | 1.500–2.500 câu |
+| Trò chơi nhỏ | 2 | 6: chạy xe, buôn bán, việc tự do, đọc hợp đồng, nghi lễ theo nhịp, đi chào bàn |
+| Âm thanh | 2 bản nhạc | 10–12 bản nhạc nền, khoảng 80 tiếng động (cần nguồn có bản quyền) |
+
+Đây là một game lớn. Cách giữ chi phí trong tầm kiểm soát: dựng theo bộ ghép (một dáng người mặc nhiều bộ đồ, một bộ bàn ghế dùng cho nhiều khu), và chỉ dựng phần của giai đoạn đang làm.
+
+## 12. Kỹ thuật, nền tảng, thứ tự làm
+
+**Nơi đặt.** Thư mục `game/` của repo này, tải riêng nên không làm nặng website.
+
+**Tải cho nhẹ.** Thứ giúp ở đây không phải cookie (cookie chỉ là mẩu ghi nhớ nhỏ, không làm trang tải nhanh hơn) mà là **bộ nhớ đệm của trình duyệt**:
+
+- Lần đầu chỉ tải khu đang chơi; các khu khác tải dần ở nền.
+- Một trình chạy nền của trình duyệt (service worker) giữ lại những gì đã tải. Từ lần thứ hai game mở gần như tức thì, và chơi được cả khi mạng chập chờn.
+- Người chơi có thể "Thêm vào màn hình chính" để mở game như một ứng dụng, không cần qua cửa hàng ứng dụng.
+- Hình và mô hình 3D được nén bằng định dạng dành riêng cho web.
+
+**Lưu tiến độ.** Trên máy người chơi ở bản đầu; có tài khoản thì lưu trên máy chủ (cùng đợt làm Supabase của website).
+
+**Nội dung tách khỏi mã.** Nhà cung cấp, gói, giá, tình huống, lời thoại nằm trong tệp dữ liệu, sửa được mà không đụng tới mã.
 
 **Nhà cung cấp thật.** Bản đầu dùng nhà cung cấp hư cấu, ghi rõ là nhân vật trong game. Dữ liệu dùng cùng cấu trúc với `suppliers.js`, nên khi bạn mời được nhà cung cấp thật thì thêm vào là xong. Hai nguyên tắc:
-- Nhà cung cấp thật hiện với hồ sơ thật và nút "Xem hồ sơ trên Timeless Harmony".
+
+- Nhà cung cấp thật hiện với hồ sơ và các gói thật, kèm nút "Xem hồ sơ trên Timeless Harmony".
 - Điểm mạnh, điểm yếu của nhà cung cấp thật chỉ lấy từ dữ kiện họ xác nhận (giá, sức chứa, khu vực, thời gian đặt trước). Game không tự gán điểm yếu cho doanh nghiệp thật.
 
 Cuối game có nút chuyển kế hoạch trong game (ngân sách, chương trình, hạng mục) sang Harmony AI để làm thật.
 
-**Giá cả trong game.** Cần một đợt khảo sát giá thật trước khi cân bằng. Mình sẽ không tự đặt con số rồi gọi là "giá thị trường".
+**Tiền thật.** Bản đầu không thu tiền thật và không đổi vật phẩm ra tiền. Thu tiền trong game ở Việt Nam có thủ tục cấp phép riêng; cần hỏi luật sư trước khi thiết kế phần này. Mình không tư vấn pháp lý được.
 
-**Tiền thật.** Bản đầu không có nạp tiền thật và không đổi vật phẩm ra tiền. Nếu sau này muốn thu tiền trong game, ở Việt Nam việc đó có thủ tục cấp phép riêng; cần hỏi luật sư trước khi thiết kế phần này. Mình không tư vấn pháp lý được.
-
-**"Thành công" đo bằng gì.** Bạn nói sẽ liên hệ nhà cung cấp thật sau khi game thành công, nên cần định trước con số: ví dụ số người chơi hết chương 4, và số người bấm sang xem hồ sơ thật.
-
-**Thứ tự làm:**
+**"Thành công" đo bằng gì.** Bạn sẽ liên hệ nhà cung cấp thật sau khi game thành công, nên cần định trước con số: ví dụ số người chơi hết chương 4, và số người bấm sang xem hồ sơ thật.
 
 | Giai đoạn | Làm gì | Tốn hình vẽ |
 |---|---|---|
-| 0 | Chốt đặc tả này | không |
-| 1 | Bản chơi thử "xám": đủ sáu chương bằng giao diện đơn giản và hình khối tạm, để thử luật chơi và cân bằng tiền | không |
-| 2 | Một lát cắt đẹp: ngày cưới ở Sài Gòn (lễ gia tiên và tiệc) với hình thật, để chốt phong cách | 3 cảnh, 2 nhân vật chính, vài khách |
-| 3 | Đủ gói miền Nam: mọi cảnh, hai trò chơi kiếm tiền, âm thanh | phần còn lại của mục 10 |
-| 4 | Tài khoản, lưu trên máy chủ, album chia sẻ, nhà cung cấp thật | ít |
-| 5 | Các miền khác, rồi thế giới | theo từng gói |
+| 0 | Chốt đặc tả này, ma trận tâm lý và bảng giá | không |
+| 1 | Bản chơi thử bằng hình khối tạm: đủ sáu chương, gói sẵn và may đo, tâm lý, tiền, tình huống | không |
+| 1b | Thử kỹ thuật hình: một phòng, một nhân vật, trên điện thoại thật | rất ít |
+| 2 | Lát cắt đẹp: ngày cưới ở Sài Gòn (lễ gia tiên và tiệc), để chốt phong cách | cột "Lát cắt đẹp" ở mục 11 |
+| 3 | Gói miền Nam đầy đủ | cột còn lại ở mục 11 |
+| 4 | Tài khoản, lưu trên máy chủ, quyền quản trị, album chia sẻ, nhà cung cấp thật, khu phố liền mạch | ít |
+| 5 | Ba miền và các điểm đến ở Việt Nam | theo từng gói |
+| 6 | Thế giới | theo từng gói |
 
-Giai đoạn 1 đi trước để lỗi luật chơi lộ ra khi chưa tốn công vẽ.
-
-## 12. Cần bạn chốt
+## 13. Còn cần bạn chốt
 
 | # | Câu hỏi | Mình đề xuất |
 |---|---|---|
-| 1 | "Thực tế ảo" là thế giới 3D chạy trên trình duyệt (điện thoại, máy tính), hay phải đeo kính VR? | Trình duyệt. Kính VR là một sản phẩm khác hẳn về công cụ và chi phí. |
-| 2 | Kiểu hình: mô hình thu nhỏ với máy quay cố định, hay thế giới 3D đi lại tự do? | Mô hình thu nhỏ (mục 10). |
-| 3 | "Nạp tiền" là đóng cọc bằng tiền trong game, hay người chơi nạp tiền thật? | Tiền trong game ở bản đầu. |
-| 4 | Người chơi chỉ đóng vai chú rể đi tìm vợ, hay được chọn chú rể hoặc cô dâu? | Cho chọn. Phần lớn người lo kế hoạch cưới là cô dâu, bỏ vai này là bỏ nửa người chơi. |
-| 5 | Mở đầu ở miền nào? | Sài Gòn và quê miền Tây. |
-| 6 | Làm bản chơi thử "xám" trước rồi mới vẽ? | Có. |
-| 7 | Tên game. | "Về chung một nhà", hoặc tên bạn chọn. |
+| 1 | Người chơi thường bấm "Nạp tiền" ở bản đầu thì thấy gì? | Các cách kiếm tiền trong game; chưa thu tiền thật. |
+| 2 | Nhóm tập luyện gọi là "khoẻ và tự tin", và phạt việc ép cân cấp tốc? | Có. |
+| 3 | Chín trục tâm lý và mười kiểu cặp đôi có sát với những cặp bạn biết không? | Bạn đọc tài liệu đi kèm và sửa chỗ thấy chưa đúng. |
+| 3b | Phong cách của lô đồ vật đầu tiên (hình khối bo tròn, màu nhạt) có hợp mắt không? | Nếu hợp, mình dựng tiếp các lô sau theo đúng kiểu này. |
+| 4 | Các tỉ lệ của gói may đo (mục 5) và mức giá tham khảo đã hợp lý chưa? | Dùng làm điểm xuất phát, chỉnh ở bản chơi thử. |
+| 5 | Bắt đầu giai đoạn 1? | Có, ở một phiên làm việc mới. |

@@ -14,8 +14,10 @@ Danh sách này gom mọi thứ website và bộ thương hiệu đang chờ t�
 
 ## 1b. Game
 
-- [ ] **Duyệt đặc tả game** `docs/game/spec.md` và trả lời bảy câu ở mục 12 (nền tảng, kiểu hình, tiền thật hay tiền trong game, vai người chơi, miền mở đầu, thứ tự làm, tên game).
-- [ ] *(Khi tới lúc)* Tìm một người am hiểu phong tục cưới từng miền để soát nội dung nghi lễ; khảo sát giá thật để cân bằng game.
+- [ ] **Duyệt đặc tả game bản 0.2** `docs/game/spec.md` và trả lời các câu ở mục 13 (nút nạp tiền, nhóm tập luyện, tỉ lệ gói may đo, phong cách lô đồ vật đầu tiên, bắt đầu bản chơi thử).
+- [ ] **Đọc ma trận tâm lý** `docs/game/tam-ly-cap-doi.md`: chín trục và mười kiểu cặp đôi có sát thực tế không.
+- [ ] **Giá thật:** `docs/game/gia-tham-khao.md` còn nhiều ô là số tạm. Khi liên hệ nhà cung cấp, xin báo giá của hai ba nhà cho mỗi hạng mục.
+- [ ] *(Khi tới lúc)* Tìm một người am hiểu phong tục cưới từng miền để soát nội dung nghi lễ.
 
 ## 2. Hình ảnh
 
