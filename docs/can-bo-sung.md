@@ -12,6 +12,11 @@ Danh sách này gom mọi thứ website và bộ thương hiệu đang chờ t�
 - [ ] *(Không gấp)* Bốn cụm tulip nét mảnh cũ vẫn tách từ ảnh 1080px; chỉ còn dùng ở khối kêu gọi và in ấn. Cần in khổ lớn thì vẽ lại.
 - [ ] **Xưng hô:** "chúng mình" hay "chúng tôi" (xem Giọng thương hiệu → Câu hỏi mở).
 
+## 1b. Game
+
+- [ ] **Duyệt đặc tả game** `docs/game/spec.md` và trả lời bảy câu ở mục 12 (nền tảng, kiểu hình, tiền thật hay tiền trong game, vai người chơi, miền mở đầu, thứ tự làm, tên game).
+- [ ] *(Khi tới lúc)* Tìm một người am hiểu phong tục cưới từng miền để soát nội dung nghi lễ; khảo sát giá thật để cân bằng game.
+
 ## 2. Hình ảnh
 
 - [ ] **Ảnh nhà cung cấp** — mỗi hồ sơ 1 ảnh bìa ngang (tối thiểu 1600×1000) + 3–6 ảnh sản phẩm. Hiện đang là nền màu theo hạng mục.

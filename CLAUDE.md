@@ -34,4 +34,4 @@ Không có test trong repo. Trước khi push: `python3 -m http.server`, soát b
 
 ## Đang chờ
 
-Xem `docs/can-bo-sung.md`. Việc lớn tiếp theo: lưu dữ liệu form (Supabase), tài khoản, thay dữ liệu mẫu bằng nhà cung cấp thật.
+Xem `docs/can-bo-sung.md`. Việc lớn tiếp theo: lưu dữ liệu form (Supabase), tài khoản, thay dữ liệu mẫu bằng nhà cung cấp thật. Game "Về chung một nhà": đặc tả ở `docs/game/spec.md` (chờ chủ dự án duyệt; chưa vẽ, chưa viết mã trước khi duyệt).
