@@ -37,7 +37,10 @@
 :root {
   --sky: linear-gradient(180deg, #040A1A 0%, #0B1D3E 55%, #1A3A5E 100%);
   --bg-scene: url(/assets/bg/scene-night.webp);
-  --backdrop: blur(var(--blur)) saturate(1.25) brightness(.8);
+  --backdrop: blur(var(--blur)) saturate(1.25) brightness(.72);
+  --nav-backdrop: blur(14px) saturate(1.5) brightness(.8);
+  --chip-special: linear-gradient(135deg, rgba(44,38,22,.9), rgba(26,24,16,.84));
+  --drop-fx: blur(10px) saturate(1.6) brightness(.8);
   --pane: linear-gradient(135deg, rgba(16,32,46,.78), rgba(8,20,32,.66) 50%, rgba(14,28,42,.72));
   --pane-strong: linear-gradient(135deg, rgba(14,28,40,.86), rgba(10,22,32,.8));
   --edge: rgba(255,255,255,.16);  --edge-soft: rgba(255,255,255,.1);
@@ -84,8 +87,11 @@
 body.light {
   --sky: linear-gradient(180deg, #4C97E6 0%, #86BFF2 45%, #CDE6F9 100%);
   --bg-scene: url(/assets/bg/scene-day.webp);
-  --backdrop: blur(var(--blur)) saturate(1.25) brightness(1.06);
-  --pane: linear-gradient(135deg, rgba(255,255,255,.8), rgba(255,255,255,.66) 48%, rgba(255,255,255,.72));
+  --backdrop: blur(var(--blur)) saturate(1.3) contrast(.62) brightness(1.24);   /* nén tương phản của cảnh sau kính: vùng tối (hàng bách) sáng lên, chữ luôn đọc được */
+  --nav-backdrop: blur(14px) saturate(1.5) contrast(.62) brightness(1.24);
+  --chip-special: linear-gradient(135deg, rgba(255,251,240,.94), rgba(250,238,210,.86));
+  --drop-fx: blur(10px) saturate(1.6) contrast(.62) brightness(1.24);      /* giọt kính đứng trực tiếp trên cảnh */
+  --pane: linear-gradient(135deg, rgba(255,255,255,.84), rgba(255,255,255,.74) 48%, rgba(255,255,255,.78));
   --pane-strong: linear-gradient(135deg, rgba(255,255,255,.88), rgba(255,255,255,.76));
   --edge: rgba(255,255,255,.8);  --edge-soft: rgba(255,255,255,.5);
   --rim: inset 0 0 0 1px rgba(255,255,255,.5), inset 0 1.5px 0 rgba(255,255,255,.98), inset 0 -1px 0 rgba(255,255,255,.55),
@@ -94,13 +100,13 @@ body.light {
   --pane-shadow: 0 36px 70px -32px rgba(18,44,66,.46), 0 3px 8px rgba(18,44,66,.06), var(--rim);
   --card-shadow: 0 14px 30px -18px rgba(18,44,66,.32), inset 0 1px 0 rgba(255,255,255,.95);
   --shine: rgba(255,255,255,.42);
-  --field: rgba(255,255,255,.76);  --chip: linear-gradient(135deg, rgba(255,255,255,.84), rgba(255,255,255,.66));  --menu: rgba(255,255,255,.95);
+  --field: rgba(255,255,255,.76);  --chip: linear-gradient(135deg, rgba(255,255,255,.88), rgba(255,255,255,.76));  --menu: rgba(255,255,255,.95);
   --btn-grad: linear-gradient(180deg, rgba(40,104,76,.94) 0%, rgba(14,50,36,.96) 100%);  --btn-edge: rgba(231,207,155,.5);
   --btn-shadow: 0 16px 28px -14px rgba(12,46,32,.7), inset 0 1px 0 rgba(255,255,255,.45), inset 0 -10px 16px -10px rgba(0,0,0,.35), inset 0 10px 14px -10px rgba(255,255,255,.3);
-  --btn2: linear-gradient(135deg, rgba(255,255,255,.82), rgba(255,255,255,.6));
+  --btn2: linear-gradient(135deg, rgba(255,255,255,.86), rgba(255,255,255,.74));
 
   --bg: rgba(255,255,255,.62);  --bg2: rgba(255,255,255,.42);  --bg3: rgba(255,255,255,.58);
-  --nav-bg: linear-gradient(135deg, rgba(255,255,255,.82), rgba(255,255,255,.64) 50%, rgba(255,255,255,.72));
+  --nav-bg: linear-gradient(135deg, rgba(255,255,255,.86), rgba(255,255,255,.76) 50%, rgba(255,255,255,.8));
   --line: rgba(18,38,28,.11);  --line2: rgba(18,38,28,.2);
   --text: var(--th-ink);  --text2: #2B4336;  --text3: #40574A;
   --ink-rgb: 18,38,28;
@@ -109,7 +115,7 @@ body.light {
   --tulip: var(--th-gold);  --tulip-bg: rgba(199,162,98,.16);  --em-grad: var(--gold-grad);
   --icon: var(--th-gold);
   --card-bg: linear-gradient(135deg, rgba(255,255,255,.58), rgba(255,255,255,.34));  --card-border: rgba(255,255,255,.78);
-  --search-bg: rgba(255,255,255,.78);
+  --search-bg: rgba(255,255,255,.82);
   --btn-primary-bg: var(--th-emerald);  --btn-primary-text: #FBF7EE;
   --inverse-bg: linear-gradient(135deg, rgba(24,74,54,.84), rgba(10,40,30,.88));  --inverse-text: #FBF7EE;  --inverse-tulip: #EBD6A6;
   --user-bubble: linear-gradient(135deg, rgba(231,207,155,.62), rgba(246,235,203,.5));  --user-border: rgba(122,86,40,.24);
@@ -236,6 +242,7 @@ body > section:not(#hero):not(#planner):not(#cta),
   border: 0;
   border-radius: 40px;
   box-shadow: var(--pane-shadow);
+  --drop: none; --inner: none;  /* giọt kính và thẻ nổi bên trong tấm không làm mờ lần hai */
 }
 .glass-strong, body > .article-body, .page-hero + .content, body > .article-cover {
   background: radial-gradient(420px circle at var(--lx, -600px) var(--ly, -600px), var(--shine), transparent 65%), var(--pane-strong);
@@ -292,11 +299,14 @@ body > .article-cover img, body > .article-cover .cover-placeholder { border-rad
 /* Thẻ nổi: đứng riêng trên nền nên tự làm mờ */
 .planner-box, .cta-box, .newsletter-box, .form-wrap .step, .msg-bubble, .sup-card-chat, .typing, .modal,
 .featured-card, .featured-inner, .hint {
-  -webkit-backdrop-filter: var(--backdrop);
-          backdrop-filter: var(--backdrop);
+  -webkit-backdrop-filter: var(--inner, var(--backdrop));
+          backdrop-filter: var(--inner, var(--backdrop));
   border: 0;
   box-shadow: var(--pane-shadow);
+  --drop: none;
 }
+/* thẻ nổi lồng trong thẻ nổi (ví dụ ô gợi ý trong một bước của biểu mẫu) cũng không làm mờ lần hai */
+:is(.planner-box, .cta-box, .newsletter-box, .form-wrap .step, .msg-bubble, .sup-card-chat, .typing, .modal, .featured-card, .featured-inner) > * { --inner: none; }
 .planner-box, .newsletter-box {
   background: radial-gradient(420px circle at var(--lx, -600px) var(--ly, -600px), var(--shine), transparent 65%), var(--pane);
   border-radius: 36px;
@@ -310,8 +320,9 @@ body > .article-cover img, body > .article-cover .cover-placeholder { border-rad
 /* GIỌT — thanh menu */
 nav {
   background: var(--nav-bg);
-  -webkit-backdrop-filter: blur(12px) saturate(1.9) brightness(1.05);
-          backdrop-filter: blur(12px) saturate(1.9) brightness(1.05);
+  -webkit-backdrop-filter: var(--nav-backdrop);
+          backdrop-filter: var(--nav-backdrop);
+  --drop: none;
   border: 0 !important;
   border-radius: 999px;
   margin: 12px max(12px, calc(50% - 590px)) 0;
@@ -321,7 +332,7 @@ nav:has(+ .page-hero), nav:has(+ #form-section) { top: 12px; }
 .nav-dropdown { background: var(--menu) !important; border: 1px solid var(--edge); border-radius: 22px; box-shadow: var(--pane-shadow); }
 nav a, nav button, .nav-badge { white-space: nowrap; }
 .nav-right { flex-shrink: 0; }
-.verified-badge { background: var(--pane-strong); color: var(--accent); border: 1px solid var(--edge); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.verified-badge { background: var(--pane-strong); color: var(--accent); border: 1px solid var(--edge); }
 
 /* GIỌT — ô nhập & ô tìm kiếm */
 .search-box, .search-select, .planner-input, .filter-select, .form-input, .newsletter-input,
@@ -330,7 +341,7 @@ nav a, nav button, .nav-badge { white-space: nowrap; }
   box-shadow: inset 0 2px 5px rgba(18,44,66,.1), inset 0 -1px 0 rgba(255,255,255,.6);
 }
 .search-box, .search-select {
-  -webkit-backdrop-filter: blur(10px) saturate(1.8) brightness(1.05); backdrop-filter: blur(10px) saturate(1.8) brightness(1.05);
+  -webkit-backdrop-filter: var(--drop, var(--drop-fx)); backdrop-filter: var(--drop, var(--drop-fx));
   border: 0; border-radius: 999px;
   box-shadow: 0 16px 32px -20px rgba(18,44,66,.5), var(--rim);
 }
@@ -365,7 +376,7 @@ nav a, nav button, .nav-badge { white-space: nowrap; }
 .mode-toggle, .nav-menu-btn { border-radius: 999px !important; }
 .btn-line, .btn-outline, .btn-plan, .btn-load, .btn-home, .btn-cancel, .pkg-btn, .quick-btn, .planner-btn, .mode-toggle, .nav-menu-btn {
   background: var(--btn2); border: 0; color: var(--text);
-  -webkit-backdrop-filter: blur(10px) saturate(1.8); backdrop-filter: blur(10px) saturate(1.8);
+  -webkit-backdrop-filter: var(--drop, var(--drop-fx)); backdrop-filter: var(--drop, var(--drop-fx));
   box-shadow: 0 12px 24px -16px rgba(18,44,66,.45), var(--rim);
 }
 .btn-line:hover, .btn-outline:hover, .btn-load:hover, .pkg-btn:hover, .quick-btn:hover, .planner-btn:hover {
@@ -379,10 +390,12 @@ nav a, nav button, .nav-badge { white-space: nowrap; }
 /* GIỌT — nhãn lọc */
 .pill, .cat-pill, .cat, .ptag, .style-tag {
   background: var(--chip); border: 0;
-  -webkit-backdrop-filter: blur(8px) saturate(1.8); backdrop-filter: blur(8px) saturate(1.8);
+  -webkit-backdrop-filter: var(--drop, var(--drop-fx)); backdrop-filter: var(--drop, var(--drop-fx));
   box-shadow: 0 8px 18px -14px rgba(18,44,66,.5), inset 0 0 0 1px rgba(255,255,255,.45), inset 0 1.5px 0 rgba(255,255,255,.9);
   transition: transform .45s var(--spring), filter .25s ease;
 }
+/* nhãn "Độc đáo": kính ngả vàng, đủ đục để chữ vàng đồng đọc được trên mọi vùng của cảnh */
+.pill.special:not(.active), .cat-pill.special:not(.active) { background: var(--chip-special); box-shadow: 0 8px 18px -14px rgba(18,44,66,.5), inset 0 0 0 1px var(--accent-line), inset 0 1.5px 0 rgba(255,255,255,.6); }
 .pill:hover, .cat-pill:hover, .cat:hover { transform: translateY(-1px) scale(1.03); }
 .pill.active, .pill.special.active, .cat-pill.active, .cat-pill.special.active, .cat.active {
   background: var(--btn-grad); border: 0; color: var(--btn-primary-text); box-shadow: var(--btn-shadow), inset 0 0 0 1px var(--btn-edge);
@@ -393,7 +406,7 @@ nav a, nav button, .nav-badge { white-space: nowrap; }
 /* Tiện ích: biến một phần tử bất kỳ thành giọt kính trong */
 .liquid {
   background: var(--btn2);
-  -webkit-backdrop-filter: blur(10px) saturate(1.9) brightness(1.05); backdrop-filter: blur(10px) saturate(1.9) brightness(1.05);
+  -webkit-backdrop-filter: var(--drop, var(--drop-fx)); backdrop-filter: var(--drop, var(--drop-fx));
   box-shadow: 0 20px 40px -22px rgba(18,44,66,.5), var(--rim);
 }
 
@@ -413,7 +426,9 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   .nav-logo::after, a.logo::after { width: 124px; height: 10.1px; }
 }
 @media (max-width: 640px) {
-  :root { --blur: 16px; }
+  /* giọt kính nhỏ (nhãn, ô tìm kiếm, nút phụ) không làm mờ nền trên điện thoại: ít lớp dựng hơn, cuộn nhẹ hơn */
+  :root { --blur: 16px; --drop: none; --chip: rgba(10,22,34,.86); --btn2: rgba(12,26,38,.86); --search-bg: rgba(10,22,34,.86); --field: rgba(10,22,34,.86); }
+  body.light { --chip: rgba(255,255,255,.9); --btn2: rgba(255,255,255,.9); --search-bg: rgba(255,255,255,.9); --field: rgba(255,255,255,.9); }
   body > section:not(#hero):not(#planner):not(#cta), .cats-section, .sup-section, footer {
     width: calc(100% - 16px); margin: 14px auto; border-radius: 30px;
   }
@@ -445,6 +460,17 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   [data-r] { opacity: 1 !important; transform: none !important; transition: none !important; }
   * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+/* Tấm kính có hiệu ứng hiện dần thì chỉ đổi độ trong, không trượt (trượt = phải làm mờ lại nền ở từng khung hình) */
+.planner-box[data-r], .cta-box[data-r], .newsletter-box[data-r], .glass[data-r], .glass-strong[data-r] { transform: none !important; }
+
+/* ── 9. CHẾ ĐỘ NHẸ ──
+   <html class="lite">: bỏ toàn bộ làm mờ nền, kính đục hơn để chữ vẫn rõ. Tự bật khi máy yếu, khi người dùng bật
+   tiết kiệm dữ liệu, hoặc khi liquid.js đo thấy cuộn bị giật (ghi nhớ 7 ngày trong localStorage['th-lite']). */
+html.lite *, html.lite *::before, html.lite *::after { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+html.lite { --shine: transparent; --pane: rgba(12,26,36,.93); --pane-strong: rgba(12,26,36,.97); --nav-bg: rgba(12,26,36,.95); --chip: rgba(10,22,34,.9); --btn2: rgba(12,26,38,.9); --search-bg: rgba(10,22,34,.9); --field: rgba(10,22,34,.88); }
+html.lite body.light { --shine: transparent; --pane: rgba(255,255,255,.92); --pane-strong: rgba(255,255,255,.97); --nav-bg: rgba(255,255,255,.95); --card-bg: rgba(255,255,255,.72); --field: rgba(255,255,255,.94); --btn2: rgba(255,255,255,.93); --chip: rgba(255,255,255,.93); --search-bg: rgba(255,255,255,.94); }
+html.lite .orb-chip { animation: none !important; }
+
 /* Trình duyệt không làm mờ được, hoặc người dùng tắt hiệu ứng trong suốt: dùng nền đặc hơn */
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   body.light { --pane: rgba(255,255,255,.9); --nav-bg: rgba(255,255,255,.92); --card-bg: rgba(255,255,255,.7); --field: rgba(255,255,255,.92); --btn2: rgba(255,255,255,.9); --chip: rgba(255,255,255,.88); }

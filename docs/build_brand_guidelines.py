@@ -42,18 +42,18 @@ def level(r):
 GL_L = 'kính sáng xấu nhất (đo)'; GL_D = 'kính tối xấu nhất (đo)'
 rows = [
  ('#12261C', '#FFFFFF', 'Mực ngọc lục', 'Chữ chính', None),
- ('#12261C', '#C9D9CB', 'Mực ngọc lục', 'Chữ chính, kính xấu nhất', (10.74, GL_L)),
+ ('#12261C', '#C9D9CB', 'Mực ngọc lục', 'Chữ chính, kính xấu nhất', (10.59, GL_L)),
  ('#2B4336', '#FFFFFF', 'Chữ phụ', 'Đoạn văn phụ', None),
- ('#2B4336', '#C9D9CB', 'Chữ phụ', 'Đoạn văn phụ, kính xấu nhất', (7.24, GL_L)),
+ ('#2B4336', '#C9D9CB', 'Chữ phụ', 'Đoạn văn phụ, kính xấu nhất', (7.14, GL_L)),
  ('#40574A', '#FFFFFF', 'Chữ mờ', 'Chú thích, ngày tháng', None),
- ('#40574A', '#C9D9CB', 'Chữ mờ', 'Chú thích, kính xấu nhất', (5.29, GL_L)),
+ ('#40574A', '#C9D9CB', 'Chữ mờ', 'Chú thích, kính xấu nhất', (5.22, GL_L)),
  ('#765225', '#FFFFFF', 'Vàng đồng', 'Chữ nhấn nhỏ, liên kết, icon, giá', None),
- ('#765225', '#C9D9CB', 'Vàng đồng', 'Chữ nhấn, kính xấu nhất', (4.72, GL_L)),
+ ('#765225', '#C9D9CB', 'Vàng đồng', 'Chữ nhấn, kính xấu nhất', (4.65, GL_L)),
  ('#FBF7EE', '#1E5A40', 'Chữ ngà', 'Nút chính (ngọc lục)', None),
- ('#F3F5F1', '#26414A', 'Chữ chính (tối)', 'Đêm vườn: chữ chính, kính xấu nhất', (9.60, GL_D)),
- ('#D5DED8', '#26414A', 'Chữ phụ (tối)', 'Đêm vườn: đoạn văn phụ', (7.65, GL_D)),
- ('#AFC0B7', '#26414A', 'Chữ mờ (tối)', 'Đêm vườn: chú thích', (5.54, GL_D)),
- ('#E7CF9B', '#26414A', 'Champagne (tối)', 'Đêm vườn: chữ nhấn, liên kết, giá', (6.92, GL_D)),
+ ('#F3F5F1', '#26414A', 'Chữ chính (tối)', 'Đêm vườn: chữ chính, kính xấu nhất', (9.21, GL_D)),
+ ('#D5DED8', '#26414A', 'Chữ phụ (tối)', 'Đêm vườn: đoạn văn phụ', (7.34, GL_D)),
+ ('#AFC0B7', '#26414A', 'Chữ mờ (tối)', 'Đêm vườn: chú thích', (5.31, GL_D)),
+ ('#E7CF9B', '#26414A', 'Champagne (tối)', 'Đêm vườn: chữ nhấn, liên kết, giá', (6.64, GL_D)),
 ]
 def contrast_row(fg, bg, name, use, meas):
     r = meas[0] if meas else ratio(fg, bg); lv, cl = level(r)
@@ -280,7 +280,7 @@ footer .art {{ width:150px; margin:0 auto 10px; color:var(--ink); }}
   <div class="cover-pane">
     {img('logo-lockup-color', '', 'Timeless Harmony — hold us together').replace('class="cimg"', 'class="cimg c-lockup"')}
     <p class="cover-title">Brand Guideline</p>
-    <p class="cover-sub">Phiên bản 2.2 · tháng 11, 2026 — Vườn kính · kính lỏng</p>
+    <p class="cover-sub">Phiên bản 2.3 · tháng 11, 2026 — Vườn kính · kính lỏng · cảnh nền 3D</p>
     <span class="cover-sys">Hệ nhận diện “Vườn kính” · kính lỏng</span>
   </div>
 </header>
@@ -479,7 +479,7 @@ footer .art {{ width:150px; margin:0 auto 10px; color:var(--ink); }}
 <section id="nen"><div class="wrap">
   <span class="num">05</span>
   <h2>Hình <em>nền</em></h2>
-  <p class="lead">Mỗi trang là một lễ cưới trong vườn biệt thự bên hồ ở Ý, nhìn từ trên cao: trời xanh, dãy núi bên kia hồ, mặt hồ ngọc lam, lan can đá có ban công cong, thảm cỏ sọc và lối sỏi. Hai dãy ghế có khách (chỉ là hình dáng nhìn từ sau, không có gương mặt) chạy dọc lối đi viền hoa trắng dẫn tới cổng hoa; cô dâu chú rể nhỏ đứng dưới cổng, và phía sau là chùm pháo bông ngày nhiều màu xoè hình quạt.</p>
+  <p class="lead">Mỗi trang là một lễ cưới trong vườn biệt thự bên hồ ở Ý — <b>một cảnh 3D dựng sẵn thành ảnh tĩnh</b> (ánh nắng, bóng đổ và phản chiếu trên mặt hồ là thật; trình duyệt chỉ tải một ảnh, không chạy 3D). Cảnh nhìn từ trên cao: trời xanh, dãy núi bên kia hồ, mặt hồ ngọc lam, lan can đá có ban công cong, thảm cỏ sọc và lối sỏi. Hai dãy ghế có khách (chỉ là hình dáng nhìn từ sau, không có gương mặt) chạy dọc lối đi viền hoa trắng dẫn tới cổng hoa; cô dâu chú rể nhỏ đứng dưới cổng, và phía sau là chùm pháo bông ngày nhiều màu xoè hình quạt.</p>
   <p class="note">Bản đêm: trăng, sao, đèn làng ven hồ, nến dọc lối đi và pháo bông rực hơn. Pháo bông nhiều màu là <b>điểm nhấn màu duy nhất</b> của cảnh, nên giao diện giữ màu tiết chế: ngọc lục, vàng và kính trắng.</p>
   <div class="grid g2" style="margin-top:30px">
     <div><div class="scene day"></div><p class="note"><code>scene-day.webp</code> · chế độ sáng — hồ Ý, lối hoa trắng, cổng hoa và pháo bông ngày</p></div>
@@ -489,7 +489,7 @@ footer .art {{ width:150px; margin:0 auto 10px; color:var(--ink); }}
     <tr><th>Tệp</th><th>Vai trò</th></tr>
     <tr><td><code>assets/bg/scene-day.webp</code> · <code>scene-night.webp</code></td><td>Cảnh nền máy tính, 2000×1250, ngày và đêm</td></tr>
     <tr><td><code>assets/bg/scene-day-m.webp</code> · <code>scene-night-m.webp</code></td><td>Bản dọc cho điện thoại, 900×1950</td></tr>
-    <tr><td><code>docs/design/build_background.py</code> + <code>render_background.js</code></td><td>Vẽ SVG vào <code>docs/design/.build/</code> (không commit), rồi xuất WebP ra <code>assets/bg/</code></td></tr>
+    <tr><td><code>docs/design/build_scene3d.py</code> + <code>post_scene3d.py</code></td><td>Dựng cảnh bằng Blender (Cycles) ra EXR trong <code>docs/design/.build/</code> (không commit), rồi hậu kỳ và xuất WebP ra <code>assets/bg/</code>. Cách chạy: <code>docs/design/README.md</code></td></tr>
   </table></div>
   <div class="grid g2" style="margin-top:26px">
     <div><h3 style="margin-top:0">Nên</h3><ul class="rules">
@@ -603,7 +603,9 @@ footer .art {{ width:150px; margin:0 auto 10px; color:var(--ink); }}
   <h3>Quy tắc</h3>
   <ul class="rules">
     <li><b>Không lồng hai lớp làm mờ.</b> Thẻ nằm trong tấm chỉ dùng nền kính mỏng (trắng .58 → .34), không <code>backdrop-filter</code>.</li>
-    <li><b>Điện thoại</b> (≤ 640px): giảm blur (<code>--blur</code>), tấm bo 30px, lề hai bên 8px.</li>
+    <li><b>Điện thoại</b> (≤ 640px): giảm blur (<code>--blur</code>), tấm bo 30px, lề hai bên 8px; giọt kính nhỏ (nhãn, ô tìm kiếm, nút phụ) không làm mờ, bù bằng nền đục hơn.</li>
+    <li><b>Chế độ nhẹ</b> (<code>html.lite</code>): bỏ toàn bộ làm mờ, kính đục 92–97%. Tự bật khi máy yếu, khi bật tiết kiệm dữ liệu, hoặc khi <code>liquid.js</code> đo thấy cuộn trang bị giật. Thành phần mới phải đọc được cả ở chế độ này.</li>
+    <li><b>Không cho phần tử đang làm mờ nền chuyển động</b> (trượt, trôi): mỗi khung hình trình duyệt phải làm mờ lại.</li>
     <li><b>Dự phòng:</b> trình duyệt không hỗ trợ <code>backdrop-filter</code> (<code>@supports not</code>), hoặc người dùng bật giảm trong suốt (<code>prefers-reduced-transparency</code>): tấm chuyển sang trắng đặc 90–95%.</li>
     <li><b>Chữ thường</b> trên kính phải đạt tương phản tối thiểu 4,5:1 — xem bảng ở mục 03. Chữ nhỏ chỉ dùng vàng đồng <code>#765225</code>; champagne chỉ để trang trí.</li>
     <li><b>Đổi cảnh nền hoặc độ đục kính (<code>--pane</code>) thì phải đo lại độ tương phản</b> trên vùng kính xấu nhất.</li>
@@ -647,7 +649,7 @@ footer .art {{ width:150px; margin:0 auto 10px; color:var(--ink); }}
   <h3>Ảnh đại diện &amp; ảnh chia sẻ</h3>
   <ul class="rules">
     <li>Ảnh đại diện mạng xã hội: quả cầu — <code>docs/logo/social/avatar-orb.png</code>, 1080×1080, tràn khung, tự cắt tròn.</li>
-    <li>Ảnh xem trước khi chia sẻ link (1200×630): <code>og-image.png</code>.</li>
+    <li>Ảnh xem trước khi chia sẻ link (1200×630): <code>og-image.jpg</code>.</li>
     <li>Chữ ký email: bản ngang màu <code>docs/logo/png/logo-horizontal-color.png</code>, hiển thị rộng 200px; chữ Be Vietnam Pro 13px màu Mực ngọc lục.</li>
   </ul>
 </div></section>
@@ -669,10 +671,10 @@ footer .art {{ width:150px; margin:0 auto 10px; color:var(--ink); }}
     <tr><td><code>favicon.svg</code> · <code>apple-touch-icon.png</code></td><td>Biểu tượng trình duyệt và iPhone</td></tr>
     <tr><td><code>assets/bg/scene-day.webp</code> · <code>scene-night.webp</code></td><td>Cảnh lễ cưới bên hồ ở Ý, máy tính 2000×1250, ngày và đêm</td></tr>
     <tr><td><code>assets/bg/scene-day-m.webp</code> · <code>scene-night-m.webp</code></td><td>Bản dọc cho điện thoại, 900×1950</td></tr>
-    <tr><td><code>docs/design/build_background.py</code> · <code>render_background.js</code></td><td>Vẽ lại cảnh nền (SVG trung gian trong <code>docs/design/.build/</code>) và xuất bốn tệp WebP</td></tr>
+    <tr><td><code>docs/design/build_scene3d.py</code> · <code>post_scene3d.py</code></td><td>Dựng lại cảnh nền 3D và xuất bốn tệp WebP</td></tr>
     <tr><td><code>docs/logo/svg/</code> · <code>png/</code> · <code>pdf/</code> · <code>social/</code></td><td>Bộ tệp gửi đối tác, nhà in: bản màu, bản một màu cố định (mực ngọc lục và ngà), PNG nền trong, PDF vector, ảnh đại diện</td></tr>
     <tr><td><code>assets/brand/tulip-*.svg</code></td><td>Bốn cụm tulip nét mảnh (kính xanh đậm, ấn phẩm in)</td></tr>
-    <tr><td><code>og-image.png</code></td><td>Ảnh chia sẻ link, 1200×630</td></tr>
+    <tr><td><code>og-image.jpg</code></td><td>Ảnh chia sẻ link, 1200×630</td></tr>
     <tr><td><code>theme.css</code></td><td>Màu, phông và chất liệu kính lỏng cho website — nguồn duy nhất; <code>liquid.js</code> cho vệt sáng theo con trỏ</td></tr>
     <tr><td><code>.claude/brand-voice-guidelines.md</code></td><td>Giọng thương hiệu đầy đủ</td></tr>
     <tr><td><code>docs/marketing-playbook.md</code></td><td>Chiến lược và kế hoạch marketing</td></tr>

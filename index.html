@@ -14,7 +14,7 @@
 <meta property="og:description" content="Timeless Harmony — nền tảng kết nối dịch vụ cưới tại Việt Nam: nhiếp ảnh, hoa cưới, địa điểm, làm đẹp, âm nhạc. Nhà cung cấp được tuyển chọn, thanh toán an toàn qua ký quỹ, trợ lý AI lên kế hoạch miễn phí.">
 <meta property="og:url" content="https://timeless-harmony.com/">
 <meta property="og:locale" content="vi_VN">
-<meta property="og:image" content="https://timeless-harmony.com/og-image.png">
+<meta property="og:image" content="https://timeless-harmony.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Timeless Harmony — Đám cưới của bạn bắt đầu từ đây">
@@ -885,7 +885,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   -webkit-backdrop-filter: blur(5px) saturate(1.9) brightness(1.08); backdrop-filter: blur(5px) saturate(1.9) brightness(1.08);
   box-shadow: 0 64px 90px -46px rgba(18,50,84,.62), inset 0 0 0 1.5px rgba(255,255,255,.78), inset 0 3px 2px rgba(255,255,255,.95),
               inset 0 -28px 48px -22px rgba(120,176,236,.5), inset 0 32px 52px -32px rgba(255,255,255,.9);
-  animation: orbFloat 8s ease-in-out infinite;
+  /* quả cầu đứng yên: nó đang làm mờ nền, nếu trôi thì trình duyệt phải làm mờ lại ở mọi khung hình */
 }
 .orb-disc::after {
   content: ''; position: absolute; left: 15%; top: 8%; width: 40%; height: 21%; border-radius: 50%;
@@ -895,10 +895,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .orb-chip {
   position: absolute; display: inline-flex; align-items: center; gap: 9px; white-space: nowrap;
   font-size: 12.5px; font-weight: 500; letter-spacing: .01em; color: #12261C; padding: 10px 17px 10px 11px; border-radius: 999px;
-  background: linear-gradient(135deg, rgba(255,255,255,.74), rgba(255,255,255,.38));
-  -webkit-backdrop-filter: blur(10px) saturate(1.8); backdrop-filter: blur(10px) saturate(1.8);
+  background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(255,255,255,.72));
   box-shadow: 0 18px 30px -18px rgba(18,44,66,.55), inset 0 0 0 1px rgba(255,255,255,.6), inset 0 1.5px 0 #fff, inset 0 -8px 12px -10px rgba(255,255,255,.7);
-  animation: orbFloat 8s ease-in-out infinite;
+  animation: orbFloat 8s ease-in-out infinite;   /* ba viên nhỏ trôi nhẹ; không làm mờ nền nên chỉ tốn một phép dịch chuyển */
 }
 .orb-chip i { width: 19px; height: 19px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(140deg, #E3C88F, #9A7440); box-shadow: inset 0 1px 0 rgba(255,255,255,.6); }
 .orb-chip i::after { content: ''; width: 8px; height: 4px; border-left: 1.6px solid #fff; border-bottom: 1.6px solid #fff; transform: rotate(-45deg) translate(1px, -1px); }
@@ -949,7 +948,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 <script src="/liquid.js" defer></script>
 </head>
 <body>
-<script>try{if(localStorage.getItem('th-mode')!=='dark')document.body.classList.add('light')}catch(e){document.body.classList.add('light')}</script>
+<script>try{if(localStorage.getItem('th-mode')!=='dark')document.body.classList.add('light');var l=+localStorage.getItem('th-lite');if(l&&Date.now()-l<6048e5)document.documentElement.classList.add('lite')}catch(e){document.body.classList.add('light')}</script>
 
 <!-- NAV -->
 <nav>

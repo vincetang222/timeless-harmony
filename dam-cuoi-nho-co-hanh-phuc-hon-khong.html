@@ -92,7 +92,7 @@ footer{border-top:0.5px solid var(--line);padding:36px 32px;}
 <script src="/liquid.js" defer></script>
 </head>
 <body>
-<script>try{if(localStorage.getItem('th-mode')!=='dark')document.body.classList.add('light')}catch(e){document.body.classList.add('light')}</script>
+<script>try{if(localStorage.getItem('th-mode')!=='dark')document.body.classList.add('light');var l=+localStorage.getItem('th-lite');if(l&&Date.now()-l<6048e5)document.documentElement.classList.add('lite')}catch(e){document.body.classList.add('light')}</script>
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-logo">Timeless <span>Harmony</span></a>
