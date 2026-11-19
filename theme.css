@@ -2,8 +2,9 @@
    TIMELESS HARMONY — "VƯỜN KÍNH" · liquid glass
    Nguồn duy nhất cho màu, chữ và chất liệu kính của toàn site.
    File này nạp SAU <style> của từng trang nên biến ở đây luôn thắng.
-   Hình nền: docs/design/build_background.py + render_background.js → assets/bg/scene-*.webp.
-   Vệt sáng theo con trỏ: /liquid.js (chỉ chạy trên thiết bị có chuột).
+   Hình nền: cảnh 3D dựng sẵn (docs/design/build_scene3d.py → post_scene3d.py → build_glass.js) → assets/bg/lake-*.webp.
+   /liquid.js: kính dựng sẵn, vệt sáng theo con trỏ, bộ điều tiết độ mượt, nút ngắm cảnh và bắn pháo hoa.
+   /fireworks.js: pháo hoa chuyển động trên cảnh nền (chỉ tải khi người dùng bấm nút).
    Quy chuẩn đầy đủ: docs/brand-guidelines.html
    ═══════════════════════════════════════════════════════════════ */
 
@@ -36,7 +37,7 @@
 /* ── 2. CHẾ ĐỘ TỐI — "Đêm vườn" (khi <body> không có class .light) ── */
 :root {
   --sky: linear-gradient(180deg, #040A1A 0%, #0B1D3E 55%, #1A3A5E 100%);
-  --bg-scene: url(/assets/bg/scene-night.webp);
+  --bg-scene: url(/assets/bg/lake-night.webp);  --bg-glass: url(/assets/bg/lake-night-glass.webp);
   --backdrop: blur(var(--blur)) saturate(1.25) brightness(.72);
   --nav-backdrop: blur(14px) saturate(1.5) brightness(.8);
   --chip-special: linear-gradient(135deg, rgba(44,38,22,.9), rgba(26,24,16,.84));
@@ -86,7 +87,7 @@
 /* ── 3. CHẾ ĐỘ SÁNG — mặc định: nắng sớm trên đồng hoa ── */
 body.light {
   --sky: linear-gradient(180deg, #4C97E6 0%, #86BFF2 45%, #CDE6F9 100%);
-  --bg-scene: url(/assets/bg/scene-day.webp);
+  --bg-scene: url(/assets/bg/lake-day.webp);  --bg-glass: url(/assets/bg/lake-day-glass.webp);
   --backdrop: blur(var(--blur)) saturate(1.3) contrast(.62) brightness(1.24);   /* nén tương phản của cảnh sau kính: vùng tối (hàng bách) sáng lên, chữ luôn đọc được */
   --nav-backdrop: blur(14px) saturate(1.5) contrast(.62) brightness(1.24);
   --chip-special: linear-gradient(135deg, rgba(255,251,240,.94), rgba(250,238,210,.86));
@@ -144,8 +145,8 @@ body {
   color: var(--text);
   text-rendering: optimizeLegibility;
 }
-/* Khung cảnh cố định phía sau mọi thứ: lễ cưới trong vườn biệt thự bên hồ, pháo bông sau cổng hoa.
-   Ảnh WebP xuất từ docs/design (bản ngang cho máy tính, bản dọc cho điện thoại). */
+/* Khung cảnh cố định phía sau mọi thứ: lễ cưới trong vườn biệt thự bên hồ. Ảnh WebP xuất từ docs/design (bản ngang
+   cho máy tính, bản dọc cho điện thoại). Pháo hoa không nằm trong ảnh: fireworks.js vẽ nó thành chuyển động (mục 10). */
 body::before {
   content: ''; position: fixed; z-index: -1; left: 0; top: 0; width: 100%; height: 100vh; height: 100lvh;
   pointer-events: none;
@@ -248,6 +249,30 @@ body > section:not(#hero):not(#planner):not(#cta),
   background: radial-gradient(420px circle at var(--lx, -600px) var(--ly, -600px), var(--shine), transparent 65%), var(--pane-strong);
 }
 
+/* ── 7b. KÍNH DỰNG SẴN ──
+   backdrop-filter buộc trình duyệt làm mờ lại nền ở mọi khung hình khi cuộn. Cảnh nền đứng yên, nên liquid.js chèn vào
+   mỗi tấm kính lớn một lớp <i class="gl"><b></b></i>: ảnh nền ĐÃ làm mờ sẵn (assets/bg/*-glass.webp, sinh bằng
+   docs/design/build_glass.js), ghim theo khung nhìn (position: fixed) và cắt theo hình tấm kính (clip-path). Tấm đó
+   thôi dùng backdrop-filter; nhìn như cũ nhưng khi cuộn trình duyệt chỉ việc ghép lớp. Thanh menu, hộp thoại và giọt
+   kính nhỏ vẫn làm mờ trực tiếp. Lớp ảnh vẽ ở 1/4 kích thước rồi phóng lên: ảnh đã mờ nên không mất gì, mà nhẹ bộ nhớ.
+   LƯU Ý: tấm có lớp .gl và các phần tử bao ngoài nó không được có transform/filter, vì sẽ làm lệch ảnh ghim
+   (liquid.js đo lại từng lớp; lớp nào lệch thì bị gỡ và tấm đó quay về backdrop-filter). */
+.gl { display: none; }
+html.pre .gl {
+  display: block; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: inherit; clip-path: inset(0 round var(--gl-r, 40px));
+}
+html.pre .gl > b {
+  position: fixed; left: 0; top: 0; width: 25%; height: 25vh; height: 25lvh;
+  transform: scale(4); transform-origin: 0 0;
+  background: var(--bg-glass) center bottom / cover no-repeat;
+}
+html.pre .gl::after { content: ''; position: absolute; inset: 0; background: inherit; }   /* lớp màu của tấm kính, phủ trên ảnh mờ */
+html.pre :has(> .gl) { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; isolation: isolate; transform: none !important; }
+html.pre .gl-rel { position: relative; }
+html.pre [data-r]:has(.gl) { transform: none !important; }
+html.lite .gl { display: none !important; }
+
 /* Tấm: khối ngang toàn trang → tấm kính nổi, có lề hai bên */
 body > section:not(#hero):not(#planner):not(#cta), .cats-section, .sup-section, footer {
   width: min(1180px, calc(100% - 28px)); margin: 26px auto; max-width: none;
@@ -255,7 +280,7 @@ body > section:not(#hero):not(#planner):not(#cta), .cats-section, .sup-section, 
 body > section:not(#hero):not(#planner):not(#cta) { padding-block: clamp(40px, 5.4vw, 68px); }
 .cats-section, .sup-section { padding-block: 44px; }
 body > section#planner, body > section#cta { padding-block: 10px; border: 0; }
-footer { margin-bottom: 14px; padding-block: 36px 24px; }
+footer { margin-bottom: 72px; padding-block: 36px 24px; }   /* chừa chỗ cho hai nút nổi ở góc dưới phải */
 #pageContent > .wrap { margin: 88px auto 26px; width: min(var(--max, 1100px), calc(100% - 28px)); padding-bottom: 46px; }
 .articles { margin: 28px 0; padding: 36px 32px 46px; }
 body > .article-body { margin: 30px auto; width: min(var(--max-article, 760px), calc(100% - 24px)); padding-top: 42px; padding-bottom: 58px; }
@@ -434,8 +459,8 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   }
   body > .article-body, body > .article-body ~ .related, .page-hero + .content, #pageContent > .wrap { width: calc(100% - 16px); border-radius: 30px; }
   .articles { padding: 24px 16px 30px; border-radius: 30px; }
-  body.light { --bg-scene: url(/assets/bg/scene-day-m.webp); }
-  :root { --bg-scene: url(/assets/bg/scene-night-m.webp); }
+  body.light { --bg-scene: url(/assets/bg/lake-day-m.webp); --bg-glass: url(/assets/bg/lake-day-m-glass.webp); }
+  :root { --bg-scene: url(/assets/bg/lake-night-m.webp); --bg-glass: url(/assets/bg/lake-night-m-glass.webp); }
   body > .hero, .page-hero, .article-hero { width: calc(100% - 16px); border-radius: 30px; }
   .hero-copy, .page-header { border-radius: 30px; }
   .page-header { padding: 30px 22px 26px !important; }
@@ -470,6 +495,63 @@ html.lite *, html.lite *::before, html.lite *::after { -webkit-backdrop-filter: 
 html.lite { --shine: transparent; --pane: rgba(12,26,36,.93); --pane-strong: rgba(12,26,36,.97); --nav-bg: rgba(12,26,36,.95); --chip: rgba(10,22,34,.9); --btn2: rgba(12,26,38,.9); --search-bg: rgba(10,22,34,.9); --field: rgba(10,22,34,.88); }
 html.lite body.light { --shine: transparent; --pane: rgba(255,255,255,.92); --pane-strong: rgba(255,255,255,.97); --nav-bg: rgba(255,255,255,.95); --card-bg: rgba(255,255,255,.72); --field: rgba(255,255,255,.94); --btn2: rgba(255,255,255,.93); --chip: rgba(255,255,255,.93); --search-bg: rgba(255,255,255,.94); }
 html.lite .orb-chip { animation: none !important; }
+
+/* ── 10. SÂN KHẤU: ngắm cảnh và pháo hoa ──
+   liquid.js gắn hai nút nổi (.th-stage) vào mọi trang; fireworks.js vẽ pháo lên <canvas class="th-sky"> nằm ngay trên
+   ảnh nền. <html class="stage">: mọi nội dung mờ đi để lộ trọn cảnh; phần tử có class .th-keep thì ở lại. */
+.th-sky { position: fixed; z-index: -1; left: 0; top: 0; width: 100%; height: 100vh; height: 100lvh; pointer-events: none; }
+.th-stage {
+  position: fixed; z-index: 90; display: flex; align-items: center; gap: 8px;
+  right: max(14px, env(safe-area-inset-right)); bottom: max(14px, env(safe-area-inset-bottom));
+}
+.th-stage button {
+  position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 46px; padding: 0 18px 0 15px; border: 0; border-radius: 999px; cursor: pointer;
+  font: 600 13.5px/1 var(--font-body); letter-spacing: .01em; white-space: nowrap;
+  transition: transform .45s var(--spring), filter .25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.th-stage button:hover { transform: translateY(-2px) scale(1.03); filter: brightness(1.1); }
+.th-stage button:active { transform: scale(.95); }
+.th-fire { background: var(--btn-grad); color: var(--btn-primary-text); box-shadow: var(--btn-shadow), inset 0 0 0 1px var(--btn-edge); }
+.th-fire svg { color: #F1DCA6; }
+body:not(.light) .th-fire svg { color: #7A5628; }
+.th-view {
+  width: 46px; padding: 0 !important; background: var(--btn2); color: var(--text);
+  -webkit-backdrop-filter: var(--drop, var(--drop-fx)); backdrop-filter: var(--drop, var(--drop-fx));
+  box-shadow: 0 12px 24px -16px rgba(18,44,66,.45), var(--rim);
+}
+.th-stage.is-view .th-view { width: auto; padding: 0 17px 0 13px !important; }
+/* vòng sáng gợi ý quanh nút pháo hoa cho tới lần bấm đầu tiên (ba nhịp rồi thôi) */
+.th-fire::after {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  box-shadow: 0 0 0 2px rgba(231,207,155,.9); opacity: 0;
+  animation: th-ring 2.2s ease-out 1.4s 3;
+}
+.th-stage.fired .th-fire::after { animation: none; }
+@keyframes th-ring { 0% { opacity: .9; transform: scale(1); } 100% { opacity: 0; transform: scale(1.32, 1.6); } }
+.th-tip {
+  position: absolute; right: 0; bottom: calc(100% + 10px); padding: 9px 14px; border-radius: 999px; white-space: nowrap;
+  font: 500 12.5px/1 var(--font-body); color: #fff; background: rgba(8,24,30,.62);
+  opacity: 0; transform: translateY(6px); transition: opacity .4s ease, transform .4s ease; pointer-events: none;
+}
+html.stage .th-stage.is-view .th-tip { opacity: 1; transform: none; transition-delay: .5s; }
+html.stage-anim body > *:not(.th-keep) { transition: opacity .5s ease !important; }
+html.stage body > *:not(.th-keep) { opacity: 0 !important; pointer-events: none !important; }
+html.stage-done body > *:not(.th-keep) { visibility: hidden !important; }
+html.stage, html.stage body { cursor: crosshair; }
+html.stage .th-stage, html.stage .th-stage * { cursor: pointer; }
+@media (max-width: 640px) {
+  .th-stage button { height: 44px; font-size: 13px; }
+  .th-fire { padding: 0 15px 0 12px !important; }
+  .th-view { width: 44px; }
+  footer { margin-bottom: 70px; }
+  /* trang Harmony AI: đáy màn hình là khung nhập, nên hai nút thu gọn và đứng ngay phía trên */
+  body:has(.input-bar) .th-stage { bottom: 132px; }
+  body:has(.input-bar) .th-fire { width: 44px; padding: 0 !important; }
+  body:has(.input-bar) .th-fire span { display: none; }
+}
+@media print { .th-stage, .th-sky { display: none !important; } }
 
 /* Trình duyệt không làm mờ được, hoặc người dùng tắt hiệu ứng trong suốt: dùng nền đặc hơn */
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {

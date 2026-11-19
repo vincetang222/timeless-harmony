@@ -4,8 +4,9 @@ Danh sách này gom mọi thứ website và bộ thương hiệu đang chờ t�
 
 ## 1. Thương hiệu
 
-- [ ] **Duyệt giao diện kính lỏng** (cảnh nền 3D lễ cưới bên hồ ở Ý có pháo bông, kính viền bắt sáng, tiêu đề serif ánh vàng, logo quả cầu ngọc lục – vàng). Xem trang chủ và `docs/logo/preview.png`; báo lại nếu muốn chỉnh góc máy, màu hoa, pháo bông, độ trong của kính.
-- [ ] **Thử trên điện thoại thật** (một máy iPhone, một máy Android tầm trung): cuộn trang chủ và trang Dịch vụ xem có mượt không. Nếu máy yếu, trang sẽ tự chuyển sang chế độ nhẹ (kính đục, không làm mờ nền) sau vài giây cuộn giật.
+- [ ] **Duyệt giao diện kính lỏng** (cảnh nền 3D lễ cưới bên hồ ở Ý, kính viền bắt sáng, tiêu đề serif ánh vàng, logo quả cầu ngọc lục – vàng). Xem trang chủ và `docs/logo/preview.png`; báo lại nếu muốn chỉnh góc máy, màu hoa, độ trong của kính.
+- [ ] **Duyệt pháo hoa và nút "Ngắm cảnh"**: bấm "Bắn pháo hoa" ở góc dưới phải vài lần (dàn phun cầu vồng, bông cầu, liễu rủ, trái tim), ở cả chế độ sáng và tối; bấm hình con mắt rồi chạm vào bầu trời. Báo lại nếu muốn đổi kiểu pháo, màu, vị trí nút, hoặc muốn pháo tự bắn một lần khi mở trang chủ.
+- [ ] **Thử trên điện thoại thật** (một máy iPhone, một máy Android tầm trung): cuộn trang chủ và trang Dịch vụ xem có mượt không, và nhìn kỹ các tấm kính khi cuộn: ảnh mờ sau kính phải khớp với cảnh, không trượt theo trang. Kính dựng sẵn mới chỉ được kiểm trên Chromium; nếu trên iPhone thấy lệch, mở trang với `?glass=live` ở cuối địa chỉ để so sánh và báo lại.
 - [ ] **Xác nhận ý nghĩa biểu tượng** (mục 01 của brand guideline): vô cực, hai nụ tulip, quả cầu trời – cỏ.
 - [ ] **Xác nhận phông chữ** Cormorant Garamond (tiêu đề) / Be Vietnam Pro / Lora. (Chữ logo: Belleza; tagline: Lora.)
 - [ ] *(Không gấp)* Bốn cụm tulip nét mảnh cũ vẫn tách từ ảnh 1080px; chỉ còn dùng ở khối kêu gọi và in ấn. Cần in khổ lớn thì vẽ lại.
