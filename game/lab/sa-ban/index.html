@@ -91,9 +91,23 @@ button[aria-pressed="true"] { background: var(--btn); color: var(--btn-ink); bor
 </div>
 <div class="load" id="load"><p id="load-text">Đang tải sa bàn…</p></div>
 
-<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js" } }</script>
+<script>
+// Canh chừng: nếu thư viện 3D không chạy được (trình duyệt cũ, bị chặn tải), báo rõ thay vì treo ở "Đang tải".
+// Khi mã chính đã chạy (__sabanUp), nó tự báo lỗi của nó, nên phần này thôi.
+(function () {
+  var fail = function (why) {
+    var box = document.getElementById('load'), t = document.getElementById('load-text');
+    if (!box || box.hidden || window.__sabanUp) return;
+    var ios = /OS (\d+)_(\d+)/.exec(navigator.userAgent);
+    t.textContent = 'Không tải được thư viện 3D trên trình duyệt này (' + why + ').' + (ios ? ' Máy đang chạy iOS ' + ios[1] + '.' + ios[2] + '.' : '') + ' Bạn chụp màn hình này gửi lại cho mình nhé.';
+  };
+  window.addEventListener('error', function (e) { var el = e.target; if (el && el !== window && el.tagName !== 'SCRIPT') return; fail(e.message || 'lỗi tải tệp'); }, true);
+  setTimeout(function () { fail('quá 20 giây'); }, 20000);
+})();
+</script>
 <script type="module">
-import * as THREE from 'three';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js';
+window.__sabanUp = true;
 
 const $ = (id) => document.getElementById(id);
 const store = {
