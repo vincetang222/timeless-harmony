@@ -1,0 +1,41 @@
+{
+  "_ghi_chu": "Bản tạm theo docs/game/tam-ly-cap-doi.md (chủ dự án đánh giá chưa sát, sẽ viết lại). Mã chỉ đọc tệp này: đổi trục, đổi kiểu, đổi luật ở đây là đủ. Điểm mỗi trục từ -2 (cực trái) đến +2 (cực phải).",
+  "truc": [
+    { "id": "tien", "ten": "Tiền", "trai": "Giữ", "phai": "Tiêu" },
+    { "id": "quy_mo", "ten": "Quy mô", "trai": "Riêng tư", "phai": "Rình rang" },
+    { "id": "phong_tuc", "ten": "Phong tục", "trai": "Giữ lễ", "phai": "Phá cách" },
+    { "id": "gia_dinh", "ten": "Gia đình", "trai": "Theo bố mẹ", "phai": "Tự quyết" },
+    { "id": "the_dien", "ten": "Thể diện", "trai": "Cho mình", "phai": "Cho người ta nhìn" },
+    { "id": "kiem_soat", "ten": "Kiểm soát", "trai": "Tự tay", "phai": "Giao phó" },
+    { "id": "chuan_muc", "ten": "Chuẩn mực", "trai": "Dễ tính", "phai": "Cầu toàn" },
+    { "id": "nhip", "ten": "Nhịp", "trai": "Lo xa", "phai": "Tuỳ hứng" },
+    { "id": "cang_thang", "ten": "Khi căng thẳng", "trai": "Rút lui", "phai": "Nói ra" }
+  ],
+  "kieu": [
+    { "id": "can_than", "ten": "Cẩn thận, tính từng khoản", "mo_ta": "Thích ít khách, thân mật. Sợ nợ, hay hỏi giá. Lo xa, muốn xong sớm cho yên tâm.",
+      "tin_tam_linh": 1,
+      "diem": { "tien": -2, "quy_mo": -1, "phong_tuc": -1, "gia_dinh": 0, "the_dien": -1, "kiem_soat": -1, "chuan_muc": 1, "nhip": -2, "cang_thang": -1 } },
+    { "id": "hao_phong", "ten": "Hào phóng, thích đông vui", "mo_ta": "Cả đời có một lần nên đáng thì chi. Càng đông càng vui, thích có chút đình đám.",
+      "tin_tam_linh": 0,
+      "diem": { "tien": 2, "quy_mo": 2, "phong_tuc": 1, "gia_dinh": 1, "the_dien": 1, "kiem_soat": 1, "chuan_muc": 0, "nhip": 1, "cang_thang": 2 } },
+    { "id": "truyen_thong", "ten": "Truyền thống, nghe lời bố mẹ", "mo_ta": "Giữ đủ nghi lễ, đúng ngày giờ. Muốn hai họ vui trước, mình tính sau.",
+      "tin_tam_linh": 2,
+      "diem": { "tien": 0, "quy_mo": 1, "phong_tuc": -2, "gia_dinh": -2, "the_dien": 1, "kiem_soat": 0, "chuan_muc": 1, "nhip": -1, "cang_thang": -1 } },
+    { "id": "tu_do", "ten": "Tự do, thích làm theo ý mình", "mo_ta": "Đám cưới là của hai đứa. Thích ít lễ, nhiều trải nghiệm, không thích bị đẩy theo khuôn.",
+      "tin_tam_linh": 0,
+      "diem": { "tien": 1, "quy_mo": -1, "phong_tuc": 2, "gia_dinh": 2, "the_dien": -2, "kiem_soat": 0, "chuan_muc": -1, "nhip": 2, "cang_thang": 1 } },
+    { "id": "cau_toan", "ten": "Cầu toàn, muốn từng chi tiết đúng", "mo_ta": "Tự tay lo hết cho chắc. Hay đổi ý để đẹp hơn, dễ kiệt sức khi gần ngày.",
+      "tin_tam_linh": 1,
+      "diem": { "tien": 0, "quy_mo": 0, "phong_tuc": 0, "gia_dinh": 0, "the_dien": 2, "kiem_soat": -2, "chuan_muc": 2, "nhip": -2, "cang_thang": -2 } }
+  ],
+  "luat": {
+    "_khop": "khop = 1 - |diem - 2*huong| / 2, trong khoảng -1..1. Lựa chọn nghiêng về cực huong (-1 hoặc +1); người ấy càng ở gần cực đó thì khớp càng cao. Tình cảm và căng thẳng của lựa chọn nhân với khop.",
+    "he_so_khop_cang": 0.6,
+    "tin_tam_linh_cang_khi_ngay_xau": 6,
+    "tin_tam_linh_ho_khi_ngay_xau": 7
+  },
+  "gia_dinh": {
+    "nha_trai": { "ten": "Nhà trai", "tin_tam_linh": 1 },
+    "nha_gai": { "ten": "Nhà gái", "tin_tam_linh": 2 }
+  }
+}

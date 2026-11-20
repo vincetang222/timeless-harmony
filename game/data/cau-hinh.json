@@ -1,0 +1,115 @@
+{
+  "_ghi_chu": "Mọi số trong tệp này là số của game (tiền tính bằng triệu đồng), lấy từ cột 'số tạm' của docs/game/gia-tham-khao.md, không phải dữ liệu thị trường.",
+  "ngay_bat_dau": "2027-01-04",
+  "sinh_hoat_thang": 8,
+  "nghe": [
+    { "id": "van_phong", "ten": "Nhân viên văn phòng", "luong": 12 },
+    { "id": "ky_su", "ten": "Kỹ sư phần mềm", "luong": 18 },
+    { "id": "giao_vien", "ten": "Giáo viên", "luong": 9 },
+    { "id": "kinh_doanh", "ten": "Nhân viên kinh doanh", "luong": 11 }
+  ],
+  "tiet_kiem": [
+    { "id": "it", "ten": "Ít", "tien": 40 },
+    { "id": "vua", "ten": "Vừa", "tien": 90 },
+    { "id": "kha", "ten": "Khá", "tien": 160 }
+  ],
+  "nguoi_ay": {
+    "cho_chu_re": [
+      { "ten": "Thu Hà", "sinh": "1997-03-08", "kieu": "can_than", "mo_ta": "Làm ở một văn phòng kế toán. Hay hỏi giá, hay mang theo sổ tay." },
+      { "ten": "Minh Châu", "sinh": "1996-11-22", "kieu": "hao_phong", "mo_ta": "Dạy yoga buổi sáng, nhiều bạn. Nói chuyện là cười." },
+      { "ten": "Bảo Ngọc", "sinh": "1998-06-15", "kieu": "truyen_thong", "mo_ta": "Quê Cần Thơ, ở Sài Gòn làm hành chính. Cuối tuần nào cũng gọi về cho mẹ." }
+    ],
+    "cho_co_dau": [
+      { "ten": "Quốc Anh", "sinh": "1996-05-12", "kieu": "cau_toan", "mo_ta": "Làm thiết kế. Đặt bàn quán nào cũng đọc kỹ đánh giá trước." },
+      { "ten": "Gia Huy", "sinh": "1997-09-03", "kieu": "tu_do", "mo_ta": "Hay đi phượt, thích nói chuyện về những chỗ chưa đi tới." },
+      { "ten": "Đức Thịnh", "sinh": "1995-01-30", "kieu": "hao_phong", "mo_ta": "Làm kinh doanh, quen nhiều người, cười to." }
+    ]
+  },
+  "ngay_sinh_mac_dinh": { "chu_re": "1996-05-12", "co_dau": "1997-03-08" },
+  "hen_ho": [
+    { "id": "ca_phe", "ten": "Cà phê yên tĩnh", "phi": 0.15, "mo_ta": "Hai người, một góc quán, nói chuyện lâu.", "truc": "quy_mo", "huong": -1, "tinh_cam": 8, "cang": -3 },
+    { "id": "ban_be", "ten": "Đi ăn cùng nhóm bạn", "phi": 0.4, "mo_ta": "Đông vui, giới thiệu người ấy với bạn bè.", "truc": "quy_mo", "huong": 1, "tinh_cam": 8, "cang": -2 },
+    { "id": "ve_que", "ten": "Về thăm nhà người ấy", "phi": 0.3, "mo_ta": "Mua ít quà, ngồi nói chuyện với bố mẹ người ấy.", "truc": "gia_dinh", "huong": -1, "tinh_cam": 8, "cang": 1 },
+    { "id": "di_choi", "ten": "Đi chơi xa một ngày", "phi": 0.8, "mo_ta": "Tự lên kế hoạch, đi theo hứng.", "truc": "nhip", "huong": 1, "tinh_cam": 8, "cang": -4 }
+  ],
+  "cau_hon": [
+    { "id": "ca_phe_quen", "ten": "Quán cà phê quen, nơi hẹn đầu", "phi": 1, "diem": 0, "truc": "quy_mo", "huong": -1, "manh": "Nhiều kỷ niệm, rẻ", "rui_ro": "Kém bất ngờ" },
+    { "id": "tai_nha", "ten": "Tự làm tại nhà", "phi": 1.5, "diem": 2, "truc": "quy_mo", "huong": -1, "manh": "Chân thành, gần như không tốn", "rui_ro": "Dễ vụng tay" },
+    { "id": "san_thuong", "ten": "Sân thượng một toà tháp cao", "phi": 12, "diem": 8, "truc": "the_dien", "huong": 1, "manh": "Cảnh thành phố về đêm", "rui_ro": "Đông người lạ, có thể mưa" },
+    { "id": "bai_bien", "ten": "Bãi biển lúc hoàng hôn", "phi": 16, "diem": 9, "truc": "phong_tuc", "huong": 1, "manh": "Lãng mạn, ảnh đẹp", "rui_ro": "Gió, triều lên, phải đi xa" },
+    { "id": "du_thuyen", "ten": "Du thuyền riêng", "phi": 32, "diem": 11, "truc": "quy_mo", "huong": -1, "manh": "Riêng tư", "rui_ro": "Say sóng, đắt" },
+    { "id": "truc_thang", "ten": "Trực thăng ngắm thành phố", "phi": 45, "diem": 13, "truc": "the_dien", "huong": 1, "manh": "Bất ngờ nhất", "rui_ro": "Đắt, đổi chuyến vì thời tiết; người ấy có thể sợ độ cao" }
+  ],
+  "nhan_cau_hon": { "ngay_toi_thieu": 0, "nguong": 62, "ghi_chu": "Điểm = tình cảm * 0.55 + lòng hai họ trung bình * 0.15 + điểm bối cảnh + 20 * khớp tính cách (-1..1) + 10. Nhận khi từ ngưỡng này trở lên." },
+  "khach": [
+    { "so": 40, "nhan": "Khoảng 40 khách, thân mật" },
+    { "so": 80, "nhan": "Khoảng 80 khách" },
+    { "so": 150, "nhan": "Khoảng 150 khách" },
+    { "so": 250, "nhan": "Khoảng 250 khách" },
+    { "so": 400, "nhan": "Khoảng 400 khách, như bố mẹ muốn" }
+  ],
+  "tien_mung_khach": { "tp": [0.5, 1.0], "que": [0.3, 0.5], "ghi_chu": "Số tạm của game: tiền mừng trung bình mỗi khách, khoảng min–max." },
+  "ho_tro_bo_me": { "so_tien": 40, "ho_nhan_bo_me_tang": 4, "ghi_chu": "Xin bố mẹ hỗ trợ một lần: bố mẹ có tiếng nói hơn, người ấy ít tự chủ hơn." },
+  "vay": { "lai_nam": 0.18, "moi_lan": 20, "ghi_chu": "Vay tín chấp 18%/năm (số tạm). Lãi cộng dồn mỗi tháng vào nợ." },
+  "moc_dong_tien": [
+    { "id": "coc", "nhan": "Cọc khi ký", "ty_le": 0.3, "ngay": "ky" },
+    { "id": "dot2", "nhan": "Đợt hai, trước ngày cưới 30 ngày", "ty_le": 0.4, "ngay": -30 },
+    { "id": "con_lai", "nhan": "Phần còn lại, sau tiệc", "ty_le": 0.3, "ngay": "sau_tiec" }
+  ],
+  "ky_quy_phi": 0.015,
+  "tra_thang_giam": 0.03,
+  "gia_han": { "ngay": 7, "phi": 0.03 },
+  "ngay_dep_gia": { "hoang_dao": 0.12, "cuoi_tuan": 0.1, "ngay_thuong": -0.08 },
+  "thay_xem_ngay_phi": 1.5,
+  "tro_nho": [
+    {
+      "id": "xe_cong_nghe", "ten": "Chạy xe công nghệ (hãng xe trong game: \"Xe Nhanh\")", "buoi": "toi", "cang": 4,
+      "mo_ta": "Một buổi tối nhận ba cuốc. Mỗi cuốc bạn chọn cách đi.",
+      "vong": [
+        { "cau_hoi": "Cuốc đầu: khách ở quận 1 đi sân bay, giờ cao điểm.", "chon": [
+          { "nhan": "Đi đường lớn, chậm mà chắc", "thu": [0.06, 0.09], "ket": "Hơi chậm nhưng khách cho năm sao." },
+          { "nhan": "Chui hẻm cho nhanh", "thu": [0.02, 0.12], "ket": "Hên thì tới sớm, xui thì kẹt trong hẻm." }
+        ] },
+        { "cau_hoi": "Cuốc hai: trời bắt đầu mưa, đường Nguyễn Hữu Cảnh có chỗ ngập.", "chon": [
+          { "nhan": "Nhận cuốc, đi tránh chỗ ngập", "thu": [0.04, 0.1], "ket": "Đi vòng xa hơn nhưng an toàn." },
+          { "nhan": "Từ chối, đứng đợi mưa tạnh", "thu": [0.0, 0.0], "ket": "Mất một lúc chờ, bù lại không bị ướt." }
+        ] },
+        { "cau_hoi": "Cuốc ba: khách nhờ chở về quê ngoài thành phố, cuốc dài.", "chon": [
+          { "nhan": "Nhận cuốc dài", "thu": [0.05, 0.14], "ket": "Cuốc dài, về muộn nhưng được thêm tiền." },
+          { "nhan": "Chỉ chạy trong thành phố", "thu": [0.03, 0.07], "ket": "Về sớm, thu nhập vừa phải." }
+        ] }
+      ]
+    },
+    {
+      "id": "cho_dem", "ten": "Bán hàng ở chợ đêm (sàn bán hàng trong game: \"Chợ Online\")", "buoi": "toi", "cang": 3,
+      "mo_ta": "Một buổi tối bán đồ ở chợ đêm. Bạn chọn nhập gì và bán giá nào.",
+      "vong": [
+        { "cau_hoi": "Nhập hàng: bạn nhập loại nào?", "chon": [
+          { "nhan": "Ốp điện thoại, giá thấp", "thu": [0.04, 0.1], "phi": 0.05, "ket": "Bán đều, lời ít." },
+          { "nhan": "Đồ ăn vặt, dễ ế nếu mưa", "thu": [0.0, 0.22], "phi": 0.08, "ket": "Có tối bán hết sạch, có tối còn nguyên." }
+        ] },
+        { "cau_hoi": "Giữa buổi, khách trả giá thấp hơn giá bạn niêm yết.", "chon": [
+          { "nhan": "Giữ giá", "thu": [0.0, 0.1], "ket": "Có người quay lại, có người đi." },
+          { "nhan": "Giảm một chút để chốt", "thu": [0.04, 0.08], "ket": "Chốt được vài đơn, lời mỏng hơn." }
+        ] }
+      ]
+    }
+  ],
+  "tiec_mau": [
+    { "id": "san_vuon", "ten": "Sân vườn", "mo_ta": "Ngoài trời, nhiều cây, hợp tiệc nhỏ và vừa.", "gom": { "tiec": ["ncc_vuon", "gon"], "anh": ["ncc_anh", "gon"], "trang_phuc": ["ncc_trang_phuc", "gon"] } },
+    { "id": "nha_hang", "ten": "Nhà hàng", "mo_ta": "Sảnh trong nhà, bếp làm sẵn, đỡ phải lo.", "gom": { "tiec": ["ncc_nha_hang", "gon"], "trang_phuc": ["ncc_trang_phuc", "gon"], "nhac": ["ncc_nhac", "gon"] } },
+    { "id": "rap_que", "ten": "Rạp cưới ở quê", "mo_ta": "Dựng rạp nhà, nhiều họ hàng, ấm cúng.", "gom": { "tiec": ["ncc_rap_que", "gon"], "trang_phuc": ["ncc_trang_phuc", "gon"], "nhac": ["ncc_nhac", "gon"] } }
+  ],
+  "ngay_cuoi": {
+    "gio_moc": ["Lễ gia tiên", "Xuất phát rước dâu", "Đón dâu vào nhà"],
+    "ngan_sach_goi_y": "Ngân sách gợi ý = giá tiệc nhanh rẻ nhất + 15% dự phòng."
+  },
+  "ket_thuc": {
+    "tron_ven": { "ten": "Trọn vẹn", "mo": "Hai họ vui, bạn bè vui, hai người vui, và không nợ ai. Đám cưới của bạn ấm và đủ đầy." },
+    "nho_am": { "ten": "Nhỏ mà ấm", "mo": "Ít khách, đúng ý hai người, còn dư chút tiền để đi đâu đó sau cưới." },
+    "rinh_rang_no": { "ten": "Rình rang mà nợ", "mo": "Hai họ nở mày nở mặt, nhưng hai người sẽ phải trả nợ một thời gian." },
+    "toi_gian": { "ten": "Tối giản", "mo": "Đăng ký kết hôn và một bữa cơm gia đình. Đơn giản, nhẹ nhàng." },
+    "hoan_cuoi": { "ten": "Hoãn cưới", "mo": "Chưa đủ tiền hoặc hai họ chưa thuận. Hoãn không phải là hết: bạn chơi tiếp được." },
+    "chia_tay": { "ten": "Đường ai nấy đi", "mo": "Tình cảm đã cạn. Bạn giữ lại số tiền đang có và có thể bắt đầu lại." }
+  }
+}
