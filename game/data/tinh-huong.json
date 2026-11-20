@@ -1,0 +1,564 @@
+{
+  "_ghi_chu": "Hiệu ứng của một lựa chọn: tien (triệu, âm là chi), no (triệu, cộng vào nợ), tinh_cam, ho_trai, ho_gai, ho (cả hai nhà), cang (cả hai người), cang_minh, cang_ay, tg (số buổi), co (cờ cho mã xử lý). 'khop': hiệu ứng nhân với độ khớp tính cách của người ấy (đọc từ tam-ly.json): {truc, huong, tinh_cam, cang}. 'dk' là điều kiện để tình huống được bốc ra.",
+  "tinh_huong": [
+    {
+      "id": "ra_mat",
+      "chuong": 2,
+      "dk": [],
+      "tieu_de": "Ra mắt hai bên bố mẹ",
+      "noi": "Bố mẹ người ấy hơi ngần ngại: hai gia đình ở hai miền, và bố mẹ muốn biết thêm về công việc của bạn.",
+      "lua_chon": [
+        {
+          "nhan": "Nói thật về công việc và kế hoạch của mình",
+          "ket": "Bố mẹ gật đầu chậm rãi. Họ thích sự thẳng thắn.",
+          "ho": 6,
+          "tinh_cam": 3,
+          "cang_minh": 4
+        },
+        {
+          "nhan": "Nhờ một người lớn trong họ nói giúp",
+          "ket": "Người lớn nói đỡ, bữa cơm êm hơn nhưng bạn thấy mình hơi được che chở quá.",
+          "ho": 4,
+          "tien": -0.5,
+          "tinh_cam": -2
+        },
+        {
+          "nhan": "Hẹn bữa khác, để bố mẹ có thời gian",
+          "ket": "Không ai buồn, nhưng cũng chẳng ai tiến thêm.",
+          "ho": 1,
+          "tg": 1
+        }
+      ]
+    },
+    {
+      "id": "cai_nhau",
+      "chuong": 5,
+      "dk": [],
+      "tieu_de": "Cãi nhau vì chuyện tiền",
+      "noi": "Người ấy thấy bạn mải kiếm tiền mà ít nói chuyện với nhau. Bạn thì thấy mình đang làm vì đám cưới.",
+      "lua_chon": [
+        {
+          "nhan": "Dừng lại, nói chuyện thẳng với nhau",
+          "ket": "Hai người nói ra hết. Mệt nhưng nhẹ người.",
+          "khop": {
+            "truc": "cang_thang",
+            "huong": 1,
+            "tinh_cam": 8,
+            "cang": -6
+          }
+        },
+        {
+          "nhan": "Im lặng, để hôm sau tính",
+          "ket": "Cả hai lánh nhau một ngày. Vẫn còn đó chưa nói.",
+          "khop": {
+            "truc": "cang_thang",
+            "huong": -1,
+            "tinh_cam": 4,
+            "cang": -2
+          },
+          "cang": 2
+        },
+        {
+          "nhan": "Mời đi ăn tối, tuần này không bàn chuyện cưới",
+          "ket": "Một bữa tối đơn giản làm không khí dịu lại.",
+          "tien": -0.6,
+          "tinh_cam": 6,
+          "cang": -5
+        }
+      ]
+    },
+    {
+      "id": "sinh_le",
+      "chuong": 3,
+      "dk": [],
+      "tieu_de": "Sính lễ cao hơn dự tính",
+      "noi": "Nhà gái nhắn lại: sính lễ bên bạn đưa chưa tương xứng, họ muốn thêm một vài mâm.",
+      "lua_chon": [
+        {
+          "nhan": "Thương lượng nhẹ nhàng, nhờ người lớn đứng ra",
+          "ket": "Hai bên nhượng nhau một ít. Mọi người đều giữ được thể diện.",
+          "tien": -4,
+          "ho_gai": 3,
+          "ho_trai": 1
+        },
+        {
+          "nhan": "Chiều theo, vay thêm một khoản",
+          "ket": "Nhà gái hài lòng, nhưng bạn có thêm một khoản nợ.",
+          "no": 12,
+          "tien": 12,
+          "ho_gai": 8,
+          "cang_minh": 5
+        },
+        {
+          "nhan": "Bớt hạng mục khác trong đám cưới để bù",
+          "ket": "Bạn cắt bớt chỗ khác. Nhà gái ghi nhận thiện chí.",
+          "ho_gai": 4,
+          "ho_trai": -2,
+          "cang_minh": 3
+        }
+      ]
+    },
+    {
+      "id": "muon_400",
+      "chuong": 3,
+      "dk": [
+        "it_khach"
+      ],
+      "tieu_de": "Bố mẹ muốn mời bốn trăm khách",
+      "noi": "Bố mẹ nói: bao năm nay nhà đi mừng người ta, giờ mình không mời thì mất lòng. Hai bạn thì chỉ muốn một đám cưới nhỏ.",
+      "lua_chon": [
+        {
+          "nhan": "Tiệc nhỏ của hai người, bố mẹ tự lo một bữa mời họ hàng riêng",
+          "ket": "Bố mẹ thấy được tôn trọng. Hai người giữ được đám cưới ít khách.",
+          "ho": 5,
+          "tinh_cam": 3,
+          "cang": 3,
+          "tien": -3
+        },
+        {
+          "nhan": "Nhượng bố mẹ, tăng số khách",
+          "ket": "Bố mẹ vui. Hai bạn thấy hơi lạc lõng với danh sách khách của chính mình.",
+          "ho": 8,
+          "tinh_cam": -4,
+          "co": "them_khach"
+        },
+        {
+          "nhan": "Giữ quyết định, giải thích cho bố mẹ",
+          "ket": "Bố mẹ im một lúc rồi bảo để suy nghĩ.",
+          "ho": -5,
+          "tinh_cam": 5,
+          "cang": 4
+        }
+      ]
+    },
+    {
+      "id": "tuoi_xung",
+      "chuong": 3,
+      "dk": [
+        "xem_ngay",
+        "tuoi_khong_on"
+      ],
+      "tieu_de": "Có chỗ chưa hợp theo lịch âm",
+      "noi": "Theo lịch âm, ngày đã chọn đang vướng một điểm (tuổi hoặc năm cưới). Ông bà để ý chuyện này. Mình không kết luận gì về đám cưới của bạn, chỉ là phong tục có vài cách gỡ.",
+      "lua_chon": [
+        {
+          "nhan": "Chọn lại ngày, dời sang thời điểm khác",
+          "ket": "Bạn quay lại xem ngày. Ông bà mừng vì bạn chịu để ý.",
+          "ho": 3,
+          "co": "chon_lai_ngay"
+        },
+        {
+          "nhan": "Làm lễ xin dâu hai lần theo tục",
+          "ket": "Hai lần lễ tốn thêm công và tiền nhưng người lớn thấy đủ lễ.",
+          "tien": -4,
+          "ho": 6
+        },
+        {
+          "nhan": "Nói chuyện để bố mẹ cho qua",
+          "ket": "Bố mẹ nghe, có người chưa yên tâm hẳn.",
+          "ho_trai": -2,
+          "ho_gai": -3,
+          "cang_minh": 3,
+          "co": "tuy_nguoi_tin"
+        }
+      ]
+    },
+    {
+      "id": "vuot_ngan_sach",
+      "chuong": 4,
+      "dk": [
+        "vuot_ngan_sach"
+      ],
+      "tieu_de": "Tổng chi đang vượt ngân sách",
+      "noi": "Cộng các hợp đồng lại thì cao hơn con số bạn đặt ra. Còn thời gian để điều chỉnh.",
+      "lua_chon": [
+        {
+          "nhan": "Hạ gói ở một hạng mục không quan trọng",
+          "ket": "Giảm một chút, đám cưới vẫn giữ nguyên điều quan trọng.",
+          "co": "ha_goi"
+        },
+        {
+          "nhan": "Tự làm thiệp, hoa cưới, nhờ bạn bè phụ",
+          "ket": "Bạn bè sốt sắng giúp. Mất vài buổi nhưng vui.",
+          "tien": 3,
+          "tinh_cam": 4,
+          "tg": 2,
+          "cang": 3
+        },
+        {
+          "nhan": "Nâng ngân sách lên, chấp nhận vay",
+          "ket": "Nợ nhiều hơn một chút, đổi lại không phải cắt gì.",
+          "no": 15,
+          "tien": 15,
+          "cang_minh": 4,
+          "co": "nang_ngan_sach"
+        }
+      ]
+    },
+    {
+      "id": "vay_nong",
+      "chuong": 5,
+      "dk": [],
+      "tieu_de": "Một người quen rủ chơi cá độ",
+      "noi": "Một người quen bảo: chơi một lần, gỡ liền được tiền cọc đợt hai. Nghe thì dễ.",
+      "lua_chon": [
+        {
+          "nhan": "Từ chối, nói thẳng là không chơi",
+          "ket": "Bạn từ chối. Về nhà bạn thấy nhẹ người.",
+          "cang_minh": -2
+        },
+        {
+          "nhan": "Thử một lần cho biết",
+          "ket": "Bạn mất một khoản và mất luôn cả buổi tối. Người ấy biết chuyện và không vui.",
+          "tien": -6,
+          "tinh_cam": -8,
+          "cang": 6
+        }
+      ]
+    },
+    {
+      "id": "xe_hong",
+      "chuong": 5,
+      "dk": [],
+      "tieu_de": "Xe hỏng giữa tháng",
+      "noi": "Chiếc xe của bạn hỏng giữa đường, thợ báo phải thay phụ tùng.",
+      "lua_chon": [
+        {
+          "nhan": "Sửa luôn bằng tiền đang có",
+          "ket": "Xe chạy lại, ví nhẹ đi.",
+          "tien": -3
+        },
+        {
+          "nhan": "Đi xe công nghệ, làm thêm vài buổi bù lại",
+          "ket": "Tốn thêm thời gian, nhưng tiền vẫn giữ được.",
+          "tien": -1,
+          "tg": 2,
+          "cang_minh": 3
+        }
+      ]
+    },
+    {
+      "id": "cang_thang",
+      "chuong": 5,
+      "dk": [
+        "cang_cao"
+      ],
+      "tieu_de": "Căng thẳng vượt ngưỡng",
+      "noi": "Một chuyện nhỏ về danh sách khách làm hai người to tiếng. Cả hai đều đang mệt.",
+      "lua_chon": [
+        {
+          "nhan": "Xin lỗi trước, làm lành",
+          "ket": "Một câu xin lỗi mở được nhiều chuyện.",
+          "tinh_cam": 6,
+          "cang": -10
+        },
+        {
+          "nhan": "Đi thư giãn một buổi, không bàn chuyện cưới",
+          "ket": "Cả hai thở ra được.",
+          "tien": -1.2,
+          "tinh_cam": 3,
+          "cang": -12,
+          "tg": 1
+        },
+        {
+          "nhan": "Hoãn quyết định đó vài hôm",
+          "ket": "Chuyện chưa gỡ nhưng đỡ nóng.",
+          "cang": -4,
+          "tinh_cam": 1
+        }
+      ]
+    },
+    {
+      "id": "ncc_bo_ngang",
+      "chuong": 5,
+      "dk": [
+        "ncc_bo_ngang"
+      ],
+      "tieu_de": "Một nhà cung cấp bỏ ngang",
+      "noi": "Nhà cung cấp báo họ không nhận được lịch của bạn nữa, dù đã nhận cọc.",
+      "lua_chon": [
+        {
+          "nhan": "Nhờ bên giữ tiền xử lý, tìm người thay",
+          "ket": "Nếu bạn đã ký quỹ, tiền cọc được hoàn và có người thay. Nếu trả thẳng, phần cọc đã mất.",
+          "co": "bo_ngang_xu_ly",
+          "cang_minh": 3
+        },
+        {
+          "nhan": "Tự gọi chỗ khác, chấp nhận giá cao hơn",
+          "ket": "Bạn tìm được chỗ khác trong tuần, giá cao hơn dự tính.",
+          "tien": -4,
+          "cang_minh": 4
+        }
+      ]
+    },
+    {
+      "id": "khong_kip_moc",
+      "chuong": 5,
+      "dk": [
+        "he_thong"
+      ],
+      "tieu_de": "Không kịp mốc đóng tiền",
+      "noi": "Mốc đóng tiền đã tới mà ví của bạn chưa đủ.",
+      "lua_chon": [
+        {
+          "nhan": "Vay ngân hàng để đóng đủ",
+          "ket": "Bạn vay phần còn thiếu, lãi 18% một năm (số của game).",
+          "co": "vay_du"
+        },
+        {
+          "nhan": "Xin gia hạn bảy ngày, chịu một khoản phí",
+          "ket": "Nhà cung cấp đồng ý gia hạn, tính thêm phí.",
+          "co": "gia_han"
+        },
+        {
+          "nhan": "Hạ gói để còn đóng được",
+          "ket": "Bạn hạ xuống gói thấp hơn, giảm tổng giá trị hợp đồng.",
+          "co": "ha_goi_het"
+        },
+        {
+          "nhan": "Hoãn đám cưới",
+          "ket": "Mất một phần tiền cọc, hai họ cần được báo.",
+          "co": "hoan_cuoi"
+        }
+      ]
+    }
+  ],
+  "su_co": [
+    {
+      "id": "mua",
+      "dk": [
+        "ngoai_troi"
+      ],
+      "tieu_de": "Mưa đúng buổi tiệc ngoài trời",
+      "noi": "Mây đen kéo tới ngay trước giờ khách vào.",
+      "lua_chon": [
+        {
+          "nhan": "Chạy khách vào trong nhà",
+          "ket": "Chật hơn dự tính nhưng ai cũng khô ráo.",
+          "khach": -6,
+          "cang": 3
+        },
+        {
+          "nhan": "Dựng thêm bạt tạm",
+          "ket": "Nhân viên dựng bạt kịp, tốn thêm một khoản.",
+          "tien": -3,
+          "khach": -2
+        }
+      ],
+      "co_san": {
+        "khi": "nha_bat",
+        "ket": "Nhà bạt dự phòng có sẵn trong gói của bạn. Khách hầu như không nhận ra trời mưa.",
+        "khach": 2
+      }
+    },
+    {
+      "id": "ket_xe",
+      "dk": [
+        "co_gio_moc"
+      ],
+      "tieu_de": "Kẹt xe, sắp trễ giờ lành",
+      "noi": "Đoàn xe bị kẹt ở một ngã tư. Giờ hoàng đạo chỉ còn mười lăm phút.",
+      "lua_chon": [
+        {
+          "nhan": "Đổi đường vòng",
+          "ket": "Đoàn đi vòng, tới sát giờ.",
+          "cang": 4,
+          "khach": -1
+        },
+        {
+          "nhan": "Gọi báo hai họ và xin phép trễ một chút",
+          "ket": "Hai họ thông cảm, nhưng bên coi trọng giờ lành hơi lấn cấn.",
+          "ho_trai": -2,
+          "ho_gai": -2,
+          "co": "tre_gio"
+        }
+      ]
+    },
+    {
+      "id": "khach_lech",
+      "dk": [],
+      "tieu_de": "Số khách tới khác số bàn",
+      "noi": "Có hai bàn nhiều hơn dự tính, vài chỗ khác lại trống.",
+      "lua_chon": [
+        {
+          "nhan": "Dồn bàn, mời khách ngồi chung cho gọn",
+          "ket": "Gọn gàng, một số khách hơi chật.",
+          "khach": -2
+        },
+        {
+          "nhan": "Mở thêm hai bàn",
+          "ket": "Ai cũng có chỗ, hoá đơn dài thêm.",
+          "tien": -9,
+          "khach": 3
+        }
+      ]
+    },
+    {
+      "id": "am_thanh",
+      "dk": [],
+      "tieu_de": "Âm thanh bỗng hỏng",
+      "noi": "Micro im bặt đúng lúc bố mẹ chuẩn bị phát biểu.",
+      "lua_chon": [
+        {
+          "nhan": "Nhờ kỹ thuật viên thay thiết bị",
+          "ket": "Mất vài phút tìm thiết bị thay, khách hơi sốt ruột.",
+          "khach": -1
+        },
+        {
+          "nhan": "Nói không cần micro, bố mẹ phát biểu to",
+          "ket": "Phát biểu hơi nhỏ nhưng mộc mạc, nhiều người cười.",
+          "khach": -2,
+          "ho": 1
+        }
+      ],
+      "co_san": {
+        "khi": "nhac",
+        "ket": "Ban nhạc có máy phát và micro dự phòng, thay ngay. Gần như không ai để ý.",
+        "khach": 1
+      }
+    },
+    {
+      "id": "quen_nhan",
+      "dk": [],
+      "tieu_de": "Quên nhẫn cưới ở nhà",
+      "noi": "Đến lúc trao nhẫn mới biết hộp nhẫn vẫn nằm ở nhà.",
+      "lua_chon": [
+        {
+          "nhan": "Nhờ em họ chạy về lấy",
+          "ket": "Em chạy về kịp, hai bạn cười ngượng cả ngày.",
+          "cang": 3,
+          "khach": -1
+        },
+        {
+          "nhan": "Đùa với khách, trao nhẫn sau",
+          "ket": "Khách cười ồ, bầu không khí còn vui hơn.",
+          "tinh_cam": 3,
+          "cang": 2
+        }
+      ]
+    },
+    {
+      "id": "phat_bieu_dai",
+      "dk": [],
+      "tieu_de": "Phát biểu của hai họ kéo dài",
+      "noi": "Bố mẹ say sưa phát biểu, chương trình đang lố giờ.",
+      "lua_chon": [
+        {
+          "nhan": "Khéo léo nhờ MC nhắc giờ",
+          "ket": "MC nhắc nhẹ, bố mẹ cười và kết thúc.",
+          "cang": 2
+        },
+        {
+          "nhan": "Để bố mẹ nói hết, kéo dài tiệc",
+          "ket": "Bố mẹ vui. Bạn bè hơi mệt nhưng ở lại.",
+          "ho": 3,
+          "khach": -1,
+          "tien": -2
+        }
+      ]
+    }
+  ],
+  "nghi_le": [
+    {
+      "id": "gia_tien",
+      "gio_moc": true,
+      "ten": "Lễ gia tiên",
+      "mo_ta": "Hai họ có mặt, bàn thờ gia tiên đã bày xong. Tới lượt bạn thắp hương và rót trà mời bố mẹ.",
+      "lua_chon": [
+        {
+          "nhan": "Nói vài lời cảm ơn bố mẹ, thật lòng",
+          "ket": "Mẹ rơm rớm. Cả phòng im lặng rồi vỗ tay.",
+          "ho": 4,
+          "tinh_cam": 2,
+          "cang_minh": 3
+        },
+        {
+          "nhan": "Làm gọn, đúng nghi thức",
+          "ket": "Mọi thứ trôi chảy, đúng lễ.",
+          "ho": 2
+        }
+      ]
+    },
+    {
+      "id": "ruoc_dau",
+      "gio_moc": true,
+      "ten": "Xuất phát rước dâu",
+      "mo_ta": "Đoàn xe sẵn sàng. Giờ hoàng đạo trong ngày là mốc xuất phát.",
+      "lua_chon": [
+        {
+          "nhan": "Xuất phát đúng giờ hoàng đạo",
+          "ket": "Đoàn xe lên đường đúng giờ, người lớn thấy yên tâm.",
+          "ho": 2,
+          "co": "dung_gio"
+        },
+        {
+          "nhan": "Chờ cho đủ người rồi mới đi",
+          "ket": "Đoàn đi trễ vài phút, không ai nói gì.",
+          "ho": -1,
+          "cang_minh": 2
+        }
+      ]
+    },
+    {
+      "id": "don_dau",
+      "gio_moc": true,
+      "ten": "Đón dâu vào nhà",
+      "mo_ta": "Trao trầu cau, mời bố mẹ hai bên, đón cô dâu vào nhà.",
+      "lua_chon": [
+        {
+          "nhan": "Làm đủ các bước theo phong tục",
+          "ket": "Các bước nối nhau chậm rãi, người lớn mãn nguyện.",
+          "ho": 4,
+          "cang_minh": 2
+        },
+        {
+          "nhan": "Rút gọn cho kịp tiệc",
+          "ket": "Gọn gàng, tiệc kịp giờ, vài người lớn thấy thiếu.",
+          "ho": -1,
+          "khach": 1
+        }
+      ]
+    },
+    {
+      "id": "tiec",
+      "gio_moc": false,
+      "ten": "Tiệc cưới",
+      "mo_ta": "Khách đã vào. Đến phần trao nhẫn và đi chào bàn.",
+      "lua_chon": [
+        {
+          "nhan": "Đi chào từng bàn, nói chuyện lâu một chút",
+          "ket": "Mệt nhưng khách cảm thấy được tiếp đón.",
+          "khach": 5,
+          "cang": 4
+        },
+        {
+          "nhan": "Chào nhanh, giữ sức cho phần sau",
+          "ket": "Khách vui vừa phải, hai người còn sức.",
+          "khach": 1,
+          "cang": -2
+        }
+      ]
+    },
+    {
+      "id": "sau_cuoi",
+      "gio_moc": false,
+      "ten": "Tiệc sau cưới",
+      "mo_ta": "Nhóm bạn kéo hai bạn đi tiếp. Sáng mai còn việc.",
+      "lua_chon": [
+        {
+          "nhan": "Ở lại vui tới khuya",
+          "ket": "Vui lắm. Sáng mai dậy trễ.",
+          "khach": 3,
+          "tinh_cam": 2,
+          "cang": 4
+        },
+        {
+          "nhan": "Chào mọi người, về sớm nghỉ ngơi",
+          "ket": "Hai người về yên tĩnh. Bạn bè hiểu.",
+          "tinh_cam": 3,
+          "cang": -5
+        }
+      ]
+    }
+  ]
+}
