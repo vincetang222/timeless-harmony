@@ -261,6 +261,15 @@ Trước khi viết nghi lễ của một miền hay một nước, cần một 
 
 **Bước thử kỹ thuật trước khi dựng hàng loạt:** một căn phòng và một nhân vật đi lại, chạy trên điện thoại thật, để bạn duyệt chất lượng hình và độ mượt.
 
+Bản thử đầu tiên là **sa bàn tiệc vườn** (`game/lab/sa-ban/`, dựng bằng `docs/game/build_saban.py`): góc tiệc ghép từ kho đồ vật, một nhân vật tạm (chú rể hoặc cô dâu) đi theo chỗ chạm, máy quay xoay và phóng to được, và bảng số đo ngay trên trang (khung hình mỗi giây, số lệnh vẽ, dung lượng đã tải, tên card đồ hoạ). Công thức cho điện thoại:
+
+- Mặt đảo là một ảnh nhìn từ trên xuống, ánh sáng và bóng của mọi đồ vật đã tính sẵn bằng Blender (khoảng 80 KB).
+- Đồ vật dùng ánh sáng đơn giản và bóng ở hốc đã tô sẵn vào màu; không tính bóng đổ lúc chạy. Nhân vật có một bóng mềm giả dưới chân.
+- Mọi mô hình gói chung một tệp: 1,4 MB, nén lại khoảng 0,6 MB nếu máy chủ có nén. Trang tự tính lại pháp tuyến.
+- Thư viện 3D (three.js) tải từ CDN, khoảng 0,17 MB khi nén.
+
+Nhân vật trong bản thử chỉ là khối tạm để đo; dựng nhân vật thật sau khi phong cách được duyệt.
+
 **Kho đồ vật.** Những món không phụ thuộc vào quyết định nào (bàn ghế tiệc, bánh cưới, cổng hoa, mâm quả, chậu cây, đèn, xe cà phê, sạp chợ đêm…) được dựng trước và cất vào `game/assets/kit/`. Mỗi món là một hàm trong `docs/game/build_kit.py`; đổi bảng màu hay thêm món thì sửa tệp đó rồi chạy lại.
 
 Lô đầu (29 món, hình khối trơn một màu) bị chủ dự án chê là chán và khó nhận ra. **Bản hai** (30 món, khoảng 1,9 MB) đổi cách dựng: hoa có từng cánh, lá có gập, khăn bàn có nếp rủ, bàn tiệc bày sẵn đĩa và hoa, kim loại bóng thật, ly bằng kính trong, bóng đèn tự sáng, bóng tối ở hốc và khe được tô sẵn vào màu. Quy tắc mới: mỗi món phải nhận ra được khi nhìn nhỏ. Bản hai đang chờ duyệt; cảnh, nhân vật và trang phục thì chờ bước thử kỹ thuật.

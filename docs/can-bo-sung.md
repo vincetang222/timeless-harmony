@@ -15,6 +15,7 @@ Danh sách này gom mọi thứ website và bộ thương hiệu đang chờ t�
 ## 1b. Game
 
 - [ ] **Đặc tả game bản 0.3** `docs/game/spec.md`: trả lời các câu còn lại ở mục 13 (phong cách kho đồ vật bản hai, độ sâu của phần xem tuổi xem ngày, tỉ lệ gói may đo).
+- [ ] **Mở sa bàn thử trên điện thoại** (link Artifact riêng tư: https://claude.ai/artifact/DfzDpCLpxVrVgY7eLbY6W3): đi thử, xoay, phóng to, rồi bấm nút số đo → "Chép số đo" và gửi lại. Nhất là iPhone và một máy Android tầm trung.
 - [ ] **Ma trận tâm lý** `docs/game/tam-ly-cap-doi.md` chưa sát thực tế: kể hai ba cặp đôi thật (cãi nhau vì gì, ai quyết, điều gì suýt làm hỏng đám cưới) để viết lại.
 - [ ] **Người soát phong tục và lịch âm:** các bảng trong `docs/game/xem-ngay.md` ghi theo quy tắc phổ biến, chưa đối chiếu với lịch vạn niên in.
 - [ ] **Giá thật:** `docs/game/gia-tham-khao.md` còn nhiều ô là số tạm. Khi liên hệ nhà cung cấp, xin báo giá của hai ba nhà cho mỗi hạng mục.

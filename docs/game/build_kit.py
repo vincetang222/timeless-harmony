@@ -2,7 +2,7 @@
 
     python3 docs/game/build_kit.py                                    # chỉ cần numpy: dựng lại toàn bộ .glb và kit.json
     .venv3d/bin/python docs/game/build_kit.py --preview kho.png       # thêm ảnh bảng kê (cần bpy và Pillow)
-    .venv3d/bin/python docs/game/build_kit.py --scene goc-tiec.png    # thêm ảnh một góc tiệc ghép từ các món trong kho
+    (ảnh góc tiệc ghép từ kho, và sa bàn cho trang thử kỹ thuật: docs/game/build_saban.py)
 
 Quy ước: đơn vị mét, gốc toạ độ ở giữa mặt đáy, trục Z hướng lên (lúc xuất đổi sang trục Y hướng lên của glTF).
 Không dùng ảnh chất liệu. Màu nằm ở từng đỉnh (COLOR_0) và đã tô sẵn bóng ở hốc, khe (hàm bake).
@@ -856,100 +856,11 @@ def preview(built, out, cols=6):
     im.save(out)
 
 
-def scene(built, out):
-    """Một góc tiệc vườn ghép từ các món trong kho, đặt trên một "đảo" nhỏ: ảnh mẫu cho kiểu sa bàn của game.
-    Đảo cỏ, cây lớn, bụi hoa và dây đèn giăng chéo dựng riêng ở đây, chưa phải món trong kho."""
-    bpy, sc, mats = bl_start(72)
-    from mathutils import Vector
-    from PIL import Image
-    mesh = {key: bl_mesh(bpy, mats, key, P, C, I, T) for key, (name, P, C, I, T) in built.items()}
-
-    def put(key, x, y, rot=0.0, z=0.0, s=1.0):
-        ob = bpy.data.objects.new(key, mesh[key]); ob.location = (x, y, z); ob.rotation_euler = (0, 0, math.radians(rot)); ob.scale = (s, s, s)
-        sc.collection.objects.link(ob)
-
-    k = Kit(); RI, NA = 6.3, 96                                                           # đảo cỏ cắt sọc, lối đi, sân lát
-    rr = np.linspace(0, RI, 34); a = np.arange(NA) * 2 * np.pi / NA
-    V = np.stack([np.outer(rr, np.cos(a)), np.outer(rr, np.sin(a)), np.zeros((34, NA))], -1).reshape(-1, 3); F = []
-    for i in range(33):
-        for j in range(NA):
-            p, q = i * NA + j, i * NA + (j + 1) % NA
-            F += [[p, q, q + NA], [p, q + NA, p + NA]]
-    tone = 0.5 + 0.5 * np.tanh(np.sin(V[:, 0] * 2.0 + V[:, 1] * 0.7) * 4)
-    k.add(V, F, PAL["grass"] + (PAL["grass_d"] - PAL["grass"]) * tone[:, None], nrm=(0, 0, 1))
-    k.lathe([(0, -1.6), (3.8, -1.3), (5.8, -0.55), (RI, -0.1), (RI, 0)], "wood_d", NA)
-    k.rbox(1.3, 6.2, 0.012, "cream", 0.1, t=(0, 0.2, 0))
-    TABLES = ((-3.0, -0.3), (3.0, 0.3))
-    for tx, ty in TABLES:
-        k.lathe([(1.95, 0.008), (0, 0.008)], (0.90, 0.85, 0.76), 44, hard=True, t=(tx, ty, 0))
-    for x, y in rng.uniform((-0.95, -2.8), (0.95, 3.2), (170, 2)):                        # cánh hoa rắc hai mép lối đi
-        if abs(x) > 0.5:
-            k.ball((x, y, 0.016), (0.04, 0.03, 0.006), ("tulip", "pink_l", "rose", "white")[int(abs(x * 97 + y * 31)) % 4], 5, 3)
-    for x, y, h, r in ((-4.9, 3.3, 2.9, 0.95), (-2.9, 4.9, 3.3, 1.1), (3.1, 4.8, 3.2, 1.05), (5.0, 3.0, 2.8, 0.9), (0.0, 5.6, 3.4, 1.15)):   # hàng cây phía sau
-        k.cyl((x, y, 0), (x, y, h * 0.6), 0.10, "wood_d", 0.06, n=7, caps=False)
-        k.foliage((x, y, h * 0.72), r, ("leaf", "leaf_m", "leaf"), nu=14, nv=10, rough=0.16)
-        for b in range(5):
-            k.foliage((x + r * 0.62 * math.cos(b * 1.257 + x), y + r * 0.62 * math.sin(b * 1.257 + x), h * 0.72 + r * 0.3 * math.sin(b * 2.1)), r * 0.55, ("leaf", "leaf_m", "leaf_l"), nu=9, nv=6)
-    for d in list(range(22, 160, 9)) + [203, 213, 224, 236, 304, 316, 327, 337]:          # bụi hoa viền đảo
-        bx, by = 5.85 * math.cos(math.radians(d)), 5.85 * math.sin(math.radians(d)); s = 0.36 + 0.1 * math.sin(d * 1.7)
-        k.foliage((bx, by, s * 0.7), (s * 1.25, s * 1.25, s), nu=10, nv=6)
-        for j in range(4):
-            dr = np.array((math.cos(j * 1.6 + d), math.sin(j * 1.6 + d), 1.2)); dr /= np.linalg.norm(dr)
-            k.rose((bx, by, s * 0.7) + dr * s * 0.95, dr, 0.11, FLOWERS[(d + j) % len(FLOWERS)], 0)
-    posts = ((-5.0, -1.9), (5.0, -1.9), (-4.4, 3.0), (4.4, 3.0))                          # dây đèn giăng chéo trên đầu
-    for x, y in posts:
-        k.m("satin").lathe([(0, 0), (0.1, 0), (0.1, 0.03), (0.03, 0.05), (0.025, 3.3), (0, 3.3)], "dark", 8, hard=True, t=(x, y, 0)).m()
-    for i, j in ((0, 3), (1, 2), (0, 1), (2, 3)):
-        u = np.linspace(0, 1, 27)[:, None]; w = np.c_[np.array(posts[i]) + (np.array(posts[j]) - posts[i]) * u, 3.28 - 0.75 * 4 * u * (1 - u)]
-        k.tube(w, 0.008, "dark", 4)
-        for q in w[2:-1:2]:
-            k.ball(q - (0, 0, 0.09), (0.055, 0.055, 0.07), "yellow", 8, 6)
-    P, N, C, I, T = k.arrays()
-    sc.collection.objects.link(bpy.data.objects.new("island", bl_mesh(bpy, mats, "island", P, C, I, T)))
-
-    put("cong-hoa", 0, 3.3)
-    for s in (-1, 1):
-        put("chau-cay-non", s * 1.75, 3.4)
-        for y in (-2.0, -0.3, 1.4):
-            put("chau-hoa", s * 0.98, y, y * 40)
-    for tx, ty in TABLES:
-        put("ban-tron", tx, ty, tx * 20)
-        for i in range(8):
-            b = math.radians(i * 45 + 22.5)
-            put("ghe-chiavari", tx + 1.24 * math.cos(b), ty + 1.24 * math.sin(b), i * 45 + 22.5 - 90)
-    lx, ly, lr = -2.9, 3.3, 8.0                                                           # bàn dài: bánh cưới và tháp ly
-
-    def on(dx, dy=0.0):
-        c, s = math.cos(math.radians(lr)), math.sin(math.radians(lr))
-        return lx + dx * c - dy * s, ly + dx * s + dy * c
-    put("ban-dai", lx, ly, lr)
-    put("banh-cuoi", *on(-0.62), z=0.767, s=1.5); put("thap-ly", *on(0.62), z=0.767, s=0.9)
-    put("ban-ca-phe", -1.8, -3.2); put("thung-tien-mung", -1.8, -3.2, 15, z=0.73)
-    put("bang-don-khach", 1.8, -3.0, -18); put("bong-bay", 2.7, -2.8)
-    put("xe-ca-phe", 4.3, -3.0, -28); put("ghe-bang", -4.6, -2.9, 62); put("den-duong", -5.5, 1.0, -30)
-    put("loa", 2.2, 3.8, -25); put("micro", -1.25, 2.7, 15)
-    put("ban-ca-phe", 3.7, 3.2); put("mam-qua", 3.7, 3.2, z=0.73, s=1.3)
-
-    bl_light(bpy, sc, (1.0, 0.84, 0.66), 3.0, (0.62, 0.78, 1.0), 0.75, (52, 0, -42))
-    cam = bpy.data.cameras.new("cam"); cam.lens = 38
-    co = bpy.data.objects.new("cam", cam); co.location = (0.8, -13.6, 7.6)
-    co.rotation_euler = (Vector((0, 0.5, 1.0)) - co.location).to_track_quat("-Z", "Y").to_euler(); sc.collection.objects.link(co); sc.camera = co
-    sc.render.resolution_x, sc.render.resolution_y = 1900, 1240; sc.render.film_transparent = True; sc.render.filepath = os.path.abspath(out)
-    bpy.ops.render.render(write_still=True)
-    im = Image.open(out).convert("RGBA"); W, H = im.size
-    g = np.linspace(0, 1, H)[:, None, None]
-    bg = Image.fromarray(((np.array((253, 244, 232)) * (1 - g) + np.array((247, 214, 214)) * g) * np.ones((1, W, 1))).astype("u1"), "RGB").convert("RGBA")
-    bloom(Image.alpha_composite(bg, im).convert("RGB")).save(out)
-
-
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--preview", default=None, help="xuất thêm ảnh bảng kê (cần bpy và Pillow)")
-    ap.add_argument("--scene", default=None, help="xuất thêm ảnh một góc tiệc ghép từ kho (cần bpy và Pillow)")
     A = ap.parse_args()
     built, manifest = build_all()
     print("%d món, %d tam giác, %.0f KB" % (len(manifest), sum(m["tam_giac"] for m in manifest), sum(m["kb"] for m in manifest)))
     if A.preview:
         preview(built, A.preview); print("preview", A.preview)
-    if A.scene:
-        scene(built, A.scene); print("scene", A.scene)

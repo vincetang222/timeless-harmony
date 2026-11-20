@@ -1,0 +1,499 @@
+<title>Sa bàn tiệc vườn</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&family=Cormorant+Garamond:ital,wght@1,600&display=swap">
+<style>
+/* Một màn hình: cảnh 3D phủ kín, các nút nổi bên trên. Màu theo thương hiệu "Vườn kính"; cảnh luôn là ban ngày, chỉ bảng điều khiển đổi theo chế độ sáng/tối. */
+:root {
+  --sky-top: #FDF4E8; --sky-bottom: #F5D5D3;
+  --panel: rgba(253, 251, 247, 0.92); --line: rgba(18, 38, 28, 0.14);
+  --ink: #12261C; --muted: #3C5246; --accent: #765225;
+  --btn: #1E5A40; --btn-ink: #FFFFFF; --chip: rgba(30, 90, 64, 0.10);
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-data: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --sky-top: #12271D; --sky-bottom: #3B2A33; --panel: rgba(22, 41, 31, 0.92); --line: rgba(242, 236, 220, 0.16);
+    --ink: #F2ECDC; --muted: #C3CEC1; --accent: #E0BC83; --btn: #2F7A55; --btn-ink: #FFFFFF; --chip: rgba(111, 196, 155, 0.16); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --sky-top: #12271D; --sky-bottom: #3B2A33; --panel: rgba(22, 41, 31, 0.92); --line: rgba(242, 236, 220, 0.16);
+  --ink: #F2ECDC; --muted: #C3CEC1; --accent: #E0BC83; --btn: #2F7A55; --btn-ink: #FFFFFF; --chip: rgba(111, 196, 155, 0.16); color-scheme: dark;
+}
+html, body { height: 100%; overflow: hidden; }
+body { background: linear-gradient(var(--sky-top), var(--sky-bottom)); color: var(--ink); font: 15px/1.45 var(--font-body); -webkit-tap-highlight-color: transparent; }
+#c { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; cursor: pointer; }
+.hud {
+  position: fixed; inset: 0; pointer-events: none; display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+  padding-top: calc(env(safe-area-inset-top, 0px) + 12px); padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 12px);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.hud > * { pointer-events: auto; }
+.row { display: flex; gap: 8px; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; }
+.tag { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 8px 12px; min-width: 0; max-width: 100%; }
+.tag strong { display: block; font: italic 600 1.35rem/1.1 var(--font-display); color: var(--ink); text-wrap: balance; }
+.tag span { display: block; font-size: 0.8rem; color: var(--muted); }
+button {
+  font: 600 0.88rem/1 var(--font-body); color: var(--ink); background: var(--panel); border: 1px solid var(--line);
+  border-radius: 999px; padding: 10px 14px; min-height: 40px; cursor: pointer;
+}
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button[aria-pressed="true"] { background: var(--btn); color: var(--btn-ink); border-color: var(--btn); }
+.side { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.fps { font: 600 0.82rem/1 var(--font-data); font-variant-numeric: tabular-nums; }
+.stats { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; width: min(340px, calc(100vw - 32px)); max-height: calc(100dvh - 200px); overflow-y: auto; }
+.stats h2 { font: 600 0.78rem/1.2 var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin: 0 0 8px; }
+.stats dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 0 0 10px; font-size: 0.82rem; }
+.stats dt { color: var(--muted); }
+.stats dd.wide { grid-column: 1 / -1; text-align: left; margin-top: -2px; }
+.stats dd { margin: 0; text-align: right; font-family: var(--font-data); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; min-width: 0; }
+.stats p { margin: 0 0 10px; font-size: 0.78rem; color: var(--muted); }
+.bottom { display: flex; flex-direction: column; gap: 8px; align-items: center; }
+.hint { margin: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-size: 0.8rem; color: var(--muted); text-align: center; max-width: 100%; transition: opacity 0.6s; }
+.hint.gone { opacity: 0; pointer-events: none; }
+.dock { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.seg { display: inline-flex; background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
+.seg button { border: 0; background: transparent; min-height: 34px; padding: 8px 12px; }
+.seg button[aria-pressed="true"] { background: var(--btn); color: var(--btn-ink); }
+.load { position: fixed; inset: 0; display: grid; place-items: center; pointer-events: none; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.load p { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; margin: 0; max-width: 360px; text-align: center; }
+@media (prefers-reduced-motion: reduce) { .hint { transition: none; } }
+</style>
+
+<canvas id="c" aria-label="Sa bàn 3D: một góc tiệc cưới ngoài vườn và một nhân vật"></canvas>
+<div class="hud">
+  <div class="row">
+    <div class="tag"><strong>Sa bàn tiệc vườn</strong><span>Thử kỹ thuật · nhân vật tạm, chưa phải hình chính thức</span></div>
+    <div class="side">
+      <button id="btn-stats" aria-expanded="false" aria-controls="stats"><span class="fps" id="fps">… khung/giây</span></button>
+      <section class="stats" id="stats" hidden>
+        <h2>Số đo trên máy này</h2>
+        <dl id="stat-list"></dl>
+        <p>Bạn bấm "Chép số đo" rồi dán vào trò chuyện để mình biết máy chạy thế nào.</p>
+        <button id="btn-copy">Chép số đo</button>
+      </section>
+    </div>
+  </div>
+  <div class="bottom">
+    <p class="hint" id="hint">Chạm vào bãi cỏ để đi tới · kéo để xoay · chụm hai ngón để phóng to</p>
+    <div class="dock">
+      <div class="seg" role="group" aria-label="Trang phục">
+        <button id="o-groom" aria-pressed="true">Chú rể</button>
+        <button id="o-bride" aria-pressed="false">Cô dâu</button>
+      </div>
+      <button id="btn-quality">Nét: cao</button>
+      <button id="btn-cam">Xem toàn cảnh</button>
+    </div>
+  </div>
+</div>
+<div class="load" id="load"><p id="load-text">Đang tải sa bàn…</p></div>
+
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js" } }</script>
+<script type="module">
+import * as THREE from 'three';
+
+const $ = (id) => document.getElementById(id);
+const store = {
+  get(k, d) { try { const v = localStorage.getItem('saban-' + k); return v === null ? d : v; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem('saban-' + k, v); } catch { /* không lưu được thì thôi */ } },
+};
+const say = (t) => { $('load-text').textContent = t; $('load').hidden = !t; };
+
+// ───────────── giải gói mô hình (xem docs/game/build_saban.py) ─────────────
+const LIN = Float32Array.from({ length: 256 }, (_, i) => { const c = i / 255; return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); });
+const MATS = {
+  matte: new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.85, side: THREE.DoubleSide }),
+  satin: new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.42, side: THREE.DoubleSide }),
+  metal: new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.32, metalness: 1, side: THREE.DoubleSide }),
+  glass: new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.06, transparent: true, opacity: 0.3, depthWrite: false, side: THREE.DoubleSide }),
+  glow: new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.6, emissive: new THREE.Color(1, 0.74, 0.38), emissiveIntensity: 0.9 }),
+  lantern: new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.6, emissive: new THREE.Color(0.6, 0.09, 0.04), emissiveIntensity: 0.6, side: THREE.DoubleSide }),
+};
+function decode(rec) {
+  const bin = atob(rec.b64), u = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i);
+  const n = rec.n, q = new Int16Array(u.buffer, 0, n * 3), c8 = new Uint8Array(u.buffer, n * 6, n * 3);
+  const pos = new Float32Array(n * 3), col = new Float32Array(n * 3);
+  for (let i = 0; i < n * 3; i++) {
+    const a = i % 3;
+    pos[i] = rec.lo[a] + ((q[i] + 32768) / 65535) * (rec.hi[a] - rec.lo[a]);
+    col[i] = LIN[c8[i]];
+  }
+  const off = Math.ceil((n * 9) / 4) * 4;
+  const idx = rec.u32 ? new Uint32Array(u.buffer, off) : new Uint16Array(u.buffer, off);
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  g.setAttribute('color', new THREE.BufferAttribute(col, 3));
+  g.setIndex(new THREE.BufferAttribute(idx, 1));
+  g.computeVertexNormals();
+  rec.nhom.forEach(([, start, count], i) => g.addGroup(start, count, i));
+  g.computeBoundingBox(); g.computeBoundingSphere();
+  return { geo: g, mats: rec.nhom.map(([m]) => MATS[m] || MATS.matte) };
+}
+
+// ───────────── nhân vật tạm: khối cơ bản, có hai bộ đồ ─────────────
+function makeCharacter() {
+  const std = (hex, r = 0.7) => new THREE.MeshStandardMaterial({ color: hex, roughness: r });
+  const M = { skin: std(0xF3CBA9, 0.6), hair: std(0x3A2A22, 0.5), eye: std(0x1D1A1A, 0.3), white: std(0xFFFFFF, 0.3),
+    blush: new THREE.MeshBasicMaterial({ color: 0xF4A3AE, transparent: true, opacity: 0.55, depthWrite: false }),
+    suit: std(0x23324F), shirt: std(0xFBF9F4), tie: std(0xC8372D, 0.5), shoe: std(0x2B2320, 0.4),
+    ao: new THREE.MeshStandardMaterial({ color: 0xC8372D, roughness: 0.45, side: THREE.DoubleSide }), gold: new THREE.MeshStandardMaterial({ color: 0xD8B36A, roughness: 0.3, metalness: 1 }), quan: std(0xFBF8F2), tulip: std(0xF48FA8) };
+  const add = (parent, geo, mat, x = 0, y = 0, z = 0, sx = 1, sy = 1, sz = 1) => {
+    const m = new THREE.Mesh(geo, mat); m.position.set(x, y, z); m.scale.set(sx, sy, sz); parent.add(m); return m;
+  };
+  const ball = new THREE.SphereGeometry(1, 20, 14), cap = (r, l) => new THREE.CapsuleGeometry(r, l, 4, 10);
+  const root = new THREE.Group(), body = new THREE.Group(); root.add(body);
+  const hips = [-1, 1].map((s) => { const g = new THREE.Group(); g.position.set(0.085 * s, 0.6, 0); body.add(g); return g; });
+  const shoulders = [-1, 1].map((s) => { const g = new THREE.Group(); g.position.set(0.2 * s, 0.98, 0); body.add(g); return g; });
+  const head = new THREE.Group(); head.position.set(0, 1.12, 0); body.add(head);
+  // đầu và mặt (dùng chung cho hai bộ đồ)
+  add(head, ball, M.skin, 0, 0.24, 0, 0.25, 0.24, 0.24);
+  for (const s of [-1, 1]) {
+    add(head, ball, M.eye, 0.08 * s, 0.22, 0.212, 0.026, 0.036, 0.016);
+    add(head, ball, M.white, 0.088 * s, 0.235, 0.226, 0.008, 0.008, 0.004);
+    add(head, ball, M.blush, 0.135 * s, 0.155, 0.19, 0.04, 0.025, 0.01);
+  }
+  add(head, new THREE.CylinderGeometry(0.055, 0.06, 0.08, 10), M.skin, 0, 0.0, 0);
+  const outfits = {};
+  // chú rể: vest xanh than, sơ mi trắng, nơ đỏ, tóc ngắn
+  {
+    const o = new THREE.Group(); body.add(o);
+    const t = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.165, 0.42, 16), M.suit); t.position.y = 0.8; o.add(t);
+    add(o, new THREE.BoxGeometry(0.1, 0.24, 0.02), M.shirt, 0, 0.9, 0.152);
+    add(o, ball, M.tie, 0, 1.0, 0.16, 0.05, 0.022, 0.02);
+    const legs = hips.map((h) => { const g = new THREE.Group(); h.add(g); add(g, cap(0.06, 0.4), M.suit, 0, -0.27, 0); add(g, ball, M.shoe, 0, -0.56, 0.04, 0.06, 0.04, 0.11); return g; });
+    const arms = shoulders.map((s) => { const g = new THREE.Group(); s.add(g); add(g, cap(0.048, 0.3), M.suit, 0, -0.18, 0); add(g, ball, M.skin, 0, -0.38, 0, 0.05, 0.055, 0.05); return g; });
+    const hair = new THREE.Group(); head.add(hair);
+    add(hair, new THREE.SphereGeometry(0.262, 20, 12, 0, Math.PI * 2, 0, 1.25), M.hair, 0, 0.255, -0.01);
+    add(hair, ball, M.hair, 0.04, 0.4, 0.13, 0.15, 0.06, 0.09);
+    outfits.groom = [o, hair, ...legs, ...arms];
+  }
+  // cô dâu: áo dài đỏ viền vàng, quần trắng, tóc búi có hoa
+  const panels = [];
+  {
+    const o = new THREE.Group(); body.add(o);
+    const t = new THREE.Mesh(new THREE.CylinderGeometry(0.135, 0.15, 0.42, 16), M.ao); t.position.y = 0.8; o.add(t);
+    add(o, new THREE.CylinderGeometry(0.065, 0.07, 0.07, 14), M.ao, 0, 1.06, 0);
+    add(o, new THREE.TorusGeometry(0.068, 0.008, 6, 18), M.gold, 0, 1.095, 0, 1, 1, 1).rotation.x = Math.PI / 2;
+    for (const s of [1, -1]) {                         // hai tà áo, đung đưa khi bước
+      const g = new THREE.Group(); g.position.set(0, 0.6, 0.06 * s); o.add(g);
+      add(g, new THREE.CylinderGeometry(0.15, 0.2, 0.48, 16, 1, true, s > 0 ? -Math.PI / 2.6 : Math.PI - Math.PI / 2.6, Math.PI / 1.3), M.ao, 0, -0.24, -0.06 * s);
+      panels.push(g);
+    }
+    const legs = hips.map((h) => { const g = new THREE.Group(); h.add(g); add(g, new THREE.CylinderGeometry(0.07, 0.085, 0.5, 12), M.quan, 0, -0.27, 0); add(g, ball, M.gold, 0, -0.57, 0.035, 0.05, 0.03, 0.1); return g; });
+    const arms = shoulders.map((s) => { const g = new THREE.Group(); s.add(g); add(g, cap(0.045, 0.3), M.ao, 0, -0.18, 0); add(g, ball, M.skin, 0, -0.38, 0, 0.048, 0.052, 0.048); return g; });
+    const hair = new THREE.Group(); head.add(hair);
+    add(hair, new THREE.SphereGeometry(0.262, 20, 12, 0, Math.PI * 2, 0, 1.35), M.hair, 0, 0.25, -0.012);
+    add(hair, ball, M.hair, 0, 0.36, -0.2, 0.12, 0.11, 0.11);
+    add(hair, ball, M.tulip, 0.09, 0.42, -0.17, 0.045, 0.045, 0.045);
+    outfits.bride = [o, hair, ...legs, ...arms];
+  }
+  const setOutfit = (name) => { for (const [k, list] of Object.entries(outfits)) list.forEach((m) => { m.visible = k === name; }); };
+  // bóng mềm dưới chân
+  const cv = document.createElement('canvas'); cv.width = cv.height = 64;
+  const cx = cv.getContext('2d'), gr = cx.createRadialGradient(32, 32, 2, 32, 32, 31);
+  gr.addColorStop(0, 'rgba(20,30,20,0.42)'); gr.addColorStop(1, 'rgba(20,30,20,0)'); cx.fillStyle = gr; cx.fillRect(0, 0, 64, 64);
+  const shadow = new THREE.Mesh(new THREE.PlaneGeometry(0.85, 0.85).rotateX(-Math.PI / 2),
+    new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(cv), transparent: true, depthWrite: false, toneMapped: false }));
+  shadow.position.y = 0.012; shadow.renderOrder = 1;
+  let phase = 0, amp = 0, t = 0;
+  function animate(dt, speed) {
+    t += dt; amp += ((speed > 0.05 ? 1 : 0) - amp) * Math.min(1, dt * 8);
+    phase += dt * speed * 5.6;
+    const sw = Math.sin(phase) * amp;
+    hips[0].rotation.x = sw * 0.55; hips[1].rotation.x = -sw * 0.55;
+    shoulders[0].rotation.x = -sw * 0.45; shoulders[1].rotation.x = sw * 0.45;
+    shoulders[0].rotation.z = -0.08; shoulders[1].rotation.z = 0.08;
+    body.position.y = Math.abs(Math.sin(phase)) * 0.035 * amp + Math.sin(t * 2.2) * 0.004 * (1 - amp);
+    panels[0].rotation.x = 0.18 * amp + Math.sin(phase * 2) * 0.05 * amp; panels[1].rotation.x = -0.1 * amp;
+    head.rotation.z = Math.sin(phase) * 0.03 * amp;
+  }
+  return { root, shadow, setOutfit, animate };
+}
+
+// ───────────── khởi động ─────────────
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ canvas: $('c'), antialias: true, alpha: true, powerPreference: 'high-performance' });
+} catch (e) {
+  say('Máy hoặc trình duyệt này không chạy được đồ hoạ 3D (WebGL), nên chưa xem được sa bàn.');
+  throw e;
+}
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.NoToneMapping;
+renderer.setClearColor(0x000000, 0);
+
+async function getJSON(url) { const r = await fetch(url); if (!r.ok) throw new Error(url + ' (' + r.status + ')'); return r.json(); }
+function loadTexture(url) { return new Promise((ok, no) => new THREE.TextureLoader().load(url, ok, undefined, () => no(new Error(url)))); }
+
+let bo, pack, groundTex;
+try {
+  say('Đang tải sa bàn… (1/3)');
+  bo = await getJSON('bo-cuc.json');
+  say('Đang tải mô hình… (2/3)');
+  [pack, groundTex] = await Promise.all([getJSON('mo-hinh.json'), loadTexture(bo.mat_dat)]);
+  say('Đang dựng cảnh… (3/3)');
+} catch (e) {
+  say('Không tải được một phần của sa bàn: ' + e.message + '. Bạn thử tải lại trang.');
+  throw e;
+}
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 120);
+const RI = bo.ban_kinh_dao;
+
+// môi trường: bầu trời và ánh cỏ hắt lên, để kim loại có gì mà phản chiếu
+{
+  const s = new THREE.Scene(), geo = new THREE.SphereGeometry(10, 32, 16), p = geo.attributes.position, cols = [];
+  const k = bo.troi.cuong_do, top = new THREE.Color(...bo.troi.mau).multiplyScalar(k), hor = new THREE.Color(0.62, 0.62, 0.6), bot = new THREE.Color(0.22, 0.32, 0.16), c = new THREE.Color();
+  for (let i = 0; i < p.count; i++) { const y = p.getY(i) / 10; c.copy(hor).lerp(y > 0 ? top : bot, Math.abs(y) ** 0.6); cols.push(c.r, c.g, c.b); }
+  geo.setAttribute('color', new THREE.Float32BufferAttribute(cols, 3));
+  s.add(new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ vertexColors: true, side: THREE.BackSide })));
+  const pm = new THREE.PMREMGenerator(renderer); scene.environment = pm.fromScene(s, 0.04).texture; pm.dispose();
+}
+const sun = new THREE.DirectionalLight(new THREE.Color(...bo.nang.mau), bo.nang.cuong_do);
+sun.position.set(...bo.nang.huong_toi_mat_troi).multiplyScalar(20); scene.add(sun);
+
+// mặt đảo: một tấm tròn dán ảnh đã tính sẵn ánh sáng và bóng
+groundTex.colorSpace = THREE.SRGBColorSpace; groundTex.anisotropy = Math.min(4, renderer.capabilities.getMaxAnisotropy());
+const ground = new THREE.Mesh(new THREE.CircleGeometry(RI, 128).rotateX(-Math.PI / 2), new THREE.MeshBasicMaterial({ map: groundTex, toneMapped: false }));
+scene.add(ground);
+
+// đồ vật và vật cản
+const R_CHAR = 0.24, obst = [];
+for (const v of bo.vat_can) obst.push({ x: v.x, z: -v.y, r: v.r });
+const POSTS_ONLY = { 'cong-hoa': [[-1.05, 0], [1.05, 0]] }, THIN = { 'den-duong': 0.2, micro: 0.15, 'bong-bay': 0.3, loa: 0.4 };
+const byId = {};
+for (const p of bo.mon) (byId[p.id] ||= []).push(p);
+const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), eul = new THREE.Euler(), v3 = new THREE.Vector3(), s3 = new THREE.Vector3();
+{
+  const { geo, mats } = decode(pack['trang-tri']);
+  scene.add(new THREE.Mesh(geo, mats));
+}
+for (const [id, list] of Object.entries(byId)) {
+  const { geo, mats } = decode(pack[id]);
+  const mesh = list.length > 1 ? new THREE.InstancedMesh(geo, mats, list.length) : new THREE.Mesh(geo, mats);
+  const bb = geo.boundingBox;
+  list.forEach((p, i) => {
+    const a = (p.xoay * Math.PI) / 180, c = Math.cos(a), s = Math.sin(a), x = p.x, z = -p.y;
+    m4.compose(v3.set(x, p.z, z), q.setFromEuler(eul.set(0, a, 0)), s3.setScalar(p.s));
+    if (mesh.isInstancedMesh) mesh.setMatrixAt(i, m4); else mesh.applyMatrix4(m4);
+    if (p.z > 0.1) return;                                    // món đặt trên bàn: không chắn đường
+    const world = (lx, lz) => ({ x: x + c * lx + s * lz, z: z - s * lx + c * lz });
+    if (POSTS_ONLY[id]) { for (const [lx, lz] of POSTS_ONLY[id]) obst.push({ ...world(lx * p.s, lz * p.s), r: 0.16 }); return; }
+    if (THIN[id]) { obst.push({ x, z, r: THIN[id] }); return; }
+    const hx = ((bb.max.x - bb.min.x) / 2) * p.s, hz = ((bb.max.z - bb.min.z) / 2) * p.s;
+    const ctr = world(((bb.max.x + bb.min.x) / 2) * p.s, ((bb.max.z + bb.min.z) / 2) * p.s);
+    if (Math.abs(hx - hz) / Math.max(hx, hz) < 0.2) obst.push({ ...ctr, r: Math.max(hx, hz) * 0.92 });
+    else obst.push({ ...ctr, c, s, hx, hz });
+  });
+  if (mesh.isInstancedMesh) { mesh.instanceMatrix.needsUpdate = true; mesh.computeBoundingSphere(); }
+  scene.add(mesh);
+}
+delete pack['trang-tri'];
+
+function resolve(p) {
+  for (const o of obst) {
+    if (o.r !== undefined) {
+      const dx = p.x - o.x, dz = p.z - o.z, d = Math.hypot(dx, dz), m = o.r + R_CHAR;
+      if (d < m && d > 1e-6) { p.x = o.x + (dx / d) * m; p.z = o.z + (dz / d) * m; }
+      continue;
+    }
+    const dx = p.x - o.x, dz = p.z - o.z, lx = o.c * dx - o.s * dz, lz = o.s * dx + o.c * dz;
+    const cx = Math.max(-o.hx, Math.min(o.hx, lx)), cz = Math.max(-o.hz, Math.min(o.hz, lz));
+    let ex = lx - cx, ez = lz - cz, d = Math.hypot(ex, ez), nx, nz;
+    if (d >= R_CHAR) continue;
+    if (d < 1e-6) {                                           // lọt vào trong hộp: đẩy ra theo cạnh gần nhất
+      if (o.hx - Math.abs(lx) < o.hz - Math.abs(lz)) { nx = Math.sign(lx || 1) * (o.hx + R_CHAR); nz = lz; } else { nx = lx; nz = Math.sign(lz || 1) * (o.hz + R_CHAR); }
+    } else { nx = cx + (ex / d) * R_CHAR; nz = cz + (ez / d) * R_CHAR; }
+    p.x = o.x + o.c * nx + o.s * nz; p.z = o.z - o.s * nx + o.c * nz;
+  }
+  const r = Math.hypot(p.x, p.z), lim = RI - 0.55;
+  if (r > lim) { p.x *= lim / r; p.z *= lim / r; }
+}
+
+// nhân vật
+const hero = makeCharacter();
+scene.add(hero.root, hero.shadow);
+hero.root.position.set(0, 0, 2.6);                         // quay mặt về phía máy quay
+let outfit = store.get('outfit', 'groom');
+function setOutfit(name) {
+  outfit = name; hero.setOutfit(name); store.set('outfit', name);
+  $('o-groom').setAttribute('aria-pressed', String(name === 'groom')); $('o-bride').setAttribute('aria-pressed', String(name === 'bride'));
+}
+setOutfit(outfit === 'bride' ? 'bride' : 'groom');
+if (!matchMedia('(pointer: coarse)').matches) $('hint').textContent = 'Bấm vào bãi cỏ để đi tới · kéo để xoay · lăn chuột để phóng to · phím W A S D để đi';
+$('o-groom').onclick = () => setOutfit('groom');
+$('o-bride').onclick = () => setOutfit('bride');
+
+// điểm đến
+const marker = new THREE.Mesh(new THREE.RingGeometry(0.16, 0.22, 32).rotateX(-Math.PI / 2), new THREE.MeshBasicMaterial({ color: 0x1E5A40, transparent: true, opacity: 0, depthWrite: false }));
+marker.position.y = 0.02; scene.add(marker);
+
+// ───────────── máy quay ─────────────
+const cam = { yaw: 0.06, pitch: 0.7, dist: 10, follow: true, focus: new THREE.Vector3(0, 0.8, 2.6) };
+function camLimits() { const port = camera.aspect < 1; return { min: 3.5, max: port ? 30 : 20 }; }
+function frameView() {
+  const port = camera.aspect < 1;
+  camera.fov = port ? 55 : 40; camera.updateProjectionMatrix();
+  cam.dist = cam.follow ? (port ? 12 : 10) : (port ? 23 : 17);
+  cam.pitch = cam.follow ? 0.7 : 0.62;
+}
+$('btn-cam').onclick = () => {
+  cam.follow = !cam.follow; frameView();
+  $('btn-cam').textContent = cam.follow ? 'Xem toàn cảnh' : 'Theo nhân vật';
+};
+
+// ───────────── điều khiển ─────────────
+const target = new THREE.Vector3(), ray = new THREE.Raycaster(), plane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0), ndc = new THREE.Vector2();
+let moving = false, stuck = 0, hinted = false;
+const keys = new Set();
+function goTo(clientX, clientY) {
+  ndc.set((clientX / innerWidth) * 2 - 1, -(clientY / innerHeight) * 2 + 1);
+  ray.setFromCamera(ndc, camera);
+  const hit = ray.ray.intersectPlane(plane, v3);
+  if (!hit || Math.hypot(hit.x, hit.z) > RI - 0.4) return;
+  target.copy(hit); moving = true; stuck = 0;
+  marker.position.set(hit.x, 0.02, hit.z); marker.material.opacity = 0.9;
+  if (!hinted) { hinted = true; $('hint').classList.add('gone'); }
+}
+const ptrs = new Map(); let tap = null, pinch = null;
+const cv = $('c');
+cv.addEventListener('pointerdown', (e) => {
+  cv.setPointerCapture(e.pointerId); ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (ptrs.size === 1) tap = { x: e.clientX, y: e.clientY, t: performance.now(), moved: false };
+  if (ptrs.size === 2) { const [a, b] = [...ptrs.values()]; pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), dist: cam.dist }; tap = null; }
+});
+cv.addEventListener('pointermove', (e) => {
+  const pr = ptrs.get(e.pointerId); if (!pr) return;
+  const dx = e.clientX - pr.x, dy = e.clientY - pr.y; pr.x = e.clientX; pr.y = e.clientY;
+  if (ptrs.size === 1) {
+    if (tap && Math.hypot(e.clientX - tap.x, e.clientY - tap.y) > 8) tap.moved = true;
+    if (!tap || tap.moved) { cam.yaw -= dx * 0.008; cam.pitch = Math.max(0.35, Math.min(1.25, cam.pitch + dy * 0.005)); }
+  } else if (ptrs.size === 2 && pinch) {
+    const [a, b] = [...ptrs.values()], L = camLimits();
+    cam.dist = Math.max(L.min, Math.min(L.max, (pinch.dist * pinch.d) / Math.max(20, Math.hypot(a.x - b.x, a.y - b.y))));
+  }
+});
+const up = (e) => {
+  if (tap && !tap.moved && ptrs.size === 1 && performance.now() - tap.t < 450) goTo(e.clientX, e.clientY);
+  ptrs.delete(e.pointerId); if (ptrs.size < 2) pinch = null; if (!ptrs.size) tap = null;
+};
+cv.addEventListener('pointerup', up);
+cv.addEventListener('pointercancel', (e) => { ptrs.delete(e.pointerId); pinch = null; tap = null; });
+cv.addEventListener('wheel', (e) => { e.preventDefault(); const L = camLimits(); cam.dist = Math.max(L.min, Math.min(L.max, cam.dist * Math.exp(e.deltaY * 0.001))); }, { passive: false });
+addEventListener('keydown', (e) => { if (/^(Key[WASD]|Arrow)/.test(e.code) && !e.target.closest('button')) { keys.add(e.code); moving = false; e.preventDefault(); } });
+addEventListener('keyup', (e) => keys.delete(e.code));
+
+// ───────────── chất lượng, kích thước ─────────────
+let quality = store.get('quality', 'cao') === 'tiet-kiem' ? 'tiet-kiem' : 'cao';
+function applySize() {
+  renderer.setPixelRatio(quality === 'cao' ? Math.min(devicePixelRatio || 1, 2) : 1);
+  renderer.setSize(innerWidth, innerHeight, false);
+  camera.aspect = innerWidth / Math.max(1, innerHeight);
+  frameView();
+  $('btn-quality').textContent = quality === 'cao' ? 'Nét: cao' : 'Nét: tiết kiệm';
+}
+$('btn-quality').onclick = () => { quality = quality === 'cao' ? 'tiet-kiem' : 'cao'; store.set('quality', quality); applySize(); };
+addEventListener('resize', applySize);
+applySize();
+
+// ───────────── số đo ─────────────
+const gl = renderer.getContext(), dbg = gl.getExtension('WEBGL_debug_renderer_info');
+const GPU = dbg ? gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) : 'trình duyệt không cho biết';
+let loadMs = 0, frames = 0, acc = 0;
+const times = [];
+function transferred() {
+  let net = 0, raw = 0;
+  for (const e of performance.getEntriesByType('resource')) {
+    if (!/three|mo-hinh|bo-cuc|nen-dao/.test(e.name)) continue;
+    net += e.transferSize || 0; raw += e.decodedBodySize || e.encodedBodySize || 0;
+  }
+  return { net, raw };
+}
+function statsText() {
+  const n = times.length, avg = n ? times.reduce((a, b) => a + b, 0) / n : 0, slow = n ? times.filter((t) => t > 33.4).length / n : 0;
+  const { net, raw } = transferred(), info = renderer.info.render, mb = (b) => (b / 1048576).toFixed(2) + ' MB';
+  return [
+    ['Khung hình/giây', avg ? (1000 / avg).toFixed(0) + ' (trung bình 5 giây)' : '…'],
+    ['Khung chậm (trên 33 ms)', (slow * 100).toFixed(0) + '%'],
+    ['Lệnh vẽ mỗi khung', String(info.calls)],
+    ['Tam giác mỗi khung', info.triangles.toLocaleString('vi-VN')],
+    ['Độ phân giải vẽ', `${gl.drawingBufferWidth}×${gl.drawingBufferHeight} (×${renderer.getPixelRatio().toFixed(2)})`],
+    ['Đã tải', net ? `${mb(net)} qua mạng, ${mb(raw)} sau giải nén` : `${mb(raw)} (không đo được phần qua mạng)`],
+    ['Thời gian tải', (loadMs / 1000).toFixed(1) + ' giây'],
+    ['Card đồ hoạ', GPU],
+    ['Trình duyệt', navigator.userAgent.replace(/^Mozilla\/5\.0 /, '')],
+  ];
+}
+function renderStats() {
+  const list = $('stat-list'); list.replaceChildren();
+  for (const [k, v] of statsText()) { const dt = document.createElement('dt'), dd = document.createElement('dd'); dt.textContent = k; dd.textContent = v; if (v.length > 22) dd.className = 'wide'; list.append(dt, dd); }
+}
+$('btn-stats').onclick = () => {
+  const box = $('stats'), open = box.hidden; box.hidden = !open; $('btn-stats').setAttribute('aria-expanded', String(open)); if (open) renderStats();
+};
+$('btn-copy').onclick = () => {
+  const text = 'Sa bàn tiệc vườn, số đo\n' + statsText().map(([k, v]) => `${k}: ${v}`).join('\n') + `\nNét: ${quality}`;
+  const btn = $('btn-copy');
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents($('stat-list')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Đã chọn sẵn, bạn bấm Chép'; };
+  try { navigator.clipboard.writeText(text).then(() => { btn.textContent = 'Đã chép'; setTimeout(() => (btn.textContent = 'Chép số đo'), 1800); }, fallback); } catch { fallback(); }
+};
+
+// ───────────── vòng lặp ─────────────
+const clock = new THREE.Clock(), dir = new THREE.Vector3(), prev = new THREE.Vector3(), look = new THREE.Vector3();
+const SPEED = 1.7;
+function tick() {
+  const dt = Math.min(0.05, clock.getDelta());
+  const pos = hero.root.position; prev.copy(pos);
+  dir.set(0, 0, 0);
+  if (keys.size) {
+    const f = (keys.has('KeyW') || keys.has('ArrowUp') ? 1 : 0) - (keys.has('KeyS') || keys.has('ArrowDown') ? 1 : 0);
+    const r = (keys.has('KeyD') || keys.has('ArrowRight') ? 1 : 0) - (keys.has('KeyA') || keys.has('ArrowLeft') ? 1 : 0);
+    dir.set(-Math.sin(cam.yaw) * f + Math.cos(cam.yaw) * r, 0, -Math.cos(cam.yaw) * f - Math.sin(cam.yaw) * r);
+    if (dir.lengthSq() > 0) { dir.normalize(); if (!hinted) { hinted = true; $('hint').classList.add('gone'); } }
+  } else if (moving) {
+    dir.subVectors(target, pos).setY(0);
+    const d = dir.length();
+    if (d < 0.08) { moving = false; dir.set(0, 0, 0); } else dir.divideScalar(d);
+  }
+  let speed = 0;
+  if (dir.lengthSq() > 0) {
+    pos.addScaledVector(dir, SPEED * dt); resolve(pos);
+    speed = pos.distanceTo(prev) / Math.max(dt, 1e-4);
+    if (moving && speed < 0.25) { stuck += dt; if (stuck > 0.6) moving = false; } else stuck = 0;
+    const want = Math.atan2(dir.x, dir.z); let dy = want - hero.root.rotation.y;
+    dy = Math.atan2(Math.sin(dy), Math.cos(dy)); hero.root.rotation.y += dy * Math.min(1, dt * 10);
+  }
+  hero.animate(dt, speed);
+  hero.shadow.position.set(pos.x, 0.012, pos.z);
+  marker.material.opacity = moving ? 0.9 : Math.max(0, marker.material.opacity - dt * 2);
+
+  const k = 1 - Math.exp(-dt * 6);
+  look.set(cam.follow ? pos.x : 0, cam.follow ? 0.8 : 0.4, cam.follow ? pos.z : 0.6);
+  cam.focus.lerp(look, k);
+  camera.position.set(
+    cam.focus.x + Math.sin(cam.yaw) * Math.cos(cam.pitch) * cam.dist,
+    cam.focus.y + Math.sin(cam.pitch) * cam.dist,
+    cam.focus.z + Math.cos(cam.yaw) * Math.cos(cam.pitch) * cam.dist);
+  camera.lookAt(cam.focus);
+  renderer.render(scene, camera);
+
+  const ms = dt * 1000; times.push(ms); if (times.length > 300) times.shift();
+  frames++; acc += dt;
+  if (acc >= 0.5) {
+    const n = Math.min(times.length, 60), avg = times.slice(-n).reduce((a, b) => a + b, 0) / n;
+    $('fps').textContent = (1000 / avg).toFixed(0) + ' khung/giây'; frames = 0; acc = 0;
+    if (!$('stats').hidden) renderStats();
+  }
+  requestAnimationFrame(tick);
+}
+renderer.compile(scene, camera);
+renderer.render(scene, camera);
+loadMs = performance.now();                                   // tính từ lúc mở trang, gồm cả tải three.js
+say('');
+requestAnimationFrame(tick);
+</script>
