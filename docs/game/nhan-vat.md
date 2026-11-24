@@ -13,10 +13,12 @@ Tài liệu thiết kế cho phần dựng nhân vật của game "Về chung m�
 2. **Biến thể bằng chế độ sửa ảnh.** Mỗi biến thể được sửa từ người gốc với câu lệnh "giữ nguyên mọi thứ khác". Nhờ vậy dáng đứng, khung hình và gương mặt gần như trùng khít giữa các ảnh.
 3. **Hai lớp: đầu và thân.** Lựa chọn tăng theo cấp số nhân nếu mỗi tổ hợp là một ảnh. Vì vậy mỗi nhân vật được ghép từ hai lớp, cắt ở cổ:
    - **Lớp đầu:** vóc người × khuôn mặt × kiểu tóc = 3 × 3 × 3 = 27 ảnh mỗi vai. Vóc người nằm ở lớp đầu vì người đầy đặn thì mặt cũng đầy theo.
-   - **Lớp thân:** vóc người × dáng người = 3 × 5 = 15 ảnh mỗi vai.
+   - **Lớp thân:** trang phục × vóc người × dáng người = 2 × 3 × 6 = 36 ảnh mỗi vai.
    - **Vết cắt:** lớp thân được giữ đặc tới quá vết cắt, lớp đầu mờ dần qua cổ đè lên. Vì vậy chỗ nối không bị thủng.
    - **Tóc dài:** lớp đầu của cô dâu giữ thêm phần tóc rủ xuống vai, tách theo màu tóc.
-   - Không ghép thì cần 3 × 3 × 3 × 5 = 135 ảnh mỗi vai; ghép theo lớp chỉ cần 42.
+   - **Lớp mắt và lông mày:** 3 dáng mặt × (4 dáng mắt + 3 kiểu lông mày), cắt riêng từng bên (mục 4).
+   - **Áo dài:** cổ áo cao, nên có thêm một lớp cổ áo vẽ đè lên đầu để che cổ sơ mi của lớp đầu.
+   - Mỗi vai có 2 × 3 × 6 × 3 × 3 × 4 × 3 = 3.888 tổ hợp hình dạng (chưa kể màu) từ 78 ảnh vẽ.
 4. **Chiều cao (145–195 cm):** phóng hoặc thu cả hình. Trong cảnh, kích thước theo phối cảnh đo trên tranh nền: 1 m tại chân y (% khung) cao 0,307 × (y − 44) % chiều cao khung. Số này đo từ lan can đá (≈1 m), ghế tiệc (≈0,95 m) và bàn (≈0,75 m). Khoảng 145–195 cm là lựa chọn thiết kế, không phải số đo thống kê.
 5. **Ánh sáng và bóng:**
    - Bóng ngả dựng lúc chạy từ chính hình vẽ: (x, độ cao u) → (x − 0,75u, chân + 0,2u), cùng hướng với bóng bàn ghế trong tranh. Sau đó làm mờ và nhạt dần ra xa.
@@ -67,11 +69,13 @@ Game không gọi dịch vụ ngoài: mọi ảnh được vẽ sẵn lúc làm 
 | Chú rể | Vai rộng, có bụng | vai và ngực chắc, bụng rõ ở eo |
 | Chú rể | Vai xuôi, có bụng | vai hẹp xuôi, bụng tròn đẩy vạt áo |
 | Chú rể | Vai hẹp, hông rộng | vai ngực hẹp, hông đùi rộng hơn vai |
+| Chú rể | Vai rộng, hông rộng, có bụng | to chắc: vai ngực rộng, bụng tròn, hông đùi rộng |
 | Cô dâu | Cân đối | vai, eo, hông gần bằng nhau (ảnh gốc) |
 | Cô dâu | Eo thon | vai và hông bằng nhau, ngực đầy, eo thắt rõ |
 | Cô dâu | Vai rộng | vai vuông rộng, eo hông hẹp |
 | Cô dâu | Hông rộng | vai hẹp xuôi, hông rộng dưới váy |
 | Cô dâu | Có bụng | vai tròn, eo không rõ, bụng mềm dưới thân váy |
+| Cô dâu | Vai rộng, hông rộng, có bụng | vai vuông, bụng mềm, hông rộng |
 
 Váy xòe che gần hết hông và đùi, nên dáng cô dâu chủ yếu đọc được ở vai, ngực và eo. Hông sẽ rõ khi có thêm áo dài và đầm ôm.
 
@@ -79,15 +83,57 @@ Váy xòe che gần hết hông và đùi, nên dáng cô dâu chủ yếu đọ
 
 | Mục | Lựa chọn |
 |---|---|
-| Khuôn mặt | Trái xoan (gốc); Tròn, một mí; Vuông, mắt to hai mí, lông mày đậm |
+| Dáng mặt | Trái xoan; Tròn; Vuông |
+| Dáng mắt | Hạnh nhân; Một mí; To tròn; Mắt phượng |
+| Lông mày | Mảnh, cong; Tự nhiên; Đậm, ngang |
+| Màu da | 6 nấc từ trắng hồng tới nâu đậm, hoặc như ảnh vẽ |
+| Màu mắt | Nâu đen; Nâu; Hổ phách; Xám |
+| Màu tóc | Đen; Nâu đen; Hạt dẻ; Nâu sáng; Đỏ rượu; Xám khói |
+| Trang phục | Chú rể: vest ngọc lục, áo dài gấm ngọc lục. Cô dâu: váy cưới, áo dài đỏ thêu phượng |
 | Tóc chú rể | Rẽ ngôi; Vuốt ngược; Xoăn ngắn |
 | Tóc cô dâu | Búi cao; Dài thẳng; Ngang cằm |
 
 Chi tiết mặt chỉ đọc được ở ô chân dung. Trong cảnh tiệc, một người cao vài trăm điểm ảnh nên chỉ còn đọc được chiều cao, dáng, tóc và trang phục.
 
-## 4. Việc tiếp theo
+## 4. Học từ cách tạo nhân vật của The Sims
 
-- **Trang phục:** áo dài (cả hai vai), vest màu khác, đầm ôm. Mỗi bộ cần vẽ lại lớp thân (3 vóc × 5 dáng).
+### The Sims 4 làm thế nào
+
+Theo tin của EA và các hướng dẫn:
+- **Hai tầng chỉnh.** Người chơi bắt đầu từ khuôn mặt và cơ thể dựng sẵn, rồi tinh chỉnh.
+  - Kéo đẩy trực tiếp trên mặt và người: bấm vào một vùng rồi kéo, gần như điểm nào trên mặt và người cũng chỉnh được.
+  - Độ béo và độ cơ bắp là thanh kéo chung, còn từng bộ phận chỉnh riêng.
+  - Bộ cơ thể dựng sẵn không khóa thanh kéo, chọn xong vẫn chỉnh tiếp được.
+- **Hình dạng tách khỏi màu sắc.** Màu da, màu tóc, màu mắt là bảng màu riêng, đổi màu không đổi hình.
+- **Có giới hạn:** bản gốc không có thanh chiều cao; thanh kéo không dùng cho trẻ nhỏ.
+- **Hệ quả kỹ thuật:** vì cơ thể thay đổi rất mạnh, đội làm game phải cho chuyển động biết hình dáng cơ thể, ví dụ chỉnh đường tay để không xuyên qua bụng.
+
+### Áp dụng cho game vẽ tay 2D này
+
+The Sims dùng mô hình 3D co giãn được, game này dùng tranh vẽ tay. Mình giữ tinh thần, đổi cách làm:
+
+| The Sims 4 | Về chung một nhà |
+|---|---|
+| Mặt và cơ thể dựng sẵn để bắt đầu | Người gốc, nút Ngẫu nhiên, và (sắp có) vài bộ dựng sẵn |
+| Thanh béo và cơ bắp | Vóc người (mảnh, vừa, đầy đặn) và dáng (vai, eo, bụng, hông) |
+| Kéo đẩy từng bộ phận | Chọn từng bộ phận đã vẽ sẵn: dáng mặt, dáng mắt, lông mày, kiểu tóc. Mỗi bộ phận là một lớp ảnh riêng |
+| Bảng màu da, tóc, mắt | Đổi màu ngay trong trình duyệt trên tranh vẽ, giữ nguyên bóng sáng |
+| Chuyển động biết hình dáng | Bóng đổ dựng từ chính hình vẽ, nên tự khớp theo dáng, váy, chiều cao |
+
+**Cách ghép lớp:**
+- Thứ tự: thân (trang phục × vóc × dáng) → đầu (vóc × dáng mặt × tóc) → lông mày → hai mắt.
+- Mắt và lông mày vẽ trên ba khuôn mặt gốc, cắt riêng từng bên, rồi dò vị trí khớp trên từng đầu.
+- Cùng một dáng mắt dùng được cho mọi vóc người và kiểu tóc.
+- Tóc ngang cằm có mái che lông mày, nên lông mày lấy theo đầu.
+
+**Cách đổi màu:**
+- **Da:** nhân theo tỉ lệ màu, giữ bóng và má hồng.
+- **Tóc và lông mày:** ánh xạ theo độ sáng sang bảng màu mới. Vùng tóc tìm bằng cách loang từ đỉnh đầu, để không dính nét viền áo.
+- **Tròng mắt:** ánh xạ trong vùng mắt.
+
+## 5. Việc tiếp theo
+
+- **Trang phục:** vest màu khác, đầm ôm, khăn vấn và khăn xếp đi cùng áo dài. Mỗi bộ cần vẽ lại lớp thân (3 vóc × 6 dáng). Áo dài cô dâu hiện vẫn đi với voan vì voan nằm trong lớp đầu.
 - **Tư thế:** nắm tay, quay nghiêng, chào bàn. Mỗi tư thế là một bộ người gốc mới.
 - **Màu da và màu tóc:** thử đổi bằng chế độ sửa ảnh trên lớp đầu, hoặc pha màu lúc chạy.
 - **Nhân vật phụ** (bố mẹ, khách, nhà cung cấp): dùng cùng quy trình, ít lựa chọn hơn.
