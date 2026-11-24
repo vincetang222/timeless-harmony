@@ -162,3 +162,21 @@ The Sims dùng mô hình 3D co giãn được, game này dùng tranh vẽ tay. M
 - [Luận văn NC State về dáng nam từ dữ liệu SizeUSA](https://repository.lib.ncsu.edu/server/api/core/bitstreams/fe578c1f-8c9b-428a-924c-ae5c4cd3d39a/content)
 - [Whole body shapes and fit problems among overweight and obese men in the United States](https://emerald.com/insight/content/doi/10.1108/JFMM-02-2021-0039)
 - [Analysis of Vietnamese women's body shape from anthropometric data – TU Liberec](https://dspace.tul.cz/handle/15240/175245)
+
+## 6. Việc để sau 01/12 (khi gói Model Studio làm mới)
+
+Đã duyệt, chờ hạn mức:
+
+- **30 kiểu tóc** (15 nam, 15 nữ). Bảng đã duyệt ngày 24/11:
+  - Nam: rẽ ngôi lệch, vuốt ngược, xoăn ngắn, undercut, húi cua, mái ngố Hàn Quốc, rẽ giữa dài tới tai, quiff, side part fade, đầu đinh, buộc túm sau gáy, xoăn dài tới cằm, uốn gợn ép phồng, hói nhẹ trán, muối tiêu chải gọn.
+  - Nữ: búi cao, dài thẳng, ngang cằm mái thẳng, dài gợn sóng, búi thấp, búi rối, tết một bên, tết vương miện, nửa buộc nửa xõa, đuôi ngựa cao, bob không mái, tóc tém, xoăn lọn to, kẹp một bên sóng cổ điển, vấn tóc truyền thống.
+- **Bài học từ hai tấm thử:**
+  - Tóc vẽ trên "đầu nền tóc ép sát" thì đẹp khi xem nguyên tấm.
+  - Nhưng mô hình luôn vẽ lại khuôn mặt một chút, kể cả khi đã dặn giữ nguyên. Vì vậy tách riêng lớp tóc rồi đặt lên đầu khác sẽ hở viền mặt và lộ tai.
+  - Cách định làm: mỗi kiểu tóc là một **đầu trọn** (tóc cùng mặt vẽ chung), vẽ trên 3 dáng mặt. Mắt, lông mày và màu vẫn ghép bằng máy như hiện nay để giữ nhận diện. Vóc người đổi cỡ đầu bằng máy.
+  - Tổng khoảng 90 ảnh. Trước khi chạy cả lô vẫn phải vẽ thử 1 kiểu.
+- **Trang phục:** mỗi vai 6 bộ, mỗi bộ 3 ảnh (3 vóc), vì dáng đã có thanh chỉnh thân 7 mức.
+  - Chú rể: vest đen, vest be, tuxedo, áo dài đỏ thêu, áo dài trắng, áo dài the kèm khăn xếp.
+  - Cô dâu: váy đuôi cá, váy ren tay dài, váy ngắn, áo dài trắng, áo dài hồng, áo dài kèm khăn vấn.
+- **MC và ban nhạc:** MC 4 bộ, ban nhạc 3 bộ, vẽ lại cùng nét với cặp đôi.
+- **Quy tắc:** làm theo mục "Quy tắc tiết kiệm lượt vẽ" trong `canh-ngoai-troi.md`.
