@@ -20,7 +20,7 @@ Tiệc trong nhà (nhà hàng, sảnh khách sạn) sẽ thiết kế sau. Tài 
 
 ## 2. Danh sách địa điểm
 
-### Đợt 1: đã vẽ gói Đủ (7 cảnh), chờ duyệt
+### Đợt 1: 7 cảnh; 5 cảnh tiệc đã có đủ Gọn, Đủ, Trọn
 
 | Mã | Cảnh | Vùng | Dùng cho | Ghi chú |
 |---|---|---|---|---|
