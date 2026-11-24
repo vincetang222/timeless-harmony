@@ -79,6 +79,21 @@ Game không gọi dịch vụ ngoài: mọi ảnh được vẽ sẵn lúc làm 
 
 Váy xòe che gần hết hông và đùi, nên dáng cô dâu chủ yếu đọc được ở vai, ngực và eo. Hông sẽ rõ khi có thêm áo dài và đầm ôm.
 
+### Vai, eo-bụng, hông là ba thanh kéo riêng (cập nhật)
+
+Chủ dự án góp ý: gộp vai, eo, bụng, hông vào một lựa chọn là không hợp lý. Giờ trang chia như sau:
+- **Vai, Eo và bụng, Hông:** ba thanh kéo độc lập, từ −1 tới +1.
+  - Máy nắn ngang lớp thân theo từng dải, mỗi dải mềm theo hình chuông quanh vai, eo, hông.
+  - Dải mạnh nhất co giãn 22%.
+  - Không tốn lượt vẽ.
+- **Dáng mẫu vẽ tay:** vẫn giữ, nhưng chỉ là điểm xuất phát giống bộ cơ thể dựng sẵn của The Sims; thanh kéo chỉnh tiếp trên đó.
+
+### Đầu không phóng theo chiều cao (cập nhật)
+
+- Ngoài đời, cỡ đầu thay đổi ít hơn nhiều so với chiều cao.
+- Giờ cỡ đầu tỉ lệ với chiều cao mũ 0,3. Phần dưới cổ co giãn bù vào cho đủ chiều cao; bề ngang thân theo chiều cao mũ 0,6.
+- Kết quả: người 148 cm có đầu to hơn so với thân, người 190 cm có đầu nhỏ hơn so với thân, thay vì phóng to cả hình.
+
 ## 3. Khuôn mặt và tóc
 
 | Mục | Lựa chọn |
