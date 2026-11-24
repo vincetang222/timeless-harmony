@@ -116,7 +116,7 @@ Thay danh sách chữ bằng **thẻ có hình**, vẽ bằng mã (SVG và canva
 - Mỗi thẻ đọc được cả ở chế độ sáng và tối, và ở bản nhẹ không có làm mờ.
 - Bộ biểu tượng vẽ một lần, dùng chung cho game và website.
 
-**Bước đầu:** dựng mẫu màn "chọn gói trang trí" với 3 thẻ hình, bộ 10 biểu tượng và đồng hồ chỉ số, đặt dưới cảnh tiệc đang có. Bạn duyệt mẫu xong mới làm cả bộ.
+**Đã dựng mẫu** ở `game/lab/xuong/`: bốn bước Cặp đôi → Địa điểm → Trang trí → Ngày cưới, thẻ hình, đồng hồ chỉ số, bộ biểu tượng nét đơn. Chờ chủ dự án duyệt rồi mới làm các màn còn lại (lịch, mâm quả, hợp đồng, phong bì).
 
 ## 4. Danh sách cảnh theo giai đoạn
 

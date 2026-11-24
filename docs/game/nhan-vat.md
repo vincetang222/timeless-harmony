@@ -1,6 +1,6 @@
 # Nhân vật: ngoại hình và tùy chỉnh
 
-Tài liệu thiết kế cho phần dựng nhân vật của game "Về chung một nhà". Bản thử đang ở dạng trang Artifact (Xưởng nhân vật), chưa nằm trong `game/`.
+Tài liệu thiết kế cho phần dựng nhân vật của game "Về chung một nhà". Bản thử nằm ở `game/lab/xuong/` (không deploy): `index.html` là giao diện, `may.js` là máy ghép lớp, `nv/` và `anh/` là tranh. Script vẽ và tách lớp ở `docs/game/ve/`.
 
 ## 1. Cách dựng hình
 
@@ -180,3 +180,20 @@ The Sims dùng mô hình 3D co giãn được, game này dùng tranh vẽ tay. M
   - Cô dâu: váy đuôi cá, váy ren tay dài, váy ngắn, áo dài trắng, áo dài hồng, áo dài kèm khăn vấn.
 - **MC và ban nhạc:** MC 4 bộ, ban nhạc 3 bộ, vẽ lại cùng nét với cặp đôi.
 - **Quy tắc:** làm theo mục "Quy tắc tiết kiệm lượt vẽ" trong `canh-ngoai-troi.md`.
+
+## 7. Bản thiết kế lại thành màn chơi (25/11/2026)
+
+Chủ dự án nhận xét bản trước còn nhiều lỗi và giao diện giống bảng cài đặt, khó hút người chơi. Bản mới:
+
+- **Một sân khấu, một máy quay.** Cặp đôi đứng trong chính tranh cảnh. Ở bước tạo nhân vật, máy quay phóng gần vào cặp đôi dưới cổng hoa; sang bước chọn địa điểm thì lùi ra toàn cảnh. Cặp đôi được vẽ vào một ô riêng quanh cổng để đủ nét khi phóng gần.
+- **Bốn bước:** Cặp đôi → Địa điểm → Trang trí → Ngày cưới, có màn mở đầu và thiệp tổng kết. Tiền còn lại luôn hiện ở góc trên.
+- **Thẻ chọn có hình xem trước.** Mỗi lựa chọn (dáng mặt, mắt, lông mày, tóc, vóc người, trang phục) hiện bằng hình của chính nhân vật đang chỉnh khi áp lựa chọn đó. Hình được vẽ dần trong hàng chờ để trang không đơ.
+- **Điều khiển kiểu game:** chân dung tròn phóng to khi chỉnh mặt và tóc; nút chọn cô dâu, chú rể nằm ngay trên sân khấu; vai, eo-bụng, hông là ba nấc bấm 7 mức; có mẫu dựng sẵn và nút ngẫu nhiên; đặt được tên.
+- **Lỗi đã sửa trong máy ghép (`may.js`):**
+  - Màu tóc loang sang áo dài: tóc và mắt giờ đổi màu trên riêng lớp đầu trước khi ghép, nên không thể chạm vào trang phục.
+  - Viền mặt bị sáng theo màu tóc: vùng tóc chỉ loang qua khối dày, đi theo nét mảnh (tóc mai) một quãng ngắn.
+  - Vai có bậc khi nắn dáng: tỉ lệ thân giữa chuyển mềm ở hai đầu vùng tay.
+  - Cổ áo dài lệch khi nắn vai: lớp cổ áo nắn cùng công thức với thân.
+  - Cổ có bậc khi đổi chiều cao: bề ngang chuyển mềm qua cổ.
+  - Bóng đổ răng cưa khi phóng gần: làm mờ bằng thu nhỏ một nửa nhiều lần.
+  - Bộ nhớ tăng dần: hình ghép không còn phụ thuộc chiều cao và chỉ nhớ 6 hình gần nhất.
