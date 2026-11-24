@@ -1,0 +1,200 @@
+{
+ "_ghi": "Bản nháp theo docs/game/vong-choi.md mục 2. Tên hư cấu, giá là SỐ TẠM (triệu đồng) lấy theo docs/game/gia-tham-khao.md, chưa phải báo giá thật. Chờ chủ dự án duyệt.",
+ "dia_diem": [
+  {
+   "ma": "dalat",
+   "ten": "Đồi Thông Sương",
+   "vung": "Tây Nguyên",
+   "loai": "tiec",
+   "suc_chua": [
+    30,
+    120
+   ],
+   "gia": {
+    "moi_khach": [
+     0.8,
+     2
+    ]
+   },
+   "mua_dep": "mùa khô",
+   "rui_ro": [
+    "sương sớm",
+    "lạnh tối"
+   ],
+   "canh": "dd-dalat",
+   "tam": true
+  },
+  {
+   "ma": "hoian",
+   "ten": "Bến Đèn Lồng",
+   "vung": "Miền Trung",
+   "loai": "tiec",
+   "suc_chua": [
+    30,
+    80
+   ],
+   "gia": {
+    "moi_khach": [
+     0.8,
+     2
+    ]
+   },
+   "mua_dep": "đầu năm tới giữa năm",
+   "rui_ro": [
+    "mùa mưa bão",
+    "ngập phố"
+   ],
+   "canh": "dd-hoian",
+   "tam": true
+  },
+  {
+   "ma": "bien",
+   "ten": "Bãi Dừa Xanh",
+   "vung": "Miền Trung, Nam",
+   "loai": "tiec",
+   "suc_chua": [
+    30,
+    150
+   ],
+   "gia": {
+    "moi_khach": [
+     0.8,
+     2
+    ]
+   },
+   "mua_dep": "mùa khô của vùng",
+   "rui_ro": [
+    "gió biển",
+    "nắng gắt"
+   ],
+   "canh": "dd-bien",
+   "tam": true
+  },
+  {
+   "ma": "langque",
+   "ten": "Sân nhà quê Bắc Bộ",
+   "vung": "Đồng bằng Bắc Bộ",
+   "loai": "tiec",
+   "suc_chua": [
+    100,
+    400
+   ],
+   "gia": {
+    "moi_ban": [
+     1.5,
+     4
+    ],
+    "rap": [
+     5,
+     20
+    ]
+   },
+   "mua_dep": "xuân, thu",
+   "rui_ro": [
+    "mưa phùn",
+    "nồm"
+   ],
+   "canh": "dd-langque",
+   "tam": true
+  },
+  {
+   "ma": "mientay",
+   "ten": "Vườn Sông Quê",
+   "vung": "Đồng bằng sông Cửu Long",
+   "loai": "tiec",
+   "suc_chua": [
+    50,
+    300
+   ],
+   "gia": {
+    "moi_ban": [
+     1.5,
+     4
+    ],
+    "rap": [
+     5,
+     20
+    ]
+   },
+   "mua_dep": "mùa khô",
+   "rui_ro": [
+    "mưa chiều mùa mưa"
+   ],
+   "canh": "dd-mientay",
+   "tam": true
+  },
+  {
+   "ma": "ruongbac",
+   "ten": "Ruộng bậc thang Tây Bắc",
+   "vung": "Tây Bắc",
+   "loai": "anh_cuoi",
+   "gia": {
+    "di_lai_hai_nguoi": [
+     4,
+     8
+    ]
+   },
+   "ngay_nghi": 3,
+   "canh": "dd-ruongbac",
+   "tam": true
+  },
+  {
+   "ma": "ninhbinh",
+   "ten": "Núi đá Tràng An",
+   "vung": "Ninh Bình",
+   "loai": "anh_cuoi",
+   "gia": {
+    "di_lai_hai_nguoi": [
+     2,
+     5
+    ]
+   },
+   "ngay_nghi": 2,
+   "canh": "dd-ninhbinh",
+   "tam": true
+  }
+ ],
+ "goi_trang_tri": [
+  {
+   "ma": "gon",
+   "ten": "Gọn",
+   "gia": [
+    3,
+    4
+   ],
+   "co": [
+    "cổng đơn giản"
+   ],
+   "tam": true
+  },
+  {
+   "ma": "du",
+   "ten": "Đủ",
+   "gia": [
+    7,
+    9
+   ],
+   "co": [
+    "cổng hoa",
+    "chậu hoa dọc lối",
+    "hoa bàn"
+   ],
+   "tam": true
+  },
+  {
+   "ma": "tron",
+   "ten": "Trọn",
+   "gia": [
+    12,
+    18
+   ],
+   "co": [
+    "cổng dày hoa",
+    "đèn",
+    "cánh hoa",
+    "hoa bàn cao"
+   ],
+   "tam": true
+  }
+ ]
+}
