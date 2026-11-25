@@ -263,3 +263,21 @@ Chủ dự án nhận xét bản 6.3 chiếm nhiều diện tích và nhiều ch
 **Ước lượng (số tạm, chưa thử).** 6 nền trống + 6 bộ phong cách × khoảng 5 loại món ≈ 36 tấm, khoảng 9% hạn mức tháng. Rủi ro chính: hình rời không khớp góc nhìn, không khớp ánh sáng, chân món không bám đất.
 
 **Bước thử trước khi cam kết.** 3 tấm cho một nơi (nền trống Vườn Hồ, một cổng kiểu khác, một bộ bàn), theo đúng quy tắc: bảng duyệt trước, vẽ thử một tấm trước. Chưa vẽ gì khi chưa được duyệt.
+
+### 7.1 Bảng duyệt bước thử 3 tấm (25/11/2026, chờ chủ dự án duyệt bảng)
+
+Chủ dự án đã duyệt hướng trang trí theo lớp. Bảng dưới đây là nội dung từng tấm; chưa tấm nào được vẽ.
+
+| Tấm | Vẽ gì | Có gì | Không có gì | Sửa từ hình | Đạt khi |
+|---|---|---|---|---|---|
+| 1. Nền trống Vườn Hồ | Cảnh Vườn Hồ không còn đồ trang trí | Bãi cỏ, lối đá, lan can, hồ, núi, hàng bách, mây, ánh sáng như cũ | Cổng, hai bàn tròn, ghế, bóng của chúng | Vườn Hồ gói Gọn (`canh-gon`) | Không còn dấu vết đồ đã xoá; cỏ, lối đá, lan can liền mạch; phần còn lại không xê dịch so với hình gốc |
+| 2. Cổng tròn khung vàng, hoa trắng | Một cổng cưới rời, nền một màu để tách | Vòng tròn kim loại màu vàng đồng trên đế thấp; một cụm hoa hồng trắng, lan trắng, lá bạch đàn, cỏ lau ở góc dưới trái và một cụm nhỏ ở góc trên phải | Chữ, người, mặt đất, cảnh nền | Vườn Hồ gói Đủ (`goc-du`): thay cổng hoa hồng đúng chỗ cũ để giữ góc nhìn, cỡ và nét vẽ | Tách nền sạch, không viền màu; đặt lên tấm 1 thì chân cổng nằm đúng lối đá và cỡ khớp với cặp đôi; mã đổi được hoa sang ít nhất 2 tông khác mà khung vàng không đổi màu |
+| 3. Bộ bàn dài gỗ mộc | Một bộ bàn ghế rời, nền một màu để tách | Bàn dài gỗ sáng màu đặt dọc theo lối đi, khăn chạy bàn vải lanh màu kem, 8 ghế gỗ lưng chéo, bát đĩa, ly | Hoa bàn, nến (là lớp riêng về sau), người, mặt đất | Vườn Hồ gói Gọn (`canh-gon`): thay bàn tròn bên trái đúng chỗ cũ | Tách nền sạch; ghế đúng cỡ so với nhân vật; đặt lên tấm 1 trông như đứng trên cỏ (bóng chân do mã vẽ); lật gương bằng mã cho bên phải vẫn hợp |
+
+- **Hoa vẽ màu trắng là có chủ ý:** trắng là màu gốc dễ nhuộm nhất, mã nhân màu là ra tông khác. Khăn bàn màu kem cũng vậy.
+- **Nền tách dùng màu xanh dương thuần:** hoa lá có nhiều xanh lá nên không dùng nền xanh lá như nhân vật.
+- **Việc mã làm, không tốn lượt:** tách nền, đặt vào điểm neo, bóng chân, lật gương, đổi tông hoa và tông khăn, chỉnh sáng theo cảnh.
+- **Thứ tự:** vẽ tấm 1 trước và tự đo. Đạt thì vẽ tấm 2 và 3, soát xong mới gửi cả ba một lần. Không đạt thì sửa từng chỗ trên hình đã có.
+- **Giới hạn:** tối đa 6 lượt cho cả bước thử (3 tấm và tối đa 3 lượt sửa), khoảng 1,4% hạn mức tháng. Hết 6 lượt mà chưa đạt thì dừng và báo.
+- **Kết quả gửi xem:** một màn thử trong `game/lab/xuong/`: nền trống Vườn Hồ, cổng và bàn mới, đổi được tông hoa và tông khăn, có cặp đôi đứng trong cảnh; kèm số đo và những chỗ chưa đạt.
+- **Chưa kiểm được trong 3 tấm này:** dùng lại món rời ở nơi có ánh sáng khác. Việc đó cần nền trống của một nơi thứ hai, là tấm thứ 4 nếu bước thử đạt.
