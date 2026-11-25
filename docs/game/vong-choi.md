@@ -166,3 +166,69 @@ Tất cả khoảng 50 ảnh, tức khoảng 12% gói. Chạy sau 01/12, theo th
 1. Bạn duyệt mục 1 (vòng chơi) và mục 2 (dữ liệu, tên hư cấu, số tạm).
 2. Mình dựng mẫu đồ hoạ 2D (mục 3) bằng mã. Việc này làm được ngay, không cần chờ 01/12.
 3. Bạn chọn thứ tự cảnh (mục 4). Sau 01/12, mình gửi bảng duyệt từng tấm cho cảnh ưu tiên đầu tiên rồi mới vẽ.
+
+## 6. Chương 4 đã dựng thành ván chơi (26/11/2026)
+
+Chủ dự án duyệt vòng chơi (mục 1) và chọn làm chương 4 trước. Bản chơi nằm ở `game/lab/xuong/`. Không dùng lượt Model Studio nào: toàn bộ dùng tranh đã có.
+
+### 6.1 Bảy màn
+
+Người chơi có 200 triệu và một đám cưới 100 khách. Mỗi màn theo nhịp ở mục 1.2.
+
+| Màn | Người chơi làm gì | Điều rút ra |
+|---|---|---|
+| 1. Nơi tổ chức | Chọn 1 trong 6 nơi. Bố chú rể muốn về quê, mẹ cô dâu thích cảnh đẹp. | Không nơi nào vừa lòng cả hai họ |
+| 2. Trang trí | Chọn gói Gọn, Đủ, Trọn; cảnh đổi theo. | Đẹp hơn thì tốn hơn và căng hơn |
+| 3. Người phục vụ | Thuê hoặc không thuê MC, ban nhạc, ảnh và phim. | Mỗi người thêm một lợi ích khác nhau |
+| 4. Mặc cả | Ba lượt đề nghị giảm giá; có thể dời sang ngày thường. | Đòi quá tay thì mất thiện chí |
+| 5. Hợp đồng | Đọc hoặc không đọc chữ nhỏ; chọn ký quỹ hay trả thẳng; thuê hay không thuê nhà bạt. | Đọc hợp đồng, ký quỹ, phương án dự phòng |
+| 6. Ngày cưới | Xử lý sự cố thời tiết; có thể có người phục vụ báo huỷ. | Quyết định trước đó mở hoặc đóng lối thoát |
+| 7. Tổng kết | Nhận tiền mừng, xem bảng chi tiêu và kết cục. | Nhìn lại cả chuỗi quyết định |
+
+### 6.2 Luật chơi (mọi số là số tạm)
+
+Giá lấy trong cột "số tạm cho bản chơi thử" của `gia-tham-khao.md`. Điểm cộng trừ là do mình đặt để chơi thử, chưa cân bằng với người chơi thật.
+
+- **Giá:**
+  - sân vườn 140, nấu tại nhà ở quê 40 (cho 100 khách);
+  - gói trang trí 4, 9, 15;
+  - MC 3, ban nhạc 6, ảnh và phim 9;
+  - nhà bạt dự phòng 8.
+- **Lòng hai họ:** nơi ở quê cộng nhiều cho nhà trai, nơi có cảnh cộng nhiều cho nhà gái. Gói Gọn trừ cả hai, gói Trọn cộng cả hai. Dời sang ngày thường trừ cả hai.
+- **Mặc cả:**
+  - Nhà cung cấp có một mức giảm tối đa mà người chơi không thấy: 5–9% tuỳ giá trị đơn, thêm 6% nếu dời sang ngày thường.
+  - Đề nghị trong mức đó thì được. Đề nghị quá thì bị trả giá thấp hơn, mất một phần thiện chí và tăng Căng thẳng.
+  - Sau ba lượt là giá cuối.
+- **Hợp đồng:**
+  - Phần chữ nhỏ có điều khoản phí phục vụ 5%. Đọc thì thấy và xin bỏ được. Không đọc thì bị tính ở màn tổng kết.
+  - Trả thẳng được giảm 3%. Ký quỹ giữ nguyên giá.
+- **Sự cố:**
+  - Thời tiết: xác suất 70%, loại theo nơi tổ chức (mưa, gió, nắng, sương). Có nhà bạt hoặc có đội trang trí trực (gói Đủ, Trọn) thì mở thêm cách xử lý tốt.
+  - Người phục vụ báo huỷ: xác suất 15%, cộng 20% cho mỗi phần thiện chí đã mất. Ký quỹ thì được hoàn đủ; trả thẳng thì mất 30% tiền cọc.
+- **Tiền mừng:** 0,4 triệu mỗi khách ở quê, 0,7 ở nơi khác, nhân hệ số theo lòng hai họ.
+- **Sáu kết cục**, xét theo thứ tự:
+  1. Trọn vẹn đôi đường.
+  2. Rình rang mà rỗng ví.
+  3. Ấm cúng vừa túi tiền.
+  4. Sóng gió vẫn nắm tay.
+  5. Đám cưới của hai đứa mình.
+  6. Còn nhiều điều để học.
+- **Kiểm:** đã duyệt 36.864 tổ hợp lựa chọn bằng máy; cả sáu kết cục đều tới được.
+- **Sổ lưu niệm:** ghi những nơi đã thử và kết cục đã mở, để người chơi muốn chơi lại.
+
+### 6.3 Giao diện theo "Vườn kính"
+
+Chủ dự án nhận xét giao diện cũ chưa đẹp và muốn giống trang chủ. Bản mới dùng lại bảng màu, phông chữ và công thức kính của `theme.css`:
+
+- **Nền:** cảnh đang chọn, đã làm mờ, phủ cả trang. Đó là ảnh tĩnh nên tấm kính lớn không cần `backdrop-filter` (cùng ý với "kính dựng sẵn" của trang chủ).
+- **Ba cấp kính:** tấm (bảng màn chơi, chỉ số), thẻ (lựa chọn, lời thoại), giọt (thanh trên cùng, nút).
+- **Sân khấu:** cửa sổ nét nhìn vào cảnh. Ở màn mở đầu và tổng kết trên máy tính, sân khấu cao gần hết cột.
+- **Lời thoại:** người thân và nhà cung cấp dùng biểu tượng; cô dâu, chú rể dùng chính hình nhân vật của người chơi.
+- **Kế hoạch của hai bạn:** trên máy tính, một bảng dưới sân khấu tóm tắt các quyết định đã chốt.
+
+### 6.4 Chưa làm
+
+- Chưa có hình bố mẹ và nhà cung cấp (đang dùng biểu tượng). Cần vẽ sau 01/12.
+- Mỗi hạng mục mới có một nhà cung cấp; mục 2.4 dự kiến 2–3.
+- Chưa có âm thanh.
+- Chưa thử trên điện thoại thật và chưa chơi thử với người ngoài.
