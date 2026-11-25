@@ -38,7 +38,9 @@ Bốn ảnh mô hình trả về (`lenh/tt-j1.json`): `nen-ho.png`, `nen-langque
 | Bóng chân | Nướng sẵn vào hình rời, nằm ngay dưới vật nên lật gương vẫn dùng được. |
 | Số đo | Script in ra cỡ, điểm neo và số px mỗi mét; chép vào `TT` trong `index.html` của bản chơi. |
 | Chỉnh sáng theo cảnh | Bản chơi nhân màu món rời với một hệ số riêng của từng nơi (`sang` trong `LOP`). Hệ số là tỉ lệ màu khăn trắng của nơi đó so với Vườn Hồ, đo trên tranh gốc. |
-| Hoạ tiết khăn (thử 25/11) | `python3 hoa_tiet.py` trong cùng thư mục, cạnh `trang_tri.py`. Mỗi điểm trên khăn chạy bàn có toạ độ vải (dọc, ngang, mét) theo phối cảnh, đo tay trên tấm bàn dài: hai mép khăn, chỗ gập, các đĩa đè lên mép khăn. Hoạ tiết sinh theo toạ độ đó rồi nhuộm bằng công thức đổi tông. Ra `khan-hoatiet.jpg` với 8 mặt vải. 0 lượt vẽ. |
+| Hoạ tiết khăn (thử 25/11) | `python3 hoa_tiet.py` trong cùng thư mục, cạnh `trang_tri.py` và `hoa_van.py` (các hoạ tiết dùng chung). Mỗi điểm trên khăn chạy bàn có toạ độ vải (dọc, ngang, mét) theo phối cảnh, đo tay trên tấm bàn dài: hai mép khăn, chỗ gập, các đĩa đè lên mép khăn. Hoạ tiết sinh theo toạ độ đó rồi nhuộm bằng công thức đổi tông. Ra `khan-hoatiet.jpg` với 8 mặt vải. 0 lượt vẽ. |
+| Khăn nhiều lớp (thử 25/11) | `python3 khan_lop.py` → `khan-lop.jpg`. Đầu vào là `mau/ban-tron-gon.webp`: bàn tròn cắt từ ảnh gốc 2736×1520 của cảnh gọn, không nén mất dữ liệu. Mỗi điểm trên khăn được trải phẳng về mặt bàn (phần rủ = vải thừa ra ngoài mép), nên khăn phủ, khăn chạy bàn chỉ là hình phẳng. Mặt nạ khăn tách khỏi ghế bằng các luật và số đo riêng của tấm này; bàn vẽ rời (T8, T9) không cần. |
+| Ghế theo lớp (thử 25/11) | `python3 ghe_lop.py` → `ghe-lop.jpg`, dùng cùng ảnh mẫu. Đổi màu khung, đệm; đai và nơ vẽ bằng mã (kết quả: nơ trông như hình dán, nên nơ phải vẽ). Số đo lưng ghế là của riêng tấm này. |
 
 Kinh nghiệm viết câu lệnh: mô hình không giữ vị trí và cỡ của vật khi được bảo xoá hết phần còn lại (nó vẽ vật to gần kín khung), nên vị trí và cỡ luôn do mã đặt. Lần sau nên yêu cầu phần cần đổi tông (khăn, hoa) màu trắng và đặt trên vật có màu khác hẳn.
 
