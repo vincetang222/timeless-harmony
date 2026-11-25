@@ -675,8 +675,9 @@ Kết quả tốt. Còn một lỗi: khung đen làm nhuỵ hoa gần khung bị
 | Ghế: 4 kiểu vẽ, màu gỗ và kim loại bằng mã | đã thử trên ghế của bàn dài | 2 (đã trừ) | — |
 | Nhiều món trên một tấm | thử ở T2, T3, T7, T8 | khoảng 40 | khác biệt giữa hai cột của mục 7 |
 | Bàn dài nối từ mô-đun, ghế rời quanh bàn | thử ở T7, T8, T9 | — | một bộ hình cho mọi cỡ bàn |
-| Bản đêm bằng mã: tô tối nền trống, thêm đèn và trời sao | chưa thử, 0 lượt | tới 6 | nếu trông giả mới vẽ (T6) |
-| Khung kim loại đơn giản vẽ bằng mã: tròn, lục giác, tam giác, khung ống | chưa thử, 0 lượt | tới 5 | khung tre, sắt rèn, gỗ thì vẫn vẽ |
+| Bản đêm bằng mã: tô tối nền trống, thêm đèn và trời sao | đã thử 25/11 trên Vườn Hồ (`dem_ma.py`), chờ chủ dự án xem | tới 6 | không xê dịch cảnh; mây giữ khối, sao, đèn lan can, đèn làng xa có vệt phản chiếu. Nếu trông giả mới vẽ (T6) |
+| Khung kim loại đơn giản vẽ bằng mã: tròn, lục giác, tam giác, khung ống | đã thử 25/11 (`khung_ma.py`), chờ chủ dự án xem | tới 5 | ống có viền mực, vệt sáng, vệt tối, nét hơi rung, vân giấy; đặt đúng thước phối cảnh. Khung tre, sắt rèn, gỗ thì vẫn vẽ |
+| Ghế, đồ bàn dựng 3D rồi vẽ nét mực (Blender chạy trên máy làm việc, không cần card đồ hoạ) | đã thử 25/11: ghế chiavari 8 góc (`ghe_3d.py`), chờ chủ dự án xem | ghế: 4 kiểu × 8 góc (4 tấm); đồ bàn cận cảnh (đĩa, ly, dao nĩa, bộ Việt): khoảng 3 tấm | 8 góc khớp nhau tuyệt đối; mặt nạ đệm, khung có sẵn, không khoanh tay. Nét đều và sạch hơn tranh vẽ tay. Khăn rủ, nơ, hoa, khăn ăn gấp vẫn vẽ |
 | Lấy món từ 18 tranh cũ bằng cách trừ nền trống: chậu hoa, dây đèn, đèn lồng, cổng lá dừa, cổng rạp đỏ | chưa thử, 0 lượt | khoảng 3 | mép có thể cần sửa tay |
 | Cảnh dùng chung phòng: một phòng khách cho C4, C7, C20; một bàn thờ cho C15, C17; đồ đạc là lớp rời | chưa thử | khoảng 6 | như trang trí theo lớp |
 | Lật gương, chỉnh sáng theo cảnh, dùng lại món ở mọi nơi | đã thử | — | đang dùng |
@@ -687,15 +688,17 @@ Tháng 11 còn khoảng 20 tấm (ước lượng). Đợt này dùng tối đa 
 
 | Tấm | Ai hoặc vật gì | Tư thế, trang phục | Có gì | Không có gì | Sửa từ hình nào | Đạt khi |
 |---|---|---|---|---|---|---|
-| T1. Khung lục giác trần | khung cổng | đứng thẳng, nhìn chính diện | khung lục giác kim loại đen mờ, chân đế phẳng | hoa, lá, vải, người, đất | `cong-tron.png` (giữ nét vẽ, góc nhìn, nền xanh) | tách nền sạch dù khung mảnh; không méo |
+| T1. Khung lục giác trần (có thể thay bằng mã, đã thử 25/11) | khung cổng | đứng thẳng, nhìn chính diện | khung lục giác kim loại đen mờ, chân đế phẳng | hoa, lá, vải, người, đất | `cong-tron.png` (giữ nét vẽ, góc nhìn, nền xanh) | tách nền sạch dù khung mảnh; không méo |
 | T2. Cụm mẫu đơn | 4 cụm hoa rời | — | cụm góc lớn, dải rủ dài, cụm nhỏ tròn, cụm chân đế; mẫu đơn hồng nhạt, lá bạch đàn; các cụm cách xa nhau | khung, cuống lơ thơ, người | `cong-tron.png` (thay cổng bằng 4 cụm hoa) | mã cắt được 4 cụm; gắn lên khung T1 và khung tròn trông như cắm thật; nhuộm được tông |
 | T3. Hoa bàn 6 kiểu | 6 món, lưới 3 × 2 | góc nhìn hơi cao như bàn tiệc | thấp tròn, cao trong bình, nến và bạch đàn, cam quýt và lá, đèn lồng nhỏ, chân nến đồng | bàn, khăn, người | `ban-dai.png` (giữ góc nhìn, cỡ) | mã cắt được ít nhất 5/6 món; cùng góc nhìn; đặt lên bàn dài và bàn tròn đúng cỡ |
 | T4. Tứ tấu đàn dây | 4 nhạc công: 2 violin, 1 viola, 1 cello; 2 nam, 2 nữ | ngồi ghế, đang chơi; nam vest đen, nữ đầm đen dài | 4 ghế, 4 cây đàn, giá nhạc | đất, người khác | một tấm mẫu ghép sẵn bằng mã: ban nhạc (`ban-nhac-b.webp`) và cặp đôi đặt trên nền xanh dương phẳng (công cụ vẽ chỉ nhận một hình mẫu, và hình có nền trong suốt sẽ hiện nền đen) | nét giống ban nhạc và cặp đôi; tay cầm đàn đúng; tách nền sạch; đặt vào Vườn Hồ đúng cỡ |
 | T5. Sảnh tiệc có màn LED | nền trống trong nhà | — | sảnh tiệc, lối đi giữa, sân khấu thấp phía sau, màn LED lớn **đen trơn**, chùm đèn pha lê, sàn bóng | bàn ghế, người, hoa | `nen-ho.png` (giữ góc máy và vị trí lối đi) | lối đi và đường chân trời gần như cũ để dùng chung thước phối cảnh; màn LED là hình chữ nhật sạch, mã đo được 4 góc |
-| T6. Vườn Hồ ban đêm | nền trống, đêm | — | trời xanh thẫm có sao, đèn lan can sáng ấm, mặt hồ phản chiếu | trăng to, người, đồ trang trí | `nen-ho.png` | cảnh xê dịch không quá 1%; trời đủ tối cho pháo hoa bằng mã; đo được hệ số chỉnh sáng cho món rời |
-| T7. Ghế chiavari 8 góc nhìn | 8 chiếc ghế cùng kiểu, lưới 4 × 2, cách xa nhau | trước, sau, trái, phải, bốn góc chéo; cùng cỡ; góc nhìn hơi cao như bàn tiệc | ghế chiavari trắng, đệm kem | bàn, người, đất | `ban-dai.png` (thay bộ bàn bằng 8 chiếc ghế) | mã cắt được 8 ghế; đặt quanh bàn T8 trông như thật, ghế sau bị bàn che đúng thứ tự |
+| T6. Vườn Hồ ban đêm (có thể thay bằng mã, đã thử 25/11) | nền trống, đêm | — | trời xanh thẫm có sao, đèn lan can sáng ấm, mặt hồ phản chiếu | trăng to, người, đồ trang trí | `nen-ho.png` | cảnh xê dịch không quá 1%; trời đủ tối cho pháo hoa bằng mã; đo được hệ số chỉnh sáng cho món rời |
+| T7. Ghế chiavari 8 góc nhìn (có thể thay bằng 3D, đã thử 25/11) | 8 chiếc ghế cùng kiểu, lưới 4 × 2, cách xa nhau | trước, sau, trái, phải, bốn góc chéo; cùng cỡ; góc nhìn hơi cao như bàn tiệc | ghế chiavari trắng, đệm kem | bàn, người, đất | `ban-dai.png` (thay bộ bàn bằng 8 chiếc ghế) | mã cắt được 8 ghế; đặt quanh bàn T8 trông như thật, ghế sau bị bàn che đúng thứ tự |
 | T8. Bàn tròn trần 3 cỡ | 3 bàn tròn: 6, 10, 12 người | góc nhìn hơi cao | khăn trắng phủ chấm đất | ghế, hoa, đồ ăn, người | `ban-dai.png` | mã cắt được 3 bàn; mặt bàn đúng góc nhìn; tỉ lệ cỡ giữa ba bàn hợp lý; ghép với ghế T7 ra bàn 6, 10, 12 người |
 | T9. Bàn dài mô-đun chạy ngang (đổi ngày 25/11, đã duyệt) | 3 mảnh: đầu trái, đoạn giữa, đầu phải | nhìn chính diện, hơi cao; bàn chạy ngang khung hình | khăn trắng phủ chấm đất, mặt bàn trống; bát đĩa, ly đặt cách xa mép khăn | ghế, khăn chạy bàn, hoa, người, đất | `ban-dai.png` | mã nối thành bàn 8, 20, 40 người không lộ mối nối; mã phủ được khăn phủ, khăn chạy bàn và đổi màu, hoạ tiết khăn nền |
+
+**Nếu chủ dự án nhận ba bản làm bằng mã** (khung cổng, bản đêm, ghế 3D), Đợt 0 bỏ T1, T6, T7, còn 6 tấm (T2, T3, T4, T5, T8, T9) và 3 lượt sửa, tối đa 9 tấm. T2 khi đó gắn cụm hoa lên khung lục giác vẽ bằng mã.
 
 **Thứ tự:** T1 rồi T2 (cặp này quyết định có 13.000 hay 320 cách phối cổng), rồi T7, T8, T9 (quyết định bàn ghế có lắp tự do được không), sau đó T3, T4, T5, T6. Tấm nào không đạt thì sửa từng chỗ trên chính tấm đó, tối đa 3 lượt sửa cho cả đợt.
 
@@ -726,10 +729,11 @@ Bốn tấm thử cho ghế và màn cận cảnh, chạy đầu tháng 12, trư
 ## 10. Cần chủ dự án quyết
 
 1. Danh sách bộ phong cách (mục 3.9) và tiết mục (mục 6): thêm, bớt hay giữ nguyên?
-2. Có chạy Đợt 0 (T1–T9 ở mục 8) ngay tháng này không?
-3. Thứ tự tháng 12 ở mục 7: trang trí trước, hay tóc và trang phục trước?
-4. Người Việt nhìn hạc giấy ở tiệc cưới thế nào: nên có trong danh mục, có kèm lưu ý, hay bỏ?
-5. Có mở thêm `www.dienmayxanh.com`, `www.sapo.vn`, `www.brandsvietnam.com` để đọc trọn cách bày bàn kiểu Việt không? Hiện mới có đoạn trích.
+2. Ba bản làm bằng mã ngày 25/11 (khung cổng, Vườn Hồ ban đêm, ghế 3D 8 góc) có dùng được không? Nếu được, Đợt 0 bỏ T1, T6, T7.
+3. Có chạy Đợt 0 ngay tháng này không?
+4. Thứ tự tháng 12 ở mục 7: trang trí trước, hay tóc và trang phục trước?
+5. Người Việt nhìn hạc giấy ở tiệc cưới thế nào: nên có trong danh mục, có kèm lưu ý, hay bỏ?
+6. Có mở thêm `www.dienmayxanh.com`, `www.sapo.vn`, `www.brandsvietnam.com` để đọc trọn cách bày bàn kiểu Việt không? Hiện mới có đoạn trích.
 
 Đã xong (25/11):
 - Chủ dự án chọn thêm màn cận cảnh bàn.
