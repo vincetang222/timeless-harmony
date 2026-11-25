@@ -56,9 +56,11 @@ def p_ren(u, v, nen=(196, 140, 134), ren=(252, 250, 246)):  # ren trắng phủ 
 
 
 def p_kimsa(u, v, goc=(214, 182, 120)):  # kim sa vàng champagne: mỗi hạt bắt sáng khác nhau, vài hạt loé
-    c = 0.006; ui = np.floor(u / c); vi = np.floor(v / c + 0.5 * (ui % 2)); h = hx(ui, vi)
-    t = mau(*goc)[None] * (0.62 + 0.62 * h)[..., None]
-    return t, (h > 0.965).astype(np.float32)
+    c = 0.006; ui = np.floor(u / c); vv = v / c + 0.5 * (ui % 2); vi = np.floor(vv); h = hx(ui, vi)
+    du = fr(u / c) - 0.5; dv = vv - vi - 0.5; r = np.hypot(du, dv)
+    hat = np.clip((0.5 - r) / 0.08, 0, 1)                     # hạt tròn, kẽ giữa các hạt tối hơn (nhìn gần mới thấy)
+    t = mau(*goc)[None] * ((0.62 + 0.62 * h) * (0.55 + 0.45 * hat))[..., None]
+    return t, ((h > 0.965) * hat * (r < 0.25)).astype(np.float32)
 
 
 def p_loang(u, v):  # nhuộm loang: đậm ở đầu rủ, nhạt dần về xa
