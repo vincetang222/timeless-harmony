@@ -287,9 +287,7 @@ Giới hạn đã thấy:
   - quà ở mỗi chỗ: nến thơm, sô-cô-la, sen đá nhỏ, gói hạt giống;
   - nơ trên chân ly, trên dao nĩa.
 
-**Nhỏ quá thì không thấy trong cảnh.** Ở cỡ cảnh, khăn ăn gấp, thiệp tên, sáp niêm phong, dao nĩa và đĩa lót chỉ còn vài điểm ảnh. Có hai cách, cần chủ dự án chọn:
-1. Những món này chỉ là dòng dữ liệu có hình thẻ và chỉ số, không có hình trong cảnh. 0 tấm.
-2. Thêm một **cận cảnh một chỗ ngồi** (đĩa, khăn ăn, ly, dao nĩa, thiệp), vẽ một lần, để người chơi xem món mình chọn. Đĩa lót, ly, dao nĩa đổi màu bằng mã; 12 kiểu khăn ăn gấp vẽ chung một tấm. Khoảng 2 tấm.
+**Nhỏ quá thì không thấy trong cảnh, nên thêm màn cận cảnh bàn.** Ở cỡ cảnh, khăn ăn gấp, thiệp tên, dao nĩa và đĩa lót chỉ còn vài điểm ảnh. Chủ dự án chọn (25/11): thêm **một góc nhìn cận cảnh vào bàn** để cặp đôi xem rõ và ra quyết định. Kế hoạch ở phần "Màn cận cảnh bàn" bên dưới.
 
 Món đủ lớn để thấy trong cảnh (nến, chân nến, đèn lồng nhỏ, quạt giấy, quả cầu tổ ong, chữ Hỷ cắt giấy, trái cây) đi cùng hoa bàn ở mục 3.5.
 
@@ -321,7 +319,7 @@ Món đủ lớn để thấy trong cảnh (nến, chân nến, đèn lồng nh�
 | Nến và giấy trên bàn | 6 kiểu nến và chân nến; quạt giấy, quả cầu tổ ong, chữ Hỷ, đèn lồng giấy nhỏ, hoa giấy | C |
 | Ghế cặp đôi | ghế mây lưng công, ghế vua – hoàng hậu, ghế Louis; góc trước chéo | D |
 
-Cộng 9 tấm nếu vẽ được nhiều món trên một tấm (T2, T3, T7, T8). Nếu không được thì khoảng 19 tấm, và phải bớt số kiểu nơ và số món gắn ghế. Cận cảnh chỗ ngồi thêm 2 tấm nếu chủ dự án chọn cách 2.
+Cộng 9 tấm nếu vẽ được nhiều món trên một tấm (T2, T3, T7, T8). Nếu không được thì khoảng 19 tấm, và phải bớt số kiểu nơ và số món gắn ghế. Màn cận cảnh bàn tính riêng (phần dưới).
 
 #### Khăn nhiều lớp (thử ngày 25/11, 0 lượt)
 
@@ -609,7 +607,7 @@ Kết quả tốt. Còn một lỗi: khung đen làm nhuỵ hoa gần khung bị
 
 ## 8. Đợt 0: 9 tấm thử, chạy được ngay tháng này
 
-Tháng 11 còn khoảng 20 tấm. Đợt này dùng tối đa 12 tấm (9 tấm và 3 lượt sửa), khoảng 3% gói; nếu duyệt thêm T10 và T11 thì tối đa 14 tấm, vẫn trong khoảng 20 tấm còn lại của tháng 11. T10 và T11 thử những món đã tính trong tháng 12, nên không cộng thêm vào tháng 12. Mỗi tấm vẽ trên nền xanh dương phẳng, trừ T5 và T6 là cảnh.
+Tháng 11 còn khoảng 20 tấm. Đợt này dùng tối đa 12 tấm (9 tấm và 3 lượt sửa), khoảng 3% gói; nếu duyệt thêm T10 và T11 thì tối đa 14 tấm; thêm cả T12 và T13 thì tối đa 16 tấm. Số tấm còn lại của tháng 11 (khoảng 20) là ước lượng, nên nếu muốn chừa dư, T12 và T13 dời sang đầu tháng 12. T10 đến T13 thử những món đã tính trong tháng 12, nên không cộng thêm vào tháng 12. Mỗi tấm vẽ trên nền xanh dương phẳng, trừ T5 và T6 là cảnh.
 
 | Tấm | Ai hoặc vật gì | Tư thế, trang phục | Có gì | Không có gì | Sửa từ hình nào | Đạt khi |
 |---|---|---|---|---|---|---|
@@ -624,8 +622,10 @@ Tháng 11 còn khoảng 20 tấm. Đợt này dùng tối đa 12 tấm (9 tấm 
 | T9. Bàn dài mô-đun chạy ngang (đề xuất đổi ngày 25/11) | 3 mảnh: đầu trái, đoạn giữa, đầu phải | nhìn chính diện, hơi cao; bàn chạy ngang khung hình | khăn trắng phủ chấm đất, mặt bàn trống; bát đĩa, ly đặt cách xa mép khăn | ghế, khăn chạy bàn, hoa, người, đất | `ban-dai.png` | mã nối thành bàn 8, 20, 40 người không lộ mối nối; mã phủ được khăn phủ, khăn chạy bàn và đổi màu, hoạ tiết khăn nền |
 | T10. Nơ ghế 8 kiểu (đề xuất thêm, chờ duyệt) | 8 chiếc nơ rời, lưới 4 × 2, cách xa nhau; chỉ gồm nút nơ và đuôi, dải vải quấn lưng ghế do mã vẽ | nhìn từ sau, góc hơi cao như bàn tiệc | nơ satin trắng: nơ bướm, nút đơn, hoa hồng, rủ dọc, bắt chéo, đai có khoá cài, nơ đuôi dài, nơ to | ghế, người, đất | `ban-dai.png` (giữ nét vẽ) | mã cắt được 8 nơ; gắn lên lưng ghế T7 nhìn từ sau trông như buộc thật; nhuộm được màu, đổi được chất (satin, voan, nhung) |
 | T11. Món gắn ghế lối đi 8 món (đề xuất thêm, chờ duyệt) | 8 món rời, lưới 4 × 2, cách xa nhau | nhìn từ sau chéo, góc hơi cao | cụm hoa, bó lá bạch đàn buộc ruy băng, phễu giấy đựng cánh hoa, vòng hoa tròn, quạt giấy tròn, bảng tên gỗ (để trống chữ), nón lá nhỏ buộc ruy băng, bó búp sen; màu sáng | ghế, chữ, người, đất | `ban-dai.png` (giữ nét vẽ) | mã cắt được 8 món; gắn lên lưng ghế T7 góc sau chéo trông như buộc thật; nhuộm được ruy băng và hoa |
+| T12. Cận cảnh bàn tròn, mặt bàn trống (đề xuất thêm, chờ duyệt) | nền cho màn cận cảnh | người đứng ngay sau ghế nhìn xuống chừng 40°; một chỗ ngồi ở chính giữa khung, mép bàn cong chạy ngang phía dưới; chỗ ngồi hai bên bị mép khung cắt; giữa bàn ở mép trên, mờ | khăn trắng phủ, mặt bàn trống, nếp khăn rủ ở mép trước; vườn mờ phía sau | ghế (lưng ghế nằm dưới khung hình), đĩa, ly, hoa, người | tranh gốc 2736×1520 của cảnh gọn (giữ nét vẽ, khăn trắng, ánh sáng) | mép bàn là đường cong sạch, đo được; mặt khăn phẳng đủ để đặt đồ; nền mờ không lấn vào bàn |
+| T13. Bộ đồ bàn thử ở góc cận (đề xuất thêm, chờ duyệt; chạy sau T12) | 6 món rời, lưới 3 × 2, cách xa nhau | đúng góc nhìn của T12 | đĩa lót viền hạt, đĩa sứ trắng, ly chân cao, ly flute, bộ dao nĩa, khăn ăn gấp hình quạt; tất cả màu sáng | bàn, khăn, người | T12 (giữ góc nhìn, thay bàn bằng nền xanh dương phẳng) | mã cắt được 6 món; đặt lên T12 đúng cỡ, đúng góc; nhuộm được viền đĩa, màu ly, kim loại |
 
-**Thứ tự:** T1 rồi T2 (cặp này quyết định có 13.000 hay 320 cách phối cổng), rồi T7, T8, T9 (quyết định bàn ghế có lắp tự do được không), rồi T10, T11 nếu được duyệt, sau đó T3, T4, T5, T6. Tấm nào không đạt thì sửa từng chỗ trên chính tấm đó, tối đa 3 lượt sửa cho cả đợt.
+**Thứ tự:** T1 rồi T2 (cặp này quyết định có 13.000 hay 320 cách phối cổng), rồi T7, T8, T9 (quyết định bàn ghế có lắp tự do được không), rồi T10, T11 nếu được duyệt, sau đó T3, T4, T5, T6, cuối cùng T12 rồi T13 nếu được duyệt. Tấm nào không đạt thì sửa từng chỗ trên chính tấm đó, tối đa 3 lượt sửa cho cả đợt.
 
 ## 9. Việc làm được ngay, không tốn lượt
 
@@ -635,6 +635,7 @@ Tháng 11 còn khoảng 20 tấm. Đợt này dùng tối đa 12 tấm (9 tấm 
 - Dựng bộ xếp bàn bằng mã: 13 cách xếp, tính số bàn theo số khách, đo vùng đặt bàn và sức chứa của Vườn Hồ và Sân nhà quê, sơ đồ nhìn từ trên xuống. Chạy thử trước với bàn dài đã có.
 - Đưa hoạ tiết khăn vào màn thử trang trí theo lớp: ảnh toạ độ cho bàn dài, bộ chọn mặt vải (ca rô, sọc, ren, kim sa…) đi cùng bộ chọn màu.
 - Khi có T8, T9: đưa khăn nhiều lớp (nền, phủ, chạy bàn) và ghế theo lớp (khung, đệm, đai) vào màn thử, với bộ chọn từng lớp.
+- Dựng khung màn cận cảnh trước khi có tranh: cùng một bộ lựa chọn cho cảnh xa và cận cảnh, nút "Xem gần", và chế độ so sánh hai phương án đặt cạnh nhau. Dùng hình tạm cho tới khi có T12, T13.
 - Dựng màn chương trình: dòng thời gian tiết mục theo `spec.md` mục 4. Màn này phải có trước khi vẽ nhiều người biểu diễn; nếu không, hình tiết mục chưa có chỗ dùng. Vì vậy tháng 12 chỉ vẽ trước vài tiết mục mỗi nhóm.
 
 ## 10. Cần chủ dự án quyết
