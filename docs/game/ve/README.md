@@ -27,4 +27,17 @@ Chạy theo thứ tự: `luu_prep.py` → `may_moi.py` → `dong_goi.py <thư m�
 | `may_moi.py` | Xoá lông mày gốc trên 9 đầu chú rể Vuốt ngược; xuất lớp nét `mayA`. Phần thử cho cô dâu (`mayS`) không dùng, ghi chú trong tệp. |
 | `dong_goi.py` | Gom mảnh mắt, lông mày thành tấm ghép `manh-*.webp`; dựng tấm cỡ nhỏ `nho-*.webp`; cắt hình thẻ địa điểm `anh/t-*.webp`; thu nhỏ hình người phục vụ; ghi `manh.json`. |
 
+### Trang trí theo lớp (bước thử ở Vườn Hồ)
+
+Ba ảnh mô hình trả về (`lenh/tt-j1.json`): `nen-ho.png` (nền trống), `cong-tron.png` và `ban-dai.png` (hình rời trên nền xanh dương). Chạy `python3 trang_tri.py <thư mục bản chơi>` trong thư mục chứa ba ảnh đó.
+
+| Việc | Cách làm |
+|---|---|
+| Tách nền | Alpha theo khoảng cách màu tới màu nền thật; gỡ màu nền khỏi viền; gỡ ánh xanh dương trên toàn vật (mô hình vẽ lá ngoài rìa nhuốm màu nền). Đồ có lá thì không dùng nền xanh lá. |
+| Mặt nạ đổi tông | Hoa: tự động, theo màu và mật độ (cỏ lau, khung vàng không bị nhuộm). Khăn bàn: khoanh tay một đa giác cho mỗi kiểu bàn, vì gỗ sáng, đĩa và khăn có màu quá gần nhau. |
+| Bóng chân | Nướng sẵn vào hình rời, nằm ngay dưới vật nên lật gương vẫn dùng được. |
+| Số đo | Script in ra cỡ, điểm neo và số px mỗi mét; chép vào `TT` trong `index.html` của bản chơi. |
+
+Kinh nghiệm viết câu lệnh: mô hình không giữ vị trí và cỡ của vật khi được bảo xoá hết phần còn lại (nó vẽ vật to gần kín khung), nên vị trí và cỡ luôn do mã đặt. Lần sau nên yêu cầu phần cần đổi tông (khăn, hoa) màu trắng và đặt trên vật có màu khác hẳn.
+
 Quy tắc dùng lượt vẽ nằm ở `../canh-ngoai-troi.md`, mục 4. Mỗi ảnh tốn khoảng 0,24% gói tháng (đo ngày 24/11/2026).

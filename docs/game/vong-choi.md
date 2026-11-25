@@ -264,9 +264,9 @@ Chủ dự án nhận xét bản 6.3 chiếm nhiều diện tích và nhiều ch
 
 **Bước thử trước khi cam kết.** 3 tấm cho một nơi (nền trống Vườn Hồ, một cổng kiểu khác, một bộ bàn), theo đúng quy tắc: bảng duyệt trước, vẽ thử một tấm trước. Chưa vẽ gì khi chưa được duyệt.
 
-### 7.1 Bảng duyệt bước thử 3 tấm (25/11/2026, chờ chủ dự án duyệt bảng)
+### 7.1 Bảng duyệt bước thử 3 tấm (25/11/2026, chủ dự án đã duyệt)
 
-Chủ dự án đã duyệt hướng trang trí theo lớp. Bảng dưới đây là nội dung từng tấm; chưa tấm nào được vẽ.
+Chủ dự án đã duyệt hướng trang trí theo lớp và duyệt bảng dưới đây. Kết quả ở mục 7.2.
 
 | Tấm | Vẽ gì | Có gì | Không có gì | Sửa từ hình | Đạt khi |
 |---|---|---|---|---|---|
@@ -281,3 +281,26 @@ Chủ dự án đã duyệt hướng trang trí theo lớp. Bảng dưới đây
 - **Giới hạn:** tối đa 6 lượt cho cả bước thử (3 tấm và tối đa 3 lượt sửa), khoảng 1,4% hạn mức tháng. Hết 6 lượt mà chưa đạt thì dừng và báo.
 - **Kết quả gửi xem:** một màn thử trong `game/lab/xuong/`: nền trống Vườn Hồ, cổng và bàn mới, đổi được tông hoa và tông khăn, có cặp đôi đứng trong cảnh; kèm số đo và những chỗ chưa đạt.
 - **Chưa kiểm được trong 3 tấm này:** dùng lại món rời ở nơi có ánh sáng khác. Việc đó cần nền trống của một nơi thứ hai, là tấm thứ 4 nếu bước thử đạt.
+
+### 7.2 Kết quả bước thử (25/11/2026)
+
+Dùng 3 lượt vẽ cho 3 tấm, không lượt sửa nào (khoảng 0,7% hạn mức tháng). Màn thử nằm trong `game/lab/xuong/`: màn mở đầu, nút "Thử trang trí theo lớp (Vườn Hồ)".
+
+| Tấm | Kết quả | Số đo, ghi chú |
+|---|---|---|
+| 1. Nền trống | Đạt | Cổng, bàn ghế và bóng của chúng đã hết; cỏ, lối đá, lan can liền mạch. Cả cảnh lệch xuống khoảng 10 px trên ảnh cao 1520 px (0,7%); lối đá hẹp hơn 28 px ở mép dưới. Chỗ đứng của cặp đôi đã cân lại bằng mã. |
+| 2. Cổng tròn | Đạt | Nền phẳng (độ lệch màu nền khoảng 1/255), tách sạch trên nền sáng và nền tối. Mô hình không giữ vị trí và cỡ cũ mà vẽ cổng to gần kín khung (rộng 1367 px): có lợi cho độ nét, vị trí và cỡ do mã đặt. Lá ngoài rìa bị nhuốm xanh dương của nền, đã gỡ bằng mã. |
+| 3. Bàn dài | Đạt, có sai khác | 10 ghế thay vì 8. Bàn được vẽ chéo góc chứ không song song lối đi; dùng nguyên cho bên phải, lật gương cho bên trái. Vệt tối giữa chân ghế đã xoá bằng mã. |
+
+**Mã làm được gì trên 3 tấm này.** Đặt cổng và bàn vào điểm neo theo cùng thước phối cảnh với nhân vật (vòng cổng 2,7 m; ghế gần nhất 1 m). Bóng chân. Lật gương bộ bàn. 6 tông hoa và 5 tông khăn, tức 30 cách phối từ một cổng và một bộ bàn. Thêm vào bản chơi khoảng 370 KB, chỉ tải khi mở màn thử.
+
+**Giới hạn đã thấy.**
+
+- Mặt nạ hoa làm tự động. Mặt nạ khăn bàn phải khoanh tay một lần cho mỗi kiểu bàn, vì gỗ sáng, đĩa và khăn có màu quá gần nhau.
+- Tông đỏ đậm còn sót vài chấm kem ở nhuỵ hoa hồng.
+- Bàn bên trái là bản lật gương nên hướng sáng trên bàn cũng bị lật.
+- Phối cảnh trong hình bàn hơi mạnh hơn cảnh.
+- Chưa kiểm việc dùng lại ở nơi có ánh sáng khác (cần nền trống của nơi thứ hai). Mới thử trên Chromium ở 1280 và 390, chưa thử điện thoại thật.
+
+**Cách vẽ lô sau, nếu được duyệt.** Mỗi món một lượt, vẽ rời trên nền một màu, không cần sửa từ cảnh; vị trí và cỡ do mã đặt. Yêu cầu phần cần đổi tông có màu trắng và nằm trên vật có màu khác hẳn để mặt nạ làm tự động được.
+
