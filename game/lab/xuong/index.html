@@ -566,8 +566,8 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
   var PVM = { mc: { ax: 0.8165, ay: 0.7708, hf: 0.751, ar: 0.9209 }, 'ban-nhac': { ax: 0.6967, ay: 0.7708, hf: 0.751, ar: 1.4822 }, 'tho-anh': { ax: 0.8072, ay: 0.7864, hf: 0.7715, ar: 0.9659 } };
   function canhCua(dd) { return DD[dd].canh || dd; } // bộ tranh mà một nơi tổ chức dùng
   function laLop() { return st.man === 'lop'; } // màn thử trang trí theo lớp: nền trống Vườn Hồ, đồ trang trí là hình rời
-  function chanY() { return laLop() ? LOP.Y : canhCua(ddHien()) === 'ho' ? CANH[goiHien()] : 80; }
-  function tamX() { return laLop() ? LOP.X : TAM_CONG[canhCua(ddHien())][goiHien()]; }
+  function chanY() { return laLop() ? LOP[lopHien().noi].Y : canhCua(ddHien()) === 'ho' ? CANH[goiHien()] : 80; }
+  function tamX() { return laLop() ? LOP[lopHien().noi].X : TAM_CONG[canhCua(ddHien())][goiHien()]; }
   function tenNen(dd, goi) { dd = canhCua(dd); return dd === 'ho' ? 'canh-' + goi : 'dd-' + dd + (goi === 'du' ? '' : '-' + goi); }
   function anhNen(dd, goi, nho) { return 'anh/' + tenNen(dd, goi) + (nho ? '-m' : '') + '.webp'; }
   function anhThe(dd, goi) { return 'anh/t-' + tenNen(dd, goi) + '.webp'; }   // hình cắt sẵn cho thẻ chọn (320 px)
@@ -593,19 +593,19 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
   }
   var nenHien = 'nen-a', ntHien = 'nt-a';
   function datNen() { // đổi tranh nền bằng cách mờ dần giữa hai lớp ảnh; nền mờ của cả trang đổi theo
-    var src = laLop() ? 'anh/nen-ho' + (canNho() ? '-m' : '') + '.webp' : anhNen(ddHien(), goiHien(), canNho()), a = $(nenHien);
+    var src = laLop() ? 'anh/' + LOP[lopHien().noi].nen + (canNho() ? '-m' : '') + '.webp' : anhNen(ddHien(), goiHien(), canNho()), a = $(nenHien);
     if (a.getAttribute('src') !== src) {
       if (!a.getAttribute('src')) a.src = src;
       else { var kia = nenHien === 'nen-a' ? 'nen-b' : 'nen-a', b = $(kia);
         b.onload = function () { b.classList.add('hien'); a.classList.remove('hien'); nenHien = kia; };
         b.src = src; if (b.complete && b.naturalWidth) b.onload(); }
     }
-    var mo = 'url(' + (laLop() ? 'anh/t-nen-ho.webp' : anhThe(ddHien(), 'du')) + ')', n = $(ntHien);
+    var mo = 'url(' + (laLop() ? 'anh/t-' + LOP[lopHien().noi].nen + '.webp' : anhThe(ddHien(), 'du')) + ')', n = $(ntHien);
     if (n.dataset.anh !== mo) {
       if (!n.dataset.anh) { n.style.backgroundImage = mo; n.dataset.anh = mo; }
       else { var kia2 = ntHien === 'nt-a' ? 'nt-b' : 'nt-a', m = $(kia2); m.style.backgroundImage = mo; m.dataset.anh = mo; m.classList.add('hien'); n.classList.remove('hien'); ntHien = kia2; }
     }
-    var bc = $('bien-canh'); if (st.dd || laLop()) { bc.innerHTML = ico('ghim') + '<span></span>'; bc.lastChild.textContent = laLop() ? 'Vườn Hồ · nền trống' : DD[st.dd].ten; } else bc.innerHTML = '';
+    var bc = $('bien-canh'); if (st.dd || laLop()) { bc.innerHTML = ico('ghim') + '<span></span>'; bc.lastChild.textContent = laLop() ? LOP[lopHien().noi].ten + ' · nền trống' : DD[st.dd].ten; } else bc.innerHTML = '';
   }
   function datPV() {
     Object.keys(PV).forEach(function (id) {
@@ -869,12 +869,16 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     'cong-tron': { ten: 'Cổng tròn vàng', f: 'anh/tt/cong-tron.webp', mn: 'anh/tt/cong-tron-mn.webp', the: 'anh/tt/t-cong-tron.webp', w: 760, h: 676, pxm: 180.17, ax: 0.5571, ay: 0.9088, goc: [250, 246, 232] },
     'ban-dai': { ten: 'Bàn dài gỗ', f: 'anh/tt/ban-dai.webp', mn: 'anh/tt/ban-dai-mn.webp', the: 'anh/tt/t-ban-dai.webp', w: 898, h: 447, pxm: 292.89, ax: 0.5, ay: 0.8991, goc: [246, 234, 204] }
   };
-  // Chỗ đứng trên nền trống (% khung): cặp đôi, cổng (sau lưng cặp đôi), hai bàn (bên trái là bản lật gương).
-  var LOP = { X: 50.3, Y: 80.6, cong: [50.3, 78.6], ban: [['tt-ban-p', 79, 96, false], ['tt-ban-t', 21.5, 96, true]] };
+  // Mỗi nơi: tấm nền trống và chỗ đứng trên đó (% khung) của cặp đôi, cổng (sau lưng cặp đôi), hai bàn (bên trái là bản lật gương).
+  // Cùng một cổng và một bộ bàn dùng cho mọi nơi.
+  var LOP = {
+    ho: { ten: 'Vườn Hồ', nen: 'nen-ho', X: 50.3, Y: 80.6, cong: [50.3, 78.6], ban: [['tt-ban-p', 79, 96, false], ['tt-ban-t', 21.5, 96, true]] },
+    langque: { ten: 'Sân nhà quê', nen: 'nen-langque', sang: [0.98, 0.905, 0.83], X: 52.8, Y: 80, cong: [52.8, 78], ban: [['tt-ban-p', 81.3, 96, false], ['tt-ban-t', 24.3, 96, true]] }
+  };
   // Tông màu: [khoá, tên, màu nhuộm (null = màu gốc của tấm vẽ), màu ô chọn]
   var TONG_HOA = [['trang', 'Trắng', null, [250, 246, 232]], ['hong', 'Hồng phấn', [255, 198, 208]], ['dao', 'Đào', [255, 204, 168]], ['tim', 'Tím nhạt', [216, 196, 242]], ['vang', 'Vàng bơ', [255, 228, 150]], ['do', 'Đỏ rượu', [184, 40, 62]]];
   var TONG_KHAN = [['kem', 'Kem', null, [246, 234, 204]], ['hong', 'Hồng đất', [236, 178, 170]], ['ngoc', 'Xanh ngọc', [150, 206, 192]], ['reu', 'Xanh rêu', [148, 170, 118]], ['do', 'Đỏ đô', [176, 44, 52]]];
-  function lopHien() { var L = st.lop; if (!L || (L.cong && !TT[L.cong]) || (L.ban && !TT[L.ban])) L = st.lop = { cong: 'cong-tron', hoa: 'trang', ban: 'ban-dai', khan: 'kem' }; return L; }
+  function lopHien() { var L = st.lop; if (!L || !LOP[L.noi] || (L.cong && !TT[L.cong]) || (L.ban && !TT[L.ban])) L = st.lop = { noi: 'ho', cong: 'cong-tron', hoa: 'trang', ban: 'ban-dai', khan: 'kem' }; return L; }
   function tongCua(bo, k) { for (var i = 0; i < bo.length; i++) if (bo[i][0] === k) return bo[i]; return bo[0]; }
   var ttAnh = {};
   function ttTai(id, fn) { // tải hình rời và mặt nạ của nó, một lần
@@ -883,32 +887,37 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     function xong() { if (++a.n < 2) return; a.ok = true; a.cho.forEach(function (f) { f(a); }); a.cho = []; }
     a.hinh.onload = xong; a.mn.onload = xong; a.hinh.src = m.f; a.mn.src = m.mn;
   }
-  function ttVe(cv, id, tong) { // vẽ hình rời vào canvas; có tông thì nhuộm phần nằm trong mặt nạ
-    var m = TT[id], khoa = id + '|' + (tong ? tong.join(',') : ''); cv.dataset.muon = khoa;
+  function ttVe(cv, id, tong, sang) { // vẽ hình rời vào canvas; có tông thì nhuộm phần nằm trong mặt nạ; có `sang` thì chỉnh sáng cả hình theo cảnh
+    var m = TT[id], khoa = id + '|' + (tong ? tong.join(',') : '') + '|' + (sang ? sang.join(',') : ''); cv.dataset.muon = khoa;
     ttTai(id, function (a) {
       if (cv.dataset.muon !== khoa || cv.dataset.khoa === khoa) return;
-      cv.width = m.w; cv.height = m.h; var x = cv.getContext('2d', { willReadFrequently: !!tong }); x.clearRect(0, 0, m.w, m.h); x.drawImage(a.hinh, 0, 0, m.w, m.h);
+      cv.width = m.w; cv.height = m.h; var x = cv.getContext('2d', { willReadFrequently: true }); x.clearRect(0, 0, m.w, m.h); x.drawImage(a.hinh, 0, 0, m.w, m.h);
+      var d = (tong || sang) && x.getImageData(0, 0, m.w, m.h), p = d && d.data, i;
       if (tong) {
         if (!a.dl) { var t = document.createElement('canvas'); t.width = m.w; t.height = m.h; var tx = t.getContext('2d'); tx.drawImage(a.mn, 0, 0, m.w, m.h); a.dl = tx.getImageData(0, 0, m.w, m.h).data; }
         // màu mới = tông × (sáng tối của nét vẽ so với màu gốc)^γ; tông càng đậm thì γ càng lớn để cánh hoa, nếp vải vẫn rõ
-        var d = x.getImageData(0, 0, m.w, m.h), p = d.data, w = a.dl, gam = 1 + (1 - (0.299 * tong[0] + 0.587 * tong[1] + 0.114 * tong[2]) / 255) * 1.6;
+        var w = a.dl, gam = 1 + (1 - (0.299 * tong[0] + 0.587 * tong[1] + 0.114 * tong[2]) / 255) * 1.6;
         var bang = [0, 1, 2].map(function (c) { var b = new Float32Array(256); for (var v = 0; v < 256; v++) b[v] = Math.min(255, Math.pow(Math.min(1.06, v / m.goc[c]), gam) * tong[c]); return b; });
-        for (var i = 0; i < p.length; i += 4) { var k = w[i]; if (!k) continue; k /= 255; p[i] += (bang[0][p[i]] - p[i]) * k; p[i + 1] += (bang[1][p[i + 1]] - p[i + 1]) * k; p[i + 2] += (bang[2][p[i + 2]] - p[i + 2]) * k; }
-        x.putImageData(d, 0, 0);
+        for (i = 0; i < p.length; i += 4) { var k = w[i]; if (!k) continue; k /= 255; p[i] += (bang[0][p[i]] - p[i]) * k; p[i + 1] += (bang[1][p[i + 1]] - p[i + 1]) * k; p[i + 2] += (bang[2][p[i + 2]] - p[i + 2]) * k; }
       }
+      if (sang) { // nhân màu theo ánh sáng của cảnh (đo trên khăn trắng của chính cảnh đó, so với Vườn Hồ)
+        var sb = sang.map(function (h) { var b = new Uint8ClampedArray(256); for (var v = 0; v < 256; v++) b[v] = v * h; return b; });
+        for (i = 0; i < p.length; i += 4) { if (!p[i + 3]) continue; p[i] = sb[0][p[i]]; p[i + 1] = sb[1][p[i + 1]]; p[i + 2] = sb[2][p[i + 2]]; }
+      }
+      if (d) x.putImageData(d, 0, 0);
       cv.dataset.khoa = khoa;
     });
   }
   function datTT() { // đặt cổng và hai bàn vào điểm neo; cỡ theo cùng thước phối cảnh với nhân vật
-    var hien = laLop(), L = hien && lopHien();
+    var hien = laLop(), L = hien && lopHien(), V = LOP[hien ? L.noi : 'ho'];
     function dat(eid, id, X, Y, lat, tong) {
       var e = $(eid); e.classList.toggle('an', !id); if (!id) return;
       var m = TT[id], cao = NV.MOT_MET * (m.h / m.pxm) * (Y - NV.CHAN_TROI), rg = cao * (m.w / m.h) / KHUNG, ax = lat ? 1 - m.ax : m.ax;
       e.style.height = cao + '%'; e.style.width = rg + '%'; e.style.left = (X - ax * rg) + '%'; e.style.top = (Y - m.ay * cao) + '%';
-      ttVe(e.firstChild, id, tong);
+      ttVe(e.firstChild, id, tong, V.sang);
     }
-    dat('tt-cong', hien && L.cong, LOP.cong[0], LOP.cong[1], false, hien && tongCua(TONG_HOA, L.hoa)[2]);
-    LOP.ban.forEach(function (b) { dat(b[0], hien && L.ban, b[1], b[2], b[3], hien && tongCua(TONG_KHAN, L.khan)[2]); });
+    dat('tt-cong', hien && L.cong, V.cong[0], V.cong[1], false, hien && tongCua(TONG_HOA, L.hoa)[2]);
+    V.ban.forEach(function (b) { dat(b[0], hien && L.ban, b[1], b[2], b[3], hien && tongCua(TONG_KHAN, L.khan)[2]); });
   }
   function bangLop(dau, than, chan) {
     var L = lopHien(), cap = [];
@@ -927,9 +936,11 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
         chon: function (k) { return (L[khoa] || '') === k; }, fn: function (k) { doiLop(function () { L[khoa] = k || null; }); } }));
       return n;
     }
+    cap.push(luoiThe(nhom(than, 'Nơi'), { id: 'lop-noi', ds: Object.keys(LOP).map(function (k) { return { k: k, ten: LOP[k].ten, hinh: 'anh/t-' + LOP[k].nen + '.webp' }; }),
+      chon: function (k) { return L.noi === k; }, fn: function (k) { doiLop(function () { L.noi = k; }); datNen(); boCuc(); veHet(); } }));
     chonMon('Cổng', 'cong', 'cong-tron', 'tru', 'Không cổng'); hangTong(nhom(than, 'Tông hoa'), TONG_HOA, 'hoa');
     chonMon('Bàn tiệc', 'ban', 'ban-dai', 'tru', 'Không bàn'); hangTong(nhom(than, 'Tông khăn'), TONG_KHAN, 'khan');
-    than.appendChild(el('p', 'ghi', 'Ba tấm vẽ: nền trống, một cổng, một bộ bàn. Tông màu, bóng chân và bàn bên trái (lật gương) do mã làm: ' + (TONG_HOA.length * TONG_KHAN.length) + ' cách phối từ một cổng và một bộ bàn.'));
+    than.appendChild(el('p', 'ghi', 'Bốn tấm vẽ: hai nền trống, một cổng, một bộ bàn. Cùng một cổng và một bộ bàn dùng cho cả hai nơi. Tông màu, bóng chân và bàn bên trái (lật gương) do mã làm: ' + (TONG_HOA.length * TONG_KHAN.length) + ' cách phối ở mỗi nơi.'));
     chan.appendChild(nutBam('Về đầu', function () { sang('mo'); }, 'phu', 'trai'));
     lamMoi = function () { cap.forEach(function (f) { f(); }); };
     lamMoi();
@@ -986,7 +997,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     var thu = el('button', 'nut-thu', st.thu ? 'Tắt danh mục thử 100 nơi' : 'Thử danh mục 100 nơi (hình lặp lại)'); thu.type = 'button';
     thu.addEventListener('click', function () { if (st.thu) { var nv0 = st.nv; boThu(); st = moi(nv0); dung(); ghi(); } else { themThu(); st.thu = 1; sang('noi'); } });
     than.appendChild(thu);
-    var thu2 = el('button', 'nut-thu', 'Thử trang trí theo lớp (Vườn Hồ)'); thu2.type = 'button'; thu2.addEventListener('click', function () { sang('lop'); }); than.appendChild(thu2);
+    var thu2 = el('button', 'nut-thu', 'Thử trang trí theo lớp (2 nơi)'); thu2.type = 'button'; thu2.addEventListener('click', function () { sang('lop'); }); than.appendChild(thu2);
     chan.appendChild(nutBam(st.xa > 1 ? 'Chơi tiếp' : 'Bắt đầu', function () { sang(st.xa > 1 ? MAN[st.xa] : 'doi'); }, 'to', null, 'phai'));
   }
   function bangNoi(dau, than, chan) {

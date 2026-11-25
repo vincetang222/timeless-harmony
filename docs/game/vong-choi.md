@@ -304,3 +304,19 @@ Dùng 3 lượt vẽ cho 3 tấm, không lượt sửa nào (khoảng 0,7% hạn
 
 **Cách vẽ lô sau, nếu được duyệt.** Mỗi món một lượt, vẽ rời trên nền một màu, không cần sửa từ cảnh; vị trí và cỡ do mã đặt. Yêu cầu phần cần đổi tông có màu trắng và nằm trên vật có màu khác hẳn để mặt nạ làm tự động được.
 
+### 7.3 Tấm 4: dùng lại món rời ở nơi khác (25/11/2026)
+
+Chủ dự án duyệt phong cách của cổng và bàn rời, và duyệt tấm 4.
+
+| Tấm | Vẽ gì | Có gì | Không có gì | Sửa từ hình | Kết quả |
+|---|---|---|---|---|---|
+| 4. Nền trống Sân nhà quê | Sân nhà quê không còn đồ trang trí | Sân gạch, lối đá, nhà ba gian, cây rơm, giếng, cây đa, cổng làng, tường, ruộng | Cổng cưới lá dừa, hai bàn tròn, ghế, bóng của chúng | Sân nhà quê gói Gọn (`langque-gon`) | Đạt trong 1 lượt. Cảnh lệch nhiều nhất 14 px trên ảnh rộng 2736 px (0,5%). Phần sau cổng cũ được vẽ bù (thêm một chái nhà và một cây). |
+
+**Dùng lại món rời.** Cùng tệp cổng và tệp bàn của Vườn Hồ đặt lên Sân nhà quê, không vẽ thêm. Mỗi nơi chỉ khai báo: tấm nền, chỗ đứng của cặp đôi, điểm neo của cổng và hai bàn, và một hệ số chỉnh sáng. Cỡ vẫn theo thước phối cảnh chung nên không phải chỉnh tay.
+
+**Chỉnh sáng theo cảnh.** Món rời để nguyên thì lạnh màu hơn nắng vàng của Sân nhà quê. Mã nhân màu món rời với (0,98; 0,905; 0,83), là tỉ lệ màu khăn trắng của Sân nhà quê so với Vườn Hồ đo trên tranh gốc. Nhân vật chưa được chỉnh sáng theo cảnh.
+
+**Tổng bước thử.** 4 lượt vẽ, không lượt sửa (khoảng 1% hạn mức tháng): hai nền trống, một cổng, một bộ bàn. Mỗi nơi có 30 cách phối tông.
+
+**Còn mở.** Lối đá ở Sân nhà quê lệch tâm (tâm ở 52,8% bề ngang) nên cổng và bàn đặt lệch theo; mỗi nền trống cần đo điểm neo một lần. Chưa thử nơi có nền cát hoặc ánh sáng tối. Các giới hạn ở mục 7.2 vẫn còn.
+

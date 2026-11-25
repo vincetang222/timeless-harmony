@@ -1,5 +1,5 @@
-# Trang trí theo lớp (bước thử ở Vườn Hồ): từ 3 ảnh mô hình trả về → nền trống, hình rời có bóng chân, mặt nạ đổi tông, hình thẻ.
-# Chạy trong thư mục chứa nen-ho.png, cong-tron.png, ban-dai.png:   python3 trang_tri.py <thư mục bản chơi>
+# Trang trí theo lớp (bước thử): từ ảnh mô hình trả về → nền trống, hình rời có bóng chân, mặt nạ đổi tông, hình thẻ.
+# Chạy trong thư mục chứa nen-ho.png, nen-langque.png, cong-tron.png, ban-dai.png:   python3 trang_tri.py <thư mục bản chơi>
 # Không gọi AI. Mọi con số neo, cỡ là số đo trên chính các ảnh này.
 import json, os, sys
 import numpy as np
@@ -93,11 +93,13 @@ def luu_roi(ten, im, mn, rong, pxm_goc, ax_goc, ay_goc, bong):
 
 if __name__ == '__main__':
     # nền trống: cỡ như các cảnh khác (1600 và 900 px), hình thẻ cắt vùng giữa
-    nen = Image.open('nen-ho.png').convert('RGB')
-    nen.resize((1600, 889), Image.LANCZOS).save(os.path.join(ANH, 'nen-ho.webp'), quality=82, method=6)
-    nho = nen.resize((900, 500), Image.LANCZOS); nho.save(os.path.join(ANH, 'nen-ho-m.webp'), quality=80, method=6)
-    w, h = nho.size; cw = w / 2.5; chh = cw * 10 / 16; x0 = (w - cw) * 0.5; y0 = (h - chh) * 0.45
-    nho.crop((round(x0), round(y0), round(x0 + cw), round(y0 + chh))).resize((320, 200), Image.LANCZOS).save(os.path.join(ANH, 't-nen-ho.webp'), quality=76, method=6)
+    for ten in ('nen-ho', 'nen-langque'):
+        if not os.path.exists(ten + '.png'): continue
+        nen = Image.open(ten + '.png').convert('RGB')
+        nen.resize((1600, 889), Image.LANCZOS).save(os.path.join(ANH, ten + '.webp'), quality=82, method=6)
+        nho = nen.resize((900, 500), Image.LANCZOS); nho.save(os.path.join(ANH, ten + '-m.webp'), quality=80, method=6)
+        w, h = nho.size; cw = w / 2.5; chh = cw * 10 / 16; x0 = (w - cw) * 0.5; y0 = (h - chh) * 0.45
+        nho.crop((round(x0), round(y0), round(x0 + cw), round(y0 + chh))).resize((320, 200), Image.LANCZOS).save(os.path.join(ANH, 't-' + ten + '.webp'), quality=76, method=6)
 
     so = {}
     # cổng tròn: vòng rộng 950 px trong hình rời = 2,7 m; tâm vòng ở 56,2% bề ngang; mép dưới đế ở 95,1% chiều cao
@@ -112,4 +114,4 @@ if __name__ == '__main__':
     so['ban-dai'].update(goc=[246, 234, 204])
     json.dump(so, open('tt.json', 'w'), ensure_ascii=False, indent=1)   # số đo để chép vào TT trong index.html của bản chơi
     for k, v in so.items(): print(k, v)
-    print('tệp:', {f: os.path.getsize(os.path.join(TT, f)) // 1024 for f in sorted(os.listdir(TT))}, 'KB | nền:', os.path.getsize(os.path.join(ANH, 'nen-ho.webp')) // 1024, os.path.getsize(os.path.join(ANH, 'nen-ho-m.webp')) // 1024, 'KB')
+    print('tệp:', {f: os.path.getsize(os.path.join(TT, f)) // 1024 for f in sorted(os.listdir(TT))}, 'KB | nền:', {f: os.path.getsize(os.path.join(ANH, f)) // 1024 for f in sorted(os.listdir(ANH)) if 'nen-' in f}, 'KB')
