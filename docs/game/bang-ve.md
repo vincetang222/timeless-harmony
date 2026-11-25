@@ -10,7 +10,8 @@
 - **Khăn, ghế, đồ trên bàn:** tìm hiểu ngày 25/11 thấy rất nhiều mẫu: khăn có chất và hoạ tiết, áo ghế, nơ ghế, trang trí bằng giấy. Màu và mặt vải (hoạ tiết, chất vải) làm bằng mã, 0 tấm; đã thử 8 hoạ tiết khăn. Món gắn thêm (nơ, món gắn ghế) và dáng mới (áo ghế, váy quây) thì vẽ, khoảng 9 tấm (cuối mục 3.4).
 - **Khăn nhiều lớp, ghế theo lớp:** khăn nền + khăn phủ + khăn chạy bàn ghép bằng mã, 0 tấm; đã thử 7 cách phối trên bàn tròn cũ. Ghế có 7 lớp; khung, đệm, đai làm bằng mã, còn nơ và món gắn phải vẽ. Đề xuất đổi T9 thành bàn dài phủ khăn trắng chấm đất (cuối mục 3.4).
 - **Tiết mục:** 32 tiết mục trong 4 nhóm, mỗi tiết mục là một hình người biểu diễn rời, khoảng 34 tấm. Điệu nhảy của chính cặp đôi là việc khác, cần tư thế mới cho nhân vật (mục 6.6).
-- **Hạn mức:** cả bảng này khoảng 118 tấm. Cộng việc đã duyệt và dự phòng sửa thì vừa gói tháng 12 nếu các bài thử đạt (mục 7). Mục 7b liệt kê các cách tiết kiệm gói; riêng đổi màu bằng mã đã bớt được 14 tấm.
+- **Màn cận cảnh bàn:** một góc nhìn gần một chỗ ngồi để cặp đôi xem đĩa, ly, dao nĩa hoặc đũa, khăn ăn và so sánh hai phương án; khoảng 8 tấm (cuối mục 3.4).
+- **Hạn mức:** cả bảng này khoảng 126 tấm. Cộng việc đã duyệt và dự phòng sửa thì vừa gói tháng 12 nếu các bài thử đạt (mục 7). Mục 7b liệt kê các cách tiết kiệm gói; riêng đổi màu bằng mã đã bớt được 14 tấm.
 - **Bước đầu:** 9 tấm thử cho các kỹ thuật chưa chứng minh, chạy được ngay tháng này (mục 8).
 
 ## 1. Làm sao có hàng nghìn lựa chọn mà không vẽ hàng nghìn tấm
@@ -432,6 +433,81 @@ Ngoài đời có (theo nguồn):
 - Ghế ông bà có đệm dày, có tựa lưng: người lớn tuổi vui.
 - Màu đai trùng một lớp khăn: được cộng "hài hoà", vì nguồn [C1] khuyên như vậy.
 
+#### Màn cận cảnh bàn (chủ dự án chọn ngày 25/11)
+
+**Để làm gì:** cặp đôi nhìn gần bộ bàn đang chọn (khăn, đĩa, ly, dao nĩa hoặc đũa, khăn ăn, thiệp) và đặt hai phương án cạnh nhau để quyết.
+
+**Khung hình: ba quy tắc để không nhân số tấm**
+1. **Một chỗ ngồi ở chính giữa.** Hai chỗ bên cạnh bị mép khung cắt, hoặc mã làm mờ. Trên bàn tròn, chỗ bên cạnh xoay theo tâm bàn. Đĩa và ly đối xứng nên dùng lại được, nhưng dao nĩa, đũa, khăn ăn gấp và thiệp thì không: mỗi chỗ bên cạnh sẽ cần hình mới. Bàn dài không gặp chuyện này (chỗ bên cạnh chỉ dời ngang), nên cận cảnh bàn dài để sau.
+2. **Lưng ghế nằm dưới khung hình.** Nếu không, nơ ghế phải vẽ thêm một góc nữa. Muốn thấy ghế trong cận cảnh thì đó là một quyết định riêng, có chi phí riêng.
+3. **Hoa bàn ở mép trên, bị cắt hoặc mờ.** Hoa bàn ở mục 3.5 vẽ theo góc của cảnh xa, không khớp góc gần; vẽ lại sẽ gấp đôi số tấm hoa bàn.
+
+**Ngoài đời bày thế nào**
+- **Kiểu Âu** (đọc trọn các bài của CV Linens):
+  - xếp chồng: đĩa lót, đĩa ăn, rồi đĩa salad hoặc bát súp [D1][D2];
+  - đĩa bánh mì và dao bơ ở góc trên bên trái [D2];
+  - nĩa bên trái; dao bên phải, lưỡi quay vào đĩa; thìa ở ngoài dao; dùng từ ngoài vào trong; dao nĩa tráng miệng đặt phía trên đĩa [D2][D17];
+  - ly nước là ly lớn nhất, đặt trên đầu dao; các ly khác xếp chéo theo thứ tự dùng. Tiệc trang trọng có 3 đến 5 ly, tiệc thường có ly nước và ly vang [D2][D3];
+  - khăn ăn đặt trên đĩa (hay gặp ở tiệc cưới), bên trái, hoặc cắm trong ly [D4][D8]; thiệp tên đặt trên khăn ăn hoặc ở mép trên đĩa lót [D1][D4];
+  - tiệc kiểu gia đình để trống giữa bàn cho đĩa chung; tiệc buffet mỗi chỗ chỉ có đĩa lót, khăn ăn và ly [D2].
+- **Kiểu Việt và Á** (chỉ có đoạn trích; các bài nói về bàn ăn kiểu Á nói chung, không riêng tiệc cưới):
+  - đĩa kê đặt trước chỗ ngồi, chén nước chấm phía trước, ly ở phía trước bên phải; lọ tăm, lọ hoa ở giữa bàn (Điện máy Xanh);
+  - mỗi chỗ có đĩa ăn, đĩa lót, đũa và gác đũa, thìa, bát cơm, cốc nước, chén rượu (Sapo);
+  - phục vụ hạng VIP có ly nước, ly vang trắng, ly vang đỏ (Brands Vietnam);
+  - khăn ăn đặt trên đĩa hoặc trên miệng ly (Điện máy Xanh).
+- **Mâm xoay:** một nhà hàng ở Hà Nội ghi bàn tròn "có thể xoay" (đoạn trích Foody). Chưa đủ nguồn để coi là phổ biến ở tiệc cưới Việt, nên để là một lựa chọn.
+- **Bao đũa in chữ Hỷ hoặc tên khách, dùng thay thiệp chỗ ngồi:** chỉ thấy ở cửa hàng của người Hoa ở nước ngoài, không phải nguồn Việt.
+
+**Danh mục đồ bàn** (A màu, B mặt và hoa văn, C món gắn, D dáng):
+- **Đĩa lót:**
+  - A: vàng, bạc, champagne, đen, xanh than, đỏ, thuỷ tinh màu trong [D15]; đen mờ, hồng phấn, trong suốt là các màu đang dùng [D6];
+  - B: viền hạt (vàng, bạc, đen), viền gợn sóng, viền tia nắng, viền bện, giả mây đan, giả gỗ, dập nổi (ren, baroque), in hoa (toile, mẫu đơn) [D15][D12];
+  - D: viền lượn sóng, viền cánh sen, viền cánh hoa, hình nơ [D15][D11]; đĩa vuông đặt trên đĩa lót tròn cũng được chấp nhận [D12];
+  - chưa thấy trang đọc được nào nói tới đĩa lót nhung hay đĩa lót gương.
+- **Đĩa** (đoạn trích trang cho thuê): sứ trắng, viền chỉ vàng, viền lượn sóng có chỉ vàng, dập nổi hình thoi, gốm đen mờ, đĩa hoa cổ mỗi chỗ một kiểu.
+- **Bộ Việt:** chén cơm, chén nước chấm, thìa, đũa (gỗ, inox, nhựa; đũa mạ vàng chỉ thấy trong một tin bán hàng), gác đũa.
+- **Ly:**
+  - D: ly nước chân cao, ly vang, flute, coupe, ly không chân, chén rượu nhỏ [D3];
+  - A: hồng, đỏ, tím nhạt, xanh, ô liu, đen [D3][D15]; hổ phách (đoạn trích);
+  - B: ly gợn sóng, ly ép hoa văn kiểu cổ [D15]; ly gân viền vàng (đoạn trích).
+- **Dao nĩa:**
+  - A: vàng cho sang, bạc cho cổ điển, đen hoặc mờ cho hiện đại [D8]; trộn kim loại ngày càng được chấp nhận [D5];
+  - B: cán hai màu vàng đen, cán xà cừ (đoạn trích).
+- **Khăn ăn:** 13 kiểu gấp ở phần "Đồ trên bàn" (loại D); cuộn bọc dao nĩa đặt trên đĩa [D14]; thêu chữ cái tên (loại B) [D7].
+- **Giấy:** thiệp tên, thực đơn, số bàn, niêm phong sáp, vòng khăn ăn (loại C).
+
+**Xu hướng** (đọc trọn):
+- CV Linens 2026: đĩa lót chồng nhiều lớp, khăn ăn thêu chữ cái, thực đơn riêng; bề mặt mờ và ánh nhẹ thay cho kim sa, đá [D7].
+- Pinterest Predicts 2026, mục "Opera Aesthetic": ly tách sang trọng, chân nến nhiều nhánh [P3]. Báo cáo cưới 2026 của Pinterest không nêu đồ bàn cụ thể.
+- Đoạn trích: đĩa viền lượn sóng; bàn "sưu tầm", mỗi chỗ một kiểu đĩa; ly màu phấn đi với đĩa lượn sóng.
+
+**Vẽ gì:**
+
+| Tấm | Có gì | Loại |
+|---|---|---|
+| T12. Nền cận cảnh bàn tròn | khăn trắng, mặt bàn trống, vườn mờ phía sau | nền |
+| Đĩa lót và đĩa | 6 dáng đĩa lót (trơn, viền hạt, lượn sóng, cánh sen, mây đan, vuông); 4 dáng đĩa (tròn, lượn sóng, vuông, bát súp); tất cả màu sáng | D |
+| Ly | ly nước chân cao, ly vang, flute, coupe, ly không chân, ly gân, ly ép hoa văn, chén rượu nhỏ | D, B |
+| Dao nĩa và bộ Việt | dao nĩa trơn, dao nĩa mảnh, dao nĩa cán hai màu; đũa, gác đũa, thìa, chén cơm, chén nước chấm | D |
+| Khăn ăn gấp, 2 tấm | 12 kiểu: mũ giám mục, quạt, hoa hồng, túi dao nĩa, nút thắt, kim tự tháp, hoa sen, vương miện, cây nến, búp măng, cuộn bọc dao nĩa, gấp phẳng | D |
+| Giấy và món nhỏ | thiệp tên, thực đơn, số bàn, bao đũa, niêm phong sáp, vòng khăn ăn, nhánh lá, quà nhỏ | C |
+| Nến ở góc gần | nến cây, nến trụ, nến cốc, chân nến | C |
+
+Cộng 8 tấm nếu vẽ được nhiều món trên một tấm; khoảng 16 nếu không, khi đó bớt số kiểu. T13 thử 6 món lấy từ các tấm này, đã tính.
+
+**Mã làm, 0 tấm:**
+- màu đĩa lót, màu viền đĩa (vàng, bạc, màu);
+- hoa văn viền đĩa: mã trải viền hình elip thành một dải thẳng, in hoa văn, rồi cuộn lại;
+- màu ly, kim loại dao nĩa, màu và chất vải khăn ăn;
+- chữ trên thiệp, thực đơn, bao đũa (tên cặp đôi, tên khách);
+- khăn nhiều lớp ở mép bàn (cùng cách trải phẳng); rải cánh hoa, pháo giấy; ánh nến.
+
+**Trong màn chơi, 0 tấm:**
+- cảnh xa và cận cảnh dùng chung một bộ lựa chọn; nút "Xem gần";
+- so sánh hai phương án đặt cạnh nhau;
+- cô dâu và chú rể mỗi người nói một câu khen hay chê theo nhãn của món (ví dụ một người thích bàn "sưu tầm", người kia thích đồng bộ). Hai người cùng thích thì cộng tình cảm; khác ý thì phải chọn nhường ai (số tạm).
+- kiểu bày Âu hay Việt là một lựa chọn; cùng một bộ món, mã đổi cách đặt.
+
 ### 3.5 Hoa bàn (vẽ, 3 tấm × 6 kiểu)
 
 thấp tròn · cao trong bình thuỷ tinh · nến trụ và bạch đàn · cam quýt và lá · đèn lồng nhỏ và hoa · chân nến đồng hoa rủ · lọ thuỷ tinh nhỏ rải dọc bàn · hoa và trái cây miền Tây · mâm bồng đỏ (truyền thống) · nến nổi trong bát · rêu và đá · hoa giấy thủ công · bình gốm lam · sen trong bát · lồng chim cổ · ngọn hoa cao vút · khay trái cây · đèn dầu cổ
@@ -561,20 +637,20 @@ Gói tháng ước khoảng **416 tấm** (mỗi tấm khoảng 0,24% gói, đo 
 | **Bảng này:** bàn ghế (mục 3.4) | chờ duyệt | 9 | khoảng 15 (ghế vẽ liền với bàn, mỗi bàn một kiểu ghế) |
 | **Bảng này:** hoa bàn, lối đi, đồ treo, góc phụ | chờ duyệt | 13 | khoảng 52 (mỗi món một tấm) |
 | **Bảng này:** khăn, áo ghế, nơ ghế, món gắn ghế, nến và giấy (cuối mục 3.4) | chờ duyệt | 9 | khoảng 19 (bớt số kiểu) |
-| **Bảng này:** cận cảnh một chỗ ngồi | chờ quyết | 2 | 2 |
+| **Bảng này:** màn cận cảnh bàn (nền T12 và đồ bàn) | chờ duyệt | 8 | khoảng 16 (bớt số kiểu) |
 | **Bảng này:** tiết mục | chờ duyệt | 34 | 34 |
-| Cộng | | khoảng 307 | khoảng 345 |
-| Dự phòng sửa 25% (quy tắc 4) | | khoảng 77 | khoảng 86 |
-| **Tổng** | | **khoảng 384** | **khoảng 431** |
+| Cộng | | khoảng 313 | khoảng 359 |
+| Dự phòng sửa 25% (quy tắc 4) | | khoảng 78 | khoảng 90 |
+| **Tổng** | | **khoảng 391** | **khoảng 449** |
 | Cách phối cổng | | khoảng 13.000 | khoảng 320 |
 
-Nếu thử đạt thì còn dư khoảng 32 tấm. Nếu không đạt thì vượt gói khoảng 15 tấm: phải dời tiết mục và cảnh C1–C13 sang tháng 1. Các cách ở mục 7b, nếu thử bằng mã đạt, bớt thêm được tới khoảng 20 tấm.
+Nếu thử đạt thì còn dư khoảng 25 tấm. Nếu không đạt thì vượt gói khoảng 33 tấm: dời 34 tấm tiết mục sang tháng 1 thì vừa đủ, không còn dư, nên dời thêm cảnh C1–C13. Các cách ở mục 7b, nếu thử bằng mã đạt, bớt thêm được tới khoảng 20 tấm.
 
 **Đề xuất thứ tự trong tháng 12:**
 
 1. **Đầu tháng:** lông mày cô dâu; nền trống 4 nơi; khung cổng; loài hoa; bàn, áo ghế, váy quây. Trang trí lên trước vì nó làm lại toàn bộ chương 4.
 2. **Giữa tháng:** tóc, trang phục, MC và ban nhạc.
-3. **Cuối tháng:** nơi trong nhà, bản đêm; hoa bàn, lối đi, đồ treo, góc phụ; nơ ghế, món gắn ghế, nến và giấy; 12 tiết mục đầu (mỗi nhóm vài tiết mục).
+3. **Cuối tháng:** nơi trong nhà, bản đêm; hoa bàn, lối đi, đồ treo, góc phụ; nơ ghế, món gắn ghế, nến và giấy; màn cận cảnh bàn; 12 tiết mục đầu (mỗi nhóm vài tiết mục).
 4. **Tháng 1:** cảnh nghi lễ C14–C17 và các cảnh còn lại; tiết mục còn lại.
 
 Mỗi nhóm vẫn vẽ thử một tấm trước khi chạy cả lô (quy tắc 3).
@@ -643,13 +719,14 @@ Tháng 11 còn khoảng 20 tấm. Đợt này dùng tối đa 12 tấm (9 tấm 
 1. Danh sách bộ phong cách (mục 3.9) và tiết mục (mục 6): thêm, bớt hay giữ nguyên?
 2. Có duyệt Đợt 0 (9 tấm thử ở mục 8) để chạy ngay tháng này không?
 3. Thứ tự tháng 12 ở mục 7: trang trí trước, hay tóc và trang phục trước?
-4. Đồ nhỏ trên bàn (khăn ăn gấp, thiệp tên, đĩa lót): chỉ là dữ liệu có hình thẻ (0 tấm), hay vẽ thêm cận cảnh một chỗ ngồi (2 tấm)? Xem cuối mục 3.4.
+4. Có thêm T12, T13 (cận cảnh bàn) vào Đợt 0, hay dời sang đầu tháng 12 để chừa dư?
 5. Có thêm T10 (nơ ghế) vào Đợt 0 không?
 6. Người Việt nhìn hạc giấy ở tiệc cưới thế nào: nên có trong danh mục, có kèm lưu ý, hay bỏ?
 7. Có đổi T9 thành bàn dài phủ khăn trắng chấm đất, không ghế, để xếp lớp khăn bằng mã không?
 8. Có thêm T11 (món gắn ghế lối đi, có nón lá nhỏ và búp sen) vào Đợt 0 không?
+9. Có mở thêm `www.dienmayxanh.com`, `www.sapo.vn`, `www.brandsvietnam.com` để đọc trọn cách bày bàn kiểu Việt không? Hiện mới có đoạn trích.
 
-Đã xong: chủ dự án mở mạng ngày 25/11; đọc được CV Linens, Pinterest, Style Me Pretty. The Knot và WeddingWire vẫn chặn máy truy cập tự động.
+Đã xong: chủ dự án chọn thêm màn cận cảnh bàn (25/11). Chủ dự án mở mạng ngày 25/11; đọc được CV Linens, Pinterest, Style Me Pretty. The Knot và WeddingWire vẫn chặn máy truy cập tự động.
 
 ## Nguồn
 
@@ -675,6 +752,12 @@ Khăn nhiều lớp và trang trí ghế (ngày 25/11, **đã đọc trọn**). 
 - [H7] how-to-tie-sash-on-chiavari-chairs · [H8] diy-chair-sash-ideas-next-event · [H9] how-long-should-chair-sashes-be · [H10] chair-band-decor-inspirations · [H11] [spandex-rosette-chair-bands](https://www.cvlinens.com/blogs/product-101/spandex-rosette-chair-bands)
 - [H12] [layered-skirting-chair-back-covers](https://www.cvlinens.com/blogs/new-arrivals/layered-skirting-chair-back-covers) · [H13] [curly-willow-chair-back-covers](https://www.cvlinens.com/blogs/new-arrivals/curly-willow-chair-back-covers) · [H14] [new-chairback-covers-oversize-chair-flowers](https://www.cvlinens.com/blogs/new-arrivals/new-chairback-covers-oversize-chair-flowers-spandex-cocktail-table-covers) · [H15] elevating-chair-decor · [H16] how-to-decorate-chiavari-chairs
 - [P1] [Pinterest Wedding Trends Report 2026](https://newsroom.pinterest.com/news/wedding-trend-report-2026/) · [P2] [Pinterest 2025](https://newsroom.pinterest.com/news/the-annual-pinterest-wedding-trends-report/) · [P3] [Pinterest Predicts 2026](https://newsroom.pinterest.com/news/pinterest-predicts-nonconformity-self-preservation-and-escapism-drive-21-trends-for-2026/) · [S1] [Style Me Pretty: 10 wedding trends for 2026](https://perspectives.stylemepretty.com/10-wedding-trends-you-need-to-know-for-2026/)
+
+Đồ bàn (ngày 25/11). **Đọc trọn**; đường dẫn bắt đầu bằng `https://www.cvlinens.com/blogs/styling-tips/` nếu không ghi khác:
+- [D1] [what-is-a-charger-plate](https://www.cvlinens.com/blogs/product-101/what-is-a-charger-plate-uses-materials-etiquette-more) · [D2] basic-informal-formal-proper-table-settings · [D3] what-is-a-goblet-and-what-is-it-used-for · [D4] what-side-of-plate-does-napkin-go-to · [D5] should-charger-plates-match-flatware-or-table-linens · [D6] are-charger-plates-old-fashioned
+- [D7] 2026-wedding-trends-whats-in-whats-out-what-timeless · [D8] 101-layering-tablescapes-styling-guide · [D11] lunar-new-year-tablescape-ideas · [D12] can-i-use-round-chargers-with-square-plates · [D14] how-to-fold-napkin-with-silverware · [D17] choosing-the-right-tableware-guide · [D15] tên sản phẩm trong sitemap sản phẩm của CV Linens
+
+Đồ bàn, **chỉ có đoạn trích**: [Điện máy Xanh: sắp xếp bàn ăn kiểu Á](https://www.dienmayxanh.com/vao-bep/bat-mi-cach-sap-xep-ban-an-kieu-a-don-gian-va-nhanh-chong-11999) · [Sapo: set up bàn ăn kiểu Á](https://www.sapo.vn/blog/set-up-ban-an-kieu-a) · [Brands Vietnam: quy trình setup bàn ăn](https://www.brandsvietnam.com/congdong/topic/cam-nang-van-hanh-dich-vu-2-quy-trinh-va-tieu-chuan-setup-ban-an) · [Foody: Thành Công Palace](https://www.foody.vn/ha-noi/thanh-cong-palace) · [East Meets Dress: đũa khắc tên](https://eastmeetsdress.com/collections/all/products/custom-chopsticks) · [Offbeat Wed: bao đũa làm thiệp chỗ ngồi](https://offbeatwed.com/chopstick-sleeve-place-cards/) · [Chairish: mismatched china](https://www.chairish.com/blog/mismatched-china/) · [Livingetc: table setting trends 2025](https://www.livingetc.com/us/ideas/table-setting-trends-for-2025) · [Livingetc: scalloped dinnerware](https://livingetc.com/shopping/scalloped-dinnerware) · [C Party Rentals: two-toned flatware](https://cpartyrentals.com/trend-alert-two-toned-flatware/)
 
 Khăn, ghế, đồ trên bàn (lượt đầu ngày 25/11). Các trang này chỉ hiện trong kết quả tìm kiếm, nên nội dung lấy từ đoạn trích:
 - [The Knot: wedding decor trends](https://www.theknot.com/content/wedding-decor-trends)
