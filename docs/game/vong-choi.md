@@ -320,3 +320,6 @@ Chủ dự án duyệt phong cách của cổng và bàn rời, và duyệt tấ
 
 **Còn mở.** Lối đá ở Sân nhà quê lệch tâm (tâm ở 52,8% bề ngang) nên cổng và bàn đặt lệch theo; mỗi nền trống cần đo điểm neo một lần. Chưa thử nơi có nền cát hoặc ánh sáng tối. Các giới hạn ở mục 7.2 vẫn còn.
 
+### 7.4 Kế hoạch vẽ tiếp
+
+Danh mục trang trí, hiệu ứng sân khấu, tiết mục và hạn mức tháng 12 nằm ở [bang-ve.md](bang-ve.md) (chờ duyệt).
