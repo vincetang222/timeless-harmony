@@ -682,9 +682,9 @@ Kết quả tốt. Còn một lỗi: khung đen làm nhuỵ hoa gần khung bị
 | Cảnh dùng chung phòng: một phòng khách cho C4, C7, C20; một bàn thờ cho C15, C17; đồ đạc là lớp rời | chưa thử | khoảng 6 | như trang trí theo lớp |
 | Lật gương, chỉnh sáng theo cảnh, dùng lại món ở mọi nơi | đã thử | — | đang dùng |
 
-## 8. Đợt 0: 9 tấm thử, chạy được ngay tháng này
+## 8. Đợt 0: tấm thử, chuyển sang tháng 12
 
-Tháng 11 còn khoảng 20 tấm (ước lượng). Đợt này dùng tối đa 12 tấm (9 tấm và 3 lượt sửa), khoảng 3% gói. Mỗi tấm vẽ trên nền xanh dương phẳng, trừ T5 và T6 là cảnh. T10–T13 chạy đầu tháng 12 (mục 8b).
+**Chủ dự án quyết ngày 25/11: tháng 11 không chạy đợt nào; món nào mình tự vẽ được (mã, 3D) thì tự vẽ.** Đợt 0 và Đợt 8b chuyển sang đầu tháng 12. Các tấm thử đều là món đầu tiên của những dòng đã tính ở mục 7, nên dời sang tháng 12 không làm tăng tổng; 3 lượt sửa nằm trong phần dự phòng. T1, T6, T7 mặc định dùng bản tự vẽ (chủ dự án vẫn xem từng kết quả, chưa phải duyệt phong cách). Mỗi tấm vẽ trên nền xanh dương phẳng, trừ T5 và T6 là cảnh.
 
 | Tấm | Ai hoặc vật gì | Tư thế, trang phục | Có gì | Không có gì | Sửa từ hình nào | Đạt khi |
 |---|---|---|---|---|---|---|
@@ -702,7 +702,7 @@ Tháng 11 còn khoảng 20 tấm (ước lượng). Đợt này dùng tối đa 
 
 **Thứ tự:** T1 rồi T2 (cặp này quyết định có 13.000 hay 320 cách phối cổng), rồi T7, T8, T9 (quyết định bàn ghế có lắp tự do được không), sau đó T3, T4, T5, T6. Tấm nào không đạt thì sửa từng chỗ trên chính tấm đó, tối đa 3 lượt sửa cho cả đợt.
 
-## 8b. Đợt thử đầu tháng 12: T10–T13 (chủ dự án duyệt ngày 25/11)
+## 8b. Đợt thử đầu tháng 12: T10–T13 (chủ dự án duyệt ngày 25/11; T12, T13 thử tự vẽ bằng 3D trước)
 
 Bốn tấm thử cho ghế và màn cận cảnh, chạy đầu tháng 12, trước các lô vẽ thật. Tối đa 6 tấm (4 tấm và 2 lượt sửa), lấy từ phần dự phòng sửa của tháng 12. Các tấm này thử những món đã tính trong mục 7, nên không cộng thêm.
 
@@ -729,13 +729,13 @@ Bốn tấm thử cho ghế và màn cận cảnh, chạy đầu tháng 12, trư
 ## 10. Cần chủ dự án quyết
 
 1. Danh sách bộ phong cách (mục 3.9) và tiết mục (mục 6): thêm, bớt hay giữ nguyên?
-2. Ba bản làm bằng mã ngày 25/11 (khung cổng, Vườn Hồ ban đêm, ghế 3D 8 góc) có dùng được không? Nếu được, Đợt 0 bỏ T1, T6, T7.
-3. Có chạy Đợt 0 ngay tháng này không?
-4. Thứ tự tháng 12 ở mục 7: trang trí trước, hay tóc và trang phục trước?
-5. Người Việt nhìn hạc giấy ở tiệc cưới thế nào: nên có trong danh mục, có kèm lưu ý, hay bỏ?
-6. Có mở thêm `www.dienmayxanh.com`, `www.sapo.vn`, `www.brandsvietnam.com` để đọc trọn cách bày bàn kiểu Việt không? Hiện mới có đoạn trích.
+2. Các bản tự vẽ (khung cổng, bản đêm, ghế và bàn 3D) có đủ giống tranh vẽ tay không? Mặc định đang dùng, chủ dự án xem từng cái.
+3. Thứ tự tháng 12 ở mục 7: trang trí trước, hay tóc và trang phục trước?
+4. Người Việt nhìn hạc giấy ở tiệc cưới thế nào: nên có trong danh mục, có kèm lưu ý, hay bỏ?
+5. Có mở thêm `www.dienmayxanh.com`, `www.sapo.vn`, `www.brandsvietnam.com` để đọc trọn cách bày bàn kiểu Việt không? Hiện mới có đoạn trích.
 
 Đã xong (25/11):
+- Tháng 11 không chạy đợt nào; tự vẽ được thì tự vẽ. Đợt 0, 8b chuyển sang đầu tháng 12.
 - Chủ dự án chọn thêm màn cận cảnh bàn.
 - Duyệt đổi T9 thành bàn dài phủ khăn trắng chấm đất; T10–T13 chạy đầu tháng 12 (mục 8b).
 - Chủ dự án mở mạng; đọc được CV Linens, Pinterest, Style Me Pretty. The Knot và WeddingWire vẫn chặn máy truy cập tự động.
