@@ -57,7 +57,7 @@ def dao_nia(loai, x, y, mat):
 def bo_cho(kieu, mats, goc_vi=0.0):
     """Một chỗ ngồi ở mép bàn tại góc goc_vi (0 = phía máy ảnh)."""
     vai, dia, lot, kl, ly, khan = mats
-    c, s = math.cos(goc_vi), math.sin(goc_vi); tam = Vector((0, -R_BAN + 0.22, 0))
+    c, s = math.cos(goc_vi), math.sin(goc_vi); tam = Vector((0, -R_BAN + (0.22 if kieu == 'au' else 0.12), 0))
     goc = bpy.data.objects.new('cho', None); bpy.data.collections['net'].objects.link(goc)
     truoc = set(bpy.data.objects)
     z = H_BAN
@@ -76,16 +76,20 @@ def bo_cho(kieu, mats, goc_vi=0.0):
                     'vang': [(0.032, 0), (0.032, 0.004), (0.005, 0.01), (0.004, 0.08), (0.028, 0.1), (0.038, 0.14), (0.032, 0.18)],
                     'flute': [(0.03, 0), (0.03, 0.004), (0.004, 0.01), (0.004, 0.09), (0.018, 0.12), (0.024, 0.18), (0.022, 0.22)]}[loai]
             xoay(prof, ly, n=40, day=0.0015, vi_tri=(tam.x + dx, tam.y + dy, z))
-    else:   # kiểu Việt
-        xoay([(0.002, 0.001), (0.12, 0.002), (0.135, 0.01), (0.137, 0.012)], lot, day=0.003, vi_tri=(tam.x, tam.y, z))            # đĩa kê
-        xoay([(0.002, 0.013), (0.075, 0.014), (0.09, 0.02), (0.105, 0.026)], dia, day=0.003, vi_tri=(tam.x, tam.y, z))             # đĩa ăn
-        xoay([(0.03, 0.026), (0.032, 0.03), (0.05, 0.05), (0.058, 0.075), (0.06, 0.08)], dia, day=0.003, vi_tri=(tam.x, tam.y + 0.005, z))   # chén cơm
-        dao_nia('thia', tam.x + 0.03, tam.y - 0.02, dia)                                                                       # thìa sứ trong chén
-        dao_nia('dua', tam.x + 0.19, tam.y, kl)
-        xoay([(0.022, 0.0), (0.03, 0.004), (0.035, 0.02), (0.036, 0.03)], dia, day=0.002, vi_tri=(tam.x - 0.05, tam.y + 0.17, z))   # chén nước chấm
-        xoay([(0.032, 0), (0.033, 0.004), (0.036, 0.12), (0.037, 0.13)], ly, n=40, day=0.0015, vi_tri=(tam.x + 0.17, tam.y + 0.18, z))   # ly nước
-        xoay([(0.032, 0), (0.032, 0.004), (0.005, 0.01), (0.004, 0.08), (0.028, 0.1), (0.038, 0.14), (0.032, 0.18)], ly, n=40, day=0.0015, vi_tri=(tam.x + 0.25, tam.y + 0.12, z))
-        hop((0.1, 0.06, 0.018), (tam.x - 0.2, tam.y + 0.02, z + 0.01), khan, bo=0.006)                                        # khăn ăn gấp bên trái
+    else:   # kiểu Việt, theo Sapo "Cách set up bàn ăn kiểu Á" (đọc trọn 25/11): đĩa kê 18–20 cm cách mép bàn 2 cm, đĩa ăn 12–15 cm
+            # trên đĩa kê, bát úp, đũa trên gác (cách đĩa kê 2 cm), thìa trên gác bên trái đũa, chén nước chấm trước đĩa kê, ly phía trước bên phải,
+            # khăn ăn gấp đặt trên miệng cốc nước
+        xoay([(0.002, 0.001), (0.085, 0.002), (0.094, 0.008), (0.096, 0.01)], lot, day=0.003, vi_tri=(tam.x, tam.y, z))         # đĩa kê 19 cm
+        xoay([(0.002, 0.011), (0.055, 0.012), (0.066, 0.018), (0.068, 0.02)], dia, day=0.003, vi_tri=(tam.x, tam.y, z))         # đĩa ăn 14 cm
+        xoay([(0.056, 0.02), (0.055, 0.035), (0.046, 0.058), (0.032, 0.07), (0.03, 0.075), (0.026, 0.075), (0.025, 0.071), (0.002, 0.071)], dia, day=0.003, vi_tri=(tam.x, tam.y, z))   # bát úp, có chân đế kín
+        dao_nia('dua', tam.x + 0.135, tam.y + 0.02, kl)
+        hop((0.014, 0.012, 0.008), (tam.x + 0.11, tam.y - 0.035, z + 0.004), dia, bo=0.003)                                  # gác thìa
+        dao_nia('thia', tam.x + 0.11, tam.y + 0.01, dia)                                                                         # thìa sứ
+        xoay([(0.002, 0.0), (0.028, 0.004), (0.034, 0.02), (0.035, 0.028)], dia, day=0.002, vi_tri=(tam.x - 0.02, tam.y + 0.15, z))   # chén nước chấm
+        xoay([(0.032, 0), (0.033, 0.004), (0.036, 0.12), (0.037, 0.13)], ly, n=40, day=0.0015, vi_tri=(tam.x + 0.12, tam.y + 0.16, z))   # cốc nước
+        q = xoay([(0.002, 0.10), (0.03, 0.14), (0.055, 0.2)], khan, n=16, vi_tri=(tam.x + 0.12, tam.y + 0.16, z))           # khăn ăn gấp quạt trên miệng cốc
+        q.scale = (1, 0.22, 1); q.rotation_euler = (0, 0, math.radians(15))                                                   # ép dẹt thành hình quạt
+        xoay([(0.032, 0), (0.032, 0.004), (0.005, 0.01), (0.004, 0.08), (0.028, 0.1), (0.038, 0.14), (0.032, 0.18)], ly, n=40, day=0.0015, vi_tri=(tam.x + 0.2, tam.y + 0.1, z))   # ly vang (phục vụ hạng VIP)
     for o in bpy.data.objects:
         if o not in truoc and o.parent is None and o != goc: o.parent = goc
     goc.rotation_euler = (0, 0, goc_vi)
