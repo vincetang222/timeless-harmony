@@ -6,13 +6,13 @@
 
 - **Trang trí:** muốn có hàng nghìn mẫu thì không vẽ từng mẫu. Ta vẽ từng bộ phận (khung cổng, cụm hoa theo loài, bàn, hoa bàn…), rồi để mã ghép, đổi màu và chỉnh sáng. Nếu hai bài thử ở mục 8 đạt, chỉ riêng cổng đã có khoảng 13.000 cách phối từ 37 tấm vẽ. Nếu không đạt, còn khoảng 320.
 - **Hiệu ứng sân khấu:** pháo hoa, pháo giấy, pháo lạnh, khói sàn, bong bóng, màn LED, chữ neon… gần như toàn bộ vẽ bằng mã, **không tốn lượt**. Cái cần vẽ là nền đêm và nền trong nhà để hiệu ứng có chỗ diễn.
-- **Bàn khách:** bàn, ghế và cách xếp tách rời: 9 tấm vẽ cho bàn tròn, vuông, dài (nối bằng mã thành bàn 8–40 người) và 4 kiểu ghế (màu gỗ, sơn, kim loại đổi bằng mã); 13 cách xếp bằng mã; từ 30 tới 1000 khách, có sơ đồ nhìn từ trên xuống (mục 3.4).
+- **Bàn khách:** bàn, ghế và cách xếp tách rời: bàn tròn, bàn dài (8–20 khách, ngang và chéo) và ghế chiavari đã tự dựng bằng 3D ngày 25/11; bàn vuông, bàn đứng và các kiểu ghế khác dự kiến dựng tiếp (màu gỗ, sơn, kim loại đổi bằng mã); 13 cách xếp bằng mã; từ 30 tới 1000 khách, có sơ đồ nhìn từ trên xuống (mục 3.4).
 - **Khăn, ghế, đồ trên bàn:** tìm hiểu ngày 25/11 thấy rất nhiều mẫu: khăn có chất và hoạ tiết, áo ghế, nơ ghế, trang trí bằng giấy. Màu và mặt vải (hoạ tiết, chất vải) làm bằng mã, 0 tấm; đã thử 8 hoạ tiết khăn. Món gắn thêm (nơ, món gắn ghế) và dáng mới (áo ghế, váy quây) thì vẽ, khoảng 9 tấm (cuối mục 3.4).
 - **Khăn nhiều lớp, ghế theo lớp:** khăn nền + khăn phủ + khăn chạy bàn ghép bằng mã, 0 tấm; đã thử 7 cách phối trên bàn tròn cũ. Ghế có 7 lớp; khung, đệm, đai làm bằng mã, còn nơ và món gắn phải vẽ. Đã duyệt đổi T9 thành bàn dài phủ khăn trắng chấm đất (cuối mục 3.4).
 - **Tiết mục:** 32 tiết mục trong 4 nhóm, mỗi tiết mục là một hình người biểu diễn rời, khoảng 34 tấm. Điệu nhảy của chính cặp đôi là việc khác, cần tư thế mới cho nhân vật (mục 6.6).
-- **Màn cận cảnh bàn:** một góc nhìn gần một chỗ ngồi để cặp đôi xem đĩa, ly, dao nĩa hoặc đũa, khăn ăn và so sánh hai phương án; khoảng 8 tấm (cuối mục 3.4).
-- **Hạn mức:** cả bảng này khoảng 126 tấm. Cộng việc đã duyệt và dự phòng sửa thì vừa gói tháng 12 nếu các bài thử đạt (mục 7). Mục 7b liệt kê các cách tiết kiệm gói; riêng đổi màu bằng mã đã bớt được 14 tấm.
-- **Bước đầu:** 9 tấm thử cho các kỹ thuật chưa chứng minh, chạy được ngay tháng này (mục 8). Bốn tấm thử ghế và cận cảnh (T10–T13) chạy đầu tháng 12 (mục 8b).
+- **Màn cận cảnh bàn:** một góc nhìn gần một chỗ ngồi để cặp đôi xem đĩa, ly, dao nĩa hoặc đũa, khăn ăn và so sánh hai phương án; nền, đĩa, ly, dao nĩa, bộ Việt đã tự dựng bằng 3D, còn khăn ăn gấp phải vẽ (khoảng 2 tấm, cuối mục 3.4).
+- **Hạn mức:** sau khi tự vẽ được nhiều món (25/11), tháng 12 còn dư khoảng 46 tấm nếu chỉ tính phần đã làm xong, khoảng 61 tấm nếu tính cả phần dự kiến tự vẽ tiếp (mục 7). Mục 7b liệt kê các cách tiết kiệm gói; riêng đổi màu bằng mã đã bớt được 14 tấm.
+- **Bước đầu:** tháng 11 không chạy đợt nào (chủ dự án quyết 25/11). Đầu tháng 12 chạy các tấm thử còn cần công cụ vẽ: T2, T3, T4, T5 (mục 8) và T10, T11 (mục 8b); T1, T6, T7, T8, T9, T12, T13 đã tự vẽ.
 
 ## 1. Làm sao có hàng nghìn lựa chọn mà không vẽ hàng nghìn tấm
 
@@ -107,7 +107,7 @@ hồng · mẫu đơn · cẩm tú cầu · lan hồ điệp · cát tường ·
 
 Sen, cúc hoạ mi và hoa giấy là hoa quen ở Việt Nam. Rum, thược dược, hồng môn, hoa làm bằng giấy theo xu hướng hoa siêu thực.
 
-### 3.3 Khung cổng và phông lễ (vẽ, 20 tấm)
+### 3.3 Khung cổng và phông lễ (20 khung; 6 khung đơn giản đã làm bằng mã, còn 14 tấm vẽ)
 
 | # | Khung | Nhận cụm hoa | Hợp với |
 |---|---|---|---|
@@ -132,7 +132,7 @@ Sen, cúc hoạ mi và hoa giấy là hoa quen ở Việt Nam. Rum, thược dư
 | 19 | Tường hoa phẳng | vẽ liền | sang, chụp ảnh |
 | 20 | Tường cây xanh | vẽ liền | tối giản, vườn |
 
-### 3.4 Bàn khách và cách xếp (vẽ 9 tấm; cách xếp là mã)
+### 3.4 Bàn khách và cách xếp (bàn ghế phần lớn dựng 3D; cách xếp là mã)
 
 Chủ dự án góp ý (25/11): tiệc ở châu Âu xếp bàn rất đa dạng, kể cả khi có 1000 khách: bàn vuông, tròn, dài, bàn 6, 10, 20 người. Game làm được điều này nếu **bàn, ghế và cách xếp tách rời nhau**.
 
@@ -494,7 +494,7 @@ Ngoài đời có (theo nguồn):
 | Giấy và món nhỏ | thiệp tên, thực đơn, số bàn, bao đũa, niêm phong sáp, vòng khăn ăn, nhánh lá, quà nhỏ | C |
 | Nến ở góc gần | nến cây, nến trụ, nến cốc, chân nến | C |
 
-Cộng 8 tấm nếu vẽ được nhiều món trên một tấm; khoảng 16 nếu không, khi đó bớt số kiểu. T13 thử 6 món lấy từ các tấm này, đã tính.
+Kế hoạch ban đầu là 8 tấm (16 nếu không vẽ được nhiều món trên một tấm). Ngày 25/11 mình đã tự dựng bằng 3D nền cận cảnh, đĩa lót, đĩa, 4 dáng ly, dao nĩa và bộ Việt; nến và đồ giấy dự kiến dựng 3D tiếp; chỉ còn khăn ăn gấp phải vẽ (khoảng 2 tấm).
 
 **Mã làm, 0 tấm:**
 - màu đĩa lót, màu viền đĩa (vàng, bạc, màu);
@@ -547,7 +547,7 @@ Mỗi bộ chọn sẵn: khung, loài hoa, bố cục, bảng màu, bàn, hoa b�
 |---|---|---|---|
 | Nền trống ngoài trời | Đồi Thông Sương, Bến Đèn Lồng, Bãi Dừa Xanh, Vườn Sông Quê | 4 | 2 nơi đã có (Vườn Hồ, Sân nhà quê) |
 | Trong nhà | Sảnh tiệc có màn LED; sảnh khách sạn chùm đèn; Câu lạc bộ jazz; Nhà kính; rạp cưới quê Bắc Bộ; rạp cưới quê Nam Bộ | 6 | Rạp quê Nam Bộ trùng với đợt 2 của `canh-ngoai-troi.md`, chỉ tính một lần |
-| Bản đêm | 6 nơi ngoài trời | 6 | Cần cho pháo hoa và đèn. Tô tối bằng mã thường trông giả, nên vẽ; thử trước ở T6 |
+| Bản đêm | 6 nơi ngoài trời | 0 (làm bằng mã) | Cần cho pháo hoa và đèn. Ngày 25/11 đã làm bằng mã cho Vườn Hồ và Sân nhà quê (`dem_ma.py`); mỗi nơi mới cần một luật tách trời và toạ độ đèn riêng |
 
 Mỗi nơi mới cần đo một lần: chỗ đứng của cặp đôi, điểm neo của cổng và bàn, chỗ cho người biểu diễn, hệ số chỉnh sáng.
 
@@ -632,20 +632,24 @@ Gói tháng ước khoảng **416 tấm** (mỗi tấm khoảng 0,24% gói, đo 
 | MC, ban nhạc (4 bộ vẽ; màu thêm bằng mã) | đã duyệt, đề xuất bớt | 4 | 4 |
 | Cảnh C1–C17, C20 và nhân vật phụ | chờ duyệt | khoảng 50 | khoảng 50 |
 | Nơi đợt 2 (trừ rạp quê Nam Bộ) | chờ duyệt | 7 | 7 |
-| **Bảng này:** nơi tổ chức (6 bản đêm làm bằng mã, đã làm Vườn Hồ và Sân nhà quê) | chờ duyệt | 10 | 10 |
+| **Bảng này:** nơi tổ chức; 6 bản đêm làm bằng mã (đã làm 2, dự kiến 4) | chờ duyệt | 10 | 10 |
 | **Bảng này:** khung cổng (6 khung đơn giản làm bằng mã, đã làm) | chờ duyệt | 14 | 20 (vẽ kèm hoa) |
 | **Bảng này:** loài hoa | chờ duyệt | 17 | 0 (hoa vẽ liền vào khung) |
-| **Bảng này:** bàn ghế (mục 3.4): bàn tròn, bàn dài, ghế chiavari đã dựng 3D; bàn vuông, bàn đứng, ghế lưng chéo, ghế trong suốt cùng cách, chưa làm | chờ duyệt | 1 (ghế bọc vải có nơ) | 1 |
+| **Bảng này:** bàn ghế (mục 3.4): đã dựng 3D bàn tròn, bàn dài, ghế chiavari (4 trên 9 tấm); dự kiến bàn vuông, bàn đứng, ghế lưng chéo, ghế trong suốt (ghế trong suốt có nét viền chưa chắc đẹp) | chờ duyệt | 1 (ghế bọc vải có nơ) | 1 |
 | **Bảng này:** hoa bàn, lối đi, đồ treo, góc phụ | chờ duyệt | 13 | khoảng 52 (mỗi món một tấm) |
 | **Bảng này:** khăn, áo ghế, nơ ghế, món gắn ghế, nến và giấy (cuối mục 3.4); khăn phủ, chạy bàn bằng mã; váy quây, áo ghế thun dự kiến dựng 3D | chờ duyệt | 6 | khoảng 14 |
 | **Bảng này:** màn cận cảnh bàn: nền, đĩa, ly, dao nĩa, bộ Việt đã dựng 3D; còn khăn ăn gấp | chờ duyệt | 2 | khoảng 4 |
 | **Bảng này:** tiết mục | chờ duyệt | 34 | 34 |
 | Cộng | | khoảng 284 | khoảng 322 |
 | Dự phòng sửa 25% (quy tắc 4) | | khoảng 71 | khoảng 81 |
-| **Tổng** | | **khoảng 355** | **khoảng 403** |
+| **Tổng, tính cả phần dự kiến tự vẽ** | | **khoảng 355** | **khoảng 403** |
+| Tổng nếu chỉ tính phần đã làm xong ngày 25/11 | | khoảng 370 | khoảng 424 |
 | Cách phối cổng | | khoảng 13.000 | khoảng 320 |
 
-Cập nhật ngày 25/11, sau khi tự vẽ (mã và 3D) được khung đơn giản, bản đêm, bàn ghế và cận cảnh: nếu thử đạt thì còn dư khoảng 61 tấm; nếu không đạt vẫn còn dư khoảng 13 tấm, không phải dời tiết mục. Các con số này giả định chủ dự án chấp nhận nét của đồ tự vẽ.
+Cập nhật ngày 25/11, sau khi tự vẽ (mã và 3D):
+- **Chỉ tính phần đã làm xong** (6 khung, 2 bản đêm, bàn tròn, bàn dài, ghế chiavari, cận cảnh): thử đạt thì dư khoảng 46 tấm; thử không đạt thì thiếu khoảng 8 tấm.
+- **Tính cả phần dự kiến tự vẽ tiếp** (4 bản đêm, bàn vuông, bàn đứng, 2 kiểu ghế, váy quây, áo ghế thun, nến, đồ giấy): dư khoảng 61 tấm, hoặc 13 nếu thử không đạt.
+- Các con số giả định chủ dự án chấp nhận nét của đồ tự vẽ.
 
 **Đề xuất thứ tự trong tháng 12:**
 
@@ -677,7 +681,7 @@ Kết quả tốt. Còn một lỗi: khung đen làm nhuỵ hoa gần khung bị
 | Nhiều món trên một tấm | thử ở T2, T3, T7, T8 | khoảng 40 | khác biệt giữa hai cột của mục 7 |
 | Bàn dài nối từ mô-đun, ghế rời quanh bàn | thử ở T7, T8, T9 | — | một bộ hình cho mọi cỡ bàn |
 | Bản đêm bằng mã: tô tối nền trống, thêm đèn và trời sao | đã làm 25/11: Vườn Hồ, Sân nhà quê (`dem_ma.py`) | 6 (đã trừ ở mục 7) | không xê dịch cảnh; mây giữ khối, sao, đèn lan can, đèn cổng, cửa sổ sáng, đèn làng xa có vệt phản chiếu |
-| Khung đơn giản vẽ bằng mã: vòm cong, tròn, lục giác, tam giác, vòm nhọn, khung chữ nhật gỗ | đã làm 25/11 (`khung_ma.py`) | 6 (đã trừ) | ống có viền mực, vệt sáng, vệt tối, nét hơi rung, vân giấy. Khung tre, sắt rèn, gỗ trôi dạt vẫn vẽ |
+| Khung đơn giản vẽ bằng mã: vòm cong, tròn, lục giác, tam giác, vòm nhọn, khung chữ nhật gỗ (màu gỗ, đen, trắng, vàng đồng đổi bằng mã) | đã làm 25/11 (`khung_ma.py`) | 6 (đã trừ) | ống có viền mực, vệt sáng, vệt tối, nét hơi rung, vân giấy. Khung tre, sắt rèn, gỗ trôi dạt vẫn vẽ |
 | Bàn, ghế, đồ bàn dựng 3D rồi vẽ nét mực (Blender trên máy làm việc, không cần card đồ hoạ) | đã làm 25/11: ghế chiavari 8 góc; bàn tròn 6, 10, 12 khách có ghế; bàn dài 8, 12, 20 khách, ngang và chéo; cận cảnh kiểu Âu và kiểu Việt | khoảng 17 (đã trừ) | mỗi bộ có sẵn mặt nạ (khăn, đệm, khung, đĩa…) và ảnh toạ độ khăn, nên khăn nhiều lớp và đổi màu chạy thẳng, không khoanh tay. Vẽ thẳng mọi độ dài bàn, không cần ghép mô-đun. Nét đều và sạch hơn tranh vẽ tay |
 | Lấy món từ 18 tranh cũ bằng cách trừ nền trống: chậu hoa, dây đèn, đèn lồng, cổng lá dừa, cổng rạp đỏ | chưa thử, 0 lượt | khoảng 3 | mép có thể cần sửa tay |
 | Cảnh dùng chung phòng: một phòng khách cho C4, C7, C20; một bàn thờ cho C15, C17; đồ đạc là lớp rời | chưa thử | khoảng 6 | như trang trí theo lớp |
@@ -724,6 +728,7 @@ Bốn tấm thử cho ghế và màn cận cảnh, chạy đầu tháng 12, trư
 - Dựng bộ xếp bàn bằng mã: 13 cách xếp, tính số bàn theo số khách, đo vùng đặt bàn và sức chứa của Vườn Hồ và Sân nhà quê, sơ đồ nhìn từ trên xuống. Chạy thử trước với bàn dài đã có.
 - Đưa hoạ tiết khăn vào màn thử trang trí theo lớp: ảnh toạ độ cho bàn dài, bộ chọn mặt vải (ca rô, sọc, ren, kim sa…) đi cùng bộ chọn màu.
 - Khi có T8, T9: đưa khăn nhiều lớp (nền, phủ, chạy bàn) và ghế theo lớp (khung, đệm, đai) vào màn thử, với bộ chọn từng lớp.
+- Lưu ý khi đưa vào trình duyệt: ảnh toạ độ khăn 16 bit bị canvas cắt còn 8 bit, nên đóng gói u, v vào ảnh RGB không kênh trong suốt (bit cao ở R, G, bit thấp ở B), lưu không kèm thông tin màu, đọc bằng `createImageBitmap` tắt chuyển màu. Mặt nạ màu ID bị trộn ở mép (đỏ + lục ra vàng): vẽ mỗi loại một mặt nạ riêng. Cận cảnh hiện là một hình cho cả chỗ ngồi; muốn đổi từng món thì vẽ mỗi món một lớp cùng máy ảnh.
 - Đưa đồ tự vẽ vào màn thử trang trí theo lớp: 6 khung cổng, nút ngày/đêm cho Vườn Hồ và Sân nhà quê, bộ bàn tròn và bàn dài 3D, khăn nhiều lớp đọc ảnh toạ độ khăn, màn cận cảnh kiểu Âu và kiểu Việt.
 - Dựng khung màn cận cảnh trước khi có tranh: cùng một bộ lựa chọn cho cảnh xa và cận cảnh, nút "Xem gần", và chế độ so sánh hai phương án đặt cạnh nhau. Dùng hình tạm cho tới khi có T12, T13.
 - Dựng màn chương trình: dòng thời gian tiết mục theo `spec.md` mục 4. Màn này phải có trước khi vẽ nhiều người biểu diễn; nếu không, hình tiết mục chưa có chỗ dùng. Vì vậy tháng 12 chỉ vẽ trước vài tiết mục mỗi nhóm.
