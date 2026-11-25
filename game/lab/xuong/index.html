@@ -1,8 +1,11 @@
 <title>Xưởng nhân vật</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="robots" content="noindex">
+<link rel="preload" href="nv/manh.json" as="fetch" crossorigin="anonymous">
+<link rel="preload" href="may.js" as="script">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,700;1,600&display=swap" media="print" onload="this.media='all'">
 <style>
 /* Một màn hình như game: thanh bước ở trên, sân khấu (tranh vẽ tay, máy quay phóng gần hoặc lùi xa) và bảng chọn bằng thẻ hình.
    Điện thoại: sân khấu trên, bảng dưới. Máy tính: sân khấu trái, bảng phải. */
@@ -52,22 +55,20 @@ button { font: inherit; color: inherit; }
 @media (min-width: 900px) { .buoc .ten { display: inline; } .buoc li + li::before { width: 22px; } }
 .vi { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px 5px 6px; border-radius: 999px; background: var(--khung); border: 1.5px solid var(--vang); font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .vi .xu { width: 24px; height: 24px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #F6DFA8, #C7A262 70%); display: grid; place-items: center; color: #5A3E12; font-size: .72rem; font-weight: 700; }
-.vi small { font-weight: 500; color: var(--phu); }
+.vi small { font-weight: 400; color: var(--phu); }
 @media (prefers-reduced-motion: no-preference) { .vi.nay { animation: nay .35s var(--em); } }
 @keyframes nay { 40% { transform: scale(1.12); } }
 
 /* Sân khấu */
 .san { position: relative; overflow: hidden; border-radius: 18px; background: #CFE3E6; box-shadow: 0 0 0 1px var(--vien), 0 10px 28px rgba(18, 38, 28, .16); height: 200px; min-width: 0; }
-.world { position: absolute; left: 0; top: 0; width: 100%; aspect-ratio: 2736 / 1520; transform-origin: 0 0; will-change: transform; }
+.world { position: absolute; left: 0; top: 0; width: 100%; aspect-ratio: 2736 / 1520; transform-origin: 0 0; will-change: transform; contain: layout style; }
 @media (prefers-reduced-motion: no-preference) { .san { transition: height .6s var(--em); } .world { transition: transform .6s var(--em); } .world .nen { transition: opacity .45s ease; } }
 .world .nen { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; max-width: none; }
 .world .nen.hien { opacity: 1; }
 .lop { position: absolute; pointer-events: none; }
 .lop img { display: block; width: 100%; height: 100%; max-width: none; }
 .lop.an { opacity: 0; }
-#c-doi { position: absolute; top: 54%; width: 22%; height: 33%; pointer-events: none; transform-origin: 50% 79%; }
-@media (prefers-reduced-motion: no-preference) { .app.gan #c-doi { animation: tho 4.6s ease-in-out infinite; } }
-@keyframes tho { 50% { transform: scaleY(1.006); } }
+#c-doi { position: absolute; top: 54%; width: 22%; height: 33%; pointer-events: none; }
 #c-hoa { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .song { position: absolute; width: 90px; height: 24px; margin: -12px 0 0 -45px; border-radius: 50%; border: 2px solid var(--vang-sang); opacity: 0; pointer-events: none; }
 @media (prefers-reduced-motion: no-preference) { .song.chay { animation: song .55s ease-out; } }
@@ -156,7 +157,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
 .the[aria-checked="true"]::after { content: ""; position: absolute; top: 6px; right: 6px; width: 22px; height: 22px; border-radius: 50%; background: var(--nut) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4L18 8'/%3E%3C/svg%3E") center / 15px no-repeat; box-shadow: 0 0 0 2px #fff; }
 .the[aria-disabled="true"] { opacity: .45; cursor: not-allowed; }
 @media (prefers-reduced-motion: no-preference) { .the { transition: transform .18s var(--em); } .the:active { transform: scale(.97); } }
-.the .hinh { aspect-ratio: 16 / 10; background-size: 250%; background-repeat: no-repeat; position: relative; }
+.the .hinh { aspect-ratio: 16 / 10; background-size: cover; background-position: center; background-color: var(--o2); position: relative; }
 .the .nhan-goc { position: absolute; left: 6px; bottom: 6px; background: rgba(18, 38, 28, .78); color: #fff; font-size: .66rem; font-weight: 600; padding: 2px 8px; border-radius: 999px; }
 .the .chu { display: grid; gap: 3px; padding: 8px 10px 10px; font-size: .76rem; color: var(--phu); align-content: start; }
 .the .ten { font-weight: 700; color: var(--muc); font-size: .88rem; line-height: 1.2; }
@@ -317,23 +318,27 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
   function goiHien() { return DD[st.dd].anh ? 'du' : st.tt; }
   function chanY() { return st.dd === 'ho' ? CANH[st.tt] : 80; }
   function tamX() { var t = TAM_CONG[st.dd]; return typeof t === 'object' ? t[goiHien()] : t; }
-  function anhNen(dd, goi, nho) {
-    var g = DD[dd].anh ? 'du' : goi;
-    return 'anh/' + (dd === 'ho' ? 'canh-' + g : 'dd-' + dd + (g === 'du' ? '' : '-' + g)) + (nho ? '-m' : '') + '.webp';
-  }
+  function tenNen(dd, goi) { var g = DD[dd].anh ? 'du' : goi; return dd === 'ho' ? 'canh-' + g : 'dd-' + dd + (g === 'du' ? '' : '-' + g); }
+  function anhNen(dd, goi, nho) { return 'anh/' + tenNen(dd, goi) + (nho ? '-m' : '') + '.webp'; }
+  function anhThe(dd, goi) { return 'anh/t-' + tenNen(dd, goi) + '.webp'; }   // hình cắt sẵn cho thẻ chọn (320 px)
+  // Toàn cảnh trên màn hẹp chỉ cần tranh 900 px; phóng gần hoặc màn rộng mới cần tranh 1600 px.
+  function canNho() { return !gan && san.clientWidth * Math.min(window.devicePixelRatio || 1, 2) <= 1000; }
   var cam = { z: 1, tx: 0, ty: 0, W: 0, H0: 0, hS: 0 }, gan = false, viTri = [];
   function boCuc() { // đặt chiều cao sân khấu và vị trí máy quay theo bước
     var rong = window.matchMedia('(min-width: 900px)').matches, W = san.clientWidth, H0 = W / KHUNG, hS = H0;
     if (gan) hS = rong ? Math.max(H0, Math.min($('trai').clientHeight - 2, W * 1.05, 720)) : Math.max(230, Math.min(app.clientHeight * 0.43, W * 1.1, 520));
     san.style.height = Math.round(hS) + 'px';
     var z = 1, tx = 0, ty = 0;
-    if (gan) { z = 0.7 * hS / (0.19 * H0); tx = W / 2 - z * tamX() / 100 * W; ty = 0.93 * hS - z * chanY() / 100 * H0; }
+    if (gan) { z = 0.7 * hS / (0.19 * H0); tx = W / 2 - z * tamX() / 100 * W; ty = 0.93 * hS - z * chanY() / 100 * H0;
+      // Chân dung tròn phóng to (thẻ Mặt, Tóc) nằm góc trên bên phải: nếu nó che người đang chỉnh thì lướt máy quay cho người đó sang trái.
+      var v = viTri.length === 2 && viTri[st.ai === 'co-dau' ? 0 : 1], hw = Math.min(0.44 * W, 210);
+      if (v && app.classList.contains('can-mat')) { var sx = tx + z * v.xw / 100 * W; if (sx > W - hw - 0.06 * W) tx += Math.max(0.3 * W, hw * 0.5) - sx; } }
     world.style.transform = 'translate(' + tx.toFixed(1) + 'px,' + ty.toFixed(1) + 'px) scale(' + z.toFixed(4) + ')';
     cam = { z: z, tx: tx, ty: ty, W: W, H0: H0, hS: hS };
   }
   var nenHien = 'nen-a';
   function datNen() { // đổi tranh nền bằng cách mờ dần giữa hai lớp ảnh
-    var src = anhNen(st.dd, st.tt), a = $(nenHien);
+    var src = anhNen(st.dd, st.tt, canNho()), a = $(nenHien);
     if (a.getAttribute('src') === src) return;
     if (!a.getAttribute('src')) { a.src = src; return; }
     var kia = nenHien === 'nen-a' ? 'nen-b' : 'nen-a', b = $(kia);
@@ -354,14 +359,16 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     var pw = HOP.w / 100 * W * s, ph = HOP.h / 100 * H0 * s; if (ph > 1300) { pw *= 1300 / ph; ph = 1300; }
     pw = Math.max(2, Math.round(pw)); ph = Math.max(2, Math.round(ph));
     if (c.width !== pw || c.height !== ph) { c.width = pw; c.height = ph; }
-    var x = c.getContext('2d'); x.setTransform(1, 0, 0, 1, 0, 0); x.clearRect(0, 0, pw, ph); x.imageSmoothingQuality = 'high';
+    var x = c.getContext('2d'); x.setTransform(1, 0, 0, 1, 0, 0); x.clearRect(0, 0, pw, ph); x.imageSmoothingQuality = 'medium';
     var tam = tamX(), y = chanY(); c.style.left = (tam - HOP.l) + '%';
     var k = NV.MOT_MET * (y - NV.CHAN_TROI) / 100 * (ph / (HOP.h / 100)) / 100, fy = (y - HOP.t) / HOP.h * ph, cx = HOP.l / HOP.w * pw;
     var nu = st.nv['co-dau'], nam = st.nv['chu-re'], a = NV.nuaVai(nu), b = NV.nuaVai(nam), ho = 8, x0 = cx - (2 * a + ho + 2 * b) * k / 2;
     // "Nam tả nữ hữu": quay mặt ra khách thì chú rể ở bên phải khung hình, cô dâu bên trái; cả hai căn giữa cổng.
     var ds = [{ ai: 'co-dau', p: nu, x: x0 + a * k, y: fy, k: k }, { ai: 'chu-re', p: nam, x: x0 + (2 * a + ho + b) * k, y: fy, k: k }];
-    viTri = ds.map(function (d) { return { ai: d.ai, xw: tam - HOP.l + d.x / pw * HOP.w, yw: y }; });
-    if (!NV.ghep(nu) || !NV.ghep(nam)) return;
+    var coViTri = viTri.length === 2; viTri = ds.map(function (d) { return { ai: d.ai, xw: tam - HOP.l + d.x / pw * HOP.w, yw: y }; });
+    if (gan && !coViTri && app.classList.contains('can-mat')) boCuc(); // lần đầu biết chỗ đứng: đặt lại máy quay
+    var hn = NV.hinh(nu), hm = NV.hinh(nam); if (!hn || !hm) return; // gọi cả hai để tranh của hai người tải song song
+    if (!hn.tam && !hm.tam) daVe();
     NV.bongNga(x, ds, pw, ph);
     NV.bongChan(x, ds[0].x, fy, (nu.ao === 'aodai' ? 34 : 52) * k);
     NV.bongChan(x, ds[1].x, fy, 26 * k * ({ manh: 0.9, vua: 1, day: 1.2 })[nam.vb]);
@@ -372,10 +379,10 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
   }
   function veHuy() { // chân dung tròn của người đang chỉnh
     if (!gan) return;
-    var c = $('c-mat'), x = c.getContext('2d'), p = nvHien(), m = NV.META[p.gt], g = NV.ghep(p);
-    x.clearRect(0, 0, c.width, c.height); if (!g) return;
-    var can = st.tab === 'mat', sh = m.h * (can ? 0.19 : 0.27), sy = can ? Math.max(0, m.h * NV.CO[p.gt] * 0.6 - sh / 2) : 0, sx = (1 - m.cx) * m.w - sh / 2;
-    x.imageSmoothingQuality = 'high'; x.drawImage(g, sx, sy, sh, sh, 0, 0, c.width, c.height);
+    var c = $('c-mat'), x = c.getContext('2d'), p = nvHien(), m = NV.META[p.gt], hh = NV.hinh(p);
+    x.clearRect(0, 0, c.width, c.height); if (!hh) return;
+    var g = hh.c, q = g.height / m.h, can = st.tab === 'mat', sh = m.h * (can ? 0.19 : 0.27), sy = can ? Math.max(0, m.h * NV.CO[p.gt] * 0.6 - sh / 2) : 0, sx = (1 - m.cx) * m.w - sh / 2;
+    x.imageSmoothingQuality = 'high'; x.drawImage(g, sx * q, sy * q, sh * q, sh * q, 0, 0, c.width, c.height);
   }
   function toaDoSan(v) { return { x: cam.tx + cam.z * v.xw / 100 * cam.W, y: cam.ty + cam.z * v.yw / 100 * cam.H0 }; }
   function nhip() { // vòng sáng loé dưới chân khi vừa đổi một lựa chọn
@@ -391,7 +398,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
       b.addEventListener('click', function () { chonAi(v); }); e.appendChild(b);
     });
   }
-  function chonAi(v) { if (st.ai === v) return; st.ai = v; dungBang(); veHet(); nhip(); ghi(); }
+  function chonAi(v) { if (st.ai === v) return; st.ai = v; dungBang(); boCuc(); veHet(); nhip(); ghi(); }
   san.addEventListener('click', function (e) {
     if (!gan || viTri.length < 2 || e.target.closest('button')) return;
     var r = san.getBoundingClientRect(), mid = (toaDoSan(viTri[0]).x + toaDoSan(viTri[1]).x) / 2;
@@ -528,7 +535,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     var p = nvHien(), tab = el('div', 'tab'); tab.setAttribute('role', 'tablist'); tab.setAttribute('aria-label', 'Chỉnh ' + VAI[st.ai].toLowerCase());
     TAB.forEach(function (t) {
       var b = el('button'); b.type = 'button'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', st.tab === t[0] ? 'true' : 'false'); b.innerHTML = ico(t[2]) + '<span></span>'; b.lastChild.textContent = t[1];
-      b.addEventListener('click', function () { st.tab = t[0]; dungBang(); veHet(); ghi(); $('bang-than').scrollTop = 0; }); tab.appendChild(b);
+      b.addEventListener('click', function () { st.tab = t[0]; dungBang(); boCuc(); veHet(); ghi(); $('bang-than').scrollTop = 0; }); tab.appendChild(b);
     });
     dau.appendChild(tab);
     var n;
@@ -580,7 +587,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     var b = el('button', 'the' + (o.ngang ? ' ngang' : '')); b.type = 'button';
     b.setAttribute('role', o.cong ? 'switch' : 'radio'); b.setAttribute(o.cong ? 'aria-pressed' : 'aria-checked', o.on ? 'true' : 'false'); if (o.cong) b.setAttribute('aria-checked', o.on ? 'true' : 'false');
     if (o.tat) b.setAttribute('aria-disabled', 'true');
-    b.innerHTML = (o.hinh ? '<div class="hinh" style="background-image:url(' + o.hinh + ');background-position:' + (o.vt || '50% 48%') + '">' + (o.nhan ? '<span class="nhan-goc"></span>' : '') + '</div>'
+    b.innerHTML = (o.hinh ? '<div class="hinh" style="background-image:url(' + o.hinh + ')">' + (o.nhan ? '<span class="nhan-goc"></span>' : '') + '</div>'
       : '<div class="hinh-ico">' + o.icos.map(ico).join('') + '</div>') + '<div class="chu"><span class="ten"></span><span class="gia"></span>' + (o.dong || '') + '</div>';
     if (o.nhan && o.hinh) b.querySelector('.nhan-goc').textContent = o.nhan;
     b.querySelector('.ten').textContent = o.ten; b.querySelector('.gia').textContent = o.gia;
@@ -593,7 +600,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     function luoi(loc, td, ghiChu) {
       var n = nhom(than, td, ghiChu), l = el('div', 'the-luoi'); l.setAttribute('role', 'radiogroup');
       Object.keys(DD).filter(loc).forEach(function (k) { var x = DD[k];
-        l.appendChild(theLon({ hinh: anhNen(k, 'du', 1), nhan: x.vung, ten: x.ten, on: st.dd === k,
+        l.appendChild(theLon({ hinh: anhThe(k, 'du'), nhan: x.vung, ten: x.ten, on: st.dd === k,
           gia: x.anh ? 'Đi lại ~' + x.gia + ' triệu' : (x.que ? 'Nấu tại nhà ~' : 'Sân vườn ~') + x.gia + ' triệu',
           dong: '<span class="dong-ico"><span>' + ico('doi') + x.suc + '</span>' + x.rui.map(ico).join('') + '</span>', fn: function () { chonCanh(function () { st.dd = k; }); } })); });
       n.appendChild(l);
@@ -607,7 +614,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     tieuDe(dau, 'Trang trí và dịch vụ', d.anh ? d.ten + ' là điểm chụp ảnh cưới nên không có gói trang trí.' : 'Đổi gói để thấy cổng, hoa và đèn thay đổi ngay tại ' + d.ten + '.');
     var n = nhom(than, 'Gói trang trí'), l = el('div', 'the-luoi ba'); l.setAttribute('role', 'radiogroup');
     Object.keys(GOI).forEach(function (k) { var x = GOI[k];
-      l.appendChild(theLon({ hinh: anhNen(st.dd, k, 1), vt: '50% 42%', ten: x.ten, on: goiHien() === k, tat: d.anh && k !== 'du', gia: x.gia + ' triệu',
+      l.appendChild(theLon({ hinh: anhThe(st.dd, k), ten: x.ten, on: goiHien() === k, tat: d.anh && k !== 'du', gia: x.gia + ' triệu',
         dong: '<span class="dong-ico">' + x.co.map(ico).join('') + '</span><span class="dong-ico"><span class="chip tot">' + x.tot + '</span>' + (x.xau ? '<span class="chip xau">' + x.xau + '</span>' : '') + '</span>',
         fn: function () { chonCanh(function () { st.tt = k; }); } })); });
     n.appendChild(l);
@@ -667,5 +674,16 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
   window.addEventListener('resize', function () { clearTimeout(henCo); henCo = setTimeout(function () { boCuc(); veHet(); }, 80); });
   dung();
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { boCuc(); veHet(); });
+  // Khi cặp đôi đã hiện đủ nét lần đầu: lúc rảnh thì tải sẵn tấm hình nhỏ cho thẻ chọn và tranh nền nét cho cảnh phóng gần,
+  // để bấm "Bắt đầu" là có ngay mà không tranh đường truyền với cặp đôi lúc mới mở trang.
+  var daTai = false;
+  function daVe() {
+    if (daTai) return; daTai = true;
+    (window.requestIdleCallback || function (f) { setTimeout(f, 300); })(function () {
+      NV.taiTruoc(st.ai === 'chu-re' ? ['nam', 'nu'] : ['nu', 'nam']);
+      if (canNho()) { var i = new Image(); i.src = anhNen(st.dd, st.tt); }
+    }, { timeout: 1500 });
+  }
+  if (st.buoc === 1) NV.taiTruoc(st.ai === 'chu-re' ? ['nam', 'nu'] : ['nu', 'nam']); // mở lại ngay ở bước tạo nhân vật: cần thẻ hình ngay
 })();
 </script>

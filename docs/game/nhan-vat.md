@@ -197,3 +197,53 @@ Chủ dự án nhận xét bản trước còn nhiều lỗi và giao diện gi�
   - Cổ có bậc khi đổi chiều cao: bề ngang chuyển mềm qua cổ.
   - Bóng đổ răng cưa khi phóng gần: làm mờ bằng thu nhỏ một nửa nhiều lần.
   - Bộ nhớ tăng dần: hình ghép không còn phụ thuộc chiều cao và chỉ nhớ 6 hình gần nhất.
+
+## 8. Bản 14: sửa lông mày đôi, làm nhẹ (25/11/2026)
+
+Chủ dự án gửi ảnh chú rể tóc Vuốt ngược bị lỗi lông mày, và nhận xét trang tải rất lâu. Không dùng lượt Model Studio nào.
+
+### Lỗi lông mày đôi
+
+- **Nguyên nhân.** Mảnh lông mày được cắt từ tranh có tóc mái kiểu Rẽ ngôi, nên dính cả lọn tóc. Đặt lên đầu Vuốt ngược (trán trống, lông mày gốc đậm và cao hơn), mảnh không che hết lông mày gốc, nên thấy hai lớp lông mày và lọn tóc lạ trên trán.
+- **Chú rể, Vuốt ngược (9 đầu).** Xoá lông mày gốc khỏi đầu bằng mã. Lông mày mới là lớp chỉ có nét, không có da hay tóc (`mayA`), đặt đúng chỗ lông mày cũ.
+  - Lớp nét cắt từ bên lông mày không bị tóc che, rồi lật cho bên kia.
+  - Mặt vuông với lông mày Đậm, ngang bị lọn tóc che cả hai bên, nên dùng nét Đậm của mặt trái xoan.
+- **Cô dâu, Dài thẳng.** Mảnh lông mày bỏ các lọn tóc mái của kiểu Búi cao vắt qua trán (`mayS`).
+- **Cách xoá lông mày** (`docs/game/ve/may_xoa.py`):
+  1. Tìm nét tối hẹp bằng phép đóng.
+  2. Loại lọn tóc: nét dốc, dính vào mảng tóc hoặc chạm mép trên.
+  3. Tách lông mày khỏi mi mắt tại hàng ít điểm tối nhất.
+  4. Lấp da bằng nội suy Laplace.
+- **Soát.** Đã soát toàn bộ 54 đầu × 3 kiểu lông mày bằng bảng hình, có cả bản đổi màu tóc và màu da.
+- **Còn lại.** Mảnh mắt trên vài đầu Đầy đặn vẫn hơi lệch nếp mí. Lỗi này có từ trước, không thuộc lần sửa này.
+
+### Làm nhẹ
+
+Đo bằng Playwright, giả lập điện thoại tầm trung (4G chậm, CPU chậm 4 lần):
+
+| | Bản 13 | Bản 14 |
+|---|---|---|
+| Cặp đôi hiện ở màn mở đầu | 2,3 giây | 2,0 giây |
+| Bấm Bắt đầu → thẻ hình hiện đủ | 1,4 giây | ngay |
+| Mở thẻ Dáng | 1,5–2,0 giây | 0,1–0,3 giây |
+| Mở thẻ Mặt | 0,8–1,2 giây | 0,2–0,6 giây |
+| Bấm nấc Vai, máy bận | 0,7 giây | 0,15–0,35 giây |
+| Tải khi đi hết các bước | 118 tệp, 2,9 MB | 52 tệp, 1,6 MB |
+
+- **Tấm ghép.**
+  - 84 mảnh mắt, lông mày gom thành `nv/manh-{nam,nu}.webp`.
+  - `nv/nho-{nam,nu}.webp` chứa mọi đầu, thân và cổ áo ở cỡ 18%. Thẻ hình dựng từ đây, không tải từng tranh nét. Khi tranh nét chưa về, nhân vật hiện tạm bằng bản này.
+- **Nhớ theo lớp.**
+  - Thân, đầu và cổ áo được nhớ riêng, nên đổi tóc không phải dựng lại thân.
+  - Mặt nạ da và tóc được tính một lần cho mỗi tranh. Đổi màu chỉ còn là phép nhân.
+  - Công thức màu giữ nguyên bản 13; đã so từng điểm ảnh trên 10 nhân vật mẫu.
+- **Lật ngang và đánh sáng** gộp vào một lượt.
+- **Thứ tự tải.**
+  - Tranh của cô dâu và chú rể tải song song.
+  - Tấm ghép nhỏ và tranh nền nét chỉ tải sẵn sau khi cặp đôi đã hiện.
+  - Toàn cảnh trên điện thoại dùng tranh nền 900 px.
+  - Thẻ địa điểm dùng hình cắt sẵn 320 px.
+  - Hình người phục vụ thu nhỏ một nửa.
+  - Bớt hai độ đậm phông chữ không dùng.
+- **Bỏ chuyển động chạy liên tục** (nhịp thở của cặp đôi).
+- **Máy quay tránh chân dung.** Trên điện thoại, khi chỉnh Mặt hoặc Tóc, máy quay lướt sang để chân dung tròn không che người đang chỉnh.
