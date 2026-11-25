@@ -167,7 +167,7 @@ Tất cả khoảng 50 ảnh, tức khoảng 12% gói. Chạy sau 01/12, theo th
 2. Mình dựng mẫu đồ hoạ 2D (mục 3) bằng mã. Việc này làm được ngay, không cần chờ 01/12.
 3. Bạn chọn thứ tự cảnh (mục 4). Sau 01/12, mình gửi bảng duyệt từng tấm cho cảnh ưu tiên đầu tiên rồi mới vẽ.
 
-## 6. Chương 4 đã dựng thành ván chơi (26/11/2026)
+## 6. Chương 4 đã dựng thành ván chơi (25/11/2026)
 
 Chủ dự án duyệt vòng chơi (mục 1) và chọn làm chương 4 trước. Bản chơi nằm ở `game/lab/xuong/`. Không dùng lượt Model Studio nào: toàn bộ dùng tranh đã có.
 
