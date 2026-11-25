@@ -226,9 +226,40 @@ Chủ dự án nhận xét giao diện cũ chưa đẹp và muốn giống trang
 - **Lời thoại:** người thân và nhà cung cấp dùng biểu tượng; cô dâu, chú rể dùng chính hình nhân vật của người chơi.
 - **Kế hoạch của hai bạn:** trên máy tính, một bảng dưới sân khấu tóm tắt các quyết định đã chốt.
 
-### 6.4 Chưa làm
+### 6.4 Bản gọn và danh mục dài (25/11/2026)
+
+Chủ dự án nhận xét bản 6.3 chiếm nhiều diện tích và nhiều chữ, và hỏi về khả năng có khoảng 100 lựa chọn cho mỗi hạng mục. Bản gọn đổi cách trình bày, không đổi luật chơi:
+
+- **Lưới thẻ:** mỗi lựa chọn là một ô hình nhỏ có giá và một dòng tên (3 cột trên điện thoại, 4 cột trên máy tính). Chạm là cảnh đổi ngay; lưới không dựng lại nên danh mục dài không giật.
+- **Khay chi tiết:** chữ chỉ hiện cho lựa chọn đang chọn (tên, giá, nhãn ảnh hưởng), bám đáy bảng nên luôn thấy khi cuộn.
+- **Lọc và xếp:** hạng mục có trên 8 lựa chọn tự hiện hàng lọc theo nhãn và nút xếp theo giá. Hình trong lưới tải dần khi cuộn tới.
+- **Chỉ số:** một hàng mỏng bốn thanh; tiền chỉ nằm ở ví trên cùng. Bỏ các đoạn mở đầu và mô tả dài.
+- **Thử 100 lựa chọn:** ở màn mở đầu có nút "Thử danh mục 100 nơi". Nút này nhân 6 nơi thành 100 nơi với hình lặp lại và tên "thử", chỉ để kiểm bố cục; không phải dữ liệu của game. Đã thử ở 1280 và 390, sáng và tối: 100 thẻ, lọc còn 32, không lỗi, không tràn ngang.
+- **Dữ liệu:** mỗi nơi có thể có trường `canh` trỏ tới bộ tranh dùng chung, nên nhiều lựa chọn có thể dùng lại một bộ tranh.
+
+### 6.5 Chưa làm
 
 - Chưa có hình bố mẹ và nhà cung cấp (đang dùng biểu tượng). Cần vẽ sau 01/12.
 - Mỗi hạng mục mới có một nhà cung cấp; mục 2.4 dự kiến 2–3.
 - Chưa có âm thanh.
 - Chưa thử trên điện thoại thật và chưa chơi thử với người ngoài.
+
+## 7. Trang trí theo lớp và danh mục 100 lựa chọn (đề xuất, chờ duyệt)
+
+**Hiện trạng.** Trang trí đang là 3 gói (Gọn, Đủ, Trọn), mỗi gói là một tấm tranh vẽ trọn cảnh cho từng nơi (6 nơi × 3 = 18 tấm). Cổng hoa, bàn ghế, đèn dính liền vào nền, nên người chơi chỉ chọn "ít hay nhiều", không chọn được kiểu. Thêm một lựa chọn nghĩa là vẽ thêm một tấm cho mỗi nơi.
+
+**Vì sao không vẽ thẳng 100 tấm cho mỗi hạng mục.** Mỗi tấm tốn khoảng 0,24% hạn mức tháng. 8 hạng mục × 100 tấm là khoảng 800 tấm, gần gấp đôi hạn mức của một tháng, chưa tính tấm hỏng.
+
+**Đề xuất: tách trang trí thành lớp, giống cách đã làm với nhân vật.**
+
+1. Mỗi nơi có một tấm **nền trống** (không cổng, không bàn) và các **điểm neo** cố định: cổng, lối đi, bàn tiệc, hoa bàn, đèn, phông sân khấu.
+2. Mỗi món trang trí là một **hình rời nền trong**, vẽ một lần theo cùng góc nhìn, dùng được ở mọi nơi. Mã chỉnh sáng theo từng cảnh như đang làm với nhân vật.
+3. Số lựa chọn đến từ phép nhân **kiểu dáng × tông màu**: tông màu đổi bằng mã (như màu tóc, màu da). Ví dụ 10 kiểu cổng × 10 tông hoa cho 100 lựa chọn cổng từ 10 tấm vẽ.
+4. Lựa chọn nằm trong **tệp dữ liệu** (tên, giá, nhãn phong cách, nhãn tông màu). Ảnh hưởng tới hai họ và ngân sách tính từ nhãn, không viết tay cho từng món. Thêm lựa chọn không cần sửa mã.
+5. Món trang trí gom theo **bộ phong cách** (ví dụ: vườn pastel, truyền thống đỏ vàng, mộc, tối giản, nhiệt đới, đêm đèn). Người chơi phối tự do; phối hợp tông thì được cộng điểm.
+
+**Giới hạn cần nói rõ.** 100 lựa chọn kiểu này là 10 kiểu dáng với 10 tông màu, không phải 100 thiết kế khác hẳn nhau. Giao diện nên là hai bước (chọn kiểu, rồi chọn tông) thay vì một lưới phẳng 100 ô. Lưới 100 ô hợp với nơi tổ chức và nhà cung cấp hơn.
+
+**Ước lượng (số tạm, chưa thử).** 6 nền trống + 6 bộ phong cách × khoảng 5 loại món ≈ 36 tấm, khoảng 9% hạn mức tháng. Rủi ro chính: hình rời không khớp góc nhìn, không khớp ánh sáng, chân món không bám đất.
+
+**Bước thử trước khi cam kết.** 3 tấm cho một nơi (nền trống Vườn Hồ, một cổng kiểu khác, một bộ bàn), theo đúng quy tắc: bảng duyệt trước, vẽ thử một tấm trước. Chưa vẽ gì khi chưa được duyệt.
