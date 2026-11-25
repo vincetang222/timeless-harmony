@@ -11,7 +11,7 @@
 - **Khăn nhiều lớp, ghế theo lớp:** khăn nền + khăn phủ + khăn chạy bàn ghép bằng mã, 0 tấm; đã thử 7 cách phối trên bàn tròn cũ. Ghế có 7 lớp; khung, đệm, đai làm bằng mã, còn nơ và món gắn phải vẽ. Đã duyệt đổi T9 thành bàn dài phủ khăn trắng chấm đất (cuối mục 3.4).
 - **Tiết mục:** 32 tiết mục trong 4 nhóm, mỗi tiết mục là một hình người biểu diễn rời, khoảng 34 tấm. Điệu nhảy của chính cặp đôi là việc khác, cần tư thế mới cho nhân vật (mục 6.6).
 - **Màn cận cảnh bàn:** một góc nhìn gần một chỗ ngồi để cặp đôi xem đĩa, ly, dao nĩa hoặc đũa, khăn ăn và so sánh hai phương án; nền, đĩa, ly, dao nĩa, bộ Việt đã tự dựng bằng 3D, còn khăn ăn gấp phải vẽ (khoảng 2 tấm, cuối mục 3.4).
-- **Hạn mức:** sau khi tự vẽ được nhiều món (25/11), tháng 12 còn dư khoảng 46 tấm nếu chỉ tính phần đã làm xong, khoảng 61 tấm nếu tính cả phần dự kiến tự vẽ tiếp (mục 7). Mục 7b liệt kê các cách tiết kiệm gói; riêng đổi màu bằng mã đã bớt được 14 tấm.
+- **Hạn mức:** chủ dự án giới hạn game ở 40% gói Model Studio mỗi tháng, khoảng 166 hình (25/11). Toàn bộ kế hoạch khoảng 355 hình nên chia ra ba tháng 12, 1, 2; tháng 12 làm trang trí và tiết mục là vừa (mục 7). `gen.py` tự chặn lô vượt trần. Mục 7b liệt kê các cách tiết kiệm gói; riêng đổi màu bằng mã đã bớt được 14 tấm.
 - **Bước đầu:** tháng 11 không chạy đợt nào (chủ dự án quyết 25/11). Đầu tháng 12 chạy các tấm thử còn cần công cụ vẽ: T2, T3, T4, T5 (mục 8) và T10, T11 (mục 8b); T1, T6, T7, T8, T9, T12, T13 đã tự vẽ.
 
 ## 1. Làm sao có hàng nghìn lựa chọn mà không vẽ hàng nghìn tấm
@@ -620,9 +620,11 @@ MC, ban nhạc mộc, thợ ảnh (bản chơi hiện nay). MC 4 bộ và ban nh
 
 Waltz hay điệu nhảy đầu tiên của cô dâu chú rể không phải hình người biểu diễn. Nó cần thân nhân vật ở tư thế nhảy, cho mọi vóc người và mọi bộ trang phục, nên tốn rất nhiều tấm. Trước mắt: cặp đôi đứng giữa, mã làm khói sàn, đèn đuổi và cánh hoa. Tư thế nhảy để sau khi tóc và trang phục đã vẽ xong.
 
-## 7. Hạn mức tháng 12 trên một trang
+## 7. Hạn mức trên một trang
 
-Gói tháng ước khoảng **416 tấm** (mỗi tấm khoảng 0,24% gói, đo ngày 24/11). Mọi con số dưới đây là ước lượng.
+**Giới hạn mới (chủ dự án đặt ngày 25/11): game chỉ dùng tối đa 40% gói Model Studio mỗi tháng**, phần còn lại để việc khác. Mỗi hình khoảng 0,24% gói (đo ngày 24/11), nên trần là **khoảng 166 hình mỗi tháng**, kể cả lượt sửa; video tính quy đổi (1 clip 5 giây ≈ 23 hình). `docs/game/ve/gen.py` tự đếm vào sổ `so-luot.json` và từ chối lô nào làm vượt trần, trước khi gọi.
+
+Vì vậy kế hoạch dưới đây (khoảng 355 hình nếu thử đạt) không còn vừa một tháng, mà chia ra ba tháng (bảng "Chia theo tháng" ở cuối mục). Bảng ngay dưới là tổng khối lượng, chưa chia tháng. Mọi con số là ước lượng.
 
 | Việc | Trạng thái | Nếu thử đạt | Nếu thử không đạt |
 |---|---|---|---|
@@ -651,12 +653,19 @@ Cập nhật ngày 25/11, sau khi tự vẽ (mã và 3D):
 - **Tính cả phần dự kiến tự vẽ tiếp** (4 bản đêm, bàn vuông, bàn đứng, 2 kiểu ghế, váy quây, áo ghế thun, nến, đồ giấy): dư khoảng 61 tấm, hoặc 13 nếu thử không đạt.
 - Các con số giả định chủ dự án chấp nhận nét của đồ tự vẽ.
 
-**Đề xuất thứ tự trong tháng 12:**
+**Chia theo tháng, trần 166 hình mỗi tháng (đã gồm 25% dự phòng sửa):**
 
-1. **Đầu tháng:** Đợt thử T10–T13 (mục 8b); lông mày cô dâu; nền trống 4 nơi; khung cổng; loài hoa; bàn, áo ghế, váy quây. Trang trí lên trước vì nó làm lại toàn bộ chương 4.
-2. **Giữa tháng:** tóc, trang phục, MC và ban nhạc.
-3. **Cuối tháng:** nơi trong nhà, bản đêm; hoa bàn, lối đi, đồ treo, góc phụ; nơ ghế, món gắn ghế, nến và giấy; màn cận cảnh bàn; 12 tiết mục đầu (mỗi nhóm vài tiết mục).
-4. **Tháng 1:** cảnh nghi lễ C14–C17 và các cảnh còn lại; tiết mục còn lại.
+Phương án A, trang trí trước (mình đề xuất): trang trí đang dựng dở ở chương 4, và phần lớn bàn ghế, cận cảnh đã tự vẽ xong nên tháng 12 còn dư chỗ.
+
+| Tháng | Việc | Hình (thử đạt) | Kể cả 25% sửa |
+|---|---|---|---|
+| 12 | Tấm thử T2, T3, T4, T5, T10, T11 (là món đầu của các dòng bên dưới); lông mày 9; nơi tổ chức 10; khung cổng 14; loài hoa 17; bàn ghế 1; hoa bàn, lối đi, đồ treo, góc phụ 13; khăn và trang trí ghế 6; cận cảnh 2; MC, ban nhạc 4; tiết mục 34 | 110 | khoảng 138 (dư khoảng 28) |
+| 1 | Tóc 90; trang phục 27 | 117 | khoảng 146 (dư khoảng 20) |
+| 2 | Cảnh C1–C17, C20 và nhân vật phụ khoảng 50; nơi đợt 2: 7 | 57 | khoảng 71 |
+
+Nếu các bài thử "nhiều món trên một tấm" không đạt, tháng 12 lên khoảng 148 hình (185 kể cả sửa), vượt trần: dời khoảng 20 tiết mục sang tháng 2.
+
+Phương án B, nhân vật trước: tháng 12 là lông mày 9, tóc 90, trang phục 27, MC và ban nhạc 4 = 130 hình (khoảng 163 kể cả sửa, sát trần 166, gần như không dư). Tháng 1 là trang trí và tiết mục (106 hình, khoảng 133). Tháng 2 là cảnh (57 hình).
 
 Mỗi nhóm vẫn vẽ thử một tấm trước khi chạy cả lô (quy tắc 3).
 
@@ -737,11 +746,12 @@ Bốn tấm thử cho ghế và màn cận cảnh, chạy đầu tháng 12, trư
 
 1. Danh sách bộ phong cách (mục 3.9) và tiết mục (mục 6): thêm, bớt hay giữ nguyên?
 2. Các bản tự vẽ (khung cổng, bản đêm, ghế và bàn 3D) có đủ giống tranh vẽ tay không? Mặc định đang dùng, chủ dự án xem từng cái.
-3. Thứ tự tháng 12 ở mục 7: trang trí trước, hay tóc và trang phục trước?
+3. Chia tháng ở mục 7: phương án A (trang trí trước, tháng 12 dư khoảng 28 hình) hay B (nhân vật trước, tháng 12 sát trần)?
 4. Người Việt nhìn hạc giấy ở tiệc cưới thế nào: nên có trong danh mục, có kèm lưu ý, hay bỏ?
 5. Có mở thêm `www.dienmayxanh.com`, `www.sapo.vn`, `www.brandsvietnam.com` để đọc trọn cách bày bàn kiểu Việt không? Hiện mới có đoạn trích.
 
 Đã xong (25/11):
+- Game dùng tối đa 40% gói Model Studio mỗi tháng (khoảng 166 hình); `gen.py` tự đếm và chặn.
 - Tháng 11 không chạy đợt nào; tự vẽ được thì tự vẽ. Đợt 0, 8b chuyển sang đầu tháng 12.
 - Chủ dự án chọn thêm màn cận cảnh bàn.
 - Duyệt đổi T9 thành bàn dài phủ khăn trắng chấm đất; T10–T13 chạy đầu tháng 12 (mục 8b).

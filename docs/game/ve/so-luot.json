@@ -1,0 +1,11 @@
+{
+ "gioi_han_phan_tram": 40,
+ "phan_tram_moi_hinh": 0.24,
+ "ghi_chu": "Chủ dự án đặt ngày 25/11/2026: game dùng tối đa 40% gói Model Studio mỗi tháng (khoảng 166 hình, kể cả lượt sửa; video quy đổi theo số hình). gen.py tự đếm và từ chối lô vượt giới hạn. Tháng 11/2026 không vẽ thêm.",
+ "thang": {
+  "2026-12": {
+   "so_hinh": 0,
+   "ten": []
+  }
+ }
+}

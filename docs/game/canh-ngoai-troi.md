@@ -69,6 +69,7 @@ Các cảnh tiệc làng quê có thể cần "cổng cưới" kiểu rạp (khu
 6. **Dùng lại hình cũ.** Mọi cảnh mới đều sửa từ cảnh gốc có sẵn để giữ thước phối cảnh.
 7. **Luôn đưa hình gốc của nhân vật làm mẫu.**
 8. **Góp ý gom một lần.** Chủ dự án xem hết cả tập rồi gửi một lần; mình gộp nhiều chỗ sửa vào ít lượt. Mình tự soát hình (đo thước, khung, lỗi ghép) trước khi đưa xem, vì việc soát không tốn lượt vẽ.
+9. **Trần 40% gói mỗi tháng** (chủ dự án đặt ngày 25/11/2026). Game chỉ dùng tối đa 40% gói Model Studio mỗi tháng, khoảng 166 hình kể cả lượt sửa; video tính quy đổi. `docs/game/ve/gen.py` ghi sổ `docs/game/ve/so-luot.json` và từ chối lô làm vượt trần. Chạy đúng `gen.py` trong repo (hoặc liên kết tới nó) để sổ đếm đúng.
 
 ## 5. Gắn vào game
 

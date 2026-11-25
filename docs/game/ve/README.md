@@ -51,4 +51,4 @@ Bốn ảnh mô hình trả về (`lenh/tt-j1.json`): `nen-ho.png`, `nen-langque
 
 Kinh nghiệm viết câu lệnh: mô hình không giữ vị trí và cỡ của vật khi được bảo xoá hết phần còn lại (nó vẽ vật to gần kín khung), nên vị trí và cỡ luôn do mã đặt. Lần sau nên yêu cầu phần cần đổi tông (khăn, hoa) màu trắng và đặt trên vật có màu khác hẳn.
 
-Quy tắc dùng lượt vẽ nằm ở `../canh-ngoai-troi.md`, mục 4. Mỗi ảnh tốn khoảng 0,24% gói tháng (đo ngày 24/11/2026).
+Quy tắc dùng lượt vẽ nằm ở `../canh-ngoai-troi.md`, mục 4. Mỗi ảnh tốn khoảng 0,24% gói tháng (đo ngày 24/11/2026). **Trần: game dùng tối đa 40% gói mỗi tháng (khoảng 166 hình).** `gen.py` ghi sổ `so-luot.json` cạnh nó (theo đường dẫn thật, nên bản sao dạng liên kết vẫn ghi đúng sổ) và từ chối lô vượt trần trước khi gọi. Sau mỗi lô, đưa `so-luot.json` vào repo.
