@@ -6,9 +6,10 @@
 
 - **Trang trí:** muốn có hàng nghìn mẫu thì không vẽ từng mẫu. Ta vẽ từng bộ phận (khung cổng, cụm hoa theo loài, bàn, hoa bàn…), rồi để mã ghép, đổi màu và chỉnh sáng. Nếu hai bài thử ở mục 8 đạt, chỉ riêng cổng đã có khoảng 13.000 cách phối từ 37 tấm vẽ. Nếu không đạt, còn khoảng 320.
 - **Hiệu ứng sân khấu:** pháo hoa, pháo giấy, pháo lạnh, khói sàn, bong bóng, màn LED, chữ neon… gần như toàn bộ vẽ bằng mã, **không tốn lượt**. Cái cần vẽ là nền đêm và nền trong nhà để hiệu ứng có chỗ diễn.
+- **Bàn khách:** bàn, ghế và cách xếp tách rời: 11 tấm vẽ cho bàn tròn, vuông, dài (nối bằng mã thành bàn 8–40 người) và 6 kiểu ghế; 13 cách xếp bằng mã; từ 30 tới 1000 khách, có sơ đồ nhìn từ trên xuống (mục 3.4).
 - **Tiết mục:** 32 tiết mục trong 4 nhóm, mỗi tiết mục là một hình người biểu diễn rời, khoảng 34 tấm. Điệu nhảy của chính cặp đôi là việc khác, cần tư thế mới cho nhân vật (mục 6.6).
-- **Hạn mức:** cả bảng này khoảng 106 tấm. Cộng việc đã duyệt và dự phòng sửa thì vừa gói tháng 12 (mục 7).
-- **Bước đầu:** 6 tấm thử cho các kỹ thuật chưa chứng minh, chạy được ngay tháng này (mục 8).
+- **Hạn mức:** cả bảng này khoảng 111 tấm. Cộng việc đã duyệt và dự phòng sửa thì vừa gói tháng 12 (mục 7).
+- **Bước đầu:** 9 tấm thử cho các kỹ thuật chưa chứng minh, chạy được ngay tháng này (mục 8).
 
 ## 1. Làm sao có hàng nghìn lựa chọn mà không vẽ hàng nghìn tấm
 
@@ -29,7 +30,8 @@ Nói rõ: nhiều cách phối trong số đó chỉ khác nhau một chút. S�
 | Đổi tông qua mặt nạ | Đã chứng minh, có giới hạn | Hoa: tự động. Khăn bàn: phải khoanh tay một đa giác cho mỗi kiểu bàn |
 | Chỉnh sáng món rời theo cảnh | Đã chứng minh | Hệ số đo trên khăn trắng (mục 7.3) |
 | **Khung trần + cụm hoa rời ghép bằng mã** | **Chưa thử** | Cụm hoa có thể trông lơ lửng, cuống không bám khung. Thử T1, T2 |
-| **Nhiều món trên một tấm, mã cắt rời** | **Chưa thử** | Mô hình có thể vẽ các món chạm nhau, khác góc nhìn, khác cỡ. Thử T2, T3 |
+| **Nhiều món trên một tấm, mã cắt rời** | **Chưa thử** | Mô hình có thể vẽ các món chạm nhau, khác góc nhìn, khác cỡ. Thử T2, T3, T7, T8 |
+| **Ghế rời đặt quanh bàn; bàn dài nối từ mô-đun** | **Chưa thử** | Góc nhìn của 8 ghế phải khớp nhau; mối nối bàn dài có thể lộ. Thử T7, T8, T9 |
 | Người biểu diễn rời đặt vào cảnh | Chưa thử | Nét vẽ phải khớp cặp đôi. Thử T4 |
 | Nền trong nhà, nền đêm giữ được thước phối cảnh | Chưa thử | Mô hình hay xê dịch cảnh khoảng 10 px. Thử T5, T6 |
 
@@ -123,11 +125,59 @@ Sen, cúc hoạ mi và hoa giấy là hoa quen ở Việt Nam. Rum, thược dư
 | 19 | Tường hoa phẳng | vẽ liền | sang, chụp ảnh |
 | 20 | Tường cây xanh | vẽ liền | tối giản, vườn |
 
-### 3.4 Bàn ghế (vẽ, 6 tấm)
+### 3.4 Bàn khách và cách xếp (vẽ 11 tấm; cách xếp là mã)
 
-bàn tròn khăn dài, ghế chiavari (vẽ lại bản rời) · bàn dài gỗ, ghế lưng chéo (đã có) · bàn vuông, ghế trong suốt · bàn dài phủ khăn chữ U kiểu bàn tiệc lớn · bàn tre, ghế mây · bàn tròn rạp quê, ghế inox bọc vải
+Chủ dự án góp ý (25/11): tiệc ở châu Âu xếp bàn rất đa dạng, kể cả khi có 1000 khách: bàn vuông, tròn, dài, bàn 6, 10, 20 người. Game làm được điều này nếu **bàn, ghế và cách xếp tách rời nhau**.
 
-Mỗi kiểu bàn vẽ khăn **màu trắng trên gỗ hoặc kim loại màu khác hẳn**, để mặt nạ khăn làm tự động.
+**Vẽ bộ phận, mã lắp lại:**
+
+- **Bàn tròn** nhìn từ mọi hướng đều như nhau, nên mỗi cỡ chỉ cần một hình.
+- **Bàn dài** vẽ thành 3 mảnh: đầu trái, đoạn giữa, đầu phải. Mã nối một đầu, nhiều đoạn giữa, một đầu thành bàn 8, 12, 20 hay 40 người. Bàn chạy ngang khung hình thì các đoạn giữa cùng cỡ nên nối dễ. Bàn chạy dọc vào sâu thì mỗi đoạn nhỏ dần, thử sau.
+- **Ghế** vẽ riêng, mỗi kiểu ghế một tấm gồm 8 góc nhìn (trước, sau, hai bên, bốn góc chéo). Mã đặt ghế quanh bàn theo số người, ghế phía sau bị bàn che đúng thứ tự. Nhờ vậy một kiểu bàn ngồi được 6, 8, 10 hay 12 người, với kiểu ghế nào cũng được.
+- **Khăn** vẽ màu trắng trên gỗ hoặc kim loại màu khác hẳn, để mặt nạ đổi màu làm tự động.
+
+| Tấm | Có gì |
+|---|---|
+| Bàn tròn trần | 4 cỡ: 6, 8, 10, 12 người; khăn trắng phủ chấm đất |
+| Bàn vuông, bàn chữ nhật | vuông 4 và 8 người; chữ nhật 6 người |
+| Bàn dài mô-đun, chạy ngang | đầu trái, đoạn giữa, đầu phải; gỗ sáng, khăn chạy bàn trắng. Dùng cho bàn hoàng gia, chữ U, chữ E |
+| Bàn dài mô-đun, chạy chéo | như trên, theo hướng chéo của bàn dài đã có; lật gương cho bên kia. Dùng cho kiểu xương cá |
+| Bàn khác | bàn cocktail đứng, bàn bán nguyệt, bàn cho riêng cặp đôi |
+| 6 kiểu ghế × 8 góc nhìn | chiavari, lưng chéo, trong suốt, mây, gỗ gấp, inox bọc vải (rạp quê) |
+
+**13 cách xếp (mã, 0 tấm):**
+
+| # | Cách xếp | Hợp với |
+|---|---|---|
+| 1 | Lưới bàn tròn thẳng hàng | tiệc Việt quen thuộc (bàn 10 khách như trong `gia-tham-khao.md`), mọi cỡ |
+| 2 | Bàn tròn so le | thoáng, dễ đi chào bàn |
+| 3 | Các hàng bàn dài song song | kiểu tiệc gia đình, hai họ ngồi lẫn |
+| 4 | Xương cá (bàn dài chéo hai bên lối giữa) | ngoài trời, nhìn rõ cặp đôi |
+| 5 | Chữ U | dưới 60 khách, trang trọng |
+| 6 | Chữ E, răng lược (bàn hoàng gia và các bàn dài vuông góc) | 100–300 khách, sảnh lớn |
+| 7 | Chữ T | tiệc nhỏ |
+| 8 | Hình vuông rỗng | tiệc thân mật, ai cũng thấy nhau |
+| 9 | Bàn hoàng gia phía trước và bàn tròn | sảnh tiệc |
+| 10 | Một bàn dài xuyên suốt | tiệc làng, cả họ một bàn |
+| 11 | Bàn dài ở giữa, bàn tròn hai bên | trộn kiểu |
+| 12 | Quây quanh sàn nhảy | tiệc tối có tiết mục |
+| 13 | Tiệc đứng: bàn cocktail rải rác, vài bàn ngồi cho người lớn tuổi | trẻ trung, rẻ |
+
+**Từ 30 tới 1000 khách:**
+
+- Mã tính số bàn từ số khách và số chỗ mỗi bàn, rồi rải bàn theo cách xếp đã chọn. Bàn xa nhỏ dần theo cùng thước phối cảnh với nhân vật, vẽ từ xa tới gần cho đúng thứ tự che khuất.
+- Mỗi nơi đo một lần **vùng đất đặt được bàn**. Từ đó ra **sức chứa thật** của nơi đó. Đông khách quá thì phải chọn nơi rộng hơn hoặc đổi cách xếp. Đây cũng là một quyết định của người chơi.
+- Cảnh vẽ tay chỉ thấy rõ vài hàng bàn gần. Với tiệc vài trăm tới 1000 khách, game có thêm **sơ đồ nhìn từ trên xuống** vẽ bằng mã: người chơi chọn cách xếp, kéo bàn và thấy cả hội trường.
+
+**Ảnh hưởng tới chỉ số (số tạm, tính từ nhãn):**
+
+- Bàn tròn 10 quen với họ hàng lớn tuổi, phục vụ nhanh.
+- Bàn dài cho hai họ ngồi lẫn, dễ trò chuyện, nhưng cần nhiều khăn chạy bàn và hoa rải dọc bàn.
+- Chữ U, chữ E, hình vuông rỗng trang trọng, ai cũng thấy cặp đôi, nhưng tốn chỗ.
+- Tiệc đứng rẻ và trẻ trung, nhưng người lớn tuổi mệt nếu thiếu ghế.
+- Chi phí nhân theo số bàn: khăn, hoa bàn, người phục vụ.
+
+**Có thể thêm sau:** trò **xếp chỗ ngồi**. Người chơi đặt các nhóm khách (họ nội, họ ngoại, bạn cô dâu, đồng nghiệp chú rể, ông bà, trẻ con) vào bàn, với vài luật như ông bà ngồi gần sân khấu, hai người đang giận nhau thì không ngồi chung. Kết quả ảnh hưởng tới lòng hai họ.
 
 ### 3.5 Hoa bàn (vẽ, 3 tấm × 6 kiểu)
 
@@ -255,14 +305,15 @@ Gói tháng ước khoảng **416 tấm** (mỗi tấm khoảng 0,24% gói, đo 
 | **Bảng này:** nơi tổ chức | chờ duyệt | 16 | 16 |
 | **Bảng này:** khung cổng | chờ duyệt | 20 | 20 (vẽ kèm hoa) |
 | **Bảng này:** loài hoa | chờ duyệt | 17 | 0 (hoa vẽ liền vào khung) |
-| **Bảng này:** bàn, hoa bàn, lối đi, đồ treo, góc phụ | chờ duyệt | 19 | khoảng 58 (mỗi món một tấm) |
+| **Bảng này:** bàn ghế (mục 3.4) | chờ duyệt | 11 | khoảng 15 (ghế vẽ liền với bàn, mỗi bàn một kiểu ghế) |
+| **Bảng này:** hoa bàn, lối đi, đồ treo, góc phụ | chờ duyệt | 13 | khoảng 52 (mỗi món một tấm) |
 | **Bảng này:** tiết mục | chờ duyệt | 34 | 34 |
-| Cộng | | khoảng 305 | khoảng 327 |
-| Dự phòng sửa 25% (quy tắc 4) | | khoảng 76 | khoảng 82 |
-| **Tổng** | | **khoảng 381** | **khoảng 409** |
+| Cộng | | khoảng 310 | khoảng 336 |
+| Dự phòng sửa 25% (quy tắc 4) | | khoảng 78 | khoảng 84 |
+| **Tổng** | | **khoảng 388** | **khoảng 420** |
 | Cách phối cổng | | khoảng 13.000 | khoảng 320 |
 
-Nếu thử đạt thì vừa gói tháng 12 và còn dư khoảng 35 tấm. Nếu không đạt thì chỉ còn dư khoảng 7 tấm: nên dời tiết mục và cảnh C1–C13 sang tháng 1.
+Nếu thử đạt thì vừa gói tháng 12 và còn dư khoảng 28 tấm. Nếu không đạt thì vượt gói khoảng 4 tấm: phải dời tiết mục và cảnh C1–C13 sang tháng 1.
 
 **Đề xuất thứ tự trong tháng 12:**
 
@@ -273,9 +324,9 @@ Nếu thử đạt thì vừa gói tháng 12 và còn dư khoảng 35 tấm. N�
 
 Mỗi nhóm vẫn vẽ thử một tấm trước khi chạy cả lô (quy tắc 3).
 
-## 8. Đợt 0: 6 tấm thử, chạy được ngay tháng này
+## 8. Đợt 0: 9 tấm thử, chạy được ngay tháng này
 
-Tháng 11 còn khoảng 24 tấm. Đợt này dùng tối đa 9 tấm (6 tấm và 3 lượt sửa), khoảng 2% gói. Mỗi tấm vẽ trên nền xanh dương phẳng, trừ T5 và T6 là cảnh.
+Tháng 11 còn khoảng 24 tấm. Đợt này dùng tối đa 12 tấm (9 tấm và 3 lượt sửa), khoảng 3% gói. Mỗi tấm vẽ trên nền xanh dương phẳng, trừ T5 và T6 là cảnh.
 
 | Tấm | Ai hoặc vật gì | Tư thế, trang phục | Có gì | Không có gì | Sửa từ hình nào | Đạt khi |
 |---|---|---|---|---|---|---|
@@ -285,20 +336,24 @@ Tháng 11 còn khoảng 24 tấm. Đợt này dùng tối đa 9 tấm (6 tấm v
 | T4. Tứ tấu đàn dây | 4 nhạc công: 2 violin, 1 viola, 1 cello; 2 nam, 2 nữ | ngồi ghế, đang chơi; nam vest đen, nữ đầm đen dài | 4 ghế, 4 cây đàn, giá nhạc | đất, người khác | một tấm mẫu ghép sẵn bằng mã: ban nhạc (`ban-nhac-b.webp`) và cặp đôi đặt trên nền xanh dương phẳng (công cụ vẽ chỉ nhận một hình mẫu, và hình có nền trong suốt sẽ hiện nền đen) | nét giống ban nhạc và cặp đôi; tay cầm đàn đúng; tách nền sạch; đặt vào Vườn Hồ đúng cỡ |
 | T5. Sảnh tiệc có màn LED | nền trống trong nhà | — | sảnh tiệc, lối đi giữa, sân khấu thấp phía sau, màn LED lớn **đen trơn**, chùm đèn pha lê, sàn bóng | bàn ghế, người, hoa | `nen-ho.png` (giữ góc máy và vị trí lối đi) | lối đi và đường chân trời gần như cũ để dùng chung thước phối cảnh; màn LED là hình chữ nhật sạch, mã đo được 4 góc |
 | T6. Vườn Hồ ban đêm | nền trống, đêm | — | trời xanh thẫm có sao, đèn lan can sáng ấm, mặt hồ phản chiếu | trăng to, người, đồ trang trí | `nen-ho.png` | cảnh xê dịch không quá 1%; trời đủ tối cho pháo hoa bằng mã; đo được hệ số chỉnh sáng cho món rời |
+| T7. Ghế chiavari 8 góc nhìn | 8 chiếc ghế cùng kiểu, lưới 4 × 2, cách xa nhau | trước, sau, trái, phải, bốn góc chéo; cùng cỡ; góc nhìn hơi cao như bàn tiệc | ghế chiavari trắng, đệm kem | bàn, người, đất | `ban-dai.png` (thay bộ bàn bằng 8 chiếc ghế) | mã cắt được 8 ghế; đặt quanh bàn T8 trông như thật, ghế sau bị bàn che đúng thứ tự |
+| T8. Bàn tròn trần 3 cỡ | 3 bàn tròn: 6, 10, 12 người | góc nhìn hơi cao | khăn trắng phủ chấm đất | ghế, hoa, đồ ăn, người | `ban-dai.png` | mã cắt được 3 bàn; mặt bàn đúng góc nhìn; tỉ lệ cỡ giữa ba bàn hợp lý; ghép với ghế T7 ra bàn 6, 10, 12 người |
+| T9. Bàn dài mô-đun chạy ngang | 3 mảnh: đầu trái, đoạn giữa, đầu phải | nhìn chính diện, hơi cao; bàn chạy ngang khung hình | gỗ sáng, khăn chạy bàn trắng, bát đĩa, ly; mỗi đoạn giữa có 2 ghế mỗi bên | hoa, người, đất | `ban-dai.png` | mã nối thành bàn 8, 20, 40 người không lộ mối nối |
 
-**Thứ tự:** T1 rồi T2 (cặp này quyết định có 13.000 hay 320 cách phối cổng), sau đó T3, T4, T5, T6. Tấm nào không đạt thì sửa từng chỗ trên chính tấm đó, tối đa 3 lượt sửa cho cả đợt.
+**Thứ tự:** T1 rồi T2 (cặp này quyết định có 13.000 hay 320 cách phối cổng), rồi T7, T8, T9 (quyết định bàn ghế có lắp tự do được không), sau đó T3, T4, T5, T6. Tấm nào không đạt thì sửa từng chỗ trên chính tấm đó, tối đa 3 lượt sửa cho cả đợt.
 
 ## 9. Việc làm được ngay, không tốn lượt
 
 - Dựng các hiệu ứng mã ở mục 5 trong `game/lab/xuong/` và gắn vào màn thử trang trí theo lớp.
 - Chuyển danh mục trang trí sang dạng dữ liệu (một dòng mỗi món, có nhãn), và dựng bộ chọn hai bước (kiểu rồi màu).
 - Dựng 21 bộ phong cách từ những món đã có, để bộ chọn có dữ liệu chạy thử.
+- Dựng bộ xếp bàn bằng mã: 13 cách xếp, tính số bàn theo số khách, đo vùng đặt bàn và sức chứa của Vườn Hồ và Sân nhà quê, sơ đồ nhìn từ trên xuống. Chạy thử trước với bàn dài đã có.
 - Dựng màn chương trình: dòng thời gian tiết mục theo `spec.md` mục 4. Màn này phải có trước khi vẽ nhiều người biểu diễn; nếu không, hình tiết mục chưa có chỗ dùng. Vì vậy tháng 12 chỉ vẽ trước vài tiết mục mỗi nhóm.
 
 ## 10. Cần chủ dự án quyết
 
 1. Danh sách bộ phong cách (mục 3.9) và tiết mục (mục 6): thêm, bớt hay giữ nguyên?
-2. Có duyệt Đợt 0 (6 tấm thử ở mục 8) để chạy ngay tháng này không?
+2. Có duyệt Đợt 0 (9 tấm thử ở mục 8) để chạy ngay tháng này không?
 3. Thứ tự tháng 12 ở mục 7: trang trí trước, hay tóc và trang phục trước?
 
 ## Nguồn
