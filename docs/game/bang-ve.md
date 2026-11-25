@@ -58,7 +58,7 @@ Mình không mở được trang báo cáo gốc của Pinterest từ môi trư�
 | Nâu là màu của năm (Pinterest 2025) | Tông nâu, mocha | Bảng màu "Nâu mocha" |
 | Surreal Florals (Pinterest 2025) | Hoa rum, thược dược, hồng môn, hoa giấy, hoa treo | Các loài này có trong mục 3.2; khung "mái hoa treo" |
 | Wildflower (Pinterest 2025) | Hoa đồng nội | Loài "hoa đồng nội"; bộ "Đồng nội" |
-| Pháo lạnh (The Knot) | Máy phun tia sáng không nóng, mỗi đợt vài chục giây | Hiệu ứng mã (mục 5) |
+| Pháo lạnh (The Knot) | Máy phun tia sáng không nóng; theo The Knot, mỗi đợt thường kéo dài 15–30 giây | Hiệu ứng mã (mục 5) |
 | Giải trí cho khách (The Knot) | Hoạ sĩ vẽ trực tiếp, giải trí tương tác, hoài cổ | Nhóm tiết mục "tương tác" (mục 6.5) |
 | Cổng lễ theo hình (WeddingWire, Singaporebrides) | Tròn, tam giác, lục giác, ống kim loại, tường cây, cổng sắt, cửa gỗ cũ | Danh sách khung (mục 3.3) |
 | Việt Nam (VnExpress, Lao Động, Tinh tế) | Cá nhân hoá, tinh gọn có điểm nhấn, ngoài trời, dùng công nghệ | Màn LED kể chuyện cặp đôi, chữ neon tên riêng, nhiều tiệc ngoài trời |
@@ -66,6 +66,8 @@ Mình không mở được trang báo cáo gốc của Pinterest từ môi trư�
 ## 3. Danh mục trang trí
 
 "Vẽ" là tốn lượt; "Mã" là không tốn lượt. Số tấm tính theo giả định các bài thử ở mục 8 đạt.
+
+**Món màu xanh dương** (gốm lam, cẩm tú cầu xanh, đồ tông xô thơm): nền tách là xanh dương và mã gỡ ánh xanh khỏi viền, nên các món này vẽ màu trắng hoặc trung tính rồi để mã nhuộm xanh. Món nào bắt buộc vẽ xanh thì vẽ trên nền màu khác và tách với tuỳ chọn `giu_xanh`.
 
 ### 3.1 Bảng màu (mã, 0 tấm)
 
@@ -280,7 +282,7 @@ Tháng 11 còn khoảng 24 tấm. Đợt này dùng tối đa 9 tấm (6 tấm v
 | T1. Khung lục giác trần | khung cổng | đứng thẳng, nhìn chính diện | khung lục giác kim loại đen mờ, chân đế phẳng | hoa, lá, vải, người, đất | `cong-tron.png` (giữ nét vẽ, góc nhìn, nền xanh) | tách nền sạch dù khung mảnh; không méo |
 | T2. Cụm mẫu đơn | 4 cụm hoa rời | — | cụm góc lớn, dải rủ dài, cụm nhỏ tròn, cụm chân đế; mẫu đơn hồng nhạt, lá bạch đàn; các cụm cách xa nhau | khung, cuống lơ thơ, người | `cong-tron.png` (thay cổng bằng 4 cụm hoa) | mã cắt được 4 cụm; gắn lên khung T1 và khung tròn trông như cắm thật; nhuộm được tông |
 | T3. Hoa bàn 6 kiểu | 6 món, lưới 3 × 2 | góc nhìn hơi cao như bàn tiệc | thấp tròn, cao trong bình, nến và bạch đàn, cam quýt và lá, đèn lồng nhỏ, chân nến đồng | bàn, khăn, người | `ban-dai.png` (giữ góc nhìn, cỡ) | mã cắt được ít nhất 5/6 món; cùng góc nhìn; đặt lên bàn dài và bàn tròn đúng cỡ |
-| T4. Tứ tấu đàn dây | 4 nhạc công: 2 violin, 1 viola, 1 cello; 2 nam, 2 nữ | ngồi ghế, đang chơi; nam vest đen, nữ đầm đen dài | 4 ghế, 4 cây đàn, giá nhạc | đất, người khác | mẫu nét: `ban-nhac-b.webp` và hình cặp đôi | nét giống ban nhạc và cặp đôi; tay cầm đàn đúng; tách nền sạch; đặt vào Vườn Hồ đúng cỡ |
+| T4. Tứ tấu đàn dây | 4 nhạc công: 2 violin, 1 viola, 1 cello; 2 nam, 2 nữ | ngồi ghế, đang chơi; nam vest đen, nữ đầm đen dài | 4 ghế, 4 cây đàn, giá nhạc | đất, người khác | một tấm mẫu ghép sẵn bằng mã: ban nhạc (`ban-nhac-b.webp`) và cặp đôi đặt trên nền xanh dương phẳng (công cụ vẽ chỉ nhận một hình mẫu, và hình có nền trong suốt sẽ hiện nền đen) | nét giống ban nhạc và cặp đôi; tay cầm đàn đúng; tách nền sạch; đặt vào Vườn Hồ đúng cỡ |
 | T5. Sảnh tiệc có màn LED | nền trống trong nhà | — | sảnh tiệc, lối đi giữa, sân khấu thấp phía sau, màn LED lớn **đen trơn**, chùm đèn pha lê, sàn bóng | bàn ghế, người, hoa | `nen-ho.png` (giữ góc máy và vị trí lối đi) | lối đi và đường chân trời gần như cũ để dùng chung thước phối cảnh; màn LED là hình chữ nhật sạch, mã đo được 4 góc |
 | T6. Vườn Hồ ban đêm | nền trống, đêm | — | trời xanh thẫm có sao, đèn lan can sáng ấm, mặt hồ phản chiếu | trăng to, người, đồ trang trí | `nen-ho.png` | cảnh xê dịch không quá 1%; trời đủ tối cho pháo hoa bằng mã; đo được hệ số chỉnh sáng cho món rời |
 
@@ -291,6 +293,7 @@ Tháng 11 còn khoảng 24 tấm. Đợt này dùng tối đa 9 tấm (6 tấm v
 - Dựng các hiệu ứng mã ở mục 5 trong `game/lab/xuong/` và gắn vào màn thử trang trí theo lớp.
 - Chuyển danh mục trang trí sang dạng dữ liệu (một dòng mỗi món, có nhãn), và dựng bộ chọn hai bước (kiểu rồi màu).
 - Dựng 21 bộ phong cách từ những món đã có, để bộ chọn có dữ liệu chạy thử.
+- Dựng màn chương trình: dòng thời gian tiết mục theo `spec.md` mục 4. Màn này phải có trước khi vẽ nhiều người biểu diễn; nếu không, hình tiết mục chưa có chỗ dùng. Vì vậy tháng 12 chỉ vẽ trước vài tiết mục mỗi nhóm.
 
 ## 10. Cần chủ dự án quyết
 
