@@ -405,7 +405,7 @@ Cách gọn là **đổi T9**: vẽ bàn dài phủ khăn trắng chấm đất,
 | 7. Dây nối các ghế | voan võng, dây đèn, dây lá dọc hàng ghế lối đi | voan và dây đèn bằng mã; dây lá vẽ một đoạn rồi lặp lại | 0 hoặc 1 |
 
 **Đã thử bằng mã, trên cùng bàn tròn:**
-- Khung vàng đồng, đen mờ, trắng, gỗ óc chó, và đệm đổi màu theo khăn: đạt.
+- Khung vàng đồng, đen mờ, trắng, gỗ óc chó, và đệm đổi màu theo khăn: đạt. Bản đầu đệm đổi màu không đều (chỉ nhuộm phần sáng, sót hai ghế bên trái); đã sửa bằng cách khoanh tay mặt ngồi từng ghế, lấy cả đường viền đệm, trừ cột và thanh lưng ghế chắn phía trước.
 - Đai và nơ vẽ bằng mã trông phẳng như hình dán, không hợp nét vẽ tay. Vì vậy đai trơn làm bằng mã được, còn nơ, nút và trâm phải vẽ (T10).
 - Mã: `docs/game/ve/ghe_lop.py`.
 

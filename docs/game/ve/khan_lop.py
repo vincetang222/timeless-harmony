@@ -62,9 +62,23 @@ M = M0 | (net & D & ~trong_ghe & ~o_mat & (yy > 200))                # nếp v�
 nau = (r - b) > 30                                                    # viền ghế vẽ màu nâu; nếp vải màu xám
 khe = nd.binary_dilation(M0, iterations=2) & ~nd.binary_dilation(dem, iterations=2)
 M = M | (trong_ghe & ~o_mat & (yy > 200) & khe & ~nau & (lum > 120))   # nếp vải xám lọt giữa chân ghế, nan ghế
-M = (M | (nd.binary_closing(M, iterations=2) & ~trong_ghe & ~o_mat)) & (a.min(2) > 60)
+# Đệm ghế: khoanh tay mặt ngồi của 6 ghế thấy đệm (mặt trên và viền trước của đệm), trừ cột và thanh lưng ghế chắn phía trước.
+# Lấy cả đường viền trong đệm để đệm đổi màu đều; mảnh tự tìm ở vòng lặp trên chỉ có phần sáng nên đệm bị loang.
+DEM_DA_GIAC = [
+    [(162, 300), (168, 292), (185, 289), (230, 288), (265, 290), (280, 296), (281, 308), (276, 318), (240, 322), (185, 321), (165, 316), (161, 308)],   # ghế trước trái
+    [(397, 322), (402, 310), (420, 303), (445, 301), (515, 303), (520, 312), (518, 330), (512, 337), (470, 338), (410, 336), (399, 330)],           # ghế trước phải
+    [(69, 203), (78, 195), (100, 193), (128, 195), (134, 200), (133, 214), (131, 227), (74, 227), (68, 216)],                                      # bên trái, phía sau
+    [(46, 247), (55, 239), (80, 236), (118, 237), (129, 243), (129, 259), (127, 272), (49, 272), (45, 260)],                                       # bên trái, phía trước
+    [(637, 218), (645, 212), (670, 211), (680, 214), (680, 226), (676, 231), (642, 231), (636, 225)],                                              # bên phải, phía sau
+    [(619, 283), (628, 271), (655, 265), (700, 265), (735, 268), (738, 280), (735, 293), (705, 298), (625, 298), (618, 291)]]                       # bên phải, phía trước
+DEM_TRU = [(158, 270, 168, 330), (210, 280, 224, 330), (428, 285, 440, 355), [(503, 285), (512, 285), (507, 345), (499, 345)], (440, 298, 510, 308), (709, 240, 720, 300)]   # cột, thanh lưng ghế (hình chữ nhật hoặc đa giác)
+_v = Image.new('L', (W, H), 0); _d = ImageDraw.Draw(_v)
+for p in DEM_DA_GIAC: _d.polygon(p, fill=255)
+for q in DEM_TRU: _d.rectangle(q, fill=0) if isinstance(q, tuple) else _d.polygon(q, fill=0)
+dem = (np.asarray(_v) > 0) & (lum > 70)
+M = (M | (nd.binary_closing(M, iterations=2) & ~trong_ghe & ~o_mat)) & (a.min(2) > 60) & ~dem
 MN = np.asarray(Image.fromarray((M * 255).astype('uint8')).filter(ImageFilter.GaussianBlur(0.7))).astype(np.float32) / 255
-MD = np.asarray(Image.fromarray((nd.binary_dilation(dem, iterations=1) * 255).astype('uint8')).filter(ImageFilter.GaussianBlur(0.7))).astype(np.float32) / 255
+MD = np.asarray(Image.fromarray((dem * 255).astype('uint8')).filter(ImageFilter.GaussianBlur(0.8))).astype(np.float32) / 255
 
 # ---------- 2. Trải phẳng: mỗi điểm ảnh → (X, Z) trên mặt phẳng bàn ----------
 L_RU = 0.84                                        # độ rủ chấm đất / bán kính bàn (bàn cao 0,76 m, bán kính 0,9 m)
@@ -90,7 +104,7 @@ SS = 2; off = (np.arange(SS) + 0.5) / SS - 0.5
 MAU_MAU = [trai(xs + ox, ys + oy) for oy in off for ox in off]
 px0 = a[ys, xs]; mk = MN[ys, xs][:, None]; md = MD[ys, xs][:, None]
 GOC = np.percentile(a[M & (lum > np.percentile(lum[M], 60))], 75, axis=0)
-GOC_D = np.percentile(a[dem], 80, axis=0) if dem.any() else GOC
+GOC_D = np.percentile(a[dem & (lum > np.percentile(lum[dem], 50))], 70, axis=0)   # màu sáng của đệm làm gốc
 R_M = 0.9                                          # bán kính bàn (m) để đổi sang mét cho hoạ tiết
 
 
