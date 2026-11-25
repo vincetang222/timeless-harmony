@@ -6,9 +6,9 @@
 
 - **Trang trí:** muốn có hàng nghìn mẫu thì không vẽ từng mẫu. Ta vẽ từng bộ phận (khung cổng, cụm hoa theo loài, bàn, hoa bàn…), rồi để mã ghép, đổi màu và chỉnh sáng. Nếu hai bài thử ở mục 8 đạt, chỉ riêng cổng đã có khoảng 13.000 cách phối từ 37 tấm vẽ. Nếu không đạt, còn khoảng 320.
 - **Hiệu ứng sân khấu:** pháo hoa, pháo giấy, pháo lạnh, khói sàn, bong bóng, màn LED, chữ neon… gần như toàn bộ vẽ bằng mã, **không tốn lượt**. Cái cần vẽ là nền đêm và nền trong nhà để hiệu ứng có chỗ diễn.
-- **Bàn khách:** bàn, ghế và cách xếp tách rời: 11 tấm vẽ cho bàn tròn, vuông, dài (nối bằng mã thành bàn 8–40 người) và 6 kiểu ghế; 13 cách xếp bằng mã; từ 30 tới 1000 khách, có sơ đồ nhìn từ trên xuống (mục 3.4).
+- **Bàn khách:** bàn, ghế và cách xếp tách rời: 9 tấm vẽ cho bàn tròn, vuông, dài (nối bằng mã thành bàn 8–40 người) và 4 kiểu ghế (màu gỗ, sơn, kim loại đổi bằng mã); 13 cách xếp bằng mã; từ 30 tới 1000 khách, có sơ đồ nhìn từ trên xuống (mục 3.4).
 - **Tiết mục:** 32 tiết mục trong 4 nhóm, mỗi tiết mục là một hình người biểu diễn rời, khoảng 34 tấm. Điệu nhảy của chính cặp đôi là việc khác, cần tư thế mới cho nhân vật (mục 6.6).
-- **Hạn mức:** cả bảng này khoảng 111 tấm. Cộng việc đã duyệt và dự phòng sửa thì vừa gói tháng 12 (mục 7).
+- **Hạn mức:** cả bảng này khoảng 109 tấm. Cộng việc đã duyệt và dự phòng sửa thì vừa gói tháng 12 (mục 7). Mục 7b liệt kê các cách tiết kiệm gói; riêng đổi màu bằng mã đã bớt được 14 tấm.
 - **Bước đầu:** 9 tấm thử cho các kỹ thuật chưa chứng minh, chạy được ngay tháng này (mục 8).
 
 ## 1. Làm sao có hàng nghìn lựa chọn mà không vẽ hàng nghìn tấm
@@ -125,7 +125,7 @@ Sen, cúc hoạ mi và hoa giấy là hoa quen ở Việt Nam. Rum, thược dư
 | 19 | Tường hoa phẳng | vẽ liền | sang, chụp ảnh |
 | 20 | Tường cây xanh | vẽ liền | tối giản, vườn |
 
-### 3.4 Bàn khách và cách xếp (vẽ 11 tấm; cách xếp là mã)
+### 3.4 Bàn khách và cách xếp (vẽ 9 tấm; cách xếp là mã)
 
 Chủ dự án góp ý (25/11): tiệc ở châu Âu xếp bàn rất đa dạng, kể cả khi có 1000 khách: bàn vuông, tròn, dài, bàn 6, 10, 20 người. Game làm được điều này nếu **bàn, ghế và cách xếp tách rời nhau**.
 
@@ -143,7 +143,7 @@ Chủ dự án góp ý (25/11): tiệc ở châu Âu xếp bàn rất đa dạng
 | Bàn dài mô-đun, chạy ngang | đầu trái, đoạn giữa, đầu phải; gỗ sáng, khăn chạy bàn trắng. Dùng cho bàn hoàng gia, chữ U, chữ E |
 | Bàn dài mô-đun, chạy chéo | như trên, theo hướng chéo của bàn dài đã có; lật gương cho bên kia. Dùng cho kiểu xương cá |
 | Bàn khác | bàn cocktail đứng, bàn bán nguyệt, bàn cho riêng cặp đôi |
-| 6 kiểu ghế × 8 góc nhìn | chiavari, lưng chéo, trong suốt, mây, gỗ gấp, inox bọc vải (rạp quê) |
+| 4 kiểu ghế × 8 góc nhìn | chiavari, lưng chéo, trong suốt, ghế bọc vải có nơ (sảnh tiệc, rạp quê). Màu gỗ, sơn và kim loại đổi bằng mã: gỗ sáng, óc chó, sơn trắng, sơn đen, vàng, bạc |
 
 **13 cách xếp (mã, 0 tấm):**
 
@@ -298,22 +298,22 @@ Gói tháng ước khoảng **416 tấm** (mỗi tấm khoảng 0,24% gói, đo 
 |---|---|---|---|
 | Lông mày cô dâu | đã duyệt | 9 | 9 |
 | Tóc (30 kiểu × 3 dáng mặt) | đã duyệt | 90 | 90 |
-| Trang phục (6 bộ × 3 vóc × 2 vai) | đã duyệt | 36 | 36 |
-| MC 4 bộ, ban nhạc 3 bộ | đã duyệt | 7 | 7 |
+| Trang phục (9 bộ vẽ × 3 vóc; màu thêm bằng mã, mục 7b) | đã duyệt, đề xuất bớt | 27 | 27 |
+| MC, ban nhạc (4 bộ vẽ; màu thêm bằng mã) | đã duyệt, đề xuất bớt | 4 | 4 |
 | Cảnh C1–C17, C20 và nhân vật phụ | chờ duyệt | khoảng 50 | khoảng 50 |
 | Nơi đợt 2 (trừ rạp quê Nam Bộ) | chờ duyệt | 7 | 7 |
 | **Bảng này:** nơi tổ chức | chờ duyệt | 16 | 16 |
 | **Bảng này:** khung cổng | chờ duyệt | 20 | 20 (vẽ kèm hoa) |
 | **Bảng này:** loài hoa | chờ duyệt | 17 | 0 (hoa vẽ liền vào khung) |
-| **Bảng này:** bàn ghế (mục 3.4) | chờ duyệt | 11 | khoảng 15 (ghế vẽ liền với bàn, mỗi bàn một kiểu ghế) |
+| **Bảng này:** bàn ghế (mục 3.4) | chờ duyệt | 9 | khoảng 15 (ghế vẽ liền với bàn, mỗi bàn một kiểu ghế) |
 | **Bảng này:** hoa bàn, lối đi, đồ treo, góc phụ | chờ duyệt | 13 | khoảng 52 (mỗi món một tấm) |
 | **Bảng này:** tiết mục | chờ duyệt | 34 | 34 |
-| Cộng | | khoảng 310 | khoảng 336 |
-| Dự phòng sửa 25% (quy tắc 4) | | khoảng 78 | khoảng 84 |
-| **Tổng** | | **khoảng 388** | **khoảng 420** |
+| Cộng | | khoảng 296 | khoảng 324 |
+| Dự phòng sửa 25% (quy tắc 4) | | khoảng 74 | khoảng 81 |
+| **Tổng** | | **khoảng 370** | **khoảng 405** |
 | Cách phối cổng | | khoảng 13.000 | khoảng 320 |
 
-Nếu thử đạt thì vừa gói tháng 12 và còn dư khoảng 28 tấm. Nếu không đạt thì vượt gói khoảng 4 tấm: phải dời tiết mục và cảnh C1–C13 sang tháng 1.
+Nếu thử đạt thì còn dư khoảng 46 tấm. Nếu không đạt thì chỉ dư khoảng 11 tấm: nên dời tiết mục và cảnh C1–C13 sang tháng 1. Các cách ở mục 7b, nếu thử bằng mã đạt, bớt thêm được tới khoảng 20 tấm.
 
 **Đề xuất thứ tự trong tháng 12:**
 
@@ -323,6 +323,31 @@ Nếu thử đạt thì vừa gói tháng 12 và còn dư khoảng 28 tấm. N�
 4. **Tháng 1:** cảnh nghi lễ C14–C17 và các cảnh còn lại; tiết mục còn lại.
 
 Mỗi nhóm vẫn vẽ thử một tấm trước khi chạy cả lô (quy tắc 3).
+
+## 7b. Cách tiết kiệm gói
+
+Nguyên tắc chung: **mã làm được thì không vẽ** (quy tắc 5). Vẽ mỗi món ở **màu sáng, trung tính**, vì từ màu sáng mã nhuộm ra màu đậm rất đẹp, còn từ màu đậm nhuộm ra màu sáng thì xấu.
+
+**Đã thử bằng mã ngày 25/11** trên bàn dài và cổng tròn đã có:
+- khăn ra 8 màu, trong đó có xanh than, mù tạt, tím, đen;
+- gỗ ra óc chó, sơn trắng, sơn đen;
+- khung cổng ra bạc, đen mờ, vàng hồng.
+
+Kết quả tốt. Còn một lỗi: khung đen làm nhuỵ hoa gần khung bị lấm tấm; sửa được bằng cách giới hạn mặt nạ theo hình vòng. Màu không bị giới hạn ở danh sách: game có thể cho người chơi tự chọn màu bất kỳ.
+
+| Cách | Đã thử? | Bớt được (tấm) | Ghi chú |
+|---|---|---|---|
+| Đổi màu khăn, hoa, gỗ, sơn, kim loại bằng mặt nạ | đã thử | đã tính trong bảng | mỗi món một tấm vẽ là đủ mọi màu |
+| Trang phục vẽ màu sáng rồi nhuộm: vest đen và vest be thành 1 bộ; áo dài chú rể đỏ và trắng thành 1; áo dài cô dâu trắng và hồng thành 1 | cần thử 1 bộ | 9 (đã trừ ở mục 7) | còn có thêm vest xanh than, áo dài vàng… không tốn lượt. Hoạ tiết thêu đổi màu theo vải |
+| MC và ban nhạc: 4 bộ vẽ, màu thêm bằng mã | cần thử | 3 (đã trừ) | — |
+| Ghế: 4 kiểu vẽ, màu gỗ và kim loại bằng mã | đã thử trên ghế của bàn dài | 2 (đã trừ) | — |
+| Nhiều món trên một tấm | thử ở T2, T3, T7, T8 | khoảng 40 | khác biệt giữa hai cột của mục 7 |
+| Bàn dài nối từ mô-đun, ghế rời quanh bàn | thử ở T7, T8, T9 | — | một bộ hình cho mọi cỡ bàn |
+| Bản đêm bằng mã: tô tối nền trống, thêm đèn và trời sao | chưa thử, 0 lượt | tới 6 | nếu trông giả mới vẽ (T6) |
+| Khung kim loại đơn giản vẽ bằng mã: tròn, lục giác, tam giác, khung ống | chưa thử, 0 lượt | tới 5 | khung tre, sắt rèn, gỗ thì vẫn vẽ |
+| Lấy món từ 18 tranh cũ bằng cách trừ nền trống: chậu hoa, dây đèn, đèn lồng, cổng lá dừa, cổng rạp đỏ | chưa thử, 0 lượt | khoảng 3 | mép có thể cần sửa tay |
+| Cảnh dùng chung phòng: một phòng khách cho C4, C7, C20; một bàn thờ cho C15, C17; đồ đạc là lớp rời | chưa thử | khoảng 6 | như trang trí theo lớp |
+| Lật gương, chỉnh sáng theo cảnh, dùng lại món ở mọi nơi | đã thử | — | đang dùng |
 
 ## 8. Đợt 0: 9 tấm thử, chạy được ngay tháng này
 
