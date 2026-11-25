@@ -38,6 +38,7 @@ Bốn ảnh mô hình trả về (`lenh/tt-j1.json`): `nen-ho.png`, `nen-langque
 | Bóng chân | Nướng sẵn vào hình rời, nằm ngay dưới vật nên lật gương vẫn dùng được. |
 | Số đo | Script in ra cỡ, điểm neo và số px mỗi mét; chép vào `TT` trong `index.html` của bản chơi. |
 | Chỉnh sáng theo cảnh | Bản chơi nhân màu món rời với một hệ số riêng của từng nơi (`sang` trong `LOP`). Hệ số là tỉ lệ màu khăn trắng của nơi đó so với Vườn Hồ, đo trên tranh gốc. |
+| Hoạ tiết khăn (thử 25/11) | `python3 hoa_tiet.py` trong cùng thư mục, cạnh `trang_tri.py`. Mỗi điểm trên khăn chạy bàn có toạ độ vải (dọc, ngang, mét) theo phối cảnh, đo tay trên tấm bàn dài: hai mép khăn, chỗ gập, các đĩa đè lên mép khăn. Hoạ tiết sinh theo toạ độ đó rồi nhuộm bằng công thức đổi tông. Ra `khan-hoatiet.jpg` với 8 mặt vải. 0 lượt vẽ. |
 
 Kinh nghiệm viết câu lệnh: mô hình không giữ vị trí và cỡ của vật khi được bảo xoá hết phần còn lại (nó vẽ vật to gần kín khung), nên vị trí và cỡ luôn do mã đặt. Lần sau nên yêu cầu phần cần đổi tông (khăn, hoa) màu trắng và đặt trên vật có màu khác hẳn.
 

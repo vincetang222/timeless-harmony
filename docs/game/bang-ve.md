@@ -7,8 +7,9 @@
 - **Trang trí:** muốn có hàng nghìn mẫu thì không vẽ từng mẫu. Ta vẽ từng bộ phận (khung cổng, cụm hoa theo loài, bàn, hoa bàn…), rồi để mã ghép, đổi màu và chỉnh sáng. Nếu hai bài thử ở mục 8 đạt, chỉ riêng cổng đã có khoảng 13.000 cách phối từ 37 tấm vẽ. Nếu không đạt, còn khoảng 320.
 - **Hiệu ứng sân khấu:** pháo hoa, pháo giấy, pháo lạnh, khói sàn, bong bóng, màn LED, chữ neon… gần như toàn bộ vẽ bằng mã, **không tốn lượt**. Cái cần vẽ là nền đêm và nền trong nhà để hiệu ứng có chỗ diễn.
 - **Bàn khách:** bàn, ghế và cách xếp tách rời: 9 tấm vẽ cho bàn tròn, vuông, dài (nối bằng mã thành bàn 8–40 người) và 4 kiểu ghế (màu gỗ, sơn, kim loại đổi bằng mã); 13 cách xếp bằng mã; từ 30 tới 1000 khách, có sơ đồ nhìn từ trên xuống (mục 3.4).
+- **Khăn, ghế, đồ trên bàn:** tìm hiểu ngày 25/11 thấy rất nhiều mẫu: khăn có chất và hoạ tiết, áo ghế, nơ ghế, trang trí bằng giấy. Màu và mặt vải (hoạ tiết, chất vải) làm bằng mã, 0 tấm; đã thử 8 hoạ tiết khăn. Món gắn thêm (nơ, món gắn ghế) và dáng mới (áo ghế, váy quây) thì vẽ, khoảng 9 tấm (cuối mục 3.4).
 - **Tiết mục:** 32 tiết mục trong 4 nhóm, mỗi tiết mục là một hình người biểu diễn rời, khoảng 34 tấm. Điệu nhảy của chính cặp đôi là việc khác, cần tư thế mới cho nhân vật (mục 6.6).
-- **Hạn mức:** cả bảng này khoảng 109 tấm. Cộng việc đã duyệt và dự phòng sửa thì vừa gói tháng 12 (mục 7). Mục 7b liệt kê các cách tiết kiệm gói; riêng đổi màu bằng mã đã bớt được 14 tấm.
+- **Hạn mức:** cả bảng này khoảng 118 tấm. Cộng việc đã duyệt và dự phòng sửa thì vừa gói tháng 12 nếu các bài thử đạt (mục 7). Mục 7b liệt kê các cách tiết kiệm gói; riêng đổi màu bằng mã đã bớt được 14 tấm.
 - **Bước đầu:** 9 tấm thử cho các kỹ thuật chưa chứng minh, chạy được ngay tháng này (mục 8).
 
 ## 1. Làm sao có hàng nghìn lựa chọn mà không vẽ hàng nghìn tấm
@@ -29,6 +30,7 @@ Nói rõ: nhiều cách phối trong số đó chỉ khác nhau một chút. S�
 | Đặt món theo điểm neo và thước phối cảnh của nhân vật | Đã chứng minh | Vườn Hồ, Sân nhà quê |
 | Đổi tông qua mặt nạ | Đã chứng minh, có giới hạn | Hoa: tự động. Khăn bàn: phải khoanh tay một đa giác cho mỗi kiểu bàn |
 | Chỉnh sáng món rời theo cảnh | Đã chứng minh | Hệ số đo trên khăn trắng (mục 7.3) |
+| Phủ hoạ tiết, chất vải lên khăn theo phối cảnh | Đã thử trên khăn chạy bàn | 8 mặt vải, 0 lượt (cuối mục 3.4). Khăn tròn phủ chấm đất nếp sâu: thử trên T8 |
 | **Khung trần + cụm hoa rời ghép bằng mã** | **Chưa thử** | Cụm hoa có thể trông lơ lửng, cuống không bám khung. Thử T1, T2 |
 | **Nhiều món trên một tấm, mã cắt rời** | **Chưa thử** | Mô hình có thể vẽ các món chạm nhau, khác góc nhìn, khác cỡ. Thử T2, T3, T7, T8 |
 | **Ghế rời đặt quanh bàn; bàn dài nối từ mô-đun** | **Chưa thử** | Góc nhìn của 8 ghế phải khớp nhau; mối nối bàn dài có thể lộ. Thử T7, T8, T9 |
@@ -179,6 +181,145 @@ Chủ dự án góp ý (25/11): tiệc ở châu Âu xếp bàn rất đa dạng
 
 **Có thể thêm sau:** trò **xếp chỗ ngồi**. Người chơi đặt các nhóm khách (họ nội, họ ngoại, bạn cô dâu, đồng nghiệp chú rể, ông bà, trẻ con) vào bàn, với vài luật như ông bà ngồi gần sân khấu, hai người đang giận nhau thì không ngồi chung. Kết quả ảnh hưởng tới lòng hai họ.
 
+#### Khăn, ghế và đồ trên bàn (tìm hiểu ngày 25/11)
+
+Chủ dự án góp ý: ngoài đời khăn bàn có rất nhiều thiết kế, còn có áo ghế, nơ ghế, và trang trí bàn ghế bằng nơ, bằng giấy.
+
+**Cách tìm.**
+- Ba lượt tìm riêng cho khăn bàn, ghế và đồ trên bàn, bằng tiếng Anh và tiếng Việt. Khoảng 130 trang hiện trong kết quả.
+- **Chưa mở được trang nào để đọc toàn văn.** The Knot, CV Linens, WeddingWire, Pinterest và Style Me Pretty không vào được từ môi trường làm việc. Brides, Martha Stewart và Vogue bị công cụ tìm kiếm từ chối.
+- Vì vậy mọi điều dưới đây lấy từ đoạn trích trong kết quả tìm kiếm, phần lớn là trang nhà cung cấp và blog. Mình bỏ mọi giá và con số thống kê. Danh sách nguồn ở cuối tài liệu.
+
+**Chia theo cách làm ra hình.** Đây là phần quan trọng nhất, vì nó quyết định món nào tốn lượt.
+
+| Loại | Khác nhau ở đâu | Cách làm | Tốn lượt |
+|---|---|---|---|
+| A. Màu | chỉ màu | nhuộm qua mặt nạ (đã thử, mục 7b) | 0 |
+| B. Mặt vải | cùng dáng, khác hoạ tiết hoặc chất vải | mã phủ hoạ tiết theo phối cảnh (đã thử, xem dưới) | 0 |
+| C. Món gắn thêm | thêm một vật lên món cũ: nơ, cụm hoa, khăn phủ, bảng tên | vẽ hình rời một lần, nhiều món chung một tấm; mã đặt và nhuộm | ít |
+| D. Dáng mới | đổi hình cả món: áo ghế bọc kín, váy quây xếp ly | vẽ món mới | mỗi dáng một tấm; ghế thì mỗi dáng một bộ góc nhìn |
+
+**Đã thử loại B ngày 25/11, 0 lượt.**
+- Trên chính tấm bàn dài đã có, mã gán cho mỗi điểm của khăn chạy bàn một toạ độ trên vải: dọc và ngang khăn, tính bằng mét, theo phối cảnh của tấm vẽ. Mã sinh hoạ tiết theo toạ độ đó, rồi nhuộm bằng đúng công thức đổi màu đang dùng.
+- Ra 8 mặt vải: kẻ ca rô, sọc, hoa nhí in khuôn, ren trắng trên nền hồng, kim sa vàng, nhuộm loang, hoa văn hình học nền chàm, nhung xanh ngọc.
+- Hoạ tiết nhỏ dần về phía xa và nối liền qua chỗ khăn gập xuống đầu bàn. Nếp vải và bóng ly vẫn giữ.
+
+Giới hạn đã thấy:
+- Mỗi kiểu khăn phải đo tay một lần vài điểm (mép khăn, chỗ gập) và khoanh bỏ các đĩa đè lên mép khăn. Khi vẽ bàn mới, nên dặn mô hình không đặt đĩa đè lên mép khăn.
+- Hoạ tiết nằm theo mặt phẳng, chưa uốn theo nếp vải. Khăn chạy bàn nếp nhỏ nên không lộ. Khăn tròn phủ chấm đất có nếp sâu thì phải thử trên bàn tròn T8: quấn hoạ tiết quanh thân bàn như quanh một hình trụ.
+- Màu rất đậm (nhung) làm ly đặt trên khăn tối hẳn. Có thể giảm nhuộm ở chỗ ly.
+- Vải có khối nổi (hoa vải nổi, vải nhún) thì mã không làm giả được, nên xếp vào loại D.
+- Trong game: mỗi kiểu khăn lưu sẵn một ảnh toạ độ nhỏ, trình duyệt sinh hoạ tiết theo ảnh đó. Mã thử ở `docs/game/ve/hoa_tiet.py`.
+
+**Khăn bàn.**
+- **B, 0 tấm:**
+  - chất vải: lanh thô, satin bóng, nhung, kim sa, voan mỏng phủ trên nền khác màu, ren phủ, thêu, gấm hoa cùng tông, xếp ô nhỏ, vải nhăn bóng;
+  - hoạ tiết in: kẻ ca rô, sọc, hoa nhí in khuôn, tranh đồng quê một màu, sứ xanh trắng, hoa văn hình học, nhuộm loang, chữ cái tên cặp đôi thêu ở góc;
+  - rải trên khăn: pháo giấy kim tuyến, cánh hoa (mã rải).
+- **C, vẽ, gộp tấm:** khăn phủ vuông chéo góc trên khăn tròn; khăn chạy bàn bằng vải gạc rủ dài; dây lá thay khăn chạy bàn; rêu chạy bàn; dải vải rủ vòng có hoa ở chỗ túm (bàn cặp đôi, bàn hoàng gia); tấm lót chỗ ngồi đan cói. Gương chạy bàn thì làm bằng mã.
+- **D, vẽ dáng mới:**
+  - khăn tròn phủ chấm đất (đã có trong T8);
+  - khăn ngắn ngang đùi;
+  - **váy quây xếp ly**, rất phổ biến ở Việt Nam cho bàn đón khách, bàn trưng ảnh, bàn gia tiên;
+  - váy voan xoè nhiều lớp;
+  - khăn bọc kín bằng vải thun;
+  - lụa phồng rủ thành đống;
+  - vải có hoa vải nổi;
+  - bàn gỗ trần, không khăn.
+
+**Ghế.**
+- **Kiểu ghế (D, mỗi kiểu một bộ góc nhìn):**
+  - chiavari (nhà cung cấp Việt Nam gọi là ghế Tiffany);
+  - lưng chéo;
+  - trong suốt (kiểu Napoleon, Louis);
+  - ghế xếp inox có đệm và ghế nhựa đúc (rạp ở quê);
+  - ghế banquet khách sạn (thường bọc áo);
+  - ghế gỗ uốn;
+  - ghế lưng chữ Y;
+  - ghế Louis lưng bầu dục bọc vải;
+  - ghế nhung;
+  - ghế mây lưng công và ghế vua – hoàng hậu cho cặp đôi;
+  - ghế trẻ em.
+- **Áo ghế (D):** áo thun bó (nhà cung cấp gọi là "áo ghế thun 4 chiều"); áo satin rộng thắt nơ sau lưng; áo có váy xếp ly chấm đất; váy voan xoè; chụp đầu ghế. Mỗi kiểu là một dáng ghế mới. Vẽ màu trắng thì mọi màu và mặt vải (kim sa, xếp ly) làm bằng mã.
+- **Nơ và đai ghế (C):**
+  - chất: satin, voan, chiffon, vải tuyn, vải bố, ren, nhung, kim sa, vải thun. Nơ cùng dáng thì đổi chất bằng mã;
+  - kiểu buộc: nơ bướm, nút đơn, hoa hồng, rủ dọc lưng ghế, bắt chéo, luồn qua song ghế chiavari, nơ đuôi dài, đai có khoá cài đá;
+  - nhà cung cấp Việt Nam gọi "ghế trắng nơ vàng" là kiểu cổ điển ở sảnh tiệc.
+- **Món gắn lên ghế (C).** Thường chỉ gắn ở ghế đầu hàng lối đi hoặc ghế cặp đôi:
+  - cụm hoa; bó lá buộc ruy băng; dây lá vắt qua cả hàng ghế; bó cỏ lau;
+  - phễu giấy đựng cánh hoa; quả cầu hoa treo; vòng hoa tròn;
+  - tuyn và ruy băng dài; tua rua; đèn lồng nhỏ;
+  - bảng tên (Cô dâu, Chú rể, họ hai nhà);
+  - nơ thật to bằng satin, nhung hay tuyn;
+  - quạt giấy tròn đặt trên mỗi ghế (khách cầm quạt luôn); chong chóng giấy; hoa giấy nhún.
+
+**Ghế làm số tấm nhân lên, nên chỉ vẽ những góc mà cảnh dùng tới:**
+- **Kiểu ghế và áo ghế:** đủ 8 góc, vì quanh bàn tròn ghế quay đủ hướng.
+- **Nơ và đai:** nằm sau lưng ghế, nên chỉ cần 3 góc (sau, sau chéo, ngang) và lật gương ra phía kia. Ghế quay mặt ra phía trước thì nơ gần như khuất, mã vẽ thêm một dải vải ngang lưng ghế là đủ.
+- **Món gắn ghế lối đi:** 1 góc (sau chéo), lật gương cho bên kia lối đi.
+- **Ghế cặp đôi:** 1 góc (trước chéo).
+
+**Đồ trên bàn.**
+- **Bộ chỗ ngồi:**
+  - đĩa lót: thuỷ tinh viền hạt vàng, viền hạt đen, gương viền pha lê, mây, mica; dáng tròn, hình hoa, lượn sóng;
+  - bát đĩa cổ, mỗi chỗ một kiểu;
+  - ly: thuỷ tinh màu (hổ phách, hồng), pha lê cắt, ly gân, viền vàng; dáng coupe, flute, ly chân cao;
+  - dao nĩa: vàng, vàng mờ, đen mờ.
+- **Khăn ăn:**
+  - chất và màu (loại B, A);
+  - kiểu gấp (loại D): mũ giám mục, quạt, hoa hồng, túi đựng dao nĩa, nút thắt, kim tự tháp, hoa sen, vương miện, cây nến, chong chóng, búp măng, áo sơ mi, gấp phẳng kẹp thực đơn;
+  - vòng và dây buộc (loại C): vòng khăn, ruy băng, dây gai, nhánh hoa.
+- **Đồ giấy:** thiệp tên; thực đơn; số bàn; tên viết trên lá, trái cây, viên ngói; niêm phong sáp.
+- **Trang trí bằng giấy:**
+  - hoa giấy nhún; quả cầu tổ ong; hạc giấy; quạt giấy; đèn lồng giấy nhỏ;
+  - khăn chạy bàn bằng giấy kraft đóng dấu hoặc giấy ren;
+  - **chữ Hỷ** ép kim hoặc cắt laser (có nguồn Việt Nam);
+  - pháo giấy rải bàn.
+  - Lưu ý về hạc giấy: tục nghìn con hạc là của Nhật. Mình chưa thấy nguồn Việt Nam dùng hạc trên bàn tiệc, và có bài viết nói ở vài nơi hạc giấy gợi tới tang lễ. Nên để hạc là một lựa chọn có nhãn "có người kiêng".
+- **Món nhỏ khác:**
+  - nến cây màu, nến trụ, nến cốc, đèn bão, chân nến nhiều nhánh, nơ buộc chân nến;
+  - trái cây (cam quýt, lựu, nho, lê) bày như tranh tĩnh vật;
+  - bình hoa nhỏ một cành; gương; pha lê;
+  - quà ở mỗi chỗ: nến thơm, sô-cô-la, sen đá nhỏ, gói hạt giống;
+  - nơ trên chân ly, trên dao nĩa.
+
+**Nhỏ quá thì không thấy trong cảnh.** Ở cỡ cảnh, khăn ăn gấp, thiệp tên, sáp niêm phong, dao nĩa và đĩa lót chỉ còn vài điểm ảnh. Có hai cách, cần chủ dự án chọn:
+1. Những món này chỉ là dòng dữ liệu có hình thẻ và chỉ số, không có hình trong cảnh. 0 tấm.
+2. Thêm một **cận cảnh một chỗ ngồi** (đĩa, khăn ăn, ly, dao nĩa, thiệp), vẽ một lần, để người chơi xem món mình chọn. Đĩa lót, ly, dao nĩa đổi màu bằng mã; 12 kiểu khăn ăn gấp vẽ chung một tấm. Khoảng 2 tấm.
+
+Món đủ lớn để thấy trong cảnh (nến, chân nến, đèn lồng nhỏ, quạt giấy, quả cầu tổ ong, chữ Hỷ cắt giấy, trái cây) đi cùng hoa bàn ở mục 3.5.
+
+**Đang thịnh và đã cũ** (theo đoạn trích, không có số liệu):
+- **Đang thịnh 2025–2026:**
+  - bàn "sưu tầm": mỗi chỗ một kiểu bát đĩa;
+  - vải có chất (lanh, nhung, ren) và có màu; đồ thêu;
+  - nơ; trái cây trên bàn; nến màu;
+  - vải rủ thành nếp lớn; chrome và gương.
+- **Màu hay gặp:** xanh xô thơm, hồng đất, vàng bơ, xanh phấn, đất nung, oải hương. Ở Việt Nam năm 2026 có thêm cappuccino, mocha.
+- **Bị chê là cũ:** khăn polyester trắng trơn; mọi thứ cùng một màu; áo ghế rộng thắt nơ (theo vài blog và diễn đàn nước ngoài). Ở Việt Nam áo ghế có nơ vẫn rất phổ biến.
+- **Sảnh tiệc ở Việt Nam:** bàn tròn 10 người; khăn satin chấm đất màu trắng, vàng, đỏ hoặc xanh, thường hai lớp; ghế bọc áo có nơ voan hoặc satin.
+- **Rạp ở quê:** bàn tròn 8–10 người; khăn trắng hoặc đỏ; ghế inox có đệm hoặc ghế nhựa. Gói nâng cấp có ghế nơ và khăn hai lớp.
+
+**Thành chỉ số** (số tạm, tính từ nhãn như mục 1.3):
+- Áo ghế có nơ: họ hàng lớn tuổi khen sang, bạn trẻ thấy cũ.
+- Bàn "sưu tầm": ngược lại.
+- Hạc giấy: vài người lớn tuổi có thể không vui.
+- Khăn và ghế cùng bảng màu với cổng: được cộng "hài hoà".
+
+**Vẽ thêm (đã tính vào mục 7):**
+
+| Tấm | Có gì | Loại |
+|---|---|---|
+| Váy quây xếp ly | bàn dài và bàn đón khách phủ váy quây xếp ly trắng | D |
+| Áo ghế thun bó, 8 góc | ghế banquet bọc áo thun trắng | D |
+| Nơ ghế, 3 tấm | 8 kiểu nơ và đai màu trắng; mỗi tấm một góc: sau, sau chéo, ngang | C |
+| Món gắn ghế lối đi | cụm hoa, bó lá, phễu giấy, vòng hoa, quạt giấy, bảng tên, tua rua, đèn lồng nhỏ; góc sau chéo | C |
+| Khăn phủ và khăn chạy bàn | khăn phủ vuông trên bàn tròn, khăn gạc rủ, dây lá, rêu | C |
+| Nến và giấy trên bàn | 6 kiểu nến và chân nến; quạt giấy, quả cầu tổ ong, chữ Hỷ, đèn lồng giấy nhỏ, hoa giấy | C |
+| Ghế cặp đôi | ghế mây lưng công, ghế vua – hoàng hậu, ghế Louis; góc trước chéo | D |
+
+Cộng 9 tấm nếu vẽ được nhiều món trên một tấm (T2, T3, T7, T8). Nếu không được thì khoảng 19 tấm, và phải bớt số kiểu nơ và số món gắn ghế. Cận cảnh chỗ ngồi thêm 2 tấm nếu chủ dự án chọn cách 2.
+
 ### 3.5 Hoa bàn (vẽ, 3 tấm × 6 kiểu)
 
 thấp tròn · cao trong bình thuỷ tinh · nến trụ và bạch đàn · cam quýt và lá · đèn lồng nhỏ và hoa · chân nến đồng hoa rủ · lọ thuỷ tinh nhỏ rải dọc bàn · hoa và trái cây miền Tây · mâm bồng đỏ (truyền thống) · nến nổi trong bát · rêu và đá · hoa giấy thủ công · bình gốm lam · sen trong bát · lồng chim cổ · ngọn hoa cao vút · khay trái cây · đèn dầu cổ
@@ -307,19 +448,21 @@ Gói tháng ước khoảng **416 tấm** (mỗi tấm khoảng 0,24% gói, đo 
 | **Bảng này:** loài hoa | chờ duyệt | 17 | 0 (hoa vẽ liền vào khung) |
 | **Bảng này:** bàn ghế (mục 3.4) | chờ duyệt | 9 | khoảng 15 (ghế vẽ liền với bàn, mỗi bàn một kiểu ghế) |
 | **Bảng này:** hoa bàn, lối đi, đồ treo, góc phụ | chờ duyệt | 13 | khoảng 52 (mỗi món một tấm) |
+| **Bảng này:** khăn, áo ghế, nơ ghế, món gắn ghế, nến và giấy (cuối mục 3.4) | chờ duyệt | 9 | khoảng 19 (bớt số kiểu) |
+| **Bảng này:** cận cảnh một chỗ ngồi | chờ quyết | 2 | 2 |
 | **Bảng này:** tiết mục | chờ duyệt | 34 | 34 |
-| Cộng | | khoảng 296 | khoảng 324 |
-| Dự phòng sửa 25% (quy tắc 4) | | khoảng 74 | khoảng 81 |
-| **Tổng** | | **khoảng 370** | **khoảng 405** |
+| Cộng | | khoảng 307 | khoảng 345 |
+| Dự phòng sửa 25% (quy tắc 4) | | khoảng 77 | khoảng 86 |
+| **Tổng** | | **khoảng 384** | **khoảng 431** |
 | Cách phối cổng | | khoảng 13.000 | khoảng 320 |
 
-Nếu thử đạt thì còn dư khoảng 46 tấm. Nếu không đạt thì chỉ dư khoảng 11 tấm: nên dời tiết mục và cảnh C1–C13 sang tháng 1. Các cách ở mục 7b, nếu thử bằng mã đạt, bớt thêm được tới khoảng 20 tấm.
+Nếu thử đạt thì còn dư khoảng 32 tấm. Nếu không đạt thì vượt gói khoảng 15 tấm: phải dời tiết mục và cảnh C1–C13 sang tháng 1. Các cách ở mục 7b, nếu thử bằng mã đạt, bớt thêm được tới khoảng 20 tấm.
 
 **Đề xuất thứ tự trong tháng 12:**
 
-1. **Đầu tháng:** lông mày cô dâu; nền trống 4 nơi; khung cổng; loài hoa; bàn. Trang trí lên trước vì nó làm lại toàn bộ chương 4.
+1. **Đầu tháng:** lông mày cô dâu; nền trống 4 nơi; khung cổng; loài hoa; bàn, áo ghế, váy quây. Trang trí lên trước vì nó làm lại toàn bộ chương 4.
 2. **Giữa tháng:** tóc, trang phục, MC và ban nhạc.
-3. **Cuối tháng:** nơi trong nhà, bản đêm; hoa bàn, lối đi, đồ treo, góc phụ; 12 tiết mục đầu (mỗi nhóm vài tiết mục).
+3. **Cuối tháng:** nơi trong nhà, bản đêm; hoa bàn, lối đi, đồ treo, góc phụ; nơ ghế, món gắn ghế, nến và giấy; 12 tiết mục đầu (mỗi nhóm vài tiết mục).
 4. **Tháng 1:** cảnh nghi lễ C14–C17 và các cảnh còn lại; tiết mục còn lại.
 
 Mỗi nhóm vẫn vẽ thử một tấm trước khi chạy cả lô (quy tắc 3).
@@ -338,6 +481,7 @@ Kết quả tốt. Còn một lỗi: khung đen làm nhuỵ hoa gần khung bị
 | Cách | Đã thử? | Bớt được (tấm) | Ghi chú |
 |---|---|---|---|
 | Đổi màu khăn, hoa, gỗ, sơn, kim loại bằng mặt nạ | đã thử | đã tính trong bảng | mỗi món một tấm vẽ là đủ mọi màu |
+| Hoạ tiết và chất vải bằng mã: ca rô, sọc, hoa in, ren, kim sa, nhung, nhuộm loang… | đã thử trên khăn chạy bàn | đã tính trong bảng | mỗi mặt vải 0 tấm. Áo ghế, nơ, khăn ăn vẽ màu trắng thì cũng phủ được |
 | Trang phục vẽ màu sáng rồi nhuộm: vest đen và vest be thành 1 bộ; áo dài chú rể đỏ và trắng thành 1; áo dài cô dâu trắng và hồng thành 1 | cần thử 1 bộ | 9 (đã trừ ở mục 7) | còn có thêm vest xanh than, áo dài vàng… không tốn lượt. Hoạ tiết thêu đổi màu theo vải |
 | MC và ban nhạc: 4 bộ vẽ, màu thêm bằng mã | cần thử | 3 (đã trừ) | — |
 | Ghế: 4 kiểu vẽ, màu gỗ và kim loại bằng mã | đã thử trên ghế của bàn dài | 2 (đã trừ) | — |
@@ -351,7 +495,7 @@ Kết quả tốt. Còn một lỗi: khung đen làm nhuỵ hoa gần khung bị
 
 ## 8. Đợt 0: 9 tấm thử, chạy được ngay tháng này
 
-Tháng 11 còn khoảng 24 tấm. Đợt này dùng tối đa 12 tấm (9 tấm và 3 lượt sửa), khoảng 3% gói. Mỗi tấm vẽ trên nền xanh dương phẳng, trừ T5 và T6 là cảnh.
+Tháng 11 còn khoảng 20 tấm. Đợt này dùng tối đa 12 tấm (9 tấm và 3 lượt sửa), khoảng 3% gói; nếu duyệt thêm T10 thì tối đa 13 tấm. Mỗi tấm vẽ trên nền xanh dương phẳng, trừ T5 và T6 là cảnh.
 
 | Tấm | Ai hoặc vật gì | Tư thế, trang phục | Có gì | Không có gì | Sửa từ hình nào | Đạt khi |
 |---|---|---|---|---|---|---|
@@ -363,9 +507,10 @@ Tháng 11 còn khoảng 24 tấm. Đợt này dùng tối đa 12 tấm (9 tấm 
 | T6. Vườn Hồ ban đêm | nền trống, đêm | — | trời xanh thẫm có sao, đèn lan can sáng ấm, mặt hồ phản chiếu | trăng to, người, đồ trang trí | `nen-ho.png` | cảnh xê dịch không quá 1%; trời đủ tối cho pháo hoa bằng mã; đo được hệ số chỉnh sáng cho món rời |
 | T7. Ghế chiavari 8 góc nhìn | 8 chiếc ghế cùng kiểu, lưới 4 × 2, cách xa nhau | trước, sau, trái, phải, bốn góc chéo; cùng cỡ; góc nhìn hơi cao như bàn tiệc | ghế chiavari trắng, đệm kem | bàn, người, đất | `ban-dai.png` (thay bộ bàn bằng 8 chiếc ghế) | mã cắt được 8 ghế; đặt quanh bàn T8 trông như thật, ghế sau bị bàn che đúng thứ tự |
 | T8. Bàn tròn trần 3 cỡ | 3 bàn tròn: 6, 10, 12 người | góc nhìn hơi cao | khăn trắng phủ chấm đất | ghế, hoa, đồ ăn, người | `ban-dai.png` | mã cắt được 3 bàn; mặt bàn đúng góc nhìn; tỉ lệ cỡ giữa ba bàn hợp lý; ghép với ghế T7 ra bàn 6, 10, 12 người |
-| T9. Bàn dài mô-đun chạy ngang | 3 mảnh: đầu trái, đoạn giữa, đầu phải | nhìn chính diện, hơi cao; bàn chạy ngang khung hình | gỗ sáng, khăn chạy bàn trắng, bát đĩa, ly; mỗi đoạn giữa có 2 ghế mỗi bên | hoa, người, đất | `ban-dai.png` | mã nối thành bàn 8, 20, 40 người không lộ mối nối |
+| T9. Bàn dài mô-đun chạy ngang | 3 mảnh: đầu trái, đoạn giữa, đầu phải | nhìn chính diện, hơi cao; bàn chạy ngang khung hình | gỗ sáng, khăn chạy bàn trắng, bát đĩa, ly; mỗi đoạn giữa có 2 ghế mỗi bên; đĩa không đè lên mép khăn | hoa, người, đất | `ban-dai.png` | mã nối thành bàn 8, 20, 40 người không lộ mối nối |
+| T10. Nơ ghế 8 kiểu (đề xuất thêm, chờ duyệt) | 8 chiếc nơ rời, lưới 4 × 2, cách xa nhau; chỉ gồm nút nơ và đuôi, dải vải quấn lưng ghế do mã vẽ | nhìn từ sau, góc hơi cao như bàn tiệc | nơ satin trắng: nơ bướm, nút đơn, hoa hồng, rủ dọc, bắt chéo, đai có khoá cài, nơ đuôi dài, nơ to | ghế, người, đất | `ban-dai.png` (giữ nét vẽ) | mã cắt được 8 nơ; gắn lên lưng ghế T7 nhìn từ sau trông như buộc thật; nhuộm được màu, đổi được chất (satin, voan, nhung) |
 
-**Thứ tự:** T1 rồi T2 (cặp này quyết định có 13.000 hay 320 cách phối cổng), rồi T7, T8, T9 (quyết định bàn ghế có lắp tự do được không), sau đó T3, T4, T5, T6. Tấm nào không đạt thì sửa từng chỗ trên chính tấm đó, tối đa 3 lượt sửa cho cả đợt.
+**Thứ tự:** T1 rồi T2 (cặp này quyết định có 13.000 hay 320 cách phối cổng), rồi T7, T8, T9 (quyết định bàn ghế có lắp tự do được không), rồi T10 nếu được duyệt, sau đó T3, T4, T5, T6. Tấm nào không đạt thì sửa từng chỗ trên chính tấm đó, tối đa 3 lượt sửa cho cả đợt.
 
 ## 9. Việc làm được ngay, không tốn lượt
 
@@ -373,6 +518,7 @@ Tháng 11 còn khoảng 24 tấm. Đợt này dùng tối đa 12 tấm (9 tấm 
 - Chuyển danh mục trang trí sang dạng dữ liệu (một dòng mỗi món, có nhãn), và dựng bộ chọn hai bước (kiểu rồi màu).
 - Dựng 21 bộ phong cách từ những món đã có, để bộ chọn có dữ liệu chạy thử.
 - Dựng bộ xếp bàn bằng mã: 13 cách xếp, tính số bàn theo số khách, đo vùng đặt bàn và sức chứa của Vườn Hồ và Sân nhà quê, sơ đồ nhìn từ trên xuống. Chạy thử trước với bàn dài đã có.
+- Đưa hoạ tiết khăn vào màn thử trang trí theo lớp: ảnh toạ độ cho bàn dài, bộ chọn mặt vải (ca rô, sọc, ren, kim sa…) đi cùng bộ chọn màu.
 - Dựng màn chương trình: dòng thời gian tiết mục theo `spec.md` mục 4. Màn này phải có trước khi vẽ nhiều người biểu diễn; nếu không, hình tiết mục chưa có chỗ dùng. Vì vậy tháng 12 chỉ vẽ trước vài tiết mục mỗi nhóm.
 
 ## 10. Cần chủ dự án quyết
@@ -380,6 +526,8 @@ Tháng 11 còn khoảng 24 tấm. Đợt này dùng tối đa 12 tấm (9 tấm 
 1. Danh sách bộ phong cách (mục 3.9) và tiết mục (mục 6): thêm, bớt hay giữ nguyên?
 2. Có duyệt Đợt 0 (9 tấm thử ở mục 8) để chạy ngay tháng này không?
 3. Thứ tự tháng 12 ở mục 7: trang trí trước, hay tóc và trang phục trước?
+4. Đồ nhỏ trên bàn (khăn ăn gấp, thiệp tên, đĩa lót): chỉ là dữ liệu có hình thẻ (0 tấm), hay vẽ thêm cận cảnh một chỗ ngồi (2 tấm)? Xem cuối mục 3.4.
+5. Có thêm T10 (nơ ghế) vào Đợt 0 không?
 
 ## Nguồn
 
@@ -396,6 +544,34 @@ Hiệu ứng, giải trí, cổng lễ:
 - [The Knot: wedding reception trends](https://theknot.com/content/wedding-reception-trends)
 - [WeddingWire: ceremony structures for an outdoor wedding](https://www.weddingwire.com/wedding-ideas/stunning-ceremony-structures-for-an-outdoor-wedding)
 - [Singaporebrides: wedding arch styles](https://singaporebrides.com/articles/2025/08/wedding-arch-styles/)
+
+Khăn, ghế, đồ trên bàn (tìm ngày 25/11). Các trang này chỉ hiện trong kết quả tìm kiếm; chưa mở được trang nào, nên nội dung lấy từ đoạn trích:
+- [The Knot: wedding decor trends](https://www.theknot.com/content/wedding-decor-trends)
+- [The Knot: wedding chairs](https://www.theknot.com/content/wedding-chairs)
+- [The Knot: wedding place setting ideas](https://www.theknot.com/content/wedding-place-setting-ideas)
+- [CV Linens: 2026 wedding trends, what's in, what's out](https://cvlinens.com/blogs/styling-tips/2026-wedding-trends-whats-in-whats-out-what-timeless)
+- [CV Linens: types of wedding chair covers](https://cvlinens.com/blogs/styling-tips/types-wedding-chair-covers)
+- [WeddingWire: 11 popular wedding chair styles](https://www.weddingwire.com/wedding-ideas/11-popular-wedding-chair-styles)
+- [WeddingWire: types of fabric you can rent](https://www.weddingwire.com/wedding-ideas/types-of-fabric-you-can-rent)
+- [WeddingWire forum: 1000 cranes](https://www.weddingwire.com/wedding-forums/1000-cranes/4ab450798118de55.html)
+- [Zola: how to choose wedding chair sashes](https://www.zola.com/expert-advice/how-to-choose-wedding-chair-sashes)
+- [All Cotton and Linen: wedding decor trends](https://allcottonandlinen.com/blogs/news/wedding-decor-trends)
+- [Love Inc.: drapery as decor, 2026](https://loveincmag.com/top-wedding-trend-for-2026-innovative-ways-to-use-drapery-as-decor/)
+- [Livingetc: table setting trends 2025](https://www.livingetc.com/us/ideas/table-setting-trends-for-2025)
+- [Guides for Brides: bow wedding trend](https://guidesforbrides.co.uk/wedding-ideas/bow-wedding-trend)
+- [Domino: DIY paper wedding decorations](https://www.domino.com/content/diy-paper-wedding-decorations-ideas/)
+- [Style Me Pretty: Pinterest Predicts 2026 roundup](https://perspectives.stylemepretty.com/pinterest-predicts-2026-the-complete-wedding-trend-roundup/)
+- [Mimi: khăn trải bàn tiệc cưới](https://mimi.com.vn/blogs/news/khan-trai-ban-tiec-cuoi-dep/)
+- [Xưởng Hoà Phát: khăn trải bàn xếp ly](https://xuonghoaphat.com/khan-trai-ban-xep-ly/)
+- [Ninh Khương: xu hướng khăn trải bàn 2026](https://ninhkhuong.com/blogs/cam-nang/xu-huong-khan-trai-ban-2026-top-chat-lieu-duoc-ua-chuong-nhat)
+- [Hantexco: nơ ghế](https://hantexco.vn/no-ghe/)
+- [Song Lam: trang trí áo ghế tiệc cưới với nơ chéo](https://songlamdecor.com/tin-tuc/trang-tri-ao-cuoi-tiec-cuoi-voi-no-cheo.html)
+- [Phúc Hoà: mẫu ghế Tiffany](https://phuchoa.com.vn/mau-ghe-tiffany/)
+- [Nội thất Long Vũ: bàn ghế nhựa đám cưới](https://noithatlongvu.com/ban-ghe-nhua-dam-cuoi/)
+- [7799 Wedding: thuê trang trí rạp cưới](https://7799wedding.vn/thue-trang-tri-rap-cuoi-dep-ha-noi-nd311845.html)
+- [White Wedding: màu sắc xu hướng cưới 2026](https://whitewedding.vn/mau-sac-xu-huong-cuoi-2026/)
+- [Chiaki: chữ Hỷ ép kim và cắt laser](https://chiaki.vn/chu-hy-ep-kim-co-dien-den-cac-mau-cat-laser-hien-dai-tinh-xao)
+- [Điện máy Xanh: 8 cách xếp khăn ăn](https://www.dienmayxanh.com/vao-bep/8-cach-xep-khan-trang-tri-ban-an-them-dep-mat-va-trang-trong-15657)
 
 Việt Nam:
 - [VnExpress: Giới trẻ chuộng tiệc cưới cá nhân hoá](https://vnexpress.net/gioi-tre-chuong-tiec-cuoi-ca-nhan-hoa-4868919.html)
