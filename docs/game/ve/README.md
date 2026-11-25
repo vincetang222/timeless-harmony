@@ -24,7 +24,7 @@ Chạy theo thứ tự: `luu_prep.py` → `may_moi.py` → `dong_goi.py <thư m�
 | `may_xoa.py` | Tách nét lông mày khỏi tóc, mi mắt và da; xoá lông mày, lấp da bằng nội suy Laplace. |
 | `may_net.py` | Cắt lông mày thành lớp chỉ có nét (không da, không tóc). |
 | `may_sua.py` | Chỉnh tay cho ảnh nguồn mà quy tắc chung chưa xử lý được (hiện để trống). |
-| `may_moi.py` | Xoá lông mày gốc trên 9 đầu chú rể Vuốt ngược; xuất lớp nét `mayA` và mảnh `mayS` cho cô dâu tóc Dài thẳng. |
+| `may_moi.py` | Xoá lông mày gốc trên 9 đầu chú rể Vuốt ngược; xuất lớp nét `mayA`. Phần thử cho cô dâu (`mayS`) không dùng, ghi chú trong tệp. |
 | `dong_goi.py` | Gom mảnh mắt, lông mày thành tấm ghép `manh-*.webp`; dựng tấm cỡ nhỏ `nho-*.webp`; cắt hình thẻ địa điểm `anh/t-*.webp`; thu nhỏ hình người phục vụ; ghi `manh.json`. |
 
 Quy tắc dùng lượt vẽ nằm ở `../canh-ngoai-troi.md`, mục 4. Mỗi ảnh tốn khoảng 0,24% gói tháng (đo ngày 24/11/2026).

@@ -4,23 +4,11 @@ from may_lib import *
 from may_xoa import *
 from may_xoa import _mem
 KHUNG = (160, 72)   # khung của lớp nét trong ảnh nguồn, tâm là trọng tâm lông mày
-def net_may(n, g, ben, tham=None):
-    a = np.asarray(mo_anh(n)).astype(float); kind = n.split('-')[3]; face = n.split('-')[2]
-    p = MANH[g]['manh']['may'][face][kind][ben]; px, py = p['x0'] + 70, p['y0'] + 28 + 45
-    ex, ey = tam_mat(a, px, py); r = tach(a, ex, ey, g, ben, tham); kq, S = xoa(r)
+def lop_net(r, S, ben, tham=None):
+    """Lớp nét lông mày trong cửa sổ của tach(): trả về (alpha 0..1, màu RGB, mặt nạ lông mày) hoặc None nếu không dò được."""
     for (xa_, ya_, xb_, yb_) in (tham or {}).get('ep_may', []):   # chỉ tay vùng lông mày khi dò tự động không ra
         r['may'][ya_:yb_, xa_:xb_] |= (r['netm'] | r['toc'])[ya_:yb_, xa_:xb_] & ~r['mat'][ya_:yb_, xa_:xb_]
-    if not r['may'].any(): return None, r, S, None
-    if tham and tham.get('duoi'):                                 # đuôi lông mày bị lọn tóc vắt qua: kéo dải mày (mép trên, mép dưới) qua chỗ lọn tóc
-        M = r['may']; cols = np.nonzero(M.any(axis=0))[0]; out = 1 if ben == 1 else -1
-        top = np.array([np.nonzero(M[:, c])[0].min() for c in cols]); bot = np.array([np.nonzero(M[:, c])[0].max() for c in cols])
-        k = min(len(cols), 40); cs = cols[-k:] if out > 0 else cols[:k]; ts = top[-k:] if out > 0 else top[:k]; bs = bot[-k:] if out > 0 else bot[:k]
-        pt, pb = np.polyfit(cs, ts, 1), np.polyfit(cs, bs, 1); toi = r['net'] | r['toc']; gioi = 110 + out * tham['duoi']
-        x = (cols.max() + 1) if out > 0 else (cols.min() - 1)
-        while (x <= gioi if out > 0 else x >= gioi):
-            ya, yb = int(round(np.polyval(pt, x))), int(round(np.polyval(pb, x)))
-            if yb < ya or toi[ya:yb + 1, x].mean() < 0.5: break
-            M[ya:yb + 1, x] |= toi[ya:yb + 1, x]; x += out
+    if not r['may'].any(): return None
     gan = gian(r['may'], 7); lab, k = thanh_phan(r['nho']); may = r['may'].copy()
     for i in range(1, k + 1):                                     # chỉ giữ mảnh nhỏ nằm sát lông mày (sợi mày), bỏ ngọn tóc mái
         c = lab == i
@@ -36,6 +24,14 @@ def net_may(n, g, ben, tham=None):
     al = np.clip((Lsk - Lp) / np.maximum(Lsk - loi, 0.05), 0, 1) * _mem(R, 1.0)[..., 0]
     al = np.clip((al - 0.1) / 0.9, 0, 1)
     C = (r['w'] - (1 - al[..., None]) * S) / np.maximum(al[..., None], 0.3); C = np.clip(C, 0, 255)
+    return al, C, may
+def net_may(n, g, ben, tham=None):
+    a = np.asarray(mo_anh(n)).astype(float); kind = n.split('-')[3]; face = n.split('-')[2]
+    p = MANH[g]['manh']['may'][face][kind][ben]; px, py = p['x0'] + 70, p['y0'] + 28 + 45
+    ex, ey = tam_mat(a, px, py); r = tach(a, ex, ey, g, ben, tham); kq, S = xoa(r)
+    kqn = lop_net(r, S, ben, tham)
+    if kqn is None: return None, r, S, None
+    al, C, may = kqn
     ys, xs = np.nonzero(r['may']); cx, cy = xs.mean(), ys.mean()
     W, H = KHUNG; x0, y0 = int(round(cx - W / 2)), int(round(cy - H / 2))
     out = np.zeros((H, W, 4)); ya, yb, xa, xb = max(0, y0), min(al.shape[0], y0 + H), max(0, x0), min(al.shape[1], x0 + W)

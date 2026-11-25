@@ -239,7 +239,7 @@ var NV = (function () {
   function coTi(p, ti) { var m = META[p.gt]; return { w: Math.round(m.w * ti), h: Math.round(m.h * ti), hdau: Math.ceil(m.hdau * ti), cx: m.cx }; }
   // Mảnh mắt, lông mày đặt lên đầu p (toạ độ ở tỉ lệ ti). Kiểu lông mày tuỳ kiểu tóc:
   //  - chú rể Vuốt ngược: đầu đã xoá lông mày gốc, dùng lớp nét không dính tóc (mayA) đặt đúng chỗ lông mày cũ;
-  //  - cô dâu Dài thẳng: mảnh đã bỏ lọn tóc mái của kiểu Búi cao (mayS); cô dâu Ngang cằm: tóc mái che, không vẽ;
+  //  - cô dâu Ngang cằm: tóc mái che, không vẽ;
   //  - còn lại: mảnh cắt nguyên từ tranh có cùng kiểu tóc mái.
   function manhCua(p, ti) {
     var out = [], M = MANH && MANH[p.gt]; if (!M) return out;
@@ -247,7 +247,6 @@ var NV = (function () {
     function them(bo, cho, loai) { if (bo && cho) bo.forEach(function (o, i) { if (o && cho[i]) out.push({ sx: o.x, sy: o.y, sw: o.w, sh: o.h, x: cho[i][0] * ti, y: cho[i][1] * ti, w: o.w * ti, h: o.h * ti, loai: loai }); }); }
     function bo(goc) { return goc && goc[p.mat] && goc[p.mat][p.may]; }
     if (p.gt === 'nam' && p.toc === 'vuot' && M.mayA && M.vitriA[td]) them(bo(M.mayA), M.vitriA[td], 'may');
-    else if (p.gt === 'nu' && p.toc === 'dai' && M.mayS) them(bo(M.mayS), vt.may, 'may');
     else if (!(p.gt === 'nu' && p.toc === 'ngan')) them(bo(M.manh.may), vt.may, 'may');
     them(M.manh.mat[p.mat] && M.manh.mat[p.mat][p.mt], vt.mat, 'mat');
     return out;

@@ -208,13 +208,15 @@ Chủ dự án gửi ảnh chú rể tóc Vuốt ngược bị lỗi lông mày,
 - **Chú rể, Vuốt ngược (9 đầu).** Xoá lông mày gốc khỏi đầu bằng mã. Lông mày mới là lớp chỉ có nét, không có da hay tóc (`mayA`), đặt đúng chỗ lông mày cũ.
   - Lớp nét cắt từ bên lông mày không bị tóc che, rồi lật cho bên kia.
   - Mặt vuông với lông mày Đậm, ngang bị lọn tóc che cả hai bên, nên dùng nét Đậm của mặt trái xoan.
-- **Cô dâu, Dài thẳng.** Mảnh lông mày bỏ các lọn tóc mái của kiểu Búi cao vắt qua trán (`mayS`).
+- **Cô dâu, Dài thẳng: đã thử, không dùng.** Mảnh lông mày cô dâu có lọn tóc mái của kiểu Búi cao vắt qua. Thử bỏ lọn tóc bằng mã thì lông mày bị đứt hoặc không dò ra, vì lọn tóc vắt thẳng qua nét mày mảnh và nhạt. Bản chơi giữ mảnh của bản 13 (vết lọn tóc nhỏ). Mã thử vẫn giữ trong `may_moi.py`. Cách sửa gọn là vẽ lại riêng 9 ảnh lông mày cô dâu trên trán trống, sau 01/12.
 - **Cách xoá lông mày** (`docs/game/ve/may_xoa.py`):
   1. Tìm nét tối hẹp bằng phép đóng.
   2. Loại lọn tóc: nét dốc, dính vào mảng tóc hoặc chạm mép trên.
   3. Tách lông mày khỏi mi mắt tại hàng ít điểm tối nhất.
   4. Lấp da bằng nội suy Laplace.
-- **Soát.** Đã soát toàn bộ 54 đầu × 3 kiểu lông mày bằng bảng hình, có cả bản đổi màu tóc và màu da.
+- **Soát.**
+  - Đã soát toàn bộ 54 đầu × 3 kiểu lông mày bằng bảng hình, có cả bản đổi màu tóc và màu da.
+  - So từng điểm ảnh với bản 13 trên 10 nhân vật mẫu: chỉ khác ở lông mày chú rể Vuốt ngược.
 - **Còn lại.** Mảnh mắt trên vài đầu Đầy đặn vẫn hơi lệch nếp mí. Lỗi này có từ trước, không thuộc lần sửa này.
 
 ### Làm nhẹ

@@ -30,7 +30,7 @@ for g in ['nam', 'nu']:
                     o.append((nhom, face, kind, ben, im))
     them('mat', M['manh']['mat'], 'out2'); them('may', M['manh']['may'], 'out2')
     if 'mayA' in moi[g]: them('mayA', moi[g]['mayA'], 'out3/manh'); out['mayA'] = {}; out['vitriA'] = moi[g]['vitriA']
-    if 'mayS' in moi[g]: them('mayS', moi[g]['mayS'], 'out3/manh'); out['mayS'] = {}
+    # mayS (lông mày cô dâu bỏ lọn tóc) đã thử nhưng làm đứt lông mày, không dùng; cô dâu giữ mảnh của bản 13
     W, H, vt = xep([(i, im.width, im.height) for i, (_, _, _, _, im) in enumerate(o)], 600)
     tam = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     for i, (nhom, face, kind, ben, im) in enumerate(o):
