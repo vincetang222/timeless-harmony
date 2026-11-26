@@ -543,11 +543,15 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
   try { var s0 = JSON.parse(localStorage.getItem(KHOA_SO) || 'null'); if (s0 && s0.noi && s0.ket) soLuu = s0; } catch (e) {}
   ['co-dau', 'chu-re'].forEach(function (v) { if (!hopLe(st.nv[v], v)) st.nv[v] = JSON.parse(JSON.stringify(NV.GOC[v])); });
   if ((st.man !== 'lop' && MAN.indexOf(st.man) < 0) || (st.dd && !DD[st.dd]) || (st.tt && !GOI[st.tt] && st.tt !== 'tk')) st = moi(st.nv);
-  if (st.tt === 'tk' && !(st.dd === 'ho' || st.dd === 'langque')) st.tt = null;   // tự thiết kế chỉ có ở nơi đã có nền trống
+  if (st.tt === 'tk' && (!st.tkLop || !(st.dd === 'ho' || st.dd === 'langque'))) st.tt = null;   // tự thiết kế: cần bản lưu riêng, chỉ có ở nơi đã có nền trống
   function ghi() { try { localStorage.setItem(KHOA, JSON.stringify(st)); } catch (e) {} }
   function ghiSo() { try { localStorage.setItem(KHOA_SO, JSON.stringify(soLuu)); } catch (e) {} }
   function nvHien() { return st.nv[st.ai]; }
   function ddHien() { return st.dd || 'ho'; }
+  // Thiết kế của chương 4 là một bản chép riêng (st.tkLop), không dùng chung với xưởng tự do (st.lop). Vào xưởng từ chương 4 thì cất xưởng tự do vào st.lopTu, ra thì trả lại.
+  function chepTK(L) { var c = JSON.parse(JSON.stringify(L)); c.noi = st.dd; c.khach = KHACH; return c; }
+  function vaoXuong() { if (!st.lopTu) st.lopTu = JSON.parse(JSON.stringify(lopHien())); st.lop = chepTK(st.tkLop || lopHien()); st.tuChuong = 1; }
+  function raXuong() { if (st.lopTu) { st.lop = st.lopTu; delete st.lopTu; } st.tuChuong = 0; }
   function goiHien() { return st.tt && GOI[st.tt] ? st.tt : 'du'; }   // tự thiết kế: tranh của chương 4 tạm dùng gói Đủ
 
   /* ---------- luật chơi: tiền và lòng người (hàm thuần, thử được) ---------- */
@@ -556,7 +560,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     function cong(o) { if (o) for (var q in o) hq[q] += o[q]; }
     if (s.dd) { muc.push([d.ten + ', tiệc ' + KHACH + ' khách', d.gia]); cong(d.hq); }
     if (g) { muc.push(['Trang trí gói ' + g.ten, g.gia]); cong(g.hq); }
-    else if (s.tt === 'tk' && s.lop) { var Lk = Object.assign({}, s.lop, { noi: s.dd, khach: KHACH }), G = giaTT(Lk); muc.push(['Trang trí tự thiết kế' + (G.mau ? ' (theo mẫu có sẵn)' : ''), G.tong]); cong(hqTT(Lk)); }
+    else if (s.tt === 'tk' && s.tkLop) { var Lk = Object.assign({}, s.tkLop, { noi: s.dd, khach: KHACH }), G = giaTT(Lk); muc.push(['Trang trí tự thiết kế' + (G.mau ? ' (theo mẫu có sẵn)' : ''), G.tong]); cong(hqTT(Lk)); }
     for (k in NGUOI) if (s.pv[k]) {
       if (s.huy === k) muc.push([NGUOI[k].ten + (s.kyQuy ? ' (huỷ, ký quỹ hoàn đủ)' : ' (huỷ, mất cọc 30%)'), s.kyQuy ? 0 : NGUOI[k].gia * 0.3]);
       else { muc.push([NGUOI[k].ten, NGUOI[k].gia]); cong(NGUOI[k].hq); }
@@ -1687,8 +1691,8 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     });
     than.appendChild(el('p', 'ghi', 'Vẽ tay: hai nền, cổng tròn, bàn dài gỗ. Tự vẽ, không tốn lượt: sáu khung cổng bằng mã, cụm hoa, luống hoa và hoa bàn vẽ bằng Canva, bản đêm, bàn và cận cảnh dựng 3D. Khăn nhiều lớp, đệm, khung ghế, đĩa lót đổi bằng mã. Cận cảnh luôn ở ánh ngày để dễ xem màu.'));
     if (tuCh) {
-      chan.appendChild(nutBam('Quay lại', function () { st.tuChuong = 0; sang('goi'); }, 'phu', 'trai'));
-      chan.appendChild(nutBam('Dùng thiết kế này', function () { st.tuChuong = 0; st.tt = 'tk'; datLaiGia(); sang('goi'); }, 'to', null, 'phai'));
+      chan.appendChild(nutBam('Quay lại', function () { raXuong(); sang('goi'); }, 'phu', 'trai'));   // bỏ phần vừa sửa
+      chan.appendChild(nutBam('Dùng thiết kế này', function () { st.tkLop = chepTK(lopHien()); raXuong(); st.tt = 'tk'; datLaiGia(); sang('goi'); }, 'to', null, 'phai'));
     } else chan.appendChild(nutBam('Về đầu', function () { sang('mo'); }, 'phu', 'trai'));
     lamMoi = function () { cap.forEach(function (f) { f(); }); };
     lamMoi();
@@ -1747,7 +1751,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
       ['nhac', 'Đèn, màn LED, loa', 'dây đèn, đèn rọi, nến; màn LED chiếu tên hai bạn; ban ngày và ban đêm'],
       ['doi', 'Xếp chỗ như tiệc ở Ý', 'ghế dự lễ 4 kiểu, bàn dài xuyên suốt, lối gương nước; mặt bằng, lưu ý, bảng kê']].forEach(function (x) {
       var li = el('li'), v = el('span', 'vong'); v.innerHTML = ico(x[0]); li.appendChild(v); var t = el('div'); t.appendChild(el('b', '', x[1])); t.appendChild(el('span', '', x[2])); li.appendChild(t); ds.appendChild(li); });
-    xt.appendChild(ds); var nx = nutBam('Mở xưởng trang trí', function () { st.tuChuong = 0; sang('lop'); }, 'phu', null, 'phai'); nx.id = 'mo-xuong'; xt.appendChild(nx); than.appendChild(xt);
+    xt.appendChild(ds); var nx = nutBam('Mở xưởng trang trí', function () { raXuong(); sang('lop'); }, 'phu', null, 'phai'); nx.id = 'mo-xuong'; xt.appendChild(nx); than.appendChild(xt);
     if (soLuu.lan) veSoLuu(than);
     than.appendChild(el('p', 'ghi', 'Tên nơi và người là hư cấu. Giá là số tạm của bản thử.'));
     var thu = el('button', 'nut-thu', st.thu ? 'Tắt danh mục thử 100 nơi' : 'Thử danh mục 100 nơi (hình lặp lại)'); thu.type = 'button';
@@ -1759,7 +1763,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     tieuDe(dau, 'Nơi tổ chức', 1);
     goiY(than, [['nha', 'Nhà trai: về quê'], ['nha', 'Nhà gái: cảnh đẹp']]);
     var cap = luoiThe(than, { id: 'noi', ds: Object.keys(DD).map(function (k) { return { k: k, ten: DD[k].ten, gia: DD[k].gia, hinh: anhThe(k, 'du'), nhan: [DD[k].que ? 'que' : 'canh'] }; }),
-      chon: function (k) { return st.dd === k; }, fn: function (k) { chonCanh(function () { st.dd = k; if (st.tt === 'tk' && k !== 'ho' && k !== 'langque') st.tt = null; }); }, loc: [['que', 'Ở quê'], ['canh', 'Cảnh đẹp']] });
+      chon: function (k) { return st.dd === k; }, fn: function (k) { chonCanh(function () { st.dd = k; if (st.tt === 'tk' && k !== 'ho' && k !== 'langque') st.tt = null; if (st.tkLop) st.tkLop.noi = k; }); }, loc: [['que', 'Ở quê'], ['canh', 'Cảnh đẹp']] });
     var ct = el('div', 'chi-tiet dinh'); than.appendChild(ct);
     chan.appendChild(nutBam('Cặp đôi', function () { sang('doi'); }, 'phu', 'trai'));
     var b = nutBam('Trang trí', function () { sang('goi'); }, 'to', null, 'phai'); chan.appendChild(b);
@@ -1770,17 +1774,17 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
   function bangGoi(dau, than, chan) {
     tieuDe(dau, 'Trang trí', 2);
     goiY(than, [['hoa', 'Gói sẵn: rẻ, nhanh'], ['hoa', 'Tự thiết kế: hợp ý, tốn công']]);
-    var coTK = st.dd === 'ho' || st.dd === 'langque', L = lopHien(), xemTK = false;   // tự thiết kế dùng xưởng trang trí; chỉ có ở nơi đã có nền trống
-    if (coTK) { L.noi = st.dd; L.khach = KHACH; }
+    var coTK = st.dd === 'ho' || st.dd === 'langque', xemTK = false;   // tự thiết kế dùng xưởng trang trí; chỉ có ở nơi đã có nền trống
+    var tkL = function () { return st.tkLop || chepTK(lopHien()); };   // chưa lưu thì xem trước thiết kế đang có trong xưởng
     var cap = luoiThe(than, { id: 'goi', ds: Object.keys(GOI).map(function (k) { return { k: k, ten: 'Gói ' + GOI[k].ten, gia: GOI[k].gia, hinh: anhThe(ddHien(), k) }; })
-        .concat([{ k: 'tk', ten: coTK ? 'Tự thiết kế' : 'Tự thiết kế · sắp có', gia: coTK ? giaTT(L).tong : null, ico: 'hoa' }]),
-      chon: function (k) { return st.tt === k; }, fn: function (k) { xemTK = k === 'tk'; if (k === 'tk' && !coTK) { lamMoi(); return; } chonCanh(function () { st.tt = k; }); } });
+        .concat([{ k: 'tk', ten: coTK ? 'Tự thiết kế' : 'Tự thiết kế · sắp có', gia: coTK ? giaTT(tkL()).tong : null, ico: 'hoa' }]),
+      chon: function (k) { return st.tt === k; }, fn: function (k) { xemTK = k === 'tk'; if (k === 'tk' && !coTK) { lamMoi(); return; } chonCanh(function () { if (k === 'tk' && !st.tkLop) st.tkLop = chepTK(lopHien()); st.tt = k; }); } });
     var ct = el('div', 'chi-tiet dinh'); than.appendChild(ct);
-    var mo = nutBam(st.tt === 'tk' ? 'Sửa thiết kế' : 'Mở xưởng trang trí', function () { st.tuChuong = 1; sang('lop'); }, 'phu nho'); mo.id = 'mo-xuong-ch4'; than.appendChild(mo);
+    var mo = nutBam(st.tt === 'tk' ? 'Sửa thiết kế' : 'Mở xưởng trang trí', function () { vaoXuong(); sang('lop'); }, 'phu nho'); mo.id = 'mo-xuong-ch4'; than.appendChild(mo);
     chan.appendChild(nutBam('Nơi tổ chức', function () { sang('noi'); }, 'phu', 'trai'));
     var b = nutBam('Người phục vụ', function () { sang('nguoi'); }, 'to', null, 'phai'); chan.appendChild(b);
     lamMoi = function () { cap(); var g = st.tt && GOI[st.tt], tk = st.tt === 'tk'; b.disabled = !g && !tk; mo.hidden = !(tk || (xemTK && coTK));
-      if (tk) { var G = giaTT(L); chiTiet(ct, 'Tự thiết kế', so(G.tong) + ' triệu', hqTT(L), null, (G.mau ? 'Trùng một mẫu có sẵn nên giảm 20%. ' : 'Tự chọn từng lớp, trả đủ giá. ') + 'Ngày cưới tạm dùng tranh của gói Đủ.'); }
+      if (tk) { var G = giaTT(st.tkLop); chiTiet(ct, 'Tự thiết kế', so(G.tong) + ' triệu', hqTT(st.tkLop), null, (G.mau ? 'Trùng một mẫu có sẵn nên giảm 20%. ' : 'Tự chọn từng lớp, trả đủ giá. ') + 'Ngày cưới tạm dùng tranh của gói Đủ.'); }
       else if (xemTK && !coTK) chiTiet(ct, '', '', null, null, 'Tự thiết kế hiện có ở Vườn Hồ và Sân nhà quê; nơi này sắp có.');
       else chiTiet(ct, g && 'Gói ' + g.ten, g && g.gia + ' triệu', g && g.hq, null, g ? g.mo : 'Chạm một gói để thấy cổng và hoa đổi ngay, hoặc tự thiết kế từng lớp.'); };
     lamMoi();
@@ -1861,7 +1865,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     function luaChon(ds, khoa, sau) {
       var l = el('div', 'dong-chon');
       ds.forEach(function (x) {
-        var thieu = x.can === 'bat' ? !st.bat : x.can === 'doi' ? (st.tt === 'gon' || (st.tt === 'tk' && giaTT(lopHien()).tong < 8)) : false, b = el('button'); b.type = 'button'; b.disabled = thieu;
+        var thieu = x.can === 'bat' ? !st.bat : x.can === 'doi' ? (st.tt === 'gon' || (st.tt === 'tk' && st.tkLop && giaTT(st.tkLop).tong < 8)) : false, b = el('button'); b.type = 'button'; b.disabled = thieu;
         b.appendChild(el('b', '', x.ten)); if (x.gia) b.appendChild(el('span', 'gia', x.gia + ' triệu'));
         if (thieu) b.appendChild(el('span', 'ghi', x.can === 'bat' ? 'chưa thuê nhà bạt' : 'gói Gọn không có đội trực')); else b.appendChild(chipHQ(x.hq));
         b.addEventListener('click', function () { for (var q in x.hq) st.hq[q] += x.hq[q]; st.chiThem += x.gia || 0; st.xuLy[khoa] = x.kq; st.xuLy[khoa + 'Loi'] = x.loi; if (sau) sau(); veChiSo(); datPV(); dungBang(); ghi(); });
@@ -1909,7 +1913,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
   function veKeHoach() { // tóm tắt các quyết định đã chốt (màn rộng); bấm để quay lại màn đó nếu còn sửa được
     var e = $('ke-hoach'), i = MAN.indexOf(st.man); e.hidden = i < 2 || i > 7; if (e.hidden) return; e.innerHTML = ''; e.appendChild(el('h3', '', 'Kế hoạch của hai bạn'));
     var thue = Object.keys(NGUOI).filter(function (k) { return st.pv[k]; }).map(function (k) { return NGUOI[k].ten; });
-    [['noi', 'ghim', 'Nơi tổ chức', st.dd && DD[st.dd].ten + ' · ' + DD[st.dd].gia + ' tr'], ['goi', 'hoa', 'Trang trí', st.tt && (st.tt === 'tk' ? 'Tự thiết kế · ' + so(giaTT(lopHien()).tong) + ' tr' : 'Gói ' + GOI[st.tt].ten + ' · ' + GOI[st.tt].gia + ' tr')],
+    [['noi', 'ghim', 'Nơi tổ chức', st.dd && DD[st.dd].ten + ' · ' + DD[st.dd].gia + ' tr'], ['goi', 'hoa', 'Trang trí', st.tt && (st.tt === 'tk' ? 'Tự thiết kế · ' + so(giaTT(st.tkLop).tong) + ' tr' : 'Gói ' + GOI[st.tt].ten + ' · ' + GOI[st.tt].gia + ' tr')],
       ['nguoi', 'micro', 'Người phục vụ', st.xa >= 5 && (thue.join(', ') || 'Không thuê ai')], ['gia', 'noi', 'Mặc cả', st.chot && (st.giam ? 'Giảm ' + st.giam + '%' : 'Giữ giá gốc') + (st.ngayThuong ? ', ngày thường' : '')],
       ['ky', 'hopdong', 'Hợp đồng', st.daKy && (st.kyQuy ? 'Ký quỹ' : 'Trả thẳng') + (st.bat ? ', có nhà bạt' : ', không nhà bạt')],
       ['ngay', 'tim', 'Ngày cưới', st.suCo && (st.suCo.tt ? THOI_TIET[st.suCo.tt].ten : 'Trời đẹp') + (st.suCo.ncc ? ', ' + NGUOI[st.suCo.ncc].ten.toLowerCase() + ' huỷ' : '')]].forEach(function (r) {
@@ -1949,7 +1953,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     }, { timeout: 1500 });
   }
   if (st.man === 'doi') NV.taiTruoc(st.ai === 'chu-re' ? ['nam', 'nu'] : ['nu', 'nam']); // mở lại ngay ở bước tạo nhân vật: cần thẻ hình ngay
-  if (location.hash === '#trang-tri' && st.man !== 'lop') { st.man = 'lop'; st.tuChuong = 0; ghi(); }   // mở thẳng xưởng trang trí: thêm #trang-tri vào cuối địa chỉ
+  if (location.hash === '#trang-tri' && st.man !== 'lop') { st.man = 'lop'; raXuong(); ghi(); }   // mở thẳng xưởng trang trí: thêm #trang-tri vào cuối địa chỉ
   dung();
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { boCuc(); veHet(); });
 })();
