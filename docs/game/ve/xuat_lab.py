@@ -3,7 +3,7 @@
 #   - nền đêm (cỡ 1600, 900 và hình thẻ);
 #   - bộ bàn 3D: tranh, mặt nạ 3 lớp (đỏ = khăn, lục = đệm, lam = khung ghế; không nén mất dữ liệu), toạ độ khăn gói 12 bit vào RGB;
 #   - cận cảnh bàn Âu, Việt: tranh, mặt nạ (đỏ = khăn, lục = đĩa lót, lam = dao nĩa), toạ độ khăn.
-# Chạy: python3 xuat_lab.py <thư mục bản chơi> <thư mục nền đêm> <bàn tròn 3D> <bàn dài 3D> <cận cảnh 3D> <t14-xuat.png> [phần: nen,khung,ban,gan,vai,loa,ghe,xuyen]
+# Chạy: python3 xuat_lab.py <thư mục bản chơi> <thư mục nền đêm> <bàn tròn 3D> <bàn dài 3D> <cận cảnh 3D> <t14-xuat.png> [phần: nen,khung,ban,gan,vai,loa,ghe,xuyen,luong]
 #   - ô hoạ tiết vải (ren, kim sa, gấm) lặp liền mạch, để bản chơi trải lên khăn theo toạ độ khăn;
 # Ra: <bản chơi>/anh/..., <bản chơi>/anh/tt/..., số đo tt-lab.json (chép vào TT3 trong index.html), ảnh kiểm tra xuat-lab-*.jpg
 import sys, os, json, math
@@ -16,7 +16,7 @@ import khung_ma as K
 import trang_tri as T
 
 LAB, DEM, TRON, DAI, GAN, T14 = sys.argv[1:7]
-PHAN = set((sys.argv[7] if len(sys.argv) > 7 else 'nen,khung,ban,gan,vai,loa,ghe,xuyen').split(','))   # chạy riêng từng phần, ví dụ: khung,vai
+PHAN = set((sys.argv[7] if len(sys.argv) > 7 else 'nen,khung,ban,gan,vai,loa,ghe,xuyen,luong').split(','))   # chạy riêng từng phần, ví dụ: khung,vai
 ANH = os.path.join(LAB, 'anh'); TT = os.path.join(ANH, 'tt'); os.makedirs(TT, exist_ok=True)
 NEN_THE = (236, 240, 228)
 so = json.load(open('tt-lab.json')) if os.path.exists('tt-lab.json') else {}
@@ -232,6 +232,23 @@ if 'xuyen' in PHAN:
         t = nen.crop((240, 440, 1360, 889)).resize((320, 128), Image.LANCZOS); tt = Image.new('RGB', (320, 240), NEN_THE); tt.paste(t.convert('RGB'), (0, 56)); tt.save(os.path.join(TT, 't-' + ten + '.webp'), quality=80, method=6)
     nen = Image.open(os.path.join(ANH, 'nen-ho.webp')).convert('RGBA'); nen.alpha_composite(the_ba)
     t = nen.crop((240, 440, 1360, 889)).resize((320, 128), Image.LANCZOS); tt = Image.new('RGB', (320, 240), NEN_THE); tt.paste(t.convert('RGB'), (0, 56)); tt.save(os.path.join(TT, 't-ban-xuyen-ba.webp'), quality=80, method=6)
+
+# ---------- 4e. Luống hoa (T15, Canva): 6 khóm hoa trắng trên nền xanh → tấm ngang + mặt nạ cánh hoa; ảnh lấy từ biến T15 ----------
+if 'luong' in PHAN:
+    roi = T.tach(os.environ['T15'], nguong=90); a = np.asarray(roi)
+    lab, n = nd.label(nd.binary_dilation(a[..., 3] > 30, iterations=10)); sz = nd.sum(np.ones_like(lab), lab, range(1, n + 1)); kh = []
+    for k in np.argsort(-sz)[:6] + 1:
+        ys, xs = np.nonzero(lab == k); bb = (xs.min(), ys.min(), xs.max() + 1, ys.max() + 1)
+        c = np.asarray(roi.crop(bb)).copy(); c[..., 3] = (c[..., 3] * (lab == k)[bb[1]:bb[3], bb[0]:bb[2]]).astype('uint8'); kh.append((bb, Image.fromarray(c)))
+    kh.sort(key=lambda t: (t[0][1] // 200, t[0][0]))
+    RK = 300; anh = [im.resize((RK, round(im.size[1] * RK / im.size[0])), Image.LANCZOS) for _, im in kh]
+    Wl = len(anh) * (RK + 2); Hl = max(i.size[1] for i in anh); tam = Image.new('RGBA', (Wl, Hl), (0, 0, 0, 0)); o = []
+    for i, im in enumerate(anh): tam.alpha_composite(im, (i * (RK + 2), 0)); o.append([i * (RK + 2), RK, im.size[1], 0.5, 0.86])
+    mn = T.mat_na_hoa(tam); mh = np.asarray(mn).astype(np.float32) / 255
+    luu_webp(tam, 'luong.webp'); Image.merge('RGB', (mn, mn, mn)).save(os.path.join(TT, 'luong-mn.webp'), quality=70, method=6)
+    so['luong'] = dict(w=Wl, h=Hl, o=o, rong=0.65, goc=[round(float(v), 1) for v in np.percentile(np.asarray(tam).astype(np.float32)[..., :3][mh > 0.9], 85, axis=0)])
+    print('luống hoa:', Wl, Hl, so['luong']['goc'])
+    bg = Image.new('RGBA', tam.size, (60, 80, 70, 255)); bg.alpha_composite(tam); xem = Image.new('RGB', (Wl, Hl * 2)); xem.paste(bg.convert('RGB'), (0, 0)); xem.paste(Image.merge('RGB', (mn, mn, mn)), (0, Hl)); xem.save('xuat-lab-luong.jpg', quality=85)
 
 # ---------- 5. Ô hoạ tiết vải: lặp liền mạch (chu kỳ hoạ tiết chia hết cạnh ô), 512 px và bản 128 px cho bàn nhìn xa ----------
 # Kênh: R = tỉ lệ pha màu thứ hai (ren trắng, hoa gấm), G = độ sáng hạt (÷1,3), B = điểm loé. Cùng công thức với hoa_van.py.

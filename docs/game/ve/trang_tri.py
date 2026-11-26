@@ -14,12 +14,12 @@ def buoc(x, a, b):
 
 
 # ---------- 1. Tách nền xanh dương ----------
-def tach(path, d0=22, d1=78, giu_xanh=False, bo_xam_xanh=False):
+def tach(path, d0=22, d1=78, giu_xanh=False, bo_xam_xanh=False, nguong=125):
     """Alpha theo khoảng cách màu tới màu nền thật (nền rất phẳng); viền thì gỡ màu nền lẫn vào (un-mix).
     giu_xanh: đồ có màu xanh dương thật (khi đó nên vẽ trên nền màu khác). bo_xam_xanh: xoá vệt tối ngả xanh mô hình để sót giữa chân ghế."""
     a = np.asarray(Image.open(path).convert('RGB')).astype(np.float32)
     k = a[..., 2] - np.maximum(a[..., 0], a[..., 1])
-    bg = np.median(a[k > 125], 0)
+    bg = np.median(a[k > nguong], 0)   # nguong: lam trội hơn đỏ, lục bao nhiêu thì là nền (nền Canva T15 đậm hơn: 90)
     d = np.sqrt(((a - bg) ** 2).sum(2))
     al = np.clip((d - d0) / (d1 - d0), 0, 1)
     if bo_xam_xanh: al = al * (1 - buoc(k, 10, 26) * (1 - buoc(np.maximum(a[..., 0], a[..., 1]), 120, 165)))
