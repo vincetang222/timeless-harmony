@@ -3,7 +3,7 @@
 #   - nền đêm (cỡ 1600, 900 và hình thẻ);
 #   - bộ bàn 3D: tranh, mặt nạ 3 lớp (đỏ = khăn, lục = đệm, lam = khung ghế; không nén mất dữ liệu), toạ độ khăn gói 12 bit vào RGB;
 #   - cận cảnh bàn Âu, Việt: tranh, mặt nạ (đỏ = khăn, lục = đĩa lót, lam = dao nĩa), toạ độ khăn.
-# Chạy: python3 xuat_lab.py <thư mục bản chơi> <thư mục nền đêm> <bàn tròn 3D> <bàn dài 3D> <cận cảnh 3D> <t14-xuat.png> [phần: nen,khung,ban,gan,vai,loa]
+# Chạy: python3 xuat_lab.py <thư mục bản chơi> <thư mục nền đêm> <bàn tròn 3D> <bàn dài 3D> <cận cảnh 3D> <t14-xuat.png> [phần: nen,khung,ban,gan,vai,loa,ghe]
 #   - ô hoạ tiết vải (ren, kim sa, gấm) lặp liền mạch, để bản chơi trải lên khăn theo toạ độ khăn;
 # Ra: <bản chơi>/anh/..., <bản chơi>/anh/tt/..., số đo tt-lab.json (chép vào TT3 trong index.html), ảnh kiểm tra xuat-lab-*.jpg
 import sys, os, json, math
@@ -16,7 +16,7 @@ import khung_ma as K
 import trang_tri as T
 
 LAB, DEM, TRON, DAI, GAN, T14 = sys.argv[1:7]
-PHAN = set((sys.argv[7] if len(sys.argv) > 7 else 'nen,khung,ban,gan,vai,loa').split(','))   # chạy riêng từng phần, ví dụ: khung,vai
+PHAN = set((sys.argv[7] if len(sys.argv) > 7 else 'nen,khung,ban,gan,vai,loa,ghe').split(','))   # chạy riêng từng phần, ví dụ: khung,vai
 ANH = os.path.join(LAB, 'anh'); TT = os.path.join(ANH, 'tt'); os.makedirs(TT, exist_ok=True)
 NEN_THE = (236, 240, 228)
 so = json.load(open('tt-lab.json')) if os.path.exists('tt-lab.json') else {}
@@ -196,6 +196,21 @@ if 'loa' in PHAN:
     for ten, m in json.load(open(os.path.join(LOA, 'loa.json'))).items():
         im = Image.open(os.path.join(LOA, ten + '.png')).convert('RGBA'); kb = luu_webp(im, ten + '.webp')
         m = dict(m); m.pop('mo', None); m['kb'] = kb; so[ten] = m; print(ten, m)
+
+# ---------- 4c. Ghế chiavari 16 hướng (ghe_xoay_3d.py) gộp thành một tấm ngang: tranh + mặt nạ (lục: đệm, lam: khung); thư mục lấy từ GHE_3D ----------
+if 'ghe' in PHAN:
+    GD = os.environ['GHE_3D']; mg = json.load(open(os.path.join(GD, 'ghe.json')))
+    tranh = [Image.open(os.path.join(GD, f'ghe-{k}.png')).convert('RGBA') for k in range(16)]
+    ids = [np.asarray(Image.open(os.path.join(GD, f'ghe-{k}-id.png')).convert('RGB')).astype(np.float32) / 255 for k in range(16)]
+    Wt = sum(t.size[0] for t in tranh) + 2 * 16; Ht = max(t.size[1] for t in tranh)
+    tam = Image.new('RGBA', (Wt, Ht), (0, 0, 0, 0)); mat = np.zeros((Ht, Wt, 3), np.float32); o, x = [], 0
+    for k, t in enumerate(tranh):
+        tam.alpha_composite(t, (x, 0)); m = ids[k]; m = np.where(m < 0.03, 0, np.where(m > 0.97, 1, m)); m[..., 0] = 0
+        mat[:t.size[1], x:x + t.size[0]] = m; mk = mg[str(k)]; o.append([x, t.size[0], t.size[1], mk['ax'], mk['ay']]); x += t.size[0] + 2
+    rgb = np.asarray(tam).astype(np.float32)[..., :3]
+    luu_webp(tam, 'ghe-xoay.webp'); luu_webp(Image.fromarray(np.clip(np.round(mat * 255), 0, 255).astype('uint8')), 'ghe-xoay-mn.webp', mat=True)
+    so['ghe'] = dict(w=Wt, h=Ht, pxm=260, o=o, goc=[None, goc_lop(rgb, mat[..., 1]), goc_lop(rgb, mat[..., 2])])
+    print('ghế:', Wt, Ht, so['ghe']['goc'])
 
 # ---------- 5. Ô hoạ tiết vải: lặp liền mạch (chu kỳ hoạ tiết chia hết cạnh ô), 512 px và bản 128 px cho bàn nhìn xa ----------
 # Kênh: R = tỉ lệ pha màu thứ hai (ren trắng, hoa gấm), G = độ sáng hạt (÷1,3), B = điểm loé. Cùng công thức với hoa_van.py.

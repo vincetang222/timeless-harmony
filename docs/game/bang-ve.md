@@ -170,6 +170,8 @@ Chủ dự án góp ý (25/11): tiệc ở châu Âu xếp bàn rất đa dạng
 | 12 | Quây quanh sàn nhảy | tiệc tối có tiết mục |
 | 13 | Tiệc đứng: bàn cocktail rải rác, vài bàn ngồi cho người lớn tuổi | trẻ trung, rẻ |
 
+**Ghế dự lễ (làm ngày 26/11, theo ảnh tham khảo):** 4 cách xếp đã chạy trong trang thử (thẳng hàng, hình quạt, khối chéo, vòng tròn quanh bục), dùng ghế chiavari 3D ở 16 hướng và phối cảnh đo lại trên tranh. Chi tiết, việc tiếp theo (bàn dài hoàng gia chạy dọc lối, lối gương) ở `tham-khao-thiet-ke-tiec.md` mục 4.
+
 **Từ 30 tới 1000 khách:**
 
 - Mã tính số bàn từ số khách và số chỗ mỗi bàn, rồi rải bàn theo cách xếp đã chọn. Bàn xa nhỏ dần theo cùng thước phối cảnh với nhân vật, vẽ từ xa tới gần cho đúng thứ tự che khuất.

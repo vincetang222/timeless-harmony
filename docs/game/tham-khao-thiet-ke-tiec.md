@@ -34,3 +34,21 @@ Người chơi của game là cặp đôi, không phải kỹ thuật viên sự
 - Cách xếp hiện chỉ có một kiểu cho mỗi loại bàn: bàn tròn theo lưới, bàn dài thành hàng, bàn chéo kiểu xương cá. Khoảng cách tính từ chỗ ghế và lối đi tối thiểu (số tạm của bản thử).
 - Điện mỗi món là ước lượng của bản thử: màn LED 0,3 kW mỗi m², hai loa đứng 1 kW, loa và sub 2,6 kW, dây đèn 0,15 kW, đèn rọi 0,24 kW. Cần thay bằng thông số của nhà cung cấp.
 - Giá trong bảng kê chỉ dùng số tạm đã có. Không thêm giá mới cho khăn, ghế, đồ bàn khi chưa có báo giá.
+
+## 4. Cách xếp chỗ theo ảnh tham khảo thứ hai (26/11/2026)
+
+Chủ dự án gửi thêm một loạt ảnh tiệc cưới ở Ý: góp ý là game đang bó vào vài cách xếp bàn ghế đơn giản. Những cách xếp thấy trong ảnh:
+
+| Thấy trong ảnh | Trong game | Trạng thái |
+|---|---|---|
+| Ghế dự lễ hai khối thẳng hàng hai bên lối đi, nhìn ra cổng hoa và cảnh biển, cảnh hồ | "Phần: Lễ", xếp "Thẳng hàng" | Đã làm (26/11) |
+| Hai khối ghế xoay chéo về phía cổng | "Khối chéo" (mỗi hàng nghiêng 20°) | Đã làm (26/11) |
+| Hàng ghế cong ôm lấy chỗ làm lễ | "Hình quạt" (các cung tròn quanh cặp đôi, chừa lối giữa) | Đã làm (26/11) |
+| Ghế xếp vòng tròn đồng tâm quanh bục tròn ở giữa quảng trường, có lối xuyên tâm | "Vòng tròn" (4 vòng, 4 lối) | Đã làm (26/11) |
+| Một bàn dài xuyên suốt dưới vòm đá, bên hồ: nến, hoa rủ ở đầu bàn, dây đèn trên cao | Bàn dài hoàng gia chạy dọc lối đi, ghép từ các đoạn bàn nhìn từ đầu bàn, nhỏ dần theo phối cảnh | Việc tiếp theo |
+| Lối đi có dải nước soi bóng, hai bên là luống hoa trắng | Lối gương: mã lật một dải nền làm bóng phản chiếu | Việc tiếp theo |
+| Hoa trắng trên chân trụ cao, chậu đá kiểu Ý, ô che nắng, luống hoa dọc lối | Là món vẽ, phải qua bảng duyệt trước khi vẽ (`bang-ve.md` mục 3.6) | Chờ duyệt |
+
+**Cách làm.** Một hàm xếp chỗ chung cho cả mặt bằng và cảnh, đơn vị mét quanh chỗ cặp đôi đứng. Cảnh chiếu từng ghế lên tranh theo phối cảnh đo lại ngày 26/11 trên bàn tròn vẽ tay: mặt bàn dẹt b/a ≈ 0,18, chân bàn ở 93% khung, nên máy quay cao khoảng 3,26 m, tiêu cự khoảng 1,1 lần bề ngang khung (góc nhìn khoảng 49°). Ở Vườn Hồ, đáy khung cách máy quay khoảng 11,5 m, cặp đôi khoảng 17,6 m, lan can khoảng 26 m; lưới 1 m vẽ theo cách này khớp hai mép lối đá (lối rộng khoảng 2 m). Ghế là ghế chiavari của bộ bàn, dựng 3D ở 16 hướng (`ve/ghe_xoay_3d.py`). Mỗi ghế chọn hướng gần nhất sau khi trừ góc nhìn lệch sang bên, vẽ từ xa tới gần, chia hai lớp trước và sau cặp đôi. Đổi màu đệm, màu khung một lần cho cả 16 hướng.
+
+**Giới hạn.** Từ chỗ cặp đôi ra tới đáy khung chỉ khoảng 6 m, nên kiểu thẳng hàng thấy được 4–5 hàng gần cặp đôi; các hàng còn lại nằm dưới khung hình, mặt bằng vẫn vẽ đủ. Hình quạt và vòng tròn dùng phần cỏ hai bên và sau cặp đôi nên thấy nhiều ghế hơn.
