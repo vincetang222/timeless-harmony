@@ -1143,7 +1143,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     ds.push(['Bàn ' + m.ten.toLowerCase(), n, '', null]);
     var n10 = m.pc ? Math.ceil(b.cho / 10) : n;   // bàn dài tính theo từng 10 khách
     ds.push(['Bàn ghế, dụng cụ, người phục vụ (chưa gồm món)', n10, m.pc ? 'mỗi 10 khách' : 'mỗi bàn', [0.6 * n10, 0.9 * n10]]);
-    if (m.loai !== '3d') { ds.push(['Khăn chạy bàn ' + tongCua(TONG_KHAN, L.khan)[1].toLowerCase(), n, '', null]); ds.push.apply(ds, bangKeDen(L, n, { hinh: 'dai' })); return ds; }
+    if (m.loai !== '3d') { ds.push(['Khăn chạy bàn ' + tongCua(TONG_KHAN, L.khan)[1].toLowerCase(), n, '', null]); if (L.hoaBan && SO3.hoaban) ds.push(['Hoa bàn: ' + tongCua(HOA_BAN, L.hoaBan)[1].toLowerCase() + ', hoa ' + tongCua(TONG_HOA, L.hoa)[1].toLowerCase(), n * 3, 'mỗi bàn ba món dọc khăn chạy bàn', null]); ds.push.apply(ds, bangKeDen(L, n, { hinh: 'dai' })); return ds; }
     var cho = m.pc ? b.cho : n * g.khach, cac = m.pc ? b.ds.map(function (t) { return { hinh: 'dai', dai: t[3], rong: 0.9 }; }) : [g];
     var kich = function (h, nen) { var u = []; cac.forEach(function (q) { var k = kichKhan(q, h, nen); if (u.indexOf(k) < 0) u.push(k); }); return u.join('; '); };
     ds.push(['Ghế chiavari khung ' + tongCua(MAU_KG, L.khungGhe)[1].toLowerCase() + ', đệm ' + tongCua(MAU_DEM, L.demGhe)[1].toLowerCase(), cho, '', null]);
@@ -1599,7 +1599,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
       chon: function (k) { return (L.cong || '') === k; }, fn: function (k) { doiLop(function () { L.cong = k || null; }); } }));
     hangMau(khi(nhom(than, 'Màu khung'), laKhung), MAU_KHUNG, function () { return L.mauKhung; }, function (k) { L.mauKhung = k; });
     hangChip(khi(nhom(than, 'Hoa trên khung'), laKhung), [[1, 'Có cụm hoa'], [0, 'Khung trơn']], function () { return L.hoaKhung; }, function (k) { L.hoaKhung = k; });
-    hangMau(khi(nhom(than, 'Tông hoa'), function () { return !!L.cong && (!laKhung() || !!L.hoaKhung); }), TONG_HOA, function () { return L.hoa; }, function (k) { L.hoa = k; });
+    hangMau(khi(nhom(than, 'Tông hoa'), function () { return (!!L.cong && (!laKhung() || !!L.hoaKhung)) || (!!L.hoaBan && !!L.ban && L.phan !== 'le') || coLuong(L); }), TONG_HOA, function () { return L.hoa; }, function (k) { L.hoa = k; });
     var nLoi = nhom(than, 'Lối đi'); hangChip(nLoi, LOI, function () { return L.loi; }, function (k) { L.loi = k; });
     if (SO3.luong) khi(hangChip(nLoi, [[0, 'Không luống hoa'], [1, 'Luống hoa hai bên']], function () { return L.luong; }, function (k) { L.luong = k; }, function (k) { return k === 1 && L.xepLe === 'tron'; }), function () { return L.phan === 'le'; });
     cap.push(luoiThe(nhom(than, 'Bàn tiệc'), { id: 'lop-ban', gon: 1, ds: [the('ban-dai')].concat(BAN_TEN.map(function (b) { return the(b[0]); }), XUYEN.map(function (b) { return the(b[0]); }), [{ k: '', ten: 'Không bàn', ico: 'tru' }]),
