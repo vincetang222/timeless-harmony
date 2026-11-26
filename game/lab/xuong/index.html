@@ -1615,12 +1615,19 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     m.appendChild(el('p', '', NGAN_SACH + ' triệu, ' + KHACH + ' khách, một đám cưới của riêng hai bạn.'));
     goiY(m, [['doi', 'Tạo cặp đôi'], ['ghim', 'Chọn nơi'], ['noi', 'Mặc cả'], ['hopdong', 'Ký hợp đồng'], ['tim', 'Ngày cưới']]);
     than.appendChild(m);
+    // Xưởng trang trí: mọi món mới (26/11) nằm ở màn này, nên để một ô lớn ngay màn mở đầu thay cho dòng chữ nhỏ
+    var xt = el('section', 'nhom'), hx = el('div', 'nhom-dau'); hx.appendChild(el('h3', '', 'Xưởng trang trí tiệc')); hx.appendChild(el('span', 'gt', 'mới')); xt.appendChild(hx);
+    var ds = el('ul', 'viec');
+    [['cong', 'Cổng, hoa, bàn, khăn', '6 khung cổng, cụm hoa, bàn tròn và bàn dài 3D, khăn nhiều lớp, cận cảnh một chỗ ngồi'],
+      ['nhac', 'Đèn, màn LED, loa', 'dây đèn, đèn rọi, nến; màn LED chiếu tên hai bạn; ban ngày và ban đêm'],
+      ['doi', 'Xếp chỗ như tiệc ở Ý', 'ghế dự lễ 4 kiểu, bàn dài xuyên suốt, lối gương nước; mặt bằng, lưu ý, bảng kê']].forEach(function (x) {
+      var li = el('li'), v = el('span', 'vong'); v.innerHTML = ico(x[0]); li.appendChild(v); var t = el('div'); t.appendChild(el('b', '', x[1])); t.appendChild(el('span', '', x[2])); li.appendChild(t); ds.appendChild(li); });
+    xt.appendChild(ds); var nx = nutBam('Mở xưởng trang trí', function () { sang('lop'); }, 'phu', null, 'phai'); nx.id = 'mo-xuong'; xt.appendChild(nx); than.appendChild(xt);
     if (soLuu.lan) veSoLuu(than);
     than.appendChild(el('p', 'ghi', 'Tên nơi và người là hư cấu. Giá là số tạm của bản thử.'));
     var thu = el('button', 'nut-thu', st.thu ? 'Tắt danh mục thử 100 nơi' : 'Thử danh mục 100 nơi (hình lặp lại)'); thu.type = 'button';
     thu.addEventListener('click', function () { if (st.thu) { var nv0 = st.nv; boThu(); st = moi(nv0); dung(); ghi(); } else { themThu(); st.thu = 1; sang('noi'); } });
     than.appendChild(thu);
-    var thu2 = el('button', 'nut-thu', 'Thử trang trí theo lớp (2 nơi)'); thu2.type = 'button'; thu2.addEventListener('click', function () { sang('lop'); }); than.appendChild(thu2);
     chan.appendChild(nutBam(st.xa > 1 ? 'Chơi tiếp' : 'Bắt đầu', function () { sang(st.xa > 1 ? MAN[st.xa] : 'doi'); }, 'to', null, 'phai'));
   }
   function bangNoi(dau, than, chan) {
@@ -1809,6 +1816,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     }, { timeout: 1500 });
   }
   if (st.man === 'doi') NV.taiTruoc(st.ai === 'chu-re' ? ['nam', 'nu'] : ['nu', 'nam']); // mở lại ngay ở bước tạo nhân vật: cần thẻ hình ngay
+  if (location.hash === '#trang-tri' && st.man !== 'lop') { st.man = 'lop'; ghi(); }   // mở thẳng xưởng trang trí: thêm #trang-tri vào cuối địa chỉ
   dung();
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { boCuc(); veHet(); });
 })();
