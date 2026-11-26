@@ -282,6 +282,10 @@ Chủ dự án đã duyệt hướng trang trí theo lớp và duyệt bảng d�
 - **Kết quả gửi xem:** một màn thử trong `game/lab/xuong/`: nền trống Vườn Hồ, cổng và bàn mới, đổi được tông hoa và tông khăn, có cặp đôi đứng trong cảnh; kèm số đo và những chỗ chưa đạt.
 - **Chưa kiểm được trong 3 tấm này:** dùng lại món rời ở nơi có ánh sáng khác. Việc đó cần nền trống của một nơi thứ hai, là tấm thứ 4 nếu bước thử đạt.
 
+### 7.3 Đồ tự vẽ trong màn thử (26/11/2026)
+
+Cùng màn thử, thêm đồ tự vẽ không tốn lượt: 6 khung cổng bằng mã có cụm hoa Canva, ban ngày và ban đêm, 7 bộ bàn 3D với khăn nhiều lớp, đệm, khung ghế đổi màu, và nút "Xem gần" mở cận cảnh một chỗ ngồi kiểu Âu hoặc kiểu Việt. Chi tiết ở `bang-ve.md` mục 9. Phần tải thêm chỉ tải khi chọn món: khung và hoa 50–150 KB mỗi khung, mỗi bộ bàn 100–270 KB (thêm 190–460 KB ảnh toạ độ khăn nếu chọn hoạ tiết hoặc khăn phủ), cận cảnh khoảng 0,3 MB, có ảnh toạ độ thì khoảng 0,8 MB.
+
 ### 7.2 Kết quả bước thử (25/11/2026)
 
 Dùng 3 lượt vẽ cho 3 tấm, không lượt sửa nào (khoảng 0,7% hạn mức tháng). Màn thử nằm trong `game/lab/xuong/`: màn mở đầu, nút "Thử trang trí theo lớp (Vườn Hồ)".

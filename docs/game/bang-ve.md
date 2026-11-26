@@ -757,20 +757,21 @@ Bốn tấm thử cho ghế và màn cận cảnh, chạy đầu tháng 12, trư
 - Chuyển danh mục trang trí sang dạng dữ liệu (một dòng mỗi món, có nhãn), và dựng bộ chọn hai bước (kiểu rồi màu).
 - Dựng 21 bộ phong cách từ những món đã có, để bộ chọn có dữ liệu chạy thử.
 - Dựng bộ xếp bàn bằng mã: 13 cách xếp, tính số bàn theo số khách, đo vùng đặt bàn và sức chứa của Vườn Hồ và Sân nhà quê, sơ đồ nhìn từ trên xuống. Chạy thử trước với bàn dài đã có.
-- Đưa hoạ tiết khăn vào màn thử trang trí theo lớp: ảnh toạ độ cho bàn dài, bộ chọn mặt vải (ca rô, sọc, ren, kim sa…) đi cùng bộ chọn màu.
-- Khi có T8, T9: đưa khăn nhiều lớp (nền, phủ, chạy bàn) và ghế theo lớp (khung, đệm, đai) vào màn thử, với bộ chọn từng lớp.
-- Lưu ý khi đưa vào trình duyệt: ảnh toạ độ khăn 16 bit bị canvas cắt còn 8 bit, nên đóng gói u, v vào ảnh RGB không kênh trong suốt (bit cao ở R, G, bit thấp ở B), lưu không kèm thông tin màu, đọc bằng `createImageBitmap` tắt chuyển màu. Mặt nạ màu ID bị trộn ở mép (đỏ + lục ra vàng): vẽ mỗi loại một mặt nạ riêng. Cận cảnh hiện là một hình cho cả chỗ ngồi; muốn đổi từng món thì vẽ mỗi món một lớp cùng máy ảnh.
-- Đưa đồ tự vẽ vào màn thử trang trí theo lớp: 6 khung cổng, nút ngày/đêm cho Vườn Hồ và Sân nhà quê, bộ bàn tròn và bàn dài 3D, khăn nhiều lớp đọc ảnh toạ độ khăn, màn cận cảnh kiểu Âu và kiểu Việt.
-- Dựng khung màn cận cảnh trước khi có tranh: cùng một bộ lựa chọn cho cảnh xa và cận cảnh, nút "Xem gần", và chế độ so sánh hai phương án đặt cạnh nhau. Dùng hình tạm cho tới khi có T12, T13.
+- Chế độ so sánh hai phương án đặt cạnh nhau (cùng cảnh, hai bộ lựa chọn).
+- Ghế theo lớp còn thiếu đai và nơ: chờ T10 (nơ vẽ bằng mã trông như hình dán).
+- Cận cảnh hiện là một hình cho cả chỗ ngồi: muốn đổi từng món (ly, khăn ăn, thiệp) thì vẽ mỗi món một lớp cùng máy ảnh.
+- Ảnh toạ độ khăn khá nặng (190–540 KB mỗi bộ, chỉ tải khi chọn hoạ tiết hoặc khăn phủ): thử giảm còn nửa cỡ rồi nội suy.
+
+Đã làm (26/11), 0 lượt: màn thử trang trí theo lớp có đủ đồ tự vẽ. Cổng: cổng tròn vẽ tay và 6 khung bằng mã (4 màu khung), mỗi khung gắn sẵn cụm hoa Canva T14 (bật, tắt; nhuộm 6 tông qua mặt nạ cánh hoa riêng cho mẫu đơn hồng). Nút ban ngày, ban đêm cho cả hai nơi. Bàn: bàn dài vẽ tay và 7 bộ 3D (tròn 6, 10, 12; dài 8, 12, 20; dài xếp chéo). Khăn nền và khăn phủ chọn hình (vuông, vuông chéo, tròn ngắn, chạy bàn; bàn dài: chạy bàn, chạy ngang, phủ ngắn), chất (trơn, ren, kim sa, gấm) và 10 màu; đổi màu đệm, khung ghế. "Xem gần" mở cận cảnh kiểu Âu hoặc kiểu Việt, cùng khăn với bàn, đổi màu đĩa lót (đĩa kê) và dao nĩa (đũa). Ảnh toạ độ khăn gói 12 bit vào RGB, lưu không nén mất dữ liệu; trang tự kiểm một điểm mẫu mỗi ảnh (đúng cả 9 bộ). Mỗi lần ghép một món dưới 80 ms ở bàn lớn nhất. Xuất bằng `ve/xuat_lab.py`.
 - Dựng màn chương trình: dòng thời gian tiết mục theo `spec.md` mục 4. Màn này phải có trước khi vẽ nhiều người biểu diễn; nếu không, hình tiết mục chưa có chỗ dùng. Vì vậy tháng 12 chỉ vẽ trước vài tiết mục mỗi nhóm.
 
 ## 10. Cần chủ dự án quyết
 
 1. Danh sách bộ phong cách (mục 3.9) và tiết mục (mục 6): thêm, bớt hay giữ nguyên?
-2. Các bản tự vẽ (khung cổng, bản đêm, ghế và bàn 3D) có đủ giống tranh vẽ tay không? Mặc định đang dùng, chủ dự án xem từng cái.
-3. T14 (cụm hoa Canva trên khung lục giác) có đạt không? Nếu đạt, hoa và đồ trang trí mềm vẽ bằng Canva, Model Studio tháng 12 có chỗ bắt đầu tóc.
+2. Các bản tự vẽ (khung cổng, bản đêm, ghế và bàn 3D, cận cảnh) có đủ giống tranh vẽ tay không? Mặc định đang dùng; đã có trong trang thử để chủ dự án xem từng cái.
 
-Đã xong (25/11):
+Đã xong (25–26/11):
+- T14 đạt (26/11): hoa và đồ trang trí mềm vẽ bằng Canva; đã đưa cụm hoa vào trang thử, gắn trên 6 khung cổng.
 - Chọn phương án A (trang trí trước) ngày 26/11. Duyệt và đã vẽ T14 bằng Canva; được dùng 100 hình Canva.
 - Hạc giấy: đặt ở đâu cũng được; đã đưa vào đồ treo, chỗ ngồi, góc phụ và bộ "Nghìn hạc".
 - Chủ dự án mở thêm mạng cho Điện máy Xanh, Sapo, Brands Vietnam; đọc trọn được Sapo.
