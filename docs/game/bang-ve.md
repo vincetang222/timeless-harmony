@@ -661,7 +661,7 @@ Cập nhật ngày 25/11, sau khi tự vẽ (mã và 3D):
 
 **Chia theo tháng, trần 166 hình mỗi tháng (đã gồm 25% dự phòng sửa):**
 
-Phương án A, trang trí trước (mình đề xuất): trang trí đang dựng dở ở chương 4, và phần lớn bàn ghế, cận cảnh đã tự vẽ xong nên tháng 12 còn dư chỗ.
+Phương án A, trang trí trước (**chủ dự án chọn ngày 26/11**): trang trí đang dựng dở ở chương 4, và phần lớn bàn ghế, cận cảnh đã tự vẽ xong nên tháng 12 còn dư chỗ.
 
 | Tháng | Việc | Hình (thử đạt) | Kể cả 25% sửa |
 |---|---|---|---|
@@ -670,6 +670,8 @@ Phương án A, trang trí trước (mình đề xuất): trang trí đang dựn
 | 2 | Cảnh C1–C17, C20 và nhân vật phụ khoảng 50; nơi đợt 2: 7 | 57 | khoảng 71 |
 
 Nếu các bài thử "nhiều món trên một tấm" không đạt, tháng 12 lên khoảng 148 hình (185 kể cả sửa), vượt trần: dời khoảng 20 tiết mục sang tháng 2.
+
+**Nếu T14 đạt (vẽ hoa và đồ trang trí mềm bằng Canva, mục 7c):** khoảng 36 hình của tháng 12 chuyển sang Canva (45 kể cả sửa, trong 100 hình Canva). Phần Model Studio tháng 12 còn khoảng 74 hình (93 kể cả sửa), dư khoảng 73 hình dưới trần 166: có thể bắt đầu tóc ngay trong tháng 12, để tháng 1 xong tóc và trang phục sớm hơn.
 
 Phương án B, nhân vật trước: tháng 12 là lông mày 9, tóc 90, trang phục 27, MC và ban nhạc 4 = 130 hình (khoảng 163 kể cả sửa, sát trần 166, gần như không dư). Tháng 1 là trang trí và tiết mục (106 hình, khoảng 133). Tháng 2 là cảnh (57 hình).
 
@@ -706,7 +708,10 @@ Kết quả tốt. Còn một lỗi: khung đen làm nhuỵ hoa gần khung bị
 
 Chủ dự án cho dùng model khác, miễn nét vẽ vẫn đẹp. Hiện có hai đường:
 
-- **Canva** (đã nối với phiên làm việc): tạo hình từ chữ, hoặc sửa và vẽ lại theo hình mẫu tải lên. Không tính vào trần 40% của Model Studio, nhưng dùng lượt AI trong tài khoản Canva của chủ dự án. Chưa biết nét có giữ được như tranh hiện tại không, nên phải vẽ thử một tấm (T14 ở mục 8b).
+- **Canva** (đã nối với phiên làm việc): tạo hình từ chữ, hoặc vẽ lại theo hình mẫu tải lên. Không tính vào trần 40% của Model Studio. **Chủ dự án cho dùng 100 hình Canva** (26/11); sổ đếm ở `so-luot.json`, mục `canva`.
+  - **T14 đã vẽ ngày 26/11 (1 hình Canva):** 4 cụm mẫu đơn rời trên nền xanh phẳng, lấy cổng tròn vẽ tay làm mẫu. Tách nền sạch bằng `trang_tri.tach`; gắn lên khung lục giác vẽ bằng mã ở góc trên, dọc cạnh phải và ở chân thì trông như cắm thật. Ở cỡ cảnh, nét gần với cổng tròn vẽ tay; nhìn gần thì hoa Canva đậm màu và chi tiết hơn, ít nét viền hơn. Chờ chủ dự án xem.
+  - Nếu đạt: loài hoa (17), hoa bàn, lối đi, đồ treo, góc phụ (13), món gắn ghế và nơ (4), khăn ăn gấp (2) chuyển sang Canva, khoảng 36 hình (45 kể cả sửa). Đồng thời coi như đã thử được ý "khung trần + cụm hoa rời", nên T2 không cần vẽ nữa.
+  - Cách lấy ảnh đủ cỡ: công cụ chỉ trả ảnh xem trước 200 điểm ảnh, nên phải đặt hình vào một trang Canva rồi xuất PNG (ảnh gốc 1680×944). Mạng đã mở cho `www.canva.com`, `media.canva.com`, `export-download.canva.com`.
 - **Model khác trong Model Studio** (bản rẻ hơn, nếu có trong gói): vẫn tính vào trần 40%, chỉ có lợi nếu mỗi hình tốn ít hơn 0,24% gói. Cần đo trên trang quản lý gói sau một hình thử.
 - **Không dùng** dịch vụ trả tiền theo lượt gọi khi chưa được chủ dự án đồng ý.
 
@@ -742,7 +747,7 @@ Bốn tấm thử cho ghế và màn cận cảnh, chạy đầu tháng 12, trư
 | T11. Món gắn ghế lối đi 8 món | 8 món rời, lưới 4 × 2, cách xa nhau | nhìn từ sau chéo, góc hơi cao | cụm hoa, bó lá bạch đàn buộc ruy băng, phễu giấy đựng cánh hoa, vòng hoa tròn, quạt giấy tròn, bảng tên gỗ (để trống chữ), nón lá nhỏ buộc ruy băng, bó búp sen; màu sáng | ghế, chữ, người, đất | `ban-dai.png` (giữ nét vẽ) | mã cắt được 8 món; gắn lên lưng ghế T7 góc sau chéo trông như buộc thật; nhuộm được ruy băng và hoa |
 | T12. Cận cảnh bàn tròn, mặt bàn trống (đã tự vẽ bằng 3D, 25/11) | nền cho màn cận cảnh | người đứng ngay sau ghế nhìn xuống chừng 40°; một chỗ ngồi ở chính giữa khung, mép bàn cong chạy ngang phía dưới; chỗ ngồi hai bên bị mép khung cắt; giữa bàn ở mép trên, mờ | khăn trắng phủ, mặt bàn trống, nếp khăn rủ ở mép trước; vườn mờ phía sau | ghế (lưng ghế nằm dưới khung hình), đĩa, ly, hoa, người | tranh gốc 2736×1520 của cảnh gọn (giữ nét vẽ, khăn trắng, ánh sáng) | mép bàn là đường cong sạch, đo được; mặt khăn phẳng đủ để đặt đồ; nền mờ không lấn vào bàn |
 | T13. Bộ đồ bàn thử ở góc cận (đã tự vẽ bằng 3D, 25/11) | 6 món rời, lưới 3 × 2, cách xa nhau | đúng góc nhìn của T12 | đĩa lót viền hạt, đĩa sứ trắng, ly chân cao, ly flute, bộ dao nĩa, khăn ăn gấp hình quạt; tất cả màu sáng | bàn, khăn, người | T12 (giữ góc nhìn, thay bàn bằng nền xanh dương phẳng) | mã cắt được 6 món; đặt lên T12 đúng cỡ, đúng góc; nhuộm được viền đĩa, màu ly, kim loại |
-| T14. Thử Canva vẽ cụm hoa (đề xuất, chờ duyệt) | 4 cụm mẫu đơn rời như T2 | — | cụm góc lớn, dải rủ dài, cụm nhỏ tròn, cụm chân đế; mẫu đơn hồng nhạt, lá bạch đàn; nền xanh dương phẳng | khung, người | tải `cong-tron.png` (cổng tròn vẽ tay) lên Canva làm hình mẫu nét vẽ | nét, màu, ánh sáng giống cổng tròn vẽ tay khi đặt cạnh nhau ở cỡ cảnh; tách nền sạch; gắn được lên khung lục giác vẽ bằng mã. Đạt thì các loài hoa có thể vẽ bằng Canva, bớt khoảng 17 hình Model Studio |
+| T14. Thử Canva vẽ cụm hoa (đã duyệt, đã vẽ 26/11, chờ chủ dự án xem) | 4 cụm mẫu đơn rời như T2 | — | cụm góc lớn, dải rủ dài, cụm nhỏ tròn, cụm chân đế; mẫu đơn hồng nhạt, lá bạch đàn; nền xanh dương phẳng | khung, người | tải `cong-tron.png` (cổng tròn vẽ tay) lên Canva làm hình mẫu nét vẽ | nét, màu, ánh sáng giống cổng tròn vẽ tay khi đặt cạnh nhau ở cỡ cảnh; tách nền sạch; gắn được lên khung lục giác vẽ bằng mã. Đạt thì các loài hoa có thể vẽ bằng Canva, bớt khoảng 17 hình Model Studio |
 
 **Thứ tự:** T10 và T11 chạy sau khi T7 (ghế 8 góc) đạt, vì cần lưng ghế để gắn thử. T12 rồi T13 (T13 vẽ từ T12 để cùng góc nhìn).
 
@@ -763,10 +768,10 @@ Bốn tấm thử cho ghế và màn cận cảnh, chạy đầu tháng 12, trư
 
 1. Danh sách bộ phong cách (mục 3.9) và tiết mục (mục 6): thêm, bớt hay giữ nguyên?
 2. Các bản tự vẽ (khung cổng, bản đêm, ghế và bàn 3D) có đủ giống tranh vẽ tay không? Mặc định đang dùng, chủ dự án xem từng cái.
-3. Chia tháng ở mục 7: phương án A (trang trí trước, tháng 12 dư khoảng 28 hình) hay B (nhân vật trước, tháng 12 sát trần)?
-4. Có duyệt T14 (thử Canva vẽ cụm hoa theo nét cổng tròn, mục 8b) không?
+3. T14 (cụm hoa Canva trên khung lục giác) có đạt không? Nếu đạt, hoa và đồ trang trí mềm vẽ bằng Canva, Model Studio tháng 12 có chỗ bắt đầu tóc.
 
 Đã xong (25/11):
+- Chọn phương án A (trang trí trước) ngày 26/11. Duyệt và đã vẽ T14 bằng Canva; được dùng 100 hình Canva.
 - Hạc giấy: đặt ở đâu cũng được; đã đưa vào đồ treo, chỗ ngồi, góc phụ và bộ "Nghìn hạc".
 - Chủ dự án mở thêm mạng cho Điện máy Xanh, Sapo, Brands Vietnam; đọc trọn được Sapo.
 - Cho dùng model khác nếu nét vẽ vẫn đẹp (mục 7c).

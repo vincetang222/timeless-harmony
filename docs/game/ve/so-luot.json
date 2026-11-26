@@ -7,5 +7,17 @@
    "so_hinh": 0,
    "ten": []
   }
+ },
+ "canva": {
+  "gioi_han_hinh_moi_thang": 100,
+  "ghi_chu": "Chủ dự án cho dùng 100 hình AI của Canva (26/11/2026). Đếm tay: mỗi lần generate-image là 1 hình; tạo trang và xuất ảnh để tải bản đủ cỡ không tính.",
+  "thang": {
+   "2026-11": {
+    "so_hinh": 1,
+    "ten": [
+     "T14 cụm mẫu đơn"
+    ]
+   }
+  }
  }
 }
