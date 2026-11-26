@@ -808,6 +808,7 @@ Bốn tấm thử cho ghế và màn cận cảnh, chạy đầu tháng 12, trư
 2. Các bản tự vẽ (khung cổng, bản đêm, ghế và bàn 3D, cận cảnh) có đủ giống tranh vẽ tay không? Mặc định đang dùng; đã có trong trang thử để chủ dự án xem từng cái.
 3. Tấm thử T16 (Vườn Hồ nới rộng, mục 8b) có đạt không, rồi mới đưa vào trang thử.
 4. Thứ tự vẽ nơi mới (mục 4): đề xuất Nhà kính trước, rồi sảnh tiệc có màn LED.
+5. Kế hoạch làm đẹp cảnh trang trí (`bo-cuc-canh.md`): hướng làm có đúng ý không, và cảnh ngang tầm mắt chỉ vẽ phần bàn đẹp trong khung (đếm đủ trên mặt bằng, xem đủ ở T16).
 
 Đã xong (25–26/11):
 - Duyệt vòng chơi trang trí và bảng giá số tạm (26/11, `vong-choi.md` mục 8, `gia-tham-khao.md` mục 6). Tiệc rất đông: vẽ nới rộng Vườn Hồ cũ (T16); thêm nơi mới vào kế hoạch, có nơi trong nhà (mục 4).
