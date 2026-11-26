@@ -355,4 +355,11 @@ Danh mục trang trí, hiệu ứng sân khấu, tiết mục và hạn mức th
 3. Nhãn phong cách: món hợp gu nhà trai (đỏ, gấm, cổng tròn dày hoa), nhà gái (đèn, màn LED, kim sa, hoa bàn), hai bạn (tông trắng xanh, luống hoa, bàn dài gia đình) cộng vào chỉ số tương ứng; thiếu cổng, thiếu đèn khi tiệc tối thì trừ. *(26/11)*
 4. Lưu ý thành rủi ro ngày cưới: thiếu điện thì mất điện giữa tiệc, loa yếu thì khách phía sau không nghe, thiếu chỗ thì khách phải đứng. Người chơi xử lý trước hoặc chấp nhận rủi ro. *(chưa làm)*
 5. Cảnh ngày cưới vẽ đúng những món đã chọn trong xưởng (hiện ngày cưới vẫn dùng tranh của gói). *(chưa làm)*
+
+**Đã làm ngày 26/11 (bước 1–3), số tạm của bản thử:**
+- Trong xưởng, mỗi dòng bảng kê có giá theo `gia-tham-khao.md` mục 6; dòng "Bàn ghế, dụng cụ, người phục vụ" đã nằm trong giá nơi tổ chức nên ghi riêng, không cộng vào trang trí. Giá một con số = trung bình khoảng; trùng đúng một mẫu có sẵn (chưa thêm hoa bàn, lối đi, luống hoa) thì giảm 20%.
+- Màn "Trang trí" có thẻ thứ tư "Tự thiết kế" cạnh 3 gói. Ở Vườn Hồ và Sân nhà quê: chọn thẻ rồi "Mở xưởng trang trí"; trong xưởng, nơi và số khách khoá theo ván chơi, chỉ hiện mẫu có sẵn của nơi đó; "Dùng thiết kế này" mang giá và ảnh hưởng về, mặc cả tính lại từ đầu. Ở 4 nơi còn lại thẻ ghi "sắp có".
+- Ảnh hưởng (hàm `hqTT`): thiếu cổng như gói Gọn; cổng tròn dày hoa, tông đỏ, vải gấm hợp nhà trai; hoa bàn, kim sa, màn LED, có đèn khi tiệc tối hợp nhà gái; tông trắng xanh, luống hoa, bàn dài gia đình hợp hai bạn; thiếu loa, loa kéo cho hơn 50 khách, thiếu chỗ thì trừ; tự chọn thêm 3 Căng thẳng (mẫu có sẵn bớt 2).
+- Sự cố gió ngày cưới: tự thiết kế từ 8 triệu trở lên coi như có đội trang trí trực (như gói Đủ, Trọn).
+- Cân thử (Vườn Hồ, có MC và thợ ảnh): mẫu "Vườn trắng xanh" 10,4 triệu cho kết quả gần gói Đủ, thêm Tình cảm; "Đêm kim sa" 18 triệu gần gói Trọn nhưng nhà trai kém hơn vì thiếu màu đỏ. Không đổi ngưỡng kết cục.
 6. Chạy thử buổi lễ 30 giây theo chương trình. *(chưa làm, cần màn chương trình)*

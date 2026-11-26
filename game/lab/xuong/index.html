@@ -542,12 +542,13 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
   if (st.thu) themThu();
   try { var s0 = JSON.parse(localStorage.getItem(KHOA_SO) || 'null'); if (s0 && s0.noi && s0.ket) soLuu = s0; } catch (e) {}
   ['co-dau', 'chu-re'].forEach(function (v) { if (!hopLe(st.nv[v], v)) st.nv[v] = JSON.parse(JSON.stringify(NV.GOC[v])); });
-  if ((st.man !== 'lop' && MAN.indexOf(st.man) < 0) || (st.dd && !DD[st.dd]) || (st.tt && !GOI[st.tt])) st = moi(st.nv);
+  if ((st.man !== 'lop' && MAN.indexOf(st.man) < 0) || (st.dd && !DD[st.dd]) || (st.tt && !GOI[st.tt] && st.tt !== 'tk')) st = moi(st.nv);
+  if (st.tt === 'tk' && !(st.dd === 'ho' || st.dd === 'langque')) st.tt = null;   // tự thiết kế chỉ có ở nơi đã có nền trống
   function ghi() { try { localStorage.setItem(KHOA, JSON.stringify(st)); } catch (e) {} }
   function ghiSo() { try { localStorage.setItem(KHOA_SO, JSON.stringify(soLuu)); } catch (e) {} }
   function nvHien() { return st.nv[st.ai]; }
   function ddHien() { return st.dd || 'ho'; }
-  function goiHien() { return st.tt || 'du'; }
+  function goiHien() { return st.tt && GOI[st.tt] ? st.tt : 'du'; }   // tự thiết kế: tranh của chương 4 tạm dùng gói Đủ
 
   /* ---------- luật chơi: tiền và lòng người (hàm thuần, thử được) ---------- */
   function tinh(s) {
@@ -555,6 +556,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     function cong(o) { if (o) for (var q in o) hq[q] += o[q]; }
     if (s.dd) { muc.push([d.ten + ', tiệc ' + KHACH + ' khách', d.gia]); cong(d.hq); }
     if (g) { muc.push(['Trang trí gói ' + g.ten, g.gia]); cong(g.hq); }
+    else if (s.tt === 'tk' && s.lop) { var Lk = Object.assign({}, s.lop, { noi: s.dd, khach: KHACH }), G = giaTT(Lk); muc.push(['Trang trí tự thiết kế' + (G.mau ? ' (theo mẫu có sẵn)' : ''), G.tong]); cong(hqTT(Lk)); }
     for (k in NGUOI) if (s.pv[k]) {
       if (s.huy === k) muc.push([NGUOI[k].ten + (s.kyQuy ? ' (huỷ, ký quỹ hoàn đủ)' : ' (huỷ, mất cọc 30%)'), s.kyQuy ? 0 : NGUOI[k].gia * 0.3]);
       else { muc.push([NGUOI[k].ten, NGUOI[k].gia]); cong(NGUOI[k].hq); }
@@ -737,8 +739,9 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
   /* ---------- thanh tiến độ ---------- */
   function veTienDo() {
     var i = MAN.indexOf(st.man), o = $('buoc'); o.innerHTML = ''; o.hidden = i < 2;
-    $('chuong').textContent = laLop() ? 'Bản thử' : i <= 1 ? (i === 0 ? 'Bản chơi thử' : 'Mở đầu') : 'Chương 4';
-    $('man-ten').textContent = laLop() ? 'Trang trí theo lớp' : i === 0 ? 'Nhà cung cấp và ngày cưới' : MAN_TEN[st.man];
+    var tuCh = laLop() && st.tuChuong;   // xưởng mở từ màn Trang trí của chương 4
+    $('chuong').textContent = laLop() ? (tuCh ? 'Chương 4' : 'Bản thử') : i <= 1 ? (i === 0 ? 'Bản chơi thử' : 'Mở đầu') : 'Chương 4';
+    $('man-ten').textContent = laLop() ? (tuCh ? 'Tự thiết kế trang trí' : 'Trang trí theo lớp') : i === 0 ? 'Nhà cung cấp và ngày cưới' : MAN_TEN[st.man];
     for (var k = 2; k < MAN.length; k++) (function (k) {
       var li = el('li', k < i ? 'qua' : ''), b = el('button'); b.type = 'button'; b.setAttribute('aria-label', 'Màn ' + (k - 1) + ': ' + MAN_TEN[MAN[k]]); b.title = MAN_TEN[MAN[k]];
       if (k === i) b.setAttribute('aria-current', 'step');
@@ -947,7 +950,12 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     ['que', 'Sân quê đỏ thắm', { noi: 'langque', gio: 'ngay', cong: 'cong-tron', hoa: 'do', ban: 'ban-tron-10', nen: ['gam', 'do'], phu: ['ngan', 'kimsa', 'vang'], demGhe: 'do', khungGhe: 'goc', den: [1, 0, 0, 0], led: '', loa: 'doi' }],
     ['moc', 'Mộc mạc', { noi: 'langque', gio: 'ngay', cong: 'khung-tam-giac', mauKhung: 'go', hoaKhung: 1, hoa: 'dao', ban: 'ban-dai-8', nen: ['tron', 'kem'], phu: ['chay', 'ren', 'trang'], demGhe: 'kem', khungGhe: 'go', den: [0, 0, 0, 1], led: '', loa: 'doi' }]
   ];
-  function mauDangDung(L) { for (var i = 0; i < MAU_TT_SAN.length; i++) { var m = MAU_TT_SAN[i][2], ok = true; for (var k in m) if (JSON.stringify(m[k]) !== JSON.stringify(L[k])) { ok = false; break; } if (ok) return MAU_TT_SAN[i][0]; } return ''; }
+  function mauDangDung(L) { // mẫu có sẵn đang trùng: đúng mọi trường của mẫu, và chưa thêm món ngoài mẫu (hoa bàn, lối đi, luống hoa)
+    for (var i = 0; i < MAU_TT_SAN.length; i++) { var m = MAU_TT_SAN[i][2], ok = true, k;
+      for (k in m) if (JSON.stringify(m[k]) !== JSON.stringify(L[k])) { ok = false; break; }
+      ['hoaBan', 'loi', 'luong'].forEach(function (q) { if (!(q in m) && (L[q] || '') !== (q === 'luong' ? 0 : '') && L[q]) ok = false; });
+      if (ok) return MAU_TT_SAN[i][0]; }
+    return ''; }
   var LOP_GOC = { noi: 'ho', gio: 'ngay', cong: 'cong-tron', mauKhung: 'dong', hoaKhung: 1, hoa: 'trang', ban: 'ban-dai', khan: 'kem', nen: ['tron', 'trang'], phu: ['', 'ren', 'trang'], demGhe: 'goc', khungGhe: 'goc', xemGan: 0, bay: 'au', lot: 'goc', kl: 'goc', den: [0, 0, 0, 0], mauRoi: 'am', led: '', ledND: 'ten', loa: '', phan: 'tiec', xepLe: 'thang', loi: '', luong: 0, khach: 100, hoaBan: '' };
   function lopHien() { // lựa chọn đã lưu; trường nào thiếu (bản lưu cũ) hoặc sai thì lấy mặc định riêng trường đó
     var L = st.lop; if (!L || typeof L !== 'object') L = st.lop = {};
@@ -955,7 +963,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     if (!LOP[L.noi]) L.noi = 'ho'; if (L.cong && !TT[L.cong]) L.cong = LOP_GOC.cong; if (L.ban && !TT[L.ban]) L.ban = LOP_GOC.ban; if (!CC[L.bay]) L.bay = 'au'; if (!LED_SO[L.led]) L.led = ''; if (!LOA_SO[L.loa]) L.loa = ''; if (L.phan !== 'le') L.phan = 'tiec'; if (L.hoaBan && !HOA_BAN.some(function (x) { return x[0] === L.hoaBan; })) L.hoaBan = ''; if (SO_KHACH.indexOf(L.khach) < 0) L.khach = 100; if (!LOI.some(function (x) { return x[0] === L.loi; })) L.loi = ''; if (!XEP_LE.some(function (x) { return x[0] === L.xepLe; })) L.xepLe = 'thang';
     return L;
   }
-  function soKhach() { var L = st.lop; return (L && L.khach) || KHACH; }   // số khách của xưởng (chương 4 vẫn dùng KHACH)
+  function soKhach(L) { L = L || st.lop; return (L && L.khach) || KHACH; }   // số khách của xưởng (chương 4 vẫn dùng KHACH)
   function tongCua(bo, k) { for (var i = 0; i < bo.length; i++) if (bo[i][0] === k) return bo[i]; return bo[0]; }
   function mauCua(bo, k) { var t = tongCua(bo, k); return t[2] || t[3]; }
   function hinhHien(L, ke) { var h = L.phu[0]; return HINH_PHU[ke].some(function (x) { return x[0] === h; }) ? h : ''; }
@@ -1047,7 +1055,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
       var zMax = A.sau - A.cy - 0.5, them = function (cx, z0, z1) { z1 = Math.min(z1, zMax); var sb = Math.floor((z1 - z0 - 0.3) / 0.62); if (sb < 1) return; var dai = sb * 0.62 + 0.3; o.ds.push([A.rong / 2 + cx, A.cy + z0 + dai / 2, 90, dai]); o.cho += 2 * sb; };
       if (m.pc.indexOf('lop-doc') >= 0) { them(-3.6, -6.5, 10); them(3.6, -6.5, 10); }
       if (m.pc.indexOf('lop-giua') >= 0) them(0, 1.6, 99);
-      o.g = { hinh: 'dai', dai: 3, rong: 0.9, khach: 2 }; o.can = 0; o.du = o.cho >= soKhach(); return o;
+      o.g = { hinh: 'dai', dai: 3, rong: 0.9, khach: 2 }; o.can = 0; o.du = o.cho >= soKhach(L); return o;
     }
     var g = o.g = m.loai === '3d' ? { hinh: m.hinh, R: m.R, dai: m.dai, rong: m.rong, khach: m.khach, cheo: !!m.xoay_do } : { hinh: 'dai', dai: 3.4, rong: 0.9, khach: 10, cheo: true };   // bàn vẽ tay: 10 ghế, vẽ chéo
     var w, h, kh = 0.8, a = 28 * Math.PI / 180, nua = (A.rong - A.loi) / 2 - 0.5;
@@ -1062,9 +1070,9 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
       cho.push([x, y, g.cheo ? (s ? -28 : 28) : 0, Math.hypot(x - A.rong / 2, (y - A.cy) * 1.3)]);
     }
     cho.sort(function (p, q) { return p[3] - q[3]; });                                  // gần cặp đôi trước
-    o.can = Math.ceil(soKhach() / g.khach); o.suc = cho.length * g.khach;
+    o.can = Math.ceil(soKhach(L) / g.khach); o.suc = cho.length * g.khach;
     o.ds = cho.slice(0, o.can).map(function (t) { return t.slice(0, 3); });
-    o.cho = o.ds.length * g.khach; o.du = o.cho >= soKhach();
+    o.cho = o.ds.length * g.khach; o.du = o.cho >= soKhach(L);
     return o;
   }
   function veMatBang(cv, L) {
@@ -1109,7 +1117,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
       x.restore();
     });
     x.font = '600 ' + f + 'px ' + tk('--than'); x.textBaseline = 'top';
-    var ten = !L.ban ? 'Chưa có bàn' : (TT[L.ban].pc ? b.ds.length + ' bàn dài' : b.ds.length + ' bàn × ' + g.khach + ' khách') + ' · ' + b.cho + '/' + soKhach() + ' chỗ' + (b.du ? '' : ' · thiếu ' + (soKhach() - b.cho) + ' chỗ');
+    var ten = !L.ban ? 'Chưa có bàn' : (TT[L.ban].pc ? b.ds.length + ' bàn dài' : b.ds.length + ' bàn × ' + g.khach + ' khách') + ' · ' + b.cho + '/' + soKhach(L) + ' chỗ' + (b.du ? '' : ' · thiếu ' + (soKhach(L) - b.cho) + ' chỗ');
     x.fillStyle = b.du ? muc : xau; x.fillText(ten, W / 2, oy + A.sau * k + 6);
   }
   function veLeMB(x, L, A, k, P, muc, xau, f, tk, cy, oy) { // ghế dự lễ trên mặt bằng: ô vuông là mặt ghế, nét đậm là lưng ghế
@@ -1133,49 +1141,81 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     if (g.hinh === 'tron') return { vuong: 'vuông ' + r1(2 * g.R) + ' m', cheo: 'vuông ' + r1(2 * g.R) + ' m, đặt chéo', ngan: 'tròn ' + r1(2 * (g.R + 0.28)) + ' m', chay: cr + r1(2 * g.R + 0.7) + ' m' }[hinh];
     return { chay: cr + r1(g.dai + 0.6) + ' m', ngang: cr + r1(g.rong + 0.6) + ' m', ngan: r1(g.dai + 0.5) + ' × ' + r1(g.rong + 0.5) + ' m' }[hinh];
   }
-  function bangKe(L, b) { // bóc tách: [món, số lượng, ghi chú, giá tạm [thấp, cao] (triệu) hoặc null]
+  // Bảng giá số tạm (triệu đồng, [thấp, cao] cho mỗi đơn vị), chủ dự án duyệt 26/11: docs/game/gia-tham-khao.md mục 6.
+  // Mỗi số là phần trả thêm so với tiệc nơi tổ chức đã tính (bàn, ghế thường, khăn trắng, bộ đồ bàn, phục vụ).
+  var GIA = { cong_tron: [6, 12], cong_khung_hoa: [3, 6], cong_khung: [1, 2], ghe: [0.01, 0.02], nen_tron: [0.1, 0.2], nen_hoa: [0.2, 0.4],
+    phu_tron: [0.05, 0.15], phu_hoa: [0.1, 0.25], phu_ngang_tron: [0.02, 0.05], phu_ngang_hoa: [0.04, 0.08], chay_go: [0.05, 0.1],
+    hb_thap: [0.3, 0.6], hb_cam: [0.3, 0.6], hb_chan: [0.3, 0.6], hb_cao: [0.5, 1], hb_nen: [0.2, 0.5], hb_den: [0.2, 0.5],
+    luong: [0.15, 0.3], tham: [0.5, 1.5], guong: [3, 6], day_den: [0.3, 0.6], domdom: [0.3, 0.6], roi: [0.2, 0.4], nen: [0.01, 0.02],
+    led: [0.25, 0.5], loa_keo: [0.4, 1], loa_doi: [0.75, 1.5], loa_lon: [1.5, 3], may_phat: [2, 4] };
+  var GIAM_GOI = 0.2;   // trùng một "Mẫu có sẵn" (gói làm sẵn của nhà cung cấp) thì giảm 20%
+  function gia(k, q) { var g = GIA[k]; q = q == null ? 1 : q; return [Math.round(g[0] * q * 100) / 100, Math.round(g[1] * q * 100) / 100]; }
+  function giaTT(L) { // giá phần trang trí (thuần): cộng các dòng có giá của bảng kê, trừ dòng tiệc đã nằm trong giá nơi tổ chức; một con số = trung bình khoảng
+    var lo = 0, hi = 0; bangKe(L, boBan(L)).forEach(function (r) { if (r[3] && r[4] !== 'tiec') { lo += r[3][0]; hi += r[3][1]; } });
+    var mau = mauDangDung(L), tb = (lo + hi) / 2, tong = Math.round(tb * (mau ? 1 - GIAM_GOI : 1) * 10) / 10;
+    return { lo: Math.round(lo * 10) / 10, hi: Math.round(hi * 10) / 10, mau: mau, tong: tong };
+  }
+  function hqTT(L) { // ảnh hưởng của thiết kế tự chọn tới Nhà trai, Nhà gái, Tình cảm, Căng thẳng (thuần; số tạm của bản thử, vong-choi.md mục 8 bước 3)
+    var h = { trai: 0, gai: 0, tinh: 0, cang: 3 }, b = boBan(L), dem = L.gio === 'dem', coDen = L.den[0] || L.den[2] || L.den[3], m = L.ban && TT[L.ban];
+    var vai = function (k) { return L.nen[0] === k || (L.phu[0] && L.phu[1] === k); };
+    if (!L.cong) { h.trai -= 5; h.gai -= 8; } else if (L.cong === 'cong-tron') { h.trai += 4; h.gai += 3; }
+    if (L.hoa === 'do' || vai('gam') || L.nen[1] === 'do') h.trai += 5;           // đỏ, gấm: gu nhà trai
+    if (L.hoaBan) h.gai += 4;
+    if (vai('kimsa')) h.gai += 2;
+    if (L.led) { h.gai += 4; h.trai += 2; h.cang += 1; }
+    if (dem) { if (coDen) h.gai += 3; else { h.trai -= 4; h.gai -= 4; } }
+    if (L.hoa === 'trang' && ['trang', 'kem', 'xo'].indexOf(L.nen[1]) >= 0) h.tinh += 3;   // tông trắng xanh: gu của hai bạn
+    if (coLuong(L)) { h.tinh += 2; h.gai += 2; }
+    if (m && (m.hinh === 'dai' || m.loai !== '3d')) { h.tinh += 3; h.trai -= 2; }   // bàn dài gia đình
+    if (!L.loa) h.trai -= 4; else if (L.loa === 'keo' && soKhach(L) > 50) h.trai -= 3;
+    if (!L.ban || !b.du) { h.trai -= 8; h.gai -= 6; h.cang += 6; }
+    if (mauDangDung(L)) h.cang -= 2;
+    return h;
+  }
+  function bangKe(L, b) { // bóc tách: [món, số lượng, ghi chú, giá tạm [thấp, cao] (triệu) hoặc null, 'tiec' = đã nằm trong giá nơi tổ chức / 'san' = có sẵn]
     var ds = [], m = L.ban && TT[L.ban], n = b.ds.length, g = b.g;
-    if (L.cong) { var mc = TT[L.cong]; ds.push(['Cổng ' + (mc.loai === 'khung' ? 'khung ' + mc.ten.toLowerCase() + ' ' + tongCua(MAU_KHUNG, L.mauKhung)[1].toLowerCase() + (L.hoaKhung ? ', 3 cụm hoa ' + tongCua(TONG_HOA, L.hoa)[1].toLowerCase() : '') : 'tròn có hoa ' + tongCua(TONG_HOA, L.hoa)[1].toLowerCase()), 1, '', [3, 12]]); }
-    ds.push(['Ghế dự lễ chiavari khung ' + tongCua(MAU_KG, L.khungGhe)[1].toLowerCase() + ', đệm ' + tongCua(MAU_DEM, L.demGhe)[1].toLowerCase(), soKhach(), 'xếp ' + tongCua(XEP_LE, L.xepLe)[1].toLowerCase(), null]);
-    if (L.loi) { var Am = LOP[L.noi].mb; ds.push([L.loi === 'guong' ? 'Lối gương nước' : 'Thảm lối đi ' + (L.loi === 'do' ? 'đỏ' : 'trắng'), 1, 'rộng ' + so(L.loi === 'guong' ? 1.5 : 1.2) + ' m, dài khoảng ' + Math.round(Am.sau - Am.cy - 0.6) + ' m', null]); }
-    if (coLuong(L)) { var Al = LOP[L.noi].mb; ds.push(['Luống hoa dọc lối, hoa ' + tongCua(TONG_HOA, L.hoa)[1].toLowerCase(), 2, 'mỗi bên khoảng ' + Math.round(Al.sau - Al.cy - 0.5) + ' m, hồng, cẩm tú cầu, baby, lá bạch đàn', null]); }
+    if (L.cong) { var mc = TT[L.cong]; ds.push(['Cổng ' + (mc.loai === 'khung' ? 'khung ' + mc.ten.toLowerCase() + ' ' + tongCua(MAU_KHUNG, L.mauKhung)[1].toLowerCase() + (L.hoaKhung ? ', 3 cụm hoa ' + tongCua(TONG_HOA, L.hoa)[1].toLowerCase() : '') : 'tròn có hoa ' + tongCua(TONG_HOA, L.hoa)[1].toLowerCase()), 1, '', gia(mc.loai === 'khung' ? (L.hoaKhung ? 'cong_khung_hoa' : 'cong_khung') : 'cong_tron')]); }
+    ds.push(['Ghế dự lễ chiavari khung ' + tongCua(MAU_KG, L.khungGhe)[1].toLowerCase() + ', đệm ' + tongCua(MAU_DEM, L.demGhe)[1].toLowerCase(), soKhach(L), 'xếp ' + tongCua(XEP_LE, L.xepLe)[1].toLowerCase(), gia('ghe', soKhach(L))]);
+    if (L.loi) { var Am = LOP[L.noi].mb; ds.push([L.loi === 'guong' ? 'Lối gương nước' : 'Thảm lối đi ' + (L.loi === 'do' ? 'đỏ' : 'trắng'), 1, 'rộng ' + so(L.loi === 'guong' ? 1.5 : 1.2) + ' m, dài khoảng ' + Math.round(Am.sau - Am.cy - 0.6) + ' m', gia(L.loi === 'guong' ? 'guong' : 'tham')]); }
+    if (coLuong(L)) { var Al = LOP[L.noi].mb; ds.push(['Luống hoa dọc lối, hoa ' + tongCua(TONG_HOA, L.hoa)[1].toLowerCase(), 2, 'mỗi bên khoảng ' + Math.round(Al.sau - Al.cy - 0.5) + ' m, hồng, cẩm tú cầu, baby, lá bạch đàn', gia('luong', 2 * Math.round(Al.sau - Al.cy - 0.5))]); }
     if (!m) { ds.push.apply(ds, bangKeDen(L, 0, null)); return ds; }
-    ds.push(['Bàn ' + m.ten.toLowerCase(), n, '', null]);
+    ds.push(['Bàn ' + m.ten.toLowerCase(), n, '', null, 'san']);
     var n10 = m.pc ? Math.ceil(b.cho / 10) : n;   // bàn dài tính theo từng 10 khách
-    ds.push(['Bàn ghế, dụng cụ, người phục vụ (chưa gồm món)', n10, m.pc ? 'mỗi 10 khách' : 'mỗi bàn', [0.6 * n10, 0.9 * n10]]);
-    if (m.loai !== '3d') { ds.push(['Khăn chạy bàn ' + tongCua(TONG_KHAN, L.khan)[1].toLowerCase(), n, '', null]); if (L.hoaBan && SO3.hoaban) ds.push(['Hoa bàn: ' + tongCua(HOA_BAN, L.hoaBan)[1].toLowerCase() + ', hoa ' + tongCua(TONG_HOA, L.hoa)[1].toLowerCase(), n * 3, 'mỗi bàn ba món dọc khăn chạy bàn', null]); ds.push.apply(ds, bangKeDen(L, n, { hinh: 'dai' })); return ds; }
+    ds.push(['Bàn ghế, dụng cụ, người phục vụ (chưa gồm món)', n10, m.pc ? 'mỗi 10 khách' : 'mỗi bàn', [0.6 * n10, 0.9 * n10], 'tiec']);
+    if (m.loai !== '3d') { ds.push(['Khăn chạy bàn ' + tongCua(TONG_KHAN, L.khan)[1].toLowerCase(), n, '', gia('chay_go', n)]); if (L.hoaBan && SO3.hoaban) ds.push(['Hoa bàn: ' + tongCua(HOA_BAN, L.hoaBan)[1].toLowerCase() + ', hoa ' + tongCua(TONG_HOA, L.hoa)[1].toLowerCase(), n * 3, 'mỗi bàn ba món dọc khăn chạy bàn', gia('hb_' + L.hoaBan, n * 3)]); ds.push.apply(ds, bangKeDen(L, n, { hinh: 'dai' })); return ds; }
     var cho = m.pc ? b.cho : n * g.khach, cac = m.pc ? b.ds.map(function (t) { return { hinh: 'dai', dai: t[3], rong: 0.9 }; }) : [g];
     var kich = function (h, nen) { var u = []; cac.forEach(function (q) { var k = kichKhan(q, h, nen); if (u.indexOf(k) < 0) u.push(k); }); return u.join('; '); };
-    ds.push(['Ghế chiavari khung ' + tongCua(MAU_KG, L.khungGhe)[1].toLowerCase() + ', đệm ' + tongCua(MAU_DEM, L.demGhe)[1].toLowerCase(), cho, '', null]);
-    ds.push(['Khăn nền ' + tongCua(CHAT, L.nen[0])[1].toLowerCase() + ' ' + tongCua(MAU_VAI, L.nen[1])[1].toLowerCase(), n, kich('', 1), null]);
+    ds.push(['Ghế chiavari khung ' + tongCua(MAU_KG, L.khungGhe)[1].toLowerCase() + ', đệm ' + tongCua(MAU_DEM, L.demGhe)[1].toLowerCase(), cho, '', gia('ghe', cho)]);
+    ds.push(['Khăn nền ' + tongCua(CHAT, L.nen[0])[1].toLowerCase() + ' ' + tongCua(MAU_VAI, L.nen[1])[1].toLowerCase(), n, kich('', 1), gia(L.nen[0] === 'tron' ? 'nen_tron' : 'nen_hoa', n)]);
     var h = hinhHien(L, g.hinh);
-    if (h) ds.push(['Khăn phủ ' + tongCua(HINH_PHU[g.hinh], h)[1].toLowerCase() + ', ' + tongCua(CHAT, L.phu[1])[1].toLowerCase() + ' ' + tongCua(MAU_VAI, L.phu[2])[1].toLowerCase(), h === 'ngang' ? cho / 2 : n, kich(h), null]);
-    if (L.hoaBan && SO3.hoaban) ds.push(['Hoa bàn: ' + tongCua(HOA_BAN, L.hoaBan)[1].toLowerCase() + ', hoa ' + tongCua(TONG_HOA, L.hoa)[1].toLowerCase(), m.pc ? Math.round(cac.reduce(function (a, q) { return a + q.dai; }, 0) / 1.5) : g.hinh === 'dai' ? n * Math.max(1, Math.round(g.dai / 1.5)) : n, m.pc || g.hinh === 'dai' ? 'mỗi 1,5 m bàn một món' : 'mỗi bàn một món', null]);
+    if (h) ds.push(['Khăn phủ ' + tongCua(HINH_PHU[g.hinh], h)[1].toLowerCase() + ', ' + tongCua(CHAT, L.phu[1])[1].toLowerCase() + ' ' + tongCua(MAU_VAI, L.phu[2])[1].toLowerCase(), h === 'ngang' ? cho / 2 : n, kich(h), gia('phu_' + (h === 'ngang' ? 'ngang_' : '') + (L.phu[1] === 'tron' ? 'tron' : 'hoa'), h === 'ngang' ? cho / 2 : n)]);
+    if (L.hoaBan && SO3.hoaban) ds.push(['Hoa bàn: ' + tongCua(HOA_BAN, L.hoaBan)[1].toLowerCase() + ', hoa ' + tongCua(TONG_HOA, L.hoa)[1].toLowerCase(), m.pc ? Math.round(cac.reduce(function (a, q) { return a + q.dai; }, 0) / 1.5) : g.hinh === 'dai' ? n * Math.max(1, Math.round(g.dai / 1.5)) : n, m.pc || g.hinh === 'dai' ? 'mỗi 1,5 m bàn một món' : 'mỗi bàn một món', 'GIA_HB']);
+    ds.forEach(function (r) { if (r[3] === 'GIA_HB') r[3] = gia('hb_' + L.hoaBan, r[1]); });
     ds.push.apply(ds, bangKeDen(L, m.pc ? Math.round(cho / 8) : n, g));
-    ds.push([(L.bay === 'viet' ? 'Bộ đồ bàn kiểu Việt' : 'Bộ đồ bàn kiểu Âu') + ', ' + (L.bay === 'viet' ? 'đĩa kê ' : 'đĩa lót ') + tongCua(MAU_LOT, L.lot)[1].toLowerCase(), cho, L.bay === 'viet' ? 'đĩa kê, đĩa, bát, đũa, thìa, chén chấm, cốc, ly' : 'đĩa lót, đĩa, đĩa bánh mì, dao nĩa, 3 ly, khăn ăn, thiệp', null]);
+    ds.push([(L.bay === 'viet' ? 'Bộ đồ bàn kiểu Việt' : 'Bộ đồ bàn kiểu Âu') + ', ' + (L.bay === 'viet' ? 'đĩa kê ' : 'đĩa lót ') + tongCua(MAU_LOT, L.lot)[1].toLowerCase(), cho, L.bay === 'viet' ? 'đĩa kê, đĩa, bát, đũa, thìa, chén chấm, cốc, ly' : 'đĩa lót, đĩa, đĩa bánh mì, dao nĩa, 3 ly, khăn ăn, thiệp', null, 'san']);
     return ds;
   }
   function bangKeDen(L, n, g) { // đèn, màn LED, loa, máy phát
     var ds = [], e = LED_SO[L.led], lo = LOA_SO[L.loa], V = LOP[L.noi], kw = dienCan(L);
-    if (L.den[0]) ds.push(['Dây đèn bóng tròn', CHUOI[L.noi].length, 'khoảng ' + CHUOI[L.noi].reduce(function (a, q) { return a + q[5] - 1; }, 0) + ' bóng', null]);
-    if (L.den[1] && L.cong) ds.push(['Đèn đom đóm quấn cổng', 1, 'bộ', null]);
-    if (L.den[2]) ds.push(['Đèn rọi cổng, ánh ' + tongCua(MAU_ROI, L.mauRoi)[1].toLowerCase(), 4, '', null]);
-    if (L.den[3] && n) ds.push(['Nến trên bàn', n * (g && g.hinh === 'dai' ? 4 : 3), '', null]);
-    if (e) ds.push(['Màn LED ' + e.ten, e.so, so(e.r) + ' × ' + so(e.c) + ' m' + (e.so > 1 ? ' mỗi màn' : '') + ', chiếu ' + tongCua(LED_ND, L.ledND)[1].toLowerCase(), null]);
-    if (lo) ds.push([lo.ten, lo.so, L.loa === 'lon' ? 'kèm 2 sub' : '', null]);
-    if (kw > V.dien) ds.push(['Máy phát điện', 1, 'điện ước lượng ' + so(kw) + ' kW', null]);
+    if (L.den[0]) ds.push(['Dây đèn bóng tròn', CHUOI[L.noi].length, 'khoảng ' + CHUOI[L.noi].reduce(function (a, q) { return a + q[5] - 1; }, 0) + ' bóng', gia('day_den', CHUOI[L.noi].length)]);
+    if (L.den[1] && L.cong) ds.push(['Đèn đom đóm quấn cổng', 1, 'bộ', gia('domdom')]);
+    if (L.den[2]) ds.push(['Đèn rọi cổng, ánh ' + tongCua(MAU_ROI, L.mauRoi)[1].toLowerCase(), 4, '', gia('roi', 4)]);
+    if (L.den[3] && n) ds.push(['Nến trên bàn', n * (g && g.hinh === 'dai' ? 4 : 3), '', gia('nen', n * (g && g.hinh === 'dai' ? 4 : 3))]);
+    if (e) ds.push(['Màn LED ' + e.ten, e.so, so(e.r) + ' × ' + so(e.c) + ' m' + (e.so > 1 ? ' mỗi màn' : '') + ', chiếu ' + tongCua(LED_ND, L.ledND)[1].toLowerCase(), gia('led', e.so * e.r * e.c)]);
+    if (lo) ds.push([lo.ten, lo.so, L.loa === 'lon' ? 'kèm 2 sub, người chạy âm thanh' : L.loa === 'doi' ? 'kèm người chạy âm thanh' : '', gia('loa_' + L.loa, L.loa === 'keo' ? 1 : lo.so)]);
+    if (kw > V.dien) ds.push(['Máy phát điện', 1, 'điện ước lượng ' + so(kw) + ' kW', gia('may_phat')]);
     return ds;
   }
   function luuY(L, b) {
     var ds = [];
-    if (!L.ban) ds.push('Chưa có bàn tiệc cho ' + soKhach() + ' khách.');
-    else if (!b.du) ds.push(LOP[L.noi].ten + ' chỉ xếp được ' + b.ds.length + ' bàn, ' + b.cho + '/' + soKhach() + ' chỗ: chọn bàn nhiều chỗ hơn, bớt khách hoặc nơi rộng hơn.');
+    if (!L.ban) ds.push('Chưa có bàn tiệc cho ' + soKhach(L) + ' khách.');
+    else if (!b.du) ds.push(LOP[L.noi].ten + ' chỉ xếp được ' + b.ds.length + ' bàn, ' + b.cho + '/' + soKhach(L) + ' chỗ: chọn bàn nhiều chỗ hơn, bớt khách hoặc nơi rộng hơn.');
     if (!L.cong) ds.push('Chưa có cổng: hai bạn thiếu chỗ đứng làm lễ và chụp ảnh.');
     var coDen = L.den[0] || L.den[1] || L.den[2] || L.den[3], kw = dienCan(L), V = LOP[L.noi], lo = LOA_SO[L.loa];
     if (L.gio === 'dem' && !(L.den[0] || L.den[2] || L.den[3])) ds.push('Tiệc tối cần đèn: chọn dây đèn, nến hoặc đèn rọi' + (coDen ? ' (đom đóm chỉ để trang trí).' : '.'));
     if (L.gio !== 'dem' && L.den[2]) ds.push('Đèn rọi chỉ thấy rõ khi trời tối.');
     if (!lo) ds.push('Chưa có âm thanh: MC, nhạc lễ và ban nhạc đều cần loa.');
-    else if (soKhach() > lo.toi) ds.push(lo.ten + ' hợp tiệc dưới ' + lo.toi + ' khách; ' + soKhach() + ' khách ngoài trời nên dùng ' + (soKhach() <= 200 ? 'hai loa đứng' : soKhach() <= 500 ? 'loa và sub' : 'nhiều cụm loa và sub') + '.');
+    else if (soKhach(L) > lo.toi) ds.push(lo.ten + ' hợp tiệc dưới ' + lo.toi + ' khách; ' + soKhach(L) + ' khách ngoài trời nên dùng ' + (soKhach(L) <= 200 ? 'hai loa đứng' : soKhach(L) <= 500 ? 'loa và sub' : 'nhiều cụm loa và sub') + '.');
     if (kw > V.dien) ds.push('Điện ước lượng ' + so(kw) + ' kW, vượt nguồn tại chỗ ' + V.dien + ' kW: cần thuê máy phát.');
     if (L.led === 'sau' && L.noi === 'ho') ds.push('Màn lớn sau cổng che cảnh hồ phía sau hai bạn.');
     if (L.xepLe === 'tron' && L.cong) ds.push('Ghế xếp vòng tròn: khách phía sau nhìn thấy lưng cổng; hợp với bục tròn ở giữa hơn.');
@@ -1375,9 +1415,9 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     var ds = [], a = coLuong(L) ? viLuong(L) + 0.33 + 0.15 : 1.35, pz = 0.95, pc = 0.56, k = L.xepLe, r, j, s, n, t;   // có luống hoa: ghế lùi ra ngoài mép luống
     if (k === 'quat' || k === 'tron') {
       var cz = k === 'quat' ? -1.0 : 0, r0 = k === 'quat' ? 4.0 : 2.4, gh = k === 'quat' ? 62 : 180;
-      for (r = 0; ds.length < soKhach() && r < 30; r++) {
+      for (r = 0; ds.length < soKhach(L) && r < 30; r++) {
         var R = r0 + r * pz, buoc = pc / R;
-        for (t = -gh * Math.PI / 180 + buoc / 2; t <= gh * Math.PI / 180 + 1e-6 && ds.length < soKhach(); t += buoc) {
+        for (t = -gh * Math.PI / 180 + buoc / 2; t <= gh * Math.PI / 180 + 1e-6 && ds.length < soKhach(L); t += buoc) {
           var x = R * Math.sin(t), z = cz + R * Math.cos(t);
           if (Math.abs(x) < a + 0.15 && z > cz) continue;                                        // lối giữa phía trước
           if (k === 'tron' && (Math.abs(x) < 0.65 || Math.abs(z) < 0.65)) continue;                // vòng tròn: bốn lối xuyên tâm
@@ -1386,7 +1426,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
       }
     } else {
       var nghieng = k === 'cheo' ? 20 * Math.PI / 180 : 0;
-      for (r = 0; ds.length < soKhach() && r < 60; r++) for (s = -1; s <= 1; s += 2) for (j = 0; j < 5 && ds.length < soKhach(); j++)
+      for (r = 0; ds.length < soKhach(L) && r < 60; r++) for (s = -1; s <= 1; s += 2) for (j = 0; j < 5 && ds.length < soKhach(L); j++)
         ds.push([s * (a + 0.3 + j * pc * Math.cos(nghieng)), 3.0 + r * pz - j * pc * Math.sin(nghieng), Math.atan2(-s * Math.sin(nghieng), -Math.cos(nghieng))]);
     }
     return ds;
@@ -1567,8 +1607,9 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
   function tenCanhLop() { var L = lopHien(), m = L.ban && TT[L.ban]; return LOP[L.noi].ten + (L.phan === 'le' ? ' · lễ' : '') + (L.xemGan === 2 ? ' · mặt bằng' : m && m.loai === '3d' && L.xemGan === 1 && L.phan !== 'le' ? ' · cận cảnh' : L.gio === 'dem' ? ' · ban đêm' : ' · ban ngày'); }
   window.addEventListener('resize', function () { if (laLop()) setTimeout(function () { chayDen(); veGhe(lopHien(), sangCua(lopHien(), LOP[lopHien().noi])); if (lopHien().xemGan === 2) veMatBang($('mat-bang').firstChild, lopHien()); }, 120); });
   function bangLop(dau, than, chan) {
-    var L = lopHien(), cap = [];
-    dau.appendChild(el('h2', '', 'Trang trí theo lớp')); dau.appendChild(el('span', 'dem', 'bản thử'));
+    var L = lopHien(), cap = [], tuCh = !!(st.tuChuong && st.dd && LOP[st.dd]);   // tuCh: vào từ màn Trang trí của chương 4, nơi và số khách theo ván chơi
+    if (tuCh) { L.noi = st.dd; L.khach = KHACH; }
+    dau.appendChild(el('h2', '', tuCh ? 'Tự thiết kế trang trí' : 'Trang trí theo lớp')); dau.appendChild(el('span', 'dem', tuCh ? 'chương 4' : 'bản thử'));
     function doiLop(fn) { fn(); datNen(); datTT(); lamMoi(); ghi(); }
     function khi(n, dk) { cap.push(function () { n.hidden = !dk(); }); return n; }
     function hangMau(noi, bo, lay, dat) { // một hàng ô màu
@@ -1586,10 +1627,11 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     }
     function the(id) { return { k: id, ten: TT[id].ten, hinh: TT[id].the }; }
     var laKhung = function () { return !!L.cong && TT[L.cong].loai === 'khung'; }, ban3 = function () { return !!L.ban && TT[L.ban].loai === '3d'; };
-    hangChip(nhom(than, 'Mẫu có sẵn'), MAU_TT_SAN, function () { return mauDangDung(L); }, function (k) { var m = MAU_TT_SAN.filter(function (x) { return x[0] === k; })[0][2]; for (var q in m) L[q] = Array.isArray(m[q]) ? m[q].slice() : m[q]; });
-    cap.push(luoiThe(nhom(than, 'Nơi'), { id: 'lop-noi', ds: Object.keys(LOP).map(function (k) { return { k: k, ten: LOP[k].ten, hinh: 'anh/t-' + LOP[k].nen + '.webp' }; }),
+    hangChip(nhom(than, 'Mẫu có sẵn'), tuCh ? MAU_TT_SAN.filter(function (x) { return x[2].noi === st.dd; }) : MAU_TT_SAN, function () { return mauDangDung(L); }, function (k) { var m = MAU_TT_SAN.filter(function (x) { return x[0] === k; })[0][2]; for (var q in m) L[q] = Array.isArray(m[q]) ? m[q].slice() : m[q]; });
+    if (tuCh) than.appendChild(el('p', 'ghi', 'Mẫu có sẵn là gói làm sẵn của nhà cung cấp, rẻ hơn 20%. Nơi và số khách theo ván chơi: ' + DD[st.dd].ten + ', ' + KHACH + ' khách.'));
+    else cap.push(luoiThe(nhom(than, 'Nơi'), { id: 'lop-noi', ds: Object.keys(LOP).map(function (k) { return { k: k, ten: LOP[k].ten, hinh: 'anh/t-' + LOP[k].nen + '.webp' }; }),
       chon: function (k) { return L.noi === k; }, fn: function (k) { doiLop(function () { L.noi = k; }); boCuc(); veHet(); } }));
-    hangChip(nhom(than, 'Số khách'), SO_KHACH.map(function (n) { return [n, String(n)]; }), function () { return L.khach; }, function (k) { L.khach = k; });
+    if (!tuCh) hangChip(nhom(than, 'Số khách'), SO_KHACH.map(function (n) { return [n, String(n)]; }), function () { return L.khach; }, function (k) { L.khach = k; });
     hangChip(nhom(than, 'Giờ tiệc'), [['ngay', 'Ban ngày'], ['dem', 'Ban đêm']], function () { return L.gio; }, function (k) { L.gio = k; });
     hangChip(nhom(than, 'Phần'), [['tiec', 'Tiệc'], ['le', 'Lễ']], function () { return L.phan; }, function (k) { L.phan = k; });
     hangChip(khi(nhom(than, 'Xếp ghế dự lễ'), function () { return L.phan === 'le'; }), XEP_LE, function () { return L.xepLe; }, function (k) { L.xepLe = k; });
@@ -1639,11 +1681,15 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
       demY.textContent = y.length ? y.length + ' lưu ý' : 'bản thử';
       dsK.innerHTML = ''; ke.forEach(function (r) { var d = dsK.appendChild(el('div', 'dong')); d.appendChild(el('span', 'sl', so(r[1])));
         var t = d.appendChild(el('span', 'ten', r[0])); if (r[2]) t.appendChild(el('small', '', r[2]));
-        d.appendChild(el('span', 'gia', r[3] ? so(r[3][0]) + '–' + so(r[3][1]) + ' tr' : 'chưa có giá')); if (r[3]) { lo += r[3][0]; cao += r[3][1]; } });
-      tongK.textContent = (ke.length ? 'Phần có giá: ' + so(lo) + '–' + so(cao) + ' triệu. Giá là số tạm của bản thử, chưa gồm món ăn và các món chưa có giá. Số bàn tính đủ ' + soKhach() + ' khách trên mặt bằng. ' : '') + 'Điện ước lượng ' + so(dienCan(L)) + ' kW; nguồn tại chỗ ' + LOP[L.noi].dien + ' kW (số tạm).';
+        d.appendChild(el('span', 'gia', r[3] ? so(r[3][0]) + '–' + so(r[3][1]) + ' tr' : r[4] === 'san' ? 'có sẵn' : 'chưa có giá')); if (r[3] && r[4] === 'tiec') { lo += r[3][0]; cao += r[3][1]; } });
+      var G = giaTT(L);
+      tongK.textContent = (ke.length ? 'Trang trí: ' + so(G.lo) + '–' + so(G.hi) + ' triệu, tính ' + so(G.tong) + ' triệu' + (G.mau ? ' (trùng một mẫu có sẵn nên giảm 20%)' : ' (tự chọn từng lớp, không giảm)') + '. ' + (cao ? 'Bàn ghế, phục vụ ' + so(lo) + '–' + so(cao) + ' triệu đã gồm trong giá nơi tổ chức. ' : '') + 'Giá là số tạm của bản thử, chưa gồm món ăn. Số bàn tính đủ ' + soKhach(L) + ' khách trên mặt bằng. ' : '') + 'Điện ước lượng ' + so(dienCan(L)) + ' kW; nguồn tại chỗ ' + LOP[L.noi].dien + ' kW (số tạm).';
     });
     than.appendChild(el('p', 'ghi', 'Vẽ tay: hai nền, cổng tròn, bàn dài gỗ. Tự vẽ, không tốn lượt: sáu khung cổng bằng mã, cụm hoa, luống hoa và hoa bàn vẽ bằng Canva, bản đêm, bàn và cận cảnh dựng 3D. Khăn nhiều lớp, đệm, khung ghế, đĩa lót đổi bằng mã. Cận cảnh luôn ở ánh ngày để dễ xem màu.'));
-    chan.appendChild(nutBam('Về đầu', function () { sang('mo'); }, 'phu', 'trai'));
+    if (tuCh) {
+      chan.appendChild(nutBam('Quay lại', function () { st.tuChuong = 0; sang('goi'); }, 'phu', 'trai'));
+      chan.appendChild(nutBam('Dùng thiết kế này', function () { st.tuChuong = 0; st.tt = 'tk'; datLaiGia(); sang('goi'); }, 'to', null, 'phai'));
+    } else chan.appendChild(nutBam('Về đầu', function () { sang('mo'); }, 'phu', 'trai'));
     lamMoi = function () { cap.forEach(function (f) { f(); }); };
     lamMoi();
   }
@@ -1701,7 +1747,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
       ['nhac', 'Đèn, màn LED, loa', 'dây đèn, đèn rọi, nến; màn LED chiếu tên hai bạn; ban ngày và ban đêm'],
       ['doi', 'Xếp chỗ như tiệc ở Ý', 'ghế dự lễ 4 kiểu, bàn dài xuyên suốt, lối gương nước; mặt bằng, lưu ý, bảng kê']].forEach(function (x) {
       var li = el('li'), v = el('span', 'vong'); v.innerHTML = ico(x[0]); li.appendChild(v); var t = el('div'); t.appendChild(el('b', '', x[1])); t.appendChild(el('span', '', x[2])); li.appendChild(t); ds.appendChild(li); });
-    xt.appendChild(ds); var nx = nutBam('Mở xưởng trang trí', function () { sang('lop'); }, 'phu', null, 'phai'); nx.id = 'mo-xuong'; xt.appendChild(nx); than.appendChild(xt);
+    xt.appendChild(ds); var nx = nutBam('Mở xưởng trang trí', function () { st.tuChuong = 0; sang('lop'); }, 'phu', null, 'phai'); nx.id = 'mo-xuong'; xt.appendChild(nx); than.appendChild(xt);
     if (soLuu.lan) veSoLuu(than);
     than.appendChild(el('p', 'ghi', 'Tên nơi và người là hư cấu. Giá là số tạm của bản thử.'));
     var thu = el('button', 'nut-thu', st.thu ? 'Tắt danh mục thử 100 nơi' : 'Thử danh mục 100 nơi (hình lặp lại)'); thu.type = 'button';
@@ -1713,7 +1759,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     tieuDe(dau, 'Nơi tổ chức', 1);
     goiY(than, [['nha', 'Nhà trai: về quê'], ['nha', 'Nhà gái: cảnh đẹp']]);
     var cap = luoiThe(than, { id: 'noi', ds: Object.keys(DD).map(function (k) { return { k: k, ten: DD[k].ten, gia: DD[k].gia, hinh: anhThe(k, 'du'), nhan: [DD[k].que ? 'que' : 'canh'] }; }),
-      chon: function (k) { return st.dd === k; }, fn: function (k) { chonCanh(function () { st.dd = k; }); }, loc: [['que', 'Ở quê'], ['canh', 'Cảnh đẹp']] });
+      chon: function (k) { return st.dd === k; }, fn: function (k) { chonCanh(function () { st.dd = k; if (st.tt === 'tk' && k !== 'ho' && k !== 'langque') st.tt = null; }); }, loc: [['que', 'Ở quê'], ['canh', 'Cảnh đẹp']] });
     var ct = el('div', 'chi-tiet dinh'); than.appendChild(ct);
     chan.appendChild(nutBam('Cặp đôi', function () { sang('doi'); }, 'phu', 'trai'));
     var b = nutBam('Trang trí', function () { sang('goi'); }, 'to', null, 'phai'); chan.appendChild(b);
@@ -1723,12 +1769,20 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
   }
   function bangGoi(dau, than, chan) {
     tieuDe(dau, 'Trang trí', 2);
-    var cap = luoiThe(than, { id: 'goi', ds: Object.keys(GOI).map(function (k) { return { k: k, ten: 'Gói ' + GOI[k].ten, gia: GOI[k].gia, hinh: anhThe(ddHien(), k) }; }),
-      chon: function (k) { return st.tt === k; }, fn: function (k) { chonCanh(function () { st.tt = k; }); } });
+    goiY(than, [['hoa', 'Gói sẵn: rẻ, nhanh'], ['hoa', 'Tự thiết kế: hợp ý, tốn công']]);
+    var coTK = st.dd === 'ho' || st.dd === 'langque', L = lopHien(), xemTK = false;   // tự thiết kế dùng xưởng trang trí; chỉ có ở nơi đã có nền trống
+    if (coTK) { L.noi = st.dd; L.khach = KHACH; }
+    var cap = luoiThe(than, { id: 'goi', ds: Object.keys(GOI).map(function (k) { return { k: k, ten: 'Gói ' + GOI[k].ten, gia: GOI[k].gia, hinh: anhThe(ddHien(), k) }; })
+        .concat([{ k: 'tk', ten: coTK ? 'Tự thiết kế' : 'Tự thiết kế · sắp có', gia: coTK ? giaTT(L).tong : null, ico: 'hoa' }]),
+      chon: function (k) { return st.tt === k; }, fn: function (k) { xemTK = k === 'tk'; if (k === 'tk' && !coTK) { lamMoi(); return; } chonCanh(function () { st.tt = k; }); } });
     var ct = el('div', 'chi-tiet dinh'); than.appendChild(ct);
+    var mo = nutBam(st.tt === 'tk' ? 'Sửa thiết kế' : 'Mở xưởng trang trí', function () { st.tuChuong = 1; sang('lop'); }, 'phu nho'); mo.id = 'mo-xuong-ch4'; than.appendChild(mo);
     chan.appendChild(nutBam('Nơi tổ chức', function () { sang('noi'); }, 'phu', 'trai'));
     var b = nutBam('Người phục vụ', function () { sang('nguoi'); }, 'to', null, 'phai'); chan.appendChild(b);
-    lamMoi = function () { cap(); var g = st.tt && GOI[st.tt]; b.disabled = !g; chiTiet(ct, g && 'Gói ' + g.ten, g && g.gia + ' triệu', g && g.hq, null, g ? g.mo : 'Chạm một gói để thấy cổng và hoa đổi ngay.'); };
+    lamMoi = function () { cap(); var g = st.tt && GOI[st.tt], tk = st.tt === 'tk'; b.disabled = !g && !tk; mo.hidden = !(tk || (xemTK && coTK));
+      if (tk) { var G = giaTT(L); chiTiet(ct, 'Tự thiết kế', so(G.tong) + ' triệu', hqTT(L), null, (G.mau ? 'Trùng một mẫu có sẵn nên giảm 20%. ' : 'Tự chọn từng lớp, trả đủ giá. ') + 'Ngày cưới tạm dùng tranh của gói Đủ.'); }
+      else if (xemTK && !coTK) chiTiet(ct, '', '', null, null, 'Tự thiết kế hiện có ở Vườn Hồ và Sân nhà quê; nơi này sắp có.');
+      else chiTiet(ct, g && 'Gói ' + g.ten, g && g.gia + ' triệu', g && g.hq, null, g ? g.mo : 'Chạm một gói để thấy cổng và hoa đổi ngay, hoặc tự thiết kế từng lớp.'); };
     lamMoi();
   }
   function bangNguoi(dau, than, chan) {
@@ -1807,7 +1861,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     function luaChon(ds, khoa, sau) {
       var l = el('div', 'dong-chon');
       ds.forEach(function (x) {
-        var thieu = x.can === 'bat' ? !st.bat : x.can === 'doi' ? st.tt === 'gon' : false, b = el('button'); b.type = 'button'; b.disabled = thieu;
+        var thieu = x.can === 'bat' ? !st.bat : x.can === 'doi' ? (st.tt === 'gon' || (st.tt === 'tk' && giaTT(lopHien()).tong < 8)) : false, b = el('button'); b.type = 'button'; b.disabled = thieu;
         b.appendChild(el('b', '', x.ten)); if (x.gia) b.appendChild(el('span', 'gia', x.gia + ' triệu'));
         if (thieu) b.appendChild(el('span', 'ghi', x.can === 'bat' ? 'chưa thuê nhà bạt' : 'gói Gọn không có đội trực')); else b.appendChild(chipHQ(x.hq));
         b.addEventListener('click', function () { for (var q in x.hq) st.hq[q] += x.hq[q]; st.chiThem += x.gia || 0; st.xuLy[khoa] = x.kq; st.xuLy[khoa + 'Loi'] = x.loi; if (sau) sau(); veChiSo(); datPV(); dungBang(); ghi(); });
@@ -1855,7 +1909,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
   function veKeHoach() { // tóm tắt các quyết định đã chốt (màn rộng); bấm để quay lại màn đó nếu còn sửa được
     var e = $('ke-hoach'), i = MAN.indexOf(st.man); e.hidden = i < 2 || i > 7; if (e.hidden) return; e.innerHTML = ''; e.appendChild(el('h3', '', 'Kế hoạch của hai bạn'));
     var thue = Object.keys(NGUOI).filter(function (k) { return st.pv[k]; }).map(function (k) { return NGUOI[k].ten; });
-    [['noi', 'ghim', 'Nơi tổ chức', st.dd && DD[st.dd].ten + ' · ' + DD[st.dd].gia + ' tr'], ['goi', 'hoa', 'Trang trí', st.tt && 'Gói ' + GOI[st.tt].ten + ' · ' + GOI[st.tt].gia + ' tr'],
+    [['noi', 'ghim', 'Nơi tổ chức', st.dd && DD[st.dd].ten + ' · ' + DD[st.dd].gia + ' tr'], ['goi', 'hoa', 'Trang trí', st.tt && (st.tt === 'tk' ? 'Tự thiết kế · ' + so(giaTT(lopHien()).tong) + ' tr' : 'Gói ' + GOI[st.tt].ten + ' · ' + GOI[st.tt].gia + ' tr')],
       ['nguoi', 'micro', 'Người phục vụ', st.xa >= 5 && (thue.join(', ') || 'Không thuê ai')], ['gia', 'noi', 'Mặc cả', st.chot && (st.giam ? 'Giảm ' + st.giam + '%' : 'Giữ giá gốc') + (st.ngayThuong ? ', ngày thường' : '')],
       ['ky', 'hopdong', 'Hợp đồng', st.daKy && (st.kyQuy ? 'Ký quỹ' : 'Trả thẳng') + (st.bat ? ', có nhà bạt' : ', không nhà bạt')],
       ['ngay', 'tim', 'Ngày cưới', st.suCo && (st.suCo.tt ? THOI_TIET[st.suCo.tt].ten : 'Trời đẹp') + (st.suCo.ncc ? ', ' + NGUOI[st.suCo.ncc].ten.toLowerCase() + ' huỷ' : '')]].forEach(function (r) {
@@ -1895,7 +1949,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     }, { timeout: 1500 });
   }
   if (st.man === 'doi') NV.taiTruoc(st.ai === 'chu-re' ? ['nam', 'nu'] : ['nu', 'nam']); // mở lại ngay ở bước tạo nhân vật: cần thẻ hình ngay
-  if (location.hash === '#trang-tri' && st.man !== 'lop') { st.man = 'lop'; ghi(); }   // mở thẳng xưởng trang trí: thêm #trang-tri vào cuối địa chỉ
+  if (location.hash === '#trang-tri' && st.man !== 'lop') { st.man = 'lop'; st.tuChuong = 0; ghi(); }   // mở thẳng xưởng trang trí: thêm #trang-tri vào cuối địa chỉ
   dung();
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { boCuc(); veHet(); });
 })();
