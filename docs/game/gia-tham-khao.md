@@ -85,6 +85,43 @@ Cách lấy số thật nhanh nhất: khi bạn liên hệ nhà cung cấp, xin 
 | Vốn một xe cà phê mang đi | 33–50 | không xác định được trang gốc | 35 |
 | Lãi mỗi ngày của xe cà phê, sạp chợ đêm | chưa có | — | 0,2–0,6 |
 
-## 6. Còn thiếu hẳn
+## 6. Trang trí theo lớp (xưởng trang trí, chủ dự án duyệt làm bảng số tạm ngày 26/11/2026)
+
+Tra ngày 26/11 không thấy đơn giá công khai đáng tin cho các món dưới đây ở Việt Nam (các trang cho thuê màn LED, âm thanh, ghế, hoa chỉ ghi "liên hệ báo giá"; số tìm được là giá nước ngoài hoặc giá trọn gói không tách món). Vì vậy cả mục này **chỉ có số tạm**. Mỗi số là **phần trả thêm** so với tiệc mà nơi tổ chức đã tính (bàn, ghế thường, khăn trắng, bộ đồ bàn, phục vụ đã nằm trong giá nơi tổ chức).
+
+| Hạng mục | Đơn vị | Số tìm được | Số tạm cho bản chơi thử |
+|---|---|---|---|
+| Cổng khung trơn, không hoa | bộ | chưa có | 1–2 |
+| Cổng khung có 3 cụm hoa | bộ | chưa có | 3–6 |
+| Cổng tròn dày hoa | bộ | chưa có | 6–12 |
+| Ghế chiavari thay ghế thường (ghế dự lễ hoặc quanh bàn) | ghế | chưa có | 0,01–0,02 |
+| Khăn nền trơn màu | bàn | chưa có | 0,1–0,2 |
+| Khăn nền ren, kim sa, gấm | bàn | chưa có | 0,2–0,4 |
+| Khăn phủ trơn | bàn (chạy ngang: mỗi tấm) | chưa có | 0,05–0,15 (chạy ngang 0,02–0,05) |
+| Khăn phủ ren, kim sa, gấm | bàn (chạy ngang: mỗi tấm) | chưa có | 0,1–0,25 (chạy ngang 0,04–0,08) |
+| Khăn chạy bàn trên bàn gỗ | bàn | chưa có | 0,05–0,1 |
+| Hoa bàn: hoa thấp tròn, hoa và cam, chân nến đồng | món | chưa có | 0,3–0,6 |
+| Hoa bàn: bình hoa cao | món | chưa có | 0,5–1 |
+| Hoa bàn: nến và bạch đàn, đèn lồng | món | chưa có | 0,2–0,5 |
+| Luống hoa dọc lối | mét mỗi bên | chưa có | 0,15–0,3 |
+| Thảm lối đi | lối | chưa có | 0,5–1,5 |
+| Lối gương nước | lối | chưa có | 3–6 |
+| Dây đèn bóng tròn | dây | chưa có | 0,3–0,6 |
+| Đèn đom đóm quấn cổng | bộ | chưa có | 0,3–0,6 |
+| Đèn rọi | đèn | chưa có | 0,2–0,4 |
+| Nến trên bàn | ngọn | chưa có | 0,01–0,02 |
+| Màn LED | m² | chưa có | 0,25–0,5 |
+| Loa kéo | bộ | chưa có | 0,4–1 |
+| Hai loa đứng, kèm người chạy âm thanh | mỗi loa | chưa có | 0,75–1,5 |
+| Loa trên cột cắm vào sub, kèm người chạy âm thanh | mỗi bộ loa và sub | chưa có | 1,5–3 |
+| Máy phát điện | buổi | chưa có | 2–4 |
+
+**Cách game dùng bảng này** (số tạm, chỉnh được khi có báo giá thật):
+
+- Một con số cho mỗi món: lấy **trung bình** của khoảng số tạm. Bảng kê của xưởng vẫn hiện cả khoảng.
+- **Gói sẵn và may đo:** nếu cả bộ trùng một "Mẫu có sẵn" của nhà cung cấp thì giảm 20% (gói làm sẵn, rẻ và nhanh). Tự chọn từng lớp thì trả đủ giá. Với giá trên, mẫu "Vườn trắng xanh" ra khoảng 10 triệu, gần gói Đủ (9); "Đêm kim sa" khoảng 18 triệu, hơn gói Trọn (15) một chút vì có màn LED và loa lớn.
+- Chương 4 chỉ cộng các món trang trí. Dòng "Bàn ghế, dụng cụ, người phục vụ" của bảng kê đã nằm trong giá nơi tổ chức nên không cộng lại.
+
+## 7. Còn thiếu hẳn
 
 Chưa tìm được con số nào đáng tin cho: MC, ban nhạc, DJ, mâm quả, thiệp, người lên kế hoạch, trang trí, thuê trang phục, nhẫn cưới, tỉ lệ đặt cọc, phụ thu theo ngày, gói cầu hôn, rạp cưới ở quê. Đây đều là những hạng mục nên hỏi thẳng nhà cung cấp.

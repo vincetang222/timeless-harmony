@@ -559,6 +559,32 @@ Mỗi bộ chọn sẵn: khung, loài hoa, bố cục, bảng màu, bàn, hoa b�
 
 Mỗi nơi mới cần đo một lần: chỗ đứng của cặp đôi, điểm neo của cổng và bàn, chỗ cho người biểu diễn, hệ số chỉnh sáng.
 
+### 4.1 Sức chứa từng nơi (cập nhật 26/11)
+
+Xưởng trang trí cho thấy giới hạn thật là **diện tích nơi tổ chức**, không phải hình vẽ: Vườn Hồ (khoảng 30 × 22 m, ước lượng trên tranh) chỉ đặt được khoảng 26 bàn tròn 10 khách. Muốn 100 bàn (1000 khách) cần khoảng 60 × 45 m. Mỗi nơi vì vậy cần ghi kích thước ước lượng và sức chứa mục tiêu; số khách vượt sức chứa là một quyết định trong ván chơi (đổi nơi, đổi kiểu bàn, bớt khách).
+
+| Nơi | Kích thước ước lượng | Sức chứa mục tiêu | Rủi ro | Phải vẽ | Làm bằng mã, 3D |
+|---|---|---|---|---|---|
+| Vườn Hồ (đã có) | 30 × 22 m | khoảng 26 bàn tròn 10 | nắng gắt, mưa | — | bàn, ghế, khăn, hoa bàn, đèn, màn LED, loa (đã làm) |
+| **Vườn Hồ nới rộng** (T16, chủ dự án chọn 26/11) | khoảng 60 × 45 m | 100 bàn tròn 10 | như Vườn Hồ | 1 nền ngày nhìn từ trên cao hơn (thềm biệt thự, chếch xuống 25–30°) | **dựng lại bàn ghế 3D ở góc chếch mới** bằng các tệp dựng sẵn (0 lượt); bản đêm bằng mã như Vườn Hồ |
+| Sân nhà quê (đã có) | 24 × 18 m | khoảng 12 bàn tròn 10 | mưa | — | như Vườn Hồ |
+| **Nhà kính** (ảnh tham khảo 26/11, xem 4.2) | khoảng 18 × 40 m | lễ 150–200 ghế; tiệc khoảng 25 bàn | không mưa; mái kính nóng giữa trưa (thành rủi ro "nóng", xử lý bằng giờ tiệc hoặc quạt) | 1 nền ngày; bản tối vẽ riêng hoặc làm bằng mã quầng sáng quanh đèn chùm (không dùng cách tách trời của nơi ngoài trời vì đèn chùm là nguồn sáng, trời đêm chỉ lộ qua ô kính) | bàn, ghế, khăn, hoa bàn, loa; đèn chùm là một phần của tranh |
+| Sảnh khách sạn chùm đèn | khoảng 25 × 35 m | 40–50 bàn | không mưa; điện, âm thanh có sẵn của sảnh | 1 nền + bản tối | như trên |
+| Sảnh tiệc có màn LED (trung tâm tiệc cưới) | khoảng 30 × 50 m | 60–100 bàn: chỗ cho tiệc rất đông trong nhà | không mưa; giờ tiệc theo ca của sảnh | 1 nền; màn LED sân khấu dùng lại mã màn LED | như trên |
+| Rạp cưới quê Bắc Bộ, Nam Bộ | theo rạp, khoảng 10 × 30 m | 20–30 bàn | gió làm rạp rung; nóng | 1 nền mỗi rạp | như trên |
+
+Mọi nơi mới (trừ T16) vẽ **cùng góc máy với Vườn Hồ** (ngang tầm mắt, chếch khoảng 15°) để dùng lại toàn bộ bàn ghế 3D; mỗi nơi đo phối cảnh một lần bằng lưới 1 m như Vườn Hồ.
+
+### 4.2 Nhà kính: những gì thấy trong ảnh tham khảo (26/11)
+
+Chủ dự án gửi một ảnh lễ cưới trong nhà kính. Game chỉ lấy ý, không chép ảnh hay tên nơi đó.
+
+- **Không gian:** mái vòm kính khung sắt sơn màu xám xanh cong xuống hai bên; tường và cột đá xám; ba ô cửa vòm kính rất cao ở cuối phòng nhìn ra vườn kiểu Pháp có đài phun nước và hàng cây; sàn đá ô lớn.
+- **Ánh sáng:** nắng xuyên mái kính đổ thành ô sáng trên sàn; nhiều chùm đèn pha lê treo dọc giữa phòng; đèn tường chao vải dọc tường đá.
+- **Trang trí:** rèm voan trắng buộc hai bên mỗi cửa vòm; cổng hoa trắng, xanh đặt trước cửa vòm giữa; ghế dự lễ xếp thành hai khối có lối giữa.
+- **Ghế:** ghế gỗ lưng thanh tiện, mỗi ghế có một dải voan trắng xếp nếp vắt qua đỉnh lưng, thắt túm giữa lưng rồi rủ đuôi xuống sàn. Đây là lớp "đai" và "nơ" trong [Trang trí ghế theo lớp](#trang-trí-ghế-theo-lớp): dải voan xếp nếp vẽ bằng mã theo lưng ghế 3D, phần túm có thể dùng nút nơ của T10.
+- **Cho ván chơi:** nơi trong nhà bỏ rủi ro mưa nhưng thêm rủi ro nóng dưới mái kính; ánh nắng qua mái là một hiệu ứng mã rẻ (dải sáng chéo trên sàn) và cũng là lý do chọn giờ tiệc chiều muộn.
+
 ## 5. Hiệu ứng sân khấu (gần như toàn bộ là mã, 0 tấm)
 
 | Hiệu ứng | Cách làm | Cần | Luật chơi gợi ý (số tạm) |
@@ -753,6 +779,7 @@ Bốn tấm thử cho ghế và màn cận cảnh, chạy đầu tháng 12, trư
 | T13. Bộ đồ bàn thử ở góc cận (đã tự vẽ bằng 3D, 25/11) | 6 món rời, lưới 3 × 2, cách xa nhau | đúng góc nhìn của T12 | đĩa lót viền hạt, đĩa sứ trắng, ly chân cao, ly flute, bộ dao nĩa, khăn ăn gấp hình quạt; tất cả màu sáng | bàn, khăn, người | T12 (giữ góc nhìn, thay bàn bằng nền xanh dương phẳng) | mã cắt được 6 món; đặt lên T12 đúng cỡ, đúng góc; nhuộm được viền đĩa, màu ly, kim loại |
 | T14. Thử Canva vẽ cụm hoa (đã duyệt, đã vẽ 26/11, chờ chủ dự án xem) | 4 cụm mẫu đơn rời như T2 | — | cụm góc lớn, dải rủ dài, cụm nhỏ tròn, cụm chân đế; mẫu đơn hồng nhạt, lá bạch đàn; nền xanh dương phẳng | khung, người | tải `cong-tron.png` (cổng tròn vẽ tay) lên Canva làm hình mẫu nét vẽ | nét, màu, ánh sáng giống cổng tròn vẽ tay khi đặt cạnh nhau ở cỡ cảnh; tách nền sạch; gắn được lên khung lục giác vẽ bằng mã. Đạt thì các loài hoa có thể vẽ bằng Canva, bớt khoảng 17 hình Model Studio |
 | T15. Luống hoa dọc lối đi (chủ dự án duyệt 26/11, đã vẽ 26/11 bằng Canva, 1 hình; chờ chủ dự án xem) | 6 khóm hoa rời, lưới 3 × 2 | nhìn chính diện, hơi từ trên xuống như máy quay của cảnh | mỗi khóm là một ụ hoa thấp, dài hơn cao (khoảng 0,6 × 0,45 m): hồng trắng, cẩm tú cầu trắng, baby trắng, lá bạch đàn xanh xám; hoa màu **trắng** để mặt nạ đổi tông làm tự động; nền xanh dương phẳng | chậu, đất, bóng, người | `cong-tron.png` (cổng tròn vẽ tay, đã tải lên Canva) làm mẫu nét | tách nền sạch; mã xếp các khóm nối nhau dọc hai bên lối (thảm, lối đá, lối gương) theo phối cảnh của tranh, xa nhỏ gần to, trông thành một luống liền; nét gần cổng tròn vẽ tay và cụm hoa T14 |
+| T16. Vườn Hồ nới rộng (chủ dự án chọn 26/11: "vẽ scale up từ cái cũ"; vẽ thử 1 hình Canva, chưa đưa vào trang thử trước khi chủ dự án xem) | nền trống ngày, cùng nơi với Vườn Hồ nhưng bãi cỏ rộng khoảng 60 × 45 m | máy quay đặt cao trên thềm biệt thự, nhìn chếch xuống khoảng 25–30°, thấy trọn bãi cỏ, lan can đá, hồ, núi, hàng bách | bãi cỏ phẳng rộng, một lối đá thẳng bề ngang không đổi chạy từ máy quay tới chỗ làm lễ bên lan can (để đo phối cảnh từ hai mép lối và đường chân trời), lan can đá, hồ, núi, trời mây như Vườn Hồ | bàn, ghế, người, cổng, đài phun nước, đồ trang trí | `nen-ho` (nền trống Vườn Hồ, tải lên Canva) làm mẫu cảnh và nét | cùng nét, màu, cảnh với Vườn Hồ; bãi cỏ đủ chỗ cho 100 bàn khi đo bằng lưới 1 m; lối đá thẳng đo được. Khi đạt: dựng lại bàn ghế 3D ở góc chếch mới (0 lượt), đo phối cảnh, thêm thành một nơi mới trong xưởng (không ghi đè Vườn Hồ) |
 
 **Thứ tự:** T10 và T11 chạy sau khi T7 (ghế 8 góc) đạt, vì cần lưng ghế để gắn thử. T12 rồi T13 (T13 vẽ từ T12 để cùng góc nhìn).
 
@@ -779,9 +806,11 @@ Bốn tấm thử cho ghế và màn cận cảnh, chạy đầu tháng 12, trư
 
 1. Danh sách bộ phong cách (mục 3.9) và tiết mục (mục 6): thêm, bớt hay giữ nguyên?
 2. Các bản tự vẽ (khung cổng, bản đêm, ghế và bàn 3D, cận cảnh) có đủ giống tranh vẽ tay không? Mặc định đang dùng; đã có trong trang thử để chủ dự án xem từng cái.
-3. Vòng chơi trang trí (đưa xưởng vào chương 4), bảng giá số tạm cho từng món, và góc nhìn trên cao cho tiệc rất đông: đề xuất ở `vong-choi.md` mục 8.
+3. Tấm thử T16 (Vườn Hồ nới rộng, mục 8b) có đạt không, rồi mới đưa vào trang thử.
+4. Thứ tự vẽ nơi mới (mục 4): đề xuất Nhà kính trước, rồi sảnh tiệc có màn LED.
 
 Đã xong (25–26/11):
+- Duyệt vòng chơi trang trí và bảng giá số tạm (26/11, `vong-choi.md` mục 8, `gia-tham-khao.md` mục 6). Tiệc rất đông: vẽ nới rộng Vườn Hồ cũ (T16); thêm nơi mới vào kế hoạch, có nơi trong nhà (mục 4).
 - T14 đạt (26/11): hoa và đồ trang trí mềm vẽ bằng Canva; đã đưa cụm hoa vào trang thử, gắn trên 6 khung cổng.
 - Chọn phương án A (trang trí trước) ngày 26/11. Duyệt và đã vẽ T14 bằng Canva; được dùng 100 hình Canva.
 - Hạc giấy: đặt ở đâu cũng được; đã đưa vào đồ treo, chỗ ngồi, góc phụ và bộ "Nghìn hạc".
