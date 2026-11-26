@@ -2,7 +2,7 @@
 
 Chủ dự án góp ý ngày 26/11: đồ trang trí chèn vào khung hình **không đẹp và bất hợp lý**, cần kế hoạch làm cho đẹp. Tài liệu này gồm: soát lỗi trên bản 31, luật bố cục, các bước làm theo thứ tự hiệu quả trên công sức, và cách kiểm.
 
-Ảnh soát: `ve/mau/soat-truoc.webp` (9 lỗi đánh số). Trước và sau khi làm thử: `ve/mau/truoc-sau.webp`.
+Ảnh soát: `ve/mau/soat-truoc.webp` (9 lỗi đánh số). Trước và sau khi làm thử: `ve/mau/truoc-sau.webp`. Bản 32 và bản 33 (bước B–F): `ve/mau/truoc-sau-2.webp`; cận cảnh bàn tròn trước và sau khi sửa lỗi 10, 11: `ve/mau/ban-tron-sua.webp`.
 
 ## 1. Soát lỗi trên bản 31
 
