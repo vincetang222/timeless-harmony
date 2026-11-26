@@ -6,7 +6,8 @@ import numpy as np
 from mathutils import Vector
 
 PXM = 260          # px mỗi mét khi vẽ: mọi món cùng một thước, nên nét mực ra cùng độ dày sau khi đặt vào cảnh
-GOC = 15           # độ chếch máy ảnh: bàn tròn trong tranh cũ có elip mặt bàn b/a ≈ 0,26 → khoảng 15°
+GOC = float(os.environ.get('GOC_3D', 15))   # độ chếch máy ảnh (độ). Mặc định 15° (cận cảnh, loa, ghế thử). Bàn ghế đặt vào cảnh vẽ ở GOC_3D=10:
+                   # tranh nhìn từ máy cao 3,26 m, bàn ở 12–24 m chỉ chếch 8–15°; bàn tròn vẽ tay đo được b/a ≈ 0,18 ≈ 10,4° (tham-khao-thiet-ke-tiec.md mục 4)
 NET = 2.0          # độ dày nét mực (px ở cỡ vẽ)
 ID = {}            # tên vật liệu → màu mặt nạ
 

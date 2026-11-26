@@ -1,6 +1,6 @@
 # Tự vẽ bằng 3D (0 lượt), ngày 25/11: bộ bàn tròn phủ khăn trắng chấm đất, ghế chiavari xếp quanh bàn — thay T7 + T8.
 # Mỗi bộ (6, 10, 12 khách) ra: tranh, mặt nạ (khăn đỏ, đệm lục, khung ghế lam), toạ độ khăn 16 bit (khan_lop dùng để xếp lớp), số đo kiểu TT.
-# Chạy: <venv có bpy>/bin/python ban_tron_3d.py <thư mục ra>
+# Chạy: GOC_3D=10 <venv có bpy>/bin/python ban_tron_3d.py <thư mục ra>   (GOC_3D: độ chếch máy ảnh, xem xuong_3d.py)
 import sys, os, math, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import bpy
@@ -20,7 +20,9 @@ for khach, R in BO:
     d = R + 0.32                                      # tâm ghế cách tâm bàn
     for i in range(khach):
         phi = 2 * math.pi * i / khach + math.pi / khach * (khach % 4 == 2)   # lệch nửa nhịp để ghế không che chính giữa
-        X.nhan_ban(ghe, (d * math.cos(phi), d * math.sin(phi), 0), phi + math.pi / 2)   # mặt ghế (−y) quay vào bàn
+        q = phi - math.pi / 2                         # ghế mẫu có mặt hướng −y; quay q thì mặt hướng (sin q, −cos q) = −(cos φ, sin φ): vào tâm bàn
+        assert math.sin(q) * -math.cos(phi) + -math.cos(q) * -math.sin(phi) > 0.99, 'ghế phải quay mặt vào bàn'
+        X.nhan_ban(ghe, (d * math.cos(phi), d * math.sin(phi), 0), q)   # (bản 25/11 dùng φ + π/2: ghế quay lưng vào bàn, sửa 26/11)
     for o in ghe: bpy.data.objects.remove(o)          # bỏ ghế mẫu ở gốc
     m = X.may_anh(sc)
     ten = f'ban-tron-{khach}'

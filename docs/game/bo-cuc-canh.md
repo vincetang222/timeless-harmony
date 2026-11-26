@@ -17,6 +17,8 @@ Chủ dự án góp ý ngày 26/11: đồ trang trí chèn vào khung hình **kh
 | 7 | Phần Tiệc mà cặp đôi vẫn đứng ở cổng như lúc làm lễ | chưa có bàn cô dâu chú rể |
 | 8 | Ghế dự lễ xếp dày thành khối, đè nặng nửa dưới khung | xếp đủ 100 ghế trong khung, màu khung ghế đậm |
 | 9 | Sân nhà quê: bàn chắn lối vào cổng làng | vùng đặt bàn chưa có vùng cấm (lối, cổng, nhà) |
+| 10 | Bàn tròn: ghế quay lưng vào bàn (chủ dự án phát hiện 26/11) | `ban_tron_3d.py` xoay ghế φ + π/2 thay vì φ − π/2; bàn dài đúng nên không lộ khi soát |
+| 11 | Ghế phía sau của bàn xa đè lên lan can (chủ dự án phát hiện 26/11) | bàn ghế 3D vẽ chếch 15°, trong khi tranh nhìn bàn ở 12–24 m chỉ chếch 8–15° (bàn tròn vẽ tay đo được b/a ≈ 0,18 ≈ 10,4°, `tham-khao-thiet-ke-tiec.md` mục 4): bàn trông sâu hơn thật, chân ghế sau lên đúng đường chân lan can; lối dọc lan can chỉ chừa 1,2 m; hai hàng bách nằm trong vùng đặt bàn nên bàn đứng lẫn vào gốc cây |
 
 ## 2. Luật bố cục
 

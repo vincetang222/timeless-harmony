@@ -3,7 +3,7 @@
 #   - nền đêm (cỡ 1600, 900 và hình thẻ);
 #   - bộ bàn 3D: tranh, mặt nạ 3 lớp (đỏ = khăn, lục = đệm, lam = khung ghế; không nén mất dữ liệu), toạ độ khăn gói 12 bit vào RGB;
 #   - cận cảnh bàn Âu, Việt: tranh, mặt nạ (đỏ = khăn, lục = đĩa lót, lam = dao nĩa), toạ độ khăn.
-# Chạy: python3 xuat_lab.py <thư mục bản chơi> <thư mục nền đêm> <bàn tròn 3D> <bàn dài 3D> <cận cảnh 3D> <t14-xuat.png> [phần: nen,khung,ban,gan,vai,loa,ghe,xuyen,luong,hoaban]
+# Chạy: python3 xuat_lab.py <thư mục bản chơi> <thư mục nền đêm> <bàn tròn 3D> <bàn dài 3D> <cận cảnh 3D> <t14-xuat.png> [phần: nen,khung,ban,doi,gan,vai,loa,ghe,xuyen,luong,hoaban]
 #   - ô hoạ tiết vải (ren, kim sa, gấm) lặp liền mạch, để bản chơi trải lên khăn theo toạ độ khăn;
 # Ra: <bản chơi>/anh/..., <bản chơi>/anh/tt/..., số đo tt-lab.json (chép vào TT3 trong index.html), ảnh kiểm tra xuat-lab-*.jpg
 import sys, os, json, math
@@ -16,7 +16,7 @@ import khung_ma as K
 import trang_tri as T
 
 LAB, DEM, TRON, DAI, GAN, T14 = sys.argv[1:7]
-PHAN = set((sys.argv[7] if len(sys.argv) > 7 else 'nen,khung,ban,gan,vai,loa,ghe,xuyen,luong,hoaban').split(','))   # chạy riêng từng phần, ví dụ: khung,vai
+PHAN = set((sys.argv[7] if len(sys.argv) > 7 else 'nen,khung,ban,doi,gan,vai,loa,ghe,xuyen,luong,hoaban').split(','))   # chạy riêng từng phần, ví dụ: khung,vai
 ANH = os.path.join(LAB, 'anh'); TT = os.path.join(ANH, 'tt'); os.makedirs(TT, exist_ok=True)
 NEN_THE = (236, 240, 228)
 so = json.load(open('tt-lab.json')) if os.path.exists('tt-lab.json') else {}
@@ -169,6 +169,13 @@ ID_BAN = lambda idm: idm                                  # bàn: màu ID đã l
 for thu_muc, tep in (((TRON, 'ban-tron.json'), (DAI, 'ban-dai.json')) if 'ban' in PHAN else ()):
     for ten, m in json.load(open(os.path.join(thu_muc, tep))).items():
         so[ten] = xuat_bo(thu_muc, ten, m, ID_BAN, ten)
+        print(ten, so[ten]['w'], so[ten]['h'], so[ten]['kb'], 'KB', so[ten]['goc'])
+
+# bàn cô dâu chú rể (ban_doi_3d.py, 26/11): cùng cách xuất như bàn khách, không có hình thẻ; thư mục lấy từ biến DOI_3D
+if 'doi' in PHAN:
+    DD = os.environ['DOI_3D']
+    for ten, m in json.load(open(os.path.join(DD, 'ban-doi.json'))).items():
+        so[ten] = xuat_bo(DD, ten, m, ID_BAN, None)
         print(ten, so[ten]['w'], so[ten]['h'], so[ten]['kb'], 'KB', so[ten]['goc'])
 
 # cận cảnh: màu ID có màu pha (dao nĩa vàng, ly lục lam, khăn ăn tím) và ly trong suốt (độ đục 0,28) đè lên khăn, đĩa.

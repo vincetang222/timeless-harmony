@@ -1,7 +1,7 @@
 # Tự vẽ bằng 3D (0 lượt), ngày 25/11: bàn dài phủ khăn trắng chấm đất, ghế chiavari hai bên — thay T9.
 # Với 3D không cần ghép mô-đun: vẽ thẳng từng độ dài (8, 12, 20 khách), chạy ngang hoặc chạy chéo.
 # Toạ độ khăn (UV) = điểm trải phẳng trên mặt phẳng bàn, đơn vị mét, đưa về 0..1 theo cỡ ghi trong số đo (khan_uv_cao).
-# Chạy: <venv có bpy>/bin/python ban_dai_3d.py <thư mục ra>
+# Chạy: GOC_3D=10 <venv có bpy>/bin/python ban_dai_3d.py <thư mục ra>   (GOC_3D: độ chếch máy ảnh, xem xuong_3d.py)
 import sys, os, math, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import bpy
