@@ -67,12 +67,14 @@ Kết quả: khung hình thoáng, cổng và hồ không bị che, không còn h
 - **Màn LED:** Vườn Hồ không cho chọn màn lớn sau cổng (nút khoá); hai màn nhỏ đứng sát hàng bách, ngoài phần hồ, chân thấp 0,6 m. Sân nhà quê đặt trong lối dọc tường, ngoài lối vào cổng. Có màn thì loa đứng ngoài mép màn (Vườn Hồ: ra ngoài khung hình) để không che chữ. Cỡ màn giữ nguyên nên giá không đổi.
 - **Bàn cô dâu chú rể (bước C):** bàn 1,6 × 0,7 m dựng 3D, đặt ngay trước cặp đôi ở phần Tiệc, che từ thắt lưng xuống (chưa có hình nhân vật ngồi); khăn đổi theo khăn nền, ba khóm hoa của luống hoa (T15) ở mép trước, nhuộm theo tông hoa. Bàn dài giữa lối thì cặp đôi ngồi đầu bàn, không có bàn riêng. Có trên mặt bằng và bảng kê.
 - **Ghế dự lễ (bước D):** lối giữa 3 m, ghế cách nhau 0,6 m; bóng mềm dưới ghế, nhuộm theo nắng và mù dần như bàn. Sân ngắn thì mỗi hàng thêm ghế (5–8 mỗi bên) để không tràn ra ngoài: Sân nhà quê hết lưu ý "ghế ra ngoài vùng".
-- **Kiểm tự động (bước F):** trang thử có `window.thBoCuc()` trả mọi món đã đặt (khung trên hình, chỗ trên mặt bằng); bài thử chạy 5 mẫu × (thêm dây đèn, 50 và 200 khách, 5 kiểu bàn, 4 cách xếp ghế dự lễ) ở 1280 và 390, sáng và tối: 248 cảnh. Đã thử làm hỏng từng luật trên bản sao để chắc bài thử bắt được lỗi. Bài thử đã bắt một lỗi thật: loa trái ở Sân nhà quê đứng lên mép bàn sau.
+- **Kiểm tự động (bước F):** trang thử có `window.thBoCuc()` trả mọi món đã đặt (khung trên hình, chỗ trên mặt bằng); bài thử chạy cảnh mặc định (cả hai nơi, Lễ và Tiệc) và 5 mẫu × (thêm dây đèn, 50 và 200 khách, 6 kiểu bàn kể cả bàn dài vẽ tay, 4 cách xếp ghế dự lễ) ở 1280 và 390, sáng và tối: 280 cảnh, không lỗi. Đã thử làm hỏng từng luật trên bản sao để chắc bài thử bắt được lỗi. Bài thử đã bắt hai lỗi thật: loa trái ở Sân nhà quê đứng lên mép bàn sau; bàn dài xếp chéo ở Sân nhà quê có ghế sau chạm chân tường (bàn chéo sâu hơn chỗ được tính, đã sửa). Số đo nào không phải số hợp lệ cũng tính là lỗi. Chạy: `node ve/kiem_bo_cuc.js`.
 
 ## 5. Cần chủ dự án quyết
 
 1. ~~Hướng làm đẹp trong ảnh trước và sau có đúng ý không.~~ Chủ dự án duyệt 26/11 ("đúng hướng, làm tiếp các bước 2–6").
-2. Cảnh ngang tầm mắt chỉ vẽ những bàn nằm đẹp trong khung (đếm đủ trên mặt bằng; xem đủ ở cảnh nhìn từ cao T16). Điều này khác với yêu cầu trước đó "thấy toàn cảnh 100 bàn" ở cảnh ngang tầm mắt.
+2. ~~Cảnh ngang tầm mắt chỉ vẽ những bàn nằm đẹp trong khung (đếm đủ trên mặt bằng; xem đủ ở cảnh nhìn từ cao T16).~~ Chủ dự án duyệt cùng câu 1 ngày 26/11; thay cho yêu cầu trước đó "thấy toàn cảnh 100 bàn" ở cảnh ngang tầm mắt.
+
+**Thay đổi chủ dự án sẽ thấy dù không yêu cầu riêng (26/11):** nút "Màn lớn sau cổng" bị khoá ở Vườn Hồ, bản lưu cũ tự đổi sang hai màn (cả trong chương 4); ở Vườn Hồ, có màn LED thì loa đứng ngoài khung hình; mỗi mẫu đắt thêm 0,3–0,9 triệu (bàn cô dâu chú rể, dải hoa trước bàn, dây đèn thứ ba); sức chứa tối đa giảm: Vườn Hồ từ 24 xuống 22 bàn, Sân nhà quê từ 10 xuống 8 bàn 12 khách (lối dọc lan can, phông sau cặp đôi, lối vào cổng, cột đèn). Cân luật chương 4 (`can.js`): tổng chi tăng 0,3–1,1 triệu, kết cục không đổi.
 
 ## 6. Kiểm tự động (bước F)
 

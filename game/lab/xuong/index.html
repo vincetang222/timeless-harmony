@@ -560,7 +560,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     function cong(o) { if (o) for (var q in o) hq[q] += o[q]; }
     if (s.dd) { muc.push([d.ten + ', tiệc ' + KHACH + ' khách', d.gia]); cong(d.hq); }
     if (g) { muc.push(['Trang trí gói ' + g.ten, g.gia]); cong(g.hq); }
-    else if (s.tt === 'tk' && s.tkLop) { var Lk = Object.assign({}, s.tkLop, { noi: s.dd, khach: KHACH }), G = giaTT(Lk); muc.push(['Trang trí tự thiết kế' + (G.mau ? ' (theo mẫu có sẵn)' : ''), G.tong]); cong(hqTT(Lk)); }
+    else if (s.tt === 'tk' && s.tkLop) { var Lk = Object.assign({}, s.tkLop, { noi: s.dd, khach: KHACH }); if (Lk.led === 'sau' && Lk.noi === 'ho') Lk.led = 'hai'; var G = giaTT(Lk); /* Vườn Hồ không đặt màn lớn sau cổng, như xưởng */ muc.push(['Trang trí tự thiết kế' + (G.mau ? ' (theo mẫu có sẵn)' : ''), G.tong]); cong(hqTT(Lk)); }
     for (k in NGUOI) if (s.pv[k]) {
       if (s.huy === k) muc.push([NGUOI[k].ten + (s.kyQuy ? ' (huỷ, ký quỹ hoàn đủ)' : ' (huỷ, mất cọc 30%)'), s.kyQuy ? 0 : NGUOI[k].gia * 0.3]);
       else { muc.push([NGUOI[k].ten, NGUOI[k].gia]); cong(NGUOI[k].hq); }
@@ -1084,7 +1084,8 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     // cả bãi cỏ hai bên lối, trước và sau cặp đôi; chừa khoảng làm lễ quanh cổng (rộng 3,5 m mỗi bên, từ 2,5 m sau cổng tới 1,6 m trước cặp đôi)
     // hai lưới hàng: phía sau (từ lối dọc lan can tới ngang chỗ cặp đôi + 1,6 m) và phía trước (từ đó ra tới mép gần), để hàng đầu phía trước sát ngay khoảng làm lễ
     var cot = Math.max(0, Math.floor((nua + kh) / (w + kh))), le0 = A.le || 1.2, mat = A.cy + 1.6, cho = [], ys = [], y;
-    for (y = le0 + h / 2; y + h / 2 <= mat; y += h + kh) ys.push(y);
+    var h0 = g.cheo ? (g.dai + 0.2) * Math.sin(a) + (g.rong + 1.1) * Math.cos(a) : h;   // bàn xếp chéo sâu hơn h (các hàng lồng vào nhau kiểu xương cá), hàng sát lan can, tường tính theo độ sâu thật
+    for (y = le0 + h0 / 2; y + h / 2 <= mat; y += h + kh) ys.push(y);
     for (y = mat + h / 2; y + h / 2 <= A.sau - 0.5; y += h + kh) ys.push(y);
     ys.forEach(function (y) { for (var c = 0; c < cot; c++) for (var s = 0; s < 2; s++) {
       var x = A.rong / 2 + (s ? 1 : -1) * (A.loi / 2 + 0.25 + w / 2 + c * (w + kh)), le = Math.abs(x - A.rong / 2) - w / 2;
@@ -1535,7 +1536,8 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     if (!laLop()) return null; var L = lopHien(), V = LOP[L.noi], A = V.mb, w = world.clientWidth, h = world.clientHeight, b = boBan(L), m = L.ban && TT[L.ban], ra = { noi: L.noi, phan: L.phan, w: w, h: h, mon: [], day: [], ghe: [] };
     var sau = chieu(V, 0, 0)[1];   // đường mép xa (chân lan can, chân tường) trên hình, % khung
     ra.sau = sau; ra.truc = [V.X - 9, 50, V.X + 9, 100]; ra.phong = V.phongHinh || null; ra.canhDep = !!V.canhDep; ra.cam = A.cam; ra.le = A.le || 1.2; ra.cy = A.cy;
-    viTriBan(L, w, h).forEach(function (v) { var mm = v.m, sinG = gocBan(mm)[1], rr = mm.hinh === 'tron' ? mm.R + 0.52 : (mm.rong / 2 + 0.52), dat = b.ds.filter(function (t) { var c = chieu(V, t[0] - A.rong / 2, t[1]); return Math.abs(c[0] / 100 * w - v.cx) < 1 && Math.abs(c[2] - v.d) < 0.01; })[0];
+    viTriBan(L, w, h).forEach(function (v) { var mm = v.m, g = b.g, sinG = mm.loai === '3d' ? gocBan(mm)[1] : 0.18, c28 = 28 * Math.PI / 180, rr = g.hinh === 'tron' ? g.R + 0.52 : g.cheo ? (g.dai / 2 + 0.2) * Math.sin(c28) + (g.rong / 2 + 0.52) * Math.cos(c28) : g.rong / 2 + 0.52,   // bàn vẽ tay: mặt bàn dẹt b/a ≈ 0,18
+      dat = b.ds.filter(function (t) { var c = chieu(V, t[0] - A.rong / 2, t[1]); return Math.abs(c[0] / 100 * w - v.cx) < 1 && Math.abs(c[2] - v.d) < 0.01; })[0];
       ra.mon.push({ loai: 'ban', x: v.px / w * 100, y: v.py / h * 100, w: v.rg / w * 100, h: v.cao / h * 100, d: v.d, chanSau: (v.py + mm.ay * v.cao - rr * sinG * v.s) / h * 100, dat: dat ? [dat[0] - A.rong / 2, dat[1]] : null, g: b.g }); });
     var dd = viTriDoi(L, w, h); if (dd) ra.mon.push({ loai: 'doi', x: dd.px / w * 100, y: dd.py / h * 100, w: dd.rg / w * 100, h: dd.cao / h * 100, d: dd.d });
     cotDen(L, w, h).forEach(function (c) { ra.mon.push({ loai: 'cot', x: (c.x - 0.3 * c.s) / w * 100, y: (c.y - c.cao * c.s) / h * 100, w: 0.6 * c.s / w * 100, h: c.cao * c.s / h * 100, d: c.d }); });
@@ -1878,7 +1880,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     tieuDe(dau, 'Nơi tổ chức', 1);
     goiY(than, [['nha', 'Nhà trai: về quê'], ['nha', 'Nhà gái: cảnh đẹp']]);
     var cap = luoiThe(than, { id: 'noi', ds: Object.keys(DD).map(function (k) { return { k: k, ten: DD[k].ten, gia: DD[k].gia, hinh: anhThe(k, 'du'), nhan: [DD[k].que ? 'que' : 'canh'] }; }),
-      chon: function (k) { return st.dd === k; }, fn: function (k) { chonCanh(function () { st.dd = k; if (st.tt === 'tk' && k !== 'ho' && k !== 'langque') st.tt = null; if (st.tkLop) st.tkLop.noi = k; }); }, loc: [['que', 'Ở quê'], ['canh', 'Cảnh đẹp']] });
+      chon: function (k) { return st.dd === k; }, fn: function (k) { chonCanh(function () { st.dd = k; if (st.tt === 'tk' && k !== 'ho' && k !== 'langque') st.tt = null; if (st.tkLop) { st.tkLop.noi = k; if (k === 'ho' && st.tkLop.led === 'sau') st.tkLop.led = 'hai'; } }); }, loc: [['que', 'Ở quê'], ['canh', 'Cảnh đẹp']] });
     var ct = el('div', 'chi-tiet dinh'); than.appendChild(ct);
     chan.appendChild(nutBam('Cặp đôi', function () { sang('doi'); }, 'phu', 'trai'));
     var b = nutBam('Trang trí', function () { sang('goi'); }, 'to', null, 'phai'); chan.appendChild(b);

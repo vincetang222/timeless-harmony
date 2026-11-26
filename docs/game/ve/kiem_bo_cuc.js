@@ -1,4 +1,4 @@
-// Kiểm bố cục tự động (bo-cuc-canh.md mục 6), 26/11: mọi mẫu, hai nơi, Lễ và Tiệc, 1280 và 390, sáng và tối.
+// Kiểm bố cục tự động (bo-cuc-canh.md mục 6), 26/11: cảnh mặc định và mọi mẫu, hai nơi, Lễ và Tiệc, 1280 và 390, sáng và tối.
 // Đọc window.thBoCuc() của trang thử, báo lỗi khi món che trục nhìn, đứng vào vùng cấm, bị mép cắt, ghế đè lan can, dây đèn thiếu chỗ bám hoặc vắt qua phông.
 // Chạy: phục vụ game/lab/xuong (python3 -m http.server 8772), rồi node kiem_bo_cuc.js [địa chỉ trang, mặc định http://localhost:8772/index.html]
 const { chromium } = require('playwright');
@@ -9,11 +9,12 @@ function soat(r, ten) {
   const loi = [];
   r.mon.forEach(m => {
     const b = hop(m);
+    if (![m.x, m.y, m.w, m.h].concat(m.loai === 'ban' ? [m.chanSau, m.d] : []).every(Number.isFinite)) loi.push(`${m.loai}: số đo không hợp lệ (${JSON.stringify(m).slice(0, 120)})`);
     if (m.loai === 'ban') {
       if (giao(b, [r.truc[0] + 1, r.truc[1], r.truc[2] - 1, r.truc[3]])) loi.push(`bàn che trục nhìn (${b.map(v => v.toFixed(1))})`);
       if (b[0] < -0.12 * m.w || b[2] > 100 + 0.12 * m.w) loi.push(`bàn bị mép khung cắt quá 12% (${b[0].toFixed(1)}–${b[2].toFixed(1)})`);
       if (m.chanSau < r.sau + 0.4) loi.push(`chân ghế sau (${m.chanSau.toFixed(2)}%) chạm hoặc vượt chân lan can, tường (${r.sau.toFixed(2)}%)`);
-      if (m.dat) { const g = m.g, hw = g.hinh === 'tron' ? g.R + 0.55 : 0, hh = hw; if (hw && dungCam(r.cam.filter(c => c[0] !== 'cot' || true), m.dat[0] - hw, m.dat[1] - hh, m.dat[0] + hw, m.dat[1] + hh)) loi.push(`bàn đứng vào vùng cấm ở (${m.dat.map(v => v.toFixed(1))})`);
+      if (m.dat) { const g = m.g, a = 28 * Math.PI / 180, hw = g.hinh === 'tron' ? g.R + 0.55 : g.cheo ? ((g.dai + 0.2) * Math.cos(a) + (g.rong + 1.1) * Math.sin(a)) / 2 : (g.dai + 0.3) / 2, hh = g.hinh === 'tron' ? hw : g.cheo ? (g.rong + 1.35) / 2 : (g.rong + 1.1) / 2;   // khung chiếm chỗ như boBan if (hw && dungCam(r.cam.filter(c => c[0] !== 'cot' || true), m.dat[0] - hw, m.dat[1] - hh, m.dat[0] + hw, m.dat[1] + hh)) loi.push(`bàn đứng vào vùng cấm ở (${m.dat.map(v => v.toFixed(1))})`);
         if (hw && m.dat[1] - hh < r.le - 1e-6) loi.push('bàn lấn lối đi dọc lan can, tường'); }
       else loi.push('không tìm được chỗ của bàn trên mặt bằng');
     }
@@ -38,11 +39,12 @@ function soat(r, ten) {
     const chip = async (g, c) => { await N(g).locator('.loc button:visible', { hasText: c }).first().click(); await pg.waitForTimeout(150); };
     const the = async (g, c) => { await N(g).locator('.o-vuong', { hasText: c }).first().click(); await pg.waitForTimeout(150); };
     const kiem = async n => { const r = await pg.evaluate(() => window.thBoCuc()); so++; loi.push(...soat(r, `${ten} ${n}`)); return r; };
+    await kiem('mặc định'); await chip('Phần', 'Lễ'); await kiem('mặc định · lễ'); await chip('Phần', 'Tiệc'); await the('Nơi', 'Sân nhà quê'); await kiem('mặc định · Sân nhà quê'); await the('Nơi', 'Vườn Hồ');
     for (const m of ['Vườn trắng xanh', 'Đêm kim sa', 'Bàn dài gia đình', 'Sân quê đỏ thắm', 'Mộc mạc']) {
       await N('Mẫu có sẵn').locator('button', { hasText: m }).click(); await pg.waitForTimeout(300); await kiem(m);
       if (!(await N('Ánh sáng').locator('button', { hasText: 'Dây đèn' }).getAttribute('aria-pressed') === 'true')) { await chip('Ánh sáng', 'Dây đèn'); await kiem(m + ' + dây đèn'); }
       for (const k of ['50', '200']) { await chip('Số khách', k); await kiem(m + ' ' + k + ' khách'); } await chip('Số khách', '100');
-      for (const ban of ['Tròn 6 khách', 'Tròn 12 khách', 'Dài 8 khách', 'Dài 20 khách', 'Dài xếp chéo']) { await the('Bàn tiệc', ban); await kiem(m + ' · ' + ban); }
+      for (const ban of ['Tròn 6 khách', 'Tròn 12 khách', 'Dài 8 khách', 'Dài 20 khách', 'Dài xếp chéo', 'Dài gỗ vẽ tay']) { await the('Bàn tiệc', ban); await kiem(m + ' · ' + ban); }
       await chip('Phần', 'Lễ'); for (const x of ['Thẳng hàng', 'Hình quạt', 'Khối chéo', 'Vòng tròn']) { await chip('Xếp ghế dự lễ', x); await kiem(m + ' · lễ ' + x); } await chip('Phần', 'Tiệc');
     }
     const r = await pg.evaluate(() => ({ cuon: document.documentElement.scrollWidth > window.innerWidth }));
