@@ -23,8 +23,8 @@ Người chơi của game là cặp đôi, không phải kỹ thuật viên sự
 | Thư viện mẫu | "Mẫu có sẵn": 5 bộ, một lần bấm đặt cả cổng, hoa, bàn, khăn, ghế. Đây là hạt giống của 21 bộ phong cách (`bang-ve.md` mục 3.9). | Đã làm (26/11) |
 | Cấu hình của tôi | Lưu vài phương án rồi đặt cạnh nhau để so (`bang-ve.md` mục 9). | Chưa làm |
 | Chạy show 30 giây | "Xem thử buổi lễ": chạy nhanh dòng thời gian tiết mục trên chính cảnh đã trang trí. Ngày chuyển dần sang đêm, có cánh hoa, pháo giấy, đèn (hiệu ứng mã ở `bang-ve.md` mục 5), dải tiết mục chạy bên dưới. Cần màn chương trình (`spec.md` mục 4) có trước. | Chưa làm |
-| Ánh sáng, âm thanh, màn LED | Thành hạng mục thuê: dây đèn, đèn rọi, màn LED có tên cặp đôi, loa. Tiệc tối thiếu đèn thì có lưu ý. | Chưa làm |
-| Điện | Không hiện số kW. Chỉ thành luật chơi: Sân nhà quê, Vườn Sông Quê thuê nhiều đèn và màn LED thì phải thuê thêm máy phát (thêm tiền, thêm một lưu ý). | Chưa làm |
+| Ánh sáng, âm thanh, màn LED | Ánh sáng (vẽ bằng mã): dây đèn bóng tròn, đom đóm quấn cổng, 4 đèn rọi 5 màu, nến trên bàn; ban đêm có đèn thì đồ trang trí sáng ấm lên. Màn LED (mã): hai màn hai bên hoặc một màn lớn sau cổng, chiếu tên hai bạn, lời chào chạy chữ, pháo hoa hoặc hoa rơi. Âm thanh (dựng 3D, `ve/loa_3d.py`): loa kéo, hai loa đứng, loa trên cột cắm vào sub. | Đã làm (26/11) |
+| Điện | Không hiện thành thanh số. Bảng kê ghi điện ước lượng và nguồn tại chỗ (số tạm: Vườn Hồ 15 kW, Sân nhà quê 4 kW); vượt thì có lưu ý và thêm dòng máy phát. Lưu ý khác: tiệc tối thiếu đèn, chưa có loa, loa kéo không đủ cho 100 khách, đèn rọi ban ngày không rõ, màn lớn sau cổng che cảnh hồ. | Đã làm (26/11) |
 | Kích thước, dời thiết bị | Kéo bàn trên mặt bằng, chọn trong 13 cách xếp (`bang-ve.md` mục 3.4). | Chưa làm |
 | Cảnh 3D xoay tự do, AR, khung truss, kết cấu | Không làm: nặng máy, không giúp cặp đôi quyết. Game giữ tranh vẽ tay, thêm cận cảnh và mặt bằng. | Bỏ |
 
@@ -32,4 +32,5 @@ Người chơi của game là cặp đôi, không phải kỹ thuật viên sự
 
 - Vùng đặt bàn (Vườn Hồ 30 × 22 m, lối giữa 3 m; Sân nhà quê 24 × 16 m, lối giữa 2 m) là **ước lượng trên tranh, chưa đo**. Trang ghi rõ "ước lượng". Khi dựng bộ xếp bàn thật thì đo lại từng nơi theo thước phối cảnh.
 - Cách xếp hiện chỉ có một kiểu cho mỗi loại bàn: bàn tròn theo lưới, bàn dài thành hàng, bàn chéo kiểu xương cá. Khoảng cách tính từ chỗ ghế và lối đi tối thiểu (số tạm của bản thử).
+- Điện mỗi món là ước lượng của bản thử: màn LED 0,3 kW mỗi m², hai loa đứng 1 kW, loa và sub 2,6 kW, dây đèn 0,15 kW, đèn rọi 0,24 kW. Cần thay bằng thông số của nhà cung cấp.
 - Giá trong bảng kê chỉ dùng số tạm đã có. Không thêm giá mới cho khăn, ghế, đồ bàn khi chưa có báo giá.

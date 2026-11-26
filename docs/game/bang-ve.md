@@ -758,7 +758,7 @@ Bốn tấm thử cho ghế và màn cận cảnh, chạy đầu tháng 12, trư
 - Dựng 21 bộ phong cách từ những món đã có, để bộ chọn có dữ liệu chạy thử.
 - Dựng bộ xếp bàn bằng mã: 13 cách xếp, tính số bàn theo số khách, đo vùng đặt bàn và sức chứa của Vườn Hồ và Sân nhà quê, sơ đồ nhìn từ trên xuống. Chạy thử trước với bàn dài đã có.
 - Chế độ so sánh hai phương án đặt cạnh nhau (cùng cảnh, hai bộ lựa chọn).
-- Theo phần mềm thiết kế tiệc chủ dự án gửi 26/11 (`tham-khao-thiet-ke-tiec.md`): xem thử buổi lễ 30 giây theo dòng thời gian tiết mục; hạng mục ánh sáng, âm thanh, màn LED; máy phát ở nơi quê; kéo bàn trên mặt bằng.
+- Theo phần mềm thiết kế tiệc chủ dự án gửi 26/11 (`tham-khao-thiet-ke-tiec.md`): xem thử buổi lễ 30 giây theo dòng thời gian tiết mục; kéo bàn trên mặt bằng.
 - Ghế theo lớp còn thiếu đai và nơ: chờ T10 (nơ vẽ bằng mã trông như hình dán).
 - Cận cảnh hiện là một hình cho cả chỗ ngồi: muốn đổi từng món (ly, khăn ăn, thiệp) thì vẽ mỗi món một lớp cùng máy ảnh.
 - Ảnh toạ độ khăn khá nặng (190–540 KB mỗi bộ, chỉ tải khi chọn hoạ tiết hoặc khăn phủ): thử giảm còn nửa cỡ rồi nội suy.
@@ -766,6 +766,8 @@ Bốn tấm thử cho ghế và màn cận cảnh, chạy đầu tháng 12, trư
 Đã làm (26/11), 0 lượt: màn thử trang trí theo lớp có đủ đồ tự vẽ. Cổng: cổng tròn vẽ tay và 6 khung bằng mã (4 màu khung), mỗi khung gắn sẵn cụm hoa Canva T14 (bật, tắt; nhuộm 6 tông qua mặt nạ cánh hoa riêng cho mẫu đơn hồng). Nút ban ngày, ban đêm cho cả hai nơi. Bàn: bàn dài vẽ tay và 7 bộ 3D (tròn 6, 10, 12; dài 8, 12, 20; dài xếp chéo). Khăn nền và khăn phủ chọn hình (vuông, vuông chéo, tròn ngắn, chạy bàn; bàn dài: chạy bàn, chạy ngang, phủ ngắn), chất (trơn, ren, kim sa, gấm) và 10 màu; đổi màu đệm, khung ghế. "Xem gần" mở cận cảnh kiểu Âu hoặc kiểu Việt, cùng khăn với bàn, đổi màu đĩa lót (đĩa kê) và dao nĩa (đũa). Ảnh toạ độ khăn gói 12 bit vào RGB, lưu không nén mất dữ liệu; trang tự kiểm một điểm mẫu mỗi ảnh (đúng cả 9 bộ). Mỗi lần ghép một món dưới 80 ms ở bàn lớn nhất. Xuất bằng `ve/xuat_lab.py`.
 
 Đã làm (26/11, theo `tham-khao-thiet-ke-tiec.md`), 0 lượt: góc nhìn "Mặt bằng" (vùng đặt bàn ước lượng, bàn tự xếp đủ số khách, báo thiếu chỗ), mục "Lưu ý" có số đếm ở đầu bảng, mục "Bảng kê" (số lượng, cỡ khăn, khoảng tiền của những món đã có số tạm), 5 "Mẫu có sẵn".
+
+Đã làm (26/11), 0 lượt: ánh sáng (dây đèn, đom đóm quấn cổng, đèn rọi 5 màu, nến bàn), màn LED (hai màn hoặc một màn lớn, 4 nội dung), âm thanh (3 kiểu loa dựng 3D), điện ước lượng và máy phát; chi tiết ở `tham-khao-thiet-ke-tiec.md`.
 - Dựng màn chương trình: dòng thời gian tiết mục theo `spec.md` mục 4. Màn này phải có trước khi vẽ nhiều người biểu diễn; nếu không, hình tiết mục chưa có chỗ dùng. Vì vậy tháng 12 chỉ vẽ trước vài tiết mục mỗi nhóm.
 
 ## 10. Cần chủ dự án quyết

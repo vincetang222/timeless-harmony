@@ -3,7 +3,7 @@
 #   - nền đêm (cỡ 1600, 900 và hình thẻ);
 #   - bộ bàn 3D: tranh, mặt nạ 3 lớp (đỏ = khăn, lục = đệm, lam = khung ghế; không nén mất dữ liệu), toạ độ khăn gói 12 bit vào RGB;
 #   - cận cảnh bàn Âu, Việt: tranh, mặt nạ (đỏ = khăn, lục = đĩa lót, lam = dao nĩa), toạ độ khăn.
-# Chạy: python3 xuat_lab.py <thư mục bản chơi> <thư mục nền đêm> <bàn tròn 3D> <bàn dài 3D> <cận cảnh 3D> <t14-xuat.png> [phần: nen,khung,ban,gan,vai]
+# Chạy: python3 xuat_lab.py <thư mục bản chơi> <thư mục nền đêm> <bàn tròn 3D> <bàn dài 3D> <cận cảnh 3D> <t14-xuat.png> [phần: nen,khung,ban,gan,vai,loa]
 #   - ô hoạ tiết vải (ren, kim sa, gấm) lặp liền mạch, để bản chơi trải lên khăn theo toạ độ khăn;
 # Ra: <bản chơi>/anh/..., <bản chơi>/anh/tt/..., số đo tt-lab.json (chép vào TT3 trong index.html), ảnh kiểm tra xuat-lab-*.jpg
 import sys, os, json, math
@@ -16,7 +16,7 @@ import khung_ma as K
 import trang_tri as T
 
 LAB, DEM, TRON, DAI, GAN, T14 = sys.argv[1:7]
-PHAN = set((sys.argv[7] if len(sys.argv) > 7 else 'nen,khung,ban,gan,vai').split(','))   # chạy riêng từng phần, ví dụ: khung,vai
+PHAN = set((sys.argv[7] if len(sys.argv) > 7 else 'nen,khung,ban,gan,vai,loa').split(','))   # chạy riêng từng phần, ví dụ: khung,vai
 ANH = os.path.join(LAB, 'anh'); TT = os.path.join(ANH, 'tt'); os.makedirs(TT, exist_ok=True)
 NEN_THE = (236, 240, 228)
 so = json.load(open('tt-lab.json')) if os.path.exists('tt-lab.json') else {}
@@ -189,6 +189,13 @@ for kieu in (('au', 'viet') if 'gan' in PHAN else ()):
     im = Image.open(os.path.join(GAN, ten + '.png')); m.update(w=im.size[0], h=im.size[1])
     so[ten] = xuat_bo(GAN, ten, m, ID_GAN, ten)
     print(ten, so[ten]['kb'], 'KB', so[ten]['goc'])
+
+# ---------- 4b. Loa (loa_3d.py): tranh cùng thước với bàn; thư mục loa lấy từ biến LOA_3D hoặc <bàn tròn>/../loa ----------
+if 'loa' in PHAN:
+    LOA = os.environ.get('LOA_3D') or os.path.join(os.path.dirname(os.path.abspath(TRON)), 'loa')
+    for ten, m in json.load(open(os.path.join(LOA, 'loa.json'))).items():
+        im = Image.open(os.path.join(LOA, ten + '.png')).convert('RGBA'); kb = luu_webp(im, ten + '.webp')
+        m = dict(m); m.pop('mo', None); m['kb'] = kb; so[ten] = m; print(ten, m)
 
 # ---------- 5. Ô hoạ tiết vải: lặp liền mạch (chu kỳ hoạ tiết chia hết cạnh ô), 512 px và bản 128 px cho bàn nhìn xa ----------
 # Kênh: R = tỉ lệ pha màu thứ hai (ren trắng, hoa gấm), G = độ sáng hạt (÷1,3), B = điểm loé. Cùng công thức với hoa_van.py.

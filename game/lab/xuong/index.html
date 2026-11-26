@@ -125,6 +125,7 @@ em { font-style: italic; font-family: var(--tieu-de); background: var(--anh-vang
 .lop img, .lop canvas { display: block; width: 100%; height: 100%; max-width: none; }
 .lop.lat canvas { transform: scaleX(-1); }
 .lop.an { opacity: 0; }
+.den { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .can-canh { position: absolute; inset: 0; background: var(--the); }
 .can-canh canvas { display: block; width: 100%; height: 100%; object-fit: cover; }
 .can-canh.an { opacity: 0; visibility: hidden; }
@@ -375,13 +376,17 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
       <div class="world" id="world">
         <img class="nen hien" id="nen-a" alt="">
         <img class="nen" id="nen-b" alt="">
+        <canvas class="den" id="den-sau" aria-hidden="true"></canvas>
         <div class="lop an" id="tt-cong"><canvas aria-hidden="true"></canvas></div>
+        <div class="lop an lat" id="tt-loa-t"><canvas aria-hidden="true"></canvas></div>
+        <div class="lop an" id="tt-loa-p"><canvas aria-hidden="true"></canvas></div>
         <div class="lop an" id="ban-nhac"><img src="anh/ban-nhac-b.webp" alt=""></div>
         <div class="lop an" id="mc"><img src="anh/mc-b.webp" alt=""></div>
         <canvas id="c-doi" role="img" aria-label="Cô dâu và chú rể"></canvas>
         <div class="lop an lat" id="tt-ban-t"><canvas aria-hidden="true"></canvas></div>
         <div class="lop an" id="tt-ban-p"><canvas aria-hidden="true"></canvas></div>
         <div class="lop an" id="tho-anh"><img src="anh/tho-anh-b.webp" alt=""></div>
+        <canvas class="den" id="den-truoc" aria-hidden="true"></canvas>
       </div>
       <div class="can-canh an" id="can-canh" aria-hidden="true"><canvas role="img" aria-label="Cận cảnh một chỗ ngồi trên bàn tiệc"></canvas></div>
       <div class="can-canh an" id="mat-bang" aria-hidden="true"><canvas role="img" aria-label="Mặt bằng nhìn từ trên: cổng, lối giữa và các bàn"></canvas></div>
@@ -881,7 +886,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
      Tấm vẽ tay: hai nền trống, cổng tròn, bàn dài gỗ. Đồ tự vẽ, không tốn lượt: khung cổng bằng mã (cụm hoa Canva gắn sẵn theo từng khung), nền đêm bằng mã,
      bàn tròn, bàn dài và cận cảnh một chỗ ngồi dựng 3D. Mã đặt món vào điểm neo theo thước phối cảnh của nhân vật, lật gương bàn bên trái, nhuộm qua mặt nạ,
      trải khăn nhiều lớp theo toạ độ khăn của 3D. Số đo do docs/game/ve/trang_tri.py và xuat_lab.py in ra. */
-  var SO3 = /*SO3*/{"khung-luc-giac":{"w":725,"h":645,"pxm":188.86,"ax":0.4945,"ay":0.975,"hoa_goc":[249.0,235.0,230.0]},"khung-tron":{"w":725,"h":669,"pxm":188.86,"ax":0.4945,"ay":0.9759,"hoa_goc":[249.0,235.0,230.0]},"khung-tam-giac":{"w":774,"h":620,"pxm":188.86,"ax":0.4386,"ay":0.974,"hoa_goc":[249.0,235.0,230.0]},"khung-vom":{"w":727,"h":586,"pxm":188.86,"ax":0.4285,"ay":0.9725,"hoa_goc":[249.0,235.0,230.0]},"khung-vom-nhon":{"w":708,"h":670,"pxm":188.86,"ax":0.4266,"ay":0.976,"hoa_goc":[249.0,235.0,230.0]},"khung-chu-nhat":{"w":811,"h":620,"pxm":188.86,"ax":0.4753,"ay":0.974,"hoa_goc":[249.0,235.0,230.0]},"ban-tron-6":{"w":598,"h":407,"pxm":260,"ax":0.5,"ay":0.7776,"R":0.6,"khach":6,"khan_uv_Rm":2.2667,"goc":[[255.0,255.0,255.0],[255.0,255.0,255.0],[240.0,229.0,203.0]],"mau":[239,222,[98,199,7]]},"ban-tron-10":{"w":775,"h":447,"pxm":260,"ax":0.5,"ay":0.7525,"R":0.9,"khach":10,"khan_uv_Rm":1.8444,"goc":[[255.0,255.0,252.0],[255.0,255.0,255.0],[237.0,226.0,199.0]],"mau":[336,227,[111,200,242]]},"ban-tron-12":{"w":829,"h":461,"pxm":260,"ax":0.5,"ay":0.7452,"R":1.0,"khach":12,"khan_uv_Rm":1.76,"goc":[[255.0,252.0,240.0],[255.0,255.0,255.0],[239.5,228.0,202.0]],"mau":[181,233,[48,166,167]]},"ban-dai-8":{"w":795,"h":424,"pxm":260,"ax":0.4988,"ay":0.8023,"dai":2.78,"rong":0.9,"khach":8,"xoay_do":0,"khan_uv_cao":2.25,"goc":[[255.0,255.0,255.0],[255.0,255.0,255.0],[248.0,238.0,211.0]],"mau":[607,238,[174,167,3]]},"ban-dai-12":{"w":1119,"h":424,"pxm":260,"ax":0.5006,"ay":0.8023,"dai":4.02,"rong":0.9,"khach":12,"xoay_do":0,"khan_uv_cao":2.87,"goc":[[255.0,255.0,255.0],[255.0,255.0,255.0],[248.0,238.0,211.0]],"mau":[609,237,[136,158,80]]},"ban-dai-20":{"w":1764,"h":424,"pxm":260,"ax":0.5001,"ay":0.8023,"dai":6.5,"rong":0.9,"khach":20,"xoay_do":0,"khan_uv_cao":4.11,"goc":[[255.0,255.0,255.0],[255.0,255.0,255.0],[248.0,238.0,211.0]],"mau":[798,236,[111,139,179]]},"ban-dai-12-cheo":{"w":1122,"h":518,"pxm":260,"ax":0.5005,"ay":0.7473,"dai":4.02,"rong":0.9,"khach":12,"xoay_do":-28,"khan_uv_cao":2.87,"goc":[[255.0,255.0,255.0],[255.0,255.0,255.0],[250.0,239.0,212.0]],"mau":[521,281,[130,156,170]]},"can-canh-au":{"Rm":1.8444,"R":0.9,"w":1280,"h":860,"goc":[[252.0,250.0,240.0],[170.0,154.0,110.0],[177.0,166.0,128.0]],"mau":[1137,516,[148,182,211]]},"can-canh-viet":{"Rm":1.8444,"R":0.9,"w":1280,"h":860,"goc":[[251.0,250.0,240.0],[170.0,154.0,108.0],[196.0,183.0,142.0]],"mau":[1220,411,[153,175,235]]},"vai":{"ren":{"met":0.5,"n":512},"kimsa":{"met":0.504,"n":512},"gam":{"met":0.44,"n":512}}}/*HET*/;
+  var SO3 = /*SO3*/{"khung-luc-giac":{"w":725,"h":645,"pxm":188.86,"ax":0.4945,"ay":0.975,"hoa_goc":[249.0,235.0,230.0]},"khung-tron":{"w":725,"h":669,"pxm":188.86,"ax":0.4945,"ay":0.9759,"hoa_goc":[249.0,235.0,230.0]},"khung-tam-giac":{"w":774,"h":620,"pxm":188.86,"ax":0.4386,"ay":0.974,"hoa_goc":[249.0,235.0,230.0]},"khung-vom":{"w":727,"h":586,"pxm":188.86,"ax":0.4285,"ay":0.9725,"hoa_goc":[249.0,235.0,230.0]},"khung-vom-nhon":{"w":708,"h":670,"pxm":188.86,"ax":0.4266,"ay":0.976,"hoa_goc":[249.0,235.0,230.0]},"khung-chu-nhat":{"w":811,"h":620,"pxm":188.86,"ax":0.4753,"ay":0.974,"hoa_goc":[249.0,235.0,230.0]},"ban-tron-6":{"w":598,"h":407,"pxm":260,"ax":0.5,"ay":0.7776,"R":0.6,"khach":6,"khan_uv_Rm":2.2667,"goc":[[255.0,255.0,255.0],[255.0,255.0,255.0],[240.0,229.0,203.0]],"mau":[239,222,[98,199,7]]},"ban-tron-10":{"w":775,"h":447,"pxm":260,"ax":0.5,"ay":0.7525,"R":0.9,"khach":10,"khan_uv_Rm":1.8444,"goc":[[255.0,255.0,252.0],[255.0,255.0,255.0],[237.0,226.0,199.0]],"mau":[336,227,[111,200,242]]},"ban-tron-12":{"w":829,"h":461,"pxm":260,"ax":0.5,"ay":0.7452,"R":1.0,"khach":12,"khan_uv_Rm":1.76,"goc":[[255.0,252.0,240.0],[255.0,255.0,255.0],[239.5,228.0,202.0]],"mau":[181,233,[48,166,167]]},"ban-dai-8":{"w":795,"h":424,"pxm":260,"ax":0.4988,"ay":0.8023,"dai":2.78,"rong":0.9,"khach":8,"xoay_do":0,"khan_uv_cao":2.25,"goc":[[255.0,255.0,255.0],[255.0,255.0,255.0],[248.0,238.0,211.0]],"mau":[607,238,[174,167,3]]},"ban-dai-12":{"w":1119,"h":424,"pxm":260,"ax":0.5006,"ay":0.8023,"dai":4.02,"rong":0.9,"khach":12,"xoay_do":0,"khan_uv_cao":2.87,"goc":[[255.0,255.0,255.0],[255.0,255.0,255.0],[248.0,238.0,211.0]],"mau":[609,237,[136,158,80]]},"ban-dai-20":{"w":1764,"h":424,"pxm":260,"ax":0.5001,"ay":0.8023,"dai":6.5,"rong":0.9,"khach":20,"xoay_do":0,"khan_uv_cao":4.11,"goc":[[255.0,255.0,255.0],[255.0,255.0,255.0],[248.0,238.0,211.0]],"mau":[798,236,[111,139,179]]},"ban-dai-12-cheo":{"w":1122,"h":518,"pxm":260,"ax":0.5005,"ay":0.7473,"dai":4.02,"rong":0.9,"khach":12,"xoay_do":-28,"khan_uv_cao":2.87,"goc":[[255.0,255.0,255.0],[255.0,255.0,255.0],[250.0,239.0,212.0]],"mau":[521,281,[130,156,170]]},"can-canh-au":{"Rm":1.8444,"R":0.9,"w":1280,"h":860,"goc":[[252.0,250.0,240.0],[170.0,154.0,110.0],[177.0,166.0,128.0]],"mau":[1137,516,[148,182,211]]},"can-canh-viet":{"Rm":1.8444,"R":0.9,"w":1280,"h":860,"goc":[[251.0,250.0,240.0],[170.0,154.0,108.0],[196.0,183.0,142.0]],"mau":[1220,411,[153,175,235]]},"vai":{"ren":{"met":0.5,"n":512},"kimsa":{"met":0.504,"n":512},"gam":{"met":0.44,"n":512}},"loa-keo":{"w":146,"h":310,"pxm":260,"ax":0.5,"ay":0.9627},"loa-chan":{"w":284,"h":577,"pxm":260,"ax":0.5,"ay":0.9406},"loa-sub":{"w":177,"h":566,"pxm":260,"ax":0.5,"ay":0.9368}}/*HET*/;
   var TT = {
     'cong-tron': { ten: 'Cổng tròn vẽ tay', loai: 've', f: 'anh/tt/cong-tron.webp', mn: 'anh/tt/cong-tron-mn.webp', the: 'anh/tt/t-cong-tron.webp', w: 760, h: 676, pxm: 180.17, ax: 0.5571, ay: 0.9088, goc: [250, 246, 232] },
     'ban-dai': { ten: 'Dài gỗ vẽ tay', loai: 've', f: 'anh/tt/ban-dai.webp', mn: 'anh/tt/ban-dai-mn.webp', the: 'anh/tt/t-ban-dai.webp', w: 898, h: 447, pxm: 292.89, ax: 0.5, ay: 0.8991, goc: [246, 234, 204] }
@@ -897,8 +902,8 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
   // sang: hệ số chỉnh sáng món rời theo ánh sáng của nơi đó so với Vườn Hồ; sangDem: ban đêm (dem_ma.py đo trên lối đi, nhân thêm sang của nơi đó).
   // mb: vùng đặt bàn nhìn từ trên (mét, ước lượng trên tranh, chưa đo): ngang, sâu (từ cổng ra), lối giữa.
   var LOP = {
-    ho: { ten: 'Vườn Hồ', nen: 'nen-ho', mb: { rong: 30, sau: 22, loi: 3 }, sangDem: [0.304, 0.364, 0.552], X: 50.3, Y: 80.6, cong: [50.3, 78.6], ban: [['tt-ban-p', 79, 96, false], ['tt-ban-t', 21.5, 96, true]] },
-    langque: { ten: 'Sân nhà quê', nen: 'nen-langque', mb: { rong: 24, sau: 16, loi: 2 }, sang: [0.98, 0.905, 0.83], sangDem: [0.297, 0.322, 0.443], X: 52.8, Y: 80, cong: [52.8, 78], ban: [['tt-ban-p', 81.3, 96, false], ['tt-ban-t', 24.3, 96, true]] }
+    ho: { ten: 'Vườn Hồ', nen: 'nen-ho', mb: { rong: 30, sau: 22, loi: 3 }, dien: 15, sangDem: [0.304, 0.364, 0.552], X: 50.3, Y: 80.6, cong: [50.3, 78.6], ban: [['tt-ban-p', 79, 96, false], ['tt-ban-t', 21.5, 96, true]] },
+    langque: { ten: 'Sân nhà quê', nen: 'nen-langque', mb: { rong: 24, sau: 16, loi: 2 }, dien: 4, sang: [0.98, 0.905, 0.83], sangDem: [0.297, 0.322, 0.443], X: 52.8, Y: 80, cong: [52.8, 78], ban: [['tt-ban-p', 81.3, 96, false], ['tt-ban-t', 24.3, 96, true]] }
   };
   // Ô màu: [khoá, tên, màu nhuộm (null = giữ màu gốc của tấm vẽ), màu ô]
   var TONG_HOA = [['trang', 'Trắng', null, [250, 246, 232]], ['hong', 'Hồng phấn', [255, 198, 208]], ['dao', 'Đào', [255, 204, 168]], ['tim', 'Tím nhạt', [216, 196, 242]], ['vang', 'Vàng bơ', [255, 228, 150]], ['do', 'Đỏ rượu', [184, 40, 62]]];
@@ -912,20 +917,34 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
   var MAU_KL = [['goc', 'Vàng', null, [199, 168, 102]], ['bac', 'Bạc', [205, 208, 212]], ['den', 'Đen mờ', [52, 50, 52]], ['go', 'Gỗ', [150, 100, 60]]];
   var CHAT = [['tron', 'Trơn'], ['ren', 'Ren'], ['kimsa', 'Kim sa'], ['gam', 'Gấm']];
   var HINH_PHU = { tron: [['', 'Không'], ['vuong', 'Vuông'], ['cheo', 'Vuông chéo'], ['ngan', 'Tròn ngắn'], ['chay', 'Chạy bàn']], dai: [['', 'Không'], ['chay', 'Chạy bàn'], ['ngang', 'Chạy ngang'], ['ngan', 'Phủ ngắn']] };
+  // Ánh sáng, màn LED, âm thanh: vẽ bằng mã trên cảnh (đèn, màn) và 3D (loa). kW là ước lượng, nguồn tại chỗ (dien trong LOP) là số tạm.
+  var DEN = [['day', 'Dây đèn bóng tròn', 0.15], ['domdom', 'Đom đóm quấn cổng', 0.03], ['roi', 'Đèn rọi cổng', 0.24], ['nen', 'Nến trên bàn', 0]];
+  var MAU_ROI = [['am', 'Vàng ấm', [255, 190, 110]], ['hong', 'Hồng', [255, 130, 185]], ['tim', 'Tím', [165, 115, 255]], ['xanh', 'Xanh lam', [100, 165, 255]], ['trang', 'Trắng', [235, 240, 255]]];
+  var LED = [['', 'Không'], ['hai', 'Hai màn hai bên'], ['sau', 'Màn lớn sau cổng']];
+  var LED_SO = { hai: { so: 2, r: 3, c: 1.7, chan: 1.0, dx: 4.3, dy: -0.6, ten: 'hai bên cổng' }, sau: { so: 1, r: 5, c: 2.8, chan: 0.7, dx: 0, dy: -1.3, ten: 'sau cổng' } };   // mét; dy: lùi sau cổng (% khung)
+  var LED_ND = [['ten', 'Tên hai bạn'], ['chao', 'Lời chào'], ['phao', 'Pháo hoa'], ['hoa', 'Hoa rơi']];
+  var LOA = [['', 'Không'], ['keo', 'Loa kéo'], ['doi', 'Hai loa đứng'], ['lon', 'Loa và sub']];
+  var LOA_SO = { keo: { f: 'loa-keo', so: 1, kw: 0.15, toi: 50, ten: 'Loa kéo' }, doi: { f: 'loa-chan', so: 2, kw: 1.0, toi: 200, ten: 'Loa đứng trên chân' }, lon: { f: 'loa-sub', so: 2, kw: 2.6, toi: 500, ten: 'Loa trên cột cắm vào sub' } };
+  ['loa-keo', 'loa-chan', 'loa-sub'].forEach(function (k) { TT[k] = chep({ loai: 'loa', f: 'anh/tt/' + k + '.webp' }, SO3[k]); });
+  function dienCan(L) { var kw = 0; DEN.forEach(function (d, i) { if (L.den[i]) kw += d[2]; }); var e = LED_SO[L.led], o = LOA_SO[L.loa]; if (e) kw += e.so * e.r * e.c * 0.3; if (o) kw += o.kw; return Math.round(kw * 10) / 10; }
+  function sangCua(L, V) { // ánh sáng của cảnh cho món rời; ban đêm có đèn thì đồ trang trí sáng ấm hơn
+    if (L.gio !== 'dem') return V.sang || null;
+    return L.den[0] || L.den[2] || L.den[3] ? V.sangDem.map(function (v, i) { return Math.min(1, Math.round(v * [1.5, 1.36, 1.08][i] * 1000) / 1000); }) : V.sangDem;
+  }
   // Mẫu có sẵn: một lần bấm đặt cả bộ (hạt giống của 21 bộ phong cách, bang-ve.md mục 3.9)
   var MAU_TT_SAN = [
-    ['vuon', 'Vườn trắng xanh', { noi: 'ho', gio: 'ngay', cong: 'khung-vom', mauKhung: 'trang', hoaKhung: 1, hoa: 'trang', ban: 'ban-tron-10', nen: ['tron', 'xo'], phu: ['cheo', 'ren', 'trang'], demGhe: 'goc', khungGhe: 'goc' }],
-    ['kimsa', 'Đêm kim sa', { noi: 'ho', gio: 'dem', cong: 'khung-luc-giac', mauKhung: 'dong', hoaKhung: 1, hoa: 'trang', ban: 'ban-tron-12', nen: ['kimsa', 'than'], phu: ['chay', 'tron', 'bac'], demGhe: 'than', khungGhe: 'bac' }],
-    ['giadinh', 'Bàn dài gia đình', { noi: 'ho', gio: 'ngay', cong: 'khung-chu-nhat', mauKhung: 'go', hoaKhung: 1, hoa: 'hong', ban: 'ban-dai-12-cheo', nen: ['tron', 'trang'], phu: ['ngang', 'tron', 'dat'], demGhe: 'kem', khungGhe: 'go' }],
-    ['que', 'Sân quê đỏ thắm', { noi: 'langque', gio: 'ngay', cong: 'cong-tron', hoa: 'do', ban: 'ban-tron-10', nen: ['gam', 'do'], phu: ['ngan', 'kimsa', 'vang'], demGhe: 'do', khungGhe: 'goc' }],
-    ['moc', 'Mộc mạc', { noi: 'langque', gio: 'ngay', cong: 'khung-tam-giac', mauKhung: 'go', hoaKhung: 1, hoa: 'dao', ban: 'ban-dai-8', nen: ['tron', 'kem'], phu: ['chay', 'ren', 'trang'], demGhe: 'kem', khungGhe: 'go' }]
+    ['vuon', 'Vườn trắng xanh', { noi: 'ho', gio: 'ngay', cong: 'khung-vom', mauKhung: 'trang', hoaKhung: 1, hoa: 'trang', ban: 'ban-tron-10', nen: ['tron', 'xo'], phu: ['cheo', 'ren', 'trang'], demGhe: 'goc', khungGhe: 'goc', den: [0, 0, 0, 0], led: '', loa: 'doi' }],
+    ['kimsa', 'Đêm kim sa', { noi: 'ho', gio: 'dem', cong: 'khung-luc-giac', mauKhung: 'dong', hoaKhung: 1, hoa: 'trang', ban: 'ban-tron-12', nen: ['kimsa', 'than'], phu: ['chay', 'tron', 'bac'], demGhe: 'than', khungGhe: 'bac', den: [1, 1, 1, 1], mauRoi: 'tim', led: 'hai', ledND: 'ten', loa: 'lon' }],
+    ['giadinh', 'Bàn dài gia đình', { noi: 'ho', gio: 'ngay', cong: 'khung-chu-nhat', mauKhung: 'go', hoaKhung: 1, hoa: 'hong', ban: 'ban-dai-12-cheo', nen: ['tron', 'trang'], phu: ['ngang', 'tron', 'dat'], demGhe: 'kem', khungGhe: 'go', den: [1, 0, 0, 0], led: '', loa: 'doi' }],
+    ['que', 'Sân quê đỏ thắm', { noi: 'langque', gio: 'ngay', cong: 'cong-tron', hoa: 'do', ban: 'ban-tron-10', nen: ['gam', 'do'], phu: ['ngan', 'kimsa', 'vang'], demGhe: 'do', khungGhe: 'goc', den: [1, 0, 0, 0], led: '', loa: 'doi' }],
+    ['moc', 'Mộc mạc', { noi: 'langque', gio: 'ngay', cong: 'khung-tam-giac', mauKhung: 'go', hoaKhung: 1, hoa: 'dao', ban: 'ban-dai-8', nen: ['tron', 'kem'], phu: ['chay', 'ren', 'trang'], demGhe: 'kem', khungGhe: 'go', den: [0, 0, 0, 1], led: '', loa: 'doi' }]
   ];
   function mauDangDung(L) { for (var i = 0; i < MAU_TT_SAN.length; i++) { var m = MAU_TT_SAN[i][2], ok = true; for (var k in m) if (JSON.stringify(m[k]) !== JSON.stringify(L[k])) { ok = false; break; } if (ok) return MAU_TT_SAN[i][0]; } return ''; }
-  var LOP_GOC = { noi: 'ho', gio: 'ngay', cong: 'cong-tron', mauKhung: 'dong', hoaKhung: 1, hoa: 'trang', ban: 'ban-dai', khan: 'kem', nen: ['tron', 'trang'], phu: ['', 'ren', 'trang'], demGhe: 'goc', khungGhe: 'goc', xemGan: 0, bay: 'au', lot: 'goc', kl: 'goc' };
+  var LOP_GOC = { noi: 'ho', gio: 'ngay', cong: 'cong-tron', mauKhung: 'dong', hoaKhung: 1, hoa: 'trang', ban: 'ban-dai', khan: 'kem', nen: ['tron', 'trang'], phu: ['', 'ren', 'trang'], demGhe: 'goc', khungGhe: 'goc', xemGan: 0, bay: 'au', lot: 'goc', kl: 'goc', den: [0, 0, 0, 0], mauRoi: 'am', led: '', ledND: 'ten', loa: '' };
   function lopHien() { // lựa chọn đã lưu; trường nào thiếu (bản lưu cũ) hoặc sai thì lấy mặc định riêng trường đó
     var L = st.lop; if (!L || typeof L !== 'object') L = st.lop = {};
     Object.keys(LOP_GOC).forEach(function (k) { var g = LOP_GOC[k]; if (L[k] === undefined || (Array.isArray(g) && !(Array.isArray(L[k]) && L[k].length === g.length))) L[k] = Array.isArray(g) ? g.slice() : g; });
-    if (!LOP[L.noi]) L.noi = 'ho'; if (L.cong && !TT[L.cong]) L.cong = LOP_GOC.cong; if (L.ban && !TT[L.ban]) L.ban = LOP_GOC.ban; if (!CC[L.bay]) L.bay = 'au';
+    if (!LOP[L.noi]) L.noi = 'ho'; if (L.cong && !TT[L.cong]) L.cong = LOP_GOC.cong; if (L.ban && !TT[L.ban]) L.ban = LOP_GOC.ban; if (!CC[L.bay]) L.bay = 'au'; if (!LED_SO[L.led]) L.led = ''; if (!LOA_SO[L.loa]) L.loa = '';
     return L;
   }
   function tongCua(bo, k) { for (var i = 0; i < bo.length; i++) if (bo[i][0] === k) return bo[i]; return bo[0]; }
@@ -1049,6 +1068,11 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     var c0 = P(A.rong / 2 - 1.45, 1.2), c1 = P(A.rong / 2 + 1.45, 1.2);
     if (L.cong) { x.strokeStyle = tk('--champagne'); x.lineWidth = Math.max(2, 0.12 * k); x.beginPath(); x.moveTo(c0[0], c0[1]); x.lineTo(c1[0], c1[1]); x.stroke();
       x.fillStyle = muc; x.textBaseline = 'bottom'; x.fillText('Cổng', (c0[0] + c1[0]) / 2, c0[1] - 3); }
+    var eL = LED_SO[L.led], lo = LOA_SO[L.loa]; x.fillStyle = '#2A2A2E';
+    if (eL) for (var i2 = 0; i2 < eL.so; i2++) { var ql = P(A.rong / 2 + (eL.so === 2 ? (i2 ? 1 : -1) * eL.dx : 0) - eL.r / 2, eL.so === 2 ? 0.7 : 0.25); x.fillRect(ql[0], ql[1], eL.r * k, Math.max(3, 0.25 * k)); if (k >= 8) { x.save(); x.font = '700 ' + Math.min(11, Math.round(0.4 * k)) + 'px ' + tk('--than'); x.fillStyle = muc; x.textBaseline = 'bottom'; x.fillText('LED', ql[0] + eL.r * k / 2, ql[1] - 1); x.restore(); } }
+    if (lo) [1, -1].slice(0, lo.so).forEach(function (sd) { var qs = P(A.rong / 2 + sd * 2.4, 2.0); x.fillStyle = '#2A2A2E'; x.fillRect(qs[0] - Math.max(2, 0.25 * k), qs[1] - Math.max(2, 0.2 * k), Math.max(4, 0.5 * k), Math.max(4, 0.4 * k)); });
+    if (L.den[2]) { x.fillStyle = 'rgb(' + mauCua(MAU_ROI, L.mauRoi).join(',') + ')'; [-1.9, -1.2, 1.2, 1.9].forEach(function (dx) { var qr = P(A.rong / 2 + dx, 1.5); x.beginPath(); x.arc(qr[0], qr[1], Math.max(1.5, 0.14 * k), 0, 7); x.fill(); }); }
+    if (L.den[0]) { x.save(); x.strokeStyle = 'rgba(214,160,60,.85)'; x.lineWidth = 1; x.setLineDash([2, 3]); [6, 12, 18].forEach(function (yy) { if (yy > A.sau - 1) return; var a0 = P(0.5, yy), a1 = P(A.rong - 0.5, yy + 0.6); x.beginPath(); x.moveTo(a0[0], a0[1]); x.quadraticCurveTo((a0[0] + a1[0]) / 2, a0[1] + 1.4 * k, a1[0], a1[1]); x.stroke(); }); x.restore(); }
     [-0.3, 0.3].forEach(function (d, j) { var q = P(A.rong / 2 + d, 2.4); x.fillStyle = j ? '#1E5A40' : '#F4EFE6'; x.strokeStyle = muc; x.lineWidth = 1; x.beginPath(); x.arc(q[0], q[1], Math.max(2.5, 0.25 * k), 0, 7); x.fill(); x.stroke(); });
     // bàn và ghế: màu khăn nền, màu khung ghế
     var g = b.g, vai = 'rgb(' + (TT[L.ban] && TT[L.ban].loai === '3d' ? mauCua(MAU_VAI, L.nen[1]) : mauCua(TONG_KHAN, L.khan)).join(',') + ')', ghe = 'rgb(' + mauCua(MAU_KG, L.khungGhe).join(',') + ')';
@@ -1076,15 +1100,27 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
   function bangKe(L, b) { // bóc tách: [món, số lượng, ghi chú, giá tạm [thấp, cao] (triệu) hoặc null]
     var ds = [], m = L.ban && TT[L.ban], n = b.ds.length, g = b.g;
     if (L.cong) { var mc = TT[L.cong]; ds.push(['Cổng ' + (mc.loai === 'khung' ? 'khung ' + mc.ten.toLowerCase() + ' ' + tongCua(MAU_KHUNG, L.mauKhung)[1].toLowerCase() + (L.hoaKhung ? ', 3 cụm hoa ' + tongCua(TONG_HOA, L.hoa)[1].toLowerCase() : '') : 'tròn có hoa ' + tongCua(TONG_HOA, L.hoa)[1].toLowerCase()), 1, '', [3, 12]]); }
-    if (!m) return ds;
+    if (!m) { ds.push.apply(ds, bangKeDen(L, 0, null)); return ds; }
     ds.push(['Bàn ' + m.ten.toLowerCase(), n, '', null]);
     ds.push(['Bàn ghế, dụng cụ, người phục vụ (chưa gồm món)', n, 'mỗi bàn', [0.6 * n, 0.9 * n]]);
-    if (m.loai !== '3d') { ds.push(['Khăn chạy bàn ' + tongCua(TONG_KHAN, L.khan)[1].toLowerCase(), n, '', null]); return ds; }
+    if (m.loai !== '3d') { ds.push(['Khăn chạy bàn ' + tongCua(TONG_KHAN, L.khan)[1].toLowerCase(), n, '', null]); ds.push.apply(ds, bangKeDen(L, n, { hinh: 'dai' })); return ds; }
     ds.push(['Ghế chiavari khung ' + tongCua(MAU_KG, L.khungGhe)[1].toLowerCase() + ', đệm ' + tongCua(MAU_DEM, L.demGhe)[1].toLowerCase(), n * g.khach, '', null]);
     ds.push(['Khăn nền ' + tongCua(CHAT, L.nen[0])[1].toLowerCase() + ' ' + tongCua(MAU_VAI, L.nen[1])[1].toLowerCase(), n, kichKhan(g, '', 1), null]);
     var h = hinhHien(L, g.hinh);
     if (h) ds.push(['Khăn phủ ' + tongCua(HINH_PHU[g.hinh], h)[1].toLowerCase() + ', ' + tongCua(CHAT, L.phu[1])[1].toLowerCase() + ' ' + tongCua(MAU_VAI, L.phu[2])[1].toLowerCase(), h === 'ngang' ? n * Math.round(g.khach / 2) : n, kichKhan(g, h), null]);
+    ds.push.apply(ds, bangKeDen(L, n, g));
     ds.push([(L.bay === 'viet' ? 'Bộ đồ bàn kiểu Việt' : 'Bộ đồ bàn kiểu Âu') + ', ' + (L.bay === 'viet' ? 'đĩa kê ' : 'đĩa lót ') + tongCua(MAU_LOT, L.lot)[1].toLowerCase(), n * g.khach, L.bay === 'viet' ? 'đĩa kê, đĩa, bát, đũa, thìa, chén chấm, cốc, ly' : 'đĩa lót, đĩa, đĩa bánh mì, dao nĩa, 3 ly, khăn ăn, thiệp', null]);
+    return ds;
+  }
+  function bangKeDen(L, n, g) { // đèn, màn LED, loa, máy phát
+    var ds = [], e = LED_SO[L.led], lo = LOA_SO[L.loa], V = LOP[L.noi], kw = dienCan(L);
+    if (L.den[0]) ds.push(['Dây đèn bóng tròn', CHUOI[L.noi].length, 'khoảng ' + CHUOI[L.noi].reduce(function (a, q) { return a + q[5] - 1; }, 0) + ' bóng', null]);
+    if (L.den[1] && L.cong) ds.push(['Đèn đom đóm quấn cổng', 1, 'bộ', null]);
+    if (L.den[2]) ds.push(['Đèn rọi cổng, ánh ' + tongCua(MAU_ROI, L.mauRoi)[1].toLowerCase(), 4, '', null]);
+    if (L.den[3] && n) ds.push(['Nến trên bàn', n * (g && g.hinh === 'dai' ? 4 : 3), '', null]);
+    if (e) ds.push(['Màn LED ' + e.ten, e.so, so(e.r) + ' × ' + so(e.c) + ' m' + (e.so > 1 ? ' mỗi màn' : '') + ', chiếu ' + tongCua(LED_ND, L.ledND)[1].toLowerCase(), null]);
+    if (lo) ds.push([lo.ten, lo.so, L.loa === 'lon' ? 'kèm 2 sub' : '', null]);
+    if (kw > V.dien) ds.push(['Máy phát điện', 1, 'điện ước lượng ' + so(kw) + ' kW', null]);
     return ds;
   }
   function luuY(L, b) {
@@ -1092,10 +1128,152 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     if (!L.ban) ds.push('Chưa có bàn tiệc cho ' + KHACH + ' khách.');
     else if (!b.du) ds.push('Vùng đặt bàn chỉ xếp được ' + b.cho + '/' + KHACH + ' chỗ: chọn bàn nhiều chỗ hơn hoặc nơi rộng hơn.');
     if (!L.cong) ds.push('Chưa có cổng: hai bạn thiếu chỗ đứng làm lễ và chụp ảnh.');
-    if (L.gio === 'dem') ds.push('Tiệc tối cần đèn: hạng mục ánh sáng chưa có trong bản thử.');
+    var coDen = L.den[0] || L.den[1] || L.den[2] || L.den[3], kw = dienCan(L), V = LOP[L.noi], lo = LOA_SO[L.loa];
+    if (L.gio === 'dem' && !(L.den[0] || L.den[2] || L.den[3])) ds.push('Tiệc tối cần đèn: chọn dây đèn, nến hoặc đèn rọi' + (coDen ? ' (đom đóm chỉ để trang trí).' : '.'));
+    if (L.gio !== 'dem' && L.den[2]) ds.push('Đèn rọi chỉ thấy rõ khi trời tối.');
+    if (!lo) ds.push('Chưa có âm thanh: MC, nhạc lễ và ban nhạc đều cần loa.');
+    else if (KHACH > lo.toi) ds.push(lo.ten + ' hợp tiệc dưới ' + lo.toi + ' khách; ' + KHACH + ' khách ngoài trời nên dùng hai loa đứng.');
+    if (kw > V.dien) ds.push('Điện ước lượng ' + so(kw) + ' kW, vượt nguồn tại chỗ ' + V.dien + ' kW: cần thuê máy phát.');
+    if (L.led === 'sau' && L.noi === 'ho') ds.push('Màn lớn sau cổng che cảnh hồ phía sau hai bạn.');
     if (DD[L.noi] && DD[L.noi].rui.indexOf('mua') >= 0) ds.push(LOP[L.noi].ten + ' ngoài trời, hay có mưa: nên tính rạp che.');
     return ds;
   }
+  // ----- đèn và màn LED vẽ bằng mã lên hai lớp phủ cả cảnh: lớp sau (màn LED, vệt đèn rọi) nằm sau cổng; lớp trước (dây đèn, đom đóm, nến, chân đèn) trên cùng -----
+  // Dây đèn mỗi nơi: [điểm đầu x, y, điểm cuối x, y (% khung), độ võng (% chiều cao), số bóng, bán kính bóng (phần bề ngang khung)]; dây gần to, dây xa nhỏ
+  var CHUOI = { ho: [[-3, 7, 103, 9, 10, 24, 0.0042], [7, 33, 93, 33, 6, 30, 0.0024]], langque: [[-3, 8, 103, 6, 10, 24, 0.0042], [14, 31, 88, 37, 6, 26, 0.0024]] };
+  var sangAnh = {}, denHen = 0, denDiem = null, ledC = null;
+  function anhSang(rgb) { // quầng sáng tròn một màu, dùng lại cho mọi bóng
+    if (sangAnh[rgb]) return sangAnh[rgb];
+    var c = document.createElement('canvas'); c.width = c.height = 64; var x = c.getContext('2d'), g = x.createRadialGradient(32, 32, 0, 32, 32, 32);
+    g.addColorStop(0, 'rgba(' + rgb + ',1)'); g.addColorStop(0.22, 'rgba(' + rgb + ',.5)'); g.addColorStop(1, 'rgba(' + rgb + ',0)'); x.fillStyle = g; x.fillRect(0, 0, 64, 64);
+    return (sangAnh[rgb] = c);
+  }
+  function bam(n) { var v = Math.sin(n * 12.9898) * 43758.5453; return v - Math.floor(v); }
+  function hop4(e, w, h) { return [parseFloat(e.style.left) / 100 * w, parseFloat(e.style.top) / 100 * h, parseFloat(e.style.width) / 100 * w, parseFloat(e.style.height) / 100 * h]; }
+  function diemDomDom(cv) { // điểm sáng rải trên khung và hoa của cổng đang hiện; tính lại khi đổi cổng
+    var k = cv.dataset.khoa; if (!k || !cv.width) return null; if (denDiem && denDiem.k === k) return denDiem.ds;
+    var d = cv.getContext('2d').getImageData(0, 0, cv.width, cv.height).data, ung = [], ds = [], s = 7;
+    for (var y = 0; y < cv.height; y += 3) for (var x = 0; x < cv.width; x += 3) if (d[(y * cv.width + x) * 4 + 3] > 200) ung.push([x / cv.width, y / cv.height]);
+    for (var i = 0; i < 110 && ung.length; i++) { s = (s * 16807) % 2147483647; var j = s % ung.length; ds.push([ung[j][0], ung[j][1], bam(i) * 6.28]); }
+    denDiem = { k: k, ds: ds }; return ds;
+  }
+  function noiDungLED(c, nd, t, tren) { // nội dung màn LED (384 × 216); tren: chữ dồn lên phần trên (màn sau cổng bị cặp đôi che giữa); trả true nếu cần vẽ tiếp
+    var x = c.getContext('2d'), W = c.width, H = c.height, ten = tenNV('co-dau') + ' & ' + tenNV('chu-re'), cs = getComputedStyle(document.documentElement);
+    var td = cs.getPropertyValue('--tieu-de'), th = cs.getPropertyValue('--than'), g, i;
+    x.textAlign = 'center'; x.textBaseline = 'middle';
+    if (nd === 'chao') {
+      x.fillStyle = '#0B1830'; x.fillRect(0, 0, W, H); x.fillStyle = '#E7CF9B'; x.font = '700 15px ' + th; x.fillText('TIỆC CƯỚI', W / 2, H * (tren ? 0.1 : 0.24));
+      var cau = 'Chào mừng quý khách đến dự tiệc cưới của ' + ten + '  ·  '; x.font = '600 34px ' + th; x.textAlign = 'left'; x.fillStyle = '#FBF7EE';
+      var lw = x.measureText(cau).width, off = giamDong ? 0 : (t * 70) % lw; for (var k = -off; k < W; k += lw) x.fillText(cau, k, H * (tren ? 0.26 : 0.58));
+      return !giamDong;
+    }
+    if (nd === 'phao') {
+      x.fillStyle = '#070B18'; x.fillRect(0, 0, W, H);
+      var tt = giamDong ? 1.1 : t;
+      for (var b = 0; b < 3; b++) {
+        var T = 2.4, q = tt + b * 0.8, ph = (q % T) / T, n = Math.floor(q / T) * 3 + b, rx = (0.2 + 0.6 * bam(n)) * W, ry = ((tren ? 0.36 : 0.22) + 0.3 * bam(n + 7)) * H, R = ph * 80;
+        x.fillStyle = ['#FFD27A', '#FF8FB1', '#9AD3FF', '#C9A6FF'][n % 4]; x.globalAlpha = 1 - ph;
+        for (i = 0; i < 26; i++) { var a = i / 26 * 6.283; x.beginPath(); x.arc(rx + Math.cos(a) * R, ry + Math.sin(a) * R + ph * ph * 24, 2.4, 0, 7); x.fill(); }
+      }
+      x.globalAlpha = 1; x.fillStyle = '#FBF7EE'; x.font = 'italic 600 30px ' + td; x.fillText(ten, W / 2, H * (tren ? 0.14 : 0.86), W * 0.9);
+      return !giamDong;
+    }
+    if (nd === 'hoa') {
+      g = x.createLinearGradient(0, 0, 0, H); g.addColorStop(0, '#FBE3E4'); g.addColorStop(1, '#F6C9B8'); x.fillStyle = g; x.fillRect(0, 0, W, H);
+      for (i = 0; i < 22; i++) { var u = bam(i + 3), v = ((giamDong ? 0.4 : t * 0.08) + bam(i + 11)) % 1, px = (u + 0.05 * Math.sin(t * 1.3 + i)) * W, py = v * (H + 20) - 10;
+        x.fillStyle = i % 3 ? 'rgba(232,120,140,.75)' : 'rgba(255,255,255,.85)'; x.beginPath(); x.ellipse(px, py, 6, 3.4, t + i, 0, 7); x.fill(); }
+      x.fillStyle = '#7A2E3A'; x.font = 'italic 600 42px ' + td; x.fillText(ten, W / 2, H * (tren ? 0.2 : 0.5), W * 0.9);
+      return !giamDong;
+    }
+    g = x.createLinearGradient(0, 0, W, H); g.addColorStop(0, '#0E2A20'); g.addColorStop(1, '#1E5A40'); x.fillStyle = g; x.fillRect(0, 0, W, H);
+    x.strokeStyle = 'rgba(231,207,155,.6)'; x.lineWidth = 1.5; x.strokeRect(14, 14, W - 28, H - 28);
+    x.fillStyle = '#E7CF9B'; x.font = 'italic 600 44px ' + td; x.fillText(ten, W / 2, H * (tren ? 0.2 : 0.46), W * 0.86);
+    x.font = '700 13px ' + th; x.fillText('VỀ CHUNG MỘT NHÀ', W / 2, H * (tren ? 0.36 : 0.72));
+    return false;
+  }
+  function veDen(t) { // vẽ cả hai lớp; trả true nếu còn chuyển động (bóng nhấp nháy ban đêm, nội dung màn LED)
+    var cs = $('den-sau'), ct = $('den-truoc'), w = world.clientWidth, h = world.clientHeight, dpr = Math.min(window.devicePixelRatio || 1, 2);
+    [cs, ct].forEach(function (c) { var cw = Math.round(w * dpr), ch = Math.round(h * dpr); if (c.width !== cw || c.height !== ch) { c.width = cw; c.height = ch; } var x = c.getContext('2d'); x.setTransform(1, 0, 0, 1, 0, 0); x.clearRect(0, 0, cw, ch); x.setTransform(dpr, 0, 0, dpr, 0, 0); });
+    if (!laLop() || !w) return false;
+    var L = lopHien(), V = LOP[L.noi], dem = L.gio === 'dem', xs = cs.getContext('2d'), xt = ct.getContext('2d'), dong = false, i;
+    function met(Y) { return NV.MOT_MET * (Y - NV.CHAN_TROI) / 100 * h; }
+    function sang(x, rgb, cx, cy, r, a) { x.globalCompositeOperation = 'lighter'; x.globalAlpha = a; x.drawImage(anhSang(rgb), cx - r, cy - r, 2 * r, 2 * r); x.globalAlpha = 1; x.globalCompositeOperation = 'source-over'; }
+    var sg = sangCua(L, V) || [1, 1, 1], toiMau = function (c) { return 'rgb(' + c.map(function (v, j) { return Math.round(v * sg[j]); }).join(',') + ')'; };
+    // màn LED: chân, viền, nội dung, lưới điểm ảnh; ban đêm có quầng sáng
+    var e = LED_SO[L.led];
+    if (e) {
+      if (!ledC) { ledC = document.createElement('canvas'); ledC.width = 384; ledC.height = 216; }
+      dong = noiDungLED(ledC, L.ledND, t, e.so === 1) || dong;
+      var Ye = V.cong[1] + e.dy, me = met(Ye), ye = Ye / 100 * h;
+      for (i = 0; i < e.so; i++) {
+        var cx = V.cong[0] / 100 * w + (e.so === 2 ? (i ? 1 : -1) * e.dx * me : 0), rw = e.r * me, rh = e.c * me, top = ye - (e.chan + e.c) * me;
+        xs.fillStyle = 'rgba(22,40,22,.28)'; xs.beginPath(); xs.ellipse(cx, ye, rw * 0.42, 0.12 * me, 0, 0, 7); xs.fill();
+        xs.strokeStyle = toiMau([78, 80, 86]); xs.lineWidth = Math.max(1, 0.07 * me);
+        [-0.36, 0.36].forEach(function (f) { xs.beginPath(); xs.moveTo(cx + f * rw, ye); xs.lineTo(cx + f * rw, top + rh); xs.stroke(); });
+        if (dem) sang(xs, '200,215,255', cx, top + rh / 2, rw * 0.85, 0.35);
+        xs.fillStyle = toiMau([30, 30, 34]); xs.fillRect(cx - rw / 2 - 0.07 * me, top - 0.07 * me, rw + 0.14 * me, rh + 0.14 * me);
+        xs.drawImage(ledC, cx - rw / 2, top, rw, rh);
+        var b = Math.max(2, rw / 90); xs.fillStyle = 'rgba(0,0,0,.16)'; for (var gx = 0; gx < rw; gx += b) xs.fillRect(cx - rw / 2 + gx, top, Math.max(0.5, b * 0.28), rh);
+      }
+    }
+    // đèn rọi: bốn đèn dưới chân cổng hắt vệt màu lên khung
+    if (L.den[2]) {
+      var rc = mauCua(MAU_ROI, L.mauRoi).join(','), Yr = V.cong[1] + 0.3, mr = met(Yr), yr = Yr / 100 * h, xr = V.cong[0] / 100 * w, ar = dem ? 0.55 : 0.14;
+      xs.save(); xs.globalCompositeOperation = 'lighter';
+      [-1.9, -1.2, 1.2, 1.9].forEach(function (dx) {
+        var bx = xr + dx * mr, tx = xr + dx * 0.55 * mr, ty = yr - 3.3 * mr, g = xs.createLinearGradient(bx, yr, tx, ty);
+        g.addColorStop(0, 'rgba(' + rc + ',' + ar + ')'); g.addColorStop(1, 'rgba(' + rc + ',0)'); xs.fillStyle = g;
+        xs.beginPath(); xs.moveTo(bx - 0.06 * mr, yr); xs.lineTo(tx - 0.6 * mr, ty); xs.lineTo(tx + 0.6 * mr, ty); xs.lineTo(bx + 0.06 * mr, yr); xs.closePath(); xs.fill();
+      });
+      xs.restore();
+      if (dem) sang(xt, rc, xr, yr - 1.6 * mr, 2.2 * mr, 0.16);
+      [-1.9, -1.2, 1.2, 1.9].forEach(function (dx) { var bx = xr + dx * mr; xt.fillStyle = '#1C1C1F'; xt.fillRect(bx - 0.09 * mr, yr - 0.12 * mr, 0.18 * mr, 0.14 * mr); if (dem) sang(xt, rc, bx, yr - 0.1 * mr, 0.3 * mr, 0.9); });
+    }
+    // đom đóm quấn cổng
+    if (L.den[1] && L.cong) {
+      var ec = $('tt-cong'), pts = !ec.classList.contains('an') && diemDomDom(ec.firstChild);
+      if (pts) { var hc = hop4(ec, w, h), rd = Math.max(0.8, 0.0016 * w); dong = true;
+        pts.forEach(function (p) { var px = hc[0] + p[0] * hc[2], py = hc[1] + p[1] * hc[3], nh = 0.6 + 0.4 * Math.sin(t * 2.6 + p[2]);
+          if (dem) sang(xt, '255,236,190', px, py, rd * 3.6, nh * 0.75); xt.fillStyle = dem ? '#FFF6DE' : 'rgba(255,250,235,' + (0.55 + 0.3 * nh) + ')'; xt.beginPath(); xt.arc(px, py, rd, 0, 7); xt.fill(); }); }
+    }
+    // nến trên bàn
+    if (L.den[3] && L.ban) {
+      var m = TT[L.ban];
+      ['tt-ban-p', 'tt-ban-t'].forEach(function (id) {
+        var eb = $(id); if (eb.classList.contains('an')) return;
+        var hb = hop4(eb, w, h), lat = eb.classList.contains('lat'), s = hb[3] / m.h * m.pxm, bx = hb[0] + (lat ? 1 - m.ax : m.ax) * hb[2];
+        var by = hb[1] + (m.loai === '3d' ? (m.ay * m.h - 0.734 * m.pxm) / m.h : 0.52) * hb[3], dai = m.loai !== '3d' ? 2.4 : m.hinh === 'dai' ? m.dai : 0;
+        var doc = (m.xoay_do || m.loai !== '3d' ? 1 : 0) * (lat ? -1 : 1) * 0.137, ds = dai ? [-0.32, -0.11, 0.11, 0.32].map(function (f) { return [bx + f * dai * s, by + f * dai * s * doc]; }) : [[bx - 0.13 * s, by], [bx, by - 0.07 * s], [bx + 0.13 * s, by]];
+        ds.forEach(function (p, j) { var fl = 0.85 + 0.15 * Math.sin(t * 7 + j * 2.3 + bx);
+          if (dem) sang(xt, '255,170,80', p[0], p[1] - 0.1 * s, 0.38 * s, 0.85 * fl);
+          xt.fillStyle = toiMau([245, 238, 220]); xt.fillRect(p[0] - 0.022 * s, p[1] - 0.12 * s, 0.044 * s, 0.12 * s);
+          xt.fillStyle = dem ? '#FFE6A8' : '#FFC75E'; xt.beginPath(); xt.ellipse(p[0], p[1] - 0.15 * s, 0.014 * s, 0.03 * s, 0, 0, 7); xt.fill(); });
+        dong = true;
+      });
+    }
+    // dây đèn bóng tròn
+    if (L.den[0]) {
+      dong = true;
+      CHUOI[L.noi].forEach(function (q) {
+        var x0 = q[0] / 100 * w, y0 = q[1] / 100 * h, x1 = q[2] / 100 * w, y1 = q[3] / 100 * h, vo = q[4] / 100 * h, r = q[6] * w;
+        function o(u) { return [x0 + (x1 - x0) * u, y0 + (y1 - y0) * u + vo * 4 * u * (1 - u)]; }
+        xt.strokeStyle = 'rgba(28,24,20,' + (dem ? 0.4 : 0.6) + ')'; xt.lineWidth = Math.max(0.6, r * 0.32);
+        xt.beginPath(); for (var j = 0; j <= 40; j++) { var p = o(j / 40); if (j) xt.lineTo(p[0], p[1]); else xt.moveTo(p[0], p[1]); } xt.stroke();
+        for (j = 1; j < q[5]; j++) {
+          var b2 = o(j / q[5]), by2 = b2[1] + r * 1.9; xt.beginPath(); xt.moveTo(b2[0], b2[1]); xt.lineTo(b2[0], by2 - r); xt.stroke();
+          if (dem) sang(xt, '255,196,120', b2[0], by2, r * 6, 0.75 + 0.25 * Math.sin(t * 2.1 + j * 1.7));
+          xt.fillStyle = dem ? '#FFF2D0' : 'rgba(255,248,228,.95)'; xt.beginPath(); xt.arc(b2[0], by2, r, 0, 7); xt.fill();
+          if (!dem) { xt.save(); xt.strokeStyle = 'rgba(70,60,50,.55)'; xt.lineWidth = 0.6; xt.stroke(); xt.restore(); }
+        }
+      });
+    }
+    return dong && (dem || !!e);
+  }
+  function chayDen() { // vẽ một lần; còn chuyển động thì vẽ tiếp khoảng 20 hình mỗi giây (giảm chuyển động thì vẽ một hình đứng yên)
+    clearTimeout(denHen); denHen = 0;
+    (function buoc() { var con = veDen(performance.now() / 1000); if (con && !giamDong && !document.hidden) denHen = setTimeout(function () { requestAnimationFrame(buoc); }, 50); })();
+  }
+  document.addEventListener('visibilitychange', function () { if (!document.hidden && laLop()) chayDen(); });
   // ----- công thức cho từng món: các tranh vẽ chồng, các lần nhuộm [mặt nạ, kênh, màu gốc, tông], khăn nhiều lớp, ánh sáng -----
   function cthCong(L, sang) {
     var m = TT[L.cong], t = tongCua(TONG_HOA, L.hoa);
@@ -1151,14 +1329,15 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
   var ketQua = {}, choKQ = {}, thuTuKQ = [];
   function hienRoi(cv, o) { // vẽ món vào canvas; hai bàn dùng chung một lần ghép; nhớ 10 lần ghép gần nhất
     var khoa = JSON.stringify(o); cv.dataset.muon = khoa;
-    function ve(c) { if (cv.dataset.muon !== khoa || cv.dataset.khoa === khoa) return; cv.width = c.width; cv.height = c.height; cv.getContext('2d').drawImage(c, 0, 0); cv.dataset.khoa = khoa; }
+    function ve(c) { if (cv.dataset.muon !== khoa || cv.dataset.khoa === khoa) return; cv.width = c.width; cv.height = c.height; cv.getContext('2d').drawImage(c, 0, 0); cv.dataset.khoa = khoa;
+      if (cv.parentNode.id === 'tt-cong' && laLop() && lopHien().den[1]) chayDen(); }   // đom đóm lấy điểm từ hình cổng vừa vẽ
     if (ketQua[khoa]) return ve(ketQua[khoa]);
     if (choKQ[khoa]) { choKQ[khoa].push(ve); return; }
     choKQ[khoa] = [ve];
     dungRoi(o, function (c) { ketQua[khoa] = c; thuTuKQ.push(khoa); if (thuTuKQ.length > 10) delete ketQua[thuTuKQ.shift()]; var ds = choKQ[khoa]; delete choKQ[khoa]; ds.forEach(function (f) { f(c); }); });
   }
   function datTT() { // đặt cổng và hai bàn vào điểm neo (cỡ theo cùng thước phối cảnh với nhân vật); cận cảnh phủ lên sân khấu
-    var co = laLop(), L = co && lopHien(), V = LOP[co ? L.noi : 'ho'], sang = co ? (L.gio === 'dem' ? V.sangDem : V.sang) || null : null;
+    var co = laLop(), L = co && lopHien(), V = LOP[co ? L.noi : 'ho'], sang = co ? sangCua(L, V) : null;
     function dat(eid, id, X, Y, lat, cth) {
       var e = $(eid); e.classList.toggle('an', !id); if (!id) return;
       var m = TT[id], cao = NV.MOT_MET * (m.h / m.pxm) * (Y - NV.CHAN_TROI), rg = cao * (m.w / m.h) / KHUNG, ax = lat ? 1 - m.ax : m.ax;
@@ -1166,6 +1345,11 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
       hienRoi(e.firstChild, cth());
     }
     dat('tt-cong', co && L.cong, V.cong[0], V.cong[1], false, function () { return cthCong(L, sang); });
+    var lo = co && LOA_SO[L.loa];   // loa đứng hai bên cổng, hơi ra trước; loa kéo chỉ một chiếc bên phải
+    [['tt-loa-p', 1, false], ['tt-loa-t', -1, true]].forEach(function (q) {
+      var id = lo && (q[1] > 0 || lo.so === 2) ? lo.f : null, Y = V.cong[1] + 0.8;
+      dat(q[0], id, V.cong[0] + q[1] * 2.4 * NV.MOT_MET * (Y - NV.CHAN_TROI) / KHUNG, Y, q[2], function () { var m = TT[id]; return { w: m.w, h: m.h, ve: [m.f], nhuom: [], sang: sang }; });
+    });
     var mb = co && L.ban && TT[L.ban];
     V.ban.forEach(function (b) { dat(b[0], co && L.ban, b[1] + (mb && mb.dx ? (b[3] ? -mb.dx : mb.dx) : 0), mb && mb.loai === '3d' ? b[2] - 3 : b[2], b[3], function () { return cthBan(L, sang); }); });
     var cc = $('can-canh'), mo = !!(mb && mb.loai === '3d' && L.xemGan === 1); cc.classList.toggle('an', !mo); cc.setAttribute('aria-hidden', mo ? 'false' : 'true');
@@ -1173,9 +1357,10 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     var mbg = $('mat-bang'), mo2 = !!(co && L.xemGan === 2); mbg.classList.toggle('an', !mo2); mbg.setAttribute('aria-hidden', mo2 ? 'false' : 'true');
     if (mo2) veMatBang(mbg.firstChild, L);
     var bc = $('bien-canh'); if (co && bc.lastChild) bc.lastChild.textContent = tenCanhLop();
+    chayDen();
   }
   function tenCanhLop() { var L = lopHien(), m = L.ban && TT[L.ban]; return LOP[L.noi].ten + (L.xemGan === 2 ? ' · mặt bằng' : m && m.loai === '3d' && L.xemGan === 1 ? ' · cận cảnh' : L.gio === 'dem' ? ' · ban đêm' : ' · ban ngày'); }
-  window.addEventListener('resize', function () { if (laLop() && lopHien().xemGan === 2) setTimeout(function () { veMatBang($('mat-bang').firstChild, lopHien()); }, 120); });
+  window.addEventListener('resize', function () { if (laLop()) setTimeout(function () { chayDen(); if (lopHien().xemGan === 2) veMatBang($('mat-bang').firstChild, lopHien()); }, 120); });
   function bangLop(dau, than, chan) {
     var L = lopHien(), cap = [];
     dau.appendChild(el('h2', '', 'Trang trí theo lớp')); dau.appendChild(el('span', 'dem', 'bản thử'));
@@ -1217,6 +1402,14 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
     khi(hangMau(nP, MAU_VAI, function () { return L.phu[2]; }, function (k) { L.phu[2] = k; }), coPhu);
     hangMau(khi(nhom(than, 'Đệm ghế'), ban3), MAU_DEM, function () { return L.demGhe; }, function (k) { L.demGhe = k; });
     hangMau(khi(nhom(than, 'Khung ghế'), ban3), MAU_KG, function () { return L.khungGhe; }, function (k) { L.khungGhe = k; });
+    var nD = nhom(than, 'Ánh sáng'), hD = nD.appendChild(el('div', 'loc')); hD.setAttribute('role', 'group');
+    DEN.forEach(function (d, i) { var b = el('button', '', d[1]); b.type = 'button'; b.addEventListener('click', function () { doiLop(function () { L.den[i] = L.den[i] ? 0 : 1; }); }); hD.appendChild(b);
+      cap.push(function () { b.setAttribute('aria-pressed', L.den[i] ? 'true' : 'false'); }); });
+    khi(hangMau(nD, MAU_ROI, function () { return L.mauRoi; }, function (k) { L.mauRoi = k; }), function () { return !!L.den[2]; });
+    var nLed = nhom(than, 'Màn LED');
+    hangChip(nLed, LED, function () { return L.led; }, function (k) { L.led = k; });
+    khi(hangChip(nLed, LED_ND, function () { return L.ledND; }, function (k) { L.ledND = k; }), function () { return !!L.led; });
+    hangChip(nhom(than, 'Âm thanh'), LOA, function () { return L.loa; }, function (k) { L.loa = k; });
     var gan3 = function () { return ban3() && L.xemGan === 1; };
     hangChip(khi(nhom(than, 'Kiểu bày'), ban3), [['au', 'Kiểu Âu'], ['viet', 'Kiểu Việt']], function () { return L.bay; }, function (k) { L.bay = k; });
     var nL = khi(nhom(than, 'Đĩa lót'), gan3), hL = nL.querySelector('h3'); cap.push(function () { hL.textContent = L.bay === 'viet' ? 'Đĩa kê' : 'Đĩa lót'; });
@@ -1232,7 +1425,7 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
       dsK.innerHTML = ''; ke.forEach(function (r) { var d = dsK.appendChild(el('div', 'dong')); d.appendChild(el('span', 'sl', so(r[1])));
         var t = d.appendChild(el('span', 'ten', r[0])); if (r[2]) t.appendChild(el('small', '', r[2]));
         d.appendChild(el('span', 'gia', r[3] ? so(r[3][0]) + '–' + so(r[3][1]) + ' tr' : 'chưa có giá')); if (r[3]) { lo += r[3][0]; cao += r[3][1]; } });
-      tongK.textContent = ke.length ? 'Phần có giá: ' + so(lo) + '–' + so(cao) + ' triệu. Giá là số tạm của bản thử, chưa gồm món ăn và các món chưa có giá. Số bàn tính đủ ' + KHACH + ' khách trên mặt bằng.' : '';
+      tongK.textContent = (ke.length ? 'Phần có giá: ' + so(lo) + '–' + so(cao) + ' triệu. Giá là số tạm của bản thử, chưa gồm món ăn và các món chưa có giá. Số bàn tính đủ ' + KHACH + ' khách trên mặt bằng. ' : '') + 'Điện ước lượng ' + so(dienCan(L)) + ' kW; nguồn tại chỗ ' + LOP[L.noi].dien + ' kW (số tạm).';
     });
     than.appendChild(el('p', 'ghi', 'Vẽ tay: hai nền, cổng tròn, bàn dài gỗ. Tự vẽ, không tốn lượt: sáu khung cổng bằng mã, cụm hoa vẽ bằng Canva, bản đêm, bàn và cận cảnh dựng 3D. Khăn nhiều lớp, đệm, khung ghế, đĩa lót đổi bằng mã. Cận cảnh luôn ở ánh ngày để dễ xem màu.'));
     chan.appendChild(nutBam('Về đầu', function () { sang('mo'); }, 'phu', 'trai'));
