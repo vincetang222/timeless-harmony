@@ -37,12 +37,12 @@ Chủ dự án góp ý ngày 26/11: đồ trang trí chèn vào khung hình **kh
 
 | Bước | Việc | Cách làm | Tốn lượt | Trạng thái |
 |---|---|---|---|---|
-| A | Luật 2, 3, 6, 8: trục nhìn, mép khung, loa, hoà nét | mã | 0 | **Làm thử 26/11** (xem mục 4) |
-| B | Luật 4, 5: dây đèn có chỗ bám (cây, cột tre), màn LED theo luật | mã; đo chỗ bám trên từng tranh | 0 | chưa làm |
-| C | Luật 7: bàn cô dâu chú rể trước cổng ở phần Tiệc | dựng 3D bằng tệp có sẵn | 0 | chưa làm |
-| D | Luật 9: ghế dự lễ nhạt, thưa, lối rộng | mã | 0 | chưa làm |
-| E | Vùng cấm từng nơi (luật 10): Sân nhà quê có lối vào cổng, sân trước nhà | đo trên tranh | 0 | chưa làm |
-| F | Kiểm tự động (mục 6) | mã thử | 0 | chưa làm |
+| A | Luật 2, 3, 6, 8: trục nhìn, mép khung, loa, hoà nét | mã | 0 | **Đã làm 26/11** (mục 4) |
+| B | Luật 4, 5: dây đèn có chỗ bám (cây, cột tre), màn LED theo luật | mã; đo chỗ bám trên từng tranh | 0 | **Đã làm 26/11** (mục 4b) |
+| C | Luật 7: bàn cô dâu chú rể trước cổng ở phần Tiệc | dựng 3D (`ve/ban_doi_3d.py`) | 0 | **Đã làm 26/11** |
+| D | Luật 9: ghế dự lễ nhạt, thưa, lối rộng | mã | 0 | **Đã làm 26/11** |
+| E | Vùng cấm từng nơi (luật 10): gốc bách (Vườn Hồ), lối vào cổng làng (Sân nhà quê), lối dọc lan can, tường | đo trên tranh bằng lưới 1 m | 0 | **Đã làm 26/11** |
+| F | Kiểm tự động (mục 6) | mã thử | 0 | **Đã làm 26/11**: 248 cảnh, không lỗi |
 | G | Nếu hoà nét bằng mã vẫn chưa đủ giống tranh: vẽ lại bàn ghế theo nét tranh bằng Canva | qua bảng duyệt, vẽ thử một tấm trước | có | chỉ làm khi chủ dự án thấy cần |
 
 ## 4. Đã làm thử (26/11)
@@ -58,11 +58,24 @@ Chủ dự án góp ý ngày 26/11: đồ trang trí chèn vào khung hình **kh
 
 Kết quả: khung hình thoáng, cổng và hồ không bị che, không còn hộp tối và bàn cụt. Còn lại: dây đèn, màn LED, cặp đôi ở phần Tiệc, ghế dự lễ (bước B–D); bàn ghế vẫn là nét 3D.
 
+## 4b. Đã làm tiếp (26/11, sau khi chủ dự án duyệt hướng)
+
+- **Lỗi 10, 11 (bàn tròn):** sửa góc xoay ghế; bàn tròn, bàn dài, ghế 16 hướng dựng lại ở máy ảnh chếch 10° (`ve/README.md`, dòng "Góc máy ảnh"). Lối dọc lan can 2,5 m (Sân nhà quê: 1,5 m dọc tường).
+- **Xếp bàn:** hai lưới hàng, phía sau và phía trước cặp đôi. Phía sau cặp đôi để trống phông (Vườn Hồ: cả bãi cỏ giữa hai hàng bách, nửa bề ngang 8,6 m; nơi khác 4,5 m). Sân nhà quê lối giữa hẹp nên chừa thêm 3 m trước mặt cặp đôi cho bàn sát lối. Năm mẫu có sẵn vẫn đủ chỗ cho 100 khách.
+- **Vùng cấm (đo trên tranh bằng lưới 1 m chiếu theo phối cảnh):** gốc năm cây bách ở x ≈ ±7,5 m (Vườn Hồ); lối vào cổng làng ở góc sau bên phải (Sân nhà quê); cột đèn. Bàn và ghế dự lễ đều tránh.
+- **Dây đèn (bước B):** mỗi nơi 3 dây, buộc vào chỗ bám thật: Vườn Hồ hai tán bách và hai cột gỗ trong chậu trắng có dây thường xuân; Sân nhà quê cành đa (cao khoảng 6 m), cột cổng làng và hai cột tre. Dây treo theo phối cảnh 3D, cao 4–4,8 m ở gần máy quay nên nằm trên trời, không vắt qua hồ. Cột vẽ bằng mã, xếp chung với bàn ghế theo độ sâu. Bóng sát nhau trên hình thì quầng sáng nhạt bớt.
+- **Màn LED:** Vườn Hồ không cho chọn màn lớn sau cổng (nút khoá); hai màn nhỏ đứng sát hàng bách, ngoài phần hồ, chân thấp 0,6 m. Sân nhà quê đặt trong lối dọc tường, ngoài lối vào cổng. Có màn thì loa đứng ngoài mép màn (Vườn Hồ: ra ngoài khung hình) để không che chữ. Cỡ màn giữ nguyên nên giá không đổi.
+- **Bàn cô dâu chú rể (bước C):** bàn 1,6 × 0,7 m dựng 3D, đặt ngay trước cặp đôi ở phần Tiệc, che từ thắt lưng xuống (chưa có hình nhân vật ngồi); khăn đổi theo khăn nền, ba khóm hoa của luống hoa (T15) ở mép trước, nhuộm theo tông hoa. Bàn dài giữa lối thì cặp đôi ngồi đầu bàn, không có bàn riêng. Có trên mặt bằng và bảng kê.
+- **Ghế dự lễ (bước D):** lối giữa 3 m, ghế cách nhau 0,6 m; bóng mềm dưới ghế, nhuộm theo nắng và mù dần như bàn. Sân ngắn thì mỗi hàng thêm ghế (5–8 mỗi bên) để không tràn ra ngoài: Sân nhà quê hết lưu ý "ghế ra ngoài vùng".
+- **Kiểm tự động (bước F):** trang thử có `window.thBoCuc()` trả mọi món đã đặt (khung trên hình, chỗ trên mặt bằng); bài thử chạy 5 mẫu × (thêm dây đèn, 50 và 200 khách, 5 kiểu bàn, 4 cách xếp ghế dự lễ) ở 1280 và 390, sáng và tối: 248 cảnh. Đã thử làm hỏng từng luật trên bản sao để chắc bài thử bắt được lỗi. Bài thử đã bắt một lỗi thật: loa trái ở Sân nhà quê đứng lên mép bàn sau.
+
 ## 5. Cần chủ dự án quyết
 
-1. Hướng làm đẹp trong ảnh trước và sau có đúng ý không.
+1. ~~Hướng làm đẹp trong ảnh trước và sau có đúng ý không.~~ Chủ dự án duyệt 26/11 ("đúng hướng, làm tiếp các bước 2–6").
 2. Cảnh ngang tầm mắt chỉ vẽ những bàn nằm đẹp trong khung (đếm đủ trên mặt bằng; xem đủ ở cảnh nhìn từ cao T16). Điều này khác với yêu cầu trước đó "thấy toàn cảnh 100 bàn" ở cảnh ngang tầm mắt.
 
 ## 6. Kiểm tự động (bước F)
 
 Mỗi món đặt vào cảnh có một khung chữ nhật trên màn hình. Bài thử chạy ở 1280 và 390 điểm ảnh, báo lỗi khi: khung chồng lên trục nhìn hoặc vùng cấm của nơi đó; khung bị mép trái, phải cắt quá 12%; món treo không có chỗ bám; loa hoặc màn LED đứng trong vùng làm lễ.
+
+Đã làm (26/11), thêm các điều kiện: chân ghế phía sau của bàn phải nằm dưới đường chân lan can, tường trên hình (bắt lỗi 11); bàn không lấn lối dọc lan can; dây đèn không vắt qua phông sau cặp đôi; màn LED không che phông ở nơi có cảnh đẹp; loa, màn LED không đè lên bàn trên mặt bằng; cột đèn không đứng trong trục nhìn; ghế dự lễ không đứng vào vùng cấm; trang không cuộn ngang trên điện thoại.

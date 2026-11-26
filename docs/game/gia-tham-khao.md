@@ -119,7 +119,9 @@ Tra ngày 26/11 không thấy đơn giá công khai đáng tin cho các món dư
 **Cách game dùng bảng này** (số tạm, chỉnh được khi có báo giá thật):
 
 - Một con số cho mỗi món: lấy **trung bình** của khoảng số tạm. Bảng kê của xưởng vẫn hiện cả khoảng.
-- **Gói sẵn và may đo:** nếu cả bộ trùng một "Mẫu có sẵn" của nhà cung cấp thì giảm 20% (gói làm sẵn, rẻ và nhanh). Tự chọn từng lớp thì trả đủ giá. Với giá trên, mẫu "Vườn trắng xanh" ra khoảng 10 triệu, gần gói Đủ (9); "Đêm kim sa" khoảng 18 triệu, hơn gói Trọn (15) một chút vì có màn LED và loa lớn.
+- **Gói sẵn và may đo:** nếu cả bộ trùng một "Mẫu có sẵn" của nhà cung cấp thì giảm 20% (gói làm sẵn, rẻ và nhanh). Tự chọn từng lớp thì trả đủ giá. Với giá trên, mẫu "Vườn trắng xanh" ra khoảng 11 triệu, gần gói Đủ (9); "Đêm kim sa" khoảng 19 triệu, hơn gói Trọn (15) vì có màn LED và loa lớn (tính lại 26/11 sau khi thêm bàn cô dâu chú rể và dây đèn thứ ba).
+- **Bàn cô dâu chú rể** (từ 26/11): bàn có sẵn của nơi tổ chức, thêm một khăn nền như bàn khách; dải hoa trước bàn 1,6 m tính theo đơn giá luống hoa (mét). Bàn dài giữa lối thì cặp đôi ngồi đầu bàn, không có dòng này.
+- **Dây đèn** (từ 26/11): mỗi nơi 3 dây buộc vào chỗ bám thật (`bo-cuc-canh.md` bước B), tính theo dây; cột gỗ, cột tre đi kèm dây, chưa có giá riêng.
 - Chương 4 chỉ cộng các món trang trí. Dòng "Bàn ghế, dụng cụ, người phục vụ" của bảng kê đã nằm trong giá nơi tổ chức nên không cộng lại.
 
 ## 7. Còn thiếu hẳn
