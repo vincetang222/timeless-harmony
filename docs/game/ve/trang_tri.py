@@ -14,7 +14,7 @@ def buoc(x, a, b):
 
 
 # ---------- 1. Tách nền xanh dương ----------
-def tach(path, d0=22, d1=78, giu_xanh=False, bo_xam_xanh=False, nguong=125):
+def tach(path, d0=22, d1=78, giu_xanh=False, bo_xam_xanh=False, nguong=125, ra_hop=False):
     """Alpha theo khoảng cách màu tới màu nền thật (nền rất phẳng); viền thì gỡ màu nền lẫn vào (un-mix).
     giu_xanh: đồ có màu xanh dương thật (khi đó nên vẽ trên nền màu khác). bo_xam_xanh: xoá vệt tối ngả xanh mô hình để sót giữa chân ghế."""
     a = np.asarray(Image.open(path).convert('RGB')).astype(np.float32)
@@ -35,7 +35,7 @@ def tach(path, d0=22, d1=78, giu_xanh=False, bo_xam_xanh=False, nguong=125):
     im = Image.fromarray(np.dstack([fg, al * 255]).astype('uint8'), 'RGBA')
     dd = np.asarray(im)[..., 3] > 20; ys = np.nonzero(dd.sum(1) >= 12)[0]; xs = np.nonzero(dd.sum(0) >= 12)[0]
     box = (int(max(xs.min() - 6, 0)), int(max(ys.min() - 6, 0)), int(min(xs.max() + 6, im.size[0])), int(min(ys.max() + 6, im.size[1])))
-    return im.crop(box)
+    return (im.crop(box), box) if ra_hop else im.crop(box)   # ra_hop: trả thêm khung cắt (toạ độ ảnh gốc)
 
 
 # ---------- 2. Mặt nạ phần đổi tông ----------

@@ -327,3 +327,23 @@ Chủ dự án duyệt phong cách của cổng và bàn rời, và duyệt tấ
 ### 7.4 Kế hoạch vẽ tiếp
 
 Danh mục trang trí, hiệu ứng sân khấu, tiết mục và hạn mức tháng 12 nằm ở [bang-ve.md](bang-ve.md) (chờ duyệt).
+
+## 8. Đề xuất: đưa xưởng trang trí vào ván chơi (26/11/2026, chờ chủ dự án duyệt)
+
+**Hiện trạng.** Mọi món làm từ 25/11 (khung cổng, hoa, bàn 3D, khăn nhiều lớp, đèn, màn LED, loa, ghế dự lễ, bàn dài, lối đi, toàn cảnh mọi bàn, mặt bằng, lưu ý, bảng kê) nằm ở màn "Xưởng trang trí tiệc" của trang thử. Lựa chọn ở đó **chưa** ảnh hưởng tới ngân sách, chỉ số hay ngày cưới của chương 4; màn "Gói trang trí" của chương 4 vẫn là 3 gói Gọn, Đủ, Trọn.
+
+**Đề xuất vòng chơi trang trí (thay màn "Gói trang trí").**
+
+1. **Số khách → nơi tổ chức.** Số khách lấy từ danh sách khách. Mỗi nơi có sức chứa thật (số bàn xếp được trên mặt bằng). Vượt thì phải đổi nơi, đổi kiểu bàn hoặc bớt khách; đây là một quyết định khó giữa hai họ.
+2. **Bố cục.** Phần Lễ: cách xếp ghế dự lễ, lối đi. Phần Tiệc: kiểu bàn và cách xếp.
+3. **Trang trí theo lớp.** Cổng, hoa, lối đi, khăn, ghế, hoa bàn, đèn, màn LED, loa. Mỗi món có giá (số tạm, cần bảng giá) trừ vào ngân sách, và có nhãn phong cách; nhãn hợp gu nhà trai, nhà gái hay hai bạn thì tăng chỉ số tương ứng.
+4. **Gói sẵn và may đo** (đặc tả mục 5). "Mẫu có sẵn" là gói của nhà cung cấp trang trí, rẻ và nhanh; tự chọn từng lớp là gói may đo, đắt hơn nhưng hợp ý hơn.
+5. **Lưu ý thành rủi ro ngày cưới.** Ngoài trời mà không có rạp thì mưa thành sự cố; thiếu điện thì mất điện giữa tiệc; loa yếu thì khách phía sau không nghe; thiếu chỗ thì khách phải đứng. Người chơi xử lý trước (thuê rạp, máy phát, loa) hoặc chấp nhận rủi ro.
+6. **Xem trước.** Toàn cảnh, mặt bằng, cận cảnh một chỗ ngồi; sau này thêm chạy thử buổi lễ 30 giây theo chương trình.
+7. **Ngày cưới.** Cảnh ngày cưới dùng đúng những món đã chọn.
+
+**Cần chủ dự án quyết.**
+
+- Duyệt vòng chơi trên để đưa vào chương 4 (thay 3 gói).
+- Bảng giá số tạm cho từng món. Hiện chỉ cổng hoa và tiền thuê bàn ghế có số tạm trong `gia-tham-khao.md`; khăn, ghế bọc, đèn, màn LED, loa, hoa bàn đều "chưa có giá".
+- **Nhìn từ trên cao cho tiệc rất đông.** Tranh vẽ tay nhìn ngang tầm mắt chỉ thấy khoảng 20–26 bàn ở Vườn Hồ. Muốn thấy cả 100 bàn cần góc nhìn trên cao: hoặc dùng sa bàn 3D (`game/lab/sa-ban/`, đặc tả mục 11, đang chờ duyệt phong cách), hoặc vẽ thêm nền nhìn từ trên cao cho từng nơi (thêm một dòng vào bảng duyệt, vẽ một tấm thử trước).

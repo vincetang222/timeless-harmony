@@ -3,7 +3,7 @@
 #   - nền đêm (cỡ 1600, 900 và hình thẻ);
 #   - bộ bàn 3D: tranh, mặt nạ 3 lớp (đỏ = khăn, lục = đệm, lam = khung ghế; không nén mất dữ liệu), toạ độ khăn gói 12 bit vào RGB;
 #   - cận cảnh bàn Âu, Việt: tranh, mặt nạ (đỏ = khăn, lục = đĩa lót, lam = dao nĩa), toạ độ khăn.
-# Chạy: python3 xuat_lab.py <thư mục bản chơi> <thư mục nền đêm> <bàn tròn 3D> <bàn dài 3D> <cận cảnh 3D> <t14-xuat.png> [phần: nen,khung,ban,gan,vai,loa,ghe,xuyen,luong]
+# Chạy: python3 xuat_lab.py <thư mục bản chơi> <thư mục nền đêm> <bàn tròn 3D> <bàn dài 3D> <cận cảnh 3D> <t14-xuat.png> [phần: nen,khung,ban,gan,vai,loa,ghe,xuyen,luong,hoaban]
 #   - ô hoạ tiết vải (ren, kim sa, gấm) lặp liền mạch, để bản chơi trải lên khăn theo toạ độ khăn;
 # Ra: <bản chơi>/anh/..., <bản chơi>/anh/tt/..., số đo tt-lab.json (chép vào TT3 trong index.html), ảnh kiểm tra xuat-lab-*.jpg
 import sys, os, json, math
@@ -16,7 +16,7 @@ import khung_ma as K
 import trang_tri as T
 
 LAB, DEM, TRON, DAI, GAN, T14 = sys.argv[1:7]
-PHAN = set((sys.argv[7] if len(sys.argv) > 7 else 'nen,khung,ban,gan,vai,loa,ghe,xuyen,luong').split(','))   # chạy riêng từng phần, ví dụ: khung,vai
+PHAN = set((sys.argv[7] if len(sys.argv) > 7 else 'nen,khung,ban,gan,vai,loa,ghe,xuyen,luong,hoaban').split(','))   # chạy riêng từng phần, ví dụ: khung,vai
 ANH = os.path.join(LAB, 'anh'); TT = os.path.join(ANH, 'tt'); os.makedirs(TT, exist_ok=True)
 NEN_THE = (236, 240, 228)
 so = json.load(open('tt-lab.json')) if os.path.exists('tt-lab.json') else {}
@@ -249,6 +249,44 @@ if 'luong' in PHAN:
     so['luong'] = dict(w=Wl, h=Hl, o=o, rong=0.65, goc=[round(float(v), 1) for v in np.percentile(np.asarray(tam).astype(np.float32)[..., :3][mh > 0.9], 85, axis=0)])
     print('luống hoa:', Wl, Hl, so['luong']['goc'])
     bg = Image.new('RGBA', tam.size, (60, 80, 70, 255)); bg.alpha_composite(tam); xem = Image.new('RGB', (Wl, Hl * 2)); xem.paste(bg.convert('RGB'), (0, 0)); xem.paste(Image.merge('RGB', (mn, mn, mn)), (0, Hl)); xem.save('xuat-lab-luong.jpg', quality=85)
+
+# ---------- 4f. Hoa bàn (T3, Canva): 6 món trên nền xanh, thứ tự: hoa thấp tròn, hoa cao trong bình, nến và bạch đàn, hoa và cam, đèn lồng, chân nến ----------
+# Giữ cỡ gốc, xếp thành một tấm ngang. Mỗi món ghi [x, rộng, cao, neo x, neo y (đáy món), bề rộng thật m]. Thân nến trắng không nhuộm theo tông hoa.
+# Kính (bình, chụp nến): chỗ ảnh gốc còn ngả xanh nền là nhìn xuyên kính, cho gần trong suốt và trung tính (không để màu xanh nền), giữ vệt bắt sáng.
+if 'hoaban' in PHAN:
+    roi, hop = T.tach(os.environ['T3'], nguong=90, ra_hop=True)
+    g = np.asarray(Image.open(os.environ['T3']).convert('RGB')).astype(np.float32)[hop[1]:hop[3], hop[0]:hop[2]]
+    kinh = np.clip((g[..., 2] - np.maximum(g[..., 0], g[..., 1]) - 30) / 40, 0, 1)[..., None]
+    a = np.asarray(roi).astype(np.float32).copy(); a[..., :3] = a[..., :3] * (1 - kinh) + np.array([226, 232, 230]) * kinh; a[..., 3] *= 1 - 0.8 * kinh[..., 0]
+    roi = Image.fromarray(a.astype('uint8'), 'RGBA'); a = np.asarray(roi); kinh_roi = kinh[..., 0]
+    lab, n = nd.label(nd.binary_dilation(a[..., 3] > 30, iterations=10)); sz = nd.sum(np.ones_like(lab), lab, range(1, n + 1)); mon = []
+    for k in np.argsort(-sz)[:6] + 1:
+        ys, xs = np.nonzero(lab == k); bb = (xs.min(), ys.min(), xs.max() + 1, ys.max() + 1)
+        c = np.asarray(roi.crop(bb)).copy(); c[..., 3] = (c[..., 3] * (lab == k)[bb[1]:bb[3], bb[0]:bb[2]]).astype('uint8'); mon.append((bb, Image.fromarray(c)))
+    mon.sort(key=lambda t: (t[0][1] // 300, t[0][0]))
+    RONG = [0.6, 0.55, 0.4, 0.6, 0.48, 0.34]
+    NEN_SAP = [(1320, 135, 1405, 345), (1348, 308, 1436, 398), (1436, 210, 1512, 362), (820, 662, 877, 785), (1290, 450, 1486, 621)]   # thân nến, toạ độ ảnh gốc
+    Wh = sum(im.size[0] + 2 for _, im in mon); Hh = max(im.size[1] for _, im in mon); tam = Image.new('RGBA', (Wh, Hh), (0, 0, 0, 0)); kt = Image.new('L', (Wh, Hh), 0); o = []; x = 0; dich = []
+    for i, (bb, im) in enumerate(mon):
+        al = np.asarray(im)[..., 3]; hang = np.nonzero((al > 128).sum(1) >= 6)[0]; day = (hang.max() + 1) / im.size[1]   # đáy: hàng đặc cuối cùng
+        kt.paste(Image.fromarray((kinh_roi[bb[1]:bb[3], bb[0]:bb[2]] * 255).astype('uint8')), (x, 0))
+        tam.alpha_composite(im, (x, 0)); o.append([x, im.size[0], im.size[1], 0.5, round(float(day), 3), RONG[i]]); dich.append((x - bb[0] - hop[0], -bb[1] - hop[1])); x += im.size[0] + 2
+    mn = (np.asarray(T.mat_na_hoa(tam)).astype(np.float32) * (1 - np.asarray(kt.filter(ImageFilter.MaxFilter(5))).astype(np.float32) / 255)).astype('uint8')
+    for (x0, y0, x1, y1) in NEN_SAP:
+        for i, (bb, im) in enumerate(mon):
+            gx, gy = bb[0] + hop[0], bb[1] + hop[1]
+            if gx <= x0 < gx + im.size[0] and gy <= y0 < gy + im.size[1]:
+                dx, dy = dich[i]; mn[max(y0 + dy, 0):y1 + dy, max(x0 + dx, o[i][0]):min(x1 + dx, o[i][0] + o[i][1])] = 0
+    for i, (y0, y1) in {1: (0.62, 1), 2: (0, 1), 4: (0, 0.42), 5: (0, 0.36)}.items():   # đáy bình, cả món nến (không có hoa), mái đèn lồng, hàng nến trên chân nến
+        mn[int(y0 * o[i][2]):int(y1 * o[i][2]), o[i][0]:o[i][0] + o[i][1]] = 0
+    mn = Image.fromarray(mn); mh = np.asarray(mn).astype(np.float32) / 255
+    luu_webp(tam, 'hoaban.webp'); Image.merge('RGB', (mn, mn, mn)).save(os.path.join(TT, 'hoaban-mn.webp'), quality=70, method=6)
+    so['hoaban'] = dict(w=Wh, h=Hh, o=o, goc=[round(float(v), 1) for v in np.percentile(np.asarray(tam).astype(np.float32)[..., :3][mh > 0.9], 85, axis=0)])
+    print('hoa bàn:', Wh, Hh, so['hoaban'])
+    for i, q in enumerate(o):   # hình thẻ 320×240 cho từng món (cùng cỡ thẻ bàn)
+        im = tam.crop((q[0], 0, q[0] + q[1], q[2])); k = min(210 / im.size[1], 290 / im.size[0]); im = im.resize((max(1, round(im.size[0] * k)), max(1, round(im.size[1] * k))), Image.LANCZOS)
+        t = Image.new('RGBA', (320, 240), NEN_THE + (255,)); t.alpha_composite(im, ((320 - im.size[0]) // 2, 228 - im.size[1])); t.convert('RGB').save(os.path.join(TT, 't-hoaban-%d.webp' % i), quality=80, method=6)
+    bg = Image.new('RGBA', tam.size, (60, 80, 70, 255)); bg.alpha_composite(tam); xem = Image.new('RGB', (Wh, Hh * 2)); xem.paste(bg.convert('RGB'), (0, 0)); xem.paste(Image.merge('RGB', (mn, mn, mn)), (0, Hh)); xem.save('xuat-lab-hoaban.jpg', quality=85)
 
 # ---------- 5. Ô hoạ tiết vải: lặp liền mạch (chu kỳ hoạ tiết chia hết cạnh ô), 512 px và bản 128 px cho bàn nhìn xa ----------
 # Kênh: R = tỉ lệ pha màu thứ hai (ren trắng, hoa gấm), G = độ sáng hạt (÷1,3), B = điểm loé. Cùng công thức với hoa_van.py.
