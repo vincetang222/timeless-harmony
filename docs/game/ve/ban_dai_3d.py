@@ -73,30 +73,31 @@ def khan_dai(dai, rong, mat, seed=1, bien=0.04, bo=0.06):
     return o, cao
 
 
-BO = [(8, 0.0), (12, 0.0), (20, 0.0), (12, math.radians(-28))]     # số khách, góc xoay (0 = chạy ngang khung hình)
-so = {}
-for khach, xoay in BO:
-    sc = X.moi(); X.ID.clear()
-    vai = X.vat_lieu('khan', (0.94, 0.92, 0.87), 0.85, (1, 0, 0))
-    khung = X.vat_lieu('khung', (0.84, 0.76, 0.60), 0.45, (0, 0, 1))
-    dem = X.vat_lieu('dem', (0.93, 0.91, 0.86), 0.8, (0, 1, 0))
-    moi_ben = khach // 2; dai = moi_ben * 0.62 + 0.3
-    khan, cao = khan_dai(dai, RONG, vai, seed=khach)
-    ghe = X.ghe_chiavari(khung, dem)
-    for i in range(moi_ben):
-        x = -dai / 2 + 0.15 + 0.31 + i * 0.62
-        X.nhan_ban(ghe, (x, -RONG / 2 - 0.3, 0), math.pi)        # ghế mẫu có mặt hướng −y: hàng trước quay 180° để mặt hướng vào bàn
-        X.nhan_ban(ghe, (x, RONG / 2 + 0.3, 0), 0.0)
-    for o in ghe: bpy.data.objects.remove(o)
-    if xoay:
-        goc = bpy.data.objects.new('xoay', None); bpy.data.collections['net'].objects.link(goc)
-        for o in list(bpy.data.objects):
-            if o.parent is None and o.name not in ('xoay', 'sun', 'dat') and o.type in ('MESH', 'CURVE', 'EMPTY') and o != goc: o.parent = goc
-        goc.rotation_euler = (0, 0, xoay)
-    m = X.may_anh(sc)
-    ten = f'ban-dai-{khach}' + ('-cheo' if xoay else '')
-    X.ve(sc, os.path.join(RA, ten), uv_vat=khan)
-    m.update(dai=round(dai, 2), rong=RONG, khach=khach, xoay_do=round(math.degrees(xoay)), khan_uv_cao=round(cao, 4)); so[ten] = m
-    print(ten, m)
-json.dump(so, open(os.path.join(RA, 'ban-dai.json'), 'w'), ensure_ascii=False, indent=1)
-print('xong')
+if __name__ == '__main__':   # để tệp khác nhập được khan_dai mà không chạy cả lô vẽ
+    BO = [(8, 0.0), (12, 0.0), (20, 0.0), (12, math.radians(-28))]     # số khách, góc xoay (0 = chạy ngang khung hình)
+    so = {}
+    for khach, xoay in BO:
+        sc = X.moi(); X.ID.clear()
+        vai = X.vat_lieu('khan', (0.94, 0.92, 0.87), 0.85, (1, 0, 0))
+        khung = X.vat_lieu('khung', (0.84, 0.76, 0.60), 0.45, (0, 0, 1))
+        dem = X.vat_lieu('dem', (0.93, 0.91, 0.86), 0.8, (0, 1, 0))
+        moi_ben = khach // 2; dai = moi_ben * 0.62 + 0.3
+        khan, cao = khan_dai(dai, RONG, vai, seed=khach)
+        ghe = X.ghe_chiavari(khung, dem)
+        for i in range(moi_ben):
+            x = -dai / 2 + 0.15 + 0.31 + i * 0.62
+            X.nhan_ban(ghe, (x, -RONG / 2 - 0.3, 0), math.pi)        # ghế mẫu có mặt hướng −y: hàng trước quay 180° để mặt hướng vào bàn
+            X.nhan_ban(ghe, (x, RONG / 2 + 0.3, 0), 0.0)
+        for o in ghe: bpy.data.objects.remove(o)
+        if xoay:
+            goc = bpy.data.objects.new('xoay', None); bpy.data.collections['net'].objects.link(goc)
+            for o in list(bpy.data.objects):
+                if o.parent is None and o.name not in ('xoay', 'sun', 'dat') and o.type in ('MESH', 'CURVE', 'EMPTY') and o != goc: o.parent = goc
+            goc.rotation_euler = (0, 0, xoay)
+        m = X.may_anh(sc)
+        ten = f'ban-dai-{khach}' + ('-cheo' if xoay else '')
+        X.ve(sc, os.path.join(RA, ten), uv_vat=khan)
+        m.update(dai=round(dai, 2), rong=RONG, khach=khach, xoay_do=round(math.degrees(xoay)), khan_uv_cao=round(cao, 4)); so[ten] = m
+        print(ten, m)
+    json.dump(so, open(os.path.join(RA, 'ban-dai.json'), 'w'), ensure_ascii=False, indent=1)
+    print('xong')

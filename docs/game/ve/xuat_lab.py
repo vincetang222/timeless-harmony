@@ -3,7 +3,7 @@
 #   - nền đêm (cỡ 1600, 900 và hình thẻ);
 #   - bộ bàn 3D: tranh, mặt nạ 3 lớp (đỏ = khăn, lục = đệm, lam = khung ghế; không nén mất dữ liệu), toạ độ khăn gói 12 bit vào RGB;
 #   - cận cảnh bàn Âu, Việt: tranh, mặt nạ (đỏ = khăn, lục = đĩa lót, lam = dao nĩa), toạ độ khăn.
-# Chạy: python3 xuat_lab.py <thư mục bản chơi> <thư mục nền đêm> <bàn tròn 3D> <bàn dài 3D> <cận cảnh 3D> <t14-xuat.png> [phần: nen,khung,ban,gan,vai,loa,ghe]
+# Chạy: python3 xuat_lab.py <thư mục bản chơi> <thư mục nền đêm> <bàn tròn 3D> <bàn dài 3D> <cận cảnh 3D> <t14-xuat.png> [phần: nen,khung,ban,gan,vai,loa,ghe,xuyen]
 #   - ô hoạ tiết vải (ren, kim sa, gấm) lặp liền mạch, để bản chơi trải lên khăn theo toạ độ khăn;
 # Ra: <bản chơi>/anh/..., <bản chơi>/anh/tt/..., số đo tt-lab.json (chép vào TT3 trong index.html), ảnh kiểm tra xuat-lab-*.jpg
 import sys, os, json, math
@@ -16,7 +16,7 @@ import khung_ma as K
 import trang_tri as T
 
 LAB, DEM, TRON, DAI, GAN, T14 = sys.argv[1:7]
-PHAN = set((sys.argv[7] if len(sys.argv) > 7 else 'nen,khung,ban,gan,vai,loa,ghe').split(','))   # chạy riêng từng phần, ví dụ: khung,vai
+PHAN = set((sys.argv[7] if len(sys.argv) > 7 else 'nen,khung,ban,gan,vai,loa,ghe,xuyen').split(','))   # chạy riêng từng phần, ví dụ: khung,vai
 ANH = os.path.join(LAB, 'anh'); TT = os.path.join(ANH, 'tt'); os.makedirs(TT, exist_ok=True)
 NEN_THE = (236, 240, 228)
 so = json.load(open('tt-lab.json')) if os.path.exists('tt-lab.json') else {}
@@ -211,6 +211,27 @@ if 'ghe' in PHAN:
     luu_webp(tam, 'ghe-xoay.webp'); luu_webp(Image.fromarray(np.clip(np.round(mat * 255), 0, 255).astype('uint8')), 'ghe-xoay-mn.webp', mat=True)
     so['ghe'] = dict(w=Wt, h=Ht, pxm=260, o=o, goc=[None, goc_lop(rgb, mat[..., 1]), goc_lop(rgb, mat[..., 2])])
     print('ghế:', Wt, Ht, so['ghe']['goc'])
+
+# ---------- 4d. Bàn dài xuyên suốt (ban_xuyen_3d.py): vẽ đầy khung bằng máy ảnh phối cảnh; cắt gọn theo vùng có hình, ghi vị trí cắt ----------
+if 'xuyen' in PHAN:
+    XD = os.environ['XUYEN_3D']; mx = json.load(open(os.path.join(XD, 'ban-xuyen.json'))); the_ba = None
+    for ten, m in mx.items():
+        im = Image.open(os.path.join(XD, ten + '.png')).convert('RGBA'); a_ = np.asarray(im)[..., 3]
+        a_ = a_ * (nd.uniform_filter((a_ > 3).astype(np.float32), 5) > 0.3)   # bỏ điểm lạc ở góc khung
+        ys, xs = np.nonzero(a_ > 3); bb = (max(0, xs.min() - 4), max(0, ys.min() - 4), min(im.size[0], xs.max() + 5), min(im.size[1], ys.max() + 5))
+        rgb = np.asarray(im).astype(np.float32)[..., :3]
+        idm = np.asarray(Image.open(os.path.join(XD, ten + '-id.png')).convert('RGB')).astype(np.float32) / 255
+        mn = np.where(idm < 0.03, 0, np.where(idm > 0.97, 1, idm)); uvp = goi_uv(doc_uv(os.path.join(XD, ten + '-uv.png')), mn[..., 0])
+        mn8 = np.clip(np.round(mn * 255), 0, 255).astype('uint8')
+        cat = lambda arr: arr[bb[1]:bb[3], bb[0]:bb[2]]
+        kb = [luu_webp(im.crop(bb), ten + '.webp'), luu_webp(Image.fromarray(cat(mn8)), ten + '-mn.webp', mat=True), luu_webp(Image.fromarray(cat(uvp)), ten + '-uv.webp', mat=True)]
+        m = dict(m); m.update(ox=int(bb[0]), oy=int(bb[1]), w=int(bb[2] - bb[0]), h=int(bb[3] - bb[1]), goc=[goc_lop(rgb, mn[..., i]) for i in range(3)], mau=mot_mau(cat(mn8), cat(uvp)), kb=kb)
+        so[ten] = m; print(ten, m['ox'], m['oy'], m['w'], m['h'], kb, m['goc'])
+        # hình thẻ: cảnh Vườn Hồ có bàn, cắt vùng dưới
+        nen = Image.open(os.path.join(ANH, 'nen-ho.webp')).convert('RGBA'); nen.alpha_composite(im); the_ba = im if the_ba is None else Image.alpha_composite(the_ba, im)
+        t = nen.crop((240, 440, 1360, 889)).resize((320, 128), Image.LANCZOS); tt = Image.new('RGB', (320, 240), NEN_THE); tt.paste(t.convert('RGB'), (0, 56)); tt.save(os.path.join(TT, 't-' + ten + '.webp'), quality=80, method=6)
+    nen = Image.open(os.path.join(ANH, 'nen-ho.webp')).convert('RGBA'); nen.alpha_composite(the_ba)
+    t = nen.crop((240, 440, 1360, 889)).resize((320, 128), Image.LANCZOS); tt = Image.new('RGB', (320, 240), NEN_THE); tt.paste(t.convert('RGB'), (0, 56)); tt.save(os.path.join(TT, 't-ban-xuyen-ba.webp'), quality=80, method=6)
 
 # ---------- 5. Ô hoạ tiết vải: lặp liền mạch (chu kỳ hoạ tiết chia hết cạnh ô), 512 px và bản 128 px cho bàn nhìn xa ----------
 # Kênh: R = tỉ lệ pha màu thứ hai (ren trắng, hoa gấm), G = độ sáng hạt (÷1,3), B = điểm loé. Cùng công thức với hoa_van.py.
